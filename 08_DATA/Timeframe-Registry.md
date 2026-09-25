@@ -2,13 +2,13 @@
 id: "data.timeframe_registry"
 type: "data"
 data_kind: "timeframe_registry"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Input resolution and analysis timeframe registry"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.dataset_registry", "data.candle_model", "core.chronology", "algorithm.raw", "test.chronology_invariants", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L9", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L9", "engine/bridge/trading_pipeline.py#L161", "engine/bridge/trading_pipeline.py#L1686"]
+source_reference: []
 ---
 
 # Input resolution and analysis timeframe registry

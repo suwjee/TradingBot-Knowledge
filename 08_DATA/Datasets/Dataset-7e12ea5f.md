@@ -26,8 +26,8 @@ validated_by: ["test.fixture_registry", "test.baseline_policy"]
 chronology_model: "core.chronology"
 regression_role: "available-unanchored"
 hash_reference: "data.hash_registry"
-raw_path: "D:/My-Projects/TradingBot/data/raw/FXCM/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json"
-raw_locations: ["D:/My-Projects/TradingBot/data/raw/FXCM/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json"]
+raw_path: "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json"
+raw_locations: ["08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json"]
 raw_sha256: "7e12ea5f56754b2cc408753c34d7a7482de1e8eb0d9773bba577208d16903e17"
 raw_bytes: 2368419
 row_count: 30935
@@ -35,7 +35,7 @@ first_epoch: 1790018400
 last_epoch: 1790196980
 integrity_status: "verified"
 related_entities: ["data.raw_model", "data.candle_model", "data.hash_registry", "data.dataset_manifest", "data.data_validation", "core.chronology", "algorithm.raw", "source.trading_pipeline", "test.fixture_registry", "test.baseline_policy", "test.regression_policy"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/bridge/trading_pipeline.py#L1732"]
+source_reference: []
 ---
 
 # USOIL 5s RAW 2026-09-21 / 7e12ea5f
@@ -48,12 +48,12 @@ This entity identifies exact RAW bytes, not an algorithm or a directional datase
 - First row: `2026-09-21 22:50:00 Asia/Tehran (+03:30)` (epoch `1790018400`); last row: `2026-09-24 00:26:20 Asia/Tehran (+03:30)` (epoch `1790196980`).
 - Input interval: nominal 5s from filename and observed minimum step; 2128 adjacent intervals exceed that step; maximum observed interval 3670s.
 - Paths with byte-identical content:
-- `D:/My-Projects/TradingBot/data/raw/FXCM/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json`
+- `08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json`
 
 Production sidecar source label is `faraz`; its data SHA-256, byte count and candle count match the RAW. This label is not proof of upstream market/provider provenance. The present bytes, row schema, positive increasing epochs, OHLC bounds and nominal-grid alignment passed this snapshot inspection. Longer intervals are gap candidates, not independently proven missing market records.
 
 ## Usage and authority boundary
 
-Fixture dependencies: No registered Phase 5 fixture uses this hash.
+Fixture dependencies: No retained fixture uses this input.
 
 Positive behavior subset evidenced by current fixtures: No positive behavior outcome is asserted from current registered fixtures. This is not a complete output inventory. The direct calculation consumer is `algorithm.raw`; downstream behavior is owned by the source and algorithm layers. No full-payload baseline or new pipeline run was produced merely by registering this dataset.

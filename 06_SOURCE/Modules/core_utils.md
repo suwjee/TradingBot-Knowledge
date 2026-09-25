@@ -4,19 +4,19 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "core utils"
-source_path: "engine/pipeline/core_utils.py"
+source_path: "06_SOURCE/Code/engine/pipeline/core_utils.py"
 mirror: "06_SOURCE/Code/engine/pipeline/core_utils.py"
 sha256: "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de"
 affects: []
-source_refs: ["engine/pipeline/core_utils.py#L1"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L1"]
 supports: ["algorithm.raw", "algorithm.order"]
 related_entities: ["test.source_validation"]
-source_reference: ["engine/pipeline/core_utils.py#L1"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L1"]
 ---
 
 # core utils
 ## Identity and snapshot
-Production: engine/pipeline/core_utils.py
+Production: 06_SOURCE/Code/engine/pipeline/core_utils.py
 Mirror: 06_SOURCE/Code/engine/pipeline/core_utils.py
 SHA-256: 3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de
 Declared versions: [('CORE_UTILS_VERSION', '1.0.0')]
@@ -28,9 +28,9 @@ Owns shared Decimal normalization and physical Order/Reaction identity.
 No classes.
 
 ## Important symbols
-- as_decimal: engine/pipeline/core_utils.py#L11
-- order_identity: engine/pipeline/core_utils.py#L19
-- reaction_identity: engine/pipeline/core_utils.py#L24
+- as_decimal: 06_SOURCE/Code/engine/pipeline/core_utils.py#L11
+- order_identity: 06_SOURCE/Code/engine/pipeline/core_utils.py#L19
+- reaction_identity: 06_SOURCE/Code/engine/pipeline/core_utils.py#L24
 
 ## Inputs and outputs
 Numeric values or Reaction-like object -> Decimal or (FirstIndex,BreakIndex).

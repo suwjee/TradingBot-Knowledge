@@ -2,13 +2,13 @@
 id: "data.raw_format"
 type: "data"
 data_kind: "raw_format"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Observed RAW JSON format"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.raw_schema", "data.raw_model", "data.candle_model", "algorithm.raw", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L149", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L149", "engine/bridge/trading_pipeline.py#L143", "engine/bridge/trading_pipeline.py#L1737"]
+source_reference: []
 ---
 
 # Observed RAW JSON format

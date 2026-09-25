@@ -1,13 +1,13 @@
 ---
 id: "market.raw"
 type: "market"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "RAW input"
 relates_to: ["source.integration_boundary"]
-source_refs: ["engine/bridge/trading_pipeline.py#L120", "engine/bridge/trading_pipeline.py#L1732"]
+source_refs: []
 related_entities: ["data.raw_model", "source.trading_pipeline"]
-source_reference: ["engine/bridge/trading_pipeline.py#L120", "engine/bridge/trading_pipeline.py#L1732"]
+source_reference: []
 ---
 
 # RAW input

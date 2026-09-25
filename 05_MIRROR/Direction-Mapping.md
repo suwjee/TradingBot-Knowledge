@@ -1,16 +1,18 @@
 ---
 id: "mirror.direction_mapping"
 type: "mirror"
-status: "active"
-authority: "canonical"
+status: "pending"
+authority: "non-canonical"
 title: "Verified direction mapping"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["market.direction", "market.crossing", "market.candle", "algorithm.reaction", "algorithm.blue", "algorithm.order", "source.direction_policy", "source.reaction_engine", "source.blue_line_detector", "source.a_zone_detector", "source.e_zone_detector"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L641", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L641", "engine/pipeline/direction_policy.py#L21", "engine/pipeline/blue_line_detector.py#L75", "engine/pipeline/reaction_engine.py#L560", "engine/pipeline/a_zone_detector.py#L311", "engine/pipeline/e_zone_detector.py#L393", "engine/pipeline/e_zone_detector.py#L675"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L75", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L311"]
 ---
 
 # Verified direction mapping
+
+> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
 
 `direction_policy.py#L21-L70` supplies the shared primitive map; both synchronized references §15 list the same directional pairs. The mapped `value` must already be the appropriate price side. Do not substitute the stop predicate for the separate Reaction confirmation predicate.
 
@@ -27,8 +29,6 @@ source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.
 | Opposite Order direction | Bearish | Bullish | `direction_policy.py#L28-L30`; `e_zone_detector.py#L151` |
 | Mode-B Order inherited stop edge | prior healthy BoxTop | prior healthy BoxBottom | `reaction_engine.py#L1185-L1195`; both references §6.12 |
 | Mode-A opposite Order outer stop | Bearish Order: maximum High | Bullish Order: minimum Low | `reaction_engine.py#L1137-L1195`; both references §6.12 |
-| Order_B reset-leg trigger | High > frozen ceiling | Low < frozen floor | `e_zone_detector.py#L393-L436`; both references §10.3 |
-| Order_C frozen Leg level and break | minimum Low, then Low < level | maximum High, then High > level | `e_zone_detector.py#L675-L789`; both references §10.3C |
 | Blue Fibonacci level | `Top − 0.618 × (Top − reference)` | `Bottom + 0.618 × (reference − Bottom)` | `blue_line_detector.py#L75-L81` |
 | Scale Blue line price | `Low + (High − Low)/3` | `High − (High − Low)/3` | `blue_line_detector.py#L217-L238` |
 | Reset Blue line price | `Low + (High − Low)/5` | `High − (High − Low)/5` | `blue_line_detector.py#L246-L263` |

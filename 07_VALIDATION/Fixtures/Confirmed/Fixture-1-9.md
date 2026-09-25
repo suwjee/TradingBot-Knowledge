@@ -11,16 +11,18 @@ fixture_status: "Active"
 fixture_authority: "Canonical"
 direction: "Bearish"
 timeframe: "30s"
-dataset: "D:/My-Projects/TradingBot-Knowledge/08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json"
+dataset: "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json"
 dataset_sha256: "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974"
 timestamp: "2026-08-27 08:37:10"
 behavior: "unknown"
 behavior_detail: "Bullish physical Order geometry inside Bearish calculation"
 algorithm: "algorithm.order"
-source_module: "engine/pipeline/reaction_engine.py"
+source_module: "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
 source_function: "UnifiedReactionDetector._candidate_from_confirmation_remainder"
 reaction_identity: "unknown"
 order_identity: "unknown"
+first_index: "unknown"
+break_index: "unknown"
 lifecycle_state: "unknown"
 previous_behavior: "unknown"
 next_behavior: "unknown"
@@ -29,10 +31,10 @@ expected_output: "BoxTop 4620.825, BoxBottom 4619.565; lower event 08:37:10; lat
 validation_target: "Exact confirmation freezes physical Order geometry"
 validation_rule: "test.chronology_invariants"
 related_entities: ["test.fixture_registry", "test.chronology_invariants", "algorithm.order", "source.reaction_engine"]
-source_reference: ["engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1825", "engine/pipeline/reaction_engine.py#L1546"]
-source_fixture: "C:/Users/msadr/Desktop/TradingBot_Fixtures_Regression_Anchors.md"
-source_fixture_line: 108
-source_fixture_sha256: "f0234c1342ce57ccf0abd556860c1f3c4535c0b80e94dadc918f3b9bf86c13f2"
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1546"]
+source_fixture: "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md"
+source_fixture_line: 74
+source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
 ---
 
 # 1.9 Canonical Bullish Order geometry inside Bearish regression
@@ -45,7 +47,7 @@ BoxTop 4620.825, BoxBottom 4619.565; lower event 08:37:10; later 08:37:50 low ca
 
 ## Evidence boundary
 
-Current assertion supported by the synchronized reference and the named source owner; no fresh engine run or complete serialized output hash is claimed. The fixture source is section 1.9, line 108, in the SHA-256-pinned supplied document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` pins a synchronized reference passage and an implementation location; `source_function: unknown` means a single owning function was not verified. Unknown metadata is deliberately not inferred.
+The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 74 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 

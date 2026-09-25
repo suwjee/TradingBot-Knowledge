@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "chartId": "932d7158-356f-45da-99ac-fbee613a5323",
+  "broker": "FXCM",
+  "symbol": "USOIL",
+  "timeframe": "5S",
+  "source": "import",
+  "filename": "RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+  "candleCount": 36821,
+  "count": 36821,
+  "dataBytes": 2941746,
+  "dataSha256": "9e2e159ae32976db8a88a9642414bceb46b0fdba0935a32caee7969036f10c2c",
+  "requestedRange": null,
+  "actualRange": {
+    "from": "2026-09-11 02:53:30 Asia/Tehran",
+    "to": "2026-09-15 11:03:45 Asia/Tehran"
+  },
+  "createdAt": "2026-09-20 03:50:51 Asia/Tehran",
+  "updatedAt": "2026-09-20 03:50:51 Asia/Tehran"
+}

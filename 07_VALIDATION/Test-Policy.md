@@ -1,13 +1,13 @@
 ---
 id: "test.test_policy"
 type: "test"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "TradingBot test policy"
 created: "2026-09-25"
 updated: "2026-09-25"
-related_entities: ["test.validation_contract","test.fixture_model","test.regression_policy","test.mirror_validation","test.output_validation","source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1093","engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1093","engine/bridge/trading_pipeline.py#L1903","engine/bridge/trading_pipeline.py#L2300"]
+related_entities: ["test.validation_contract", "test.fixture_model", "test.regression_policy", "test.mirror_validation", "test.output_validation", "test.test_model", "test.unit_test_policy", "test.integration_test_policy", "test.regression_test_execution", "source.trading_pipeline"]
+source_reference: []
 ---
 
 # TradingBot test policy

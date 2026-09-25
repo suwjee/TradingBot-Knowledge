@@ -2,13 +2,13 @@
 id: "data.raw_authority"
 type: "data"
 data_kind: "raw_authority"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Physical RAW authority and scope"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.raw_model", "data.lineage", "data.hash_policy", "core.chronology", "algorithm.raw", "test.baseline_policy", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L141", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L141", "engine/bridge/trading_pipeline.py#L1732"]
+source_reference: []
 ---
 
 # Physical RAW authority and scope

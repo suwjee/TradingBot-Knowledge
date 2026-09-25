@@ -1,0 +1,14 @@
+{
+  "source_commit": "822c5ce1c1e7f464d2e08085fd6d991ee1d5d8ed",
+  "captured_utc": "2026-09-25T11:16:35.105921+00:00",
+  "changed_source_paths": [],
+  "missing_in_commit": [],
+  "blocked_excluded_routes": [],
+  "dirty_worktree_paths": [
+    "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+    "06_SOURCE/Code/apps/chart/vite.config.js"
+  ],
+  "review_state": "needs_review",
+  "scope": "manifest-listed clean tracked source; exact working-tree bytes; no generated trading output",
+  "index_check": "passed"
+}

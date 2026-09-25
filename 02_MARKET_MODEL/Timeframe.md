@@ -1,12 +1,12 @@
 ---
 id: "market.timeframe"
 type: "market"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Timeframe"
-source_refs: ["engine/bridge/trading_pipeline.py#L120", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L159"]
+source_refs: []
 related_entities: ["data.timeframe_registry", "algorithm.raw", "source.trading_pipeline"]
-source_reference: ["engine/bridge/trading_pipeline.py#L120", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L159"]
+source_reference: []
 ---
 
 # Timeframe

@@ -1,20 +1,21 @@
 ---
 id: "mirror.contract"
 type: "mirror"
-status: "active"
-authority: "canonical"
+status: "pending"
+authority: "non-canonical"
 title: "Mirror contract"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["market.direction", "core.behavior_model", "core.lifecycle", "algorithm.reaction", "source.direction_policy", "source.reaction_engine", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L11", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L11", "engine/pipeline/direction_policy.py#L21", "engine/pipeline/reaction_engine.py#L560", "engine/bridge/trading_pipeline.py#L2300"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560"]
 ---
 
 # Mirror contract
 
+> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
+
 ## Definition and authority
 
-Mirror is the deterministic directional transformation of the **one canonical algorithm model** into Bullish or Bearish execution. A directional price, extreme, comparison, confirmation side, or detector-internal color role changes only where the synchronized references and current source specify it. Behavior identity, state-machine meaning, physical chronology and provenance, lifecycle ownership and priority, numbering model, and public serialization key structure remain invariant. This is canonical *knowledge*; executable ownership stays with the cited engine modules. Bullish reference §15 (`engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L641`); Bearish reference §15 (`engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L641`); `direction_policy.py#L1`.
 
 ```text
 Canonical algorithm and behavior contracts
@@ -42,4 +43,4 @@ Classify each *atomic rule* once: **Directional** if its predicate/price role ch
 
 ## Evidence boundary
 
-The two V5.4.11 HPZR6 references and nine current engine modules are hash-pinned by `_INDEX/source-hashes.json`. A reference–source disagreement must be recorded as unresolved, with both anchors; neither side silently wins. Current OrderAudit output alone cannot establish a Mirror trading rule. No market-specific or example-specific branch becomes a Mirror rule. Both references §0.2 and §11; `trading_pipeline.py#L1537`.
+Only the retained source subset is hash-pinned by `_INDEX/source-hashes.json`; comprehensive directional references and mixed modules are absent. Claims requiring that missing evidence remain pending. Current OrderAudit output alone cannot establish a Mirror trading rule. No market-specific or example-specific branch becomes a Mirror rule.

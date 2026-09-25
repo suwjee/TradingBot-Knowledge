@@ -1,14 +1,14 @@
 ---
 id: "market.direction"
 type: "market"
-status: "canonical"
-authority: "normative"
+status: "active"
+authority: "empirical"
 title: "Direction"
-source_refs: ["engine/pipeline/direction_policy.py#L21", "engine/pipeline/reaction_engine.py#L560"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560"]
 related_entities: ["mirror.direction_mapping", "source.direction_policy"]
-source_reference: ["engine/pipeline/direction_policy.py#L21", "engine/pipeline/reaction_engine.py#L560"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560"]
 ---
 
 # Direction
 
-Bullish trend extreme is Low/min with strict Low < level; Reaction First is RED in GREEN context and confirms on High > BoxTop. Bearish trend extreme is High/max with strict High > level; First is GREEN in RED context and confirms on Low < BoxBottom. Bearish detector uses reflected Bullish candles/candidates. Direction-invariant lifecycle, family labels, Doji, numbering, and serialization are not reflected.
+The retained direction policy gives Bullish Low/min and strict Low < level; Reaction First is RED in GREEN context and confirms on High > BoxTop. Bearish uses High/max and strict High > level; First is GREEN in RED context and confirms on Low < BoxBottom. The retained Bearish detector uses reflected Bullish candles/candidates. Lifecycle, family labels, numbering, and serialization require omitted modules and remain pending; Doji classification is retained in the Reaction source.

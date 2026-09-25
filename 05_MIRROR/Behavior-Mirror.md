@@ -1,16 +1,18 @@
 ---
 id: "mirror.behavior"
 type: "mirror"
-status: "active"
-authority: "canonical"
+status: "pending"
+authority: "non-canonical"
 title: "Behavior mirror model"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["behavior.a", "behavior.s", "behavior.s.red", "behavior.s.blue", "behavior.s.blue.type1", "behavior.s.blue.type2", "behavior.s.blue.type3", "behavior.s.blue.type4", "behavior.e", "behavior.stopall", "core.e_numbering", "source.a_zone_detector", "source.s_zone_detector", "source.e_zone_detector", "source.lifecycle_engine"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1670", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1670", "engine/pipeline/a_zone_detector.py#L219", "engine/pipeline/s_zone_detector.py#L482", "engine/pipeline/e_zone_detector.py#L2267", "engine/pipeline/lifecycle_engine.py#L403"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L219", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L482"]
 ---
 
 # Behavior mirror model
+
+> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
 
 The taxonomy is shared across directions. Direction changes formation geometry and strict stops, not behavior identity. Both references §0.1 and §22.4–22.7; `trading_pipeline.py#L1040-L1307`.
 

@@ -1,15 +1,15 @@
 ---
 id: "core.e_numbering"
 type: "core"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "E numbering"
 calculated_by: ["algorithm.reconciliation"]
 implemented_by: ["source.e_zone_detector"]
 depends_on: ["behavior.e"]
-source_refs: ["engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2267"]
+source_refs: []
 related_entities: ["algorithm.reconciliation", "test.identity_invariants"]
-source_reference: ["engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2267"]
+source_reference: []
 ---
 
 # E numbering

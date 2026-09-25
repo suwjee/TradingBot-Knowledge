@@ -1,15 +1,15 @@
 ---
 id: "behavior.s.blue.type4"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "S Blue Type-4"
 calculated_by: ["algorithm.s.type4"]
 implemented_by: ["source.s_zone_detector"]
 depends_on: ["behavior.s.blue", "algorithm.blue"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L543", "engine/pipeline/s_zone_detector.py#L613"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L543", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L613"]
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/s_zone_detector.py#L543", "engine/pipeline/s_zone_detector.py#L613"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L543", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L613"]
 ---
 
 # S Blue Type-4

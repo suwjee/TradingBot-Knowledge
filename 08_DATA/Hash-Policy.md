@@ -2,14 +2,14 @@
 id: "data.hash_policy"
 type: "data"
 data_kind: "hash_policy"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "RAW hash and version policy"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.hash_registry", "data.dataset_manifest", "test.baseline_policy", "test.fixture_registry", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L141", "engine/bridge/trading_pipeline.py#L1732"]
-source_refs: ["apps/chart/server/raw-resource-store.js#L92"]
+source_reference: []
+source_refs: ["06_SOURCE/Code/apps/chart/server/raw-resource-store.js#L92"]
 ---
 
 # RAW hash and version policy

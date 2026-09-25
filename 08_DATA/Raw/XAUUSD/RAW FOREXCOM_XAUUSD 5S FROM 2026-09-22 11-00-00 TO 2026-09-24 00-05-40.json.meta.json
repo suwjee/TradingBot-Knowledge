@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 2,
+  "chartId": "cb86faca-1d5d-4b38-8d5b-fa80227f3dd3",
+  "broker": "FOREXCOM",
+  "symbol": "XAUUSD",
+  "timeframe": "5S",
+  "source": "faraz",
+  "filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json",
+  "candleCount": 25877,
+  "count": 25877,
+  "dataBytes": 2114937,
+  "dataSha256": "b47246b45bb66db9ddfb75b6a431e5b6a7fced5fd521e358e5d5c438f91641dc",
+  "requestedRange": {
+    "from": "2026-09-22 11:00:00 Asia/Tehran",
+    "to": "2026-09-24 00:05:45 Asia/Tehran"
+  },
+  "actualRange": {
+    "from": "2026-09-22 11:00:00 Asia/Tehran",
+    "to": "2026-09-24 00:05:40 Asia/Tehran"
+  },
+  "createdAt": "2026-09-24 00:05:55 Asia/Tehran",
+  "updatedAt": "2026-09-24 00:05:55 Asia/Tehran"
+}

@@ -2,13 +2,13 @@
 id: "data.dataset_template"
 type: "data"
 data_kind: "template"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Dataset entity template contract"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.dataset_registry", "data.hash_policy", "data.integrity", "data.data_validation", "test.fixture_model", "algorithm.raw"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/bridge/trading_pipeline.py#L120", "engine/bridge/trading_pipeline.py#L1732"]
+source_reference: []
 ---
 
 # Dataset entity template contract

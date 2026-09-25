@@ -11,16 +11,18 @@ fixture_status: "Historical"
 fixture_authority: "Historical"
 direction: "Bearish"
 timeframe: "30s"
-dataset: "D:/My-Projects/TradingBot-Knowledge/08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json"
+dataset: "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json"
 dataset_sha256: "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974"
 timestamp: "2026-09-09 04:29:30"
 behavior: "S"
 behavior_detail: "superseded S Red from old Mode-B refresh chain"
 algorithm: "algorithm.order.a"
-source_module: "engine/pipeline/s_zone_detector.py"
+source_module: "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
 source_function: "SZoneDetector._first_order_after"
 reaction_identity: "unknown"
 order_identity: "unknown"
+first_index: "unknown"
+break_index: "unknown"
 lifecycle_state: "unknown"
 previous_behavior: "A @ 2026-09-09 03:33:30"
 next_behavior: "current S Blue @ 2026-09-09 04:45:00"
@@ -29,10 +31,10 @@ expected_output: "Historical S Red 04:29:30 is not current; current first Order_
 validation_target: "Prevent historical Mode-B refresh output from becoming current baseline"
 validation_rule: "test.identity_invariants"
 related_entities: ["test.fixture_registry", "test.identity_invariants", "algorithm.order.a", "source.s_zone_detector", "behavior.s"]
-source_reference: ["engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1833", "engine/pipeline/s_zone_detector.py#L277"]
-source_fixture: "C:/Users/msadr/Desktop/TradingBot_Fixtures_Regression_Anchors.md"
-source_fixture_line: 148
-source_fixture_sha256: "f0234c1342ce57ccf0abd556860c1f3c4535c0b80e94dadc918f3b9bf86c13f2"
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L277"]
+source_fixture: "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md"
+source_fixture_line: 114
+source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
 ---
 
 # 1.13 2026-09-09 — historical Mode-B refresh chain
@@ -45,7 +47,7 @@ Historical S Red 04:29:30 is not current; current first Order_A is 04:16:00 and 
 
 ## Evidence boundary
 
-The old assertion is superseded. Its current replacement is described above; this historical value must never serve as an active expected output. The fixture source is section 1.13, line 148, in the SHA-256-pinned supplied document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` pins a synchronized reference passage and an implementation location; `source_function: unknown` means a single owning function was not verified. Unknown metadata is deliberately not inferred.
+The old assertion is superseded. Its current replacement is described above; this historical value must never serve as an active expected output. The Vault-local curated fixture section starts at line 114 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 

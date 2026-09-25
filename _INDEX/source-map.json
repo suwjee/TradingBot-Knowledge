@@ -17,19 +17,11 @@
       "source.lifecycle_engine"
     ],
     "algorithm.order": [
-      "source.e_zone_detector",
       "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.order.a": [
-      "source.e_zone_detector",
       "source.s_zone_detector"
-    ],
-    "algorithm.order.b": [
-      "source.e_zone_detector"
-    ],
-    "algorithm.order.c": [
-      "source.e_zone_detector"
     ],
     "algorithm.orderaudit": [
       "source.e_zone_detector",

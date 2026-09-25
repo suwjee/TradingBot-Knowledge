@@ -4,65 +4,51 @@
     "algorithm.a": {
       "file": "04_ALGORITHMS/A.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "A calculation"
     },
     "algorithm.blue": {
       "file": "04_ALGORITHMS/Blue.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Blue Line"
     },
     "algorithm.e": {
       "file": "04_ALGORITHMS/E.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E construction and recursive chains"
     },
     "algorithm.internal_reaction": {
       "file": "04_ALGORITHMS/Reaction/Internal-Reaction.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Internal Reaction"
     },
     "algorithm.lifecycle": {
       "file": "04_ALGORITHMS/Lifecycle.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Lifecycle eligibility and stage ownership"
     },
     "algorithm.order": {
       "file": "04_ALGORITHMS/Order/Order.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical Order and provenance"
     },
     "algorithm.order.a": {
       "file": "04_ALGORITHMS/Order/Order-A.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Order_A parent-stop cause"
-    },
-    "algorithm.order.b": {
-      "file": "04_ALGORITHMS/Order/Order-B.md",
-      "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Order_B Reset-leg cause"
-    },
-    "algorithm.order.c": {
-      "file": "04_ALGORITHMS/Order/Order-C.md",
-      "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Order_C Blue-leg cause"
     },
     "algorithm.orderaudit": {
       "file": "04_ALGORITHMS/OrderAudit.md",
@@ -74,190 +60,190 @@
     "algorithm.raw": {
       "file": "04_ALGORITHMS/RAW.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW normalization and candle construction"
     },
     "algorithm.reaction": {
       "file": "04_ALGORITHMS/Reaction/Reaction.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Reaction"
     },
     "algorithm.reconciliation": {
       "file": "04_ALGORITHMS/Reconciliation.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E and lifecycle reconciliation"
     },
     "algorithm.reset": {
       "file": "04_ALGORITHMS/Reaction/Reset.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Reset"
     },
     "algorithm.s": {
       "file": "04_ALGORITHMS/S/S.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S calculation and decision"
     },
     "algorithm.s.type1": {
       "file": "04_ALGORITHMS/S/Type-1.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-1 Simple"
     },
     "algorithm.s.type2": {
       "file": "04_ALGORITHMS/S/Type-2.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-2 Advanced"
     },
     "algorithm.s.type3": {
       "file": "04_ALGORITHMS/S/Type-3.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-3 Reset-leg"
     },
     "algorithm.s.type4": {
       "file": "04_ALGORITHMS/S/Type-4.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-4 Blue-qualified aligned Reaction"
     },
     "algorithm.serialization": {
       "file": "04_ALGORITHMS/Serialization.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Public serialization"
     },
     "algorithm.stopall": {
       "file": "04_ALGORITHMS/StopAll.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll gate state machine"
     },
     "algorithm.visibility": {
       "file": "04_ALGORITHMS/Visibility.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Final visibility and lineage"
     },
     "behavior.a": {
       "file": "03_BEHAVIORS/A.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "A"
     },
     "behavior.e": {
       "file": "03_BEHAVIORS/E/E.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E"
     },
     "behavior.e.blue": {
       "file": "03_BEHAVIORS/E/Blue.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E Blue"
     },
     "behavior.e.red": {
       "file": "03_BEHAVIORS/E/Red.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E Red"
     },
     "behavior.s": {
       "file": "03_BEHAVIORS/S/S.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S"
     },
     "behavior.s.blue": {
       "file": "03_BEHAVIORS/S/Blue.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue"
     },
     "behavior.s.blue.type1": {
       "file": "03_BEHAVIORS/S/Blue-Type-1.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-1"
     },
     "behavior.s.blue.type2": {
       "file": "03_BEHAVIORS/S/Blue-Type-2.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-2"
     },
     "behavior.s.blue.type3": {
       "file": "03_BEHAVIORS/S/Blue-Type-3.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-3"
     },
     "behavior.s.blue.type4": {
       "file": "03_BEHAVIORS/S/Blue-Type-4.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-4"
     },
     "behavior.s.red": {
       "file": "03_BEHAVIORS/S/Red.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Red"
     },
     "behavior.stopall": {
       "file": "03_BEHAVIORS/StopAll/StopAll.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll"
     },
     "behavior.stopall.type1": {
       "file": "03_BEHAVIORS/StopAll/Type-1.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll Type-1"
     },
     "behavior.stopall.type2": {
       "file": "03_BEHAVIORS/StopAll/Type-2.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll Type-2"
     },
     "behavior.stopall.type3": {
       "file": "03_BEHAVIORS/StopAll/Type-3.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll Type-3"
     },
     "case.fixture_1_1": {
@@ -270,8 +256,8 @@
     "case.fixture_1_10": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-10.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.10 2026-08-28 — exact-key StopAll"
     },
     "case.fixture_1_11": {
@@ -284,8 +270,8 @@
     "case.fixture_1_12": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-12.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll"
     },
     "case.fixture_1_13": {
@@ -295,39 +281,25 @@
       "authority": "historical",
       "title": "1.13 2026-09-09 — historical Mode-B refresh chain"
     },
-    "case.fixture_1_2": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "1.2 2026-08-25 — Order_C / Mode-B Reset owner"
-    },
-    "case.fixture_1_3": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-3.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "1.3 2026-08-26 — native Mode-A Order_C owner"
-    },
     "case.fixture_1_4": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-4.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1"
     },
     "case.fixture_1_5": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-5.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2"
     },
     "case.fixture_1_6": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-6.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3"
     },
     "case.fixture_1_7": {
@@ -340,8 +312,8 @@
     "case.fixture_1_8": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-8.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.8 V5.4.3 dominant Red E / cycle ownership"
     },
     "case.fixture_1_9": {
@@ -351,32 +323,18 @@
       "authority": "empirical",
       "title": "1.9 Canonical Bullish Order geometry inside Bearish regression"
     },
-    "case.fixture_2_1": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-2-1.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "2.1 2026-09-04 — canonical Order_B"
-    },
-    "case.fixture_2_2": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-2-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "2.2 2026-09-04 — shared accepted-Order / parent-neutral use"
-    },
     "case.fixture_2_3": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-2-3.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "2.3 2026-09-17 — Exact-source E continuation"
     },
     "case.fixture_2_4": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-2-4.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "2.4 2026-09-17 — downstream StopAll consequence"
     },
     "case.fixture_2_5": {
@@ -407,18 +365,11 @@
       "authority": "empirical",
       "title": "4.1 2026-09-09 — same-Break Bullish confirmation/reset"
     },
-    "case.fixture_4_2": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-4-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "4.2 2026-09-09 — Bullish Blue→A→S→Order chain"
-    },
     "case.fixture_4_3": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-4-3.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "4.3 2026-09-10 — stage ownership / invalid fallback"
     },
     "case.fixture_5_1": {
@@ -431,16 +382,9 @@
     "case.fixture_5_2": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-5-2.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "5.2 2026-09-11 — stage ownership"
-    },
-    "case.fixture_5_3": {
-      "file": "07_VALIDATION/Fixtures/EdgeCases/Fixture-5-3.md",
-      "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "5.3 USOIL Bearish Order_A / Order_C chain remembered from prior chat"
+      "title": "5.2 2026-09-11 — stage ownership"
     },
     "case.fixture_6_1": {
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-6-1.md",
@@ -459,93 +403,86 @@
     "core.behavior_model": {
       "file": "01_CORE/Behavior-Model.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Behavior model"
     },
     "core.chronology": {
       "file": "01_CORE/Time-Chronology.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Time and chronology"
     },
     "core.e_numbering": {
       "file": "03_BEHAVIORS/E/Numbering.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E numbering"
     },
     "core.invariants": {
       "file": "01_CORE/Core-Invariants.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Core invariants"
     },
     "core.lifecycle": {
       "file": "01_CORE/Lifecycle.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Lifecycle ownership"
     },
     "core.pipeline": {
       "file": "01_CORE/Pipeline.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Calculation pipeline"
     },
     "core.precision": {
       "file": "01_CORE/Precision.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Precision and strictness"
     },
     "core.priority": {
       "file": "01_CORE/Priority.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Priority"
     },
     "core.project": {
       "file": "01_CORE/Project.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "TradingBot project"
     },
     "core.terminology": {
       "file": "01_CORE/Terminology.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Terminology"
     },
     "data.candle_model": {
       "file": "08_DATA/Candle-Model.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW and normalized candle identities"
     },
     "data.data_validation": {
       "file": "08_DATA/Data-Validation.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset validation procedure"
-    },
-    "data.dataset_0291455b": {
-      "file": "08_DATA/Datasets/Dataset-0291455b.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 1s RAW 2026-09-03 / 0291455b"
     },
     "data.dataset_062df750": {
       "file": "08_DATA/Datasets/Dataset-062df750.md",
@@ -553,13 +490,6 @@
       "status": "active",
       "authority": "empirical",
       "title": "USOIL 5s RAW 2026-09-08 / 062df750"
-    },
-    "data.dataset_18632e27": {
-      "file": "08_DATA/Datasets/Dataset-18632e27.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-09-03 / 18632e27"
     },
     "data.dataset_7e12ea5f": {
       "file": "08_DATA/Datasets/Dataset-7e12ea5f.md",
@@ -581,13 +511,6 @@
       "status": "active",
       "authority": "empirical",
       "title": "XAUUSD 5s RAW 2026-09-22 / b47246b4"
-    },
-    "data.dataset_d33c7e2c": {
-      "file": "08_DATA/Datasets/Dataset-d33c7e2c.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-09-16 / d33c7e2c"
     },
     "data.dataset_ea82be1a": {
       "file": "08_DATA/Datasets/Dataset-ea82be1a.md",
@@ -613,239 +536,274 @@
     "data.dataset_manifest": {
       "file": "08_DATA/Manifests/Dataset-Manifest.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Observed RAW inventory manifest"
     },
     "data.dataset_registry": {
       "file": "08_DATA/Datasets/Dataset-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Inventory of byte-distinct RAW datasets"
     },
     "data.dataset_template": {
       "file": "08_DATA/Datasets/Dataset-Template.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset entity template contract"
     },
     "data.datasets_compat": {
       "file": "08_DATA/Datasets.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset navigation compatibility"
     },
     "data.hash_policy": {
       "file": "08_DATA/Hash-Policy.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW hash and version policy"
     },
     "data.hash_registry": {
       "file": "08_DATA/Hashes/Hash-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW SHA-256 registry"
     },
     "data.integrity": {
       "file": "08_DATA/Data-Integrity.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Data integrity checks and observed limits"
     },
     "data.lineage": {
       "file": "08_DATA/Data-Lineage.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset to validation lineage"
     },
     "data.policy": {
       "file": "08_DATA/Data-Policy.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Data knowledge and authority policy"
     },
     "data.raw_authority": {
       "file": "08_DATA/Raw/RAW-Authority.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical RAW authority and scope"
     },
     "data.raw_format": {
       "file": "08_DATA/Raw/RAW-Format.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Observed RAW JSON format"
     },
     "data.raw_model": {
       "file": "08_DATA/RAW-Model.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical RAW input model"
     },
     "data.raw_schema": {
       "file": "08_DATA/Raw/RAW-Schema.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW row schema and validation boundary"
     },
     "data.registry_root": {
       "file": "08_DATA/Dataset-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Data registry entry point"
     },
     "data.timeframe_registry": {
       "file": "08_DATA/Timeframe-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Input resolution and analysis timeframe registry"
+    },
+    "data.window_0291455b": {
+      "file": "08_DATA/Datasets/Window-0291455b.md",
+      "type": "data",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Verified RAW window 0291455b"
+    },
+    "data.window_18632e27": {
+      "file": "08_DATA/Datasets/Window-18632e27.md",
+      "type": "data",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Verified RAW window 18632e27"
+    },
+    "data.window_d33c7e2c": {
+      "file": "08_DATA/Datasets/Window-d33c7e2c.md",
+      "type": "data",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Verified RAW window d33c7e2c"
     },
     "market.candle": {
       "file": "02_MARKET_MODEL/Candle.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Candle"
     },
     "market.crossing": {
       "file": "02_MARKET_MODEL/Crossing.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Strict crossing"
     },
     "market.direction": {
       "file": "02_MARKET_MODEL/Direction.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Direction"
     },
     "market.events": {
       "file": "02_MARKET_MODEL/Market-Events.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Market events"
     },
     "market.exact_chronology": {
       "file": "02_MARKET_MODEL/Exact-Chronology.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Exact lower-timeframe chronology"
     },
     "market.leg": {
       "file": "02_MARKET_MODEL/Leg/Leg.md",
       "type": "market",
-      "status": "draft",
+      "status": "pending",
       "authority": "non-canonical",
       "title": "General Leg model pending"
+    },
+    "market.leg_calculation": {
+      "file": "02_MARKET_MODEL/Leg/Calculation.md",
+      "type": "market",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "General Leg calculation pending"
+    },
+    "market.leg_recognition": {
+      "file": "02_MARKET_MODEL/Leg/Recognition.md",
+      "type": "market",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "General Leg recognition pending"
     },
     "market.model": {
       "file": "02_MARKET_MODEL/Market-Model.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Market model"
     },
     "market.raw": {
       "file": "02_MARKET_MODEL/RAW.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW input"
     },
     "market.timeframe": {
       "file": "02_MARKET_MODEL/Timeframe.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Timeframe"
     },
     "mirror.algorithm_matrix": {
       "file": "05_MIRROR/Algorithm-Mirror.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Algorithm mirror matrix"
     },
     "mirror.behavior": {
       "file": "05_MIRROR/Behavior-Mirror.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Behavior mirror model"
     },
     "mirror.contract": {
       "file": "05_MIRROR/Mirror-Contract.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror contract"
     },
     "mirror.direction_mapping": {
       "file": "05_MIRROR/Direction-Mapping.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Verified direction mapping"
     },
     "mirror.directional_rules": {
       "file": "05_MIRROR/Directional-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Directional rule components"
     },
     "mirror.exceptions": {
       "file": "05_MIRROR/Mirror-Exceptions.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
-      "title": "Source-confirmed mirror exceptions"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Mirror exceptions and pending checks"
     },
     "mirror.invariants": {
       "file": "05_MIRROR/Invariant-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror invariants"
     },
     "mirror.mixed_rules": {
       "file": "05_MIRROR/Mixed-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mixed mirror rules"
     },
     "mirror.source_map": {
       "file": "05_MIRROR/Source-Mirror.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror source ownership"
     },
     "mirror.validation_rules": {
       "file": "05_MIRROR/Validation-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror validation requirements"
     },
     "source.a_zone_detector": {
@@ -872,8 +830,8 @@
     "source.dependencies": {
       "file": "06_SOURCE/Dependency-Map.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Source dependency map"
     },
     "source.direction_policy": {
@@ -884,31 +842,31 @@
       "title": "direction policy"
     },
     "source.e_zone_detector": {
-      "file": "06_SOURCE/Modules/e_zone_detector.md",
+      "file": "06_SOURCE/Pending/e_zone_detector.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
-      "title": "e zone detector"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Source evidence pending rewrite"
     },
     "source.integration_boundary": {
       "file": "06_SOURCE/Integration-Boundary.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Chart-to-bridge input scope"
     },
     "source.lifecycle_engine": {
-      "file": "06_SOURCE/Modules/lifecycle_engine.md",
+      "file": "06_SOURCE/Pending/lifecycle_engine.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
-      "title": "lifecycle engine"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Source evidence pending rewrite"
     },
     "source.map": {
       "file": "06_SOURCE/Source-Map.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Source map"
     },
     "source.reaction_engine": {
@@ -928,16 +886,16 @@
     "source.state_map": {
       "file": "06_SOURCE/State-Map.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "State and ownership map"
     },
     "source.trading_pipeline": {
-      "file": "06_SOURCE/Modules/trading_pipeline.md",
+      "file": "06_SOURCE/Pending/trading_pipeline.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
-      "title": "trading pipeline"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Source evidence pending rewrite"
     },
     "system.authority": {
       "file": "00_SYSTEM/AUTHORITY_MODEL.md",
@@ -952,13 +910,6 @@
       "status": "canonical",
       "authority": "normative",
       "title": "AI editing policy"
-    },
-    "system.executed_phases_audit": {
-      "file": "00_SYSTEM/EXECUTED_PHASES_AUDIT.md",
-      "type": "system",
-      "status": "active",
-      "authority": "empirical",
-      "title": "Executed phases audit and reconstruction"
     },
     "system.frontmatter": {
       "file": "00_SYSTEM/FRONTMATTER_SCHEMA.md",
@@ -988,12 +939,12 @@
       "authority": "normative",
       "title": "Vault manifest"
     },
-    "system.phase_4_5_audit": {
-      "file": "00_SYSTEM/PHASE_4_5_AUDIT.md",
+    "system.readme": {
+      "file": "README.md",
       "type": "system",
       "status": "active",
-      "authority": "empirical",
-      "title": "Phase 4.5 independent forensic audit"
+      "authority": "normative",
+      "title": "Standalone TradingBot Knowledge Vault"
     },
     "system.retrieval": {
       "file": "00_SYSTEM/RETRIEVAL_POLICY.md",
@@ -1005,30 +956,37 @@
     "test.baseline_policy": {
       "file": "07_VALIDATION/Regression/Baseline-Policy.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Trusted baseline policy"
     },
     "test.behavior_invariants": {
       "file": "07_VALIDATION/Invariants/Behavior-Invariants.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Behavior invariant checks"
     },
     "test.change_impact": {
       "file": "07_VALIDATION/Regression/Change-Impact.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Regression change impact"
     },
     "test.chronology_invariants": {
       "file": "07_VALIDATION/Invariants/Chronology-Invariants.md",
       "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Chronology invariant checks"
+    },
+    "test.direction_tests": {
+      "file": "07_VALIDATION/Mirror/Direction-Tests.md",
+      "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Chronology invariant checks"
+      "title": "Directional rule checks"
     },
     "test.fixture_model": {
       "file": "07_VALIDATION/Fixture-Model.md",
@@ -1040,22 +998,29 @@
     "test.fixture_registry": {
       "file": "07_VALIDATION/Fixtures/Fixture-Registry.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Fixture registry"
     },
     "test.identity_invariants": {
       "file": "07_VALIDATION/Invariants/Identity-Invariants.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical identity and provenance checks"
+    },
+    "test.integration_test_policy": {
+      "file": "07_VALIDATION/Tests/Integration-Test-Policy.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Full pipeline integration test policy"
     },
     "test.invariant_validation": {
       "file": "07_VALIDATION/Invariant-Validation.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Invariant validation"
     },
     "test.legacy_memory_fixture_review": {
@@ -1068,22 +1033,50 @@
     "test.lifecycle_invariants": {
       "file": "07_VALIDATION/Invariants/Lifecycle-Invariants.md",
       "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Lifecycle invariant checks"
+    },
+    "test.memory_benchmark": {
+      "file": "07_VALIDATION/Performance/Memory-Benchmark.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Memory benchmark contract"
+    },
+    "test.mirror_policy": {
+      "file": "07_VALIDATION/Mirror-Policy.md",
+      "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Lifecycle invariant checks"
+      "title": "Mirror validation routing policy"
+    },
+    "test.mirror_regression": {
+      "file": "07_VALIDATION/Mirror/Mirror-Regression.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Bullish and Bearish mirror regression"
     },
     "test.mirror_validation": {
       "file": "07_VALIDATION/Mirror-Validation.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror validation"
+    },
+    "test.optimization_rules": {
+      "file": "07_VALIDATION/Performance/Optimization-Rules.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Performance optimization acceptance rules"
     },
     "test.output_validation": {
       "file": "07_VALIDATION/Output-Validation.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Public output validation"
     },
     "test.precision_invariants": {
@@ -1096,16 +1089,30 @@
     "test.regression_model": {
       "file": "07_VALIDATION/Regression/Regression-Model.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Regression evidence model"
     },
     "test.regression_policy": {
       "file": "07_VALIDATION/Regression-Policy.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Regression comparison policy"
+    },
+    "test.regression_test_execution": {
+      "file": "07_VALIDATION/Tests/Regression-Test-Execution.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Regression test execution protocol"
+    },
+    "test.runtime_benchmark": {
+      "file": "07_VALIDATION/Performance/Runtime-Benchmark.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Runtime benchmark contract"
     },
     "test.source_validation": {
       "file": "07_VALIDATION/Source-Validation.md",
@@ -1114,18 +1121,46 @@
       "authority": "normative",
       "title": "Fixture to source validation"
     },
-    "test.test_policy": {
-      "file": "07_VALIDATION/Test-Policy.md",
+    "test.stage_profiling": {
+      "file": "07_VALIDATION/Performance/Stage-Profiling.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Stage profiling and timing interpretation"
+    },
+    "test.symmetry_tests": {
+      "file": "07_VALIDATION/Mirror/Symmetry-Tests.md",
       "type": "test",
       "status": "canonical",
       "authority": "normative",
+      "title": "Constructed mirror symmetry checks"
+    },
+    "test.test_model": {
+      "file": "07_VALIDATION/Tests/Test-Model.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "TradingBot test evidence model"
+    },
+    "test.test_policy": {
+      "file": "07_VALIDATION/Test-Policy.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "TradingBot test policy"
+    },
+    "test.unit_test_policy": {
+      "file": "07_VALIDATION/Tests/Unit-Test-Policy.md",
+      "type": "test",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Engine unit test policy"
     },
     "test.validation_contract": {
       "file": "07_VALIDATION/Validation-Contract.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "TradingBot validation contract"
     },
     "test.zero_difference": {

@@ -25,6 +25,8 @@
     "source_function",
     "reaction_identity",
     "order_identity",
+    "first_index",
+    "break_index",
     "lifecycle_state",
     "previous_behavior",
     "next_behavior",
@@ -42,6 +44,7 @@
     }
   },
   "allOf": [
+    { "if": { "required": ["dataset_window_sha256"] }, "then": { "required": ["dataset_window_first_epoch", "dataset_window_last_epoch", "dataset_window_row_count"] } },
     { "if": { "properties": { "fixture_status": { "const": "Active" } }, "required": ["fixture_status"] }, "then": { "properties": { "status": { "const": "active" }, "authority": { "const": "empirical" }, "fixture_authority": { "const": "Canonical" } } } },
     { "if": { "properties": { "fixture_status": { "const": "Pending" } }, "required": ["fixture_status"] }, "then": { "properties": { "status": { "const": "draft" }, "authority": { "const": "non-canonical" }, "fixture_authority": { "const": "Pending" } } } },
     { "if": { "properties": { "fixture_status": { "const": "Historical" } }, "required": ["fixture_status"] }, "then": { "properties": { "status": { "const": "archived" }, "authority": { "const": "historical" }, "fixture_authority": { "const": "Historical" }, "fixture_kind": { "const": "Bug" } } } }

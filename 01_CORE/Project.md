@@ -1,12 +1,12 @@
 ---
 id: "core.project"
 type: "core"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "TradingBot project"
-source_refs: ["engine/bridge/trading_pipeline.py#L1698", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L129"]
+source_refs: []
 related_entities: ["system.manifest"]
-source_reference: ["engine/bridge/trading_pipeline.py#L1698", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L129"]
+source_reference: []
 ---
 
 # TradingBot project

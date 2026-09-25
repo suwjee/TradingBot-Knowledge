@@ -1,15 +1,15 @@
 ---
 id: "behavior.e.blue"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "E Blue"
 calculated_by: ["algorithm.e", "algorithm.reconciliation"]
 implemented_by: ["source.e_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.e", "core.e_numbering"]
-source_refs: ["engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/lifecycle_engine.py#L331"]
+source_refs: []
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/lifecycle_engine.py#L331"]
+source_reference: []
 ---
 
 # E Blue

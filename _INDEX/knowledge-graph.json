@@ -5,73 +5,57 @@
       "id": "algorithm.a",
       "file": "04_ALGORITHMS/A.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "A calculation"
     },
     {
       "id": "algorithm.blue",
       "file": "04_ALGORITHMS/Blue.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Blue Line"
     },
     {
       "id": "algorithm.e",
       "file": "04_ALGORITHMS/E.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E construction and recursive chains"
     },
     {
       "id": "algorithm.internal_reaction",
       "file": "04_ALGORITHMS/Reaction/Internal-Reaction.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Internal Reaction"
     },
     {
       "id": "algorithm.lifecycle",
       "file": "04_ALGORITHMS/Lifecycle.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Lifecycle eligibility and stage ownership"
     },
     {
       "id": "algorithm.order",
       "file": "04_ALGORITHMS/Order/Order.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical Order and provenance"
     },
     {
       "id": "algorithm.order.a",
       "file": "04_ALGORITHMS/Order/Order-A.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Order_A parent-stop cause"
-    },
-    {
-      "id": "algorithm.order.b",
-      "file": "04_ALGORITHMS/Order/Order-B.md",
-      "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Order_B Reset-leg cause"
-    },
-    {
-      "id": "algorithm.order.c",
-      "file": "04_ALGORITHMS/Order/Order-C.md",
-      "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Order_C Blue-leg cause"
     },
     {
       "id": "algorithm.orderaudit",
@@ -85,216 +69,216 @@
       "id": "algorithm.raw",
       "file": "04_ALGORITHMS/RAW.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW normalization and candle construction"
     },
     {
       "id": "algorithm.reaction",
       "file": "04_ALGORITHMS/Reaction/Reaction.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Reaction"
     },
     {
       "id": "algorithm.reconciliation",
       "file": "04_ALGORITHMS/Reconciliation.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E and lifecycle reconciliation"
     },
     {
       "id": "algorithm.reset",
       "file": "04_ALGORITHMS/Reaction/Reset.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Reset"
     },
     {
       "id": "algorithm.s",
       "file": "04_ALGORITHMS/S/S.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S calculation and decision"
     },
     {
       "id": "algorithm.s.type1",
       "file": "04_ALGORITHMS/S/Type-1.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-1 Simple"
     },
     {
       "id": "algorithm.s.type2",
       "file": "04_ALGORITHMS/S/Type-2.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-2 Advanced"
     },
     {
       "id": "algorithm.s.type3",
       "file": "04_ALGORITHMS/S/Type-3.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-3 Reset-leg"
     },
     {
       "id": "algorithm.s.type4",
       "file": "04_ALGORITHMS/S/Type-4.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Type-4 Blue-qualified aligned Reaction"
     },
     {
       "id": "algorithm.serialization",
       "file": "04_ALGORITHMS/Serialization.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Public serialization"
     },
     {
       "id": "algorithm.stopall",
       "file": "04_ALGORITHMS/StopAll.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll gate state machine"
     },
     {
       "id": "algorithm.visibility",
       "file": "04_ALGORITHMS/Visibility.md",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Final visibility and lineage"
     },
     {
       "id": "behavior.a",
       "file": "03_BEHAVIORS/A.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "A"
     },
     {
       "id": "behavior.e",
       "file": "03_BEHAVIORS/E/E.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E"
     },
     {
       "id": "behavior.e.blue",
       "file": "03_BEHAVIORS/E/Blue.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E Blue"
     },
     {
       "id": "behavior.e.red",
       "file": "03_BEHAVIORS/E/Red.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E Red"
     },
     {
       "id": "behavior.s",
       "file": "03_BEHAVIORS/S/S.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S"
     },
     {
       "id": "behavior.s.blue",
       "file": "03_BEHAVIORS/S/Blue.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue"
     },
     {
       "id": "behavior.s.blue.type1",
       "file": "03_BEHAVIORS/S/Blue-Type-1.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-1"
     },
     {
       "id": "behavior.s.blue.type2",
       "file": "03_BEHAVIORS/S/Blue-Type-2.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-2"
     },
     {
       "id": "behavior.s.blue.type3",
       "file": "03_BEHAVIORS/S/Blue-Type-3.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-3"
     },
     {
       "id": "behavior.s.blue.type4",
       "file": "03_BEHAVIORS/S/Blue-Type-4.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Blue Type-4"
     },
     {
       "id": "behavior.s.red",
       "file": "03_BEHAVIORS/S/Red.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "S Red"
     },
     {
       "id": "behavior.stopall",
       "file": "03_BEHAVIORS/StopAll/StopAll.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll"
     },
     {
       "id": "behavior.stopall.type1",
       "file": "03_BEHAVIORS/StopAll/Type-1.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll Type-1"
     },
     {
       "id": "behavior.stopall.type2",
       "file": "03_BEHAVIORS/StopAll/Type-2.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll Type-2"
     },
     {
       "id": "behavior.stopall.type3",
       "file": "03_BEHAVIORS/StopAll/Type-3.md",
       "type": "behavior",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "StopAll Type-3"
     },
     {
@@ -309,8 +293,8 @@
       "id": "case.fixture_1_10",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-10.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.10 2026-08-28 — exact-key StopAll"
     },
     {
@@ -325,8 +309,8 @@
       "id": "case.fixture_1_12",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-12.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll"
     },
     {
@@ -338,43 +322,27 @@
       "title": "1.13 2026-09-09 — historical Mode-B refresh chain"
     },
     {
-      "id": "case.fixture_1_2",
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "1.2 2026-08-25 — Order_C / Mode-B Reset owner"
-    },
-    {
-      "id": "case.fixture_1_3",
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-3.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "1.3 2026-08-26 — native Mode-A Order_C owner"
-    },
-    {
       "id": "case.fixture_1_4",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-4.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1"
     },
     {
       "id": "case.fixture_1_5",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-5.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2"
     },
     {
       "id": "case.fixture_1_6",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-6.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3"
     },
     {
@@ -389,8 +357,8 @@
       "id": "case.fixture_1_8",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-8.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "1.8 V5.4.3 dominant Red E / cycle ownership"
     },
     {
@@ -402,35 +370,19 @@
       "title": "1.9 Canonical Bullish Order geometry inside Bearish regression"
     },
     {
-      "id": "case.fixture_2_1",
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-2-1.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "2.1 2026-09-04 — canonical Order_B"
-    },
-    {
-      "id": "case.fixture_2_2",
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-2-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "2.2 2026-09-04 — shared accepted-Order / parent-neutral use"
-    },
-    {
       "id": "case.fixture_2_3",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-2-3.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "2.3 2026-09-17 — Exact-source E continuation"
     },
     {
       "id": "case.fixture_2_4",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-2-4.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "2.4 2026-09-17 — downstream StopAll consequence"
     },
     {
@@ -466,19 +418,11 @@
       "title": "4.1 2026-09-09 — same-Break Bullish confirmation/reset"
     },
     {
-      "id": "case.fixture_4_2",
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-4-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "4.2 2026-09-09 — Bullish Blue→A→S→Order chain"
-    },
-    {
       "id": "case.fixture_4_3",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-4-3.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
+      "status": "draft",
+      "authority": "non-canonical",
       "title": "4.3 2026-09-10 — stage ownership / invalid fallback"
     },
     {
@@ -493,17 +437,9 @@
       "id": "case.fixture_5_2",
       "file": "07_VALIDATION/Fixtures/Regression/Fixture-5-2.md",
       "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "5.2 2026-09-11 — stage ownership"
-    },
-    {
-      "id": "case.fixture_5_3",
-      "file": "07_VALIDATION/Fixtures/EdgeCases/Fixture-5-3.md",
-      "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "5.3 USOIL Bearish Order_A / Order_C chain remembered from prior chat"
+      "title": "5.2 2026-09-11 — stage ownership"
     },
     {
       "id": "case.fixture_6_1",
@@ -525,105 +461,97 @@
       "id": "core.behavior_model",
       "file": "01_CORE/Behavior-Model.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Behavior model"
     },
     {
       "id": "core.chronology",
       "file": "01_CORE/Time-Chronology.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Time and chronology"
     },
     {
       "id": "core.e_numbering",
       "file": "03_BEHAVIORS/E/Numbering.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "E numbering"
     },
     {
       "id": "core.invariants",
       "file": "01_CORE/Core-Invariants.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Core invariants"
     },
     {
       "id": "core.lifecycle",
       "file": "01_CORE/Lifecycle.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Lifecycle ownership"
     },
     {
       "id": "core.pipeline",
       "file": "01_CORE/Pipeline.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Calculation pipeline"
     },
     {
       "id": "core.precision",
       "file": "01_CORE/Precision.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Precision and strictness"
     },
     {
       "id": "core.priority",
       "file": "01_CORE/Priority.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Priority"
     },
     {
       "id": "core.project",
       "file": "01_CORE/Project.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "TradingBot project"
     },
     {
       "id": "core.terminology",
       "file": "01_CORE/Terminology.md",
       "type": "core",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Terminology"
     },
     {
       "id": "data.candle_model",
       "file": "08_DATA/Candle-Model.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW and normalized candle identities"
     },
     {
       "id": "data.data_validation",
       "file": "08_DATA/Data-Validation.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset validation procedure"
-    },
-    {
-      "id": "data.dataset_0291455b",
-      "file": "08_DATA/Datasets/Dataset-0291455b.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 1s RAW 2026-09-03 / 0291455b"
     },
     {
       "id": "data.dataset_062df750",
@@ -632,14 +560,6 @@
       "status": "active",
       "authority": "empirical",
       "title": "USOIL 5s RAW 2026-09-08 / 062df750"
-    },
-    {
-      "id": "data.dataset_18632e27",
-      "file": "08_DATA/Datasets/Dataset-18632e27.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-09-03 / 18632e27"
     },
     {
       "id": "data.dataset_7e12ea5f",
@@ -664,14 +584,6 @@
       "status": "active",
       "authority": "empirical",
       "title": "XAUUSD 5s RAW 2026-09-22 / b47246b4"
-    },
-    {
-      "id": "data.dataset_d33c7e2c",
-      "file": "08_DATA/Datasets/Dataset-d33c7e2c.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-09-16 / d33c7e2c"
     },
     {
       "id": "data.dataset_ea82be1a",
@@ -701,272 +613,312 @@
       "id": "data.dataset_manifest",
       "file": "08_DATA/Manifests/Dataset-Manifest.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Observed RAW inventory manifest"
     },
     {
       "id": "data.dataset_registry",
       "file": "08_DATA/Datasets/Dataset-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Inventory of byte-distinct RAW datasets"
     },
     {
       "id": "data.dataset_template",
       "file": "08_DATA/Datasets/Dataset-Template.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset entity template contract"
     },
     {
       "id": "data.datasets_compat",
       "file": "08_DATA/Datasets.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset navigation compatibility"
     },
     {
       "id": "data.hash_policy",
       "file": "08_DATA/Hash-Policy.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW hash and version policy"
     },
     {
       "id": "data.hash_registry",
       "file": "08_DATA/Hashes/Hash-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW SHA-256 registry"
     },
     {
       "id": "data.integrity",
       "file": "08_DATA/Data-Integrity.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Data integrity checks and observed limits"
     },
     {
       "id": "data.lineage",
       "file": "08_DATA/Data-Lineage.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Dataset to validation lineage"
     },
     {
       "id": "data.policy",
       "file": "08_DATA/Data-Policy.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Data knowledge and authority policy"
     },
     {
       "id": "data.raw_authority",
       "file": "08_DATA/Raw/RAW-Authority.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical RAW authority and scope"
     },
     {
       "id": "data.raw_format",
       "file": "08_DATA/Raw/RAW-Format.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Observed RAW JSON format"
     },
     {
       "id": "data.raw_model",
       "file": "08_DATA/RAW-Model.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical RAW input model"
     },
     {
       "id": "data.raw_schema",
       "file": "08_DATA/Raw/RAW-Schema.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW row schema and validation boundary"
     },
     {
       "id": "data.registry_root",
       "file": "08_DATA/Dataset-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Data registry entry point"
     },
     {
       "id": "data.timeframe_registry",
       "file": "08_DATA/Timeframe-Registry.md",
       "type": "data",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Input resolution and analysis timeframe registry"
+    },
+    {
+      "id": "data.window_0291455b",
+      "file": "08_DATA/Datasets/Window-0291455b.md",
+      "type": "data",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Verified RAW window 0291455b"
+    },
+    {
+      "id": "data.window_18632e27",
+      "file": "08_DATA/Datasets/Window-18632e27.md",
+      "type": "data",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Verified RAW window 18632e27"
+    },
+    {
+      "id": "data.window_d33c7e2c",
+      "file": "08_DATA/Datasets/Window-d33c7e2c.md",
+      "type": "data",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Verified RAW window d33c7e2c"
     },
     {
       "id": "market.candle",
       "file": "02_MARKET_MODEL/Candle.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Candle"
     },
     {
       "id": "market.crossing",
       "file": "02_MARKET_MODEL/Crossing.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Strict crossing"
     },
     {
       "id": "market.direction",
       "file": "02_MARKET_MODEL/Direction.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Direction"
     },
     {
       "id": "market.events",
       "file": "02_MARKET_MODEL/Market-Events.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Market events"
     },
     {
       "id": "market.exact_chronology",
       "file": "02_MARKET_MODEL/Exact-Chronology.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "active",
+      "authority": "empirical",
       "title": "Exact lower-timeframe chronology"
     },
     {
       "id": "market.leg",
       "file": "02_MARKET_MODEL/Leg/Leg.md",
       "type": "market",
-      "status": "draft",
+      "status": "pending",
       "authority": "non-canonical",
       "title": "General Leg model pending"
+    },
+    {
+      "id": "market.leg_calculation",
+      "file": "02_MARKET_MODEL/Leg/Calculation.md",
+      "type": "market",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "General Leg calculation pending"
+    },
+    {
+      "id": "market.leg_recognition",
+      "file": "02_MARKET_MODEL/Leg/Recognition.md",
+      "type": "market",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "General Leg recognition pending"
     },
     {
       "id": "market.model",
       "file": "02_MARKET_MODEL/Market-Model.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Market model"
     },
     {
       "id": "market.raw",
       "file": "02_MARKET_MODEL/RAW.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "RAW input"
     },
     {
       "id": "market.timeframe",
       "file": "02_MARKET_MODEL/Timeframe.md",
       "type": "market",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Timeframe"
     },
     {
       "id": "mirror.algorithm_matrix",
       "file": "05_MIRROR/Algorithm-Mirror.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Algorithm mirror matrix"
     },
     {
       "id": "mirror.behavior",
       "file": "05_MIRROR/Behavior-Mirror.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Behavior mirror model"
     },
     {
       "id": "mirror.contract",
       "file": "05_MIRROR/Mirror-Contract.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror contract"
     },
     {
       "id": "mirror.direction_mapping",
       "file": "05_MIRROR/Direction-Mapping.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Verified direction mapping"
     },
     {
       "id": "mirror.directional_rules",
       "file": "05_MIRROR/Directional-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Directional rule components"
     },
     {
       "id": "mirror.exceptions",
       "file": "05_MIRROR/Mirror-Exceptions.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
-      "title": "Source-confirmed mirror exceptions"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Mirror exceptions and pending checks"
     },
     {
       "id": "mirror.invariants",
       "file": "05_MIRROR/Invariant-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror invariants"
     },
     {
       "id": "mirror.mixed_rules",
       "file": "05_MIRROR/Mixed-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mixed mirror rules"
     },
     {
       "id": "mirror.source_map",
       "file": "05_MIRROR/Source-Mirror.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror source ownership"
     },
     {
       "id": "mirror.validation_rules",
       "file": "05_MIRROR/Validation-Rules.md",
       "type": "mirror",
-      "status": "active",
-      "authority": "canonical",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror validation requirements"
     },
     {
@@ -997,8 +949,8 @@
       "id": "source.dependencies",
       "file": "06_SOURCE/Dependency-Map.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Source dependency map"
     },
     {
@@ -1011,34 +963,34 @@
     },
     {
       "id": "source.e_zone_detector",
-      "file": "06_SOURCE/Modules/e_zone_detector.md",
+      "file": "06_SOURCE/Pending/e_zone_detector.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
-      "title": "e zone detector"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Source evidence pending rewrite"
     },
     {
       "id": "source.integration_boundary",
       "file": "06_SOURCE/Integration-Boundary.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Chart-to-bridge input scope"
     },
     {
       "id": "source.lifecycle_engine",
-      "file": "06_SOURCE/Modules/lifecycle_engine.md",
+      "file": "06_SOURCE/Pending/lifecycle_engine.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
-      "title": "lifecycle engine"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Source evidence pending rewrite"
     },
     {
       "id": "source.map",
       "file": "06_SOURCE/Source-Map.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Source map"
     },
     {
@@ -1061,17 +1013,17 @@
       "id": "source.state_map",
       "file": "06_SOURCE/State-Map.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "State and ownership map"
     },
     {
       "id": "source.trading_pipeline",
-      "file": "06_SOURCE/Modules/trading_pipeline.md",
+      "file": "06_SOURCE/Pending/trading_pipeline.md",
       "type": "source",
-      "status": "active",
-      "authority": "executable",
-      "title": "trading pipeline"
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Source evidence pending rewrite"
     },
     {
       "id": "system.authority",
@@ -1088,14 +1040,6 @@
       "status": "canonical",
       "authority": "normative",
       "title": "AI editing policy"
-    },
-    {
-      "id": "system.executed_phases_audit",
-      "file": "00_SYSTEM/EXECUTED_PHASES_AUDIT.md",
-      "type": "system",
-      "status": "active",
-      "authority": "empirical",
-      "title": "Executed phases audit and reconstruction"
     },
     {
       "id": "system.frontmatter",
@@ -1130,12 +1074,12 @@
       "title": "Vault manifest"
     },
     {
-      "id": "system.phase_4_5_audit",
-      "file": "00_SYSTEM/PHASE_4_5_AUDIT.md",
+      "id": "system.readme",
+      "file": "README.md",
       "type": "system",
       "status": "active",
-      "authority": "empirical",
-      "title": "Phase 4.5 independent forensic audit"
+      "authority": "normative",
+      "title": "Standalone TradingBot Knowledge Vault"
     },
     {
       "id": "system.retrieval",
@@ -1149,33 +1093,41 @@
       "id": "test.baseline_policy",
       "file": "07_VALIDATION/Regression/Baseline-Policy.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Trusted baseline policy"
     },
     {
       "id": "test.behavior_invariants",
       "file": "07_VALIDATION/Invariants/Behavior-Invariants.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Behavior invariant checks"
     },
     {
       "id": "test.change_impact",
       "file": "07_VALIDATION/Regression/Change-Impact.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Regression change impact"
     },
     {
       "id": "test.chronology_invariants",
       "file": "07_VALIDATION/Invariants/Chronology-Invariants.md",
       "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Chronology invariant checks"
+    },
+    {
+      "id": "test.direction_tests",
+      "file": "07_VALIDATION/Mirror/Direction-Tests.md",
+      "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Chronology invariant checks"
+      "title": "Directional rule checks"
     },
     {
       "id": "test.fixture_model",
@@ -1189,24 +1141,32 @@
       "id": "test.fixture_registry",
       "file": "07_VALIDATION/Fixtures/Fixture-Registry.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Fixture registry"
     },
     {
       "id": "test.identity_invariants",
       "file": "07_VALIDATION/Invariants/Identity-Invariants.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Physical identity and provenance checks"
+    },
+    {
+      "id": "test.integration_test_policy",
+      "file": "07_VALIDATION/Tests/Integration-Test-Policy.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Full pipeline integration test policy"
     },
     {
       "id": "test.invariant_validation",
       "file": "07_VALIDATION/Invariant-Validation.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Invariant validation"
     },
     {
@@ -1221,24 +1181,56 @@
       "id": "test.lifecycle_invariants",
       "file": "07_VALIDATION/Invariants/Lifecycle-Invariants.md",
       "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Lifecycle invariant checks"
+    },
+    {
+      "id": "test.memory_benchmark",
+      "file": "07_VALIDATION/Performance/Memory-Benchmark.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Memory benchmark contract"
+    },
+    {
+      "id": "test.mirror_policy",
+      "file": "07_VALIDATION/Mirror-Policy.md",
+      "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Lifecycle invariant checks"
+      "title": "Mirror validation routing policy"
+    },
+    {
+      "id": "test.mirror_regression",
+      "file": "07_VALIDATION/Mirror/Mirror-Regression.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Bullish and Bearish mirror regression"
     },
     {
       "id": "test.mirror_validation",
       "file": "07_VALIDATION/Mirror-Validation.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Mirror validation"
+    },
+    {
+      "id": "test.optimization_rules",
+      "file": "07_VALIDATION/Performance/Optimization-Rules.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Performance optimization acceptance rules"
     },
     {
       "id": "test.output_validation",
       "file": "07_VALIDATION/Output-Validation.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Public output validation"
     },
     {
@@ -1253,17 +1245,33 @@
       "id": "test.regression_model",
       "file": "07_VALIDATION/Regression/Regression-Model.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Regression evidence model"
     },
     {
       "id": "test.regression_policy",
       "file": "07_VALIDATION/Regression-Policy.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "Regression comparison policy"
+    },
+    {
+      "id": "test.regression_test_execution",
+      "file": "07_VALIDATION/Tests/Regression-Test-Execution.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Regression test execution protocol"
+    },
+    {
+      "id": "test.runtime_benchmark",
+      "file": "07_VALIDATION/Performance/Runtime-Benchmark.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Runtime benchmark contract"
     },
     {
       "id": "test.source_validation",
@@ -1274,19 +1282,51 @@
       "title": "Fixture to source validation"
     },
     {
-      "id": "test.test_policy",
-      "file": "07_VALIDATION/Test-Policy.md",
+      "id": "test.stage_profiling",
+      "file": "07_VALIDATION/Performance/Stage-Profiling.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "Stage profiling and timing interpretation"
+    },
+    {
+      "id": "test.symmetry_tests",
+      "file": "07_VALIDATION/Mirror/Symmetry-Tests.md",
       "type": "test",
       "status": "canonical",
       "authority": "normative",
+      "title": "Constructed mirror symmetry checks"
+    },
+    {
+      "id": "test.test_model",
+      "file": "07_VALIDATION/Tests/Test-Model.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
+      "title": "TradingBot test evidence model"
+    },
+    {
+      "id": "test.test_policy",
+      "file": "07_VALIDATION/Test-Policy.md",
+      "type": "test",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "TradingBot test policy"
+    },
+    {
+      "id": "test.unit_test_policy",
+      "file": "07_VALIDATION/Tests/Unit-Test-Policy.md",
+      "type": "test",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Engine unit test policy"
     },
     {
       "id": "test.validation_contract",
       "file": "07_VALIDATION/Validation-Contract.md",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
+      "status": "pending",
+      "authority": "non-canonical",
       "title": "TradingBot validation contract"
     },
     {
@@ -1327,6 +1367,11 @@
     {
       "from": "algorithm.a",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1348,6 +1393,11 @@
       "from": "algorithm.blue",
       "type": "implemented_by",
       "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
     },
     {
       "from": "algorithm.blue",
@@ -1392,6 +1442,11 @@
     {
       "from": "algorithm.e",
       "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1408,6 +1463,11 @@
       "from": "algorithm.internal_reaction",
       "type": "relates_to",
       "to": "mirror.exceptions"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "relates_to",
+      "to": "test.direction_tests"
     },
     {
       "from": "algorithm.internal_reaction",
@@ -1452,6 +1512,11 @@
     {
       "from": "algorithm.lifecycle",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1467,17 +1532,17 @@
     {
       "from": "algorithm.order",
       "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order",
-      "type": "implemented_by",
       "to": "source.reaction_engine"
     },
     {
       "from": "algorithm.order",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
     },
     {
       "from": "algorithm.order",
@@ -1492,17 +1557,7 @@
     {
       "from": "algorithm.order.a",
       "type": "depends_on",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "depends_on",
       "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
     },
     {
       "from": "algorithm.order.a",
@@ -1512,55 +1567,10 @@
     {
       "from": "algorithm.order.a",
       "type": "relates_to",
-      "to": "test.source_validation"
+      "to": "test.identity_invariants"
     },
     {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.c",
+      "from": "algorithm.order.a",
       "type": "relates_to",
       "to": "test.source_validation"
     },
@@ -1622,6 +1632,11 @@
     {
       "from": "algorithm.raw",
       "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1653,6 +1668,11 @@
       "from": "algorithm.reaction",
       "type": "produces",
       "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "test.direction_tests"
     },
     {
       "from": "algorithm.reaction",
@@ -1707,6 +1727,11 @@
     {
       "from": "algorithm.reconciliation",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1723,6 +1748,11 @@
       "from": "algorithm.reset",
       "type": "implemented_by",
       "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.reset",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
     },
     {
       "from": "algorithm.reset",
@@ -1767,6 +1797,11 @@
     {
       "from": "algorithm.s",
       "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1793,6 +1828,11 @@
       "from": "algorithm.s.type1",
       "type": "produces",
       "to": "behavior.s.red"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "algorithm.s.type1",
@@ -1827,6 +1867,11 @@
     {
       "from": "algorithm.s.type2",
       "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1848,6 +1893,11 @@
       "from": "algorithm.s.type3",
       "type": "produces",
       "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "algorithm.s.type3",
@@ -1882,6 +1932,11 @@
     {
       "from": "algorithm.s.type4",
       "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1898,6 +1953,11 @@
       "from": "algorithm.serialization",
       "type": "implemented_by",
       "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "relates_to",
+      "to": "test.output_validation"
     },
     {
       "from": "algorithm.serialization",
@@ -1947,6 +2007,11 @@
     {
       "from": "algorithm.stopall",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -1983,6 +2048,11 @@
       "from": "algorithm.visibility",
       "type": "relates_to",
       "to": "test.mirror_validation"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "test.output_validation"
     },
     {
       "from": "algorithm.visibility",
@@ -2565,51 +2635,6 @@
       "to": "test.identity_invariants"
     },
     {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "algorithm.order.c"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "algorithm.order.c"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
       "from": "case.fixture_1_4",
       "type": "relates_to",
       "to": "algorithm.stopall"
@@ -2755,51 +2780,6 @@
       "to": "test.fixture_registry"
     },
     {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "algorithm.order.b"
-    },
-    {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
       "from": "case.fixture_2_3",
       "type": "relates_to",
       "to": "algorithm.e"
@@ -2808,6 +2788,11 @@
       "from": "case.fixture_2_3",
       "type": "relates_to",
       "to": "behavior.e"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "data.window_18632e27"
     },
     {
       "from": "case.fixture_2_3",
@@ -2837,6 +2822,11 @@
     {
       "from": "case.fixture_2_4",
       "type": "relates_to",
+      "to": "data.window_18632e27"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
       "to": "source.lifecycle_engine"
     },
     {
@@ -2858,6 +2848,11 @@
       "from": "case.fixture_2_5",
       "type": "relates_to",
       "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "data.window_18632e27"
     },
     {
       "from": "case.fixture_2_5",
@@ -2887,6 +2882,11 @@
     {
       "from": "case.fixture_3_1",
       "type": "relates_to",
+      "to": "data.window_0291455b"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
       "to": "source.a_zone_detector"
     },
     {
@@ -2903,6 +2903,11 @@
       "from": "case.fixture_3_2",
       "type": "relates_to",
       "to": "algorithm.order.a"
+    },
+    {
+      "from": "case.fixture_3_2",
+      "type": "relates_to",
+      "to": "data.window_0291455b"
     },
     {
       "from": "case.fixture_3_2",
@@ -2936,31 +2941,6 @@
     },
     {
       "from": "case.fixture_4_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "case.fixture_4_2",
       "type": "relates_to",
       "to": "test.fixture_registry"
     },
@@ -3038,31 +3018,6 @@
       "from": "case.fixture_5_2",
       "type": "relates_to",
       "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
     },
     {
       "from": "case.fixture_6_1",
@@ -3310,76 +3265,6 @@
       "to": "test.source_validation"
     },
     {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "case.fixture_3_1"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "case.fixture_3_2"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
       "from": "data.dataset_062df750",
       "type": "relates_to",
       "to": "algorithm.raw"
@@ -3403,11 +3288,6 @@
       "from": "data.dataset_062df750",
       "type": "relates_to",
       "to": "case.fixture_4_1"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "case.fixture_4_2"
     },
     {
       "from": "data.dataset_062df750",
@@ -3461,91 +3341,6 @@
     },
     {
       "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_1"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_2"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_3"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_4"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_5"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_18632e27",
       "type": "relates_to",
       "to": "test.regression_policy"
     },
@@ -3623,11 +3418,6 @@
       "from": "data.dataset_9e2e159a",
       "type": "relates_to",
       "to": "case.fixture_5_2"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "case.fixture_5_3"
     },
     {
       "from": "data.dataset_9e2e159a",
@@ -3740,64 +3530,29 @@
       "to": "test.regression_policy"
     },
     {
-      "from": "data.dataset_d33c7e2c",
+      "from": "data.dataset_ea82be1a",
       "type": "relates_to",
       "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.regression_policy"
     },
     {
       "from": "data.dataset_ea82be1a",
       "type": "relates_to",
-      "to": "algorithm.raw"
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "case.fixture_2_3"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "case.fixture_2_4"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "case.fixture_2_5"
     },
     {
       "from": "data.dataset_ea82be1a",
@@ -3853,6 +3608,21 @@
       "from": "data.dataset_f531a06d",
       "type": "relates_to",
       "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "case.fixture_3_1"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "case.fixture_3_2"
     },
     {
       "from": "data.dataset_f531a06d",
@@ -3953,16 +3723,6 @@
       "from": "data.dataset_f5bc29e3",
       "type": "relates_to",
       "to": "case.fixture_1_13"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_2"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_3"
     },
     {
       "from": "data.dataset_f5bc29e3",
@@ -4525,6 +4285,221 @@
       "to": "test.chronology_invariants"
     },
     {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "case.fixture_3_1"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "case.fixture_3_2"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.dataset_f531a06d"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_3"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_4"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_5"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.dataset_ea82be1a"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.dataset_ea82be1a"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
       "from": "market.candle",
       "type": "relates_to",
       "to": "data.candle_model"
@@ -4577,12 +4552,17 @@
     {
       "from": "market.leg",
       "type": "relates_to",
-      "to": "algorithm.order.c"
+      "to": "algorithm.reaction"
     },
     {
       "from": "market.leg",
       "type": "relates_to",
-      "to": "algorithm.reaction"
+      "to": "market.leg_calculation"
+    },
+    {
+      "from": "market.leg",
+      "type": "relates_to",
+      "to": "market.leg_recognition"
     },
     {
       "from": "market.leg",
@@ -4591,6 +4571,36 @@
     },
     {
       "from": "market.leg",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "market.leg_calculation",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "market.leg_calculation",
+      "type": "relates_to",
+      "to": "market.leg_recognition"
+    },
+    {
+      "from": "market.leg_calculation",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "market.leg_recognition",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "market.leg_recognition",
+      "type": "relates_to",
+      "to": "market.leg_calculation"
+    },
+    {
+      "from": "market.leg_recognition",
       "type": "relates_to",
       "to": "test.source_validation"
     },
@@ -5247,7 +5257,27 @@
     {
       "from": "mirror.validation_rules",
       "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
       "to": "test.mirror_validation"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
     },
     {
       "from": "source.a_zone_detector",
@@ -5341,43 +5371,8 @@
     },
     {
       "from": "source.e_zone_detector",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "affects",
-      "to": "behavior.e.blue"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "affects",
-      "to": "behavior.e.red"
-    },
-    {
-      "from": "source.e_zone_detector",
       "type": "implements",
       "to": "algorithm.e"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.b"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.c"
     },
     {
       "from": "source.e_zone_detector",
@@ -5388,11 +5383,6 @@
       "from": "source.e_zone_detector",
       "type": "implements",
       "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "relates_to",
-      "to": "test.source_validation"
     },
     {
       "from": "source.integration_boundary",
@@ -5408,26 +5398,6 @@
       "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "test.source_validation"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.stopall"
     },
     {
       "from": "source.lifecycle_engine",
@@ -5453,11 +5423,6 @@
       "from": "source.lifecycle_engine",
       "type": "implements",
       "to": "algorithm.visibility"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "relates_to",
-      "to": "test.source_validation"
     },
     {
       "from": "source.map",
@@ -5586,26 +5551,6 @@
     },
     {
       "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "source.trading_pipeline",
       "type": "implements",
       "to": "algorithm.orderaudit"
     },
@@ -5630,46 +5575,6 @@
       "to": "algorithm.visibility"
     },
     {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
       "from": "system.authority",
       "type": "relates_to",
       "to": "algorithm.orderaudit"
@@ -5678,56 +5583,6 @@
       "from": "system.authority",
       "type": "relates_to",
       "to": "market.leg"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "algorithm.orderaudit"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "algorithm.visibility"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "market.leg"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "source.integration_boundary"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "system.authority"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "system.manifest"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "test.validation_contract"
     },
     {
       "from": "system.manifest",
@@ -5745,14 +5600,19 @@
       "to": "system.authority"
     },
     {
-      "from": "system.manifest",
+      "from": "system.readme",
       "type": "relates_to",
-      "to": "system.executed_phases_audit"
+      "to": "system.authority"
     },
     {
-      "from": "system.phase_4_5_audit",
+      "from": "system.readme",
       "type": "relates_to",
       "to": "system.manifest"
+    },
+    {
+      "from": "system.readme",
+      "type": "relates_to",
+      "to": "system.retrieval"
     },
     {
       "from": "test.baseline_policy",
@@ -5915,6 +5775,41 @@
       "to": "test.invariant_validation"
     },
     {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "mirror.directional_rules"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
       "from": "test.fixture_model",
       "type": "relates_to",
       "to": "algorithm.order"
@@ -5962,7 +5857,17 @@
     {
       "from": "test.fixture_registry",
       "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
       "to": "test.source_validation"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.test_model"
     },
     {
       "from": "test.fixture_registry",
@@ -6005,6 +5910,46 @@
       "to": "test.invariant_validation"
     },
     {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
+    },
+    {
       "from": "test.invariant_validation",
       "type": "relates_to",
       "to": "core.invariants"
@@ -6032,12 +5977,22 @@
     {
       "from": "test.invariant_validation",
       "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
       "to": "test.lifecycle_invariants"
     },
     {
       "from": "test.invariant_validation",
       "type": "relates_to",
       "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
     },
     {
       "from": "test.legacy_memory_fixture_review",
@@ -6095,6 +6050,111 @@
       "to": "test.invariant_validation"
     },
     {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.stage_profiling"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
       "from": "test.mirror_validation",
       "type": "relates_to",
       "to": "mirror.contract"
@@ -6127,7 +6187,67 @@
     {
       "from": "test.mirror_validation",
       "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
       "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.stage_profiling"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.zero_difference"
     },
     {
       "from": "test.output_validation",
@@ -6260,6 +6380,76 @@
       "to": "test.zero_difference"
     },
     {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "data.hash_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.stage_profiling"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
       "from": "test.source_validation",
       "type": "relates_to",
       "to": "algorithm.order"
@@ -6310,6 +6500,111 @@
       "to": "test.fixture_registry"
     },
     {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
       "from": "test.test_policy",
       "type": "relates_to",
       "to": "source.trading_pipeline"
@@ -6318,6 +6613,11 @@
       "from": "test.test_policy",
       "type": "relates_to",
       "to": "test.fixture_model"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
     },
     {
       "from": "test.test_policy",
@@ -6337,7 +6637,57 @@
     {
       "from": "test.test_policy",
       "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
       "to": "test.validation_contract"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.test_model"
     },
     {
       "from": "test.validation_contract",
@@ -6370,6 +6720,36 @@
       "to": "test.fixture_model"
     },
     {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
       "from": "test.zero_difference",
       "type": "relates_to",
       "to": "algorithm.serialization"
@@ -6392,12 +6772,27 @@
     {
       "from": "test.zero_difference",
       "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
       "to": "test.output_validation"
     },
     {
       "from": "test.zero_difference",
       "type": "relates_to",
       "to": "test.regression_policy"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
     }
   ]
 }

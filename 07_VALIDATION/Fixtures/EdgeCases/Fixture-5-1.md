@@ -11,16 +11,18 @@ fixture_status: "Pending"
 fixture_authority: "Pending"
 direction: "Bearish"
 timeframe: "30s"
-dataset: "D:/My-Projects/TradingBot-Knowledge/08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json"
+dataset: "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json"
 dataset_sha256: "9e2e159ae32976db8a88a9642414bceb46b0fdba0935a32caee7969036f10c2c"
 timestamp: "2026-09-11 09:23:00"
 behavior: "unknown"
 behavior_detail: "stopped Bearish Blue carried-stop geometry"
 algorithm: "algorithm.a"
-source_module: "engine/pipeline/a_zone_detector.py"
+source_module: "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
 source_function: "AZoneDetector._inherited_stop"
 reaction_identity: "unknown"
 order_identity: "unknown"
+first_index: "unknown"
+break_index: "unknown"
 lifecycle_state: "unknown"
 previous_behavior: "unknown"
 next_behavior: "unknown"
@@ -29,10 +31,10 @@ expected_output: "Supplied geometry rule only; exact computed High/stop and curr
 validation_target: "Stopped Blue carried-stop range ending at next Bearish Reaction Breakout"
 validation_rule: "test.mirror_validation"
 related_entities: ["test.fixture_registry", "test.mirror_validation", "algorithm.a", "source.a_zone_detector", "algorithm.blue"]
-source_reference: ["engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1785", "engine/pipeline/a_zone_detector.py#L494"]
-source_fixture: "C:/Users/msadr/Desktop/TradingBot_Fixtures_Regression_Anchors.md"
-source_fixture_line: 293
-source_fixture_sha256: "f0234c1342ce57ccf0abd556860c1f3c4535c0b80e94dadc918f3b9bf86c13f2"
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L494"]
+source_fixture: "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md"
+source_fixture_line: 214
+source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
 ---
 
 # 5.1 2026-09-11 — Bearish chained Blue carried-stop
@@ -45,7 +47,7 @@ Supplied geometry rule only; exact computed High/stop and current serialized occ
 
 ## Evidence boundary
 
-The supplied event is retained as a candidate. The cited reference/source establish the general rule, but the specific occurrence or expected output remains unverified. The fixture source is section 5.1, line 293, in the SHA-256-pinned supplied document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` pins a synchronized reference passage and an implementation location; `source_function: unknown` means a single owning function was not verified. Unknown metadata is deliberately not inferred.
+The supplied event is retained as a candidate. The general rule and specific occurrence require fresh source review and a verified run. The Vault-local curated fixture section starts at line 214 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -54,7 +56,7 @@ The supplied event is retained as a candidate. The cited reference/source establ
 - For a stopped Bearish Blue:
   - locate first valid Bearish Reaction after stop
   - compute maximum High from Blue stop main candle through complete next Bearish Reaction Breakout main candle inclusive
-- Status: **Active mirror geometry anchor**
+- Supplied source status claim: **Active mirror geometry anchor**; current Vault status: Pending.
 
 ## Supplemental RAW check
 

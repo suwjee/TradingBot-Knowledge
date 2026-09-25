@@ -4,19 +4,19 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "direction policy"
-source_path: "engine/pipeline/direction_policy.py"
+source_path: "06_SOURCE/Code/engine/pipeline/direction_policy.py"
 mirror: "06_SOURCE/Code/engine/pipeline/direction_policy.py"
 sha256: "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea"
 affects: []
-source_refs: ["engine/pipeline/direction_policy.py#L1"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L1"]
 supports: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e"]
 related_entities: ["test.source_validation"]
-source_reference: ["engine/pipeline/direction_policy.py#L1"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L1"]
 ---
 
 # direction policy
 ## Identity and snapshot
-Production: engine/pipeline/direction_policy.py
+Production: 06_SOURCE/Code/engine/pipeline/direction_policy.py
 Mirror: 06_SOURCE/Code/engine/pipeline/direction_policy.py
 SHA-256: a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea
 Declared versions: [('DIRECTION_POLICY_VERSION', '1.0.0')]
@@ -28,11 +28,11 @@ Owns behavior-neutral directional primitives only, not chronology, family, lifec
 DirectionPolicy (L21)
 
 ## Important symbols
-- DirectionPolicy.strict_cross: engine/pipeline/direction_policy.py#L32
-- DirectionPolicy.better_extreme: engine/pipeline/direction_policy.py#L35
-- DirectionPolicy.choose_extreme: engine/pipeline/direction_policy.py#L38
-- DirectionPolicy.confirmation_cross: engine/pipeline/direction_policy.py#L41
-- policy_for: engine/pipeline/direction_policy.py#L49
+- DirectionPolicy.strict_cross: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L32
+- DirectionPolicy.better_extreme: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L35
+- DirectionPolicy.choose_extreme: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L38
+- DirectionPolicy.confirmation_cross: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L41
+- policy_for: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L49
 
 ## Inputs and outputs
 Direction and Decimal values -> opposite direction, strict cross, better extreme, confirmation predicate.

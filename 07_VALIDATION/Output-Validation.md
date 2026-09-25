@@ -1,13 +1,13 @@
 ---
 id: "test.output_validation"
 type: "test"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Public output validation"
 created: "2026-09-25"
 updated: "2026-09-25"
-related_entities: ["test.validation_contract","test.regression_policy","algorithm.serialization","algorithm.visibility","algorithm.order","source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1044","engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1044","engine/bridge/trading_pipeline.py#L239","engine/bridge/trading_pipeline.py#L2776","engine/bridge/trading_pipeline.py#L2942"]
+related_entities: ["test.validation_contract", "test.regression_policy", "algorithm.serialization", "algorithm.visibility", "algorithm.order", "source.trading_pipeline"]
+source_reference: []
 ---
 
 # Public output validation
@@ -19,4 +19,3 @@ For a selected display range, distinguish calculation scope from serialization c
 Current OrderAudit fields can be compared as executable output and used to detect identity/provenance drift; existing Vault authority keeps its trading-rule status pending-fix. Do not promote an observed OrderAudit discrepancy into an accepted S/E/StopAll rule. A fixture must state the stable output it checks; a count alone is insufficient when object identities or chronology may have changed.
 
 Timing values are telemetry. Verify the timing keys/shape, and compare semantic payload fields exactly for zero-difference claims. See Regression-Policy.md.
-

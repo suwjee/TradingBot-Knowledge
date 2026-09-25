@@ -6,6 +6,7 @@ _GENERATED/Cache/
 __pycache__/
 *.pyc
 *.pyo
+.venv/
 
 # Platform/editor scratch files
 .DS_Store

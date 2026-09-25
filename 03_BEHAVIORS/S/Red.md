@@ -1,15 +1,15 @@
 ---
 id: "behavior.s.red"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "S Red"
 calculated_by: ["algorithm.s"]
 implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.s", "algorithm.order"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/lifecycle_engine.py#L356"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L964"]
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/lifecycle_engine.py#L356"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L964"]
 ---
 
 # S Red

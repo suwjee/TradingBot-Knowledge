@@ -1,15 +1,15 @@
 ---
 id: "behavior.s.blue.type2"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "S Blue Type-2"
 calculated_by: ["algorithm.s.type2"]
 implemented_by: ["source.s_zone_detector"]
 depends_on: ["behavior.s.blue"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L418", "engine/bridge/trading_pipeline.py#L1145"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L418"]
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/s_zone_detector.py#L418", "engine/bridge/trading_pipeline.py#L1145"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L418"]
 ---
 
 # S Blue Type-2

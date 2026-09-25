@@ -1,16 +1,16 @@
 ---
 id: "behavior.stopall.type1"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "StopAll Type-1"
 calculated_by: ["algorithm.stopall"]
 implemented_by: ["source.lifecycle_engine"]
 depends_on: ["behavior.stopall"]
 source_gate_type: "sequence-group-stop"
-source_refs: ["engine/pipeline/lifecycle_engine.py#L514", "engine/bridge/trading_pipeline.py#L1300"]
+source_refs: []
 related_entities: ["test.lifecycle_invariants"]
-source_reference: ["engine/pipeline/lifecycle_engine.py#L514", "engine/bridge/trading_pipeline.py#L1300"]
+source_reference: []
 ---
 
 # StopAll Type-1

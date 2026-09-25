@@ -11,16 +11,18 @@ fixture_status: "Active"
 fixture_authority: "Canonical"
 direction: "Bearish"
 timeframe: "30s"
-dataset: "D:/My-Projects/TradingBot-Knowledge/08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json"
+dataset: "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json"
 dataset_sha256: "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974"
 timestamp: "2026-08-25 09:32:30"
 behavior: "A"
 behavior_detail: "stopped A; first Order_A ownership"
 algorithm: "algorithm.order.a"
-source_module: "engine/pipeline/s_zone_detector.py"
+source_module: "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
 source_function: "SZoneDetector._first_order_after"
 reaction_identity: "unknown"
 order_identity: [689, 693]
+first_index: 689
+break_index: 693
 lifecycle_state: "A stopped"
 previous_behavior: "unknown"
 next_behavior: "unknown"
@@ -29,10 +31,10 @@ expected_output: "First eligible Order_A keeps parent-stop ownership; later nati
 validation_target: "Order_A parent-stop ownership and physical identity"
 validation_rule: "test.identity_invariants"
 related_entities: ["test.fixture_registry", "test.identity_invariants", "algorithm.order.a", "source.s_zone_detector", "behavior.a"]
-source_reference: ["engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L15470", "engine/pipeline/s_zone_detector.py#L277"]
-source_fixture: "C:/Users/msadr/Desktop/TradingBot_Fixtures_Regression_Anchors.md"
-source_fixture_line: 15
-source_fixture_sha256: "f0234c1342ce57ccf0abd556860c1f3c4535c0b80e94dadc918f3b9bf86c13f2"
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L277"]
+source_fixture: "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md"
+source_fixture_line: 21
+source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
 ---
 
 # 1.1 2026-08-25 — Order_A ownership / immutable first Order
@@ -45,7 +47,7 @@ First eligible Order_A keeps parent-stop ownership; later native Mode-B Orders d
 
 ## Evidence boundary
 
-Current assertion supported by the synchronized reference and the named source owner; no fresh engine run or complete serialized output hash is claimed. The fixture source is section 1.1, line 15, in the SHA-256-pinned supplied document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` pins a synchronized reference passage and an implementation location; `source_function: unknown` means a single owning function was not verified. Unknown metadata is deliberately not inferred.
+The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 21 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 

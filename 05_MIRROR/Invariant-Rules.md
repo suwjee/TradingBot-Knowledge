@@ -1,16 +1,18 @@
 ---
 id: "mirror.invariants"
 type: "mirror"
-status: "active"
-authority: "canonical"
+status: "pending"
+authority: "non-canonical"
 title: "Mirror invariants"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["core.behavior_model", "core.priority", "core.lifecycle", "core.chronology", "core.precision", "core.e_numbering", "algorithm.order", "algorithm.serialization", "source.core_utils", "source.lifecycle_engine", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L581", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L581", "engine/pipeline/lifecycle_engine.py#L25", "engine/pipeline/core_utils.py#L11", "engine/bridge/trading_pipeline.py#L239"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L11"]
 ---
 
 # Mirror invariants
+
+> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
 
 These atomic rules do not change when direction changes. The surrounding algorithm can still be **Mixed** when its price predicate is directional.
 
@@ -23,7 +25,6 @@ These atomic rules do not change when direction changes. The surrounding algorit
 | Chronology | The exact lower-timeframe event order determines confirmation, breakout, strict stops and A/S/E/StopAll decisions; main-candle OHLC alone cannot reorder those events. Physical source and event indexes/times stay attached to their objects. | Both references §5, §12, §15A; `trading_pipeline.py#L1732-L1903` |
 | Precision | Calculation-side prices use `Decimal`; `as_decimal` keeps an existing Decimal or uses `Decimal(str(value))`. No float conversion is permitted as a substitute for calculation comparisons. | Both references §3.2; `core_utils.py#L11-L13`; `trading_pipeline.py#L120-L134` |
 | Physical Order identity | `(FirstIndex, BreakIndex)` identifies one physical opposite Reaction/Order; multiple independently proven causes may belong to it. Identity is independent of direction and native Reaction mode. | Both references §6.12, §11; `core_utils.py#L19-L29`; `lifecycle_engine.py#L728-L776` |
-| Ownership and provenance | Parent-stop, reset-leg and blue-leg are distinct creation causes; accepted-live/carried-live are use routes. Priority, lineage and cause identity do not change by directional reflection. | Both references §10.2, §11; `lifecycle_engine.py#L728-L800` |
 | Serialization structure | The same JSON keys, collection shape, nullable slots and version fields apply in both directions; only direction-dependent **values** change. Decimal prices serialize as strings. This structural rule does not claim that every emitted OrderAudit value is a validated trading rule. | Both references §16; `trading_pipeline.py#L239-L493`, `#L2776-L2950` |
 | Doji market color | `open == close` remains GREEN in either market direction; internal reflected tags are an adapter, not a market-color reclassification. | Both references §3.6; `reaction_engine.py#L91-L93`, `#L560-L577` |
 

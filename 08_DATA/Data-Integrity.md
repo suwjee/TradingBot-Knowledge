@@ -2,14 +2,14 @@
 id: "data.integrity"
 type: "data"
 data_kind: "integrity"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Data integrity checks and observed limits"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.raw_schema", "data.hash_registry", "data.dataset_manifest", "data.data_validation", "test.chronology_invariants", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L149", "engine/bridge/trading_pipeline.py#L120", "engine/bridge/trading_pipeline.py#L1732"]
-source_refs: ["apps/chart/server/raw-resource-store.js#L13"]
+source_reference: []
+source_refs: ["06_SOURCE/Code/apps/chart/server/raw-resource-store.js#L13"]
 ---
 
 # Data integrity checks and observed limits

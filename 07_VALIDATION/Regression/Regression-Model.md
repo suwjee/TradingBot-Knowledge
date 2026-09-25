@@ -1,13 +1,13 @@
 ---
 id: "test.regression_model"
 type: "test"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Regression evidence model"
 created: "2026-09-25"
 updated: "2026-09-25"
-related_entities: ["test.regression_policy","test.baseline_policy","test.change_impact","test.fixture_model","algorithm.serialization","source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1080","engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1080","engine/bridge/trading_pipeline.py#L2776","engine/bridge/trading_pipeline.py#L2942"]
+related_entities: ["test.regression_policy", "test.baseline_policy", "test.change_impact", "test.fixture_model", "algorithm.serialization", "source.trading_pipeline"]
+source_reference: []
 ---
 
 # Regression evidence model
@@ -17,4 +17,3 @@ A regression record binds a fixture id to dataset SHA, source/reference version 
 Fixture classification is orthogonal to run outcome. Regression means an active expectation must survive an unapproved refactor; Historical preserves an older version's result without treating it as current. EdgeCase covers an exact boundary and can still join a regression corpus. A pending fixture directs investigation but is not a trusted baseline. See Fixture-Model.md.
 
 Record changes at stage granularity (Reaction, Reset, Blue, A, S, E, StopAll, Order identity, final visibility, serialization). A count match is insufficient if timestamps, cause ownership or ordering differ. Time telemetry is measured separately from deterministic payload values.
-

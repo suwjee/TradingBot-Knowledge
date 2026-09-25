@@ -13,5 +13,8 @@
         { "properties": { "status": { "const": "draft" }, "authority": { "const": "non-canonical" }, "integrity_status": { "const": "pending_metadata_conflict" } } }
       ]
     }
+  }, {
+    "if": { "properties": { "data_kind": { "const": "window" } }, "required": ["data_kind"] },
+    "then": { "required": ["raw_path", "retained_raw_sha256", "raw_sha256", "row_count", "first_epoch", "last_epoch", "parent_dataset"] }
   }]
 }

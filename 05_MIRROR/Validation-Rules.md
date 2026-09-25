@@ -1,16 +1,18 @@
 ---
 id: "mirror.validation_rules"
 type: "mirror"
-status: "active"
-authority: "canonical"
+status: "pending"
+authority: "non-canonical"
 title: "Mirror validation requirements"
 created: "2026-09-25"
 updated: "2026-09-25"
-related_entities: ["mirror.contract", "mirror.direction_mapping", "mirror.invariants", "mirror.algorithm_matrix", "algorithm.reaction", "algorithm.lifecycle", "algorithm.serialization", "source.direction_policy", "source.trading_pipeline", "test.mirror_validation"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1099", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1099", "engine/pipeline/direction_policy.py#L32", "engine/pipeline/reaction_engine.py#L560", "engine/pipeline/lifecycle_engine.py#L25", "engine/bridge/trading_pipeline.py#L2776"]
+related_entities: ["mirror.contract", "mirror.direction_mapping", "mirror.invariants", "mirror.algorithm_matrix", "algorithm.reaction", "algorithm.lifecycle", "algorithm.serialization", "source.direction_policy", "source.trading_pipeline", "test.mirror_validation", "test.mirror_policy", "test.direction_tests", "test.symmetry_tests", "test.mirror_regression"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L32", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560"]
 ---
 
 # Mirror validation requirements
+
+> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
 
 This is the Mirror contract used by the executed `07_VALIDATION` layer. `test.mirror_validation` and the registered fixtures define validation targets, but their existence does not claim a fresh two-direction pipeline run. Both references §19 and §24 provide acceptance/examples; current source anchors identify the fields to compare.
 
@@ -29,10 +31,8 @@ This is the Mirror contract used by the executed `07_VALIDATION` layer. `test.mi
 ## Source validation
 
 - Trace every documented rule to the hash-pinned V5.4.11 HPZR6 references and current nine-module source snapshot. Verify `source_reference` paths/line anchors and `related_entities` targets with the Vault index builder. `direction_policy.py` owns shared predicates; Reaction reflection and module-specific geometry stay in their source owners. Both references §0.2 and §20; `direction_policy.py#L1-L10`; `reaction_engine.py#L560-L703`.
-- If source and references diverge, mark that rule unresolved with both anchors before changing canonical Mirror knowledge. The mixed-cause Internal-Reaction E/StopAll filter is such a case: both references §14 line 638 require reset-leg-only, whereas `lifecycle_engine.py#L1658-L1678` checks for any reset-leg cause or timestamp. Do not infer the answer from OrderAudit output alone.
 
 ## Regression validation
 
-For every implementation change, compare pre-change and post-change **full continuous input** payloads for both directions under identical settings. Mirror behavior must remain equal unless an approved algorithm change explicitly authorizes the difference; then record the changed rule, affected source/line, provenance, and expected output delta. Compare stage collections and final visibility, not only chart counts. Include targeted same-Break, Order_A/B/C, native Mode-B StopAll, internal-Reaction visibility (especially mixed reset-leg plus independent cause) and E-number cases. Both references §19, §24; `trading_pipeline.py#L1903`, `#L2549`, `#L2776`.
 
-The Validation layer now records 28 fixture cases, including Pending and Historical evidence. A full Mirror regression result still requires a current run with pinned RAW, source, settings and output; this note defines requirements and does not report such a result.
+The Validation layer now records 28 fixture cases, including Pending and Historical evidence. `test.direction_tests`, `test.symmetry_tests`, and `test.mirror_regression` route the corresponding execution evidence without duplicating the algorithms here. A full Mirror regression result still requires a current run with pinned RAW, source, settings and output; this note defines requirements and does not report such a result.

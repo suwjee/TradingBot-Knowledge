@@ -1,15 +1,15 @@
 ---
 id: "behavior.a"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "A"
 calculated_by: ["algorithm.a"]
 implemented_by: ["source.a_zone_detector", "source.lifecycle_engine"]
 depends_on: ["algorithm.blue", "algorithm.reaction"]
-source_refs: ["engine/pipeline/a_zone_detector.py#L38", "engine/pipeline/lifecycle_engine.py#L946", "engine/bridge/trading_pipeline.py#L1040"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L38"]
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/a_zone_detector.py#L38", "engine/pipeline/lifecycle_engine.py#L946", "engine/bridge/trading_pipeline.py#L1040"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L38"]
 ---
 
 # A

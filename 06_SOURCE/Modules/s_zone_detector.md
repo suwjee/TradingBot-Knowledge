@@ -4,19 +4,19 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "s zone detector"
-source_path: "engine/pipeline/s_zone_detector.py"
+source_path: "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
 mirror: "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
 sha256: "7714025b3f43087b09844df6feeef4eef0ec72eeb841115293df4c126fd202ee"
 implements: ["algorithm.s", "algorithm.s.type1", "algorithm.s.type2", "algorithm.s.type3", "algorithm.s.type4", "algorithm.order.a", "algorithm.order", "algorithm.orderaudit"]
 affects: ["behavior.s", "behavior.s.red", "behavior.s.blue"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L1"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1"]
 related_entities: ["test.source_validation"]
-source_reference: ["engine/pipeline/s_zone_detector.py#L1"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1"]
 ---
 
 # s zone detector
 ## Identity and snapshot
-Production: engine/pipeline/s_zone_detector.py
+Production: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py
 Mirror: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py
 SHA-256: 7714025b3f43087b09844df6feeef4eef0ec72eeb841115293df4c126fd202ee
 Declared versions: [('S_ZONE_VERSION', '4.20.0')]
@@ -28,12 +28,12 @@ Owns A-to-S handoff, immutable first stopped-A Order, Simple/Advanced/Type-3/Typ
 SZone (L26), SZoneDetector (L64)
 
 ## Important symbols
-- SZoneDetector._first_order_after: engine/pipeline/s_zone_detector.py#L274
-- SZoneDetector._first_type3: engine/pipeline/s_zone_detector.py#L482
-- SZoneDetector._first_type4: engine/pipeline/s_zone_detector.py#L543
-- SZoneDetector._decision: engine/pipeline/s_zone_detector.py#L964
-- SZoneDetector.detect: engine/pipeline/s_zone_detector.py#L1319
-- SZoneDetector.reconcile_shared_order_stops: engine/pipeline/s_zone_detector.py#L1422
+- SZoneDetector._first_order_after: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L274
+- SZoneDetector._first_type3: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L482
+- SZoneDetector._first_type4: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L543
+- SZoneDetector._decision: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L964
+- SZoneDetector.detect: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1319
+- SZoneDetector.reconcile_shared_order_stops: 06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1422
 
 ## Inputs and outputs
 Trend/opposite Reactions, opposite Resets, Blue, A, chronology -> SZone candidates, eligible A, initial stopped-A audit.

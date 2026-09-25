@@ -2,13 +2,13 @@
 id: "data.raw_model"
 type: "data"
 data_kind: "raw_model"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Physical RAW input model"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.raw_format", "data.raw_schema", "data.raw_authority", "algorithm.raw", "source.trading_pipeline", "data.candle_model"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/bridge/trading_pipeline.py#L120"]
+source_reference: []
 ---
 
 # Physical RAW input model

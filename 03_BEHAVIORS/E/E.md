@@ -1,16 +1,16 @@
 ---
 id: "behavior.e"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "E"
 calculated_by: ["algorithm.e", "algorithm.reconciliation"]
 implemented_by: ["source.e_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.s", "algorithm.order"]
 parent_of: ["behavior.e.red", "behavior.e.blue"]
-source_refs: ["engine/pipeline/e_zone_detector.py#L27", "engine/pipeline/e_zone_detector.py#L2463"]
+source_refs: []
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/e_zone_detector.py#L27", "engine/pipeline/e_zone_detector.py#L2463"]
+source_reference: []
 ---
 
 # E

@@ -4,19 +4,19 @@ type: "system"
 status: "canonical"
 authority: "normative"
 title: "Vault manifest"
-source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md", "engine/bridge/trading_pipeline.py#L1732"]
-related_entities: ["system.authority", "core.pipeline", "data.dataset_registry", "system.executed_phases_audit"]
-source_reference: ["engine/bridge/trading_pipeline.py#L1732"]
+source_refs: []
+related_entities: ["system.authority", "core.pipeline", "data.dataset_registry"]
+source_reference: []
 ---
 
 # Vault manifest
 
-This Vault records the current TradingBot calculation contract for AI retrieval. Canonical rules live in Markdown notes with stable IDs. _INDEX is derived; 06_SOURCE/Code is a byte-exact evidence snapshot; engine/ records current executable behavior. The two hash-pinned algorithm references are external normative inputs, with conflicts surfaced rather than silently resolved. The nine Python modules and two V5.4.11 HPZR6 references were inspected for this build. The reference documents embed source whose declared SHA-256 hashes match the current nine modules at inspection.
+This Vault records a scoped TradingBot knowledge snapshot for AI retrieval. Canonical and pending notes have stable IDs. `_INDEX` is derived; `06_SOURCE/Code` holds a byte-exact subset of source files that excludes the pending physical Order routes. Comprehensive directional references and mixed source modules were removed from this Vault. Their dependent claims are pending until replacement source and references are reviewed. The retained physical Order creation route is `Order_A`.
 
-Phase 1 covers system controls and the minimum core/market model. Phase 2 covers A, S, E, StopAll. Phase 3 covers the calculation path. Phase 4 maps source modules and captures hashes. Phase 4.8 adds the Mirror layer; Phase 5 adds fixture and validation knowledge; Phase 6 identifies byte-pinned RAW datasets in `08_DATA`. Empty future directories have no authority. Zero-byte tracked placeholders preserve the selected future folder structure in Git; truly empty directories appear only when populated. No blanket .gitkeep policy is used.
+Phase 1 covers system controls and the minimum core/market model. Phase 2 covers A, S, E, StopAll. Phase 3 covers the calculation path. Phase 4 maps source modules and captures hashes. Phase 4.8 adds the Mirror layer; Phase 5 adds fixture and validation knowledge; Phase 6 identifies byte-pinned RAW datasets and exact retained windows in `08_DATA`. Plugin runtime code and its documentation live outside this Vault. Empty future directories have no authority. Zero-byte tracked placeholders preserve the selected future folder structure in Git; truly empty directories appear only when populated. No blanket .gitkeep policy is used.
 
-Read [Authority Model](AUTHORITY_MODEL.md) before resolving any rule and [Pipeline](../01_CORE/Pipeline.md) before tracing a stage. The [Source Map](../06_SOURCE/Source-Map.md) locates implementation owners; [Data Registry](../08_DATA/Dataset-Registry.md) locates physical inputs; [Integration Boundary](../06_SOURCE/Integration-Boundary.md) records the unresolved chart input scope. The [Executed Phases Audit](EXECUTED_PHASES_AUDIT.md) records the current per-file content review and pending boundaries; the older Phase 4.5 audit remains a dated snapshot. Resolve IDs through _INDEX/entities.json when present, then open canonical Markdown. An index never overrides its note.
+Read [Authority Model](AUTHORITY_MODEL.md) before resolving any rule and [Pipeline](../01_CORE/Pipeline.md) before tracing a stage. The [Source Map](../06_SOURCE/Source-Map.md) identifies retained and pending source owners; [Data Registry](../08_DATA/Dataset-Registry.md) locates physical inputs; [Integration Boundary](../06_SOURCE/Integration-Boundary.md) records the unresolved chart input scope. Resolve IDs through `_INDEX/entities.json`, then open the owning Markdown note. An index never overrides its note.
 
-Production root: D:/My-Projects/TradingBot. Vault root: D:/My-Projects/TradingBot-Knowledge. Current source is a dirty working tree; do not infer source identity from Git HEAD alone. The older root AGENTS.md project summary describes earlier versions and is not the authority for current V5.4.11 rules.
+All operational paths in this Vault are relative to its own root. The retained source came from a dirty working tree; do not infer its identity from a Git commit alone. A later source refresh requires new hashes and review of affected claims. The Vault reader needs no access to the production checkout.
 
-Current Open Issue: the chart server may send a selected-range stream to the bridge. The bridge calculates over its complete received input. The references require full physical RAW for normative calculation. The bridge calculates over all rows it receives, while a chart partial-range path can send fewer rows. This unresolved integration divergence does not change the normative requirement.
+Current open issue: the chart server may send a selected-range stream to the bridge, while full-RAW chronology was assumed by earlier rule descriptions. The retained Vault does not resolve that integration contract. Until the affected source is republished and reviewed, related calculation claims remain pending.

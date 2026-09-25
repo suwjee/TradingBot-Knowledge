@@ -35,6 +35,7 @@
         "canonical",
         "active",
         "draft",
+        "pending",
         "proposed",
         "pending-fix",
         "deprecated",
@@ -76,7 +77,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "pattern": "^engine/[A-Za-z0-9_./-]+#L[1-9][0-9]*$"
+        "pattern": "^06_SOURCE/Code/engine/[A-Za-z0-9_./-]+#L[1-9][0-9]*$"
       },
       "uniqueItems": true
     },
@@ -87,14 +88,20 @@
     "timeframe": { "type": "string", "pattern": "^(?:[1-9][0-9]*s|unknown)$" },
     "dataset": { "type": "string", "minLength": 1 },
     "dataset_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "dataset_window_first_epoch": { "type": "integer", "minimum": 1 },
+    "dataset_window_last_epoch": { "type": "integer", "minimum": 1 },
+    "dataset_window_row_count": { "type": "integer", "minimum": 1 },
+    "dataset_window_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "timestamp": { "type": "string", "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}|unknown)$" },
     "behavior": { "enum": ["A", "S", "E", "StopAll", "unknown"] },
     "behavior_detail": { "type": "string", "minLength": 1 },
     "algorithm": { "type": "string", "pattern": "^(?:algorithm\\.[a-z0-9_.]+|unknown)$" },
-    "source_module": { "type": "string", "pattern": "^(?:engine/(?:pipeline|bridge)/[a-z0-9_]+\\.py|unknown)$" },
+    "source_module": { "type": "string", "pattern": "^(?:06_SOURCE/Code/engine/(?:pipeline|bridge)/[a-z0-9_]+\\.py|unknown)$" },
     "source_function": { "type": "string", "minLength": 1 },
     "reaction_identity": { "oneOf": [{ "const": "unknown" }, { "type": "array", "prefixItems": [{"type":"integer","minimum":0},{"type":"integer","minimum":0}], "minItems": 2, "maxItems": 2 }] },
     "order_identity": { "oneOf": [{ "const": "unknown" }, { "type": "array", "prefixItems": [{"type":"integer","minimum":0},{"type":"integer","minimum":0}], "minItems": 2, "maxItems": 2 }] },
+    "first_index": { "oneOf": [{ "const": "unknown" }, { "type": "integer", "minimum": 0 }] },
+    "break_index": { "oneOf": [{ "const": "unknown" }, { "type": "integer", "minimum": 0 }] },
     "lifecycle_state": { "type": "string", "minLength": 1 },
     "previous_behavior": { "type": "string", "minLength": 1 },
     "next_behavior": { "type": "string", "minLength": 1 },
@@ -105,7 +112,7 @@
     "source_fixture": { "type": "string", "minLength": 1 },
     "source_fixture_line": { "type": "integer", "minimum": 1 },
     "source_fixture_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-    "data_kind": { "enum": ["policy", "registry", "raw_model", "candle_model", "timeframe_registry", "integrity", "hash_policy", "lineage", "validation", "template", "dataset", "raw_format", "raw_schema", "raw_authority", "hash_registry", "manifest"] },
+    "data_kind": { "enum": ["policy", "registry", "raw_model", "candle_model", "timeframe_registry", "integrity", "hash_policy", "lineage", "validation", "template", "dataset", "window", "raw_format", "raw_schema", "raw_authority", "hash_registry", "manifest"] },
     "name": { "type": "string", "minLength": 1 },
     "symbol": { "type": "string", "minLength": 1 },
     "market": { "type": "string", "minLength": 1 },
@@ -127,6 +134,9 @@
     "raw_path": { "type": "string", "minLength": 1 },
     "raw_locations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "minItems": 1 },
     "raw_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "retained_raw_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "parent_dataset": { "type": "string", "pattern": "^data\\.dataset_[0-9a-f]{8}$" },
+    "original_raw_bytes": { "type": "integer", "minimum": 1 },
     "raw_bytes": { "type": "integer", "minimum": 1 },
     "row_count": { "type": "integer", "minimum": 1 },
     "first_epoch": { "type": "integer", "minimum": 1 },
@@ -136,13 +146,13 @@
       "type": "array",
       "items": {
         "type": "string",
-        "pattern": "^(?:engine|apps/chart)/[A-Za-z0-9_./-]+(?:#L[1-9][0-9]*)?$"
+        "pattern": "^06_SOURCE/Code/(?:engine|apps/chart)/[A-Za-z0-9_./-]+(?:#L[1-9][0-9]*)?$"
       },
       "uniqueItems": true
     },
     "source_path": {
       "type": "string",
-      "pattern": "^engine/(?:bridge|pipeline)/[a-z0-9_]+\\.py$"
+      "pattern": "^06_SOURCE/Code/engine/(?:bridge|pipeline)/[a-z0-9_]+\\.py$"
     },
     "mirror": {
       "type": "string",
@@ -163,7 +173,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "pattern": "^(?:engine|apps/chart)/[A-Za-z0-9_./-]+$"
+        "pattern": "^06_SOURCE/Code/(?:engine|apps/chart)/[A-Za-z0-9_./-]+$"
       },
       "uniqueItems": true,
       "minItems": 1
@@ -259,7 +269,7 @@
     "external_source_hashes": {
       "type": "object",
       "patternProperties": {
-        "^(?:engine|apps/chart)/[A-Za-z0-9_./-]+$": {
+        "^06_SOURCE/Code/(?:engine|apps/chart)/[A-Za-z0-9_./-]+$": {
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
         }
@@ -271,7 +281,7 @@
   "additionalProperties": false,
   "allOf": [
     {
-      "if": { "properties": { "type": { "not": { "const": "system" } } }, "required": ["type"] },
+      "if": { "properties": { "type": { "not": { "const": "system" } }, "authority": { "enum": ["normative", "executable", "canonical"] } }, "required": ["type", "authority"] },
       "then": { "properties": { "source_reference": { "minItems": 1 } } }
     },
     {
@@ -290,8 +300,6 @@
       "then": {
         "required": [ "created", "updated", "related_entities", "source_reference" ],
         "properties": {
-          "status": { "const": "active" },
-          "authority": { "const": "canonical" },
           "related_entities": { "minItems": 1 }
         }
       }
@@ -340,6 +348,10 @@
           }
         }
       }
+    },
+    {
+      "if": { "properties": { "status": { "const": "pending" } }, "required": ["status"] },
+      "then": { "properties": { "authority": { "const": "non-canonical" } } }
     },
     {
       "if": {

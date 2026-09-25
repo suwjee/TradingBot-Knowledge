@@ -11,16 +11,18 @@ fixture_status: "Active"
 fixture_authority: "Canonical"
 direction: "Bearish"
 timeframe: "30s"
-dataset: "D:/My-Projects/TradingBot-Knowledge/08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 1S FROM 2026-09-03 19-05-40 TO 2026-09-08 03-18-28.json"
-dataset_sha256: "0291455b94b2a536b75b6129f3a90b71cd2eadb40a6a685f8a4e01dc2e744776"
+dataset: "08_DATA/Raw/XAUUSD/RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json"
+dataset_sha256: "f531a06d89e518964d4579f6b126ffdcd2b4f31fe2b6e4828ef71fd122809da3"
 timestamp: "2026-09-04 16:58:38"
 behavior: "A"
 behavior_detail: "A source at 16:57:30 frozen by exact 1s confirmation"
 algorithm: "algorithm.a"
-source_module: "engine/pipeline/a_zone_detector.py"
+source_module: "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
 source_function: "AZoneDetector._a_source"
 reaction_identity: "unknown"
 order_identity: "unknown"
+first_index: "unknown"
+break_index: "unknown"
 lifecycle_state: "unknown"
 previous_behavior: "unknown"
 next_behavior: "unknown"
@@ -28,11 +30,15 @@ stopall_boundary: "unknown"
 expected_output: "A source remains 2026-09-04 16:57:30; moving A to 16:58:30 is wrong."
 validation_target: "Exact lower-timeframe Reaction confirmation fixes A source"
 validation_rule: "test.chronology_invariants"
-related_entities: ["test.fixture_registry", "test.chronology_invariants", "algorithm.a", "source.a_zone_detector", "behavior.a"]
-source_reference: ["engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1777", "engine/pipeline/a_zone_detector.py#L547"]
-source_fixture: "C:/Users/msadr/Desktop/TradingBot_Fixtures_Regression_Anchors.md"
-source_fixture_line: 237
-source_fixture_sha256: "f0234c1342ce57ccf0abd556860c1f3c4535c0b80e94dadc918f3b9bf86c13f2"
+related_entities: ["algorithm.a", "behavior.a", "data.window_0291455b", "source.a_zone_detector", "test.chronology_invariants", "test.fixture_registry"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L547"]
+source_fixture: "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md"
+source_fixture_line: 168
+source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+dataset_window_first_epoch: 1788449740
+dataset_window_last_epoch: 1788824908
+dataset_window_row_count: 161376
+dataset_window_sha256: "0291455b94b2a536b75b6129f3a90b71cd2eadb40a6a685f8a4e01dc2e744776"
 ---
 
 # 3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership
@@ -45,7 +51,7 @@ A source remains 2026-09-04 16:57:30; moving A to 16:58:30 is wrong.
 
 ## Evidence boundary
 
-Current assertion supported by the synchronized reference and the named source owner; no fresh engine run or complete serialized output hash is claimed. The fixture source is section 3.1, line 237, in the SHA-256-pinned supplied document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` pins a synchronized reference passage and an implementation location; `source_function: unknown` means a single owning function was not verified. Unknown metadata is deliberately not inferred.
+The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 168 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -59,3 +65,7 @@ Current assertion supported by the synchronized reference and the named source o
 - Expected: A source freezes at exact confirmation
 - Wrong candidate: moving A to `16:58:30`
 - Status: **Active exact chronology fixture**
+
+## Reproduction RAW window
+
+Use `08_DATA/Raw/XAUUSD/RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json` and select the inclusive source-row interval `1788449740`–`1788824908`. The resulting 161376 rows reproduce SHA-256 `0291455b94b2a536b75b6129f3a90b71cd2eadb40a6a685f8a4e01dc2e744776` for the former small RAW. Do not calculate from the entire parent for this case.

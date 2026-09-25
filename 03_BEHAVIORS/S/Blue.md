@@ -1,16 +1,16 @@
 ---
 id: "behavior.s.blue"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "S Blue"
 calculated_by: ["algorithm.s"]
 implemented_by: ["source.s_zone_detector"]
 depends_on: ["behavior.s"]
 parent_of: ["behavior.s.blue.type1", "behavior.s.blue.type2", "behavior.s.blue.type3", "behavior.s.blue.type4"]
-source_refs: ["engine/bridge/trading_pipeline.py#L1130", "engine/pipeline/lifecycle_engine.py#L331"]
+source_refs: []
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/bridge/trading_pipeline.py#L1130", "engine/pipeline/lifecycle_engine.py#L331"]
+source_reference: []
 ---
 
 # S Blue

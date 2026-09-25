@@ -2,13 +2,13 @@
 id: "data.lineage"
 type: "data"
 data_kind: "lineage"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Dataset to validation lineage"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.dataset_registry", "data.raw_model", "core.pipeline", "algorithm.raw", "algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.stopall", "behavior.a", "behavior.s", "behavior.e", "behavior.stopall", "test.validation_contract", "test.regression_policy", "source.trading_pipeline"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L133", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L133", "engine/bridge/trading_pipeline.py#L1732", "engine/bridge/trading_pipeline.py#L2300"]
+source_reference: []
 ---
 
 # Dataset to validation lineage

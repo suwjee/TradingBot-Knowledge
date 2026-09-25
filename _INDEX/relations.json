@@ -29,6 +29,11 @@
     {
       "from": "algorithm.a",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -50,6 +55,11 @@
       "from": "algorithm.blue",
       "type": "implemented_by",
       "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
     },
     {
       "from": "algorithm.blue",
@@ -94,6 +104,11 @@
     {
       "from": "algorithm.e",
       "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -110,6 +125,11 @@
       "from": "algorithm.internal_reaction",
       "type": "relates_to",
       "to": "mirror.exceptions"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "relates_to",
+      "to": "test.direction_tests"
     },
     {
       "from": "algorithm.internal_reaction",
@@ -154,6 +174,11 @@
     {
       "from": "algorithm.lifecycle",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -169,17 +194,17 @@
     {
       "from": "algorithm.order",
       "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order",
-      "type": "implemented_by",
       "to": "source.reaction_engine"
     },
     {
       "from": "algorithm.order",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
     },
     {
       "from": "algorithm.order",
@@ -194,17 +219,7 @@
     {
       "from": "algorithm.order.a",
       "type": "depends_on",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "depends_on",
       "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
     },
     {
       "from": "algorithm.order.a",
@@ -214,55 +229,10 @@
     {
       "from": "algorithm.order.a",
       "type": "relates_to",
-      "to": "test.source_validation"
+      "to": "test.identity_invariants"
     },
     {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.c",
+      "from": "algorithm.order.a",
       "type": "relates_to",
       "to": "test.source_validation"
     },
@@ -324,6 +294,11 @@
     {
       "from": "algorithm.raw",
       "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -355,6 +330,11 @@
       "from": "algorithm.reaction",
       "type": "produces",
       "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "test.direction_tests"
     },
     {
       "from": "algorithm.reaction",
@@ -409,6 +389,11 @@
     {
       "from": "algorithm.reconciliation",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -425,6 +410,11 @@
       "from": "algorithm.reset",
       "type": "implemented_by",
       "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.reset",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
     },
     {
       "from": "algorithm.reset",
@@ -469,6 +459,11 @@
     {
       "from": "algorithm.s",
       "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -495,6 +490,11 @@
       "from": "algorithm.s.type1",
       "type": "produces",
       "to": "behavior.s.red"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "algorithm.s.type1",
@@ -529,6 +529,11 @@
     {
       "from": "algorithm.s.type2",
       "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -550,6 +555,11 @@
       "from": "algorithm.s.type3",
       "type": "produces",
       "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "algorithm.s.type3",
@@ -584,6 +594,11 @@
     {
       "from": "algorithm.s.type4",
       "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -600,6 +615,11 @@
       "from": "algorithm.serialization",
       "type": "implemented_by",
       "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "relates_to",
+      "to": "test.output_validation"
     },
     {
       "from": "algorithm.serialization",
@@ -649,6 +669,11 @@
     {
       "from": "algorithm.stopall",
       "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
       "to": "test.source_validation"
     },
     {
@@ -685,6 +710,11 @@
       "from": "algorithm.visibility",
       "type": "relates_to",
       "to": "test.mirror_validation"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "test.output_validation"
     },
     {
       "from": "algorithm.visibility",
@@ -1267,51 +1297,6 @@
       "to": "test.identity_invariants"
     },
     {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "algorithm.order.c"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_2",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "algorithm.order.c"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_1_3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
       "from": "case.fixture_1_4",
       "type": "relates_to",
       "to": "algorithm.stopall"
@@ -1457,51 +1442,6 @@
       "to": "test.fixture_registry"
     },
     {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "algorithm.order.b"
-    },
-    {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_1",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_2",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
       "from": "case.fixture_2_3",
       "type": "relates_to",
       "to": "algorithm.e"
@@ -1510,6 +1450,11 @@
       "from": "case.fixture_2_3",
       "type": "relates_to",
       "to": "behavior.e"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "data.window_18632e27"
     },
     {
       "from": "case.fixture_2_3",
@@ -1539,6 +1484,11 @@
     {
       "from": "case.fixture_2_4",
       "type": "relates_to",
+      "to": "data.window_18632e27"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
       "to": "source.lifecycle_engine"
     },
     {
@@ -1560,6 +1510,11 @@
       "from": "case.fixture_2_5",
       "type": "relates_to",
       "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "data.window_18632e27"
     },
     {
       "from": "case.fixture_2_5",
@@ -1589,6 +1544,11 @@
     {
       "from": "case.fixture_3_1",
       "type": "relates_to",
+      "to": "data.window_0291455b"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
       "to": "source.a_zone_detector"
     },
     {
@@ -1605,6 +1565,11 @@
       "from": "case.fixture_3_2",
       "type": "relates_to",
       "to": "algorithm.order.a"
+    },
+    {
+      "from": "case.fixture_3_2",
+      "type": "relates_to",
+      "to": "data.window_0291455b"
     },
     {
       "from": "case.fixture_3_2",
@@ -1638,31 +1603,6 @@
     },
     {
       "from": "case.fixture_4_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "case.fixture_4_2",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "case.fixture_4_2",
       "type": "relates_to",
       "to": "test.fixture_registry"
     },
@@ -1740,31 +1680,6 @@
       "from": "case.fixture_5_2",
       "type": "relates_to",
       "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_5_3",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
     },
     {
       "from": "case.fixture_6_1",
@@ -2012,76 +1927,6 @@
       "to": "test.source_validation"
     },
     {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "case.fixture_3_1"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "case.fixture_3_2"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_0291455b",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
       "from": "data.dataset_062df750",
       "type": "relates_to",
       "to": "algorithm.raw"
@@ -2105,11 +1950,6 @@
       "from": "data.dataset_062df750",
       "type": "relates_to",
       "to": "case.fixture_4_1"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "case.fixture_4_2"
     },
     {
       "from": "data.dataset_062df750",
@@ -2163,91 +2003,6 @@
     },
     {
       "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_1"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_2"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_3"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_4"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_5"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_18632e27",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_18632e27",
       "type": "relates_to",
       "to": "test.regression_policy"
     },
@@ -2325,11 +2080,6 @@
       "from": "data.dataset_9e2e159a",
       "type": "relates_to",
       "to": "case.fixture_5_2"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "case.fixture_5_3"
     },
     {
       "from": "data.dataset_9e2e159a",
@@ -2442,64 +2192,29 @@
       "to": "test.regression_policy"
     },
     {
-      "from": "data.dataset_d33c7e2c",
+      "from": "data.dataset_ea82be1a",
       "type": "relates_to",
       "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.regression_policy"
     },
     {
       "from": "data.dataset_ea82be1a",
       "type": "relates_to",
-      "to": "algorithm.raw"
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "case.fixture_2_3"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "case.fixture_2_4"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "case.fixture_2_5"
     },
     {
       "from": "data.dataset_ea82be1a",
@@ -2555,6 +2270,21 @@
       "from": "data.dataset_f531a06d",
       "type": "relates_to",
       "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "case.fixture_3_1"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "case.fixture_3_2"
     },
     {
       "from": "data.dataset_f531a06d",
@@ -2655,16 +2385,6 @@
       "from": "data.dataset_f5bc29e3",
       "type": "relates_to",
       "to": "case.fixture_1_13"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_2"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_3"
     },
     {
       "from": "data.dataset_f5bc29e3",
@@ -3227,6 +2947,221 @@
       "to": "test.chronology_invariants"
     },
     {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "case.fixture_3_1"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "case.fixture_3_2"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.dataset_f531a06d"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.window_0291455b",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_3"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_4"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_5"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.dataset_ea82be1a"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.window_18632e27",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.dataset_ea82be1a"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.window_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
       "from": "market.candle",
       "type": "relates_to",
       "to": "data.candle_model"
@@ -3279,12 +3214,17 @@
     {
       "from": "market.leg",
       "type": "relates_to",
-      "to": "algorithm.order.c"
+      "to": "algorithm.reaction"
     },
     {
       "from": "market.leg",
       "type": "relates_to",
-      "to": "algorithm.reaction"
+      "to": "market.leg_calculation"
+    },
+    {
+      "from": "market.leg",
+      "type": "relates_to",
+      "to": "market.leg_recognition"
     },
     {
       "from": "market.leg",
@@ -3293,6 +3233,36 @@
     },
     {
       "from": "market.leg",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "market.leg_calculation",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "market.leg_calculation",
+      "type": "relates_to",
+      "to": "market.leg_recognition"
+    },
+    {
+      "from": "market.leg_calculation",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "market.leg_recognition",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "market.leg_recognition",
+      "type": "relates_to",
+      "to": "market.leg_calculation"
+    },
+    {
+      "from": "market.leg_recognition",
       "type": "relates_to",
       "to": "test.source_validation"
     },
@@ -3949,7 +3919,27 @@
     {
       "from": "mirror.validation_rules",
       "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
       "to": "test.mirror_validation"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
     },
     {
       "from": "source.a_zone_detector",
@@ -4043,43 +4033,8 @@
     },
     {
       "from": "source.e_zone_detector",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "affects",
-      "to": "behavior.e.blue"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "affects",
-      "to": "behavior.e.red"
-    },
-    {
-      "from": "source.e_zone_detector",
       "type": "implements",
       "to": "algorithm.e"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.b"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.c"
     },
     {
       "from": "source.e_zone_detector",
@@ -4090,11 +4045,6 @@
       "from": "source.e_zone_detector",
       "type": "implements",
       "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "relates_to",
-      "to": "test.source_validation"
     },
     {
       "from": "source.integration_boundary",
@@ -4110,26 +4060,6 @@
       "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "test.source_validation"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "affects",
-      "to": "behavior.stopall"
     },
     {
       "from": "source.lifecycle_engine",
@@ -4155,11 +4085,6 @@
       "from": "source.lifecycle_engine",
       "type": "implements",
       "to": "algorithm.visibility"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "relates_to",
-      "to": "test.source_validation"
     },
     {
       "from": "source.map",
@@ -4288,26 +4213,6 @@
     },
     {
       "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "affects",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "source.trading_pipeline",
       "type": "implements",
       "to": "algorithm.orderaudit"
     },
@@ -4332,46 +4237,6 @@
       "to": "algorithm.visibility"
     },
     {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "orchestrates",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
       "from": "system.authority",
       "type": "relates_to",
       "to": "algorithm.orderaudit"
@@ -4380,56 +4245,6 @@
       "from": "system.authority",
       "type": "relates_to",
       "to": "market.leg"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "algorithm.orderaudit"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "algorithm.visibility"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "market.leg"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "source.integration_boundary"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "system.authority"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "system.manifest"
-    },
-    {
-      "from": "system.executed_phases_audit",
-      "type": "relates_to",
-      "to": "test.validation_contract"
     },
     {
       "from": "system.manifest",
@@ -4447,14 +4262,19 @@
       "to": "system.authority"
     },
     {
-      "from": "system.manifest",
+      "from": "system.readme",
       "type": "relates_to",
-      "to": "system.executed_phases_audit"
+      "to": "system.authority"
     },
     {
-      "from": "system.phase_4_5_audit",
+      "from": "system.readme",
       "type": "relates_to",
       "to": "system.manifest"
+    },
+    {
+      "from": "system.readme",
+      "type": "relates_to",
+      "to": "system.retrieval"
     },
     {
       "from": "test.baseline_policy",
@@ -4617,6 +4437,41 @@
       "to": "test.invariant_validation"
     },
     {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "mirror.directional_rules"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.direction_tests",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
       "from": "test.fixture_model",
       "type": "relates_to",
       "to": "algorithm.order"
@@ -4664,7 +4519,17 @@
     {
       "from": "test.fixture_registry",
       "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
       "to": "test.source_validation"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.test_model"
     },
     {
       "from": "test.fixture_registry",
@@ -4707,6 +4572,46 @@
       "to": "test.invariant_validation"
     },
     {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
+      "from": "test.integration_test_policy",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
+    },
+    {
       "from": "test.invariant_validation",
       "type": "relates_to",
       "to": "core.invariants"
@@ -4734,12 +4639,22 @@
     {
       "from": "test.invariant_validation",
       "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
       "to": "test.lifecycle_invariants"
     },
     {
       "from": "test.invariant_validation",
       "type": "relates_to",
       "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
     },
     {
       "from": "test.legacy_memory_fixture_review",
@@ -4797,6 +4712,111 @@
       "to": "test.invariant_validation"
     },
     {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.stage_profiling"
+    },
+    {
+      "from": "test.memory_benchmark",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
+      "from": "test.mirror_policy",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
+      "from": "test.mirror_regression",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
       "from": "test.mirror_validation",
       "type": "relates_to",
       "to": "mirror.contract"
@@ -4829,7 +4849,67 @@
     {
       "from": "test.mirror_validation",
       "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
       "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.symmetry_tests"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.stage_profiling"
+    },
+    {
+      "from": "test.optimization_rules",
+      "type": "relates_to",
+      "to": "test.zero_difference"
     },
     {
       "from": "test.output_validation",
@@ -4962,6 +5042,76 @@
       "to": "test.zero_difference"
     },
     {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "data.hash_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
+      "from": "test.regression_test_execution",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.stage_profiling"
+    },
+    {
+      "from": "test.runtime_benchmark",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
       "from": "test.source_validation",
       "type": "relates_to",
       "to": "algorithm.order"
@@ -5012,6 +5162,111 @@
       "to": "test.fixture_registry"
     },
     {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.stage_profiling",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.direction_tests"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.mirror_regression"
+    },
+    {
+      "from": "test.symmetry_tests",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
+    },
+    {
+      "from": "test.test_model",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
       "from": "test.test_policy",
       "type": "relates_to",
       "to": "source.trading_pipeline"
@@ -5020,6 +5275,11 @@
       "from": "test.test_policy",
       "type": "relates_to",
       "to": "test.fixture_model"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
     },
     {
       "from": "test.test_policy",
@@ -5039,7 +5299,57 @@
     {
       "from": "test.test_policy",
       "type": "relates_to",
+      "to": "test.regression_test_execution"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.unit_test_policy"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
       "to": "test.validation_contract"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.integration_test_policy"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.unit_test_policy",
+      "type": "relates_to",
+      "to": "test.test_model"
     },
     {
       "from": "test.validation_contract",
@@ -5072,6 +5382,36 @@
       "to": "test.fixture_model"
     },
     {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.mirror_policy"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.test_model"
+    },
+    {
       "from": "test.zero_difference",
       "type": "relates_to",
       "to": "algorithm.serialization"
@@ -5094,12 +5434,27 @@
     {
       "from": "test.zero_difference",
       "type": "relates_to",
+      "to": "test.memory_benchmark"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "test.optimization_rules"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
       "to": "test.output_validation"
     },
     {
       "from": "test.zero_difference",
       "type": "relates_to",
       "to": "test.regression_policy"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "test.runtime_benchmark"
     }
   ]
 }

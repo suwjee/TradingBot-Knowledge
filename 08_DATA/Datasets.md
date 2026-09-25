@@ -2,13 +2,13 @@
 id: "data.datasets_compat"
 type: "data"
 data_kind: "registry"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Dataset navigation compatibility"
 created: "2026-09-25"
 updated: "2026-09-25"
 related_entities: ["data.registry_root", "data.dataset_registry", "data.dataset_manifest", "data.hash_registry"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/bridge/trading_pipeline.py#L1732"]
+source_reference: []
 ---
 
 # Dataset navigation compatibility

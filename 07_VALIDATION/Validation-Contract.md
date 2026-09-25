@@ -1,13 +1,13 @@
 ---
 id: "test.validation_contract"
 type: "test"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "TradingBot validation contract"
 created: "2026-09-25"
 updated: "2026-09-25"
-related_entities: ["core.pipeline","core.behavior_model","algorithm.serialization","mirror.contract","source.trading_pipeline","test.fixture_model"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L82","engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L82","engine/bridge/trading_pipeline.py#L1732","engine/bridge/trading_pipeline.py#L2942"]
+related_entities: ["core.pipeline", "core.behavior_model", "algorithm.serialization", "mirror.contract", "source.trading_pipeline", "test.fixture_model", "test.invariant_validation", "test.test_model", "test.mirror_policy", "test.runtime_benchmark", "test.memory_benchmark", "test.optimization_rules"]
+source_reference: []
 ---
 
 # TradingBot validation contract
@@ -19,4 +19,3 @@ The evidence chain is pinned RAW bytes → complete input/settings → both dire
 A fixture is evidence, not a production rule. A confirmed output does not authorize a timestamp-, symbol-, price-, RAW-name- or expected-output-specific branch. Historical and pending assertions cannot replace current accepted rules. A disagreement between source and reference is unresolved until decided; see Mirror-Validation.md and the existing Mirror-Exceptions.md.
 
 Read Fixture-Model.md for evidence authority, Test-Policy.md for execution, and Regression-Policy.md for change decisions. No run is claimed merely because this contract exists.
-

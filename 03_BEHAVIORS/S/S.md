@@ -1,16 +1,16 @@
 ---
 id: "behavior.s"
 type: "behavior"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "S"
 calculated_by: ["algorithm.s"]
 implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.a", "algorithm.order"]
 parent_of: ["behavior.s.red", "behavior.s.blue"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L26", "engine/bridge/trading_pipeline.py#L1130"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L26"]
 related_entities: ["test.behavior_invariants"]
-source_reference: ["engine/pipeline/s_zone_detector.py#L26", "engine/bridge/trading_pipeline.py#L1130"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L26"]
 ---
 
 # S

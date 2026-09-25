@@ -1,14 +1,14 @@
 ---
 id: "market.events"
 type: "market"
-status: "canonical"
-authority: "normative"
+status: "pending"
+authority: "non-canonical"
 title: "Market events"
-source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L209", "engine/pipeline/reaction_engine.py#L39"]
+source_refs: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L39"]
 related_entities: ["algorithm.reaction", "algorithm.reset"]
-source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L209", "engine/pipeline/reaction_engine.py#L39"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L39"]
 ---
 
 # Market events
 
-Reaction confirmation, Reset, Blue formation, A trigger/stop, S source/decision, physical Order confirmation/stop, E parent stop/decision, and StopAll gates may have distinct exact event times inside the same main candle. Preserve each event's physical source and containing main index. Native Reaction mode and S/E family are independent labels.
+The retained Reaction, Blue, A, and S sources record distinct exact events that may share one main candle. Preserve their physical source and containing main index. E parent/decision and StopAll gate chronology require omitted source modules, so this full-stage event inventory is pending. Native Reaction mode is a separate label from S/E family; full downstream use awaits the omitted modules.
