@@ -10,6 +10,8 @@ sha256: "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6"
 implements: ["algorithm.reaction", "algorithm.reset", "algorithm.internal_reaction", "algorithm.order", "algorithm.raw"]
 affects: ["behavior.a", "behavior.s", "behavior.e"]
 source_refs: ["engine/pipeline/reaction_engine.py#L1"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/reaction_engine.py#L1"]
 ---
 
 # reaction engine

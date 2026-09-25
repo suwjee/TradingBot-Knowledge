@@ -4,6 +4,8 @@ type: "system"
 status: "canonical"
 authority: "normative"
 title: "AI editing policy"
+related_entities: []
+source_reference: []
 ---
 
 # AI editing policy

@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Candle"
 source_refs: ["engine/pipeline/reaction_engine.py#L27", "engine/pipeline/reaction_engine.py#L91"]
+related_entities: ["data.candle_model", "source.reaction_engine"]
+source_reference: ["engine/pipeline/reaction_engine.py#L27", "engine/pipeline/reaction_engine.py#L91"]
 ---
 
 # Candle

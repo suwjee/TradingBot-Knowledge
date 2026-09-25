@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Direction"
 source_refs: ["engine/pipeline/direction_policy.py#L21", "engine/pipeline/reaction_engine.py#L560"]
+related_entities: ["mirror.direction_mapping", "source.direction_policy"]
+source_reference: ["engine/pipeline/direction_policy.py#L21", "engine/pipeline/reaction_engine.py#L560"]
 ---
 
 # Direction

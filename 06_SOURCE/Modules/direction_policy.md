@@ -10,6 +10,8 @@ sha256: "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea"
 affects: []
 source_refs: ["engine/pipeline/direction_policy.py#L1"]
 supports: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/direction_policy.py#L1"]
 ---
 
 # direction policy

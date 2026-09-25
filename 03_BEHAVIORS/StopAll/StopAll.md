@@ -9,6 +9,8 @@ implemented_by: ["source.lifecycle_engine"]
 depends_on: ["behavior.e", "behavior.s"]
 parent_of: ["behavior.stopall.type1", "behavior.stopall.type2", "behavior.stopall.type3"]
 source_refs: ["engine/pipeline/lifecycle_engine.py#L39", "engine/bridge/trading_pipeline.py#L1285"]
+related_entities: ["test.lifecycle_invariants"]
+source_reference: ["engine/pipeline/lifecycle_engine.py#L39", "engine/bridge/trading_pipeline.py#L1285"]
 ---
 
 # StopAll

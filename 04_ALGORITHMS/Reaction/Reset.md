@@ -7,6 +7,8 @@ title: "Reset"
 implemented_by: ["source.reaction_engine"]
 depends_on: ["algorithm.reaction", "market.exact_chronology"]
 source_refs: ["engine/pipeline/reaction_engine.py#L247", "engine/pipeline/reaction_engine.py#L267", "engine/pipeline/reaction_engine.py#L1070"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/reaction_engine.py#L247", "engine/pipeline/reaction_engine.py#L267", "engine/pipeline/reaction_engine.py#L1070"]
 ---
 
 # Reset

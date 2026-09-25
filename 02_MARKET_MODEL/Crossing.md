@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Strict crossing"
 source_refs: ["engine/pipeline/direction_policy.py#L32", "engine/pipeline/reaction_engine.py#L211", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L429"]
+related_entities: ["mirror.direction_mapping", "test.precision_invariants"]
+source_reference: ["engine/pipeline/direction_policy.py#L32", "engine/pipeline/reaction_engine.py#L211", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L429"]
 ---
 
 # Strict crossing

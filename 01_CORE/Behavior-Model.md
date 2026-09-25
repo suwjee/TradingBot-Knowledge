@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Behavior model"
 source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L78", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L581"]
+related_entities: ["algorithm.a", "algorithm.s", "algorithm.e", "algorithm.stopall", "test.behavior_invariants"]
+source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L78", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L581"]
 ---
 
 # Behavior model

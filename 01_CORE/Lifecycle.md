@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Lifecycle ownership"
 source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L589", "engine/pipeline/lifecycle_engine.py#L946"]
+related_entities: ["algorithm.lifecycle", "test.lifecycle_invariants"]
+source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L589", "engine/pipeline/lifecycle_engine.py#L946"]
 ---
 
 # Lifecycle ownership

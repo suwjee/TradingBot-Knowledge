@@ -8,6 +8,8 @@ calculated_by: ["algorithm.s"]
 implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.s", "algorithm.order"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/lifecycle_engine.py#L356"]
+related_entities: ["test.behavior_invariants"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/lifecycle_engine.py#L356"]
 ---
 
 # S Red

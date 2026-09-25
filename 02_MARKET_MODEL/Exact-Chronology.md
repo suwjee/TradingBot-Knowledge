@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Exact lower-timeframe chronology"
 source_refs: ["engine/pipeline/reaction_engine.py#L971", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L209"]
+related_entities: ["core.chronology", "test.chronology_invariants"]
+source_reference: ["engine/pipeline/reaction_engine.py#L971", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L209"]
 ---
 
 # Exact lower-timeframe chronology

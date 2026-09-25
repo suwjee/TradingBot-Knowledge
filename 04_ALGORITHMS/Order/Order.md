@@ -7,6 +7,8 @@ title: "Physical Order and provenance"
 implemented_by: ["source.reaction_engine", "source.e_zone_detector", "source.s_zone_detector"]
 depends_on: ["algorithm.reaction", "market.exact_chronology"]
 source_refs: ["engine/pipeline/reaction_engine.py#L1137", "engine/pipeline/e_zone_detector.py#L1229", "engine/pipeline/core_utils.py#L19"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/reaction_engine.py#L1137", "engine/pipeline/e_zone_detector.py#L1229", "engine/pipeline/core_utils.py#L19"]
 ---
 
 # Physical Order and provenance

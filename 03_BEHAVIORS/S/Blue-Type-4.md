@@ -8,6 +8,8 @@ calculated_by: ["algorithm.s.type4"]
 implemented_by: ["source.s_zone_detector"]
 depends_on: ["behavior.s.blue", "algorithm.blue"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L543", "engine/pipeline/s_zone_detector.py#L613"]
+related_entities: ["test.behavior_invariants"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L543", "engine/pipeline/s_zone_detector.py#L613"]
 ---
 
 # S Blue Type-4

@@ -5,6 +5,8 @@ status: "active"
 authority: "empirical"
 title: "Phase 4.5 independent forensic audit"
 source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md", "engine/bridge/trading_pipeline.py#L1903"]
+related_entities: ["system.manifest"]
+source_reference: ["engine/bridge/trading_pipeline.py#L1903"]
 ---
 
 # Phase 4.5 independent forensic audit

@@ -7,7 +7,9 @@
     "type",
     "status",
     "authority",
-    "title"
+    "title",
+    "related_entities",
+    "source_reference"
   ],
   "properties": {
     "type": {

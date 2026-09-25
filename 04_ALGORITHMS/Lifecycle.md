@@ -8,6 +8,8 @@ implemented_by: ["source.lifecycle_engine"]
 depends_on: ["algorithm.a", "algorithm.s", "algorithm.e"]
 source_refs: ["engine/pipeline/lifecycle_engine.py#L946", "engine/pipeline/lifecycle_engine.py#L1172", "engine/bridge/trading_pipeline.py#L1903"]
 affects: ["behavior.a", "behavior.s", "behavior.e"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/lifecycle_engine.py#L946", "engine/pipeline/lifecycle_engine.py#L1172", "engine/bridge/trading_pipeline.py#L1903"]
 ---
 
 # Lifecycle eligibility and stage ownership

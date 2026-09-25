@@ -8,6 +8,8 @@ relates_to: ["core.pipeline", "market.raw"]
 source_refs: ["apps/chart/vite.config.js#L581", "apps/chart/vite.config.js#L611", "apps/chart/server/indicator-range-input.js#L32", "apps/chart/server/indicator-range-input.js#L113", "engine/bridge/trading_pipeline.py#L1732"]
 external_source_paths: ["apps/chart/vite.config.js", "apps/chart/server/indicator-range-input.js"]
 external_source_hashes: {"apps/chart/vite.config.js": "9baf5c9745a96058e27b485b885dfc5a868e4256016d9ec38e14a442f7a5f58c", "apps/chart/server/indicator-range-input.js": "bf9b2c5eac9457435f9aaed9615ca062dfabcb7541ca70fbf114c9dd2f1a419f"}
+related_entities: ["test.source_validation"]
+source_reference: ["engine/bridge/trading_pipeline.py#L1732"]
 ---
 
 # Chart-to-bridge input scope

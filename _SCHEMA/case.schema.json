@@ -1,17 +1,49 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "case note",
+  "title": "fixture case note",
   "type": "object",
   "required": [
     "id",
     "type",
     "status",
     "authority",
-    "title"
+    "title",
+    "related_entities",
+    "source_reference",
+    "fixture_kind",
+    "fixture_status",
+    "fixture_authority",
+    "direction",
+    "timeframe",
+    "dataset",
+    "dataset_sha256",
+    "timestamp",
+    "behavior",
+    "behavior_detail",
+    "algorithm",
+    "source_module",
+    "source_function",
+    "reaction_identity",
+    "order_identity",
+    "lifecycle_state",
+    "previous_behavior",
+    "next_behavior",
+    "stopall_boundary",
+    "expected_output",
+    "validation_target",
+    "validation_rule",
+    "source_fixture",
+    "source_fixture_line",
+    "source_fixture_sha256"
   ],
   "properties": {
     "type": {
       "const": "case"
     }
-  }
+  },
+  "allOf": [
+    { "if": { "properties": { "fixture_status": { "const": "Active" } }, "required": ["fixture_status"] }, "then": { "properties": { "status": { "const": "active" }, "authority": { "const": "empirical" }, "fixture_authority": { "const": "Canonical" } } } },
+    { "if": { "properties": { "fixture_status": { "const": "Pending" } }, "required": ["fixture_status"] }, "then": { "properties": { "status": { "const": "draft" }, "authority": { "const": "non-canonical" }, "fixture_authority": { "const": "Pending" } } } },
+    { "if": { "properties": { "fixture_status": { "const": "Historical" } }, "required": ["fixture_status"] }, "then": { "properties": { "status": { "const": "archived" }, "authority": { "const": "historical" }, "fixture_authority": { "const": "Historical" }, "fixture_kind": { "const": "Bug" } } } }
+  ]
 }

@@ -8,6 +8,8 @@ implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s.blue.type2", "behavior.s.red"]
 depends_on: ["algorithm.s", "algorithm.reaction"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L418", "engine/pipeline/s_zone_detector.py#L1148"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L418", "engine/pipeline/s_zone_detector.py#L1148"]
 ---
 
 # S Type-2 Advanced

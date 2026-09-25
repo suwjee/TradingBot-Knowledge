@@ -8,6 +8,8 @@ implemented_by: ["source.reaction_engine"]
 produces: ["algorithm.reset", "algorithm.internal_reaction"]
 depends_on: ["algorithm.raw", "market.direction", "market.exact_chronology"]
 source_refs: ["engine/pipeline/reaction_engine.py#L174", "engine/pipeline/reaction_engine.py#L646", "engine/pipeline/reaction_engine.py#L1376"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/reaction_engine.py#L174", "engine/pipeline/reaction_engine.py#L646", "engine/pipeline/reaction_engine.py#L1376"]
 ---
 
 # Reaction

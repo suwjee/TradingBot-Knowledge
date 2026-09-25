@@ -7,6 +7,8 @@ title: "Blue Line"
 implemented_by: ["source.blue_line_detector"]
 depends_on: ["algorithm.reaction", "algorithm.reset", "market.direction"]
 source_refs: ["engine/pipeline/blue_line_detector.py#L75", "engine/pipeline/blue_line_detector.py#L139", "engine/pipeline/blue_line_detector.py#L299"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/blue_line_detector.py#L75", "engine/pipeline/blue_line_detector.py#L139", "engine/pipeline/blue_line_detector.py#L299"]
 ---
 
 # Blue Line

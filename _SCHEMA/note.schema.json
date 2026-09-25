@@ -7,7 +7,9 @@
     "type",
     "status",
     "authority",
-    "title"
+    "title",
+    "related_entities",
+    "source_reference"
   ],
   "properties": {
     "id": {
@@ -24,7 +26,8 @@
         "source",
         "mirror",
         "test",
-        "case"
+        "case",
+        "data"
       ]
     },
     "status": {
@@ -75,9 +78,60 @@
         "type": "string",
         "pattern": "^engine/[A-Za-z0-9_./-]+#L[1-9][0-9]*$"
       },
-      "minItems": 1,
       "uniqueItems": true
     },
+    "fixture_kind": { "enum": ["Confirmed", "Regression", "EdgeCase", "Bug"] },
+    "fixture_status": { "enum": ["Active", "Pending", "Historical"] },
+    "fixture_authority": { "enum": ["Canonical", "Pending", "Historical"] },
+    "direction": { "enum": ["Bullish", "Bearish", "unknown"] },
+    "timeframe": { "type": "string", "pattern": "^(?:[1-9][0-9]*s|unknown)$" },
+    "dataset": { "type": "string", "minLength": 1 },
+    "dataset_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "timestamp": { "type": "string", "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}|unknown)$" },
+    "behavior": { "enum": ["A", "S", "E", "StopAll", "unknown"] },
+    "behavior_detail": { "type": "string", "minLength": 1 },
+    "algorithm": { "type": "string", "pattern": "^(?:algorithm\\.[a-z0-9_.]+|unknown)$" },
+    "source_module": { "type": "string", "pattern": "^(?:engine/(?:pipeline|bridge)/[a-z0-9_]+\\.py|unknown)$" },
+    "source_function": { "type": "string", "minLength": 1 },
+    "reaction_identity": { "oneOf": [{ "const": "unknown" }, { "type": "array", "prefixItems": [{"type":"integer","minimum":0},{"type":"integer","minimum":0}], "minItems": 2, "maxItems": 2 }] },
+    "order_identity": { "oneOf": [{ "const": "unknown" }, { "type": "array", "prefixItems": [{"type":"integer","minimum":0},{"type":"integer","minimum":0}], "minItems": 2, "maxItems": 2 }] },
+    "lifecycle_state": { "type": "string", "minLength": 1 },
+    "previous_behavior": { "type": "string", "minLength": 1 },
+    "next_behavior": { "type": "string", "minLength": 1 },
+    "stopall_boundary": { "oneOf": [{ "type": "boolean" }, { "const": "unknown" }] },
+    "expected_output": { "type": "string", "minLength": 1 },
+    "validation_target": { "type": "string", "minLength": 1 },
+    "validation_rule": { "type": "string", "pattern": "^test\\.[a-z0-9_.]+$" },
+    "source_fixture": { "type": "string", "minLength": 1 },
+    "source_fixture_line": { "type": "integer", "minimum": 1 },
+    "source_fixture_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "data_kind": { "enum": ["policy", "registry", "raw_model", "candle_model", "timeframe_registry", "integrity", "hash_policy", "lineage", "validation", "template", "dataset", "raw_format", "raw_schema", "raw_authority", "hash_registry", "manifest"] },
+    "name": { "type": "string", "minLength": 1 },
+    "symbol": { "type": "string", "minLength": 1 },
+    "market": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "instrument": { "type": "string", "minLength": 1 },
+    "broker": { "type": "string", "minLength": 1 },
+    "resolution": { "type": "string", "pattern": "^(?:[1-9][0-9]*s|unknown)$" },
+    "start_time": { "type": "string", "minLength": 1 },
+    "end_time": { "type": "string", "minLength": 1 },
+    "timezone": { "enum": ["Asia/Tehran", "unknown"] },
+    "direction_support": { "type": "array", "items": { "enum": ["Bullish", "Bearish"] }, "uniqueItems": true, "minItems": 1 },
+    "consumed_by_algorithms": { "type": "array", "items": { "type": "string", "pattern": "^algorithm\\.[a-z0-9_.]+$" }, "uniqueItems": true, "minItems": 1 },
+    "produces_behaviors": { "type": "array", "items": { "type": "string", "pattern": "^behavior\\.[a-z0-9_.]+$" }, "uniqueItems": true },
+    "used_by_fixtures": { "type": "array", "items": { "type": "string", "pattern": "^case\\.[a-z0-9_.]+$" }, "uniqueItems": true },
+    "validated_by": { "type": "array", "items": { "type": "string", "pattern": "^test\\.[a-z0-9_.]+$" }, "uniqueItems": true, "minItems": 1 },
+    "chronology_model": { "const": "core.chronology" },
+    "regression_role": { "enum": ["fixture-backed", "available-unanchored"] },
+    "hash_reference": { "const": "data.hash_registry" },
+    "raw_path": { "type": "string", "minLength": 1 },
+    "raw_locations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true, "minItems": 1 },
+    "raw_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "raw_bytes": { "type": "integer", "minimum": 1 },
+    "row_count": { "type": "integer", "minimum": 1 },
+    "first_epoch": { "type": "integer", "minimum": 1 },
+    "last_epoch": { "type": "integer", "minimum": 1 },
+    "integrity_status": { "enum": ["verified", "pending_metadata_conflict"] },
     "source_refs": {
       "type": "array",
       "items": {
@@ -216,6 +270,18 @@
   },
   "additionalProperties": false,
   "allOf": [
+    {
+      "if": { "properties": { "type": { "not": { "const": "system" } } }, "required": ["type"] },
+      "then": { "properties": { "source_reference": { "minItems": 1 } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "test" } }, "required": ["type"] },
+      "then": { "required": ["related_entities", "source_reference"], "properties": { "related_entities": { "minItems": 1 } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "case" } }, "required": ["type"] },
+      "then": { "required": ["related_entities", "source_reference"], "properties": { "related_entities": { "minItems": 2 } } }
+    },
     {
       "if": {
         "properties": { "type": { "const": "mirror" } },

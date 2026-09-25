@@ -10,6 +10,8 @@ sha256: "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097"
 implements: ["algorithm.a"]
 affects: ["behavior.a"]
 source_refs: ["engine/pipeline/a_zone_detector.py#L1"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/a_zone_detector.py#L1"]
 ---
 
 # a zone detector

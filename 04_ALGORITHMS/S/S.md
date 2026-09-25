@@ -8,6 +8,8 @@ implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s", "behavior.s.red", "behavior.s.blue"]
 depends_on: ["algorithm.a", "algorithm.order", "algorithm.reaction"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L1319", "engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/s_zone_detector.py#L1422"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L1319", "engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/s_zone_detector.py#L1422"]
 ---
 
 # S calculation and decision

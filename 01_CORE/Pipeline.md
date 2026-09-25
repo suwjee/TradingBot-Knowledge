@@ -6,6 +6,8 @@ authority: "normative"
 title: "Calculation pipeline"
 relates_to: ["source.integration_boundary"]
 source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L661", "engine/bridge/trading_pipeline.py#L1903", "engine/bridge/trading_pipeline.py#L2549"]
+related_entities: ["source.trading_pipeline", "test.validation_contract"]
+source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L661", "engine/bridge/trading_pipeline.py#L1903", "engine/bridge/trading_pipeline.py#L2549"]
 ---
 
 # Calculation pipeline

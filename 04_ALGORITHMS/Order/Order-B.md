@@ -7,6 +7,8 @@ title: "Order_B Reset-leg cause"
 implemented_by: ["source.e_zone_detector"]
 depends_on: ["algorithm.order", "algorithm.reset", "algorithm.reaction"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L390", "engine/pipeline/e_zone_detector.py#L499", "engine/pipeline/e_zone_detector.py#L1143"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L390", "engine/pipeline/e_zone_detector.py#L499", "engine/pipeline/e_zone_detector.py#L1143"]
 ---
 
 # Order_B Reset-leg cause

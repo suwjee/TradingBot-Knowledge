@@ -8,6 +8,8 @@ implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.tr
 produces: ["behavior.e", "behavior.e.red", "behavior.e.blue", "core.e_numbering"]
 depends_on: ["algorithm.e", "algorithm.lifecycle"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L2267", "engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2311"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L2267", "engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2311"]
 ---
 
 # E and lifecycle reconciliation

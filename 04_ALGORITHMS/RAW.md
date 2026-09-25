@@ -9,6 +9,8 @@ produces: ["market.candle", "market.exact_chronology"]
 depends_on: []
 relates_to: ["source.integration_boundary"]
 source_refs: ["engine/bridge/trading_pipeline.py#L120", "engine/bridge/trading_pipeline.py#L1732", "engine/pipeline/core_utils.py#L11"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/bridge/trading_pipeline.py#L120", "engine/bridge/trading_pipeline.py#L1732", "engine/pipeline/core_utils.py#L11"]
 ---
 
 # RAW normalization and candle construction

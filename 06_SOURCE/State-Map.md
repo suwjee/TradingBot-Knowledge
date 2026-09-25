@@ -6,6 +6,8 @@ authority: "executable"
 title: "State and ownership map"
 source_refs: ["engine/bridge/trading_pipeline.py#L1698", "engine/bridge/trading_pipeline.py#L1903"]
 relates_to: ["core.pipeline"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/bridge/trading_pipeline.py#L1698", "engine/bridge/trading_pipeline.py#L1903"]
 ---
 
 # State and ownership map

@@ -9,6 +9,8 @@ implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.a", "algorithm.order"]
 parent_of: ["behavior.s.red", "behavior.s.blue"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L26", "engine/bridge/trading_pipeline.py#L1130"]
+related_entities: ["test.behavior_invariants"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L26", "engine/bridge/trading_pipeline.py#L1130"]
 ---
 
 # S

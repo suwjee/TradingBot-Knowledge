@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data knowledge note",
+  "type": "object",
+  "required": ["id", "type", "status", "authority", "title", "data_kind", "related_entities", "source_reference"],
+  "properties": { "type": { "const": "data" } },
+  "allOf": [{
+    "if": { "properties": { "data_kind": { "const": "dataset" } }, "required": ["data_kind"] },
+    "then": {
+      "required": ["name", "symbol", "market", "source", "instrument", "broker", "timeframe", "resolution", "start_time", "end_time", "timezone", "direction_support", "consumed_by_algorithms", "produces_behaviors", "used_by_fixtures", "validated_by", "chronology_model", "regression_role", "hash_reference", "raw_path", "raw_locations", "raw_sha256", "raw_bytes", "row_count", "first_epoch", "last_epoch", "integrity_status"],
+      "oneOf": [
+        { "properties": { "status": { "const": "active" }, "authority": { "const": "empirical" }, "integrity_status": { "const": "verified" } } },
+        { "properties": { "status": { "const": "draft" }, "authority": { "const": "non-canonical" }, "integrity_status": { "const": "pending_metadata_conflict" } } }
+      ]
+    }
+  }]
+}

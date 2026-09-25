@@ -11,6 +11,8 @@ implements: ["algorithm.raw", "algorithm.reconciliation", "algorithm.visibility"
 affects: ["behavior.a", "behavior.s", "behavior.e", "behavior.stopall"]
 source_refs: ["engine/bridge/trading_pipeline.py#L1"]
 orchestrates: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.lifecycle", "algorithm.stopall"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/bridge/trading_pipeline.py#L1"]
 ---
 
 # trading pipeline

@@ -10,6 +10,8 @@ sha256: "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448"
 implements: ["algorithm.blue"]
 affects: ["behavior.a", "behavior.s.blue.type4"]
 source_refs: ["engine/pipeline/blue_line_detector.py#L1"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/blue_line_detector.py#L1"]
 ---
 
 # blue line detector

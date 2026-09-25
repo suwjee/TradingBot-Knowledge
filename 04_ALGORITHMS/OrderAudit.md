@@ -7,6 +7,8 @@ title: "OrderAudit (pending fix)"
 implemented_by: ["source.s_zone_detector", "source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
 depends_on: ["algorithm.order"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L325", "engine/pipeline/e_zone_detector.py#L1395", "engine/pipeline/lifecycle_engine.py#L621", "engine/bridge/trading_pipeline.py#L1469"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L325", "engine/pipeline/e_zone_detector.py#L1395", "engine/pipeline/lifecycle_engine.py#L621", "engine/bridge/trading_pipeline.py#L1469"]
 ---
 
 # OrderAudit (pending fix)

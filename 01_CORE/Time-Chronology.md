@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Time and chronology"
 source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L209", "engine/pipeline/reaction_engine.py#L971"]
+related_entities: ["market.exact_chronology", "test.chronology_invariants"]
+source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L145", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L209", "engine/pipeline/reaction_engine.py#L971"]
 ---
 
 # Time and chronology

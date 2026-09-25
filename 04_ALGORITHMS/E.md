@@ -9,6 +9,8 @@ produces: ["behavior.e", "behavior.e.red", "behavior.e.blue"]
 depends_on: ["algorithm.s", "algorithm.order"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L1901", "engine/pipeline/e_zone_detector.py#L2040", "engine/pipeline/e_zone_detector.py#L2371"]
 relates_to: ["algorithm.reconciliation"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L1901", "engine/pipeline/e_zone_detector.py#L2040", "engine/pipeline/e_zone_detector.py#L2371"]
 ---
 
 # E construction and recursive chains

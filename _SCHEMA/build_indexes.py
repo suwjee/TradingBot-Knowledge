@@ -6,6 +6,7 @@ when every validation succeeds. Run with: python -B _SCHEMA/build_indexes.py
 from __future__ import annotations
 
 from pathlib import Path
+import ast
 import hashlib
 import json
 import re
@@ -19,7 +20,7 @@ REL_KEYS = (
     "calculated_by", "implemented_by", "depends_on", "produces", "implements",
     "affects", "parent_of", "child_of", "relates_to", "supports", "orchestrates",
 )
-SCHEMA_TYPES = {"behavior", "algorithm", "source", "test", "case"}
+SCHEMA_TYPES = {"behavior", "algorithm", "source", "test", "case", "data"}
 STOPALL_GATES = {
     "behavior.stopall.type1": "sequence-group-stop",
     "behavior.stopall.type2": "stopall-stop",
@@ -69,6 +70,29 @@ def safe_path(root: Path, relative: str) -> Path:
 
 def build() -> int:
     errors: list[str] = []
+    digest_cache: dict[Path, str] = {}
+    symbol_cache: dict[Path, set[str]] = {}
+
+    def cached_sha(path: Path) -> str:
+        resolved = path.resolve()
+        if resolved not in digest_cache:
+            digest_cache[resolved] = sha(resolved)
+        return digest_cache[resolved]
+
+    def source_symbols(path: Path) -> set[str]:
+        resolved = path.resolve()
+        if resolved not in symbol_cache:
+            tree = ast.parse(resolved.read_text(encoding="utf-8-sig"))
+            names = set()
+            for node in tree.body:
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                    names.add(node.name)
+                elif isinstance(node, ast.ClassDef):
+                    for child in node.body:
+                        if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                            names.add(f"{node.name}.{child.name}")
+            symbol_cache[resolved] = names
+        return symbol_cache[resolved]
     schemas: dict[str, Draft202012Validator] = {}
     for name in ["note", *sorted(SCHEMA_TYPES)]:
         try:
@@ -126,6 +150,57 @@ def build() -> int:
                 elif sep and (not anchor.isdigit() or int(anchor) < 1
                               or int(anchor) > len(actual.read_text(encoding="utf-8-sig").splitlines())):
                     errors.append(f"Invalid source line: {ident}: {ref}")
+            if data.get("type") == "case":
+                fixture = Path(data["source_fixture"])
+                if not fixture.is_file():
+                    errors.append(f"Missing fixture source: {ident}: {fixture}")
+                elif cached_sha(fixture) != data["source_fixture_sha256"]:
+                    errors.append(f"Fixture source SHA mismatch: {ident}")
+                else:
+                    fixture_lines = fixture.read_text(encoding="utf-8-sig").splitlines()
+                    fixture_line = data["source_fixture_line"]
+                    if fixture_line > len(fixture_lines):
+                        errors.append(f"Fixture source line out of range: {ident}")
+                    else:
+                        section = re.fullmatch(r"case\.fixture_([0-9]+)_([0-9]+)", ident)
+                        if section and not fixture_lines[fixture_line - 1].startswith(
+                            f"### {section.group(1)}.{section.group(2)} "
+                        ):
+                            errors.append(f"Fixture source heading mismatch: {ident}")
+                dataset = Path(data["dataset"])
+                allowed_data_roots = (ROOT / "08_DATA/Raw", PROD / "data/raw")
+                if not any(dataset.resolve().is_relative_to(root.resolve()) for root in allowed_data_roots):
+                    errors.append(f"Fixture dataset outside RAW roots: {ident}: {dataset}")
+                elif not dataset.is_file():
+                    errors.append(f"Missing fixture dataset: {ident}: {dataset}")
+                elif cached_sha(dataset) != data["dataset_sha256"]:
+                    errors.append(f"Fixture dataset SHA mismatch: {ident}")
+                source_module = data["source_module"]
+                if source_module != "unknown":
+                    module = safe_path(PROD, source_module)
+                    if not module.is_file():
+                        errors.append(f"Missing fixture source module: {ident}: {source_module}")
+                    elif data["source_function"] != "unknown" and data["source_function"] not in source_symbols(module):
+                        errors.append(f"Unknown fixture source function: {ident}: {data['source_function']}")
+            if data.get("type") == "data" and data.get("data_kind") == "dataset":
+                allowed_data_roots = (ROOT / "08_DATA/Raw", PROD / "data/raw")
+                raw_locations = data["raw_locations"]
+                if data["raw_path"] not in raw_locations:
+                    errors.append(f"Primary RAW missing from locations: {ident}")
+                if data["name"] != Path(data["raw_path"]).name:
+                    errors.append(f"Dataset name/path mismatch: {ident}")
+                if ident != f"data.dataset_{data['raw_sha256'][:8]}":
+                    errors.append(f"Dataset ID/hash mismatch: {ident}")
+                for location in raw_locations:
+                    raw_file = Path(location)
+                    if not any(raw_file.resolve().is_relative_to(root.resolve()) for root in allowed_data_roots):
+                        errors.append(f"Dataset RAW outside approved roots: {ident}: {location}")
+                    elif not raw_file.is_file():
+                        errors.append(f"Dataset RAW missing: {ident}: {location}")
+                    elif cached_sha(raw_file) != data["raw_sha256"]:
+                        errors.append(f"Dataset RAW SHA mismatch: {ident}: {location}")
+                    elif raw_file.stat().st_size != data["raw_bytes"]:
+                        errors.append(f"Dataset RAW byte count mismatch: {ident}: {location}")
             external_paths = data.get("external_source_paths", [])
             external_hashes = data.get("external_source_hashes", {})
             if external_paths and set(external_paths) != set(external_hashes):
@@ -144,6 +219,40 @@ def build() -> int:
             errors.append(f"{rel}: {exc}")
 
     edges = []
+    source_entities = {data["source_path"]: ident for ident, data in notes.items() if "source_path" in data}
+    datasets_by_hash: dict[str, str] = {}
+    for ident, data in notes.items():
+        if data["type"] != "data" or data.get("data_kind") != "dataset":
+            continue
+        raw_hash = data["raw_sha256"]
+        if raw_hash in datasets_by_hash:
+            errors.append(f"Duplicate dataset content hash: {ident} / {datasets_by_hash[raw_hash]}")
+        datasets_by_hash[raw_hash] = ident
+        expected = {data["hash_reference"], data["chronology_model"], "test.regression_policy",
+                    *data["consumed_by_algorithms"], *data["produces_behaviors"],
+                    *data["used_by_fixtures"], *data["validated_by"]}
+        missing = expected - set(data["related_entities"])
+        if missing:
+            errors.append(f"Missing dataset relations: {ident}: {sorted(missing)}")
+        for fixture_id in data["used_by_fixtures"]:
+            fixture = notes.get(fixture_id)
+            if fixture is None or fixture.get("type") != "case" or fixture.get("dataset_sha256") != raw_hash:
+                errors.append(f"Dataset/fixture hash relationship mismatch: {ident} -> {fixture_id}")
+    for ident, data in notes.items():
+        if data["type"] != "case":
+            continue
+        if data["dataset_sha256"] not in datasets_by_hash:
+            errors.append(f"Fixture dataset has no data entity: {ident}")
+        expected = {data["validation_rule"]}
+        if data["behavior"] != "unknown":
+            expected.add(f"behavior.{data['behavior'].lower()}")
+        if data["algorithm"] != "unknown":
+            expected.add(data["algorithm"])
+        if data["source_module"] != "unknown":
+            expected.add(source_entities.get(data["source_module"], "unknown-source-entity"))
+        missing = expected - set(data["related_entities"])
+        if missing:
+            errors.append(f"Missing fixture relations: {ident}: {sorted(missing)}")
     for ident, data in notes.items():
         for key in (*REL_KEYS, "related_entities"):
             for target in data.get(key, []):

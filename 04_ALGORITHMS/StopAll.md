@@ -8,6 +8,8 @@ implemented_by: ["source.lifecycle_engine"]
 produces: ["behavior.stopall", "behavior.stopall.type1", "behavior.stopall.type2", "behavior.stopall.type3"]
 depends_on: ["algorithm.lifecycle", "algorithm.e", "algorithm.s"]
 source_refs: ["engine/pipeline/lifecycle_engine.py#L331", "engine/pipeline/lifecycle_engine.py#L403", "engine/bridge/trading_pipeline.py#L1285"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/lifecycle_engine.py#L331", "engine/pipeline/lifecycle_engine.py#L403", "engine/bridge/trading_pipeline.py#L1285"]
 ---
 
 # StopAll gate state machine

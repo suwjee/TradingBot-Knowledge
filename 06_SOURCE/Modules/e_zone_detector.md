@@ -10,6 +10,8 @@ sha256: "6becc792a17e40f572673bf65bc9818c9a957244de811be2823402d41c36e628"
 implements: ["algorithm.order", "algorithm.order.a", "algorithm.order.b", "algorithm.order.c", "algorithm.e", "algorithm.reconciliation", "algorithm.orderaudit"]
 affects: ["behavior.e", "behavior.e.red", "behavior.e.blue"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L1"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L1"]
 ---
 
 # e zone detector

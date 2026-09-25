@@ -10,6 +10,8 @@ sha256: "7714025b3f43087b09844df6feeef4eef0ec72eeb841115293df4c126fd202ee"
 implements: ["algorithm.s", "algorithm.s.type1", "algorithm.s.type2", "algorithm.s.type3", "algorithm.s.type4", "algorithm.order.a", "algorithm.order", "algorithm.orderaudit"]
 affects: ["behavior.s", "behavior.s.red", "behavior.s.blue"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L1"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L1"]
 ---
 
 # s zone detector

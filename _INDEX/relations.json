@@ -27,6 +27,11 @@
       "to": "behavior.a"
     },
     {
+      "from": "algorithm.a",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.blue",
       "type": "depends_on",
       "to": "algorithm.reaction"
@@ -45,6 +50,11 @@
       "from": "algorithm.blue",
       "type": "implemented_by",
       "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.e",
@@ -82,6 +92,11 @@
       "to": "algorithm.reconciliation"
     },
     {
+      "from": "algorithm.e",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.internal_reaction",
       "type": "depends_on",
       "to": "algorithm.reaction"
@@ -90,6 +105,16 @@
       "from": "algorithm.internal_reaction",
       "type": "implemented_by",
       "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.lifecycle",
@@ -127,6 +152,11 @@
       "to": "source.lifecycle_engine"
     },
     {
+      "from": "algorithm.lifecycle",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.order",
       "type": "depends_on",
       "to": "algorithm.reaction"
@@ -150,6 +180,11 @@
       "from": "algorithm.order",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.order.a",
@@ -177,6 +212,11 @@
       "to": "source.s_zone_detector"
     },
     {
+      "from": "algorithm.order.a",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.order.b",
       "type": "depends_on",
       "to": "algorithm.order"
@@ -197,6 +237,11 @@
       "to": "source.e_zone_detector"
     },
     {
+      "from": "algorithm.order.b",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.order.c",
       "type": "depends_on",
       "to": "algorithm.blue"
@@ -215,6 +260,11 @@
       "from": "algorithm.order.c",
       "type": "implemented_by",
       "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.orderaudit",
@@ -240,6 +290,11 @@
       "from": "algorithm.orderaudit",
       "type": "implemented_by",
       "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.raw",
@@ -267,6 +322,11 @@
       "to": "source.integration_boundary"
     },
     {
+      "from": "algorithm.raw",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.reaction",
       "type": "depends_on",
       "to": "algorithm.raw"
@@ -295,6 +355,11 @@
       "from": "algorithm.reaction",
       "type": "produces",
       "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.reconciliation",
@@ -342,6 +407,11 @@
       "to": "core.e_numbering"
     },
     {
+      "from": "algorithm.reconciliation",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.reset",
       "type": "depends_on",
       "to": "algorithm.reaction"
@@ -355,6 +425,11 @@
       "from": "algorithm.reset",
       "type": "implemented_by",
       "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.reset",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.s",
@@ -392,6 +467,11 @@
       "to": "behavior.s.red"
     },
     {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.s.type1",
       "type": "depends_on",
       "to": "algorithm.order.a"
@@ -415,6 +495,11 @@
       "from": "algorithm.s.type1",
       "type": "produces",
       "to": "behavior.s.red"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.s.type2",
@@ -442,6 +527,11 @@
       "to": "behavior.s.red"
     },
     {
+      "from": "algorithm.s.type2",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.s.type3",
       "type": "depends_on",
       "to": "algorithm.reset"
@@ -460,6 +550,11 @@
       "from": "algorithm.s.type3",
       "type": "produces",
       "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.s.type4",
@@ -487,6 +582,11 @@
       "to": "behavior.s.blue.type4"
     },
     {
+      "from": "algorithm.s.type4",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.serialization",
       "type": "depends_on",
       "to": "algorithm.raw"
@@ -500,6 +600,11 @@
       "from": "algorithm.serialization",
       "type": "implemented_by",
       "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "algorithm.stopall",
@@ -542,6 +647,11 @@
       "to": "behavior.stopall.type3"
     },
     {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "algorithm.visibility",
       "type": "depends_on",
       "to": "algorithm.internal_reaction"
@@ -567,6 +677,21 @@
       "to": "source.trading_pipeline"
     },
     {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "behavior.a",
       "type": "calculated_by",
       "to": "algorithm.a"
@@ -590,6 +715,11 @@
       "from": "behavior.a",
       "type": "implemented_by",
       "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.a",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "behavior.e",
@@ -632,6 +762,11 @@
       "to": "behavior.e.red"
     },
     {
+      "from": "behavior.e",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
       "from": "behavior.e.blue",
       "type": "calculated_by",
       "to": "algorithm.e"
@@ -662,6 +797,11 @@
       "to": "source.lifecycle_engine"
     },
     {
+      "from": "behavior.e.blue",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
       "from": "behavior.e.red",
       "type": "calculated_by",
       "to": "algorithm.e"
@@ -690,6 +830,11 @@
       "from": "behavior.e.red",
       "type": "implemented_by",
       "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "behavior.s",
@@ -727,6 +872,11 @@
       "to": "behavior.s.red"
     },
     {
+      "from": "behavior.s",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
       "from": "behavior.s.blue",
       "type": "calculated_by",
       "to": "algorithm.s"
@@ -762,6 +912,11 @@
       "to": "behavior.s.blue.type4"
     },
     {
+      "from": "behavior.s.blue",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
       "from": "behavior.s.blue.type1",
       "type": "calculated_by",
       "to": "algorithm.s.type1"
@@ -777,6 +932,11 @@
       "to": "source.s_zone_detector"
     },
     {
+      "from": "behavior.s.blue.type1",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
       "from": "behavior.s.blue.type2",
       "type": "calculated_by",
       "to": "algorithm.s.type2"
@@ -790,6 +950,11 @@
       "from": "behavior.s.blue.type2",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "behavior.s.blue.type3",
@@ -812,6 +977,11 @@
       "to": "source.s_zone_detector"
     },
     {
+      "from": "behavior.s.blue.type3",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
       "from": "behavior.s.blue.type4",
       "type": "calculated_by",
       "to": "algorithm.s.type4"
@@ -830,6 +1000,11 @@
       "from": "behavior.s.blue.type4",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "behavior.s.red",
@@ -855,6 +1030,11 @@
       "from": "behavior.s.red",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
     },
     {
       "from": "behavior.stopall",
@@ -892,6 +1072,11 @@
       "to": "behavior.stopall.type3"
     },
     {
+      "from": "behavior.stopall",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
       "from": "behavior.stopall.type1",
       "type": "calculated_by",
       "to": "algorithm.stopall"
@@ -907,6 +1092,11 @@
       "to": "source.lifecycle_engine"
     },
     {
+      "from": "behavior.stopall.type1",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
       "from": "behavior.stopall.type2",
       "type": "calculated_by",
       "to": "algorithm.stopall"
@@ -920,6 +1110,11 @@
       "from": "behavior.stopall.type2",
       "type": "implemented_by",
       "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.type2",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
     },
     {
       "from": "behavior.stopall.type3",
@@ -942,6 +1137,721 @@
       "to": "source.lifecycle_engine"
     },
     {
+      "from": "behavior.stopall.type3",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_1_1",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "case.fixture_1_1",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "case.fixture_1_1",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "case.fixture_1_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_1",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_1_10",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_1_10",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_10",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_10",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_10",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_1_11",
+      "type": "relates_to",
+      "to": "algorithm.s.type4"
+    },
+    {
+      "from": "case.fixture_1_11",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_11",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "case.fixture_1_11",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "case.fixture_1_11",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_12",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_1_12",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "case.fixture_1_12",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_12",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_12",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_1_13",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "case.fixture_1_13",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_13",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "case.fixture_1_13",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_13",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_1_2",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
+    },
+    {
+      "from": "case.fixture_1_2",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "case.fixture_1_2",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "case.fixture_1_2",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_2",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_1_3",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
+    },
+    {
+      "from": "case.fixture_1_3",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "case.fixture_1_3",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "case.fixture_1_3",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_4",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_1_4",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_4",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_4",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_4",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_1_5",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_1_5",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_5",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_5",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_5",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_1_6",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_1_6",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_6",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_6",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "case.fixture_1_6",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_7",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "case.fixture_1_7",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_7",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_7",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_7",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_1_8",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "case.fixture_1_8",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_1_8",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_1_8",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_1_8",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_1_9",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "case.fixture_1_9",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "case.fixture_1_9",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "case.fixture_1_9",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_2_1",
+      "type": "relates_to",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "case.fixture_2_1",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "case.fixture_2_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_2_1",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_2_2",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "case.fixture_2_2",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "case.fixture_2_2",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "case.fixture_2_2",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_2_2",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "case.fixture_2_3",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_2_4",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_2_5",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "case.fixture_3_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_3_2",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "case.fixture_3_2",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "case.fixture_3_2",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_3_2",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_4_1",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "case.fixture_4_1",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "case.fixture_4_1",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "case.fixture_4_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_4_2",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "case.fixture_4_2",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "case.fixture_4_2",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "case.fixture_4_2",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "case.fixture_4_2",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_4_3",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "case.fixture_4_3",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "case.fixture_4_3",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_4_3",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_4_3",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_5_1",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "case.fixture_5_1",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "case.fixture_5_1",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "case.fixture_5_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_5_1",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "case.fixture_5_2",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "case.fixture_5_2",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "case.fixture_5_2",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_5_2",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_5_2",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "case.fixture_5_3",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "case.fixture_5_3",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "case.fixture_5_3",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "case.fixture_5_3",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_5_3",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "case.fixture_6_1",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "case.fixture_6_1",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "case.fixture_6_1",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "case.fixture_6_1",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "case.fixture_6_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_8_1",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "case.fixture_8_1",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "case.fixture_8_1",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "case.fixture_8_1",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "case.fixture_8_1",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "core.chronology",
+      "type": "relates_to",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "core.chronology",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
       "from": "core.e_numbering",
       "type": "calculated_by",
       "to": "algorithm.reconciliation"
@@ -957,14 +1867,1479 @@
       "to": "source.e_zone_detector"
     },
     {
+      "from": "core.e_numbering",
+      "type": "relates_to",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "core.invariants",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "core.lifecycle",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "core.lifecycle",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
       "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "core.precision",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "core.precision",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "core.priority",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "core.priority",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "core.project",
+      "type": "relates_to",
+      "to": "system.manifest"
+    },
+    {
+      "from": "core.terminology",
+      "type": "relates_to",
+      "to": "system.knowledge_model"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "data.raw_schema"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "data.timeframe_registry"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "market.candle"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "data.candle_model",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "data.integrity"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.data_validation",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "case.fixture_3_1"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "case.fixture_3_2"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_0291455b",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "case.fixture_4_1"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "case.fixture_4_2"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "case.fixture_4_3"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_062df750",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_1"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_2"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_3"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_4"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "case.fixture_2_5"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_18632e27",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_7e12ea5f",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "case.fixture_5_1"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "case.fixture_5_2"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "case.fixture_5_3"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_9e2e159a",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "case.fixture_6_1"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_b47246b4",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_d33c7e2c",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_ea82be1a",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_f531a06d",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_1"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_10"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_11"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_12"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_13"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_2"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_3"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_4"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_5"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_6"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_7"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_8"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_1_9"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "case.fixture_8_1"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_f5bc29e3",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.dataset_manifest",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_manifest",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.dataset_manifest",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_manifest",
+      "type": "relates_to",
+      "to": "data.integrity"
+    },
+    {
+      "from": "data.dataset_manifest",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "data.dataset_template"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "data.registry_root"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.dataset_template",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.dataset_template",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.dataset_template",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.dataset_template",
+      "type": "relates_to",
+      "to": "data.hash_policy"
+    },
+    {
+      "from": "data.dataset_template",
+      "type": "relates_to",
+      "to": "data.integrity"
+    },
+    {
+      "from": "data.dataset_template",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "data.datasets_compat",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.datasets_compat",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.datasets_compat",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.datasets_compat",
+      "type": "relates_to",
+      "to": "data.registry_root"
+    },
+    {
+      "from": "data.hash_policy",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.hash_policy",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.hash_policy",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.hash_policy",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.hash_policy",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.hash_registry",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.hash_registry",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.hash_registry",
+      "type": "relates_to",
+      "to": "data.hash_policy"
+    },
+    {
+      "from": "data.hash_registry",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.integrity",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.integrity",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.integrity",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.integrity",
+      "type": "relates_to",
+      "to": "data.raw_schema"
+    },
+    {
+      "from": "data.integrity",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.integrity",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "data.lineage",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "data.hash_policy"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "data.raw_authority"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "data.hash_policy"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "data.lineage"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.raw_authority",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "data.raw_format",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.raw_format",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.raw_format",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "data.raw_format",
+      "type": "relates_to",
+      "to": "data.raw_schema"
+    },
+    {
+      "from": "data.raw_format",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "data.raw_authority"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "data.raw_format"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "data.raw_schema"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.raw_schema",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.raw_schema",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.raw_schema",
+      "type": "relates_to",
+      "to": "data.integrity"
+    },
+    {
+      "from": "data.raw_schema",
+      "type": "relates_to",
+      "to": "data.raw_format"
+    },
+    {
+      "from": "data.raw_schema",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.registry_root",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.registry_root",
+      "type": "relates_to",
+      "to": "data.data_validation"
+    },
+    {
+      "from": "data.registry_root",
+      "type": "relates_to",
+      "to": "data.dataset_manifest"
+    },
+    {
+      "from": "data.registry_root",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.registry_root",
+      "type": "relates_to",
+      "to": "data.hash_registry"
+    },
+    {
+      "from": "data.registry_root",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "data.timeframe_registry",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "data.timeframe_registry",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "data.timeframe_registry",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "data.timeframe_registry",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "data.timeframe_registry",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "data.timeframe_registry",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "market.candle",
+      "type": "relates_to",
+      "to": "data.candle_model"
+    },
+    {
+      "from": "market.candle",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "market.crossing",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "market.crossing",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "market.direction",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "market.direction",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "market.events",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "market.events",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "market.exact_chronology",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "market.exact_chronology",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "market.leg",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
+    },
+    {
+      "from": "market.leg",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "market.leg",
+      "type": "relates_to",
+      "to": "market.model"
+    },
+    {
+      "from": "market.leg",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "market.model",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "market.model",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "market.model",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "market.raw",
+      "type": "relates_to",
+      "to": "data.raw_model"
+    },
+    {
+      "from": "market.raw",
       "type": "relates_to",
       "to": "source.integration_boundary"
     },
     {
       "from": "market.raw",
       "type": "relates_to",
-      "to": "source.integration_boundary"
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "market.timeframe",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "market.timeframe",
+      "type": "relates_to",
+      "to": "data.timeframe_registry"
+    },
+    {
+      "from": "market.timeframe",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
     },
     {
       "from": "mirror.algorithm_matrix",
@@ -1572,6 +3947,11 @@
       "to": "source.trading_pipeline"
     },
     {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
       "from": "source.a_zone_detector",
       "type": "affects",
       "to": "behavior.a"
@@ -1580,6 +3960,11 @@
       "from": "source.a_zone_detector",
       "type": "implements",
       "to": "algorithm.a"
+    },
+    {
+      "from": "source.a_zone_detector",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.blue_line_detector",
@@ -1597,6 +3982,16 @@
       "to": "algorithm.blue"
     },
     {
+      "from": "source.blue_line_detector",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "source.core_utils",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "source.core_utils",
       "type": "supports",
       "to": "algorithm.order"
@@ -1610,6 +4005,16 @@
       "from": "source.dependencies",
       "type": "relates_to",
       "to": "core.pipeline"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.direction_policy",
@@ -1687,6 +4092,11 @@
       "to": "algorithm.reconciliation"
     },
     {
+      "from": "source.e_zone_detector",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "core.pipeline"
@@ -1695,6 +4105,11 @@
       "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "market.raw"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.lifecycle_engine",
@@ -1742,9 +4157,19 @@
       "to": "algorithm.visibility"
     },
     {
+      "from": "source.lifecycle_engine",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "source.map",
       "type": "relates_to",
       "to": "core.pipeline"
+    },
+    {
+      "from": "source.map",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.reaction_engine",
@@ -1785,6 +4210,11 @@
       "from": "source.reaction_engine",
       "type": "implements",
       "to": "algorithm.reset"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.s_zone_detector",
@@ -1842,9 +4272,19 @@
       "to": "algorithm.s.type4"
     },
     {
+      "from": "source.s_zone_detector",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "source.state_map",
       "type": "relates_to",
       "to": "core.pipeline"
+    },
+    {
+      "from": "source.state_map",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.trading_pipeline",
@@ -1925,6 +4365,741 @@
       "from": "source.trading_pipeline",
       "type": "orchestrates",
       "to": "algorithm.stopall"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "system.authority",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "system.authority",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "market.leg"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "system.authority"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "system.manifest"
+    },
+    {
+      "from": "system.executed_phases_audit",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "data.dataset_registry"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "system.authority"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "system.executed_phases_audit"
+    },
+    {
+      "from": "system.phase_4_5_audit",
+      "type": "relates_to",
+      "to": "system.manifest"
+    },
+    {
+      "from": "test.baseline_policy",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.baseline_policy",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.baseline_policy",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "test.baseline_policy",
+      "type": "relates_to",
+      "to": "test.regression_model"
+    },
+    {
+      "from": "test.baseline_policy",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.baseline_policy",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "test.behavior_invariants",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "test.regression_model"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.change_impact",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.chronology_invariants",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.fixture_model",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "test.fixture_model",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "test.fixture_model",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "test.fixture_model",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "test.fixture_model",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "test.fixture_model",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "test.fixture_registry",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "test.identity_invariants",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "core.invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.behavior_invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.chronology_invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.identity_invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.lifecycle_invariants"
+    },
+    {
+      "from": "test.invariant_validation",
+      "type": "relates_to",
+      "to": "test.precision_invariants"
+    },
+    {
+      "from": "test.legacy_memory_fixture_review",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "test.legacy_memory_fixture_review",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.legacy_memory_fixture_review",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "test.legacy_memory_fixture_review",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.legacy_memory_fixture_review",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
+      "from": "test.lifecycle_invariants",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "test.lifecycle_invariants",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "test.lifecycle_invariants",
+      "type": "relates_to",
+      "to": "core.lifecycle"
+    },
+    {
+      "from": "test.lifecycle_invariants",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "test.lifecycle_invariants",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "test.lifecycle_invariants",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "test.mirror_validation",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.output_validation",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "test.output_validation",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.output_validation",
+      "type": "relates_to",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "test.output_validation",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.output_validation",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.output_validation",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "market.candle"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "market.crossing"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "test.precision_invariants",
+      "type": "relates_to",
+      "to": "test.invariant_validation"
+    },
+    {
+      "from": "test.regression_model",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.regression_model",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.regression_model",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "test.regression_model",
+      "type": "relates_to",
+      "to": "test.change_impact"
+    },
+    {
+      "from": "test.regression_model",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.regression_model",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "test.baseline_policy"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "test.regression_model"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "test.regression_policy",
+      "type": "relates_to",
+      "to": "test.zero_difference"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "mirror.source_map"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.source_validation",
+      "type": "relates_to",
+      "to": "test.fixture_registry"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.mirror_validation"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.regression_policy"
+    },
+    {
+      "from": "test.test_policy",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "test.output_validation"
+    },
+    {
+      "from": "test.zero_difference",
+      "type": "relates_to",
+      "to": "test.regression_policy"
     }
   ]
 }

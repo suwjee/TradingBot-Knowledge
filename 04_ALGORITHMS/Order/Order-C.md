@@ -7,6 +7,8 @@ title: "Order_C Blue-leg cause"
 implemented_by: ["source.e_zone_detector"]
 depends_on: ["algorithm.order", "algorithm.blue", "algorithm.reset"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L648", "engine/pipeline/e_zone_detector.py#L674", "engine/pipeline/e_zone_detector.py#L727"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L648", "engine/pipeline/e_zone_detector.py#L674", "engine/pipeline/e_zone_detector.py#L727"]
 ---
 
 # Order_C Blue-leg cause

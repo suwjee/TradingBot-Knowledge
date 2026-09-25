@@ -7,6 +7,8 @@ title: "Public serialization"
 implemented_by: ["source.trading_pipeline"]
 depends_on: ["algorithm.visibility", "algorithm.raw"]
 source_refs: ["engine/bridge/trading_pipeline.py#L254", "engine/bridge/trading_pipeline.py#L267", "engine/bridge/trading_pipeline.py#L1130", "engine/bridge/trading_pipeline.py#L1285"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/bridge/trading_pipeline.py#L254", "engine/bridge/trading_pipeline.py#L267", "engine/bridge/trading_pipeline.py#L1130", "engine/bridge/trading_pipeline.py#L1285"]
 ---
 
 # Public serialization

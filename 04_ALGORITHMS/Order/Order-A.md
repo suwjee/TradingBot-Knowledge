@@ -7,6 +7,8 @@ title: "Order_A parent-stop cause"
 implemented_by: ["source.s_zone_detector", "source.e_zone_detector"]
 depends_on: ["algorithm.order", "algorithm.a", "algorithm.e"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L274", "engine/pipeline/e_zone_detector.py#L1058", "engine/pipeline/e_zone_detector.py#L1186"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L274", "engine/pipeline/e_zone_detector.py#L1058", "engine/pipeline/e_zone_detector.py#L1186"]
 ---
 
 # Order_A parent-stop cause

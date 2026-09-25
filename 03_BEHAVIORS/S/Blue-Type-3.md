@@ -8,6 +8,8 @@ calculated_by: ["algorithm.s.type3"]
 implemented_by: ["source.s_zone_detector"]
 depends_on: ["behavior.s.blue", "algorithm.reset"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L457", "engine/pipeline/s_zone_detector.py#L1090"]
+related_entities: ["test.behavior_invariants"]
+source_reference: ["engine/pipeline/s_zone_detector.py#L457", "engine/pipeline/s_zone_detector.py#L1090"]
 ---
 
 # S Blue Type-3

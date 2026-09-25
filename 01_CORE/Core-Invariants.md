@@ -5,6 +5,8 @@ status: "canonical"
 authority: "normative"
 title: "Core invariants"
 source_refs: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L82", "engine/pipeline/lifecycle_engine.py#L25"]
+related_entities: ["test.invariant_validation"]
+source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L82", "engine/pipeline/lifecycle_engine.py#L25"]
 ---
 
 # Core invariants

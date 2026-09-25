@@ -6,13 +6,13 @@ authority: "canonical"
 title: "Mirror validation requirements"
 created: "2026-09-25"
 updated: "2026-09-25"
-related_entities: ["mirror.contract", "mirror.direction_mapping", "mirror.invariants", "mirror.algorithm_matrix", "algorithm.reaction", "algorithm.lifecycle", "algorithm.serialization", "source.direction_policy", "source.trading_pipeline"]
+related_entities: ["mirror.contract", "mirror.direction_mapping", "mirror.invariants", "mirror.algorithm_matrix", "algorithm.reaction", "algorithm.lifecycle", "algorithm.serialization", "source.direction_policy", "source.trading_pipeline", "test.mirror_validation"]
 source_reference: ["engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1099", "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1099", "engine/pipeline/direction_policy.py#L32", "engine/pipeline/reaction_engine.py#L560", "engine/pipeline/lifecycle_engine.py#L25", "engine/bridge/trading_pipeline.py#L2776"]
 ---
 
 # Mirror validation requirements
 
-This is a contract for future `07_VALIDATION` work. It does not claim that the tests below have been executed or that an empty validation placeholder is evidence. Both references §19 and §24 provide acceptance/examples; current source anchors identify the fields to compare.
+This is the Mirror contract used by the executed `07_VALIDATION` layer. `test.mirror_validation` and the registered fixtures define validation targets, but their existence does not claim a fresh two-direction pipeline run. Both references §19 and §24 provide acceptance/examples; current source anchors identify the fields to compare.
 
 ## Direction validation
 
@@ -35,4 +35,4 @@ This is a contract for future `07_VALIDATION` work. It does not claim that the t
 
 For every implementation change, compare pre-change and post-change **full continuous input** payloads for both directions under identical settings. Mirror behavior must remain equal unless an approved algorithm change explicitly authorizes the difference; then record the changed rule, affected source/line, provenance, and expected output delta. Compare stage collections and final visibility, not only chart counts. Include targeted same-Break, Order_A/B/C, native Mode-B StopAll, internal-Reaction visibility (especially mixed reset-leg plus independent cause) and E-number cases. Both references §19, §24; `trading_pipeline.py#L1903`, `#L2549`, `#L2776`.
 
-Validation is incomplete until the future `07_VALIDATION` layer contains runnable cases and their results. This file defines requirements only.
+The Validation layer now records 28 fixture cases, including Pending and Historical evidence. A full Mirror regression result still requires a current run with pinned RAW, source, settings and output; this note defines requirements and does not report such a result.

@@ -8,6 +8,8 @@ implemented_by: ["source.a_zone_detector"]
 produces: ["behavior.a"]
 depends_on: ["algorithm.blue", "algorithm.reaction", "market.exact_chronology"]
 source_refs: ["engine/pipeline/a_zone_detector.py#L219", "engine/pipeline/a_zone_detector.py#L311", "engine/pipeline/a_zone_detector.py#L568"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/a_zone_detector.py#L219", "engine/pipeline/a_zone_detector.py#L311", "engine/pipeline/a_zone_detector.py#L568"]
 ---
 
 # A calculation

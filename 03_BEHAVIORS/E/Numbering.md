@@ -8,6 +8,8 @@ calculated_by: ["algorithm.reconciliation"]
 implemented_by: ["source.e_zone_detector"]
 depends_on: ["behavior.e"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2267"]
+related_entities: ["algorithm.reconciliation", "test.identity_invariants"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2267"]
 ---
 
 # E numbering

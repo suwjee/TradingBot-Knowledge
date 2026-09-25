@@ -10,6 +10,8 @@ sha256: "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de"
 affects: []
 source_refs: ["engine/pipeline/core_utils.py#L1"]
 supports: ["algorithm.raw", "algorithm.order"]
+related_entities: ["test.source_validation"]
+source_reference: ["engine/pipeline/core_utils.py#L1"]
 ---
 
 # core utils

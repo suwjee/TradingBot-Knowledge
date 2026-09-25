@@ -9,6 +9,8 @@ implemented_by: ["source.lifecycle_engine"]
 depends_on: ["behavior.stopall"]
 source_gate_type: "sequence-group-stop"
 source_refs: ["engine/pipeline/lifecycle_engine.py#L514", "engine/bridge/trading_pipeline.py#L1300"]
+related_entities: ["test.lifecycle_invariants"]
+source_reference: ["engine/pipeline/lifecycle_engine.py#L514", "engine/bridge/trading_pipeline.py#L1300"]
 ---
 
 # StopAll Type-1

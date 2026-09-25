@@ -9,6 +9,8 @@ implemented_by: ["source.e_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.s", "algorithm.order"]
 parent_of: ["behavior.e.red", "behavior.e.blue"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L27", "engine/pipeline/e_zone_detector.py#L2463"]
+related_entities: ["test.behavior_invariants"]
+source_reference: ["engine/pipeline/e_zone_detector.py#L27", "engine/pipeline/e_zone_detector.py#L2463"]
 ---
 
 # E
