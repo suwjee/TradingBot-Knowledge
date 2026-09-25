@@ -1,0 +1,2207 @@
+{
+  "generated_from": "canonical Markdown frontmatter",
+  "nodes": [
+    {
+      "id": "algorithm.a",
+      "file": "04_ALGORITHMS/A.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "A calculation"
+    },
+    {
+      "id": "algorithm.blue",
+      "file": "04_ALGORITHMS/Blue.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Blue Line"
+    },
+    {
+      "id": "algorithm.e",
+      "file": "04_ALGORITHMS/E.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E construction and recursive chains"
+    },
+    {
+      "id": "algorithm.internal_reaction",
+      "file": "04_ALGORITHMS/Reaction/Internal-Reaction.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Internal Reaction"
+    },
+    {
+      "id": "algorithm.lifecycle",
+      "file": "04_ALGORITHMS/Lifecycle.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Lifecycle eligibility and stage ownership"
+    },
+    {
+      "id": "algorithm.order",
+      "file": "04_ALGORITHMS/Order/Order.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Physical Order and provenance"
+    },
+    {
+      "id": "algorithm.order.a",
+      "file": "04_ALGORITHMS/Order/Order-A.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_A parent-stop cause"
+    },
+    {
+      "id": "algorithm.order.b",
+      "file": "04_ALGORITHMS/Order/Order-B.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_B Reset-leg cause"
+    },
+    {
+      "id": "algorithm.order.c",
+      "file": "04_ALGORITHMS/Order/Order-C.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_C Blue-leg cause"
+    },
+    {
+      "id": "algorithm.orderaudit",
+      "file": "04_ALGORITHMS/OrderAudit.md",
+      "type": "algorithm",
+      "status": "pending-fix",
+      "authority": "non-canonical",
+      "title": "OrderAudit (pending fix)"
+    },
+    {
+      "id": "algorithm.raw",
+      "file": "04_ALGORITHMS/RAW.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "RAW normalization and candle construction"
+    },
+    {
+      "id": "algorithm.reaction",
+      "file": "04_ALGORITHMS/Reaction/Reaction.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Reaction"
+    },
+    {
+      "id": "algorithm.reconciliation",
+      "file": "04_ALGORITHMS/Reconciliation.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E and lifecycle reconciliation"
+    },
+    {
+      "id": "algorithm.reset",
+      "file": "04_ALGORITHMS/Reaction/Reset.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Reset"
+    },
+    {
+      "id": "algorithm.s",
+      "file": "04_ALGORITHMS/S/S.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S calculation and decision"
+    },
+    {
+      "id": "algorithm.s.type1",
+      "file": "04_ALGORITHMS/S/Type-1.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-1 Simple"
+    },
+    {
+      "id": "algorithm.s.type2",
+      "file": "04_ALGORITHMS/S/Type-2.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-2 Advanced"
+    },
+    {
+      "id": "algorithm.s.type3",
+      "file": "04_ALGORITHMS/S/Type-3.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-3 Reset-leg"
+    },
+    {
+      "id": "algorithm.s.type4",
+      "file": "04_ALGORITHMS/S/Type-4.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-4 Blue-qualified aligned Reaction"
+    },
+    {
+      "id": "algorithm.serialization",
+      "file": "04_ALGORITHMS/Serialization.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Public serialization"
+    },
+    {
+      "id": "algorithm.stopall",
+      "file": "04_ALGORITHMS/StopAll.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll gate state machine"
+    },
+    {
+      "id": "algorithm.visibility",
+      "file": "04_ALGORITHMS/Visibility.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Final visibility and lineage"
+    },
+    {
+      "id": "behavior.a",
+      "file": "03_BEHAVIORS/A.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "A"
+    },
+    {
+      "id": "behavior.e",
+      "file": "03_BEHAVIORS/E/E.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E"
+    },
+    {
+      "id": "behavior.e.blue",
+      "file": "03_BEHAVIORS/E/Blue.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E Blue"
+    },
+    {
+      "id": "behavior.e.red",
+      "file": "03_BEHAVIORS/E/Red.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E Red"
+    },
+    {
+      "id": "behavior.s",
+      "file": "03_BEHAVIORS/S/S.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S"
+    },
+    {
+      "id": "behavior.s.blue",
+      "file": "03_BEHAVIORS/S/Blue.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue"
+    },
+    {
+      "id": "behavior.s.blue.type1",
+      "file": "03_BEHAVIORS/S/Blue-Type-1.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-1"
+    },
+    {
+      "id": "behavior.s.blue.type2",
+      "file": "03_BEHAVIORS/S/Blue-Type-2.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-2"
+    },
+    {
+      "id": "behavior.s.blue.type3",
+      "file": "03_BEHAVIORS/S/Blue-Type-3.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-3"
+    },
+    {
+      "id": "behavior.s.blue.type4",
+      "file": "03_BEHAVIORS/S/Blue-Type-4.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-4"
+    },
+    {
+      "id": "behavior.s.red",
+      "file": "03_BEHAVIORS/S/Red.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Red"
+    },
+    {
+      "id": "behavior.stopall",
+      "file": "03_BEHAVIORS/StopAll/StopAll.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll"
+    },
+    {
+      "id": "behavior.stopall.type1",
+      "file": "03_BEHAVIORS/StopAll/Type-1.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll Type-1"
+    },
+    {
+      "id": "behavior.stopall.type2",
+      "file": "03_BEHAVIORS/StopAll/Type-2.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll Type-2"
+    },
+    {
+      "id": "behavior.stopall.type3",
+      "file": "03_BEHAVIORS/StopAll/Type-3.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll Type-3"
+    },
+    {
+      "id": "core.behavior_model",
+      "file": "01_CORE/Behavior-Model.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Behavior model"
+    },
+    {
+      "id": "core.chronology",
+      "file": "01_CORE/Time-Chronology.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Time and chronology"
+    },
+    {
+      "id": "core.e_numbering",
+      "file": "03_BEHAVIORS/E/Numbering.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E numbering"
+    },
+    {
+      "id": "core.invariants",
+      "file": "01_CORE/Core-Invariants.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Core invariants"
+    },
+    {
+      "id": "core.lifecycle",
+      "file": "01_CORE/Lifecycle.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Lifecycle ownership"
+    },
+    {
+      "id": "core.pipeline",
+      "file": "01_CORE/Pipeline.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Calculation pipeline"
+    },
+    {
+      "id": "core.precision",
+      "file": "01_CORE/Precision.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Precision and strictness"
+    },
+    {
+      "id": "core.priority",
+      "file": "01_CORE/Priority.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Priority"
+    },
+    {
+      "id": "core.project",
+      "file": "01_CORE/Project.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "TradingBot project"
+    },
+    {
+      "id": "core.terminology",
+      "file": "01_CORE/Terminology.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Terminology"
+    },
+    {
+      "id": "market.candle",
+      "file": "02_MARKET_MODEL/Candle.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Candle"
+    },
+    {
+      "id": "market.crossing",
+      "file": "02_MARKET_MODEL/Crossing.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Strict crossing"
+    },
+    {
+      "id": "market.direction",
+      "file": "02_MARKET_MODEL/Direction.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Direction"
+    },
+    {
+      "id": "market.events",
+      "file": "02_MARKET_MODEL/Market-Events.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Market events"
+    },
+    {
+      "id": "market.exact_chronology",
+      "file": "02_MARKET_MODEL/Exact-Chronology.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Exact lower-timeframe chronology"
+    },
+    {
+      "id": "market.model",
+      "file": "02_MARKET_MODEL/Market-Model.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Market model"
+    },
+    {
+      "id": "market.raw",
+      "file": "02_MARKET_MODEL/RAW.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "RAW input"
+    },
+    {
+      "id": "market.timeframe",
+      "file": "02_MARKET_MODEL/Timeframe.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Timeframe"
+    },
+    {
+      "id": "source.a_zone_detector",
+      "file": "06_SOURCE/Modules/a_zone_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "a zone detector"
+    },
+    {
+      "id": "source.blue_line_detector",
+      "file": "06_SOURCE/Modules/blue_line_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "blue line detector"
+    },
+    {
+      "id": "source.core_utils",
+      "file": "06_SOURCE/Modules/core_utils.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "core utils"
+    },
+    {
+      "id": "source.dependencies",
+      "file": "06_SOURCE/Dependency-Map.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Source dependency map"
+    },
+    {
+      "id": "source.direction_policy",
+      "file": "06_SOURCE/Modules/direction_policy.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "direction policy"
+    },
+    {
+      "id": "source.e_zone_detector",
+      "file": "06_SOURCE/Modules/e_zone_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "e zone detector"
+    },
+    {
+      "id": "source.integration_boundary",
+      "file": "06_SOURCE/Integration-Boundary.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Chart-to-bridge input scope"
+    },
+    {
+      "id": "source.lifecycle_engine",
+      "file": "06_SOURCE/Modules/lifecycle_engine.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "lifecycle engine"
+    },
+    {
+      "id": "source.map",
+      "file": "06_SOURCE/Source-Map.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Source map"
+    },
+    {
+      "id": "source.reaction_engine",
+      "file": "06_SOURCE/Modules/reaction_engine.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "reaction engine"
+    },
+    {
+      "id": "source.s_zone_detector",
+      "file": "06_SOURCE/Modules/s_zone_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "s zone detector"
+    },
+    {
+      "id": "source.state_map",
+      "file": "06_SOURCE/State-Map.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "State and ownership map"
+    },
+    {
+      "id": "source.trading_pipeline",
+      "file": "06_SOURCE/Modules/trading_pipeline.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "trading pipeline"
+    },
+    {
+      "id": "system.authority",
+      "file": "00_SYSTEM/AUTHORITY_MODEL.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Authority and status model"
+    },
+    {
+      "id": "system.editing",
+      "file": "00_SYSTEM/EDITING_POLICY.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "AI editing policy"
+    },
+    {
+      "id": "system.frontmatter",
+      "file": "00_SYSTEM/FRONTMATTER_SCHEMA.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Frontmatter schema"
+    },
+    {
+      "id": "system.ids",
+      "file": "00_SYSTEM/ID_CONVENTIONS.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Stable ID conventions"
+    },
+    {
+      "id": "system.knowledge_model",
+      "file": "00_SYSTEM/KNOWLEDGE_MODEL.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Knowledge model"
+    },
+    {
+      "id": "system.manifest",
+      "file": "00_SYSTEM/VAULT_MANIFEST.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Vault manifest"
+    },
+    {
+      "id": "system.retrieval",
+      "file": "00_SYSTEM/RETRIEVAL_POLICY.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Retrieval policy"
+    }
+  ],
+  "edges": [
+    {
+      "from": "algorithm.a",
+      "type": "depends_on",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "depends_on",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "implemented_by",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "produces",
+      "to": "behavior.a"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "depends_on",
+      "to": "market.direction"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "depends_on",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "produces",
+      "to": "behavior.e"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "produces",
+      "to": "behavior.e.blue"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "produces",
+      "to": "behavior.e.red"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "depends_on",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.internal_reaction",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "depends_on",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "depends_on",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "produces",
+      "to": "behavior.a"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "produces",
+      "to": "behavior.e"
+    },
+    {
+      "from": "algorithm.lifecycle",
+      "type": "produces",
+      "to": "behavior.s"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "depends_on",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "depends_on",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "depends_on",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "implemented_by",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "produces",
+      "to": "market.candle"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "produces",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "depends_on",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "depends_on",
+      "to": "market.direction"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "depends_on",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "produces",
+      "to": "algorithm.internal_reaction"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "produces",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "depends_on",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "depends_on",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "produces",
+      "to": "behavior.e"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "produces",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "algorithm.reset",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.reset",
+      "type": "depends_on",
+      "to": "market.exact_chronology"
+    },
+    {
+      "from": "algorithm.reset",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "produces",
+      "to": "behavior.s"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "produces",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "produces",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "depends_on",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "produces",
+      "to": "behavior.s.blue.type1"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "produces",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "produces",
+      "to": "behavior.s.blue.type2"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "produces",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "produces",
+      "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "depends_on",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "produces",
+      "to": "behavior.s.blue.type4"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "depends_on",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "depends_on",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "depends_on",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "depends_on",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "depends_on",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "depends_on",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "produces",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "produces",
+      "to": "behavior.stopall.type1"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "produces",
+      "to": "behavior.stopall.type2"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "produces",
+      "to": "behavior.stopall.type3"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "depends_on",
+      "to": "algorithm.internal_reaction"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "depends_on",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "depends_on",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.a",
+      "type": "calculated_by",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "behavior.a",
+      "type": "calculated_by",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "behavior.a",
+      "type": "depends_on",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "behavior.a",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "behavior.a",
+      "type": "implemented_by",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "behavior.a",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.a",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.e",
+      "type": "calculated_by",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "behavior.e",
+      "type": "calculated_by",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "behavior.e",
+      "type": "calculated_by",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "behavior.e",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "behavior.e",
+      "type": "depends_on",
+      "to": "behavior.s"
+    },
+    {
+      "from": "behavior.e",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.e",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.e",
+      "type": "parent_of",
+      "to": "behavior.e.blue"
+    },
+    {
+      "from": "behavior.e",
+      "type": "parent_of",
+      "to": "behavior.e.red"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "calculated_by",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "calculated_by",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "depends_on",
+      "to": "behavior.e"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "depends_on",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "calculated_by",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "calculated_by",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "depends_on",
+      "to": "behavior.e"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "depends_on",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s",
+      "type": "calculated_by",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "behavior.s",
+      "type": "calculated_by",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "behavior.s",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "behavior.s",
+      "type": "depends_on",
+      "to": "behavior.a"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s",
+      "type": "parent_of",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s",
+      "type": "parent_of",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "calculated_by",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "depends_on",
+      "to": "behavior.s"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "parent_of",
+      "to": "behavior.s.blue.type1"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "parent_of",
+      "to": "behavior.s.blue.type2"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "parent_of",
+      "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "parent_of",
+      "to": "behavior.s.blue.type4"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "calculated_by",
+      "to": "algorithm.s.type1"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "depends_on",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "calculated_by",
+      "to": "algorithm.s.type2"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "depends_on",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "calculated_by",
+      "to": "algorithm.s.type3"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "depends_on",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "calculated_by",
+      "to": "algorithm.s.type4"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "depends_on",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "depends_on",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "calculated_by",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "calculated_by",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "depends_on",
+      "to": "behavior.s"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "calculated_by",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "calculated_by",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "depends_on",
+      "to": "behavior.e"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "depends_on",
+      "to": "behavior.s"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "parent_of",
+      "to": "behavior.stopall.type1"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "parent_of",
+      "to": "behavior.stopall.type2"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "parent_of",
+      "to": "behavior.stopall.type3"
+    },
+    {
+      "from": "behavior.stopall.type1",
+      "type": "calculated_by",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "behavior.stopall.type1",
+      "type": "depends_on",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "behavior.stopall.type1",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.type1",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.stopall.type2",
+      "type": "calculated_by",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "behavior.stopall.type2",
+      "type": "depends_on",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "behavior.stopall.type2",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.type2",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "behavior.stopall.type3",
+      "type": "calculated_by",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "behavior.stopall.type3",
+      "type": "depends_on",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "behavior.stopall.type3",
+      "type": "depends_on",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "behavior.stopall.type3",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.type3",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "calculated_by",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "calculated_by",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "depends_on",
+      "to": "behavior.e"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "core.e_numbering",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "market.raw",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.a_zone_detector",
+      "type": "affects",
+      "to": "behavior.a"
+    },
+    {
+      "from": "source.a_zone_detector",
+      "type": "implements",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "source.blue_line_detector",
+      "type": "affects",
+      "to": "behavior.a"
+    },
+    {
+      "from": "source.blue_line_detector",
+      "type": "affects",
+      "to": "behavior.s.blue.type4"
+    },
+    {
+      "from": "source.blue_line_detector",
+      "type": "implements",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "source.core_utils",
+      "type": "implements",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "source.core_utils",
+      "type": "implements",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "source.dependencies",
+      "type": "implements",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "implements",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "implements",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "implements",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "implements",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "implements",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "affects",
+      "to": "behavior.e"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "affects",
+      "to": "behavior.e.blue"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "affects",
+      "to": "behavior.e.red"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.c"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "implements",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "market.raw"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "affects",
+      "to": "behavior.a"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "affects",
+      "to": "behavior.e"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "affects",
+      "to": "behavior.s"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "affects",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "implements",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "implements",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "implements",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "implements",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "source.map",
+      "type": "implements",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "affects",
+      "to": "behavior.a"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "affects",
+      "to": "behavior.e"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "affects",
+      "to": "behavior.s"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "implements",
+      "to": "algorithm.internal_reaction"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "implements",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "implements",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "source.reaction_engine",
+      "type": "implements",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "affects",
+      "to": "behavior.s"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "affects",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "affects",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "implements",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "implements",
+      "to": "algorithm.s.type1"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "implements",
+      "to": "algorithm.s.type2"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "implements",
+      "to": "algorithm.s.type3"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "implements",
+      "to": "algorithm.s.type4"
+    },
+    {
+      "from": "source.state_map",
+      "type": "implements",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "source.state_map",
+      "type": "implements",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "source.state_map",
+      "type": "implements",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "source.state_map",
+      "type": "implements",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "source.state_map",
+      "type": "implements",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "affects",
+      "to": "behavior.a"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "affects",
+      "to": "behavior.e"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "affects",
+      "to": "behavior.s"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "affects",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "source.trading_pipeline",
+      "type": "implements",
+      "to": "algorithm.visibility"
+    }
+  ]
+}

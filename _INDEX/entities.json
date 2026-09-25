@@ -1,0 +1,530 @@
+{
+  "generated_from": "canonical Markdown frontmatter",
+  "entities": {
+    "algorithm.a": {
+      "file": "04_ALGORITHMS/A.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "A calculation"
+    },
+    "algorithm.blue": {
+      "file": "04_ALGORITHMS/Blue.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Blue Line"
+    },
+    "algorithm.e": {
+      "file": "04_ALGORITHMS/E.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E construction and recursive chains"
+    },
+    "algorithm.internal_reaction": {
+      "file": "04_ALGORITHMS/Reaction/Internal-Reaction.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Internal Reaction"
+    },
+    "algorithm.lifecycle": {
+      "file": "04_ALGORITHMS/Lifecycle.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Lifecycle eligibility and stage ownership"
+    },
+    "algorithm.order": {
+      "file": "04_ALGORITHMS/Order/Order.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Physical Order and provenance"
+    },
+    "algorithm.order.a": {
+      "file": "04_ALGORITHMS/Order/Order-A.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_A parent-stop cause"
+    },
+    "algorithm.order.b": {
+      "file": "04_ALGORITHMS/Order/Order-B.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_B Reset-leg cause"
+    },
+    "algorithm.order.c": {
+      "file": "04_ALGORITHMS/Order/Order-C.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_C Blue-leg cause"
+    },
+    "algorithm.orderaudit": {
+      "file": "04_ALGORITHMS/OrderAudit.md",
+      "type": "algorithm",
+      "status": "pending-fix",
+      "authority": "non-canonical",
+      "title": "OrderAudit (pending fix)"
+    },
+    "algorithm.raw": {
+      "file": "04_ALGORITHMS/RAW.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "RAW normalization and candle construction"
+    },
+    "algorithm.reaction": {
+      "file": "04_ALGORITHMS/Reaction/Reaction.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Reaction"
+    },
+    "algorithm.reconciliation": {
+      "file": "04_ALGORITHMS/Reconciliation.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E and lifecycle reconciliation"
+    },
+    "algorithm.reset": {
+      "file": "04_ALGORITHMS/Reaction/Reset.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Reset"
+    },
+    "algorithm.s": {
+      "file": "04_ALGORITHMS/S/S.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S calculation and decision"
+    },
+    "algorithm.s.type1": {
+      "file": "04_ALGORITHMS/S/Type-1.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-1 Simple"
+    },
+    "algorithm.s.type2": {
+      "file": "04_ALGORITHMS/S/Type-2.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-2 Advanced"
+    },
+    "algorithm.s.type3": {
+      "file": "04_ALGORITHMS/S/Type-3.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-3 Reset-leg"
+    },
+    "algorithm.s.type4": {
+      "file": "04_ALGORITHMS/S/Type-4.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Type-4 Blue-qualified aligned Reaction"
+    },
+    "algorithm.serialization": {
+      "file": "04_ALGORITHMS/Serialization.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Public serialization"
+    },
+    "algorithm.stopall": {
+      "file": "04_ALGORITHMS/StopAll.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll gate state machine"
+    },
+    "algorithm.visibility": {
+      "file": "04_ALGORITHMS/Visibility.md",
+      "type": "algorithm",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Final visibility and lineage"
+    },
+    "behavior.a": {
+      "file": "03_BEHAVIORS/A.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "A"
+    },
+    "behavior.e": {
+      "file": "03_BEHAVIORS/E/E.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E"
+    },
+    "behavior.e.blue": {
+      "file": "03_BEHAVIORS/E/Blue.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E Blue"
+    },
+    "behavior.e.red": {
+      "file": "03_BEHAVIORS/E/Red.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E Red"
+    },
+    "behavior.s": {
+      "file": "03_BEHAVIORS/S/S.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S"
+    },
+    "behavior.s.blue": {
+      "file": "03_BEHAVIORS/S/Blue.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue"
+    },
+    "behavior.s.blue.type1": {
+      "file": "03_BEHAVIORS/S/Blue-Type-1.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-1"
+    },
+    "behavior.s.blue.type2": {
+      "file": "03_BEHAVIORS/S/Blue-Type-2.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-2"
+    },
+    "behavior.s.blue.type3": {
+      "file": "03_BEHAVIORS/S/Blue-Type-3.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-3"
+    },
+    "behavior.s.blue.type4": {
+      "file": "03_BEHAVIORS/S/Blue-Type-4.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Blue Type-4"
+    },
+    "behavior.s.red": {
+      "file": "03_BEHAVIORS/S/Red.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "S Red"
+    },
+    "behavior.stopall": {
+      "file": "03_BEHAVIORS/StopAll/StopAll.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll"
+    },
+    "behavior.stopall.type1": {
+      "file": "03_BEHAVIORS/StopAll/Type-1.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll Type-1"
+    },
+    "behavior.stopall.type2": {
+      "file": "03_BEHAVIORS/StopAll/Type-2.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll Type-2"
+    },
+    "behavior.stopall.type3": {
+      "file": "03_BEHAVIORS/StopAll/Type-3.md",
+      "type": "behavior",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "StopAll Type-3"
+    },
+    "core.behavior_model": {
+      "file": "01_CORE/Behavior-Model.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Behavior model"
+    },
+    "core.chronology": {
+      "file": "01_CORE/Time-Chronology.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Time and chronology"
+    },
+    "core.e_numbering": {
+      "file": "03_BEHAVIORS/E/Numbering.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "E numbering"
+    },
+    "core.invariants": {
+      "file": "01_CORE/Core-Invariants.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Core invariants"
+    },
+    "core.lifecycle": {
+      "file": "01_CORE/Lifecycle.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Lifecycle ownership"
+    },
+    "core.pipeline": {
+      "file": "01_CORE/Pipeline.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Calculation pipeline"
+    },
+    "core.precision": {
+      "file": "01_CORE/Precision.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Precision and strictness"
+    },
+    "core.priority": {
+      "file": "01_CORE/Priority.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Priority"
+    },
+    "core.project": {
+      "file": "01_CORE/Project.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "TradingBot project"
+    },
+    "core.terminology": {
+      "file": "01_CORE/Terminology.md",
+      "type": "core",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Terminology"
+    },
+    "market.candle": {
+      "file": "02_MARKET_MODEL/Candle.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Candle"
+    },
+    "market.crossing": {
+      "file": "02_MARKET_MODEL/Crossing.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Strict crossing"
+    },
+    "market.direction": {
+      "file": "02_MARKET_MODEL/Direction.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Direction"
+    },
+    "market.events": {
+      "file": "02_MARKET_MODEL/Market-Events.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Market events"
+    },
+    "market.exact_chronology": {
+      "file": "02_MARKET_MODEL/Exact-Chronology.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Exact lower-timeframe chronology"
+    },
+    "market.model": {
+      "file": "02_MARKET_MODEL/Market-Model.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Market model"
+    },
+    "market.raw": {
+      "file": "02_MARKET_MODEL/RAW.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "RAW input"
+    },
+    "market.timeframe": {
+      "file": "02_MARKET_MODEL/Timeframe.md",
+      "type": "market",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Timeframe"
+    },
+    "source.a_zone_detector": {
+      "file": "06_SOURCE/Modules/a_zone_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "a zone detector"
+    },
+    "source.blue_line_detector": {
+      "file": "06_SOURCE/Modules/blue_line_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "blue line detector"
+    },
+    "source.core_utils": {
+      "file": "06_SOURCE/Modules/core_utils.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "core utils"
+    },
+    "source.dependencies": {
+      "file": "06_SOURCE/Dependency-Map.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Source dependency map"
+    },
+    "source.direction_policy": {
+      "file": "06_SOURCE/Modules/direction_policy.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "direction policy"
+    },
+    "source.e_zone_detector": {
+      "file": "06_SOURCE/Modules/e_zone_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "e zone detector"
+    },
+    "source.integration_boundary": {
+      "file": "06_SOURCE/Integration-Boundary.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Chart-to-bridge input scope"
+    },
+    "source.lifecycle_engine": {
+      "file": "06_SOURCE/Modules/lifecycle_engine.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "lifecycle engine"
+    },
+    "source.map": {
+      "file": "06_SOURCE/Source-Map.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Source map"
+    },
+    "source.reaction_engine": {
+      "file": "06_SOURCE/Modules/reaction_engine.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "reaction engine"
+    },
+    "source.s_zone_detector": {
+      "file": "06_SOURCE/Modules/s_zone_detector.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "s zone detector"
+    },
+    "source.state_map": {
+      "file": "06_SOURCE/State-Map.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "State and ownership map"
+    },
+    "source.trading_pipeline": {
+      "file": "06_SOURCE/Modules/trading_pipeline.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "trading pipeline"
+    },
+    "system.authority": {
+      "file": "00_SYSTEM/AUTHORITY_MODEL.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Authority and status model"
+    },
+    "system.editing": {
+      "file": "00_SYSTEM/EDITING_POLICY.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "AI editing policy"
+    },
+    "system.frontmatter": {
+      "file": "00_SYSTEM/FRONTMATTER_SCHEMA.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Frontmatter schema"
+    },
+    "system.ids": {
+      "file": "00_SYSTEM/ID_CONVENTIONS.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Stable ID conventions"
+    },
+    "system.knowledge_model": {
+      "file": "00_SYSTEM/KNOWLEDGE_MODEL.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Knowledge model"
+    },
+    "system.manifest": {
+      "file": "00_SYSTEM/VAULT_MANIFEST.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Vault manifest"
+    },
+    "system.retrieval": {
+      "file": "00_SYSTEM/RETRIEVAL_POLICY.md",
+      "type": "system",
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Retrieval policy"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+"""TradingBot calculation engine package."""

@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-09-25T02:21:32.7688721Z",
+  "source_root": "D:/My-Projects/TradingBot",
+  "mirror_kind": "byte-exact snapshot",
+  "files": [
+    {
+      "source": "engine/bridge/trading_pipeline.py",
+      "mirror": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+      "sha256": "a14b00ef08e3e97260b856ffe0dab8044cc70026d272e08e3d4350e9cff249cd",
+      "bytes": 111984
+    },
+    {
+      "source": "engine/pipeline/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/__init__.py",
+      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
+      "bytes": 348
+    },
+    {
+      "source": "engine/pipeline/a_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097",
+      "bytes": 31007
+    },
+    {
+      "source": "engine/pipeline/blue_line_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448",
+      "bytes": 15802
+    },
+    {
+      "source": "engine/pipeline/core_utils.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/core_utils.py",
+      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de",
+      "bytes": 885
+    },
+    {
+      "source": "engine/pipeline/direction_policy.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+      "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
+      "bytes": 2282
+    },
+    {
+      "source": "engine/pipeline/e_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "sha256": "6becc792a17e40f572673bf65bc9818c9a957244de811be2823402d41c36e628",
+      "bytes": 139655
+    },
+    {
+      "source": "engine/pipeline/lifecycle_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "sha256": "330e26ffc04c24dea952e9a1e8e39da1a434936d0f80ef2233bd279fc32e8af1",
+      "bytes": 74496
+    },
+    {
+      "source": "engine/pipeline/reaction_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6",
+      "bytes": 103120
+    },
+    {
+      "source": "engine/pipeline/s_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+      "sha256": "7714025b3f43087b09844df6feeef4eef0ec72eeb841115293df4c126fd202ee",
+      "bytes": 65869
+    },
+    {
+      "source": "engine/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/__init__.py",
+      "sha256": "b8cf63f6eb68b0cdb2b05f1173d4e0d03ab01b68c54f7a26b29fb3180377de8c",
+      "bytes": 45
+    },
+    {
+      "source": "engine/bridge/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/bridge/__init__.py",
+      "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
+      "bytes": 64
+    }
+  ],
+  "algorithm_references": [
+    {
+      "source": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
+      "sha256": "7537cb0a8c007e66b24967ab272af53a1e952414ce143c1d38d396951c49adc3",
+      "bytes": 766916
+    },
+    {
+      "source": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
+      "sha256": "fe9de3f6aaad68aec5f4de53437cb5d0d7398b9d35050d2c825cd0755c762ea0",
+      "bytes": 765830
+    }
+  ]
+}

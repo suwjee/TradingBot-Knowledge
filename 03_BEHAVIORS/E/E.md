@@ -1,0 +1,18 @@
+---
+id: "behavior.e"
+type: "behavior"
+status: "canonical"
+authority: "normative"
+title: "E"
+calculated_by: ["algorithm.e", "algorithm.reconciliation", "algorithm.lifecycle"]
+implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+depends_on: ["behavior.s", "algorithm.order"]
+parent_of: ["behavior.e.red", "behavior.e.blue"]
+source_refs: ["engine/pipeline/e_zone_detector.py#L27", "engine/pipeline/e_zone_detector.py#L2463"]
+---
+
+# E
+
+E is the larger behavior built recursively from stopped accepted S or E. Each E has family Red/Blue, number, parent identity, source, decision, price, and accepted physical Order provenance. An E child may continue a stopped parent, while lifecycle reconciliation can preserve independent S-owned E1 roots. A consumed non-public S may supply continuation evidence for a stopped larger E without becoming public S.
+
+Family and number are reconciled from active accepted ownership, not inferred solely from discovery order. One physical source (sourceIndex,sourceTime) has at most one accepted E: Red outranks Blue, then higher number within family, with first accepted provenance retained on exact ties. StopAll and final visibility can suppress E at a common source.
