@@ -118,7 +118,7 @@ def build() -> int:
                 if source in module_paths:
                     errors.append(f"Duplicate module source_path: {source}")
                 module_paths.add(source)
-            for ref in data.get("source_refs", []):
+            for ref in [*data.get("source_refs", []), *data.get("source_reference", [])]:
                 source, sep, anchor = ref.partition("#L")
                 actual = safe_path(PROD, source)
                 if not actual.is_file():
@@ -145,25 +145,26 @@ def build() -> int:
 
     edges = []
     for ident, data in notes.items():
-        for key in REL_KEYS:
+        for key in (*REL_KEYS, "related_entities"):
             for target in data.get(key, []):
                 if target not in notes:
                     errors.append(f"Unresolved {key}: {ident} -> {target}")
                     continue
+                edge_key = "relates_to" if key == "related_entities" else key
                 source_type = data["type"]
                 target_type = notes[target]["type"]
-                if key in {"implemented_by"} and target_type != "source":
+                if edge_key in {"implemented_by"} and target_type != "source":
                     errors.append(f"implemented_by target not Source: {ident} -> {target}")
-                if key == "calculated_by" and target_type != "algorithm":
+                if edge_key == "calculated_by" and target_type != "algorithm":
                     errors.append(f"calculated_by target not Algorithm: {ident} -> {target}")
-                if key in {"implements", "supports", "orchestrates"} and (source_type != "source" or target_type != "algorithm"):
-                    errors.append(f"Wrong {key} types: {ident} -> {target}")
-                if key == "depends_on" and ident == target:
+                if edge_key in {"implements", "supports", "orchestrates"} and (source_type != "source" or target_type != "algorithm"):
+                    errors.append(f"Wrong {edge_key} types: {ident} -> {target}")
+                if edge_key == "depends_on" and ident == target:
                     errors.append(f"Self dependency: {ident}")
                 if (data["authority"] == "normative" and notes[target]["authority"] == "non-canonical"
-                        and key not in {"relates_to", "affects"}):
-                    errors.append(f"Normative edge into non-canonical knowledge: {ident} {key} {target}")
-                edges.append({"from": ident, "type": key, "to": target})
+                        and edge_key not in {"relates_to", "affects"}):
+                    errors.append(f"Normative edge into non-canonical knowledge: {ident} {edge_key} {target}")
+                edges.append({"from": ident, "type": edge_key, "to": target})
     pairs = {(row["from"], row["type"], row["to"]) for row in edges}
     for source, key, target in pairs:
         if key == "implemented_by" and notes[source]["type"] == "algorithm" and (target, "implements", source) not in pairs:

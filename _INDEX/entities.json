@@ -386,6 +386,76 @@
       "authority": "normative",
       "title": "Timeframe"
     },
+    "mirror.algorithm_matrix": {
+      "file": "05_MIRROR/Algorithm-Mirror.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Algorithm mirror matrix"
+    },
+    "mirror.behavior": {
+      "file": "05_MIRROR/Behavior-Mirror.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Behavior mirror model"
+    },
+    "mirror.contract": {
+      "file": "05_MIRROR/Mirror-Contract.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Mirror contract"
+    },
+    "mirror.direction_mapping": {
+      "file": "05_MIRROR/Direction-Mapping.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Verified direction mapping"
+    },
+    "mirror.directional_rules": {
+      "file": "05_MIRROR/Directional-Rules.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Directional rule components"
+    },
+    "mirror.exceptions": {
+      "file": "05_MIRROR/Mirror-Exceptions.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Source-confirmed mirror exceptions"
+    },
+    "mirror.invariants": {
+      "file": "05_MIRROR/Invariant-Rules.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Mirror invariants"
+    },
+    "mirror.mixed_rules": {
+      "file": "05_MIRROR/Mixed-Rules.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Mixed mirror rules"
+    },
+    "mirror.source_map": {
+      "file": "05_MIRROR/Source-Mirror.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Mirror source ownership"
+    },
+    "mirror.validation_rules": {
+      "file": "05_MIRROR/Validation-Rules.md",
+      "type": "mirror",
+      "status": "active",
+      "authority": "canonical",
+      "title": "Mirror validation requirements"
+    },
     "source.a_zone_detector": {
       "file": "06_SOURCE/Modules/a_zone_detector.md",
       "type": "source",

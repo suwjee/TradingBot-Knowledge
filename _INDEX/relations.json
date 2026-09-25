@@ -967,6 +967,611 @@
       "to": "source.integration_boundary"
     },
     {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.a"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.e"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type1"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type2"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type4"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "core.lifecycle"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "market.direction"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "market.candle"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "market.crossing"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "market.direction"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.internal_reaction"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.e_numbering"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.lifecycle"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "algorithm.internal_reaction"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "mirror.algorithm_matrix"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "source.trading_pipeline"
+    },
+    {
       "from": "source.a_zone_detector",
       "type": "affects",
       "to": "behavior.a"
