@@ -4,10 +4,10 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "Lifecycle eligibility and stage ownership"
-implemented_by: ["source.lifecycle_engine", "source.trading_pipeline"]
-produces: ["behavior.a", "behavior.s", "behavior.e"]
+implemented_by: ["source.lifecycle_engine"]
 depends_on: ["algorithm.a", "algorithm.s", "algorithm.e"]
 source_refs: ["engine/pipeline/lifecycle_engine.py#L946", "engine/pipeline/lifecycle_engine.py#L1172", "engine/bridge/trading_pipeline.py#L1903"]
+affects: ["behavior.a", "behavior.s", "behavior.e"]
 ---
 
 # Lifecycle eligibility and stage ownership

@@ -4,8 +4,8 @@ type: "behavior"
 status: "canonical"
 authority: "normative"
 title: "S"
-calculated_by: ["algorithm.s", "algorithm.lifecycle"]
-implemented_by: ["source.s_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+calculated_by: ["algorithm.s"]
+implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.a", "algorithm.order"]
 parent_of: ["behavior.s.red", "behavior.s.blue"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L26", "engine/bridge/trading_pipeline.py#L1130"]

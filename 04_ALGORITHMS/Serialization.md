@@ -4,9 +4,9 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "Public serialization"
-implemented_by: ["source.trading_pipeline", "source.lifecycle_engine"]
-depends_on: ["algorithm.visibility", "algorithm.raw", "algorithm.orderaudit"]
-source_refs: ["engine/bridge/trading_pipeline.py#L239", "engine/bridge/trading_pipeline.py#L1028", "engine/bridge/trading_pipeline.py#L1130", "engine/bridge/trading_pipeline.py#L1285"]
+implemented_by: ["source.trading_pipeline"]
+depends_on: ["algorithm.visibility", "algorithm.raw"]
+source_refs: ["engine/bridge/trading_pipeline.py#L254", "engine/bridge/trading_pipeline.py#L267", "engine/bridge/trading_pipeline.py#L1130", "engine/bridge/trading_pipeline.py#L1285"]
 ---
 
 # Public serialization
@@ -23,13 +23,13 @@ The following outer JSON keys were extracted from the current bridge serializer 
 
 engine, version, pipelineVersion, blueLineVersion, aVersion, sVersion, eVersion, stopAllVersion, blueLinesEnabled, aEnabled, sEnabled, eEnabled, stopAllEnabled, timeframe, actualFrom, actualTo, directions.
 
-### Reaction (trading_pipeline.py L239)
-
-index, time, secondTime, brokenLevel, fromFirstIndex.
-
-### Reset (trading_pipeline.py L239)
+### Reaction (trading_pipeline.py L267)
 
 firstIndex, firstTime, boxTopSourceIndex, boxTopSourceTime, boxTop, boxBottomSourceIndex, boxBottomSourceTime, boxBottom, breakIndex, breakTime, mode.
+
+### Reset (trading_pipeline.py L254)
+
+index, time, secondTime, brokenLevel, fromFirstIndex.
 
 ### Blue (trading_pipeline.py L283)
 

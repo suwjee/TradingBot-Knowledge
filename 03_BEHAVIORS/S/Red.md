@@ -4,8 +4,8 @@ type: "behavior"
 status: "canonical"
 authority: "normative"
 title: "S Red"
-calculated_by: ["algorithm.s", "algorithm.stopall"]
-implemented_by: ["source.s_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+calculated_by: ["algorithm.s"]
+implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.s", "algorithm.order"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/lifecycle_engine.py#L356"]
 ---

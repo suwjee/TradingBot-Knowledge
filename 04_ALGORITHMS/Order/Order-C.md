@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "Order_C Blue-leg cause"
-implemented_by: ["source.e_zone_detector", "source.blue_line_detector", "source.reaction_engine"]
+implemented_by: ["source.e_zone_detector"]
 depends_on: ["algorithm.order", "algorithm.blue", "algorithm.reset"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L648", "engine/pipeline/e_zone_detector.py#L674", "engine/pipeline/e_zone_detector.py#L727"]
 ---

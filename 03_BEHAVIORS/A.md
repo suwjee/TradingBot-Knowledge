@@ -4,10 +4,10 @@ type: "behavior"
 status: "canonical"
 authority: "normative"
 title: "A"
-calculated_by: ["algorithm.a", "algorithm.lifecycle"]
-implemented_by: ["source.a_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+calculated_by: ["algorithm.a"]
+implemented_by: ["source.a_zone_detector", "source.lifecycle_engine"]
 depends_on: ["algorithm.blue", "algorithm.reaction"]
-source_refs: ["engine/pipeline/a_zone_detector.py#L38", "engine/pipeline/lifecycle_engine.py#L946", "engine/bridge/trading_pipeline.py#L1028"]
+source_refs: ["engine/pipeline/a_zone_detector.py#L38", "engine/pipeline/lifecycle_engine.py#L946", "engine/bridge/trading_pipeline.py#L1040"]
 ---
 
 # A

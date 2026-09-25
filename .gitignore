@@ -1,0 +1,15 @@
+# Per-user Obsidian UI state
+.obsidian/workspace.json
+
+# Local generated caches and Python artifacts
+_GENERATED/Cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Platform/editor scratch files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.log

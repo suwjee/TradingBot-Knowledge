@@ -4,7 +4,7 @@ type: "core"
 status: "canonical"
 authority: "normative"
 title: "Precision and strictness"
-source_refs: ["engine/pipeline/core_utils.py#L11", "engine/pipeline/direction_policy.py#L32", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L1044"]
+source_refs: ["engine/pipeline/core_utils.py#L11", "engine/pipeline/direction_policy.py#L32", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L199"]
 ---
 
 # Precision and strictness

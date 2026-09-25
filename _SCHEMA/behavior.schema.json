@@ -1,67 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "behavior note",
   "type": "object",
   "required": [
-    "id",
-    "type",
-    "status",
-    "authority",
-    "title",
     "calculated_by",
     "implemented_by"
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
-    },
-    "type": {
-      "const": "behavior"
-    },
-    "status": {
-      "enum": [
-        "canonical",
-        "active",
-        "draft",
-        "proposed",
-        "pending-fix",
-        "deprecated",
-        "superseded",
-        "archived"
-      ]
-    },
-    "authority": {
-      "enum": [
-        "normative",
-        "executable",
-        "empirical",
-        "historical",
-        "non-canonical"
-      ]
-    },
-    "title": {
-      "type": "string",
-      "minLength": 1
-    },
-    "source_refs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
     "calculated_by": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "minItems": 1
     },
     "implemented_by": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "minItems": 1
     }
-  },
-  "additionalProperties": true,
-  "title": "behavior note"
+  }
 }

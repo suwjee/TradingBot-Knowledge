@@ -5,10 +5,10 @@ status: "canonical"
 authority: "normative"
 title: "StopAll Type-2"
 calculated_by: ["algorithm.stopall"]
-implemented_by: ["source.lifecycle_engine", "source.trading_pipeline"]
+implemented_by: ["source.lifecycle_engine"]
 depends_on: ["behavior.stopall"]
 source_gate_type: "stopall-stop"
-source_refs: ["engine/pipeline/lifecycle_engine.py#L476", "engine/bridge/trading_pipeline.py#L1300"]
+source_refs: ["engine/pipeline/lifecycle_engine.py#L487", "engine/bridge/trading_pipeline.py#L1300"]
 ---
 
 # StopAll Type-2

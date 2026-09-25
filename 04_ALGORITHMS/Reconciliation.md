@@ -5,7 +5,7 @@ status: "canonical"
 authority: "normative"
 title: "E and lifecycle reconciliation"
 implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
-produces: ["behavior.e", "core.e_numbering"]
+produces: ["behavior.e", "behavior.e.red", "behavior.e.blue", "core.e_numbering"]
 depends_on: ["algorithm.e", "algorithm.lifecycle"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L2267", "engine/pipeline/e_zone_detector.py#L2463", "engine/pipeline/e_zone_detector.py#L2311"]
 ---

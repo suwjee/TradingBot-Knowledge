@@ -4,8 +4,8 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "Internal Reaction"
-implemented_by: ["source.reaction_engine", "source.lifecycle_engine", "source.trading_pipeline"]
-depends_on: ["algorithm.reaction", "algorithm.visibility"]
+implemented_by: ["source.reaction_engine"]
+depends_on: ["algorithm.reaction"]
 source_refs: ["engine/pipeline/reaction_engine.py#L1202", "engine/pipeline/lifecycle_engine.py#L1658"]
 ---
 

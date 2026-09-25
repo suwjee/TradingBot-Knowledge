@@ -75,6 +75,7 @@
     "system.ids": "00_SYSTEM/ID_CONVENTIONS.md",
     "system.knowledge_model": "00_SYSTEM/KNOWLEDGE_MODEL.md",
     "system.manifest": "00_SYSTEM/VAULT_MANIFEST.md",
+    "system.phase_4_5_audit": "00_SYSTEM/PHASE_4_5_AUDIT.md",
     "system.retrieval": "00_SYSTEM/RETRIEVAL_POLICY.md"
   }
 }

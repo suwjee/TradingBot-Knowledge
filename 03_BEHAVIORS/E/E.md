@@ -4,8 +4,8 @@ type: "behavior"
 status: "canonical"
 authority: "normative"
 title: "E"
-calculated_by: ["algorithm.e", "algorithm.reconciliation", "algorithm.lifecycle"]
-implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+calculated_by: ["algorithm.e", "algorithm.reconciliation"]
+implemented_by: ["source.e_zone_detector", "source.lifecycle_engine"]
 depends_on: ["behavior.s", "algorithm.order"]
 parent_of: ["behavior.e.red", "behavior.e.blue"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L27", "engine/pipeline/e_zone_detector.py#L2463"]

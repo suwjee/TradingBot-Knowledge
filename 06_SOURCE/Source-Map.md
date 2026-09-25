@@ -4,8 +4,8 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "Source map"
-implements: ["algorithm.raw", "algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.lifecycle", "algorithm.stopall", "algorithm.visibility", "algorithm.serialization"]
 source_refs: ["engine/bridge/trading_pipeline.py#L1698", "engine/bridge/trading_pipeline.py#L1903"]
+relates_to: ["core.pipeline"]
 ---
 
 # Source map
@@ -36,5 +36,5 @@ The current bridge dynamically loads engine/pipeline modules; module notes and t
 | algorithm.serialization | bridge.serialize_direction_payload L2776; build_bridge_output L1364 | versioned JSON and bridge behavior view | all |
 | algorithm.orderaudit | S/E ledgers, lifecycle_engine.prepare_order_audit L621, bridge.serialize_order_audit L1537 | pending-fix executable output | none canonical |
 
-The bridge calls Blue -> A -> S -> E and then lifecycle passes within calculate_full_direction_state L1903. prepare_pipeline_state L2300 constructs both Reaction directions for dependent stages. finalize_direction_visibility L2549 detects StopAll and clips only after full calculation. See Dependency-Map and State-Map.
+This map documents source ownership; it is not itself an implementation module. The bridge orchestrates Blue -> A -> S -> E and then lifecycle passes within calculate_full_direction_state L1903. prepare_pipeline_state L2300 constructs both Reaction directions for dependent stages. finalize_direction_visibility L2549 detects StopAll and clips only after full calculation. See Dependency-Map and State-Map.
 

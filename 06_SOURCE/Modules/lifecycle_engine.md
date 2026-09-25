@@ -7,7 +7,7 @@ title: "lifecycle engine"
 source_path: "engine/pipeline/lifecycle_engine.py"
 mirror: "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"
 sha256: "330e26ffc04c24dea952e9a1e8e39da1a434936d0f80ef2233bd279fc32e8af1"
-implements: ["algorithm.lifecycle", "algorithm.stopall", "algorithm.visibility", "algorithm.reconciliation"]
+implements: ["algorithm.lifecycle", "algorithm.stopall", "algorithm.visibility", "algorithm.reconciliation", "algorithm.orderaudit"]
 affects: ["behavior.a", "behavior.s", "behavior.e", "behavior.stopall"]
 source_refs: ["engine/pipeline/lifecycle_engine.py#L1"]
 ---

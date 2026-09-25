@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vault note frontmatter",
   "type": "object",
   "required": [
     "id",
@@ -54,9 +55,269 @@
     "source_refs": {
       "type": "array",
       "items": {
-        "type": "string"
-      }
+        "type": "string",
+        "pattern": "^(?:engine|apps/chart)/[A-Za-z0-9_./-]+(?:#L[1-9][0-9]*)?$"
+      },
+      "uniqueItems": true
+    },
+    "source_path": {
+      "type": "string",
+      "pattern": "^engine/(?:bridge|pipeline)/[a-z0-9_]+\\.py$"
+    },
+    "mirror": {
+      "type": "string",
+      "pattern": "^06_SOURCE/Code/engine/(?:bridge|pipeline)/[a-z0-9_]+\\.py$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_gate_type": {
+      "enum": [
+        "sequence-group-stop",
+        "stopall-stop",
+        "opposite-s-group-stop"
+      ]
+    },
+    "external_source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(?:engine|apps/chart)/[A-Za-z0-9_./-]+$"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "calculated_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "implemented_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "produces": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "implements": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "affects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "parent_of": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "child_of": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "relates_to": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "supports": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "orchestrates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+      },
+      "uniqueItems": true
+    },
+    "external_source_hashes": {
+      "type": "object",
+      "patternProperties": {
+        "^(?:engine|apps/chart)/[A-Za-z0-9_./-]+$": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "canonical"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "authority": {
+            "const": "normative"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "pending-fix"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "authority": {
+            "const": "non-canonical"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "id": {
+            "const": "algorithm.orderaudit"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "pending-fix"
+          },
+          "authority": {
+            "const": "non-canonical"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "source_path"
+        ]
+      },
+      "then": {
+        "properties": {
+          "type": {
+            "const": "source"
+          },
+          "authority": {
+            "const": "executable"
+          }
+        },
+        "required": [
+          "mirror",
+          "sha256"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "behavior"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "calculated_by",
+          "implemented_by"
+        ],
+        "properties": {
+          "calculated_by": {
+            "minItems": 1
+          },
+          "implemented_by": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "algorithm"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "then": {
+        "required": [
+          "implemented_by"
+        ],
+        "properties": {
+          "implemented_by": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
 }

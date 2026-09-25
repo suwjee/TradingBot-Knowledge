@@ -4,9 +4,9 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "Order_B Reset-leg cause"
-implemented_by: ["source.e_zone_detector", "source.reaction_engine"]
+implemented_by: ["source.e_zone_detector"]
 depends_on: ["algorithm.order", "algorithm.reset", "algorithm.reaction"]
-source_refs: ["engine/pipeline/e_zone_detector.py#L390", "engine/pipeline/e_zone_detector.py#L499", "engine/pipeline/e_zone_detector.py#L1545"]
+source_refs: ["engine/pipeline/e_zone_detector.py#L390", "engine/pipeline/e_zone_detector.py#L499", "engine/pipeline/e_zone_detector.py#L1143"]
 ---
 
 # Order_B Reset-leg cause

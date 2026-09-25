@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "RAW normalization and candle construction"
-implemented_by: ["source.trading_pipeline", "source.reaction_engine", "source.core_utils"]
+implemented_by: ["source.trading_pipeline", "source.reaction_engine"]
 produces: ["market.candle", "market.exact_chronology"]
 depends_on: []
 relates_to: ["source.integration_boundary"]

@@ -1,88 +1,233 @@
-from pathlib import Path
-import hashlib,json,re,sys
-ROOT=Path(__file__).resolve().parents[1]
-PROD=Path(r"D:\My-Projects\TradingBot")
-REL_KEYS=("calculated_by","implemented_by","depends_on","produces","implements","affects","parent_of","child_of","relates_to")
-TYPES={"system","core","market","behavior","algorithm","source","mirror","test","case"}
-STATUS={"canonical","active","draft","proposed","pending-fix","deprecated","superseded","archived"}
-AUTH={"normative","executable","empirical","historical","non-canonical"}
-def frontmatter(path):
-    raw=path.read_text(encoding="utf-8-sig")
-    if not raw.startswith("---\n"):return None
-    end=raw.find("\n---\n",4)
-    if end<0:raise ValueError(f"Unclosed frontmatter: {path}")
-    data={}
-    for line in raw[4:end].splitlines():
-        if not line.strip():continue
-        if ":" not in line:raise ValueError(f"Bad frontmatter line: {path}: {line}")
-        key,value=line.split(":",1)
-        if key in data:raise ValueError(f"Duplicate key {key}: {path}")
-        data[key]=json.loads(value.strip())
-    return data
-def sha(path):
-    h=hashlib.sha256()
-    with path.open("rb") as f:
-        while chunk:=f.read(1024*1024):h.update(chunk)
-    return h.hexdigest()
-def build():
-    notes={}
-    files={}
-    errors=[]
-    for path in sorted(ROOT.rglob("*.md")):
-        rel=path.relative_to(ROOT).as_posix()
-        if ".obsidian" in path.parts or "Code" in path.parts:continue
-        if path.stat().st_size==0:continue
-        try:d=frontmatter(path)
-        except Exception as e:errors.append(str(e));continue
-        if d is None:errors.append(f"Populated Markdown missing frontmatter: {rel}");continue
-        ident=d.get("id")
-        if ident in notes:errors.append(f"Duplicate ID {ident}: {rel}")
-        if not isinstance(ident,str) or not re.fullmatch(r"[a-z][a-z0-9]*(\.[a-z0-9_]+)+",ident or ""):errors.append(f"Invalid ID: {rel}")
-        if d.get("type") not in TYPES:errors.append(f"Invalid type: {rel}")
-        if d.get("status") not in STATUS:errors.append(f"Invalid status: {rel}")
-        if d.get("authority") not in AUTH:errors.append(f"Invalid authority: {rel}")
-        if d.get("status")=="pending-fix" and d.get("authority")=="normative":errors.append(f"Pending-fix normative: {rel}")
-        for key in REL_KEYS:
-            if key in d and (not isinstance(d[key],list) or not all(isinstance(x,str) for x in d[key])):errors.append(f"Invalid relation array {key}: {rel}")
-        if d.get("type")=="behavior" and ("calculated_by" not in d or "implemented_by" not in d):errors.append(f"Behavior missing mapping: {rel}")
-        if d.get("type")=="algorithm" and "implemented_by" not in d:errors.append(f"Algorithm missing source mapping: {rel}")
-        for ref in d.get("source_refs",[]):
-            src,_,anchor=ref.partition("#L")
-            actual=PROD/src
-            if not actual.is_file():errors.append(f"Missing source ref: {ident}: {ref}")
-            elif anchor and (not anchor.isdigit() or int(anchor)<1 or int(anchor)>sum(1 for _ in actual.open(encoding="utf-8"))):errors.append(f"Invalid source line: {ident}: {ref}")
-        notes[ident]=d
-        files[ident]=rel
-    edges=[]
-    for ident,d in notes.items():
-        for key in REL_KEYS:
-            for target in d.get(key,[]):
-                if target not in notes:errors.append(f"Unresolved {key}: {ident} -> {target}")
-                edges.append({"from":ident,"type":key,"to":target})
-    manifest=json.loads((ROOT/"_INDEX/source-hashes.json").read_text(encoding="utf-8-sig"))
-    for row in manifest["files"]:
-        src=PROD/row["source"];mirror=ROOT/row["mirror"]
-        if not src.is_file() or not mirror.is_file():errors.append(f"Missing mirror/source: {row['source']}");continue
-        if sha(src)!=row["sha256"] or sha(mirror)!=row["sha256"]:errors.append(f"SHA mismatch: {row['source']}")
-    for row in manifest.get("algorithm_references",[]):
-        if sha(PROD/row["source"])!=row["sha256"]:errors.append(f"Reference changed: {row['source']}")
-    if errors:
-        print("\n".join(errors),file=sys.stderr)
-        print(f"FAILED: {len(errors)} errors",file=sys.stderr)
-        return 1
-    entity_rows={i:{"file":files[i],"type":d["type"],"status":d["status"],"authority":d["authority"],"title":d["title"]} for i,d in sorted(notes.items())}
-    source_map={}
-    for ident,d in notes.items():
-        if d["type"]=="algorithm":source_map[ident]=sorted(set(d.get("implemented_by",[])))
-    outputs={
-      "entities.json":{"generated_from":"canonical Markdown frontmatter","entities":entity_rows},
-      "relations.json":{"generated_from":"canonical Markdown frontmatter","relations":sorted(edges,key=lambda x:(x["from"],x["type"],x["to"]))},
-      "files.json":{"generated_from":"canonical Markdown frontmatter","files":dict(sorted(files.items()))},
-      "source-map.json":{"generated_from":"canonical Markdown frontmatter","algorithm_to_source":dict(sorted(source_map.items()))},
-      "knowledge-graph.json":{"generated_from":"canonical Markdown frontmatter","nodes":[{"id":i,**x} for i,x in entity_rows.items()],"edges":sorted(edges,key=lambda x:(x["from"],x["type"],x["to"]))}
-    }
-    for name,obj in outputs.items():(ROOT/"_INDEX"/name).write_text(json.dumps(obj,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-    print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(manifest['files'])} verified mirrored files, {len(manifest.get('algorithm_references',[]))} reference hashes")
-    return 0
-if __name__=="__main__":raise SystemExit(build())
+"""Validate Vault frontmatter and evidence, then rebuild derived indexes.
 
+Requires jsonschema. Reads production source/references only; writes _INDEX/*.json only
+when every validation succeeds. Run with: python -B _SCHEMA/build_indexes.py
+"""
+from __future__ import annotations
+
+from pathlib import Path
+import hashlib
+import json
+import re
+import sys
+
+from jsonschema import Draft202012Validator
+
+ROOT = Path(__file__).resolve().parents[1]
+PROD = Path(r"D:\My-Projects\TradingBot")
+REL_KEYS = (
+    "calculated_by", "implemented_by", "depends_on", "produces", "implements",
+    "affects", "parent_of", "child_of", "relates_to", "supports", "orchestrates",
+)
+SCHEMA_TYPES = {"behavior", "algorithm", "source", "test", "case"}
+STOPALL_GATES = {
+    "behavior.stopall.type1": "sequence-group-stop",
+    "behavior.stopall.type2": "stopall-stop",
+    "behavior.stopall.type3": "opposite-s-group-stop",
+}
+
+
+def frontmatter(path: Path) -> dict | None:
+    raw = path.read_text(encoding="utf-8-sig")
+    if not raw.startswith("---\n"):
+        return None
+    end = raw.find("\n---\n", 4)
+    if end < 0:
+        raise ValueError(f"Unclosed frontmatter: {path}")
+    data: dict = {}
+    for line in raw[4:end].splitlines():
+        if not line.strip():
+            continue
+        if ":" not in line:
+            raise ValueError(f"Bad frontmatter line: {path}: {line}")
+        key, value = line.split(":", 1)
+        if not re.fullmatch(r"[a-z][a-z0-9_]*", key):
+            raise ValueError(f"Invalid key {key!r}: {path}")
+        if key in data:
+            raise ValueError(f"Duplicate key {key}: {path}")
+        data[key] = json.loads(value.strip())
+    return data
+
+
+def sha(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        while chunk := handle.read(1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def safe_path(root: Path, relative: str) -> Path:
+    if (not isinstance(relative, str) or not relative or "\\" in relative
+            or ":" in relative or any(part in {"", ".", ".."} for part in relative.split("/"))):
+        raise ValueError(f"Non-normalized path: {relative!r}")
+    full = (root / relative).resolve()
+    if not full.is_relative_to(root.resolve()):
+        raise ValueError(f"Path outside root: {relative!r}")
+    return full
+
+
+def build() -> int:
+    errors: list[str] = []
+    schemas: dict[str, Draft202012Validator] = {}
+    for name in ["note", *sorted(SCHEMA_TYPES)]:
+        try:
+            schema = json.loads((ROOT / "_SCHEMA" / f"{name}.schema.json").read_text(encoding="utf-8-sig"))
+            Draft202012Validator.check_schema(schema)
+            schemas[name] = Draft202012Validator(schema)
+        except Exception as exc:
+            errors.append(f"Invalid schema {name}: {exc}")
+    if errors:
+        print("\n".join(errors), file=sys.stderr)
+        return 1
+
+    notes: dict[str, dict] = {}
+    files: dict[str, str] = {}
+    module_paths: set[str] = set()
+    for path in sorted(ROOT.rglob("*.md")):
+        rel = path.relative_to(ROOT).as_posix()
+        if ".obsidian" in path.parts or "Code" in path.parts or path.stat().st_size == 0:
+            continue
+        try:
+            data = frontmatter(path)
+            if data is None:
+                raise ValueError("Populated Markdown missing frontmatter")
+            for name in ("note", data.get("type")):
+                if name not in schemas:
+                    continue
+                for err in schemas[name].iter_errors(data):
+                    errors.append(f"{rel}: {name} schema: {err.message}")
+            ident = data.get("id")
+            if not isinstance(ident, str):
+                raise ValueError("Missing or invalid ID")
+            if ident in notes:
+                raise ValueError(f"Duplicate ID {ident}: already in {files[ident]}")
+            if ident.split(".", 1)[0] != data.get("type"):
+                raise ValueError(f"ID/type prefix mismatch: {ident} / {data.get('type')}")
+            if rel.startswith("06_SOURCE/Modules/"):
+                if "source_path" not in data:
+                    raise ValueError("Physical module note missing source_path")
+            if "source_path" in data:
+                source = data["source_path"]
+                source_file = safe_path(PROD, source)
+                mirror = safe_path(ROOT, data.get("mirror"))
+                if not source_file.is_file() or not mirror.is_file():
+                    errors.append(f"Missing source/mirror for {ident}")
+                elif sha(source_file) != data.get("sha256") or sha(mirror) != data.get("sha256"):
+                    errors.append(f"Module SHA mismatch: {ident}")
+                if source in module_paths:
+                    errors.append(f"Duplicate module source_path: {source}")
+                module_paths.add(source)
+            for ref in data.get("source_refs", []):
+                source, sep, anchor = ref.partition("#L")
+                actual = safe_path(PROD, source)
+                if not actual.is_file():
+                    errors.append(f"Missing source ref: {ident}: {ref}")
+                elif sep and (not anchor.isdigit() or int(anchor) < 1
+                              or int(anchor) > len(actual.read_text(encoding="utf-8-sig").splitlines())):
+                    errors.append(f"Invalid source line: {ident}: {ref}")
+            external_paths = data.get("external_source_paths", [])
+            external_hashes = data.get("external_source_hashes", {})
+            if external_paths and set(external_paths) != set(external_hashes):
+                errors.append(f"External source/hash inventory mismatch: {ident}")
+            for source in external_paths:
+                actual = safe_path(PROD, source)
+                if not actual.is_file():
+                    errors.append(f"Missing external source: {ident}: {source}")
+                elif sha(actual) != external_hashes.get(source):
+                    errors.append(f"External source hash changed: {ident}: {source}")
+            if ident in STOPALL_GATES and data.get("source_gate_type") != STOPALL_GATES[ident]:
+                errors.append(f"Wrong StopAll gate mapping: {ident}")
+            notes[ident] = data
+            files[ident] = rel
+        except Exception as exc:
+            errors.append(f"{rel}: {exc}")
+
+    edges = []
+    for ident, data in notes.items():
+        for key in REL_KEYS:
+            for target in data.get(key, []):
+                if target not in notes:
+                    errors.append(f"Unresolved {key}: {ident} -> {target}")
+                    continue
+                source_type = data["type"]
+                target_type = notes[target]["type"]
+                if key in {"implemented_by"} and target_type != "source":
+                    errors.append(f"implemented_by target not Source: {ident} -> {target}")
+                if key == "calculated_by" and target_type != "algorithm":
+                    errors.append(f"calculated_by target not Algorithm: {ident} -> {target}")
+                if key in {"implements", "supports", "orchestrates"} and (source_type != "source" or target_type != "algorithm"):
+                    errors.append(f"Wrong {key} types: {ident} -> {target}")
+                if key == "depends_on" and ident == target:
+                    errors.append(f"Self dependency: {ident}")
+                if (data["authority"] == "normative" and notes[target]["authority"] == "non-canonical"
+                        and key not in {"relates_to", "affects"}):
+                    errors.append(f"Normative edge into non-canonical knowledge: {ident} {key} {target}")
+                edges.append({"from": ident, "type": key, "to": target})
+    pairs = {(row["from"], row["type"], row["to"]) for row in edges}
+    for source, key, target in pairs:
+        if key == "implemented_by" and notes[source]["type"] == "algorithm" and (target, "implements", source) not in pairs:
+            errors.append(f"Missing inverse implements: {source} -> {target}")
+        if key == "implements" and (target, "implemented_by", source) not in pairs:
+            errors.append(f"Missing inverse implemented_by: {source} -> {target}")
+        if key == "calculated_by" and notes[source]["type"] == "behavior" and (target, "produces", source) not in pairs:
+            errors.append(f"Missing inverse produces: {source} -> {target}")
+
+    try:
+        manifest = json.loads((ROOT / "_INDEX/source-hashes.json").read_text(encoding="utf-8-sig"))
+        mirror_expected: set[str] = set()
+        source_expected: set[str] = set()
+        for row in manifest["files"]:
+            source = safe_path(PROD, row["source"])
+            mirror = safe_path(ROOT, row["mirror"])
+            mirror_expected.add(row["mirror"])
+            source_expected.add(row["source"])
+            if not source.is_file() or not mirror.is_file():
+                errors.append(f"Missing mirror/source: {row['source']}")
+            elif sha(source) != row["sha256"] or sha(mirror) != row["sha256"] or source.stat().st_size != row["bytes"]:
+                errors.append(f"SHA/size mismatch: {row['source']}")
+        mirror_actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / "06_SOURCE/Code").rglob("*.py")}
+        if mirror_actual != mirror_expected:
+            errors.append(f"Mirror inventory mismatch: missing={sorted(mirror_expected-mirror_actual)} extra={sorted(mirror_actual-mirror_expected)}")
+        if not module_paths.issubset(source_expected):
+            errors.append(f"Module notes missing from manifest: {sorted(module_paths-source_expected)}")
+        if len(module_paths) != 9:
+            errors.append(f"Expected 9 physical module notes; found {len(module_paths)}")
+        refs = manifest.get("algorithm_references", [])
+        if len(refs) != 2:
+            errors.append(f"Expected two directional reference hashes; found {len(refs)}")
+        for row in refs:
+            source = safe_path(PROD, row["source"])
+            if not source.is_file() or sha(source) != row["sha256"]:
+                errors.append(f"Reference changed: {row['source']}")
+    except Exception as exc:
+        errors.append(f"Hash manifest validation failed: {exc}")
+        manifest = {"files": [], "algorithm_references": []}
+
+    if errors:
+        print("\n".join(sorted(errors)), file=sys.stderr)
+        print(f"FAILED: {len(errors)} errors", file=sys.stderr)
+        return 1
+
+    entity_rows = {ident: {"file": files[ident], "type": data["type"], "status": data["status"],
+                            "authority": data["authority"], "title": data["title"]}
+                   for ident, data in sorted(notes.items())}
+    source_map = {ident: sorted(set(data.get("implemented_by", [])))
+                  for ident, data in sorted(notes.items()) if data["type"] == "algorithm"}
+    sorted_edges = sorted(edges, key=lambda row: (row["from"], row["type"], row["to"]))
+    outputs = {
+        "entities.json": {"generated_from": "canonical Markdown frontmatter", "entities": entity_rows},
+        "relations.json": {"generated_from": "canonical Markdown frontmatter", "relations": sorted_edges},
+        "files.json": {"generated_from": "canonical Markdown frontmatter", "files": dict(sorted(files.items()))},
+        "source-map.json": {"generated_from": "canonical Markdown frontmatter", "algorithm_to_source": source_map},
+        "knowledge-graph.json": {"generated_from": "canonical Markdown frontmatter",
+                                 "nodes": [{"id": ident, **row} for ident, row in entity_rows.items()], "edges": sorted_edges},
+    }
+    for name, obj in outputs.items():
+        (ROOT / "_INDEX" / name).write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(manifest['files'])} verified mirrored files, {len(manifest.get('algorithm_references', []))} reference hashes")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(build())

@@ -4,8 +4,8 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "Source dependency map"
-implements: ["algorithm.raw", "algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.lifecycle"]
 source_refs: ["engine/bridge/trading_pipeline.py#L1698", "engine/bridge/trading_pipeline.py#L1903"]
+relates_to: ["core.pipeline"]
 ---
 
 # Source dependency map

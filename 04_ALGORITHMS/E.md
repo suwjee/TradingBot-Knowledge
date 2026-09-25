@@ -4,10 +4,11 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "E construction and recursive chains"
-implemented_by: ["source.e_zone_detector", "source.trading_pipeline"]
+implemented_by: ["source.e_zone_detector"]
 produces: ["behavior.e", "behavior.e.red", "behavior.e.blue"]
-depends_on: ["algorithm.s", "algorithm.order", "algorithm.reconciliation"]
+depends_on: ["algorithm.s", "algorithm.order"]
 source_refs: ["engine/pipeline/e_zone_detector.py#L1901", "engine/pipeline/e_zone_detector.py#L2040", "engine/pipeline/e_zone_detector.py#L2371"]
+relates_to: ["algorithm.reconciliation"]
 ---
 
 # E construction and recursive chains

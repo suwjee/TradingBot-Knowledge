@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "A calculation"
-implemented_by: ["source.a_zone_detector", "source.blue_line_detector"]
+implemented_by: ["source.a_zone_detector"]
 produces: ["behavior.a"]
 depends_on: ["algorithm.blue", "algorithm.reaction", "market.exact_chronology"]
 source_refs: ["engine/pipeline/a_zone_detector.py#L219", "engine/pipeline/a_zone_detector.py#L311", "engine/pipeline/a_zone_detector.py#L568"]

@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "S calculation and decision"
-implemented_by: ["source.s_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s", "behavior.s.red", "behavior.s.blue"]
 depends_on: ["algorithm.a", "algorithm.order", "algorithm.reaction"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L1319", "engine/pipeline/s_zone_detector.py#L964", "engine/pipeline/s_zone_detector.py#L1422"]

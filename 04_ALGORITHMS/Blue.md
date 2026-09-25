@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "Blue Line"
-implemented_by: ["source.blue_line_detector", "source.reaction_engine"]
+implemented_by: ["source.blue_line_detector"]
 depends_on: ["algorithm.reaction", "algorithm.reset", "market.direction"]
 source_refs: ["engine/pipeline/blue_line_detector.py#L75", "engine/pipeline/blue_line_detector.py#L139", "engine/pipeline/blue_line_detector.py#L299"]
 ---

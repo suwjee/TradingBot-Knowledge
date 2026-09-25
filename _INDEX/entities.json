@@ -519,6 +519,13 @@
       "authority": "normative",
       "title": "Vault manifest"
     },
+    "system.phase_4_5_audit": {
+      "file": "00_SYSTEM/PHASE_4_5_AUDIT.md",
+      "type": "system",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Phase 4.5 independent forensic audit"
+    },
     "system.retrieval": {
       "file": "00_SYSTEM/RETRIEVAL_POLICY.md",
       "type": "system",

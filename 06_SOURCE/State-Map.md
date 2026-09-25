@@ -4,8 +4,8 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "State and ownership map"
-implements: ["algorithm.raw", "algorithm.reaction", "algorithm.s", "algorithm.e", "algorithm.stopall"]
 source_refs: ["engine/bridge/trading_pipeline.py#L1698", "engine/bridge/trading_pipeline.py#L1903"]
+relates_to: ["core.pipeline"]
 ---
 
 # State and ownership map

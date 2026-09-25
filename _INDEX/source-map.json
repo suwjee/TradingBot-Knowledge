@@ -2,25 +2,19 @@
   "generated_from": "canonical Markdown frontmatter",
   "algorithm_to_source": {
     "algorithm.a": [
-      "source.a_zone_detector",
-      "source.blue_line_detector"
+      "source.a_zone_detector"
     ],
     "algorithm.blue": [
-      "source.blue_line_detector",
-      "source.reaction_engine"
+      "source.blue_line_detector"
     ],
     "algorithm.e": [
-      "source.e_zone_detector",
-      "source.trading_pipeline"
+      "source.e_zone_detector"
     ],
     "algorithm.internal_reaction": [
-      "source.lifecycle_engine",
-      "source.reaction_engine",
-      "source.trading_pipeline"
+      "source.reaction_engine"
     ],
     "algorithm.lifecycle": [
-      "source.lifecycle_engine",
-      "source.trading_pipeline"
+      "source.lifecycle_engine"
     ],
     "algorithm.order": [
       "source.e_zone_detector",
@@ -29,17 +23,13 @@
     ],
     "algorithm.order.a": [
       "source.e_zone_detector",
-      "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.order.b": [
-      "source.e_zone_detector",
-      "source.reaction_engine"
+      "source.e_zone_detector"
     ],
     "algorithm.order.c": [
-      "source.blue_line_detector",
-      "source.e_zone_detector",
-      "source.reaction_engine"
+      "source.e_zone_detector"
     ],
     "algorithm.orderaudit": [
       "source.e_zone_detector",
@@ -48,13 +38,11 @@
       "source.trading_pipeline"
     ],
     "algorithm.raw": [
-      "source.core_utils",
       "source.reaction_engine",
       "source.trading_pipeline"
     ],
     "algorithm.reaction": [
-      "source.reaction_engine",
-      "source.trading_pipeline"
+      "source.reaction_engine"
     ],
     "algorithm.reconciliation": [
       "source.e_zone_detector",
@@ -65,33 +53,25 @@
       "source.reaction_engine"
     ],
     "algorithm.s": [
-      "source.lifecycle_engine",
-      "source.s_zone_detector",
-      "source.trading_pipeline"
+      "source.s_zone_detector"
     ],
     "algorithm.s.type1": [
-      "source.s_zone_detector",
-      "source.trading_pipeline"
+      "source.s_zone_detector"
     ],
     "algorithm.s.type2": [
-      "source.s_zone_detector",
-      "source.trading_pipeline"
+      "source.s_zone_detector"
     ],
     "algorithm.s.type3": [
-      "source.s_zone_detector",
-      "source.trading_pipeline"
+      "source.s_zone_detector"
     ],
     "algorithm.s.type4": [
-      "source.s_zone_detector",
-      "source.trading_pipeline"
+      "source.s_zone_detector"
     ],
     "algorithm.serialization": [
-      "source.lifecycle_engine",
       "source.trading_pipeline"
     ],
     "algorithm.stopall": [
-      "source.lifecycle_engine",
-      "source.trading_pipeline"
+      "source.lifecycle_engine"
     ],
     "algorithm.visibility": [
       "source.lifecycle_engine",

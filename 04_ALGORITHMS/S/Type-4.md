@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "S Type-4 Blue-qualified aligned Reaction"
-implemented_by: ["source.s_zone_detector", "source.trading_pipeline"]
+implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s.blue.type4"]
 depends_on: ["algorithm.s", "algorithm.blue", "algorithm.reaction"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L543", "engine/pipeline/s_zone_detector.py#L613"]

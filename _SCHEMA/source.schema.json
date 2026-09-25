@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "source note",
   "type": "object",
   "required": [
     "id",
@@ -9,45 +10,23 @@
     "title"
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
-    },
     "type": {
       "const": "source"
-    },
-    "status": {
-      "enum": [
-        "canonical",
-        "active",
-        "draft",
-        "proposed",
-        "pending-fix",
-        "deprecated",
-        "superseded",
-        "archived"
-      ]
-    },
-    "authority": {
-      "enum": [
-        "normative",
-        "executable",
-        "empirical",
-        "historical",
-        "non-canonical"
-      ]
-    },
-    "title": {
-      "type": "string",
-      "minLength": 1
-    },
-    "source_refs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
-  "additionalProperties": true,
-  "title": "source note"
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "source_path"
+        ]
+      },
+      "then": {
+        "required": [
+          "mirror",
+          "sha256"
+        ]
+      }
+    }
+  ]
 }

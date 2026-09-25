@@ -7,9 +7,9 @@ title: "direction policy"
 source_path: "engine/pipeline/direction_policy.py"
 mirror: "06_SOURCE/Code/engine/pipeline/direction_policy.py"
 sha256: "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea"
-implements: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e"]
 affects: []
 source_refs: ["engine/pipeline/direction_policy.py#L1"]
+supports: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e"]
 ---
 
 # direction policy
@@ -44,5 +44,5 @@ Upstream: none.
 Downstream: reaction_engine, blue_line_detector, a_zone_detector, s_zone_detector, e_zone_detector, lifecycle_engine.
 
 ## Relationships
-Algorithms: algorithm.reaction algorithm.blue algorithm.a algorithm.s algorithm.e.
+Supports algorithm.reaction, algorithm.blue, algorithm.a, algorithm.s, and algorithm.e with shared directional primitives; it does not own those algorithms.
 Behaviors: No direct behavior ownership.

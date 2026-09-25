@@ -4,10 +4,10 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "S Type-1 Simple"
-implemented_by: ["source.s_zone_detector", "source.trading_pipeline"]
+implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s.blue.type1", "behavior.s.red"]
 depends_on: ["algorithm.s", "algorithm.order.a"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L820", "engine/pipeline/s_zone_detector.py#L1148", "engine/bridge/trading_pipeline.py#L1142"]
+source_refs: ["engine/pipeline/s_zone_detector.py#L820", "engine/pipeline/s_zone_detector.py#L1148", "engine/bridge/trading_pipeline.py#L1145"]
 ---
 
 # S Type-1 Simple

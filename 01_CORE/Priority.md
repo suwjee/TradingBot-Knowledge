@@ -4,7 +4,7 @@ type: "core"
 status: "canonical"
 authority: "normative"
 title: "Priority"
-source_refs: ["engine/pipeline/lifecycle_engine.py#L23", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L877"]
+source_refs: ["engine/pipeline/lifecycle_engine.py#L25", "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md#L877"]
 ---
 
 # Priority

@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "S Type-2 Advanced"
-implemented_by: ["source.s_zone_detector", "source.trading_pipeline"]
+implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s.blue.type2", "behavior.s.red"]
 depends_on: ["algorithm.s", "algorithm.reaction"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L418", "engine/pipeline/s_zone_detector.py#L1148"]

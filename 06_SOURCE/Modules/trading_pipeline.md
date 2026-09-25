@@ -7,9 +7,10 @@ title: "trading pipeline"
 source_path: "engine/bridge/trading_pipeline.py"
 mirror: "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
 sha256: "a14b00ef08e3e97260b856ffe0dab8044cc70026d272e08e3d4350e9cff249cd"
-implements: ["algorithm.raw", "algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.lifecycle", "algorithm.stopall", "algorithm.visibility", "algorithm.serialization"]
+implements: ["algorithm.raw", "algorithm.reconciliation", "algorithm.visibility", "algorithm.serialization", "algorithm.orderaudit"]
 affects: ["behavior.a", "behavior.s", "behavior.e", "behavior.stopall"]
 source_refs: ["engine/bridge/trading_pipeline.py#L1"]
+orchestrates: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.lifecycle", "algorithm.stopall"]
 ---
 
 # trading pipeline
@@ -48,5 +49,5 @@ Upstream: RAW JSON; all engine/pipeline modules.
 Downstream: JSON/stdout to Vite and chart, QG_PROGRESS/stderr to middleware.
 
 ## Relationships
-Algorithms: algorithm.raw algorithm.reaction algorithm.blue algorithm.a algorithm.s algorithm.e algorithm.lifecycle algorithm.stopall algorithm.visibility algorithm.serialization.
+Direct implementation ownership: algorithm.raw, algorithm.reconciliation, algorithm.visibility, algorithm.serialization; current non-canonical algorithm.orderaudit serialization/validation. Orchestrates algorithm.reaction, algorithm.blue, algorithm.a, algorithm.s, algorithm.e, algorithm.lifecycle, and algorithm.stopall without owning their detector rules.
 Behaviors: behavior.a behavior.s behavior.e behavior.stopall.

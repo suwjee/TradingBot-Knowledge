@@ -4,8 +4,8 @@ type: "behavior"
 status: "canonical"
 authority: "normative"
 title: "StopAll"
-calculated_by: ["algorithm.stopall", "algorithm.lifecycle"]
-implemented_by: ["source.lifecycle_engine", "source.trading_pipeline"]
+calculated_by: ["algorithm.stopall"]
+implemented_by: ["source.lifecycle_engine"]
 depends_on: ["behavior.e", "behavior.s"]
 parent_of: ["behavior.stopall.type1", "behavior.stopall.type2", "behavior.stopall.type3"]
 source_refs: ["engine/pipeline/lifecycle_engine.py#L39", "engine/bridge/trading_pipeline.py#L1285"]

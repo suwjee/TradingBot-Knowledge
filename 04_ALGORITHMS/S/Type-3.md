@@ -4,7 +4,7 @@ type: "algorithm"
 status: "canonical"
 authority: "normative"
 title: "S Type-3 Reset-leg"
-implemented_by: ["source.s_zone_detector", "source.trading_pipeline"]
+implemented_by: ["source.s_zone_detector"]
 produces: ["behavior.s.blue.type3"]
 depends_on: ["algorithm.s", "algorithm.reset"]
 source_refs: ["engine/pipeline/s_zone_detector.py#L457", "engine/pipeline/s_zone_detector.py#L482", "engine/pipeline/s_zone_detector.py#L1090"]

@@ -5,9 +5,9 @@ status: "canonical"
 authority: "normative"
 title: "S Blue Type-1"
 calculated_by: ["algorithm.s.type1"]
-implemented_by: ["source.s_zone_detector", "source.trading_pipeline"]
+implemented_by: ["source.s_zone_detector"]
 depends_on: ["behavior.s.blue"]
-source_refs: ["engine/pipeline/s_zone_detector.py#L1148", "engine/bridge/trading_pipeline.py#L1142"]
+source_refs: ["engine/pipeline/s_zone_detector.py#L1148", "engine/bridge/trading_pipeline.py#L1145"]
 ---
 
 # S Blue Type-1
