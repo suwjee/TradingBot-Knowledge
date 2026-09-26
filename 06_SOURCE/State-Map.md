@@ -21,7 +21,7 @@ source_reference: []
 | reaction_engine.LowerTimeframeIndex / MarketChronology | first crossing and range extrema, confirmation/Reset/Order stop chronology caches | immutable candle input |
 | blue_line_detector | pending strike, previous strike count, Blue spacing and validity | one direction |
 | a_zone_detector.AZoneDetector | sorted Blue states, pair trigger/cycle, special route | one direction |
-| s_zone_detector.SZoneDetector | A ownership windows, sorted opposite Orders, Reset/Blue event indexes, initial stopped-A order_audit | one direction/run |
+| s_zone_detector.SZoneDetector | A ownership windows, sorted opposite Orders, Reset/Blue event indexes | one direction/run |
 | E and lifecycle owners | captured executable state; B/C-dependent portions quarantined | per-run E and lifecycle state |
 | lifecycle_engine.StopAllDetector | dominant S/E group counts, active StopAll, independent pending exact Blue-repeat counts | final reconciled pass |
 

@@ -112,6 +112,7 @@
     "source_fixture": { "type": "string", "minLength": 1 },
     "source_fixture_line": { "type": "integer", "minimum": 1 },
     "source_fixture_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "source_fixture_review": { "const": "pending-manual-review" },
     "data_kind": { "enum": ["policy", "registry", "raw_model", "candle_model", "timeframe_registry", "integrity", "hash_policy", "lineage", "validation", "template", "dataset", "window", "raw_format", "raw_schema", "raw_authority", "hash_registry", "manifest"] },
     "name": { "type": "string", "minLength": 1 },
     "symbol": { "type": "string", "minLength": 1 },
@@ -335,6 +336,10 @@
           }
         }
       }
+    },
+    {
+      "if": { "required": ["source_fixture_review"] },
+      "then": { "properties": { "type": { "const": "case" } } }
     },
     {
       "if": {

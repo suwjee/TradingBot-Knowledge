@@ -1,0 +1,4159 @@
+{
+  "artifact_role": "GENERATED AUDIT CATALOG; NOT CANONICAL FIXTURE TRUTH",
+  "generated_from": [
+    {
+      "path": "07_VALIDATION/Fixtures/Bugs/Fixture-1-13.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "c60c261973a9837879724d813d9015d39b17d5286f0eac97e3b3b5d7910340f1"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Bugs/Fixture-2-5.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "e8b2cce5b4dd86b7a4b7a08e5d7b1c5598fd6cf6f1a89159943f463baec6e333"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Bugs/Fixture-8-1.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "04c5e4a0321c9890df900d020cc10f3ac8e2e55d62a7e16df9bca5e834fe5c5e"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-1.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "92bd9231847ce5cc9978b2a20a7472c4641eb9f987ae38cc61deae02f7751162"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-9.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "a538b6b427894a087ac71fc19dab6d2988348eec8b3b73b80fb4ef0415dcc1a7"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-3-1.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "aee234c5adcc02da2c41e711e3e6a555e2e086d1e98fb93fa60a0ea26e0c86d3"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-4-1.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "cb23d203314468eba9a9b2003a0c2ff4444dd0c81e69de28c9685b5070404160"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-1-11.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "cdb43914b309d159b79f2559f8799dfdc797bbb27a4a0f1b7a807caf871a2790"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-3-2.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "c09c0cffab67123c1addd024d79637dc91da5ff60b26e7d366949cdacf9689c8"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-5-1.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "a21f6eb237a349ce97481ac42da47e375b7fe92fa7e5debf501611d888a848c4"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-10.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "bb3bd2191e7b566ddc964e03cd1a3b0f52c568aa2c550bd7dac95d5bee75b934"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-12.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "c1af25f546a8128aaf435bf6aaa3ea5f6d19c73c8887e6d4e63dce53642580f0"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-4.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "fc2417a2cca45f1b71e0b97279fad918f083ce0820f97ac403c140a7f4361edf"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-5.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "024d6be92f073b2fa92d484c45389431794b73b87d92df522f66bd5e682275c5"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-6.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "bec00e9559a1e04f074ac9d157a08c2476b27c85aa1929f18f36415e64bf1187"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-7.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "749c673f67868684bd661bb422749e6be2457532e81dc045b14a1425962440d3"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-8.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "1b59635f5226eb9f1d058f78d5f7a7028988902b6f42199ed709d98e080b7958"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-2-3.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "739768eadad44138a98bbd219221aa02cb27e05e24331ceb52da664a6cb2f69f"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-2-4.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "6c173ea3552fcd1b952998a56df282ce7f856608fd0a8dbc80a51bc79b0bbbba"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-4-3.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "63b8caeaf902d3466d20dd111c4712697a4c173b47560a006b59808f0a086a36"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-5-2.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "ee3edb1041355d81a726065ab47e342d100b4fed234a84f7b80fc8745dff4a46"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Regression/Fixture-6-1.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "46086c964892e36ce46072fb9482b9624c0c0eaf47da61ac171c8256b7db3546"
+    },
+    {
+      "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "role": "Fixture source",
+      "line": null,
+      "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+    },
+    {
+      "path": "08_DATA/Dataset-Registry.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "3e7980825a52adf986d0f0ef140dd060bbc620967aee0d3a6f76c42fa21f59c2"
+    },
+    {
+      "path": "08_DATA/Datasets.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "560655171a66d4213b4de562abbd4df87cd66be8277a257272dd46633435b144"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-062df750.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "c6ea7b006cbba3e60b9217ec6d89eb1459a2685b62388d1915d2f132328c988f"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-7e12ea5f.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "8e8769c96e433ed4fed1badd8a6e622e0860b085076f88a8b7ea1154a55840f3"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-9e2e159a.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "72572bba296de5d58f2674842bfe15eede8ea8ab32b173ce35d896573f83764f"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-Registry.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-Template.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "2c523d28acef3a40eee58c2a78721f596be122fedad15ebf58dcec65f545452d"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-b47246b4.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "30913238d5d88f3392309a4608ef305e3b37b193a390fe59eb2d13a66cc79ee6"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-ea82be1a.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "f588d61c1f560e74b7e9f4092de929e9dfb44d7e359fd17ab3944af064a01c1e"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-f531a06d.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "360ef2aca6f30f4c36467e8d440b54f388c4894d0cf499bf32a32931797f5b2c"
+    },
+    {
+      "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+    },
+    {
+      "path": "08_DATA/Datasets/Window-0291455b.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "627a615d29dd3aad8b7a18f464d185cf52553016753b1d51022311cd49803c2e"
+    },
+    {
+      "path": "08_DATA/Datasets/Window-18632e27.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "219e466df4d1cb0334ceb82256377f2aad116e667838ea97c0f965eec71aa647"
+    },
+    {
+      "path": "08_DATA/Datasets/Window-d33c7e2c.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "79fae3c42d9cba70edaa51d9a86d4e6a67846fcf247f622fa23f124480037e96"
+    },
+    {
+      "path": "08_DATA/Hashes/Hash-Registry.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+    },
+    {
+      "path": "08_DATA/Manifests/Dataset-Manifest.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "a895fb434bc7227b4c92f7831b9afc370613e2eb5b5ddcc3bba7a649b8e364b0"
+    },
+    {
+      "path": "08_DATA/RAW-Model.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "e83962e03584454a87b34fd0727f079fc9a590ddb1f694ce9e1a7af1efa8aacd"
+    },
+    {
+      "path": "08_DATA/Raw/RAW-Authority.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "cf6cee0eb4a31247241e0981a662bc6d2b7ba8857f24e9a25cf5f2c5cf2d4e5e"
+    },
+    {
+      "path": "08_DATA/Raw/RAW-Format.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "a83b2fac52911da8369d303c3b17d0650ed0fa795176cf2372e1f41e274fa066"
+    },
+    {
+      "path": "08_DATA/Raw/RAW-Schema.md",
+      "role": "Dataset/RAW metadata",
+      "line": null,
+      "sha256": "c62ed61444507c2768a17c407718c99611e75044419dce31c91e0c2892445278"
+    },
+    {
+      "path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "062df750514715ecc57ff6e5c16c4c36fc4d8ed3020620654a505b3eeffc9ea6"
+    },
+    {
+      "path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "9e2e159ae32976db8a88a9642414bceb46b0fdba0935a32caee7969036f10c2c"
+    },
+    {
+      "path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "7e12ea5f56754b2cc408753c34d7a7482de1e8eb0d9773bba577208d16903e17"
+    },
+    {
+      "path": "08_DATA/Raw/XAUUSD/RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "f531a06d89e518964d4579f6b126ffdcd2b4f31fe2b6e4828ef71fd122809da3"
+    },
+    {
+      "path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974"
+    },
+    {
+      "path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "ea82be1aa715f266dab711b6f65139780402afa0529d6fcedde7cc579fdad7f9"
+    },
+    {
+      "path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json",
+      "role": "Physical RAW verified",
+      "line": null,
+      "sha256": "b47246b45bb66db9ddfb75b6a431e5b6a7fced5fd521e358e5d5c438f91641dc"
+    }
+  ],
+  "fixture_count": 22,
+  "latest_fixture_timestamp": "2026-09-22 21:46:00",
+  "earliest_fixture_timestamp": "2026-08-25 09:32:30",
+  "counts": {
+    "confirmed": 4,
+    "regression": 12,
+    "bugs": 3,
+    "edge_cases": 3,
+    "pending": 13,
+    "historical": 3,
+    "active": 6,
+    "manual_review_yes": 13,
+    "bullish": 6,
+    "bearish": 16,
+    "unknown_direction": 0,
+    "raw_groups": 6,
+    "datasets_represented": 6,
+    "unresolved_raw": 0,
+    "unresolved_primary_timestamp": 1,
+    "possible_duplicates": 0,
+    "conflicts": 18,
+    "unresolved_fixtures": 15
+  },
+  "dataset_ids_represented": [
+    "data.dataset_062df750",
+    "data.dataset_9e2e159a",
+    "data.dataset_b47246b4",
+    "data.dataset_ea82be1a",
+    "data.dataset_f531a06d",
+    "data.dataset_f5bc29e3"
+  ],
+  "fixtures": [
+    {
+      "fixture_id": "Fixture-6-1",
+      "frontmatter_id": "case.fixture_6_1",
+      "fixture_title": "6.1 2026-09-22 — stopped dominant E must advance +1",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "faraz",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_b47246b4",
+      "dataset_sha256": "b47246b45bb66db9ddfb75b6a431e5b6a7fced5fd521e358e5d5c438f91641dc",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-22 21:46:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1790062200,
+      "raw_range_last_epoch": 1790195740,
+      "input_range_first_epoch": 1790062200,
+      "input_range_last_epoch": 1790195740,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "E4 Red: `16:02:00`",
+          "timestamp": "2026-09-22 16:02:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E2 stop exact RAW event: `21:22:25`",
+          "timestamp": "2026-09-22 21:22:25",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E4 stop exact RAW event: `21:22:35`",
+          "timestamp": "2026-09-22 21:22:35",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "S: `21:42:00`",
+          "timestamp": "2026-09-22 21:42:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Correct later E: `E5 Red @ 21:46:00`",
+          "timestamp": "2026-09-22 21:46:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Next: `E6 @ 23:07:30`",
+          "timestamp": "2026-09-22 23:07:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "E Red",
+      "behavior_display": "claimed E5 Red after stopped dominant E4",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": 5,
+      "e_number": 5,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Unverified supplied claim: E5 Red @ 2026-09-22 21:46:00 and E6 @ 23:07:30; no independent current output.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Dominant E continuation increments family number after stop",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.e"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.e_zone_detector"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "E4 Red @ 2026-09-22 16:02:00",
+      "next_behavior": "claimed E6 @ 2026-09-22 23:07:30",
+      "validation_rule": "test.behavior_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-6-1.md",
+      "fixture_file_sha256": "46086c964892e36ce46072fb9482b9624c0c0eaf47da61ac171c8256b7db3546",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-6-1.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "46086c964892e36ce46072fb9482b9624c0c0eaf47da61ac171c8256b7db3546"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 41,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 231,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-b47246b4.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "30913238d5d88f3392309a4608ef305e3b37b193a390fe59eb2d13a66cc79ee6"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established. Primary fixture also requires fresh source review and verified run.",
+      "source_scenario_excerpt": "### 6.1 2026-09-22 — stopped dominant E must advance +1\n- Direction: Bearish\n- E4 Red: `16:02:00`\n- E2 stop exact RAW event: `21:22:25`\n- E4 stop exact RAW event: `21:22:35`\n- S: `21:42:00`\n- Correct later E: `E5 Red @ 21:46:00`\n- Next: `E6 @ 23:07:30`\n- Fixture purpose:\n  - after valid dominant En stops\n  - a valid continuation must advance to `E(n+1)`\n  - it must not repeat E4 or break numbering\n- Supplied source status claim: **Active conversation regression anchor**; current Vault status: Pending.\n\n---",
+      "curated_source_anchor_excerpt": "### 6.1 2026-09-22 — stopped dominant E must advance +1\n- Direction: Bearish\n- E4 Red: `16:02:00`\n- E2 stop exact RAW event: `21:22:25`\n- E4 stop exact RAW event: `21:22:35`\n- S: `21:42:00`\n- Correct later E: `E5 Red @ 21:46:00`\n- Next: `E6 @ 23:07:30`\n- Fixture purpose:\n  - after valid dominant En stops\n  - a valid continuation must advance to `E(n+1)`\n  - it must not repeat E4 or break numbering\n- Status: **Active conversation regression anchor**\n\n---"
+    },
+    {
+      "fixture_id": "Fixture-2-4",
+      "frontmatter_id": "case.fixture_2_4",
+      "fixture_title": "2.4 2026-09-17 — downstream StopAll consequence",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bullish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_ea82be1a",
+      "dataset_sha256": "ea82be1aa715f266dab711b6f65139780402afa0529d6fcedde7cc579fdad7f9",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": {
+        "window_id": "data.window_18632e27",
+        "historical_source_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-09-03 18-44-00 TO 2026-09-19 00-29-35.json",
+        "first_epoch": 1788448440,
+        "last_epoch": 1789765175,
+        "row_count": 183741,
+        "window_sha256": "18632e270173105be865ea00608290bb70de2c8129e3622c6dcab1e7f1225ee0",
+        "physical_availability": "NOT PRESENT / LOGICAL ONLY",
+        "window_note": "08_DATA/Datasets/Window-18632e27.md"
+      },
+      "parent_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "primary_timestamp": "2026-09-17 18:30:30",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1790173875,
+      "input_range_first_epoch": 1788448440,
+      "input_range_last_epoch": 1789765175,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Historical incorrect StopAll: `18:30:30`",
+          "timestamp": "2026-09-17 18:30:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "StopAll",
+      "behavior_display": "negative downstream StopAll assertion",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "StopAll @ 2026-09-17 18:30:30 absent because invalid Red E root is absent.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Historical incorrect StopAll at 2026-09-17 18:30:30.",
+      "corrected_result": "StopAll at 2026-09-17 18:30:30 absent.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Downstream lifecycle consequence of rejected Red E root",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-2-4.md",
+      "fixture_file_sha256": "6c173ea3552fcd1b952998a56df282ce7f856608fd0a8dbc80a51bc79b0bbbba",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-2-4.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "6c173ea3552fcd1b952998a56df282ce7f856608fd0a8dbc80a51bc79b0bbbba"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 33,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 152,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Historical alias 8.4",
+          "line": 289,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-ea82be1a.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "f588d61c1f560e74b7e9f4092de929e9dfb44d7e359fd17ab3944af064a01c1e"
+        },
+        {
+          "path": "08_DATA/Datasets/Window-18632e27.md",
+          "role": "Logical window note",
+          "line": null,
+          "sha256": "219e466df4d1cb0334ceb82256377f2aad116e667838ea97c0f965eec71aa647"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical.",
+        "Fixture calculation input is the exact window; parent full-file input is different."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending.",
+        "Historical small RAW is a logical window; use inclusive source epochs and window SHA, not the entire parent RAW."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 2.4 2026-09-17 — downstream StopAll consequence\n- Historical incorrect StopAll: `18:30:30`\n- Expected current: **absent**\n- Reason: invalid Red E root no longer exists\n- Supplied scenario label: **Active negative regression fixture** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 2.4 2026-09-17 — downstream StopAll consequence\n- Historical incorrect StopAll: `18:30:30`\n- Expected current: **absent**\n- Reason: invalid Red E root no longer exists\n- Status: **Active negative regression fixture**"
+    },
+    {
+      "fixture_id": "Fixture-2-5",
+      "frontmatter_id": "case.fixture_2_5",
+      "fixture_title": "2.5 2026-09-17 — S reversal historical example",
+      "category": "Bug",
+      "status": "Historical",
+      "authority": "Historical",
+      "document_status": "archived",
+      "document_authority": "historical",
+      "direction": "Bullish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_ea82be1a",
+      "dataset_sha256": "ea82be1aa715f266dab711b6f65139780402afa0529d6fcedde7cc579fdad7f9",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": {
+        "window_id": "data.window_18632e27",
+        "historical_source_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-09-03 18-44-00 TO 2026-09-19 00-29-35.json",
+        "first_epoch": 1788448440,
+        "last_epoch": 1789765175,
+        "row_count": 183741,
+        "window_sha256": "18632e270173105be865ea00608290bb70de2c8129e3622c6dcab1e7f1225ee0",
+        "physical_availability": "NOT PRESENT / LOGICAL ONLY",
+        "window_note": "08_DATA/Datasets/Window-18632e27.md"
+      },
+      "parent_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "primary_timestamp": "2026-09-17 16:15:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1790173875,
+      "input_range_first_epoch": 1788448440,
+      "input_range_last_epoch": 1789765175,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "S Red: `16:15:00`",
+          "timestamp": "2026-09-17 16:15:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "historical S Red→StopAll reversal claim",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Historical StopAll claim superseded; current output is ordinary S Red with native Mode-A Order.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Previously described S Red at 2026-09-17 16:15:00 as StopAll.",
+      "corrected_result": "Ordinary S Red at 2026-09-17 16:15:00 with native Mode-A Order.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Prevent superseded StopAll expectation from entering current baseline",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Historical; current baseline prohibited",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Bugs/Fixture-2-5.md",
+      "fixture_file_sha256": "e8b2cce5b4dd86b7a4b7a08e5d7b1c5598fd6cf6f1a89159943f463baec6e333",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Bugs/Fixture-2-5.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "e8b2cce5b4dd86b7a4b7a08e5d7b1c5598fd6cf6f1a89159943f463baec6e333"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 34,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 158,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Historical alias 8.3",
+          "line": 285,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-ea82be1a.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "f588d61c1f560e74b7e9f4092de929e9dfb44d7e359fd17ab3944af064a01c1e"
+        },
+        {
+          "path": "08_DATA/Datasets/Window-18632e27.md",
+          "role": "Logical window note",
+          "line": null,
+          "sha256": "219e466df4d1cb0334ceb82256377f2aad116e667838ea97c0f965eec71aa647"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=archived; document authority=historical.",
+        "Fixture calculation input is the exact window; parent full-file input is different.",
+        "Historical/Superseded status does not, by itself, record whether the defect was fixed in production."
+      ],
+      "open_questions": [
+        "Historical small RAW is a logical window; use inclusive source epochs and window SHA, not the entire parent RAW."
+      ],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 2.5 2026-09-17 — S reversal historical example\n- S Red: `16:15:00`\n- Previously described as StopAll\n- Current expected: ordinary `S Red` with native Mode-A Order\n- Status: **Historical / Superseded StopAll expectation**\n\n---",
+      "curated_source_anchor_excerpt": "### 2.5 2026-09-17 — S reversal historical example\n- S Red: `16:15:00`\n- Previously described as StopAll\n- Current expected: ordinary `S Red` with native Mode-A Order\n- Status: **Historical / Superseded StopAll expectation**\n\n---"
+    },
+    {
+      "fixture_id": "Fixture-2-3",
+      "frontmatter_id": "case.fixture_2_3",
+      "fixture_title": "2.3 2026-09-17 — Exact-source E continuation",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bullish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_ea82be1a",
+      "dataset_sha256": "ea82be1aa715f266dab711b6f65139780402afa0529d6fcedde7cc579fdad7f9",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": {
+        "window_id": "data.window_18632e27",
+        "historical_source_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-09-03 18-44-00 TO 2026-09-19 00-29-35.json",
+        "first_epoch": 1788448440,
+        "last_epoch": 1789765175,
+        "row_count": 183741,
+        "window_sha256": "18632e270173105be865ea00608290bb70de2c8129e3622c6dcab1e7f1225ee0",
+        "physical_availability": "NOT PRESENT / LOGICAL ONLY",
+        "window_note": "08_DATA/Datasets/Window-18632e27.md"
+      },
+      "parent_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+      "primary_timestamp": "2026-09-17 08:54:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1790173875,
+      "input_range_first_epoch": 1788448440,
+      "input_range_last_epoch": 1789765175,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "E1 Blue: `07:50:00`",
+          "timestamp": "2026-09-17 07:50:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E2 Blue: `08:00:00`",
+          "timestamp": "2026-09-17 08:00:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E3 Blue: `08:54:00`",
+          "timestamp": "2026-09-17 08:54:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Calculation-invalid S Red at `08:00:00` may remain evidence/Order provenance",
+          "timestamp": "2026-09-17 08:00:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Incorrect E1 Red `08:54:00`: must not exist",
+          "timestamp": "2026-09-17 08:54:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "E Blue",
+      "behavior_display": "E3 Blue continuation; no competing E1 Red",
+      "behavior_color": "Blue",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": 3,
+      "e_number": 3,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "E1 Blue 07:50:00 → E2 Blue 08:00:00 → E3 Blue 08:54:00; E1 Red 08:54:00 absent.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Incorrect competing E1 Red at 2026-09-17 08:54:00; must not exist.",
+      "corrected_result": "E1 Blue 07:50:00 → E2 Blue 08:00:00 → E3 Blue 08:54:00.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Same-source E continuation and cross-family conflict ownership",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.e"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.e_zone_detector"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "E2 Blue @ 2026-09-17 08:00:00",
+      "next_behavior": "E3 Blue @ 2026-09-17 08:54:00",
+      "validation_rule": "test.behavior_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-2-3.md",
+      "fixture_file_sha256": "739768eadad44138a98bbd219221aa02cb27e05e24331ceb52da664a6cb2f69f",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-2-3.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "739768eadad44138a98bbd219221aa02cb27e05e24331ceb52da664a6cb2f69f"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 32,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 142,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-ea82be1a.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "f588d61c1f560e74b7e9f4092de929e9dfb44d7e359fd17ab3944af064a01c1e"
+        },
+        {
+          "path": "08_DATA/Datasets/Window-18632e27.md",
+          "role": "Logical window note",
+          "line": null,
+          "sha256": "219e466df4d1cb0334ceb82256377f2aad116e667838ea97c0f965eec71aa647"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical.",
+        "Fixture calculation input is the exact window; parent full-file input is different."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending.",
+        "Historical small RAW is a logical window; use inclusive source epochs and window SHA, not the entire parent RAW."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 2.3 2026-09-17 — Exact-source E continuation\n- Direction: Bullish chain\n- E1 Blue: `07:50:00`\n- E2 Blue: `08:00:00`\n- E3 Blue: `08:54:00`\n- Calculation-invalid S Red at `08:00:00` may remain evidence/Order provenance\n- It must not open competing cross-family E1\n- Incorrect E1 Red `08:54:00`: must not exist\n- Supplied scenario label: **Active same-source ownership fixture** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 2.3 2026-09-17 — Exact-source E continuation\n- Direction: Bullish chain\n- E1 Blue: `07:50:00`\n- E2 Blue: `08:00:00`\n- E3 Blue: `08:54:00`\n- Calculation-invalid S Red at `08:00:00` may remain evidence/Order provenance\n- It must not open competing cross-family E1\n- Incorrect E1 Red `08:54:00`: must not exist\n- Status: **Active same-source ownership fixture**"
+    },
+    {
+      "fixture_id": "Fixture-5-2",
+      "frontmatter_id": "case.fixture_5_2",
+      "fixture_title": "5.2 2026-09-11 — stage ownership",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "USOIL",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FXCM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_9e2e159a",
+      "dataset_sha256": "9e2e159ae32976db8a88a9642414bceb46b0fdba0935a32caee7969036f10c2c",
+      "exact_raw_filename": "RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+      "raw_path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-11 18:01:30",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1789082610,
+      "raw_range_last_epoch": 1789457625,
+      "input_range_first_epoch": 1789082610,
+      "input_range_last_epoch": 1789457625,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Accepted S Blue: `17:43:00`",
+          "timestamp": "2026-09-11 17:43:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Would-be fallback A: `18:01:30`",
+          "timestamp": "2026-09-11 18:01:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Expected: A `18:01:30` rejected / absent",
+          "timestamp": "2026-09-11 18:01:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "A",
+      "behavior_display": "rejected fallback A after accepted S Blue",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "A @ 2026-09-11 18:01:30 absent; accepted S Blue @ 17:43:00 retained.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Accepted S Blue must not be consumed by rejected fallback A",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.lifecycle"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "S Blue @ 2026-09-11 17:43:00",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-5-2.md",
+      "fixture_file_sha256": "ee3edb1041355d81a726065ab47e342d100b4fed234a84f7b80fc8745dff4a46",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-5-2.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "ee3edb1041355d81a726065ab47e342d100b4fed234a84f7b80fc8745dff4a46"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 40,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 221,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-9e2e159a.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "72572bba296de5d58f2674842bfe15eede8ea8ab32b173ce35d896573f83764f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 5.2 2026-09-11 — stage ownership\n- Accepted S Blue: `17:43:00`\n- Would-be fallback A: `18:01:30`\n- Expected: A `18:01:30` rejected / absent\n- Accepted S Blue must not be consumed by rejected A\n- Supplied scenario label: **Active stage-order regression** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 5.2 2026-09-11 — stage ownership\n- Accepted S Blue: `17:43:00`\n- Would-be fallback A: `18:01:30`\n- Expected: A `18:01:30` rejected / absent\n- Accepted S Blue must not be consumed by rejected A\n- Status: **Active stage-order regression**"
+    },
+    {
+      "fixture_id": "Fixture-5-1",
+      "frontmatter_id": "case.fixture_5_1",
+      "fixture_title": "5.1 2026-09-11 — Bearish chained Blue carried-stop",
+      "category": "EdgeCase",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "USOIL",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FXCM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_9e2e159a",
+      "dataset_sha256": "9e2e159ae32976db8a88a9642414bceb46b0fdba0935a32caee7969036f10c2c",
+      "exact_raw_filename": "RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+      "raw_path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-11 09:23:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1789082610,
+      "raw_range_last_epoch": 1789457625,
+      "input_range_first_epoch": 1789082610,
+      "input_range_last_epoch": 1789457625,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Blue reference: `09:23:00`",
+          "timestamp": "2026-09-11 09:23:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Supplemental bounded RAW scan: max High 101.409",
+          "timestamp": "2026-09-11 09:29:05",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplemental RAW check"
+        }
+      ],
+      "behavior": "NOT RECORDED",
+      "behavior_display": "stopped Bearish Blue carried-stop geometry",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Supplied geometry rule only; exact computed High/stop and current serialized occurrence unverified.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Stopped Blue carried-stop range ending at next Bearish Reaction Breakout",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.a",
+        "algorithm.blue"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
+      ],
+      "source_function": "AZoneDetector._inherited_stop",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L494"
+      ],
+      "related_source_entities": [
+        "source.a_zone_detector"
+      ],
+      "mirror_relevance": "Recorded: test.mirror_validation",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.mirror_validation",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-5-1.md",
+      "fixture_file_sha256": "a21f6eb237a349ce97481ac42da47e375b7fe92fa7e5debf501611d888a848c4",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-5-1.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "a21f6eb237a349ce97481ac42da47e375b7fe92fa7e5debf501611d888a848c4"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 39,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 214,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 25,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-9e2e159a.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "72572bba296de5d58f2674842bfe15eede8ea8ab32b173ce35d896573f83764f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical.",
+        "Supplemental RAW scan verifies only a bounded numeric extreme, not proposed A outputs."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established. Primary fixture also requires fresh source review and verified run.",
+      "source_scenario_excerpt": "### 5.1 2026-09-11 — Bearish chained Blue carried-stop\n- Blue reference: `09:23:00`\n- For a stopped Bearish Blue:\n  - locate first valid Bearish Reaction after stop\n  - compute maximum High from Blue stop main candle through complete next Bearish Reaction Breakout main candle inclusive\n- Supplied source status claim: **Active mirror geometry anchor**; current Vault status: Pending.",
+      "curated_source_anchor_excerpt": "### 5.1 2026-09-11 — Bearish chained Blue carried-stop\n- Blue reference: `09:23:00`\n- For a stopped Bearish Blue:\n  - locate first valid Bearish Reaction after stop\n  - compute maximum High from Blue stop main candle through complete next Bearish Reaction Breakout main candle inclusive\n- Status: **Active mirror geometry anchor**"
+    },
+    {
+      "fixture_id": "Fixture-4-3",
+      "frontmatter_id": "case.fixture_4_3",
+      "fixture_title": "4.3 2026-09-10 — stage ownership / invalid fallback",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bullish",
+      "symbol": "USOIL",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FXCM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_062df750",
+      "dataset_sha256": "062df750514715ecc57ff6e5c16c4c36fc4d8ed3020620654a505b3eeffc9ea6",
+      "exact_raw_filename": "RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json",
+      "raw_path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-10 13:56:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1788839600,
+      "raw_range_last_epoch": 1789159495,
+      "input_range_first_epoch": 1788839600,
+      "input_range_last_epoch": 1789159495,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Competing S Red: `13:51:00` → expected rejected",
+          "timestamp": "2026-09-10 13:51:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E1 Blue: `13:56:00`",
+          "timestamp": "2026-09-10 13:56:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E2 Blue: `14:26:30`",
+          "timestamp": "2026-09-10 14:26:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "E Blue",
+      "behavior_display": "E1 Blue→E2 Blue; rejected S Red fallback",
+      "behavior_color": "Blue",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": 1,
+      "e_number": 1,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "S Red @ 13:51:00 rejected; E1 Blue @ 13:56:00 continues to E2 Blue @ 14:26:30.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Accepted later-stage ownership blocks rejected A/S fallback",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.lifecycle"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "E2 Blue @ 2026-09-10 14:26:30",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-4-3.md",
+      "fixture_file_sha256": "63b8caeaf902d3466d20dd111c4712697a4c173b47560a006b59808f0a086a36",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-4-3.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "63b8caeaf902d3466d20dd111c4712697a4c173b47560a006b59808f0a086a36"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 38,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 200,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-062df750.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "c6ea7b006cbba3e60b9217ec6d89eb1459a2685b62388d1915d2f132328c988f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 4.3 2026-09-10 — stage ownership / invalid fallback\n- Direction: Bullish\n- Competing S Red: `13:51:00` → expected rejected\n- E1 Blue: `13:56:00`\n- E2 Blue: `14:26:30`\n- Expected continuation: `E1 Blue → E2 Blue`\n- Rejected A/S fallback cannot reopen accepted later-stage ownership\n- Supplied scenario label: **Active A→S→E ownership regression** (historical wording; current Vault status: Pending)\n\n---",
+      "curated_source_anchor_excerpt": "### 4.3 2026-09-10 — stage ownership / invalid fallback\n- Direction: Bullish\n- Competing S Red: `13:51:00` → expected rejected\n- E1 Blue: `13:56:00`\n- E2 Blue: `14:26:30`\n- Expected continuation: `E1 Blue → E2 Blue`\n- Rejected A/S fallback cannot reopen accepted later-stage ownership\n- Status: **Active A→S→E ownership regression**\n\n---"
+    },
+    {
+      "fixture_id": "Fixture-4-1",
+      "frontmatter_id": "case.fixture_4_1",
+      "fixture_title": "4.1 2026-09-09 — same-Break Bullish confirmation/reset",
+      "category": "Confirmed",
+      "status": "Active",
+      "authority": "Canonical",
+      "document_status": "active",
+      "document_authority": "empirical",
+      "direction": "Bullish",
+      "symbol": "USOIL",
+      "market": "NOT RECORDED",
+      "source": "import",
+      "provider_or_broker": "FXCM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_062df750",
+      "dataset_sha256": "062df750514715ecc57ff6e5c16c4c36fc4d8ed3020620654a505b3eeffc9ea6",
+      "exact_raw_filename": "RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json",
+      "raw_path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-09 19:09:45",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1788839600,
+      "raw_range_last_epoch": 1789159495,
+      "input_range_first_epoch": 1788839600,
+      "input_range_last_epoch": 1789159495,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Bullish Reaction Break main candle: `19:09:30`",
+          "timestamp": "2026-09-09 19:09:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Exact confirmation: `19:09:45`",
+          "timestamp": "2026-09-09 19:09:45",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Later lower event in same main candle: `19:09:50`",
+          "timestamp": "2026-09-09 19:09:50",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Expected: `19:09:30` remains Reset boundary",
+          "timestamp": "2026-09-09 19:09:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "NOT RECORDED",
+      "behavior_display": "same-Break confirmation and Reset boundary",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "19:09:30 remains Reset boundary after exact confirmation 19:09:45; later 19:09:50 event cannot create next normal FirstRed there.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "19:09:30 remains Reset boundary after exact confirmation 19:09:45; later 19:09:50 event cannot create next normal FirstRed there.",
+      "bug_or_regression_description": "Same main-candle Break/Reset chronology",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Bounded assertion; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.reset"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "source_function": "UnifiedReactionDetector._candidate_from_confirmation_remainder",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1546"
+      ],
+      "related_source_entities": [
+        "source.reaction_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.chronology_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Confirmed/Fixture-4-1.md",
+      "fixture_file_sha256": "cb23d203314468eba9a9b2003a0c2ff4444dd0c81e69de28c9685b5070404160",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-4-1.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "cb23d203314468eba9a9b2003a0c2ff4444dd0c81e69de28c9685b5070404160"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 37,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 192,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-062df750.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "c6ea7b006cbba3e60b9217ec6d89eb1459a2685b62388d1915d2f132328c988f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=active; document authority=empirical."
+      ],
+      "open_questions": [],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 4.1 2026-09-09 — same-Break Bullish confirmation/reset\n- Bullish Reaction Break main candle: `19:09:30`\n- Exact confirmation: `19:09:45`\n- Later lower event in same main candle: `19:09:50`\n- Expected: `19:09:30` remains Reset boundary\n- It cannot simultaneously become next normal Bullish FirstRed\n- Status: **Active Reaction/Reset chronology fixture**",
+      "curated_source_anchor_excerpt": "### 4.1 2026-09-09 — same-Break Bullish confirmation/reset\n- Bullish Reaction Break main candle: `19:09:30`\n- Exact confirmation: `19:09:45`\n- Later lower event in same main candle: `19:09:50`\n- Expected: `19:09:30` remains Reset boundary\n- It cannot simultaneously become next normal Bullish FirstRed\n- Status: **Active Reaction/Reset chronology fixture**"
+    },
+    {
+      "fixture_id": "Fixture-1-13",
+      "frontmatter_id": "case.fixture_1_13",
+      "fixture_title": "1.13 2026-09-09 — historical Mode-B refresh chain",
+      "category": "Bug",
+      "status": "Historical",
+      "authority": "Historical",
+      "document_status": "archived",
+      "document_authority": "historical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-09 04:29:30",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A: `03:33:30`",
+          "timestamp": "2026-09-09 03:33:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`04:16:00`",
+          "timestamp": "2026-09-09 04:16:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`04:17:30`",
+          "timestamp": "2026-09-09 04:17:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`04:20:30`",
+          "timestamp": "2026-09-09 04:20:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`04:24:00`",
+          "timestamp": "2026-09-09 04:24:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Historical final Order stop source: `04:21:00`",
+          "timestamp": "2026-09-09 04:21:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "final owner = `04:24:00`",
+          "timestamp": "2026-09-09 04:24:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "S Red = `04:29:30`",
+          "timestamp": "2026-09-09 04:29:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "S Blue `04:45:00` removed",
+          "timestamp": "2026-09-09 04:45:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E1 Red = `05:15:30`",
+          "timestamp": "2026-09-09 05:15:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "StopAll = `06:23:00`",
+          "timestamp": "2026-09-09 06:23:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Order_A remains First `04:16:00`",
+          "timestamp": "2026-09-09 04:16:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`04:24:00` cannot inherit its parent-stop",
+          "timestamp": "2026-09-09 04:24:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`S Red 04:29:30` is not current expected",
+          "timestamp": "2026-09-09 04:29:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "current full-RAW emits `S Blue 04:45:00`",
+          "timestamp": "2026-09-09 04:45:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "superseded S Red from old Mode-B refresh chain",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Historical S Red 04:29:30 is not current; current first Order_A is 04:16:00 and full RAW emits S Blue 04:45:00.",
+      "observed_result": "Current full-RAW emits S Blue at 2026-09-09 04:45:00 (as recorded in the fixture source).",
+      "previous_or_rejected_result": "Old V5.4.5: final Mode-B Order_A owner 04:24:00; S Red 04:29:30; S Blue 04:45:00 removed; E1 Red 05:15:30; StopAll 06:23:00.",
+      "corrected_result": "Current V5.4.8+ first Order_A remains 04:16:00; S Red 04:29:30 is not current; full RAW emits S Blue 04:45:00.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Prevent historical Mode-B refresh output from becoming current baseline",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Historical; current baseline prohibited",
+      "algorithms": [
+        "algorithm.order.a"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "source_function": "SZoneDetector._first_order_after",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L277"
+      ],
+      "related_source_entities": [
+        "source.s_zone_detector"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "A @ 2026-09-09 03:33:30",
+      "next_behavior": "current S Blue @ 2026-09-09 04:45:00",
+      "validation_rule": "test.identity_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Bugs/Fixture-1-13.md",
+      "fixture_file_sha256": "c60c261973a9837879724d813d9015d39b17d5286f0eac97e3b3b5d7910340f1",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Bugs/Fixture-1-13.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "c60c261973a9837879724d813d9015d39b17d5286f0eac97e3b3b5d7910340f1"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 31,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 114,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Historical alias 8.2",
+          "line": 281,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 22,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=archived; document authority=historical.",
+        "Historical/Superseded status does not, by itself, record whether the defect was fixed in production."
+      ],
+      "open_questions": [],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 1.13 2026-09-09 — historical Mode-B refresh chain\n- A: `03:33:30`\n- Consecutive opposite native Mode-B Order Firsts:\n  - `04:16:00`\n  - `04:17:30`\n  - `04:20:30`\n  - `04:24:00`\n- Historical final Order stop source: `04:21:00`\n- Under old V5.4.5:\n  - final owner = `04:24:00`\n  - S Red = `04:29:30`\n  - S Blue `04:45:00` removed\n  - E1 Red = `05:15:30`\n  - StopAll = `06:23:00`\n- Under current V5.4.8+:\n  - Order_A remains First `04:16:00`\n  - `04:24:00` cannot inherit its parent-stop\n  - `S Red 04:29:30` is not current expected\n  - current full-RAW emits `S Blue 04:45:00`\n- Status: **Historical / Superseded, retained as regression provenance**\n\n---",
+      "curated_source_anchor_excerpt": "### 1.13 2026-09-09 — historical Mode-B refresh chain\n- A: `03:33:30`\n- Consecutive opposite native Mode-B Order Firsts:\n  - `04:16:00`\n  - `04:17:30`\n  - `04:20:30`\n  - `04:24:00`\n- Historical final Order stop source: `04:21:00`\n- Under old V5.4.5:\n  - final owner = `04:24:00`\n  - S Red = `04:29:30`\n  - S Blue `04:45:00` removed\n  - E1 Red = `05:15:30`\n  - StopAll = `06:23:00`\n- Under current V5.4.8+:\n  - Order_A remains First `04:16:00`\n  - `04:24:00` cannot inherit its parent-stop\n  - `S Red 04:29:30` is not current expected\n  - current full-RAW emits `S Blue 04:45:00`\n- Status: **Historical / Superseded, retained as regression provenance**\n\n---"
+    },
+    {
+      "fixture_id": "Fixture-3-2",
+      "frontmatter_id": "case.fixture_3_2",
+      "fixture_title": "3.2 2026-09-07 — bounded Mode-A anchor",
+      "category": "EdgeCase",
+      "status": "Active",
+      "authority": "Canonical",
+      "document_status": "active",
+      "document_authority": "empirical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "1s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "1s"
+      ],
+      "dataset_id": "data.dataset_f531a06d",
+      "dataset_sha256": "f531a06d89e518964d4579f6b126ffdcd2b4f31fe2b6e4828ef71fd122809da3",
+      "exact_raw_filename": "RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": {
+        "window_id": "data.window_0291455b",
+        "historical_source_raw_filename": "RAW FOREXCOM_XAUUSD 1S FROM 2026-09-03 19-05-40 TO 2026-09-08 03-18-28.json",
+        "first_epoch": 1788449740,
+        "last_epoch": 1788824908,
+        "row_count": 161376,
+        "window_sha256": "0291455b94b2a536b75b6129f3a90b71cd2eadb40a6a685f8a4e01dc2e744776",
+        "physical_availability": "NOT PRESENT / LOGICAL ONLY",
+        "window_note": "08_DATA/Datasets/Window-0291455b.md"
+      },
+      "parent_raw_filename": "RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "primary_timestamp": "2026-09-07 10:14:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1788449740,
+      "raw_range_last_epoch": 1789501784,
+      "input_range_first_epoch": 1788449740,
+      "input_range_last_epoch": 1788824908,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Reference Order: `10:14:00`",
+          "timestamp": "2026-09-07 10:14:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Stop source: `10:13:30`",
+          "timestamp": "2026-09-07 10:13:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "NOT RECORDED",
+      "behavior_display": "current-leg Mode-A anchor",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Current-leg Mode-A anchor at 10:14:00 with stop source 10:13:30; older Reset provenance does not overwrite it.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Bounded Mode-A ownership and old Reset exclusion",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Bounded assertion; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.order.a"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "source_function": "UnifiedReactionDetector.first_order_reaction_after_gate",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1758"
+      ],
+      "related_source_entities": [
+        "source.reaction_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.identity_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-3-2.md",
+      "fixture_file_sha256": "c09c0cffab67123c1addd024d79637dc91da5ff60b26e7d366949cdacf9689c8",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-3-2.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "c09c0cffab67123c1addd024d79637dc91da5ff60b26e7d366949cdacf9689c8"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 36,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 179,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 24,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f531a06d.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "360ef2aca6f30f4c36467e8d440b54f388c4894d0cf499bf32a32931797f5b2c"
+        },
+        {
+          "path": "08_DATA/Datasets/Window-0291455b.md",
+          "role": "Logical window note",
+          "line": null,
+          "sha256": "627a615d29dd3aad8b7a18f464d185cf52553016753b1d51022311cd49803c2e"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=active; document authority=empirical.",
+        "Fixture calculation input is the exact window; parent full-file input is different."
+      ],
+      "open_questions": [
+        "FARAZ parent RAW filename end epoch 1789388126 differs from actual last row 1789501784; window 0291455b is separately hash verified.",
+        "Historical small RAW is a logical window; use inclusive source epochs and window SHA, not the entire parent RAW."
+      ],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 3.2 2026-09-07 — bounded Mode-A anchor\n- Direction: Bearish\n- Reference Order: `10:14:00`\n- Stop source: `10:13:30`\n- Expected: resolved current-leg Mode-A anchor remains authoritative\n- An older Reset must not overwrite it merely because historical Reset provenance exists\n- Status: **Active geometry/anchor fixture**\n\n---",
+      "curated_source_anchor_excerpt": "### 3.2 2026-09-07 — bounded Mode-A anchor\n- Direction: Bearish\n- Reference Order: `10:14:00`\n- Stop source: `10:13:30`\n- Expected: resolved current-leg Mode-A anchor remains authoritative\n- An older Reset must not overwrite it merely because historical Reset provenance exists\n- Status: **Active geometry/anchor fixture**\n\n---"
+    },
+    {
+      "fixture_id": "Fixture-3-1",
+      "frontmatter_id": "case.fixture_3_1",
+      "fixture_title": "3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership",
+      "category": "Confirmed",
+      "status": "Active",
+      "authority": "Canonical",
+      "document_status": "active",
+      "document_authority": "empirical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "1s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "1s"
+      ],
+      "dataset_id": "data.dataset_f531a06d",
+      "dataset_sha256": "f531a06d89e518964d4579f6b126ffdcd2b4f31fe2b6e4828ef71fd122809da3",
+      "exact_raw_filename": "RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": {
+        "window_id": "data.window_0291455b",
+        "historical_source_raw_filename": "RAW FOREXCOM_XAUUSD 1S FROM 2026-09-03 19-05-40 TO 2026-09-08 03-18-28.json",
+        "first_epoch": 1788449740,
+        "last_epoch": 1788824908,
+        "row_count": 161376,
+        "window_sha256": "0291455b94b2a536b75b6129f3a90b71cd2eadb40a6a685f8a4e01dc2e744776",
+        "physical_availability": "NOT PRESENT / LOGICAL ONLY",
+        "window_note": "08_DATA/Datasets/Window-0291455b.md"
+      },
+      "parent_raw_filename": "RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json",
+      "primary_timestamp": "2026-09-04 16:58:38",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1788449740,
+      "raw_range_last_epoch": 1789501784,
+      "input_range_first_epoch": 1788449740,
+      "input_range_last_epoch": 1788824908,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A source: `16:57:30`",
+          "timestamp": "2026-09-04 16:57:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Bearish Reaction FirstGreen: `16:58:00`",
+          "timestamp": "2026-09-04 16:58:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "BoxBottom source: `16:57:30`",
+          "timestamp": "2026-09-04 16:57:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "BoxTop source: `16:58:00`",
+          "timestamp": "2026-09-04 16:58:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Exact 1s breakdown confirmation: `16:58:38`",
+          "timestamp": "2026-09-04 16:58:38",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Wrong candidate: moving A to `16:58:30`",
+          "timestamp": "2026-09-04 16:58:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "A",
+      "behavior_display": "A source at 16:57:30 frozen by exact 1s confirmation",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "A source remains 2026-09-04 16:57:30; moving A to 16:58:30 is wrong.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Wrong candidate: moving A source to 2026-09-04 16:58:30.",
+      "corrected_result": "A source remains 2026-09-04 16:57:30 after exact confirmation at 16:58:38.",
+      "confirmed_result": "A source remains 2026-09-04 16:57:30; moving A to 16:58:30 is wrong.",
+      "bug_or_regression_description": "Exact lower-timeframe Reaction confirmation fixes A source",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Bounded assertion; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.a"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
+      ],
+      "source_function": "AZoneDetector._a_source",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L547"
+      ],
+      "related_source_entities": [
+        "source.a_zone_detector"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.chronology_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Confirmed/Fixture-3-1.md",
+      "fixture_file_sha256": "aee234c5adcc02da2c41e711e3e6a555e2e086d1e98fb93fa60a0ea26e0c86d3",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-3-1.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "aee234c5adcc02da2c41e711e3e6a555e2e086d1e98fb93fa60a0ea26e0c86d3"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 35,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 168,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 23,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f531a06d.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "360ef2aca6f30f4c36467e8d440b54f388c4894d0cf499bf32a32931797f5b2c"
+        },
+        {
+          "path": "08_DATA/Datasets/Window-0291455b.md",
+          "role": "Logical window note",
+          "line": null,
+          "sha256": "627a615d29dd3aad8b7a18f464d185cf52553016753b1d51022311cd49803c2e"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=active; document authority=empirical.",
+        "Fixture calculation input is the exact window; parent full-file input is different."
+      ],
+      "open_questions": [
+        "FARAZ parent RAW filename end epoch 1789388126 differs from actual last row 1789501784; window 0291455b is separately hash verified.",
+        "Historical small RAW is a logical window; use inclusive source epochs and window SHA, not the entire parent RAW."
+      ],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership\n- Direction: Bearish\n- A source: `16:57:30`\n- Bearish Reaction FirstGreen: `16:58:00`\n- BoxBottom source: `16:57:30`\n- BoxTop source: `16:58:00`\n- Exact 1s breakdown confirmation: `16:58:38`\n- Expected: A source freezes at exact confirmation\n- Wrong candidate: moving A to `16:58:30`\n- Status: **Active exact chronology fixture**",
+      "curated_source_anchor_excerpt": "### 3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership\n- Direction: Bearish\n- A source: `16:57:30`\n- Bearish Reaction FirstGreen: `16:58:00`\n- BoxBottom source: `16:57:30`\n- BoxTop source: `16:58:00`\n- Exact 1s breakdown confirmation: `16:58:38`\n- Expected: A source freezes at exact confirmation\n- Wrong candidate: moving A to `16:58:30`\n- Status: **Active exact chronology fixture**"
+    },
+    {
+      "fixture_id": "Fixture-1-12",
+      "frontmatter_id": "case.fixture_1_12",
+      "fixture_title": "1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-04 02:36:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Primary fixture timestamp (frontmatter)",
+          "timestamp": "2026-09-04 02:36:00",
+          "date_status": "FULL",
+          "source": "Primary fixture frontmatter"
+        }
+      ],
+      "behavior": "StopAll",
+      "behavior_display": "StopAll1; opposite-s-group-stop",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": 1,
+      "e_number": null,
+      "stopall_number": 1,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Bearish StopAll1 @ 2026-09-04 02:36:00; old Bullish version is historical.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Repeated-Blue reversal gate with incoming native Mode-B S Red",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "True",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-12.md",
+      "fixture_file_sha256": "c1af25f546a8128aaf435bf6aaa3ea5f6d19c73c8887e6d4e63dce53642580f0",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-12.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "c1af25f546a8128aaf435bf6aaa3ea5f6d19c73c8887e6d4e63dce53642580f0"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 30,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 106,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [
+        "Fixture-8-1"
+      ],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll\n- Current valid direction: Bearish\n- Expected: `StopAll1`\n- Gate: `opposite-s-group-stop`\n- Incoming S Red has native Mode-B formation Order\n- Historical Bullish version of the same timestamp is not current expected\n- Supplied scenario label: **Active Bearish anchor / Bullish version superseded** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll\n- Current valid direction: Bearish\n- Expected: `StopAll1`\n- Gate: `opposite-s-group-stop`\n- Incoming S Red has native Mode-B formation Order\n- Historical Bullish version of the same timestamp is not current expected\n- Status: **Active Bearish anchor / Bullish version superseded**"
+    },
+    {
+      "fixture_id": "Fixture-8-1",
+      "frontmatter_id": "case.fixture_8_1",
+      "fixture_title": "8.1 `2026-09-04 02:36:00` Bullish StopAll",
+      "category": "Bug",
+      "status": "Historical",
+      "authority": "Historical",
+      "document_status": "archived",
+      "document_authority": "historical",
+      "direction": "Bullish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-09-04 02:36:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Primary fixture timestamp (frontmatter)",
+          "timestamp": "2026-09-04 02:36:00",
+          "date_status": "FULL",
+          "source": "Primary fixture frontmatter"
+        }
+      ],
+      "behavior": "StopAll",
+      "behavior_display": "superseded Bullish StopAll claim",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Historical Bullish StopAll at 02:36:00 is not current; Bearish StopAll1 at same timestamp remains active.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Historical Bullish StopAll at 2026-09-04 02:36:00.",
+      "corrected_result": "Historical Bullish expectation is not current; Bearish StopAll1 at the same timestamp is the retained anchor.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Direction-specific historical expectation quarantine",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Historical; current baseline prohibited",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "Recorded: test.mirror_validation",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.mirror_validation",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Bugs/Fixture-8-1.md",
+      "fixture_file_sha256": "04c5e4a0321c9890df900d020cc10f3ac8e2e55d62a7e16df9bca5e834fe5c5e",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Bugs/Fixture-8-1.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "04c5e4a0321c9890df900d020cc10f3ac8e2e55d62a7e16df9bca5e834fe5c5e"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 42,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 276,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [
+        "Fixture-1-12"
+      ],
+      "notes": [
+        "Document status=archived; document authority=historical.",
+        "Historical/Superseded status does not, by itself, record whether the defect was fixed in production."
+      ],
+      "open_questions": [],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 8.1 `2026-09-04 02:36:00` Bullish StopAll\n- Historical 5.4.4 example\n- **Not current expected**\n- Bearish StopAll1 at same timestamp remains current retained anchor",
+      "curated_source_anchor_excerpt": "### 8.1 `2026-09-04 02:36:00` Bullish StopAll\n- Historical 5.4.4 example\n- **Not current expected**\n- Bearish StopAll1 at same timestamp remains current retained anchor"
+    },
+    {
+      "fixture_id": "Fixture-1-6",
+      "frontmatter_id": "case.fixture_1_6",
+      "fixture_title": "1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-28 08:56:30",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A: `08:31:30`",
+          "timestamp": "2026-08-28 08:31:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Correct S candle: `08:56:30`",
+          "timestamp": "2026-08-28 08:56:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Earlier `08:57:00` result was corrected by exact RAW chronology.",
+          "timestamp": "2026-08-28 08:57:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "S Red",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "S Red @ 2026-08-28 08:56:30; no StopAll1; 08:57:00 is superseded.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Earlier 2026-08-28 08:57:00 result, superseded by exact RAW chronology.",
+      "corrected_result": "S Red at 2026-08-28 08:56:30; no StopAll1.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Exact RAW chronology and native Mode-B eligibility",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "False",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "A @ 2026-08-28 08:31:30",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.chronology_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-6.md",
+      "fixture_file_sha256": "bec00e9559a1e04f074ac9d157a08c2476b27c85aa1929f18f36415e64bf1187",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-6.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "bec00e9559a1e04f074ac9d157a08c2476b27c85aa1929f18f36415e64bf1187"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 24,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 41,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Duplicate set member",
+          "line": 262,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 21,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3\n- A: `08:31:30`\n- Correct S candle: `08:56:30`\n- Earlier `08:57:00` result was corrected by exact RAW chronology.\n- Expected: **S Red, not StopAll1**\n- Supplied scenario label: **Active regression anchor** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3\n- A: `08:31:30`\n- Correct S candle: `08:56:30`\n- Earlier `08:57:00` result was corrected by exact RAW chronology.\n- Expected: **S Red, not StopAll1**\n- Status: **Active regression anchor**"
+    },
+    {
+      "fixture_id": "Fixture-1-11",
+      "frontmatter_id": "case.fixture_1_11",
+      "fixture_title": "1.11 2026-08-28 — S Blue Type-4",
+      "category": "EdgeCase",
+      "status": "Active",
+      "authority": "Canonical",
+      "document_status": "active",
+      "document_authority": "empirical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-28 06:34:15",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A: `06:22:00`, then Stop",
+          "timestamp": "2026-08-28 06:22:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "First: `06:31:30`",
+          "timestamp": "2026-08-28 06:31:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Breakout: `06:32:00`",
+          "timestamp": "2026-08-28 06:32:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Main source: `06:30:30`",
+          "timestamp": "2026-08-28 06:30:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Blue: `06:34:00`",
+          "timestamp": "2026-08-28 06:34:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Exact strict crossing: `06:34:15`",
+          "timestamp": "2026-08-28 06:34:15",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Blue",
+      "behavior_display": "S Blue Type-4",
+      "behavior_color": "Blue",
+      "behavior_type": "Type-4",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "Type-4",
+      "expected_result": "S Blue Type-4 following strict crossing @ 2026-08-28 06:34:15.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Type-4 source and exact lower-timeframe strict crossing",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Bounded assertion; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.s.type4"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "source_function": "SZoneDetector._first_type4",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L543"
+      ],
+      "related_source_entities": [
+        "source.s_zone_detector"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "A stopped @ 2026-08-28 06:22:00",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.chronology_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-1-11.md",
+      "fixture_file_sha256": "cdb43914b309d159b79f2559f8799dfdc797bbb27a4a0f1b7a807caf871a2790",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/EdgeCases/Fixture-1-11.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "cdb43914b309d159b79f2559f8799dfdc797bbb27a4a0f1b7a807caf871a2790"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 29,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 93,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=active; document authority=empirical."
+      ],
+      "open_questions": [],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 1.11 2026-08-28 — S Blue Type-4\n- A: `06:22:00`, then Stop\n- Bearish Reaction:\n  - First: `06:31:30`\n  - Breakout: `06:32:00`\n- Type-4 candidate:\n  - Main source: `06:30:30`\n  - Price: `4587.505`\n- Blue: `06:34:00`\n- Exact strict crossing: `06:34:15`\n- Expected: `S Blue Type-4`\n- Status: **Active Type-4 fixture**",
+      "curated_source_anchor_excerpt": "### 1.11 2026-08-28 — S Blue Type-4\n- A: `06:22:00`, then Stop\n- Bearish Reaction:\n  - First: `06:31:30`\n  - Breakout: `06:32:00`\n- Type-4 candidate:\n  - Main source: `06:30:30`\n  - Price: `4587.505`\n- Blue: `06:34:00`\n- Exact strict crossing: `06:34:15`\n- Expected: `S Blue Type-4`\n- Status: **Active Type-4 fixture**"
+    },
+    {
+      "fixture_id": "Fixture-1-10",
+      "frontmatter_id": "case.fixture_1_10",
+      "fixture_title": "1.10 2026-08-28 — exact-key StopAll",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-28 03:41:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "S Red: `03:41:00`",
+          "timestamp": "2026-08-28 03:41:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "S Red; E3 Blue exact-key history",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "S Red @ 2026-08-28 03:41:00, not StopAll; E1/E2/E3 are distinct Blue keys.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Blue repetition requires identical key, not family sequence length",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "False",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.identity_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-10.md",
+      "fixture_file_sha256": "bb3bd2191e7b566ddc964e03cd1a3b0f52c568aa2c550bd7dac95d5bee75b934",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-10.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "bb3bd2191e7b566ddc964e03cd1a3b0f52c568aa2c550bd7dac95d5bee75b934"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 28,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 86,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 1.10 2026-08-28 — exact-key StopAll\n- E3 Blue: only one occurrence\n- S Red: `03:41:00`\n- Expected: **not StopAll**\n- E1→E2→E3 must not count as three occurrences of one Blue group.\n- Status: **Active**",
+      "curated_source_anchor_excerpt": "### 1.10 2026-08-28 — exact-key StopAll\n- E3 Blue: only one occurrence\n- S Red: `03:41:00`\n- Expected: **not StopAll**\n- E1→E2→E3 must not count as three occurrences of one Blue group.\n- Status: **Active**"
+    },
+    {
+      "fixture_id": "Fixture-1-9",
+      "frontmatter_id": "case.fixture_1_9",
+      "fixture_title": "1.9 Canonical Bullish Order geometry inside Bearish regression",
+      "category": "Confirmed",
+      "status": "Active",
+      "authority": "Canonical",
+      "document_status": "active",
+      "document_authority": "empirical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-27 08:37:10",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "Order First: `08:36:30`",
+          "timestamp": "2026-08-27 08:36:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "BoxTop source main: `08:36:00`",
+          "timestamp": "2026-08-27 08:36:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "BoxBottom source main: `08:37:00`",
+          "timestamp": "2026-08-27 08:37:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Exact lower event: `08:37:10`",
+          "timestamp": "2026-08-27 08:37:10",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Breakout main: `08:37:30`",
+          "timestamp": "2026-08-27 08:37:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Later low `08:37:50`: post-confirmation and must not rewrite BoxBottom",
+          "timestamp": "2026-08-27 08:37:50",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "NOT RECORDED",
+      "behavior_display": "Bullish physical Order geometry inside Bearish calculation",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "BoxTop 4620.825, BoxBottom 4619.565; lower event 08:37:10; later 08:37:50 low cannot rewrite BoxBottom.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "BoxTop 4620.825, BoxBottom 4619.565; lower event 08:37:10; later 08:37:50 low cannot rewrite BoxBottom.",
+      "bug_or_regression_description": "Exact confirmation freezes physical Order geometry",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Bounded assertion; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.order"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "source_function": "UnifiedReactionDetector._candidate_from_confirmation_remainder",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1546"
+      ],
+      "related_source_entities": [
+        "source.reaction_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.chronology_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-9.md",
+      "fixture_file_sha256": "a538b6b427894a087ac71fc19dab6d2988348eec8b3b73b80fb4ef0415dcc1a7",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-9.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "a538b6b427894a087ac71fc19dab6d2988348eec8b3b73b80fb4ef0415dcc1a7"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 27,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 74,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=active; document authority=empirical."
+      ],
+      "open_questions": [],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 1.9 Canonical Bullish Order geometry inside Bearish regression\n- Date: `2026-08-27`\n- Order First: `08:36:30`\n- BoxTop: `4620.825`\n- BoxTop source main: `08:36:00`\n- BoxBottom: `4619.565`\n- BoxBottom source main: `08:37:00`\n- Exact lower event: `08:37:10`\n- Breakout main: `08:37:30`\n- Later low `08:37:50`: post-confirmation and must not rewrite BoxBottom\n- Status: **Active exact-confirmation geometry fixture**",
+      "curated_source_anchor_excerpt": "### 1.9 Canonical Bullish Order geometry inside Bearish regression\n- Date: `2026-08-27`\n- Order First: `08:36:30`\n- BoxTop: `4620.825`\n- BoxTop source main: `08:36:00`\n- BoxBottom: `4619.565`\n- BoxBottom source main: `08:37:00`\n- Exact lower event: `08:37:10`\n- Breakout main: `08:37:30`\n- Later low `08:37:50`: post-confirmation and must not rewrite BoxBottom\n- Status: **Active exact-confirmation geometry fixture**"
+    },
+    {
+      "fixture_id": "Fixture-1-8",
+      "frontmatter_id": "case.fixture_1_8",
+      "fixture_title": "1.8 V5.4.3 dominant Red E / cycle ownership",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-27 03:55:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "StopAll boundary: `2026-08-26 02:21:30`",
+          "timestamp": "2026-08-26 02:21:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`2026-08-26 06:13:30`",
+          "timestamp": "2026-08-26 06:13:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`2026-08-26 09:00:30`",
+          "timestamp": "2026-08-26 09:00:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "`2026-08-27 03:34:30`",
+          "timestamp": "2026-08-27 03:34:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "S Red: `2026-08-27 03:55:00`",
+          "timestamp": "2026-08-27 03:55:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "A `2026-08-27 04:41:30`: expected absent / cycle-invalid",
+          "timestamp": "2026-08-27 04:41:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "S Red after dominant Red E history",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "S Red @ 2026-08-27 03:55:00 accepted, not StopAll; A @ 04:41:30 absent.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Dominant Red E cycle ownership across StopAll boundary",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.lifecycle"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "True",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "E1 Red @ 2026-08-27 03:34:30",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-8.md",
+      "fixture_file_sha256": "1b59635f5226eb9f1d058f78d5f7a7028988902b6f42199ed709d98e080b7958",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-8.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "1b59635f5226eb9f1d058f78d5f7a7028988902b6f42199ed709d98e080b7958"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 26,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 63,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 1.8 V5.4.3 dominant Red E / cycle ownership\n- StopAll boundary: `2026-08-26 02:21:30`\n- E1 Red repeats:\n  - `2026-08-26 06:13:30`\n  - `2026-08-26 09:00:30`\n  - `2026-08-27 03:34:30`\n- S Red: `2026-08-27 03:55:00`\n- Expected: accepted S Red, **not StopAll**\n- A `2026-08-27 04:41:30`: expected absent / cycle-invalid\n- Supplied scenario label: **Active regression anchor** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 1.8 V5.4.3 dominant Red E / cycle ownership\n- StopAll boundary: `2026-08-26 02:21:30`\n- E1 Red repeats:\n  - `2026-08-26 06:13:30`\n  - `2026-08-26 09:00:30`\n  - `2026-08-27 03:34:30`\n- S Red: `2026-08-27 03:55:00`\n- Expected: accepted S Red, **not StopAll**\n- A `2026-08-27 04:41:30`: expected absent / cycle-invalid\n- Status: **Active regression anchor**"
+    },
+    {
+      "fixture_id": "Fixture-1-5",
+      "frontmatter_id": "case.fixture_1_5",
+      "fixture_title": "1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-26 23:00:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A: `22:41:30`",
+          "timestamp": "2026-08-26 22:41:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Expected S Red: `23:00:00`",
+          "timestamp": "2026-08-26 23:00:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "S Red",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "S Red @ 2026-08-26 23:00:00; no StopAll1 substitution.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Native Mode-B S eligibility versus StopAll gate",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "False",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "A @ 2026-08-26 22:41:30",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-5.md",
+      "fixture_file_sha256": "024d6be92f073b2fa92d484c45389431794b73b87d92df522f66bd5e682275c5",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-5.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "024d6be92f073b2fa92d484c45389431794b73b87d92df522f66bd5e682275c5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 23,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 35,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Duplicate set member",
+          "line": 258,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 21,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2\n- A: `22:41:30`\n- Expected S Red: `23:00:00`\n- Expected: **S Red, not StopAll1**\n- Supplied scenario label: **Active regression anchor** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2\n- A: `22:41:30`\n- Expected S Red: `23:00:00`\n- Expected: **S Red, not StopAll1**\n- Status: **Active regression anchor**"
+    },
+    {
+      "fixture_id": "Fixture-1-4",
+      "frontmatter_id": "case.fixture_1_4",
+      "fixture_title": "1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-26 11:04:00",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A: `10:55:30`",
+          "timestamp": "2026-08-26 10:55:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Expected S Red: `11:04:00`",
+          "timestamp": "2026-08-26 11:04:00",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "S Red",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "S Red @ 2026-08-26 11:04:00; no StopAll1 substitution.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Native Mode-B S eligibility versus StopAll gate",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.stopall"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "NOT RECORDED",
+      "stopall_context": "False",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "A @ 2026-08-26 10:55:30",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-4.md",
+      "fixture_file_sha256": "fc2417a2cca45f1b71e0b97279fad918f083ce0820f97ac403c140a7f4361edf",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-4.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "fc2417a2cca45f1b71e0b97279fad918f083ce0820f97ac403c140a7f4361edf"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 22,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 29,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Duplicate set member",
+          "line": 254,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
+          "role": "Reused claim",
+          "line": 21,
+          "sha256": "5beb9fb76e242269723a1c63c2ee5afd84a15d865009b6574f02583f30463e89"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established.",
+      "source_scenario_excerpt": "### 1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1\n- A: `10:55:30`\n- Expected S Red: `11:04:00`\n- Expected: **S Red, not StopAll1**\n- Supplied scenario label: **Active regression anchor** (historical wording; current Vault status: Pending)",
+      "curated_source_anchor_excerpt": "### 1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1\n- A: `10:55:30`\n- Expected S Red: `11:04:00`\n- Expected: **S Red, not StopAll1**\n- Status: **Active regression anchor**"
+    },
+    {
+      "fixture_id": "Fixture-1-1",
+      "frontmatter_id": "case.fixture_1_1",
+      "fixture_title": "1.1 2026-08-25 — Order_A ownership / immutable first Order",
+      "category": "Confirmed",
+      "status": "Active",
+      "authority": "Canonical",
+      "document_status": "active",
+      "document_authority": "empirical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "2026-08-25 09:32:30",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "IN_RANGE",
+      "related_timeline": [
+        {
+          "event": "A: `09:32:30`",
+          "timestamp": "2026-08-25 09:32:30",
+          "date_status": "FULL",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "A",
+      "behavior_display": "stopped A; first Order_A ownership",
+      "behavior_color": "NOT RECORDED",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "First eligible Order_A keeps parent-stop ownership; later native Mode-B Orders do not refresh it.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "NOT RECORDED",
+      "corrected_result": "NOT RECORDED",
+      "confirmed_result": "First eligible Order_A keeps parent-stop ownership; later native Mode-B Orders do not refresh it.",
+      "bug_or_regression_description": "Order_A parent-stop ownership and physical identity",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "NOT RECORDED",
+      "current_verification_state": "Bounded assertion; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.order.a"
+      ],
+      "source_modules": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "source_function": "SZoneDetector._first_order_after",
+      "source_references": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L277"
+      ],
+      "related_source_entities": [
+        "source.s_zone_detector"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "A stopped",
+      "stopall_context": "NOT RECORDED",
+      "order_context": {
+        "identity": "[689, 693]",
+        "first_index": "689",
+        "break_index": "693"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.identity_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-1.md",
+      "fixture_file_sha256": "92bd9231847ce5cc9978b2a20a7472c4641eb9f987ae38cc61deae02f7751162",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-1.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "92bd9231847ce5cc9978b2a20a7472c4641eb9f987ae38cc61deae02f7751162"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 21,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 21,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=active; document authority=empirical."
+      ],
+      "open_questions": [],
+      "manual_review_required": "NOT RECORDED",
+      "manual_review_reason": "NOT RECORDED",
+      "source_scenario_excerpt": "### 1.1 2026-08-25 — Order_A ownership / immutable first Order\n- Direction: Bearish\n- A: `09:32:30`\n- بعد از Stop شدن A، اولین Order معتبر مالک `parent-stop` می‌ماند.\n- Physical identity قبلی: `(FirstIndex, BreakIndex) = (689,693)`\n- Mode-Bهای بعدی حق ندارند Order_A را refresh کنند.\n- Status: **Active current anchor**",
+      "curated_source_anchor_excerpt": "### 1.1 2026-08-25 — Order_A ownership / immutable first Order\n- Direction: Bearish\n- A: `09:32:30`\n- بعد از Stop شدن A، اولین Order معتبر مالک `parent-stop` می‌ماند.\n- Physical identity قبلی: `(FirstIndex, BreakIndex) = (689,693)`\n- Mode-Bهای بعدی حق ندارند Order_A را refresh کنند.\n- Status: **Active current anchor**"
+    },
+    {
+      "fixture_id": "Fixture-1-7",
+      "frontmatter_id": "case.fixture_1_7",
+      "fixture_title": "1.7 V5.4.2 lifecycle chain — Bearish",
+      "category": "Regression",
+      "status": "Pending",
+      "authority": "Pending",
+      "document_status": "draft",
+      "document_authority": "non-canonical",
+      "direction": "Bearish",
+      "symbol": "XAUUSD",
+      "market": "NOT RECORDED",
+      "source": "NOT RECORDED",
+      "provider_or_broker": "FOREXCOM",
+      "raw_resolution": "5s",
+      "analysis_timeframe": "30s",
+      "lower_timeframes": [
+        "5s"
+      ],
+      "dataset_id": "data.dataset_f5bc29e3",
+      "dataset_sha256": "f5bc29e3ccb08b1cfb322c0ad2c86c0585949c8e0918b63b2e7837b795446974",
+      "exact_raw_filename": "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "raw_path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+      "physical_availability": "PRESENT",
+      "additional_raw_inputs": [],
+      "related_raw_files": [],
+      "logical_window": null,
+      "parent_raw_filename": null,
+      "primary_timestamp": "AMBIGUOUS",
+      "timestamp_timezone": "Asia/Tehran (+03:30)",
+      "raw_range_first_epoch": 1787617410,
+      "raw_range_last_epoch": 1789765170,
+      "input_range_first_epoch": 1787617410,
+      "input_range_last_epoch": 1789765170,
+      "timestamp_range_check": "NOT CHECKABLE: PRIMARY DATE UNKNOWN",
+      "related_timeline": [
+        {
+          "event": "Invalid A that must not exist: `11:07:00`",
+          "timestamp": "11:07:00",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Correct A: `11:15:30`",
+          "timestamp": "11:15:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "S Red: `11:54:30`",
+          "timestamp": "11:54:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Second S Red: `12:47:00`",
+          "timestamp": "12:47:00",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "StopAll1: `13:20:30`",
+          "timestamp": "13:20:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "StopAll2: `15:20:30`",
+          "timestamp": "15:20:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E1 Blue: `16:21:30`",
+          "timestamp": "16:21:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "A: `17:36:30`, then stops",
+          "timestamp": "17:36:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "S Red: `17:43:00`",
+          "timestamp": "17:43:00",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "E1 Red: `17:56:30`",
+          "timestamp": "17:56:30",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        },
+        {
+          "event": "Expected: `S Red 17:43:00` must not immediately become StopAll from pre-StopAll state.",
+          "timestamp": "17:43:00",
+          "date_status": "DATE_NOT_RECORDED",
+          "source": "Primary fixture, Supplied scenario"
+        }
+      ],
+      "behavior": "S Red",
+      "behavior_display": "S Red in fresh post-StopAll cycle",
+      "behavior_color": "Red",
+      "behavior_type": "NOT RECORDED",
+      "behavior_number": null,
+      "e_number": null,
+      "stopall_number": null,
+      "formation_or_subtype": "NOT RECORDED",
+      "expected_result": "Unverified supplied claim: S Red at 17:43:00 remains S; full date and current serialized output unknown.",
+      "observed_result": "NOT RECORDED",
+      "previous_or_rejected_result": "Invalid A at 11:07:00 (calendar date not recorded).",
+      "corrected_result": "Correct A at 11:15:30 and S Red at 17:43:00; dates not recorded; current output unverified.",
+      "confirmed_result": "NOT RECORDED",
+      "bug_or_regression_description": "Old StopAll state must not leak into a fresh cycle",
+      "bug_fix_state": "NOT RECORDED",
+      "baseline_authority": "Pending",
+      "current_verification_state": "Pending; no fresh engine run or complete serialized output hash claimed",
+      "algorithms": [
+        "algorithm.lifecycle"
+      ],
+      "source_modules": [],
+      "source_function": "NOT RECORDED",
+      "source_references": [],
+      "related_source_entities": [
+        "source.lifecycle_engine"
+      ],
+      "mirror_relevance": "NOT RECORDED",
+      "lifecycle_context": "fresh cycle after StopAll",
+      "stopall_context": "True",
+      "order_context": {
+        "identity": "NOT RECORDED",
+        "first_index": "NOT RECORDED",
+        "break_index": "NOT RECORDED"
+      },
+      "reaction_context": "NOT RECORDED",
+      "previous_behavior": "NOT RECORDED",
+      "next_behavior": "NOT RECORDED",
+      "validation_rule": "test.lifecycle_invariants",
+      "fixture_source_file": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+      "fixture_source_sha256_recorded": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
+      "fixture_source_sha256_verified": true,
+      "fixture_file_path": "07_VALIDATION/Fixtures/Regression/Fixture-1-7.md",
+      "fixture_file_sha256": "749c673f67868684bd661bb422749e6be2457532e81dc045b14a1425962440d3",
+      "fixture_sources": [
+        {
+          "path": "07_VALIDATION/Fixtures/Regression/Fixture-1-7.md",
+          "role": "Primary fixture",
+          "line": null,
+          "sha256": "749c673f67868684bd661bb422749e6be2457532e81dc045b14a1425962440d3"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Fixture-Registry.md",
+          "role": "Fixture registry",
+          "line": 25,
+          "sha256": "23377879e5d6d6721230909c26a65d69ee179d6a8337e7fb8d512ea3aed2f075"
+        },
+        {
+          "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+          "role": "Curated source anchor",
+          "line": 48,
+          "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5"
+        }
+      ],
+      "data_sources": [
+        {
+          "path": "08_DATA/Datasets/Dataset-f5bc29e3.md",
+          "role": "Physical dataset note",
+          "line": null,
+          "sha256": "3108592df5d8154c1facda2fc7a8b4c43028257018a261a08fdeacc44d28b93f"
+        },
+        {
+          "path": "08_DATA/Datasets/Dataset-Registry.md",
+          "role": "Dataset registry",
+          "line": null,
+          "sha256": "c3d154edb92752bee4a25a6418f6c35609234c8a894f23707344855819a8eef9"
+        },
+        {
+          "path": "08_DATA/Hashes/Hash-Registry.md",
+          "role": "RAW hash registry",
+          "line": null,
+          "sha256": "6578725631e5f51bf44a3cd71b59e220447387f6b4a877d577a0677f2a04e2a1"
+        }
+      ],
+      "related_fixture_ids": [],
+      "notes": [
+        "Document status=draft; document authority=non-canonical.",
+        "Source records time-only events and no full primary date; no date was inferred from neighboring sections."
+      ],
+      "open_questions": [
+        "No approved full-payload regression baseline or route-specific review is recorded; current verification remains Pending.",
+        "Primary calendar date is NOT RECORDED; time-only lifecycle sequence cannot be chronologically placed."
+      ],
+      "manual_review_required": "YES",
+      "manual_review_reason": "Registry: no approved full-payload baseline or route-specific review established. Primary fixture also requires fresh source review and verified run.",
+      "source_scenario_excerpt": "### 1.7 V5.4.2 lifecycle chain — Bearish\n- Invalid A that must not exist: `11:07:00`\n- Correct A: `11:15:30`\n- S Red: `11:54:30`\n- Second S Red: `12:47:00`\n- StopAll1: `13:20:30`\n- StopAll2: `15:20:30`\n- Fresh cycle:\n  - E1 Blue: `16:21:30`\n  - A: `17:36:30`, then stops\n  - S Red: `17:43:00`\n  - E1 Red: `17:56:30`\n- Expected: `S Red 17:43:00` must not immediately become StopAll from pre-StopAll state.\n- Supplied source status claim: **Active lifecycle/StopAll boundary regression**; current Vault status: Pending.",
+      "curated_source_anchor_excerpt": "### 1.7 V5.4.2 lifecycle chain — Bearish\n- Invalid A that must not exist: `11:07:00`\n- Correct A: `11:15:30`\n- S Red: `11:54:30`\n- Second S Red: `12:47:00`\n- StopAll1: `13:20:30`\n- StopAll2: `15:20:30`\n- Fresh cycle:\n  - E1 Blue: `16:21:30`\n  - A: `17:36:30`, then stops\n  - S Red: `17:43:00`\n  - E1 Red: `17:56:30`\n- Expected: `S Red 17:43:00` must not immediately become StopAll from pre-StopAll state.\n- Status: **Active lifecycle/StopAll boundary regression**"
+    }
+  ],
+  "raw_group_order": [
+    "RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json",
+    "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json",
+    "RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json",
+    "RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json",
+    "RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-19 00-29-30.json",
+    "RAW FARAZ_FOREXCOM_XAUUSD 1S FROM 1788449740 TO 1789388126.json"
+  ],
+  "duplicate_audit": {
+    "confirmed_duplicate_occurrences": [
+      {
+        "source": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+        "line": 254,
+        "maps_to": "Fixture-1-4",
+        "reason": "same A 2026-08-26 10:55:30 and S Red 11:04:00"
+      },
+      {
+        "source": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+        "line": 258,
+        "maps_to": "Fixture-1-5",
+        "reason": "same A 2026-08-26 22:41:30 and S Red 23:00:00"
+      },
+      {
+        "source": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+        "line": 262,
+        "maps_to": "Fixture-1-6",
+        "reason": "same A 2026-08-28 08:31:30 and S Red 08:56:30"
+      },
+      {
+        "source": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+        "line": 281,
+        "maps_to": "Fixture-1-13",
+        "reason": "same historical 2026-09-09 Mode-B refresh chain"
+      },
+      {
+        "source": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+        "line": 285,
+        "maps_to": "Fixture-2-5",
+        "reason": "same 2026-09-17 16:15 Bullish S Red/StopAll history"
+      },
+      {
+        "source": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
+        "line": 289,
+        "maps_to": "Fixture-2-4",
+        "reason": "same 2026-09-17 18:30:30 downstream StopAll absence"
+      }
+    ],
+    "possible_duplicates": [],
+    "same_event_distinct_fixtures": [
+      {
+        "fixture_ids": [
+          "Fixture-1-12",
+          "Fixture-8-1"
+        ],
+        "reason": "Same 2026-09-04 02:36:00 timestamp, but Bearish Pending versus historical Bullish claim; directions and assertions differ."
+      }
+    ]
+  },
+  "conflicts": [
+    {
+      "fixture_id": "Fixture-5-1",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-10",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-12",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-4",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-5",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-6",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-7",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-1-8",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-2-3",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-2-4",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-4-3",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-5-2",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "Fixture-6-1",
+      "kind": "STATUS_SOURCE_VAULT",
+      "detail": "Curated source calls the anchor Active; current fixture metadata and Registry say Pending. Pending is retained; source claim is preserved."
+    },
+    {
+      "fixture_id": "DATASET",
+      "kind": "WINDOW_PHYSICAL_AVAILABILITY",
+      "detail": "data.window_0291455b: window note/manifest say smaller RAW remains, but current Vault RAW inventory lacks RAW FOREXCOM_XAUUSD 1S FROM 2026-09-03 19-05-40 TO 2026-09-08 03-18-28.json; root dataset registry says deleted. Treat as logical-only."
+    },
+    {
+      "fixture_id": "DATASET",
+      "kind": "WINDOW_PHYSICAL_AVAILABILITY",
+      "detail": "data.window_18632e27: window note/manifest say smaller RAW remains, but current Vault RAW inventory lacks RAW FOREXCOM_XAUUSD 5S FROM 2026-09-03 18-44-00 TO 2026-09-19 00-29-35.json; root dataset registry says deleted. Treat as logical-only."
+    },
+    {
+      "fixture_id": "DATASET",
+      "kind": "WINDOW_PHYSICAL_AVAILABILITY",
+      "detail": "data.window_d33c7e2c note/manifest say smaller RAW remains; current Vault inventory has seven retained physical JSON RAW files and no separately registered smaller file. Historical small filename is NOT RECORDED."
+    },
+    {
+      "fixture_id": "DATASET",
+      "kind": "FARAZ_FILENAME_END_EPOCH",
+      "detail": "Filename ends 1789388126; dataset note records actual last row 1789501784."
+    },
+    {
+      "fixture_id": "REGISTRY",
+      "kind": "CORPUS_COUNT_TEXT",
+      "detail": "Legacy review says 28-case active/registered corpus; current Fixture Registry, physical case files and curated anchor identities each contain 22."
+    }
+  ],
+  "unresolved_fixture_ids": [
+    "Fixture-6-1",
+    "Fixture-2-4",
+    "Fixture-2-3",
+    "Fixture-5-2",
+    "Fixture-5-1",
+    "Fixture-4-3",
+    "Fixture-3-2",
+    "Fixture-3-1",
+    "Fixture-1-12",
+    "Fixture-1-6",
+    "Fixture-1-10",
+    "Fixture-1-8",
+    "Fixture-1-5",
+    "Fixture-1-4",
+    "Fixture-1-7"
+  ],
+  "coverage": {
+    "physical_fixture_files": 22,
+    "registry_fixture_ids": 22,
+    "curated_source_anchor_ids": 22,
+    "unique_master_entries": 22,
+    "confirmed_duplicate_occurrences": 6,
+    "possible_duplicates": 0,
+    "unresolved_fixtures": 15,
+    "nonempty_fixture_source_files_read": 25,
+    "dataset_metadata_files_read": 20,
+    "physical_raw_files_hashed": 7,
+    "missing_source_records": []
+  },
+  "chronology_verified": true,
+  "source_files_unchanged": true,
+  "raw_files_unchanged": true,
+  "verdict": "FIXTURE_EXTRACTION_REQUIRES_REVIEW"
+}

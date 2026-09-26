@@ -6,14 +6,14 @@ status: "pending"
 authority: "non-canonical"
 title: "Observed RAW JSON format"
 created: "2026-09-25"
-updated: "2026-09-25"
+updated: "2026-09-26"
 related_entities: ["data.raw_schema", "data.raw_model", "data.candle_model", "algorithm.raw", "source.trading_pipeline"]
 source_reference: []
 ---
 
 # Observed RAW JSON format
 
-Each inspected RAW file is one JSON array of candle objects. The confirmed row keys are exactly `time`, `open`, `high`, `low`, `close`; `time` is an integer Unix epoch second, while OHLC are JSON numbers (some parse as integers, others as decimals). No volume, symbol, timeframe, direction, indicator, source ID or lifecycle field occurs inside those ten RAW row shapes. Filename and optional `.meta.json` sidecar carry separate identity metadata and are not extra candle fields.
+Each retained physical RAW file is one JSON array of candle objects. The confirmed row keys are exactly `time`, `open`, `high`, `low`, `close`; `time` is an integer Unix epoch second, while OHLC are JSON numbers (some parse as integers, others as decimals). No volume, symbol, timeframe, direction, indicator, source ID or lifecycle field occurs inside the seven physical RAW row shapes or their three reproducible logical windows. Filename and optional `.meta.json` sidecar carry separate identity metadata and are not extra candle fields.
 
 The bridge reads complete file bytes, removes a leading UTF-8 BOM if present, parses with `orjson` and accesses the five keys. The chart RAW store's write validator requires a nonempty array, those exact keys, safe positive integer times, finite prices, valid OHLC and strictly increasing row times. The bridge can aggregate duplicate seconds if such an external input reaches it, so storage acceptance and engine normalization are distinct boundaries.
 

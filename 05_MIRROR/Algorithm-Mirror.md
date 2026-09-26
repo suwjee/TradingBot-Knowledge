@@ -5,16 +5,16 @@ status: "pending"
 authority: "non-canonical"
 title: "Algorithm mirror matrix"
 created: "2026-09-25"
-updated: "2026-09-25"
+updated: "2026-09-26"
 related_entities: ["algorithm.raw", "algorithm.reaction", "algorithm.reset", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.order", "algorithm.lifecycle", "algorithm.serialization", "source.reaction_engine", "source.blue_line_detector", "source.a_zone_detector", "source.s_zone_detector", "source.e_zone_detector", "source.lifecycle_engine", "source.core_utils", "source.trading_pipeline"]
 source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21"]
 ---
 
 # Algorithm mirror matrix
 
-> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
+> Scope: All nine main Engine modules are captured. Both V5.4.11 HPZR6 references are hash-pinned optional external evidence; current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
 
-Classification below is provisional where a stage needs source omitted from this Vault. A Mixed row contains separate Directional and Invariant atomic rules; it does not place one atomic rule in two categories.
+Classification below remains non-canonical where full paired runtime evidence or an accepted B/C rewrite is required; it is not provisional because a main Engine source module is missing. A Mixed row contains separate Directional and Invariant atomic rules; it does not place one atomic rule in two categories.
 
 | Algorithm | Category | Directional component | Invariant component | Source owner / anchor |
 |---|---|---|---|---|

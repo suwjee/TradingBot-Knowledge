@@ -15,4 +15,4 @@ Raw time is epoch seconds. Main buckets use floor(time/T)*T except T=1. Internal
 
 Store both main-candle and lower-event chronology. Reaction confirmation and Reset may occur in one main candle; first strict lower event wins under each routine's tie order. Presentation clipping occurs after full engine calculation over its received input and never renumbers main indexes.
 
-The retained `reaction_engine.py` proves the lower-window and event-mapping subset. Bucket construction, bridge serialization, and presentation clipping require the absent bridge source and remain pending as a complete Vault-local chronology contract.
+The retained `reaction_engine.py` proves the lower-window and event-mapping subset. Bucket construction, bridge serialization, and presentation clipping are present in the captured bridge source; the complete Vault-local chronology contract remains pending/non-canonical until end-to-end runtime evidence is refreshed.

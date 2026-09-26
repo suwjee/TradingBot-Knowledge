@@ -5,7 +5,7 @@ status: "pending"
 authority: "non-canonical"
 title: "Fixture registry"
 created: "2026-09-25"
-updated: "2026-09-25"
+updated: "2026-09-26"
 related_entities: ["test.fixture_model", "test.validation_contract", "test.regression_policy", "test.source_validation", "test.mirror_validation", "test.test_model", "test.regression_test_execution"]
 source_reference: []
 ---
@@ -13,6 +13,8 @@ source_reference: []
 # Fixture registry
 
 The curated Vault-local fixture source is `07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md`, SHA-256 `0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5`. It contains only the retained case sections. Each case note pins its heading, RAW file, and any exact input window. All nine main Engine modules are now captured; Pending cases remain Pending because no newly approved full-payload regression baseline or route-specific review was established. No retained fixture explicitly claims Order_B or Order_C as its algorithm.
+
+The fixture source's literal `5.4.11-HPZR5` label is preserved historical fixture evidence, not the current reference registry state. The current Bullish and Bearish HPZR6 documents are the hash-registered external references. Changing that pinned fixture source would require a deliberate review of all 22 fixture hashes, so this repair leaves every fixture SHA and review marker unchanged.
 
 ## Retained scenarios
 

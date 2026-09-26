@@ -41,6 +41,9 @@
   "properties": {
     "type": {
       "const": "case"
+    },
+    "source_fixture_review": {
+      "const": "pending-manual-review"
     }
   },
   "allOf": [

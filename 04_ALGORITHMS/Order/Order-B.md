@@ -34,6 +34,8 @@ The Bullish and Bearish HPZR6 files registered in `06_SOURCE/Reference-Registry.
 
 `pending-fix` / `non-canonical` / `known-invalid`. No implementation patch or corrected replacement rule is approved. A physical Reaction's native Mode B does not itself mean independent Order_B provenance.
 
+Correct future semantics are not yet defined.
+
 ## Dependencies
 
 Current source reads Reset-leg geometry, strict price chronology, opposite Reaction and physical Order identity. The accepted future dependency graph must be established by a rewrite; this list is diagnostic.

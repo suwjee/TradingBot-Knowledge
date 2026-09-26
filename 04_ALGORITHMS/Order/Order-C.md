@@ -34,6 +34,8 @@ Both registered HPZR6 references contain §10.3C describing the present Blue-qua
 
 `pending-fix` / `non-canonical` / `known-invalid`. Native Reaction modes and independent Order_C creation cause are distinct concepts. No corrected Order_C semantics have been supplied.
 
+Correct future semantics are not yet defined.
+
 ## Dependencies
 
 The current source consults Reset ownership, a selected Leg Start, Blue formation, exact strict crossing, opposite Reaction chronology and physical Order identity. These are current-code dependencies only.

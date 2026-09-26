@@ -11,4 +11,4 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L27", "06_
 
 # Candle
 
-A retained `Candle` stores index, displayed wall time, exact timestamp, Decimal OHLC, and tag. The retained color helper returns GREEN if close >= open, so exact Doji is GREEN in both directions. One-second and main-timeframe bucket aggregation belongs to the absent bridge source and remains pending in `data.candle_model`.
+A retained `Candle` stores index, displayed wall time, exact timestamp, Decimal OHLC, and tag. The retained color helper returns GREEN if close >= open, so exact Doji is GREEN in both directions. One-second and main-timeframe bucket aggregation belong to the captured bridge source; `data.candle_model` remains pending/non-canonical until its full input-to-output chronology contract has fresh runtime validation.

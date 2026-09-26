@@ -16,7 +16,7 @@ source_reference: []
 
 ## Specification / implementation difference
 
-**Previously cited reference claim:** The former V5.4.11 HPZR6 directional references described calculation over the complete physical RAW file, with from/to selecting presentation output (sections 2 and 3A). Those references are absent from this scoped Vault, so this claim cannot currently be verified by a Vault-only reader or treated as an accepted normative contract.
+**Registered reference evidence:** Both current V5.4.11 HPZR6 directional references are hash-registered external evidence. They describe calculation over the complete physical RAW file, with from/to selecting presentation output (sections 2 and 3A). A Vault-only reader can inspect the registry but needs a configured project checkout to verify the external document bytes; this claim is therefore not an accepted normative integration contract by itself.
 
 **Retained chart implementation:** The Vite endpoint chooses inputScope=selected-range for a partial chart-candle interval. prepareIndicatorRangeInput filters RAW rows by inclusive chart bucket from..to. runIndicatorRangeCalculation streams that selected JSON through a Windows named pipe to the Python bridge. The bridge module is now captured byte-exact; the end-to-end behavioral consequence still needs a paired runtime comparison.
 

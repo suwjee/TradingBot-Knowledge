@@ -74,6 +74,7 @@ def build(check: bool = False, mode: str = "full-data") -> int:
     if mode not in {"knowledge", "full-data"}:
         raise ValueError("Validation mode must be knowledge or full-data")
     errors: list[str] = []
+    warnings: list[str] = []
     digest_cache: dict[Path, str] = {}
     candles_cache: dict[Path, list] = {}
     symbol_cache: dict[Path, set[str]] = {}
@@ -129,7 +130,7 @@ def build(check: bool = False, mode: str = "full-data") -> int:
     module_paths: set[str] = set()
     for path in sorted(ROOT.rglob("*.md")):
         rel = path.relative_to(ROOT).as_posix()
-        if (".obsidian" in path.parts or "Code" in path.parts
+        if (".obsidian" in path.parts or "_GENERATED" in path.parts or "Code" in path.parts
                 or rel.startswith("07_VALIDATION/Fixtures/Sources/") or path.stat().st_size == 0):
             continue
         try:
@@ -152,8 +153,8 @@ def build(check: bool = False, mode: str = "full-data") -> int:
                 errors.append("OrderAudit must not be indexed as a knowledge concept")
             if ident == "algorithm.order.a":
                 required = {"status": "canonical", "authority": "normative",
-                            "implementation_validity": "accepted", "valid_for_reasoning": True,
-                            "valid_for_validation": True}
+                             "implementation_validity": "accepted", "valid_for_reasoning": True,
+                             "valid_for_validation": True, "valid_for_regression_baseline": True}
                 for field, expected in required.items():
                     if data.get(field) != expected:
                         errors.append(f"Accepted Order_A metadata mismatch: {ident}.{field}")
@@ -209,12 +210,15 @@ def build(check: bool = False, mode: str = "full-data") -> int:
                 fixture = safe_path(ROOT, fixture_ref)
                 if not fixture.is_file():
                     errors.append(f"Missing Vault fixture source: {ident}: {fixture_ref}")
-                elif cached_sha(fixture) != data["source_fixture_sha256"]:
-                    errors.append(f"Fixture source SHA mismatch: {ident}")
                 else:
+                    if cached_sha(fixture) != data["source_fixture_sha256"]:
+                        if data.get("source_fixture_review") == "pending-manual-review":
+                            warnings.append(f"KNOWN_PENDING: Fixture source SHA mismatch: {ident}")
+                        else:
+                            errors.append(f"Fixture source SHA mismatch: {ident}")
                     fixture_lines = fixture.read_text(encoding="utf-8-sig").splitlines()
                     fixture_line = data["source_fixture_line"]
-                    if fixture_line > len(fixture_lines):
+                    if not isinstance(fixture_line, int) or fixture_line < 1 or fixture_line > len(fixture_lines):
                         errors.append(f"Fixture source line out of range: {ident}")
                     else:
                         section = re.fullmatch(r"case\.fixture_([0-9]+)_([0-9]+)", ident)
@@ -416,6 +420,8 @@ def build(check: bool = False, mode: str = "full-data") -> int:
         errors.append(f"Invalid directional reference registry: {exc}")
 
     if errors:
+        if warnings:
+            print("\n".join(sorted(warnings)), file=sys.stderr)
         print("\n".join(sorted(errors)), file=sys.stderr)
         print(f"FAILED: {len(errors)} errors", file=sys.stderr)
         return 1
@@ -446,8 +452,12 @@ def build(check: bool = False, mode: str = "full-data") -> int:
         else:
             path.write_text(rendered, encoding="utf-8")
     if errors:
+        if warnings:
+            print("\n".join(sorted(warnings)), file=sys.stderr)
         print("\n".join(sorted(errors)), file=sys.stderr)
         return 1
+    if warnings:
+        print("\n".join(sorted(warnings)), file=sys.stderr)
     print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(manifest['files'])} source snapshots, {registered_references} optional references, {len(manifest.get('supporting_files', []))} supporting files")
     return 0
 

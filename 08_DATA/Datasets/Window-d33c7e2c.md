@@ -6,7 +6,7 @@ status: "active"
 authority: "empirical"
 title: "Verified RAW window d33c7e2c"
 created: "2026-09-25"
-updated: "2026-09-25"
+updated: "2026-09-26"
 symbol: "XAUUSD"
 broker: "FOREXCOM"
 market: "unknown"
@@ -40,4 +40,4 @@ original_raw_bytes: 1156527
 
 # Verified RAW window d33c7e2c
 
-The 14140-candle RAW is represented in the active registry by the exact inclusive window from epoch `1789585500` through `1789659935` in `08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json`. The smaller physical file remains on disk pending deletion. The slice, serialized as compact JSON, has SHA-256 `d33c7e2c46440f7a4495bac7d80b38101a635491f0f95b8ea353caa8fdb7d96d` and matches the smaller RAW byte for byte. The retained parent has SHA-256 `ea82be1aa715f266dab711b6f65139780402afa0529d6fcedde7cc579fdad7f9`. A consumer must apply this window before calculating a fixture that previously used the smaller file; using the whole parent changes chronology and physical indexes.
+The 14140-candle historical RAW is represented in the active registry by the exact inclusive window from epoch `1789585500` through `1789659935` in `08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json`. No smaller physical file is retained. The slice, serialized as compact JSON, has SHA-256 `d33c7e2c46440f7a4495bac7d80b38101a635491f0f95b8ea353caa8fdb7d96d` and reproduces the former smaller RAW byte for byte. The retained parent has SHA-256 `ea82be1aa715f266dab711b6f65139780402afa0529d6fcedde7cc579fdad7f9`. A consumer must apply this window before calculating a fixture that previously used the smaller file; using the whole parent changes chronology and physical indexes.
