@@ -39,15 +39,15 @@ source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef7
 
 # 1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 S Red @ 2026-08-26 23:00:00; no StopAll1 substitution.
 
-**Purpose:** Native Mode-B S eligibility versus StopAll gate. **Status:** Active; **authority:** Canonical.
+**Purpose:** Native Mode-B S eligibility versus StopAll gate. **Status:** Pending; **authority:** Pending.
 
 ## Evidence boundary
 
-The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 35 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
+The supplied scenario records this candidate assertion; its expected output is not approved as a regression baseline; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 35 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -55,4 +55,4 @@ The supplied scenario and retained local source support this bounded assertion; 
 - A: `22:41:30`
 - Expected S Red: `23:00:00`
 - Expected: **S Red, not StopAll1**
-- Status: **Active regression anchor**
+- Supplied scenario label: **Active regression anchor** (historical wording; current Vault status: Pending)

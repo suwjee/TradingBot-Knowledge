@@ -12,7 +12,7 @@ source_reference: []
 
 # Retained source map
 
-The byte-exact source subset in `06_SOURCE/Code` contains Reaction/Reset, Blue, A, S, Decimal and direction-policy code. The captured bridge, E detector, lifecycle module, and comprehensive references are excluded while their dependent routes are rewritten. A pending source note is a locator for missing evidence, not executable authority.
+The byte-exact `06_SOURCE/Code` inventory now contains all nine main Engine modules. The bridge, E detector and lifecycle module are mixed executable evidence: their B/C-dependent regions are known invalid, while unrelated regions remain reviewable. The comprehensive HPZR6 references are registered by hash in `06_SOURCE/References/registry.json` and optionally read from a production checkout. The Vault does not treat their B/C descriptions as normative.
 
 | Knowledge | Retained source |
 | --- | --- |
@@ -20,7 +20,10 @@ The byte-exact source subset in `06_SOURCE/Code` contains Reaction/Reset, Blue, 
 | Blue | `blue_line_detector.py` |
 | A | `a_zone_detector.py` |
 | S and stopped-A Order_A selection | `s_zone_detector.py` |
+| E construction and current defective B/C routes | `e_zone_detector.py` |
+| StopAll, lifecycle and visibility | `lifecycle_engine.py` |
+| RAW parsing, orchestration and serialization | `trading_pipeline.py` |
 | Decimal and physical identity | `core_utils.py` |
 | Directional strictness | `direction_policy.py` |
 
-The local `Order_A` note is scoped to the S-stage first-owner rule. E-stage continuation and final public visibility are pending because their mixed source modules are excluded.
+The accepted `Order_A` note covers the immutable first stopped-A owner and evidenced direct E routes. The current B/C implementation is quarantined in `algorithm.order.b` and `algorithm.order.c`. E-stage continuation and final visibility can now be traced in local source, but any conclusion using the defective B/C creation causes is not an accepted regression baseline.

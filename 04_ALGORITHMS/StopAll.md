@@ -4,6 +4,7 @@ type: "algorithm"
 status: "pending"
 authority: "non-canonical"
 title: "StopAll gate state machine"
+affected_by_known_invalid_order_route: true
 implemented_by: ["source.lifecycle_engine"]
 produces: ["behavior.stopall", "behavior.stopall.type1", "behavior.stopall.type2", "behavior.stopall.type3"]
 depends_on: ["algorithm.lifecycle", "algorithm.e", "algorithm.s"]

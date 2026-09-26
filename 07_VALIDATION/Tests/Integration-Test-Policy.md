@@ -10,7 +10,7 @@ source_reference: []
 
 # Full pipeline integration test policy
 
-**Definition and purpose.** An integration check validates public outcomes and provenance across dependent stages on one exact input. It includes Reaction/Reset, Blue, A, S, E, Order reconciliation, StopAll, visibility, OrderAudit evidence and serialization where enabled.
+**Definition and purpose.** An integration check validates public outcomes and provenance across dependent stages on one exact input. It includes Reaction/Reset, Blue, A, S, E, Order reconciliation, StopAll, visibility and serialization where enabled. Audit output may be inspected as raw executable output, but has no active Vault validation authority.
 
 **Related algorithm and source.** `prepare_market_context()` receives the complete supplied input (`trading_pipeline.py#L1732`); `prepare_pipeline_state()` builds the dependent Reaction streams (`#L2300`); final visibility and serialization run later (`#L2549`, `#L2776`). The engine's actual E rebuilds and StopAll ownership are not a single-pass copy of the conceptual stage list. Test both directions and retain full physical indexes/timestamps.
 

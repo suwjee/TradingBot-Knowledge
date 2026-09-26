@@ -13,4 +13,10 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1137", "0
 
 # Physical Order identity
 
-A physical Order is a canonical opposite Reaction with identity `(FirstIndex,BreakIndex)`. The retained Order creation route in this Vault is `Order_A` after an eligible parent stop. Native Reaction modes A and B are separate state-machine labels. Additional creation routes are outside the current Vault authority.
+A physical Order is a canonical opposite Reaction with identity `(FirstIndex,BreakIndex)`. The accepted creation route is `Order_A` after an eligible parent stop; direct Order_A evidence is also present in E source. Native Reaction modes A and B are separate state-machine labels. `Order_B` and `Order_C` have diagnostic notes, but both current implementations are known invalid and cannot supply normative reasoning or regression baselines. The physical identity is shared across independently proven causes; current code behavior does not establish the future B/C contract.
+
+| Cause | Current knowledge status | Use |
+| --- | --- | --- |
+| Order_A | accepted canonical | reasoning and validation of evidenced A-owned routes |
+| Order_B | pending-fix, known-invalid | diagnostic source/reference evidence only |
+| Order_C | pending-fix, known-invalid | diagnostic source/reference evidence only |

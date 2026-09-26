@@ -39,15 +39,15 @@ source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef7
 
 # 1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 Bearish StopAll1 @ 2026-09-04 02:36:00; old Bullish version is historical.
 
-**Purpose:** Repeated-Blue reversal gate with incoming native Mode-B S Red. **Status:** Active; **authority:** Canonical.
+**Purpose:** Repeated-Blue reversal gate with incoming native Mode-B S Red. **Status:** Pending; **authority:** Pending.
 
 ## Evidence boundary
 
-The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 106 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
+The supplied scenario records this candidate assertion; its expected output is not approved as a regression baseline; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 106 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -57,4 +57,4 @@ The supplied scenario and retained local source support this bounded assertion; 
 - Gate: `opposite-s-group-stop`
 - Incoming S Red has native Mode-B formation Order
 - Historical Bullish version of the same timestamp is not current expected
-- Status: **Active Bearish anchor / Bullish version superseded**
+- Supplied scenario label: **Active Bearish anchor / Bullish version superseded** (historical wording; current Vault status: Pending)

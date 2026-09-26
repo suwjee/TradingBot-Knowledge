@@ -12,7 +12,7 @@ source_reference: []
 
 # Fixture registry
 
-The curated Vault-local fixture source is `07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md`, SHA-256 `0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5`. It contains only the retained case sections. Each case note pins its heading, RAW file, and any exact input window. Cases whose implementation source is excluded are Pending; no saved calculation payload is treated as an approved baseline.
+The curated Vault-local fixture source is `07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md`, SHA-256 `0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5`. It contains only the retained case sections. Each case note pins its heading, RAW file, and any exact input window. All nine main Engine modules are now captured; Pending cases remain Pending because no newly approved full-payload regression baseline or route-specific review was established. No retained fixture explicitly claims Order_B or Order_C as its algorithm.
 
 ## Retained scenarios
 
@@ -49,4 +49,4 @@ Six physical RAW files support these cases. The retained parent path and full-fi
 
 ## Evidence boundary
 
-The removed mixed references and source modules are outside this Vault. Pending cases cannot be promoted from historical notes or current computed output alone. Exact source authority, settings, both directional results, and approved expected values are required for a new regression baseline.
+The mixed source modules are present and byte-pinned. HPZR6 references are hash-registered optional external evidence. Pending cases cannot be promoted from historical notes or current computed output alone. Exact source authority, settings, both directional results, and approved expected values are required for a new regression baseline. A future fixture that depends on current Order_B/C must carry `valid_for_regression_baseline: false` and stay non-canonical.

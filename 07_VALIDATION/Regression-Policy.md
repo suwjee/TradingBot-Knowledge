@@ -12,6 +12,8 @@ source_reference: []
 
 # Regression comparison policy
 
+Current Order_B/Order_C routes and their downstream outputs are diagnostic only. They cannot supply a trusted baseline until the project rewrite and explicit rule approval.
+
 A regression compares a trusted, versioned previous result to a new result on the **same complete physical RAW bytes**, analysis timeframe, direction, enablement flags and bridge-output mode. Save dataset/source/reference hashes and command settings beside the baseline. The comparison covers the ordered behavior sequence, physical and exact event timestamps, lifecycle state and transitions, Order identity/causes, stage collections, visibility and stable serialization. Both references §§16–19; trading_pipeline.py lines 239–493 and 2776–2995.
 
 For a pure refactor, old stable output equals new stable output. The response contains measured timings; preserve their field structure but do not compare elapsed numeric values as deterministic algorithm output. For an approved algorithm change, record the approval, exact rule/version boundary, expected changed fields and causally affected downstream outputs; compare all unaffected fields and both directions. Do not hide an E/StopAll change behind unchanged Reaction counts.

@@ -4,6 +4,7 @@ type: "algorithm"
 status: "pending"
 authority: "non-canonical"
 title: "E and lifecycle reconciliation"
+affected_by_known_invalid_order_route: true
 implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
 produces: ["behavior.e", "behavior.e.red", "behavior.e.blue", "core.e_numbering"]
 depends_on: ["algorithm.e", "algorithm.lifecycle"]

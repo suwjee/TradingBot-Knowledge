@@ -16,6 +16,6 @@ Compare the response envelope, direction payload and ordered stage arrays after 
 
 For a selected display range, distinguish calculation scope from serialization clipping. The engine bridge builds complete physical-input state and then selects visible objects. A caller that prefilters RAW supplies a different physical input; do not treat those two requests as equivalent without checking the integration boundary. trading_pipeline.py lines 1732, 2300 and 2776.
 
-Current OrderAudit fields can be compared as executable output and used to detect identity/provenance drift; existing Vault authority keeps its trading-rule status pending-fix. Do not promote an observed OrderAudit discrepancy into an accepted S/E/StopAll rule. A fixture must state the stable output it checks; a count alone is insufficient when object identities or chronology may have changed.
+Current audit fields may be inspected directly in the captured source output for diagnostics, but there is no active audit knowledge entity or approved audit validation contract. Do not promote an observed audit discrepancy into an accepted S/E/StopAll rule. A fixture must state the stable output it checks; a count alone is insufficient when object identities or chronology may have changed.
 
 Timing values are telemetry. Verify the timing keys/shape, and compare semantic payload fields exactly for zero-difference claims. See Regression-Policy.md.

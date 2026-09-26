@@ -162,6 +162,12 @@
       "type": "string",
       "pattern": "^[0-9a-f]{64}$"
     },
+    "implementation_validity": { "enum": ["accepted", "known-invalid", "mixed", "unreviewed"] },
+    "valid_for_reasoning": { "type": "boolean" },
+    "valid_for_validation": { "type": "boolean" },
+    "valid_for_regression_baseline": { "type": "boolean" },
+    "rewrite_required": { "type": "boolean" },
+    "affected_by_known_invalid_order_route": { "type": "boolean" },
     "source_gate_type": {
       "enum": [
         "sequence-group-stop",

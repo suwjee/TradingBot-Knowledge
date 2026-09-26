@@ -12,7 +12,7 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21"]
 
 # Algorithm mirror matrix
 
-> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
+> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
 
 Classification below is provisional where a stage needs source omitted from this Vault. A Mixed row contains separate Directional and Invariant atomic rules; it does not place one atomic rule in two categories.
 

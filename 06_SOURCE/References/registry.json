@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "source_commit": "822c5ce1c1e7f464d2e08085fd6d991ee1d5d8ed",
+  "references": [
+    {
+      "id": "bullish_hpzr6",
+      "name": "TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
+      "version": "V5.4.11-HPZR6",
+      "repository_relative_path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
+      "sha256": "fe9de3f6aaad68aec5f4de53437cb5d0d7398b9d35050d2c825cd0755c762ea0",
+      "bytes": 765830,
+      "availability": "optional_external_untracked_at_capture",
+      "authority_scope": "descriptive reference evidence; Order_A first-owner correction accepted by project decision",
+      "accepted_evidence_lines": [29],
+      "known_invalid_sections": ["10.3 Order_B", "10.3C Order_C"],
+      "inactive_sections": ["11 OrderAudit"]
+    },
+    {
+      "id": "bearish_hpzr6",
+      "name": "TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
+      "version": "V5.4.11-HPZR6",
+      "repository_relative_path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
+      "sha256": "173814d4b964355b26dfe796c31436641e647d893c2d3d155c9aa5357926d06a",
+      "bytes": 766910,
+      "availability": "optional_external_untracked_at_capture",
+      "authority_scope": "descriptive reference evidence; Order_A first-owner correction accepted by project decision",
+      "accepted_evidence_lines": [29],
+      "known_invalid_sections": ["10.3 Order_B", "10.3C Order_C"],
+      "inactive_sections": ["11 OrderAudit"]
+    }
+  ]
+}

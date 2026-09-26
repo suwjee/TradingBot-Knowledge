@@ -12,7 +12,7 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L11"]
 
 # Mirror invariants
 
-> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
+> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
 
 These atomic rules do not change when direction changes. The surrounding algorithm can still be **Mixed** when its price predicate is directional.
 

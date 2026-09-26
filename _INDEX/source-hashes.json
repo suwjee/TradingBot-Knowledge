@@ -1,6 +1,6 @@
 {
   "created_utc": "2026-09-25T02:21:32.7688721Z",
-  "mirror_kind": "byte-exact retained source subset",
+  "mirror_kind": "byte-exact engine source snapshot; semantic validity is per knowledge note",
   "files": [
     {
       "source": "06_SOURCE/Code/engine/pipeline/__init__.py",
@@ -55,6 +55,24 @@
       "mirror": "06_SOURCE/Code/engine/bridge/__init__.py",
       "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
       "bytes": 64
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "sha256": "6becc792a17e40f572673bf65bc9818c9a957244de811be2823402d41c36e628",
+      "bytes": 139655
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "sha256": "330e26ffc04c24dea952e9a1e8e39da1a434936d0f80ef2233bd279fc32e8af1",
+      "bytes": 74496
+    },
+    {
+      "source": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+      "mirror": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+      "sha256": "a14b00ef08e3e97260b856ffe0dab8044cc70026d272e08e3d4350e9cff249cd",
+      "bytes": 111984
     }
   ],
   "algorithm_references": [],
@@ -104,6 +122,11 @@
       "path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json.meta.json",
       "sha256": "3297ed1e023b38cc9d2045a809a1796887338f5195e71b8cd7b9a19f11c1a949",
       "bytes": 742
+    },
+    {
+      "path": "06_SOURCE/References/registry.json",
+      "sha256": "87d606760d3f2aebf97554987aa5ad277cbb7c712a53f6b0471f59edc981057d",
+      "bytes": 1603
     }
   ]
 }

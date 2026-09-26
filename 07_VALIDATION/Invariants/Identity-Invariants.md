@@ -15,4 +15,4 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L19", "06_SOURC
 
 The first canonical opposite Order after a stopped A owns that A's parent-stop cause permanently. Later native Mode-B confirmations cannot refresh this owner before or after S decision. Source fixture 1.1 tests identity (689,693), and historical 1.13 preserves the superseded refresh outcome. This bounded Order_A rule is present in retained `s_zone_detector.py` lines 277–321.
 
-Validate that a single exact parent-stop provenance maps to one physical Order. Public S/E/StopAll ledger and mixed-cause visibility claims are pending until their source modules and references are restored. OrderAudit remains pending-fix for trading-rule conclusions.
+Validate that a single exact parent-stop provenance maps to one physical Order. Public S/E/StopAll ledger and mixed-cause visibility claims can now be traced to captured source, but B/C-dependent outcomes remain pending correction. Audit output has no independent active Vault validation authority.

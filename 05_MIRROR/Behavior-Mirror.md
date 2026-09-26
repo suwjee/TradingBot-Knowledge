@@ -12,7 +12,7 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L219", "06
 
 # Behavior mirror model
 
-> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
+> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
 
 The taxonomy is shared across directions. Direction changes formation geometry and strict stops, not behavior identity. Both references §0.1 and §22.4–22.7; `trading_pipeline.py#L1040-L1307`.
 

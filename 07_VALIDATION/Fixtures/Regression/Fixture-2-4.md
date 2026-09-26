@@ -43,15 +43,15 @@ dataset_window_sha256: "18632e270173105be865ea00608290bb70de2c8129e3622c6dcab1e7
 
 # 2.4 2026-09-17 — downstream StopAll consequence
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 StopAll @ 2026-09-17 18:30:30 absent because invalid Red E root is absent.
 
-**Purpose:** Downstream lifecycle consequence of rejected Red E root. **Status:** Active; **authority:** Canonical.
+**Purpose:** Downstream lifecycle consequence of rejected Red E root. **Status:** Pending; **authority:** Pending.
 
 ## Evidence boundary
 
-The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 152 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
+The supplied scenario records this candidate assertion; its expected output is not approved as a regression baseline; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 152 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -59,7 +59,7 @@ The supplied scenario and retained local source support this bounded assertion; 
 - Historical incorrect StopAll: `18:30:30`
 - Expected current: **absent**
 - Reason: invalid Red E root no longer exists
-- Status: **Active negative regression fixture**
+- Supplied scenario label: **Active negative regression fixture** (historical wording; current Vault status: Pending)
 
 ## Reproduction RAW window
 

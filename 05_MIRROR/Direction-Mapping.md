@@ -12,7 +12,7 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06
 
 # Verified direction mapping
 
-> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
+> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
 
 `direction_policy.py#L21-L70` supplies the shared primitive map; both synchronized references §15 list the same directional pairs. The mapped `value` must already be the appropriate price side. Do not substitute the stop predicate for the separate Reaction confirmation predicate.
 

@@ -39,15 +39,15 @@ source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef7
 
 # 4.3 2026-09-10 — stage ownership / invalid fallback
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 S Red @ 13:51:00 rejected; E1 Blue @ 13:56:00 continues to E2 Blue @ 14:26:30.
 
-**Purpose:** Accepted later-stage ownership blocks rejected A/S fallback. **Status:** Active; **authority:** Canonical.
+**Purpose:** Accepted later-stage ownership blocks rejected A/S fallback. **Status:** Pending; **authority:** Pending.
 
 ## Evidence boundary
 
-The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 200 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
+The supplied scenario records this candidate assertion; its expected output is not approved as a regression baseline; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 200 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -58,6 +58,6 @@ The supplied scenario and retained local source support this bounded assertion; 
 - E2 Blue: `14:26:30`
 - Expected continuation: `E1 Blue → E2 Blue`
 - Rejected A/S fallback cannot reopen accepted later-stage ownership
-- Status: **Active A→S→E ownership regression**
+- Supplied scenario label: **Active A→S→E ownership regression** (historical wording; current Vault status: Pending)
 
 ---

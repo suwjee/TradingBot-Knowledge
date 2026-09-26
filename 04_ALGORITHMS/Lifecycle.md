@@ -4,6 +4,7 @@ type: "algorithm"
 status: "pending"
 authority: "non-canonical"
 title: "Lifecycle eligibility and stage ownership"
+affected_by_known_invalid_order_route: true
 implemented_by: ["source.lifecycle_engine"]
 depends_on: ["algorithm.a", "algorithm.s", "algorithm.e"]
 source_refs: []

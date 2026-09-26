@@ -7,7 +7,7 @@ title: "s zone detector"
 source_path: "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
 mirror: "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
 sha256: "7714025b3f43087b09844df6feeef4eef0ec72eeb841115293df4c126fd202ee"
-implements: ["algorithm.s", "algorithm.s.type1", "algorithm.s.type2", "algorithm.s.type3", "algorithm.s.type4", "algorithm.order.a", "algorithm.order", "algorithm.orderaudit"]
+implements: ["algorithm.s", "algorithm.s.type1", "algorithm.s.type2", "algorithm.s.type3", "algorithm.s.type4", "algorithm.order.a", "algorithm.order"]
 affects: ["behavior.s", "behavior.s.red", "behavior.s.blue"]
 source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1"]
 related_entities: ["test.source_validation"]

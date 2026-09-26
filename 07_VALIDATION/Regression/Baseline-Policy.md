@@ -12,4 +12,4 @@ source_reference: []
 
 # Trusted baseline policy
 
-Promote a baseline only after recording a complete successful run, its raw dataset SHA, full-input scope, timeframe, direction, enablement and bridge-output flags, source/reference hashes, exact output artifact SHA, and current rule version. Keep the original artifact immutable. The accepted reference and current source must agree for the asserted rule. Both references §§0.2, 19, 29G–29H; trading_pipeline.py lines 1732 and 2942.
+Promote a baseline only after recording a complete successful run, its raw dataset SHA, full-input scope, timeframe, direction, enablement and bridge-output flags, source/reference hashes, exact output artifact SHA, and current rule version. Keep the original artifact immutable. The project owner must explicitly accept the asserted rule; source/reference agreement alone does not approve it. Current Order_B/Order_C implementation and all outputs dependent on those routes are known-invalid diagnostic evidence and cannot become an approved regression baseline. Both references §§0.2, 19, 29G–29H; trading_pipeline.py lines 1732 and 2942.

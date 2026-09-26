@@ -39,7 +39,7 @@ source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef7
 
 # 6.1 2026-09-22 — stopped dominant E must advance +1
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 Unverified supplied claim: E5 Red @ 2026-09-22 21:46:00 and E6 @ 23:07:30; no independent current output.
 

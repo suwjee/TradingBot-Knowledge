@@ -28,10 +28,6 @@ STOPALL_GATES = {
     "behavior.stopall.type2": "stopall-stop",
     "behavior.stopall.type3": "opposite-s-group-stop",
 }
-EXCLUDED_ORDER_PATTERN = re.compile(
-    r"\b(?:Order[_ -]?[BC]|order_[bc]|algorithm\.order\.[bc])\b|Order_A/B/C|\bB\s*/\s*C\b|blue-leg|orderResetLeg|orderBlueLeg",
-    re.IGNORECASE,
-)
 
 
 def frontmatter(path: Path) -> dict | None:
@@ -74,18 +70,13 @@ def safe_path(root: Path, relative: str) -> Path:
     return full
 
 
-def build(check: bool = False) -> int:
+def build(check: bool = False, mode: str = "full-data") -> int:
+    if mode not in {"knowledge", "full-data"}:
+        raise ValueError("Validation mode must be knowledge or full-data")
     errors: list[str] = []
     digest_cache: dict[Path, str] = {}
     candles_cache: dict[Path, list] = {}
     symbol_cache: dict[Path, set[str]] = {}
-    for path in ROOT.rglob("*"):
-        if (not path.is_file() or path.suffix not in {".md", ".py", ".js"}
-                or any(part in {".git", ".obsidian", "_SCHEMA", "_INDEX", "Raw"}
-                       for part in path.relative_to(ROOT).parts)):
-            continue
-        if EXCLUDED_ORDER_PATTERN.search(path.read_text(encoding="utf-8-sig")):
-            errors.append(f"Excluded Order route resurfaced: {path.relative_to(ROOT).as_posix()}")
 
     def cached_sha(path: Path) -> str:
         resolved = path.resolve()
@@ -157,6 +148,23 @@ def build(check: bool = False) -> int:
                 raise ValueError(f"Duplicate ID {ident}: already in {files[ident]}")
             if ident.split(".", 1)[0] != data.get("type"):
                 raise ValueError(f"ID/type prefix mismatch: {ident} / {data.get('type')}")
+            if ident == "algorithm.orderaudit":
+                errors.append("OrderAudit must not be indexed as a knowledge concept")
+            if ident == "algorithm.order.a":
+                required = {"status": "canonical", "authority": "normative",
+                            "implementation_validity": "accepted", "valid_for_reasoning": True,
+                            "valid_for_validation": True}
+                for field, expected in required.items():
+                    if data.get(field) != expected:
+                        errors.append(f"Accepted Order_A metadata mismatch: {ident}.{field}")
+            if ident in {"algorithm.order.b", "algorithm.order.c"}:
+                required = {"status": "pending-fix", "authority": "non-canonical",
+                            "implementation_validity": "known-invalid", "valid_for_reasoning": False,
+                            "valid_for_validation": False, "valid_for_regression_baseline": False,
+                            "rewrite_required": True}
+                for field, expected in required.items():
+                    if data.get(field) != expected:
+                        errors.append(f"Quarantine metadata mismatch: {ident}.{field}")
             if rel.startswith("06_SOURCE/Modules/"):
                 if "source_path" not in data:
                     raise ValueError("Physical module note missing source_path")
@@ -180,6 +188,16 @@ def build(check: bool = False) -> int:
                               or int(anchor) > len(actual.read_text(encoding="utf-8-sig").splitlines())):
                     errors.append(f"Invalid source line: {ident}: {ref}")
             if data.get("type") == "case":
+                body = path.read_text(encoding="utf-8-sig")
+                claim = re.search(r"[*]{2}Status:[*]{2} (Active|Pending|Historical); [*]{2}authority:[*]{2} (Canonical|Pending|Historical)[.]", body)
+                if (claim is None or claim.group(1) != data["fixture_status"]
+                        or claim.group(2) != data["fixture_authority"]):
+                    errors.append(f"Fixture frontmatter/body status contradiction: {ident}")
+                if data["fixture_status"] == "Pending" and re.search(r"(?m)^- Status: \*\*Active ", body):
+                    errors.append(f"Pending fixture has active scenario label: {ident}")
+                if data.get("algorithm") in {"algorithm.order.b", "algorithm.order.c"}:
+                    if data.get("fixture_authority") == "Canonical" or data.get("valid_for_regression_baseline") is not False:
+                        errors.append(f"Known-invalid Order fixture is an approved baseline: {ident}")
                 order_identity = data["order_identity"]
                 first_index, break_index = data["first_index"], data["break_index"]
                 if isinstance(order_identity, list):
@@ -208,11 +226,11 @@ def build(check: bool = False) -> int:
                 allowed_data_roots = (ROOT / "08_DATA/Raw",)
                 if not any(dataset.resolve().is_relative_to(root.resolve()) for root in allowed_data_roots):
                     errors.append(f"Fixture dataset outside RAW roots: {ident}: {dataset}")
-                elif not dataset.is_file():
+                elif mode == "full-data" and not dataset.is_file():
                     errors.append(f"Missing fixture dataset: {ident}: {dataset}")
-                elif cached_sha(dataset) != data["dataset_sha256"]:
+                elif mode == "full-data" and cached_sha(dataset) != data["dataset_sha256"]:
                     errors.append(f"Fixture dataset SHA mismatch: {ident}")
-                if data.get("dataset_window_sha256"):
+                if mode == "full-data" and data.get("dataset_window_sha256"):
                     if not validate_window(dataset, data["dataset_window_first_epoch"],
                                            data["dataset_window_last_epoch"],
                                            data["dataset_window_row_count"],
@@ -238,19 +256,19 @@ def build(check: bool = False) -> int:
                     raw_file = safe_path(ROOT, location)
                     if not any(raw_file.resolve().is_relative_to(root.resolve()) for root in allowed_data_roots):
                         errors.append(f"Dataset RAW outside approved roots: {ident}: {location}")
-                    elif not raw_file.is_file():
+                    elif mode == "full-data" and not raw_file.is_file():
                         errors.append(f"Dataset RAW missing: {ident}: {location}")
-                    elif cached_sha(raw_file) != data["raw_sha256"]:
+                    elif mode == "full-data" and cached_sha(raw_file) != data["raw_sha256"]:
                         errors.append(f"Dataset RAW SHA mismatch: {ident}: {location}")
-                    elif raw_file.stat().st_size != data["raw_bytes"]:
+                    elif mode == "full-data" and raw_file.stat().st_size != data["raw_bytes"]:
                         errors.append(f"Dataset RAW byte count mismatch: {ident}: {location}")
             if data.get("type") == "data" and data.get("data_kind") == "window":
                 raw_file = safe_path(ROOT, data["raw_path"])
                 if not raw_file.resolve().is_relative_to((ROOT / "08_DATA/Raw").resolve()):
                     errors.append(f"RAW window outside Vault: {ident}")
-                elif not raw_file.is_file() or cached_sha(raw_file) != data["retained_raw_sha256"]:
+                elif mode == "full-data" and (not raw_file.is_file() or cached_sha(raw_file) != data["retained_raw_sha256"]):
                     errors.append(f"RAW window parent mismatch: {ident}")
-                elif not validate_window(raw_file, data["first_epoch"], data["last_epoch"],
+                elif mode == "full-data" and not validate_window(raw_file, data["first_epoch"], data["last_epoch"],
                                          data["row_count"], data["raw_sha256"]):
                     errors.append(f"RAW window content mismatch: {ident}")
             external_paths = data.get("external_source_paths", [])
@@ -327,6 +345,8 @@ def build(check: bool = False) -> int:
                     errors.append(f"Normative edge into non-canonical knowledge: {ident} {edge_key} {target}")
                 edges.append({"from": ident, "type": edge_key, "to": target})
     pairs = {(row["from"], row["type"], row["to"]) for row in edges}
+    if len(pairs) != len(edges):
+        errors.append(f"Duplicate relations: {len(edges) - len(pairs)}")
     for source, key, target in pairs:
         if key == "implemented_by" and notes[source]["type"] == "algorithm" and (target, "implements", source) not in pairs:
             errors.append(f"Missing inverse implements: {source} -> {target}")
@@ -359,6 +379,8 @@ def build(check: bool = False) -> int:
             if not source.is_file() or sha(source) != row["sha256"] or source.stat().st_size != row["bytes"]:
                 errors.append(f"Reference changed: {row['source']}")
         for row in manifest.get("supporting_files", []):
+            if mode == "knowledge" and row["path"].startswith("08_DATA/Raw/"):
+                continue
             support = safe_path(ROOT, row["path"])
             if not support.is_file() or sha(support) != row["sha256"] or support.stat().st_size != row["bytes"]:
                 errors.append(f"Supporting evidence changed: {row['path']}")
@@ -373,10 +395,25 @@ def build(check: bool = False) -> int:
         errors.append(f"Hash manifest validation failed: {exc}")
         manifest = {"files": [], "algorithm_references": []}
 
-    if not manifest.get("algorithm_references"):
-        for ident, data in notes.items():
-            if data["authority"] == "normative" and data["type"] in {"core", "market", "behavior", "algorithm", "mirror"}:
-                errors.append(f"Normative trading rule lacks retained references: {ident}")
+    registered_references = 0
+    try:
+        registry = json.loads((ROOT / "06_SOURCE/References/registry.json").read_text(encoding="utf-8-sig"))
+        references = registry["references"]
+        registered_references = len(references)
+        if {row["id"] for row in references} != {"bullish_hpzr6", "bearish_hpzr6"}:
+            errors.append("Directional reference registry must identify both HPZR6 directions")
+        for row in references:
+            relative = row["repository_relative_path"]
+            if (not relative.startswith("engine/algorithms/") or "\\" in relative or ":" in relative
+                    or any(part in {"", ".", ".."} for part in relative.split("/"))
+                    or Path(relative).name != row["name"]):
+                errors.append(f"Unsafe reference registry path: {relative}")
+            if not re.fullmatch(r"[0-9a-f]{64}", row["sha256"]) or row["bytes"] < 1:
+                errors.append(f"Invalid reference identity: {row['id']}")
+            if not row["known_invalid_sections"] or not row["inactive_sections"]:
+                errors.append(f"Missing reference quarantine scope: {row['id']}")
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        errors.append(f"Invalid directional reference registry: {exc}")
 
     if errors:
         print("\n".join(sorted(errors)), file=sys.stderr)
@@ -384,7 +421,10 @@ def build(check: bool = False) -> int:
         return 1
 
     entity_rows = {ident: {"file": files[ident], "type": data["type"], "status": data["status"],
-                            "authority": data["authority"], "title": data["title"]}
+                            "authority": data["authority"], "title": data["title"],
+                            "valid_for_reasoning": data.get("valid_for_reasoning"),
+                            "implementation_validity": data.get("implementation_validity", "unreviewed"),
+                            "affected_by_known_invalid_order_route": data.get("affected_by_known_invalid_order_route", False)}
                    for ident, data in sorted(notes.items())}
     source_map = {ident: sorted(set(data.get("implemented_by", [])))
                   for ident, data in sorted(notes.items()) if data["type"] == "algorithm"}
@@ -408,11 +448,13 @@ def build(check: bool = False) -> int:
     if errors:
         print("\n".join(sorted(errors)), file=sys.stderr)
         return 1
-    print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(manifest['files'])} source snapshots, {len(manifest.get('algorithm_references', []))} references, {len(manifest.get('supporting_files', []))} supporting files")
+    print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(manifest['files'])} source snapshots, {registered_references} optional references, {len(manifest.get('supporting_files', []))} supporting files")
     return 0
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="validate without writing indexes")
-    raise SystemExit(build(parser.parse_args().check))
+    parser.add_argument("--mode", choices=("knowledge", "full-data"), default="full-data")
+    args = parser.parse_args()
+    raise SystemExit(build(args.check, args.mode))

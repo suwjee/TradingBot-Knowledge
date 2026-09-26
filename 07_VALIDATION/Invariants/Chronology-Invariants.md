@@ -12,7 +12,7 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1550"]
 
 # Chronology invariant checks
 
-Retained Reaction source supports exact event chronology for its own confirmation and Reset decisions. Complete RAW parsing, bucket construction, S/E/StopAll ordering, and presentation index claims require the absent bridge and lifecycle source; they remain pending in this Vault.
+Retained Reaction source supports exact event chronology for its own confirmation and Reset decisions. Bridge and lifecycle code is now captured for RAW parsing, bucket construction, S/E/StopAll ordering and presentation indexes. End-to-end claims remain pending a fresh paired run, and B/C-dependent results cannot be approved as baselines.
 
 Test same-main-candle races by event time, including invalidation-first ties where the owning routine specifies them. A same-Break post-confirmation Reset uses the frozen exact-confirmation opposite edge and prevents that Break from simultaneously opening the next Mode-B First. This local rule is anchored in retained `reaction_engine.py` lines 1550–1581 and source fixture 4.1.
 

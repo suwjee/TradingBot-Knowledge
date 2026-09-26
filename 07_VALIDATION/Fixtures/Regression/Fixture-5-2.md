@@ -39,15 +39,15 @@ source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef7
 
 # 5.2 2026-09-11 — stage ownership
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 A @ 2026-09-11 18:01:30 absent; accepted S Blue @ 17:43:00 retained.
 
-**Purpose:** Accepted S Blue must not be consumed by rejected fallback A. **Status:** Active; **authority:** Canonical.
+**Purpose:** Accepted S Blue must not be consumed by rejected fallback A. **Status:** Pending; **authority:** Pending.
 
 ## Evidence boundary
 
-The supplied scenario and retained local source support this bounded assertion; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 221 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
+The supplied scenario records this candidate assertion; its expected output is not approved as a regression baseline; no fresh engine run or complete serialized output hash is claimed. The Vault-local curated fixture section starts at line 221 in the SHA-256-pinned source document. The dataset SHA-256 identifies the exact RAW bytes. `source_reference` lists retained local implementation anchors when available; `source_function` names the verified owner when present; `unknown` records an unresolved owner. Unknown metadata is deliberately not inferred.
 
 ## Supplied scenario
 
@@ -56,4 +56,4 @@ The supplied scenario and retained local source support this bounded assertion; 
 - Would-be fallback A: `18:01:30`
 - Expected: A `18:01:30` rejected / absent
 - Accepted S Blue must not be consumed by rejected A
-- Status: **Active stage-order regression**
+- Supplied scenario label: **Active stage-order regression** (historical wording; current Vault status: Pending)

@@ -213,18 +213,23 @@
     },
     {
       "from": "algorithm.order.a",
-      "type": "depends_on",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "depends_on",
-      "to": "algorithm.order"
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
     },
     {
       "from": "algorithm.order.a",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "relates_to",
+      "to": "algorithm.order"
     },
     {
       "from": "algorithm.order.a",
@@ -237,32 +242,52 @@
       "to": "test.source_validation"
     },
     {
-      "from": "algorithm.orderaudit",
+      "from": "algorithm.order.b",
       "type": "depends_on",
       "to": "algorithm.order"
     },
     {
-      "from": "algorithm.orderaudit",
+      "from": "algorithm.order.b",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.order.b",
       "type": "implemented_by",
       "to": "source.e_zone_detector"
     },
     {
-      "from": "algorithm.orderaudit",
-      "type": "implemented_by",
+      "from": "algorithm.order.b",
+      "type": "relates_to",
       "to": "source.lifecycle_engine"
     },
     {
-      "from": "algorithm.orderaudit",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
+      "from": "algorithm.order.b",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
-      "from": "algorithm.orderaudit",
-      "type": "implemented_by",
-      "to": "source.trading_pipeline"
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.blue"
     },
     {
-      "from": "algorithm.orderaudit",
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.c",
       "type": "relates_to",
       "to": "test.source_validation"
     },
@@ -4039,12 +4064,27 @@
     {
       "from": "source.e_zone_detector",
       "type": "implements",
-      "to": "algorithm.orderaudit"
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.c"
     },
     {
       "from": "source.e_zone_detector",
       "type": "implements",
       "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.integration_boundary",
@@ -4069,11 +4109,6 @@
     {
       "from": "source.lifecycle_engine",
       "type": "implements",
-      "to": "algorithm.orderaudit"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "implements",
       "to": "algorithm.reconciliation"
     },
     {
@@ -4085,6 +4120,11 @@
       "from": "source.lifecycle_engine",
       "type": "implements",
       "to": "algorithm.visibility"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.map",
@@ -4142,6 +4182,21 @@
       "to": "test.source_validation"
     },
     {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
+    },
+    {
       "from": "source.s_zone_detector",
       "type": "affects",
       "to": "behavior.s"
@@ -4165,11 +4220,6 @@
       "from": "source.s_zone_detector",
       "type": "implements",
       "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.orderaudit"
     },
     {
       "from": "source.s_zone_detector",
@@ -4214,11 +4264,6 @@
     {
       "from": "source.trading_pipeline",
       "type": "implements",
-      "to": "algorithm.orderaudit"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "implements",
       "to": "algorithm.raw"
     },
     {
@@ -4237,9 +4282,19 @@
       "to": "algorithm.visibility"
     },
     {
+      "from": "source.trading_pipeline",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "system.authority",
       "type": "relates_to",
-      "to": "algorithm.orderaudit"
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "system.authority",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
     },
     {
       "from": "system.authority",

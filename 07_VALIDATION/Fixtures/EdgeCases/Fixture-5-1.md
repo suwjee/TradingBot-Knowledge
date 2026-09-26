@@ -39,7 +39,7 @@ source_fixture_sha256: "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef7
 
 # 5.1 2026-09-11 — Bearish chained Blue carried-stop
 
-## Validation claim
+## Pending validation claim (not an approved baseline)
 
 Supplied geometry rule only; exact computed High/stop and current serialized occurrence unverified.
 

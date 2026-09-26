@@ -4,6 +4,7 @@ type: "algorithm"
 status: "pending"
 authority: "non-canonical"
 title: "Final visibility and lineage"
+affected_by_known_invalid_order_route: true
 implemented_by: ["source.lifecycle_engine", "source.trading_pipeline"]
 depends_on: ["algorithm.lifecycle", "algorithm.stopall", "algorithm.internal_reaction"]
 source_refs: []

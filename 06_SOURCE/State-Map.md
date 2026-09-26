@@ -22,7 +22,7 @@ source_reference: []
 | blue_line_detector | pending strike, previous strike count, Blue spacing and validity | one direction |
 | a_zone_detector.AZoneDetector | sorted Blue states, pair trigger/cycle, special route | one direction |
 | s_zone_detector.SZoneDetector | A ownership windows, sorted opposite Orders, Reset/Blue event indexes, initial stopped-A order_audit | one direction/run |
-| E and lifecycle owners | pending local source capture and review | no executable authority in this Vault |
+| E and lifecycle owners | captured executable state; B/C-dependent portions quarantined | per-run E and lifecycle state |
 | lifecycle_engine.StopAllDetector | dominant S/E group counts, active StopAll, independent pending exact Blue-repeat counts | final reconciled pass |
 
 Caches are performance structures; their source ordering and first-event tie semantics must be retained. E historical rescues are display-only and do not own active E/StopAll state. accepted-live/carried-live are Order use provenance, never creation ownership. Module-level bridge time-conversion caches are process-local; they do not make prior RAW history available to a later request.

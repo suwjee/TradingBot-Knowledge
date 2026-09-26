@@ -12,4 +12,4 @@ source_reference: []
 
 # Retained dependency map
 
-The retained source directly supports Reaction/Reset, Blue, A, S, physical identity, Decimal conversion, and directional comparisons. S consumes A/Blue and opposite Reaction chronology. The bridge, E, and lifecycle orchestration are outside the current source snapshot, so their end-to-end relationships remain pending rather than being asserted from missing local code.
+The retained source directly covers Reaction/Reset, Blue, A, S, E, lifecycle/StopAll, physical identity, Decimal conversion, directional comparisons, bridge orchestration and serialization. S consumes A/Blue and opposite Reaction chronology; E consumes accepted S/Order contexts and lifecycle reconciles visibility. The current B/C creation paths in E and dependent lifecycle/bridge regions are known-invalid, so a complete accepted end-to-end contract remains pending even though the byte-exact source is now local.

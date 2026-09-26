@@ -10,9 +10,9 @@ source_reference: []
 
 # TradingBot Knowledge Vault
 
-This repository is a standalone, scoped knowledge snapshot. Its currently retained physical Order creation route is `Order_A`. Mixed source files and comprehensive directional references containing excluded creation routes are outside this Vault while those routes are rewritten in the project. Claims that lost local source evidence are marked pending. The Vault retains nine byte-pinned Python source files, chart input-boundary evidence, seven registered RAW datasets, three verified RAW windows, 22 curated fixture cases, schemas, and relationship indexes. Three superseded small RAWs remain on disk pending deletion. Reading this snapshot requires no separate TradingBot checkout.
+This repository is a standalone, scoped knowledge snapshot. `Order_A` is accepted. Current `Order_B` and `Order_C` implementations are retained as known-invalid diagnostic knowledge, with explicit quarantine metadata. The Vault retains byte-exact copies of all nine main Engine modules plus three package initializers, chart input-boundary evidence, seven registered RAW datasets, three verified RAW windows, 22 curated fixture cases, schemas and relationship indexes. The full HPZR6 references are registered by hash as optional external evidence. Reading this Vault requires no separate TradingBot checkout.
 
-The registered RAW hashes and windows verify, but the physical inventory is not yet clean: the three superseded files and their sidecars are still present. A plugin `verify` result therefore reports `verified_pins_ok: true`, `inventory_complete: false`, and overall `ok: false` until their removal is permitted.
+The registered RAW hashes and windows verify. Three superseded small RAW files and sidecars were removed after their physical SHA-256 values matched exact registered windows within retained parent RAW files. The plugin now reports `verified_pins_ok: true`, `inventory_complete: true`, and overall `ok: true` for this local snapshot. The separate 309,906-row file remains because the larger overlapping file has one extra candle in that range.
 
 ## Quick check
 

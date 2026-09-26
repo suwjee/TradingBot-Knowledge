@@ -7,7 +7,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "A calculation"
+      "title": "A calculation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.blue",
@@ -15,7 +18,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Blue Line"
+      "title": "Blue Line",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.e",
@@ -23,7 +29,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "E construction and recursive chains"
+      "title": "E construction and recursive chains",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "algorithm.internal_reaction",
@@ -31,7 +40,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Internal Reaction"
+      "title": "Internal Reaction",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.lifecycle",
@@ -39,7 +51,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Lifecycle eligibility and stage ownership"
+      "title": "Lifecycle eligibility and stage ownership",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "algorithm.order",
@@ -47,23 +62,43 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Physical Order and provenance"
+      "title": "Physical Order and provenance",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.order.a",
       "file": "04_ALGORITHMS/Order/Order-A.md",
       "type": "algorithm",
-      "status": "active",
-      "authority": "empirical",
-      "title": "Order_A parent-stop cause"
+      "status": "canonical",
+      "authority": "normative",
+      "title": "Order_A parent-stop cause",
+      "valid_for_reasoning": true,
+      "implementation_validity": "accepted",
+      "affected_by_known_invalid_order_route": false
     },
     {
-      "id": "algorithm.orderaudit",
-      "file": "04_ALGORITHMS/OrderAudit.md",
+      "id": "algorithm.order.b",
+      "file": "04_ALGORITHMS/Order/Order-B.md",
       "type": "algorithm",
       "status": "pending-fix",
       "authority": "non-canonical",
-      "title": "OrderAudit (pending fix)"
+      "title": "Order_B current implementation, quarantined",
+      "valid_for_reasoning": false,
+      "implementation_validity": "known-invalid",
+      "affected_by_known_invalid_order_route": false
+    },
+    {
+      "id": "algorithm.order.c",
+      "file": "04_ALGORITHMS/Order/Order-C.md",
+      "type": "algorithm",
+      "status": "pending-fix",
+      "authority": "non-canonical",
+      "title": "Order_C current implementation, quarantined",
+      "valid_for_reasoning": false,
+      "implementation_validity": "known-invalid",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.raw",
@@ -71,7 +106,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "RAW normalization and candle construction"
+      "title": "RAW normalization and candle construction",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.reaction",
@@ -79,7 +117,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Reaction"
+      "title": "Reaction",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.reconciliation",
@@ -87,7 +128,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "E and lifecycle reconciliation"
+      "title": "E and lifecycle reconciliation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "algorithm.reset",
@@ -95,7 +139,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Reset"
+      "title": "Reset",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.s",
@@ -103,7 +150,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S calculation and decision"
+      "title": "S calculation and decision",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.s.type1",
@@ -111,7 +161,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Type-1 Simple"
+      "title": "S Type-1 Simple",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.s.type2",
@@ -119,7 +172,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Type-2 Advanced"
+      "title": "S Type-2 Advanced",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.s.type3",
@@ -127,7 +183,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Type-3 Reset-leg"
+      "title": "S Type-3 Reset-leg",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.s.type4",
@@ -135,7 +194,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Type-4 Blue-qualified aligned Reaction"
+      "title": "S Type-4 Blue-qualified aligned Reaction",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "algorithm.serialization",
@@ -143,7 +205,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Public serialization"
+      "title": "Public serialization",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "algorithm.stopall",
@@ -151,7 +216,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "StopAll gate state machine"
+      "title": "StopAll gate state machine",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "algorithm.visibility",
@@ -159,7 +227,10 @@
       "type": "algorithm",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Final visibility and lineage"
+      "title": "Final visibility and lineage",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "behavior.a",
@@ -167,7 +238,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "A"
+      "title": "A",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.e",
@@ -175,7 +249,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "E"
+      "title": "E",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.e.blue",
@@ -183,7 +260,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "E Blue"
+      "title": "E Blue",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.e.red",
@@ -191,7 +271,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "E Red"
+      "title": "E Red",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s",
@@ -199,7 +282,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S"
+      "title": "S",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s.blue",
@@ -207,7 +293,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Blue"
+      "title": "S Blue",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s.blue.type1",
@@ -215,7 +304,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Blue Type-1"
+      "title": "S Blue Type-1",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s.blue.type2",
@@ -223,7 +315,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Blue Type-2"
+      "title": "S Blue Type-2",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s.blue.type3",
@@ -231,7 +326,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Blue Type-3"
+      "title": "S Blue Type-3",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s.blue.type4",
@@ -239,7 +337,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Blue Type-4"
+      "title": "S Blue Type-4",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.s.red",
@@ -247,7 +348,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "S Red"
+      "title": "S Red",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.stopall",
@@ -255,7 +359,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "StopAll"
+      "title": "StopAll",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.stopall.type1",
@@ -263,7 +370,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "StopAll Type-1"
+      "title": "StopAll Type-1",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.stopall.type2",
@@ -271,7 +381,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "StopAll Type-2"
+      "title": "StopAll Type-2",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "behavior.stopall.type3",
@@ -279,7 +392,10 @@
       "type": "behavior",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "StopAll Type-3"
+      "title": "StopAll Type-3",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_1",
@@ -287,7 +403,10 @@
       "type": "case",
       "status": "active",
       "authority": "empirical",
-      "title": "1.1 2026-08-25 — Order_A ownership / immutable first Order"
+      "title": "1.1 2026-08-25 — Order_A ownership / immutable first Order",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_10",
@@ -295,7 +414,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.10 2026-08-28 — exact-key StopAll"
+      "title": "1.10 2026-08-28 — exact-key StopAll",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_11",
@@ -303,7 +425,10 @@
       "type": "case",
       "status": "active",
       "authority": "empirical",
-      "title": "1.11 2026-08-28 — S Blue Type-4"
+      "title": "1.11 2026-08-28 — S Blue Type-4",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_12",
@@ -311,7 +436,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll"
+      "title": "1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_13",
@@ -319,7 +447,10 @@
       "type": "case",
       "status": "archived",
       "authority": "historical",
-      "title": "1.13 2026-09-09 — historical Mode-B refresh chain"
+      "title": "1.13 2026-09-09 — historical Mode-B refresh chain",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_4",
@@ -327,7 +458,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1"
+      "title": "1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_5",
@@ -335,7 +469,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2"
+      "title": "1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_6",
@@ -343,7 +480,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3"
+      "title": "1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_7",
@@ -351,7 +491,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.7 V5.4.2 lifecycle chain — Bearish"
+      "title": "1.7 V5.4.2 lifecycle chain — Bearish",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_8",
@@ -359,7 +502,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "1.8 V5.4.3 dominant Red E / cycle ownership"
+      "title": "1.8 V5.4.3 dominant Red E / cycle ownership",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_1_9",
@@ -367,7 +513,10 @@
       "type": "case",
       "status": "active",
       "authority": "empirical",
-      "title": "1.9 Canonical Bullish Order geometry inside Bearish regression"
+      "title": "1.9 Canonical Bullish Order geometry inside Bearish regression",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_2_3",
@@ -375,7 +524,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "2.3 2026-09-17 — Exact-source E continuation"
+      "title": "2.3 2026-09-17 — Exact-source E continuation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_2_4",
@@ -383,7 +535,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "2.4 2026-09-17 — downstream StopAll consequence"
+      "title": "2.4 2026-09-17 — downstream StopAll consequence",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_2_5",
@@ -391,7 +546,10 @@
       "type": "case",
       "status": "archived",
       "authority": "historical",
-      "title": "2.5 2026-09-17 — S reversal historical example"
+      "title": "2.5 2026-09-17 — S reversal historical example",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_3_1",
@@ -399,7 +557,10 @@
       "type": "case",
       "status": "active",
       "authority": "empirical",
-      "title": "3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership"
+      "title": "3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_3_2",
@@ -407,7 +568,10 @@
       "type": "case",
       "status": "active",
       "authority": "empirical",
-      "title": "3.2 2026-09-07 — bounded Mode-A anchor"
+      "title": "3.2 2026-09-07 — bounded Mode-A anchor",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_4_1",
@@ -415,7 +579,10 @@
       "type": "case",
       "status": "active",
       "authority": "empirical",
-      "title": "4.1 2026-09-09 — same-Break Bullish confirmation/reset"
+      "title": "4.1 2026-09-09 — same-Break Bullish confirmation/reset",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_4_3",
@@ -423,7 +590,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "4.3 2026-09-10 — stage ownership / invalid fallback"
+      "title": "4.3 2026-09-10 — stage ownership / invalid fallback",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_5_1",
@@ -431,7 +601,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "5.1 2026-09-11 — Bearish chained Blue carried-stop"
+      "title": "5.1 2026-09-11 — Bearish chained Blue carried-stop",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_5_2",
@@ -439,7 +612,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "5.2 2026-09-11 — stage ownership"
+      "title": "5.2 2026-09-11 — stage ownership",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_6_1",
@@ -447,7 +623,10 @@
       "type": "case",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "6.1 2026-09-22 — stopped dominant E must advance +1"
+      "title": "6.1 2026-09-22 — stopped dominant E must advance +1",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "case.fixture_8_1",
@@ -455,7 +634,10 @@
       "type": "case",
       "status": "archived",
       "authority": "historical",
-      "title": "8.1 `2026-09-04 02:36:00` Bullish StopAll"
+      "title": "8.1 `2026-09-04 02:36:00` Bullish StopAll",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.behavior_model",
@@ -463,7 +645,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Behavior model"
+      "title": "Behavior model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.chronology",
@@ -471,7 +656,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Time and chronology"
+      "title": "Time and chronology",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.e_numbering",
@@ -479,7 +667,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "E numbering"
+      "title": "E numbering",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.invariants",
@@ -487,7 +678,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Core invariants"
+      "title": "Core invariants",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.lifecycle",
@@ -495,7 +689,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Lifecycle ownership"
+      "title": "Lifecycle ownership",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.pipeline",
@@ -503,7 +700,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Calculation pipeline"
+      "title": "Calculation pipeline",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.precision",
@@ -511,7 +711,10 @@
       "type": "core",
       "status": "active",
       "authority": "empirical",
-      "title": "Precision and strictness"
+      "title": "Precision and strictness",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.priority",
@@ -519,7 +722,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Priority"
+      "title": "Priority",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.project",
@@ -527,7 +733,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "TradingBot project"
+      "title": "TradingBot project",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "core.terminology",
@@ -535,7 +744,10 @@
       "type": "core",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Terminology"
+      "title": "Terminology",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.candle_model",
@@ -543,7 +755,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "RAW and normalized candle identities"
+      "title": "RAW and normalized candle identities",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.data_validation",
@@ -551,7 +766,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Dataset validation procedure"
+      "title": "Dataset validation procedure",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_062df750",
@@ -559,7 +777,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "USOIL 5s RAW 2026-09-08 / 062df750"
+      "title": "USOIL 5s RAW 2026-09-08 / 062df750",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_7e12ea5f",
@@ -567,7 +788,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "USOIL 5s RAW 2026-09-21 / 7e12ea5f"
+      "title": "USOIL 5s RAW 2026-09-21 / 7e12ea5f",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_9e2e159a",
@@ -575,7 +799,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "USOIL 5s RAW 2026-09-11 / 9e2e159a"
+      "title": "USOIL 5s RAW 2026-09-11 / 9e2e159a",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_b47246b4",
@@ -583,7 +810,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-09-22 / b47246b4"
+      "title": "XAUUSD 5s RAW 2026-09-22 / b47246b4",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_ea82be1a",
@@ -591,7 +821,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-08-25 / ea82be1a"
+      "title": "XAUUSD 5s RAW 2026-08-25 / ea82be1a",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_f531a06d",
@@ -599,7 +832,10 @@
       "type": "data",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "XAUUSD 1s RAW 2026-09-03 / f531a06d"
+      "title": "XAUUSD 1s RAW 2026-09-03 / f531a06d",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_f5bc29e3",
@@ -607,7 +843,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-08-25 / f5bc29e3"
+      "title": "XAUUSD 5s RAW 2026-08-25 / f5bc29e3",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_manifest",
@@ -615,7 +854,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Observed RAW inventory manifest"
+      "title": "Observed RAW inventory manifest",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_registry",
@@ -623,7 +865,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Inventory of byte-distinct RAW datasets"
+      "title": "Inventory of byte-distinct RAW datasets",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.dataset_template",
@@ -631,7 +876,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Dataset entity template contract"
+      "title": "Dataset entity template contract",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.datasets_compat",
@@ -639,7 +887,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Dataset navigation compatibility"
+      "title": "Dataset navigation compatibility",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.hash_policy",
@@ -647,7 +898,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "RAW hash and version policy"
+      "title": "RAW hash and version policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.hash_registry",
@@ -655,7 +909,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "RAW SHA-256 registry"
+      "title": "RAW SHA-256 registry",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.integrity",
@@ -663,7 +920,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Data integrity checks and observed limits"
+      "title": "Data integrity checks and observed limits",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.lineage",
@@ -671,7 +931,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Dataset to validation lineage"
+      "title": "Dataset to validation lineage",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.policy",
@@ -679,7 +942,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Data knowledge and authority policy"
+      "title": "Data knowledge and authority policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.raw_authority",
@@ -687,7 +953,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Physical RAW authority and scope"
+      "title": "Physical RAW authority and scope",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.raw_format",
@@ -695,7 +964,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Observed RAW JSON format"
+      "title": "Observed RAW JSON format",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.raw_model",
@@ -703,7 +975,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Physical RAW input model"
+      "title": "Physical RAW input model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.raw_schema",
@@ -711,7 +986,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "RAW row schema and validation boundary"
+      "title": "RAW row schema and validation boundary",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.registry_root",
@@ -719,7 +997,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Data registry entry point"
+      "title": "Data registry entry point",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.timeframe_registry",
@@ -727,7 +1008,10 @@
       "type": "data",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Input resolution and analysis timeframe registry"
+      "title": "Input resolution and analysis timeframe registry",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.window_0291455b",
@@ -735,7 +1019,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "Verified RAW window 0291455b"
+      "title": "Verified RAW window 0291455b",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.window_18632e27",
@@ -743,7 +1030,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "Verified RAW window 18632e27"
+      "title": "Verified RAW window 18632e27",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "data.window_d33c7e2c",
@@ -751,7 +1041,10 @@
       "type": "data",
       "status": "active",
       "authority": "empirical",
-      "title": "Verified RAW window d33c7e2c"
+      "title": "Verified RAW window d33c7e2c",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.candle",
@@ -759,7 +1052,10 @@
       "type": "market",
       "status": "active",
       "authority": "empirical",
-      "title": "Candle"
+      "title": "Candle",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.crossing",
@@ -767,7 +1063,10 @@
       "type": "market",
       "status": "active",
       "authority": "empirical",
-      "title": "Strict crossing"
+      "title": "Strict crossing",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.direction",
@@ -775,7 +1074,10 @@
       "type": "market",
       "status": "active",
       "authority": "empirical",
-      "title": "Direction"
+      "title": "Direction",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.events",
@@ -783,7 +1085,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Market events"
+      "title": "Market events",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.exact_chronology",
@@ -791,7 +1096,10 @@
       "type": "market",
       "status": "active",
       "authority": "empirical",
-      "title": "Exact lower-timeframe chronology"
+      "title": "Exact lower-timeframe chronology",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.leg",
@@ -799,7 +1107,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "General Leg model pending"
+      "title": "General Leg model pending",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.leg_calculation",
@@ -807,7 +1118,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "General Leg calculation pending"
+      "title": "General Leg calculation pending",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.leg_recognition",
@@ -815,7 +1129,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "General Leg recognition pending"
+      "title": "General Leg recognition pending",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.model",
@@ -823,7 +1140,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Market model"
+      "title": "Market model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.raw",
@@ -831,7 +1151,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "RAW input"
+      "title": "RAW input",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "market.timeframe",
@@ -839,7 +1162,10 @@
       "type": "market",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Timeframe"
+      "title": "Timeframe",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.algorithm_matrix",
@@ -847,7 +1173,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Algorithm mirror matrix"
+      "title": "Algorithm mirror matrix",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.behavior",
@@ -855,7 +1184,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Behavior mirror model"
+      "title": "Behavior mirror model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.contract",
@@ -863,7 +1195,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mirror contract"
+      "title": "Mirror contract",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.direction_mapping",
@@ -871,7 +1206,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Verified direction mapping"
+      "title": "Verified direction mapping",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.directional_rules",
@@ -879,7 +1217,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Directional rule components"
+      "title": "Directional rule components",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.exceptions",
@@ -887,7 +1228,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mirror exceptions and pending checks"
+      "title": "Mirror exceptions and pending checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.invariants",
@@ -895,7 +1239,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mirror invariants"
+      "title": "Mirror invariants",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.mixed_rules",
@@ -903,7 +1250,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mixed mirror rules"
+      "title": "Mixed mirror rules",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.source_map",
@@ -911,7 +1261,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mirror source ownership"
+      "title": "Mirror source ownership",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "mirror.validation_rules",
@@ -919,7 +1272,10 @@
       "type": "mirror",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mirror validation requirements"
+      "title": "Mirror validation requirements",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.a_zone_detector",
@@ -927,7 +1283,10 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "a zone detector"
+      "title": "a zone detector",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.blue_line_detector",
@@ -935,7 +1294,10 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "blue line detector"
+      "title": "blue line detector",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.core_utils",
@@ -943,7 +1305,10 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "core utils"
+      "title": "core utils",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.dependencies",
@@ -951,7 +1316,10 @@
       "type": "source",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Source dependency map"
+      "title": "Source dependency map",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.direction_policy",
@@ -959,15 +1327,21 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "direction policy"
+      "title": "direction policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.e_zone_detector",
-      "file": "06_SOURCE/Pending/e_zone_detector.md",
+      "file": "06_SOURCE/Modules/e_zone_detector.md",
       "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Source evidence pending rewrite"
+      "status": "active",
+      "authority": "executable",
+      "title": "E zone detector: mixed source evidence",
+      "valid_for_reasoning": null,
+      "implementation_validity": "mixed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "source.integration_boundary",
@@ -975,15 +1349,21 @@
       "type": "source",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Chart-to-bridge input scope"
+      "title": "Chart-to-bridge input scope",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.lifecycle_engine",
-      "file": "06_SOURCE/Pending/lifecycle_engine.md",
+      "file": "06_SOURCE/Modules/lifecycle_engine.md",
       "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Source evidence pending rewrite"
+      "status": "active",
+      "authority": "executable",
+      "title": "Lifecycle and StopAll: mixed source evidence",
+      "valid_for_reasoning": null,
+      "implementation_validity": "mixed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "source.map",
@@ -991,7 +1371,10 @@
       "type": "source",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Source map"
+      "title": "Source map",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.reaction_engine",
@@ -999,7 +1382,21 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "reaction engine"
+      "title": "reaction engine",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
+    },
+    {
+      "id": "source.reference_registry",
+      "file": "06_SOURCE/Reference-Registry.md",
+      "type": "source",
+      "status": "active",
+      "authority": "empirical",
+      "title": "Directional reference registry",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.s_zone_detector",
@@ -1007,7 +1404,10 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "s zone detector"
+      "title": "s zone detector",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.state_map",
@@ -1015,15 +1415,21 @@
       "type": "source",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "State and ownership map"
+      "title": "State and ownership map",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "source.trading_pipeline",
-      "file": "06_SOURCE/Pending/trading_pipeline.md",
+      "file": "06_SOURCE/Modules/trading_pipeline.md",
       "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Source evidence pending rewrite"
+      "status": "active",
+      "authority": "executable",
+      "title": "Bridge orchestration and serialization: mixed source evidence",
+      "valid_for_reasoning": null,
+      "implementation_validity": "mixed",
+      "affected_by_known_invalid_order_route": true
     },
     {
       "id": "system.authority",
@@ -1031,7 +1437,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "Authority and status model"
+      "title": "Authority and status model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.editing",
@@ -1039,7 +1448,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "AI editing policy"
+      "title": "AI editing policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.frontmatter",
@@ -1047,7 +1459,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "Frontmatter schema"
+      "title": "Frontmatter schema",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.ids",
@@ -1055,7 +1470,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "Stable ID conventions"
+      "title": "Stable ID conventions",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.knowledge_model",
@@ -1063,7 +1481,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "Knowledge model"
+      "title": "Knowledge model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.manifest",
@@ -1071,7 +1492,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "Vault manifest"
+      "title": "Vault manifest",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.readme",
@@ -1079,7 +1503,10 @@
       "type": "system",
       "status": "active",
       "authority": "normative",
-      "title": "Standalone TradingBot Knowledge Vault"
+      "title": "Standalone TradingBot Knowledge Vault",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "system.retrieval",
@@ -1087,7 +1514,10 @@
       "type": "system",
       "status": "canonical",
       "authority": "normative",
-      "title": "Retrieval policy"
+      "title": "Retrieval policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.baseline_policy",
@@ -1095,7 +1525,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Trusted baseline policy"
+      "title": "Trusted baseline policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.behavior_invariants",
@@ -1103,7 +1536,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Behavior invariant checks"
+      "title": "Behavior invariant checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.change_impact",
@@ -1111,7 +1547,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Regression change impact"
+      "title": "Regression change impact",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.chronology_invariants",
@@ -1119,7 +1558,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Chronology invariant checks"
+      "title": "Chronology invariant checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.direction_tests",
@@ -1127,7 +1569,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Directional rule checks"
+      "title": "Directional rule checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.fixture_model",
@@ -1135,7 +1580,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Fixture entity model"
+      "title": "Fixture entity model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.fixture_registry",
@@ -1143,7 +1591,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Fixture registry"
+      "title": "Fixture registry",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.identity_invariants",
@@ -1151,7 +1602,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Physical identity and provenance checks"
+      "title": "Physical identity and provenance checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.integration_test_policy",
@@ -1159,7 +1613,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Full pipeline integration test policy"
+      "title": "Full pipeline integration test policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.invariant_validation",
@@ -1167,7 +1624,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Invariant validation"
+      "title": "Invariant validation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.legacy_memory_fixture_review",
@@ -1175,7 +1635,10 @@
       "type": "test",
       "status": "draft",
       "authority": "non-canonical",
-      "title": "Review of legacy memory fixture candidates"
+      "title": "Review of legacy memory fixture candidates",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.lifecycle_invariants",
@@ -1183,7 +1646,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Lifecycle invariant checks"
+      "title": "Lifecycle invariant checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.memory_benchmark",
@@ -1191,7 +1657,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Memory benchmark contract"
+      "title": "Memory benchmark contract",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.mirror_policy",
@@ -1199,7 +1668,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Mirror validation routing policy"
+      "title": "Mirror validation routing policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.mirror_regression",
@@ -1207,7 +1679,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Bullish and Bearish mirror regression"
+      "title": "Bullish and Bearish mirror regression",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.mirror_validation",
@@ -1215,7 +1690,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Mirror validation"
+      "title": "Mirror validation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.optimization_rules",
@@ -1223,7 +1701,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Performance optimization acceptance rules"
+      "title": "Performance optimization acceptance rules",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.output_validation",
@@ -1231,7 +1712,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Public output validation"
+      "title": "Public output validation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.precision_invariants",
@@ -1239,7 +1723,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Precision and strictness checks"
+      "title": "Precision and strictness checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.regression_model",
@@ -1247,7 +1734,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Regression evidence model"
+      "title": "Regression evidence model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.regression_policy",
@@ -1255,7 +1745,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Regression comparison policy"
+      "title": "Regression comparison policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.regression_test_execution",
@@ -1263,7 +1756,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Regression test execution protocol"
+      "title": "Regression test execution protocol",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.runtime_benchmark",
@@ -1271,7 +1767,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Runtime benchmark contract"
+      "title": "Runtime benchmark contract",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.source_validation",
@@ -1279,7 +1778,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Fixture to source validation"
+      "title": "Fixture to source validation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.stage_profiling",
@@ -1287,7 +1789,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "Stage profiling and timing interpretation"
+      "title": "Stage profiling and timing interpretation",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.symmetry_tests",
@@ -1295,7 +1800,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Constructed mirror symmetry checks"
+      "title": "Constructed mirror symmetry checks",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.test_model",
@@ -1303,7 +1811,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "TradingBot test evidence model"
+      "title": "TradingBot test evidence model",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.test_policy",
@@ -1311,7 +1822,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "TradingBot test policy"
+      "title": "TradingBot test policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.unit_test_policy",
@@ -1319,7 +1833,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Engine unit test policy"
+      "title": "Engine unit test policy",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.validation_contract",
@@ -1327,7 +1844,10 @@
       "type": "test",
       "status": "pending",
       "authority": "non-canonical",
-      "title": "TradingBot validation contract"
+      "title": "TradingBot validation contract",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     },
     {
       "id": "test.zero_difference",
@@ -1335,7 +1855,10 @@
       "type": "test",
       "status": "canonical",
       "authority": "normative",
-      "title": "Zero-difference refactor rule"
+      "title": "Zero-difference refactor rule",
+      "valid_for_reasoning": null,
+      "implementation_validity": "unreviewed",
+      "affected_by_known_invalid_order_route": false
     }
   ],
   "edges": [
@@ -1551,18 +2074,23 @@
     },
     {
       "from": "algorithm.order.a",
-      "type": "depends_on",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "depends_on",
-      "to": "algorithm.order"
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
     },
     {
       "from": "algorithm.order.a",
       "type": "implemented_by",
       "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "relates_to",
+      "to": "algorithm.order"
     },
     {
       "from": "algorithm.order.a",
@@ -1575,32 +2103,52 @@
       "to": "test.source_validation"
     },
     {
-      "from": "algorithm.orderaudit",
+      "from": "algorithm.order.b",
       "type": "depends_on",
       "to": "algorithm.order"
     },
     {
-      "from": "algorithm.orderaudit",
+      "from": "algorithm.order.b",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.order.b",
       "type": "implemented_by",
       "to": "source.e_zone_detector"
     },
     {
-      "from": "algorithm.orderaudit",
-      "type": "implemented_by",
+      "from": "algorithm.order.b",
+      "type": "relates_to",
       "to": "source.lifecycle_engine"
     },
     {
-      "from": "algorithm.orderaudit",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
+      "from": "algorithm.order.b",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
-      "from": "algorithm.orderaudit",
-      "type": "implemented_by",
-      "to": "source.trading_pipeline"
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.blue"
     },
     {
-      "from": "algorithm.orderaudit",
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "depends_on",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.order.c",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.c",
       "type": "relates_to",
       "to": "test.source_validation"
     },
@@ -5377,12 +5925,27 @@
     {
       "from": "source.e_zone_detector",
       "type": "implements",
-      "to": "algorithm.orderaudit"
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "implements",
+      "to": "algorithm.order.c"
     },
     {
       "from": "source.e_zone_detector",
       "type": "implements",
       "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.integration_boundary",
@@ -5407,11 +5970,6 @@
     {
       "from": "source.lifecycle_engine",
       "type": "implements",
-      "to": "algorithm.orderaudit"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "implements",
       "to": "algorithm.reconciliation"
     },
     {
@@ -5423,6 +5981,11 @@
       "from": "source.lifecycle_engine",
       "type": "implements",
       "to": "algorithm.visibility"
+    },
+    {
+      "from": "source.lifecycle_engine",
+      "type": "relates_to",
+      "to": "test.source_validation"
     },
     {
       "from": "source.map",
@@ -5480,6 +6043,21 @@
       "to": "test.source_validation"
     },
     {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
+    },
+    {
       "from": "source.s_zone_detector",
       "type": "affects",
       "to": "behavior.s"
@@ -5503,11 +6081,6 @@
       "from": "source.s_zone_detector",
       "type": "implements",
       "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.orderaudit"
     },
     {
       "from": "source.s_zone_detector",
@@ -5552,11 +6125,6 @@
     {
       "from": "source.trading_pipeline",
       "type": "implements",
-      "to": "algorithm.orderaudit"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "implements",
       "to": "algorithm.raw"
     },
     {
@@ -5575,9 +6143,19 @@
       "to": "algorithm.visibility"
     },
     {
+      "from": "source.trading_pipeline",
+      "type": "relates_to",
+      "to": "test.source_validation"
+    },
+    {
       "from": "system.authority",
       "type": "relates_to",
-      "to": "algorithm.orderaudit"
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "system.authority",
+      "type": "relates_to",
+      "to": "algorithm.order.c"
     },
     {
       "from": "system.authority",

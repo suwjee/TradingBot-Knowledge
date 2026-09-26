@@ -12,9 +12,9 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L91", "06_
 
 # Mirror exceptions and pending checks
 
-> Scope: This mirror description is provisional. Full directional references and mixed source modules are absent from this Vault; verify each rule against retained local source before use.
+> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
 
-These are candidate limits on a *simple* Low↔High / `<`↔`>` substitution, not market-specific overrides or new behaviors. Market color and same-Break Reset have retained local Reaction evidence; the first Order_A ownership rule has retained local S evidence. Other portions that cite absent E/lifecycle modules remain pending and cannot establish current behavior from this Vault alone.
+These are candidate limits on a *simple* Low↔High / `<`↔`>` substitution, not market-specific overrides or new behaviors. Market color and same-Break Reset have retained local Reaction evidence; the first Order_A ownership rule has retained local S evidence. E/lifecycle source is now captured, but B/C-dependent portions remain pending correction and cannot establish accepted future behavior.
 
 | Reviewed area | Rule or proposed guard | Evidence |
 |---|---|---|
@@ -27,8 +27,8 @@ These are candidate limits on a *simple* Low↔High / `<`↔`>` substitution, no
 
 ## Unresolved source–reference conflict
 
-The mixed-cause Internal-Reaction final visibility rule cannot be settled here because its E/lifecycle implementation and comprehensive references are absent. No symmetric pass expectation is accepted for that rule until both are restored and reconciled.
+The mixed-cause Internal-Reaction final visibility rule has captured E/lifecycle implementation evidence, but its current B-dependent semantics are known invalid. No symmetric pass expectation is accepted until B/C are rewritten and the revised references and source are reconciled.
 
 ## Scope limits
 
-The former Bearish same-Break BoxTop behavior is historical and must not be promoted to the current contract. Current OrderAudit output alone is not a Mirror rule; chart-selected input truncation is an integration boundary, not a Mirror exception. A newly suspected directional asymmetry needs its own two-reference and source trace before being added here. Both references §6.7, §11; `reaction_engine.py#L1562-L1577`.
+The former Bearish same-Break BoxTop behavior is historical and must not be promoted to the current contract. Audit output is not a Mirror rule; chart-selected input truncation is an integration boundary, not a Mirror exception. A newly suspected directional asymmetry needs its own two-reference and source trace before being added here. Both registered references §6.7 and `reaction_engine.py#L1562-L1577` support this local asymmetry.

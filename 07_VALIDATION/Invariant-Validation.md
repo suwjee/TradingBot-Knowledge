@@ -12,6 +12,6 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L11"]
 
 # Invariant validation
 
-Validate the five invariant groups separately, then across the integrated pipeline: lifecycle priority/stage boundary; Behavior and E-number identity; exact lower chronology; Decimal and strict equality; physical Order/Reaction identity and immutable provenance. The complete integrated assertion is pending because lifecycle and bridge source and comprehensive references are absent. Retained `core_utils.py` supports only its local Decimal and identity rules.
+Validate the five invariant groups separately, then across the integrated pipeline: lifecycle priority/stage boundary; Behavior and E-number identity; exact lower chronology; Decimal and strict equality; physical Order/Reaction identity and immutable provenance. The lifecycle and bridge source is now captured, but complete accepted integrated validation still requires fresh paired runs and B/C correction. `core_utils.py` supports local Decimal and identity rules.
 
 The child notes under Invariants/ give assertions, source owners and fixture links. A later directional price change may alter which object exists, but it cannot alter these invariant contracts. Any source-reference disagreement remains unresolved rather than being converted into an assertion.

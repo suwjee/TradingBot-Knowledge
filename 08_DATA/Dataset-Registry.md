@@ -13,7 +13,7 @@ source_reference: []
 
 # Data registry entry point
 
-The current registry has **seven retained physical RAW files** and **three exact, hash-verified windows** within larger files. The three superseded smaller files and their sidecars still occupy the Vault directory pending deletion; no active dataset or fixture points to them. Six retained files support the 22 retained fixture cases; one currently has no registered case. These counts describe the selected inventory, not the mutable production directory.
+The current registry has **seven retained physical RAW files** and **three exact, hash-verified windows** within larger files. The three superseded smaller files and sidecars were deleted only after matching the registered window hashes; no active dataset or fixture pointed to their physical paths. Six retained files support the 22 retained fixture cases; one currently has no registered case. These counts describe the selected Vault inventory, not the mutable production directory.
 
 [Datasets/Dataset-Registry.md](Datasets/Dataset-Registry.md) lists physical datasets and retained windows. [Hashes/Hash-Registry.md](Hashes/Hash-Registry.md) distinguishes full-file SHA-256 from window SHA-256; [Manifests/Dataset-Manifest.md](Manifests/Dataset-Manifest.md) records observed ranges. The [Fixture Registry](../07_VALIDATION/Fixtures/Fixture-Registry.md) is the evidence consumer. A dataset's physical presence does not imply a completed Bullish/Bearish run or a current accepted behavior.
 
