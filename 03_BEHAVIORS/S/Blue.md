@@ -1,20 +1,19 @@
 ---
 id: "behavior.s.blue"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "S Blue"
-calculated_by: ["algorithm.s"]
-implemented_by: ["source.s_zone_detector"]
-depends_on: ["behavior.s"]
-parent_of: ["behavior.s.blue.type1", "behavior.s.blue.type2", "behavior.s.blue.type3", "behavior.s.blue.type4"]
-source_refs: []
-related_entities: ["test.behavior_invariants"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "S Blue accepted candidate-cross family"
+version: "current"
+related_entities: ["algorithm.s", "behavior.s.blue.type1", "behavior.s.blue.type2", "behavior.s.blue.type3", "behavior.s.blue.type4"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.s_zone_detector", "source.lifecycle_engine", "source.blue_line_detector"]
 ---
 
-# S Blue
+# S Blue accepted candidate-cross family
 
-S Blue is the candidate-cross family of S. It is lower priority than E Blue, S Red, E Red, and StopAll. Its public formation field maps simple -> Type-1, advanced -> Type-2, type3 -> Type-3, and type4 -> Type-4. All accepted S Blue occurrences count as one exact group for the StopAll Type-3 reversal gate, regardless of formation subtype. The shared source, decision, parent A, stop, and lifecycle rules live in behavior.s.
+Native S Blue is strict directional candidate-cross accepted by its route. Simple/Advanced require aligned Reset Blue or ordinary aligned completion by candidate crossing. Type-3 requires ordinary aligned confirmation strictly after A stop;Type-4 requires public valid Blue within candidate-source..cross.
 
-Type-3 and Type-4 have no new forming Order. Simple/Advanced can be Order-backed. The variant notes state only their distinct semantic role; algorithm.s.typeN owns exact calculation.
+Blue is behavior family,not candle color or mere drawing. Every accepted S Blue subtype contributes same exact StopAll Blue key S. Later accepted-Order stop reconciliation may recolor frozen candidate while retaining subtype. No strict price crossing admits equality.

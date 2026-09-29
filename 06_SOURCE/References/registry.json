@@ -1,32 +1,55 @@
 {
   "schema_version": 1,
-  "source_commit": "822c5ce1c1e7f464d2e08085fd6d991ee1d5d8ed",
+  "captured_utc": "2026-09-28T19:12:46.969813+00:00",
   "references": [
     {
-      "id": "bullish_hpzr6",
-      "name": "TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
-      "version": "V5.4.11-HPZR6",
-      "repository_relative_path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
-      "sha256": "fe9de3f6aaad68aec5f4de53437cb5d0d7398b9d35050d2c825cd0755c762ea0",
-      "bytes": 765830,
-      "availability": "optional_external_untracked_at_capture",
-      "authority_scope": "descriptive reference evidence; Order_A first-owner correction accepted by project decision",
-      "accepted_evidence_lines": [29],
-      "known_invalid_sections": ["10.3 Order_B", "10.3C Order_C"],
-      "inactive_sections": ["11 OrderAudit"]
+      "id": "bearish_current",
+      "name": "TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "version": "5.4.19-EX1",
+      "direction": "Bearish",
+      "repository_relative_path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "local_path": "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "sha256": "109753d7d056b6b9ee173cc7f47472b53a77174d26e89f38b00b81061f310e18",
+      "bytes": 569305,
+      "line_count": 13267,
+      "availability": "local",
+      "current_status": "current",
+      "authority_scope": "Exact current Source embedding and preserved documented intent; narrative discrepancies require the linked semantic review",
+      "sync_status": "byte-exact",
+      "reconstruction_status": "verified",
+      "narrative_review_status": "reviewed-with-disclosed-scope-discrepancies",
+      "semantic_review_entity": "source.reference_consistency",
+      "reference_conflicts": [
+        "REF-BLUE-ENDPOINT",
+        "REF-REACTION-SUCCESSOR",
+        "REF-E-TIE-SCOPE",
+        "REF-S-MODE-B"
+      ]
     },
     {
-      "id": "bearish_hpzr6",
-      "name": "TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
-      "version": "V5.4.11-HPZR6",
-      "repository_relative_path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.11_HPZR6_Forensic_Synchronized.md",
-      "sha256": "173814d4b964355b26dfe796c31436641e647d893c2d3d155c9aa5357926d06a",
-      "bytes": 766910,
-      "availability": "optional_external_untracked_at_capture",
-      "authority_scope": "descriptive reference evidence; Order_A first-owner correction accepted by project decision",
-      "accepted_evidence_lines": [29],
-      "known_invalid_sections": ["10.3 Order_B", "10.3C Order_C"],
-      "inactive_sections": ["11 OrderAudit"]
+      "id": "bullish_current",
+      "name": "TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "version": "5.4.19-EX1",
+      "direction": "Bullish",
+      "repository_relative_path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "local_path": "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "sha256": "d3a0b89c59f1304ddefe6f6931cedf7ea2e17a15893c63d652c89489f3e6387f",
+      "bytes": 569275,
+      "line_count": 13267,
+      "availability": "local",
+      "current_status": "current",
+      "authority_scope": "Exact current Source embedding and preserved documented intent; narrative discrepancies require the linked semantic review",
+      "sync_status": "byte-exact",
+      "reconstruction_status": "verified",
+      "narrative_review_status": "reviewed-with-disclosed-scope-discrepancies",
+      "semantic_review_entity": "source.reference_consistency",
+      "reference_conflicts": [
+        "REF-BLUE-ENDPOINT",
+        "REF-REACTION-SUCCESSOR",
+        "REF-E-TIE-SCOPE",
+        "REF-S-MODE-B"
+      ]
     }
-  ]
+  ],
+  "semantic_review_date": "2026-09-29"
 }

@@ -1,21 +1,15 @@
 ---
 id: "test.output_validation"
 type: "test"
-status: "pending"
-authority: "non-canonical"
-title: "Public output validation"
-created: "2026-09-25"
-updated: "2026-09-25"
-related_entities: ["test.validation_contract", "test.regression_policy", "algorithm.serialization", "algorithm.visibility", "algorithm.order", "source.trading_pipeline"]
+status: "active"
+authority: "executable"
+title: "Future stable output validation"
+version: "current"
+related_entities: ["workflow.run_regression"]
 source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Public output validation
+# Future stable output validation
 
-Compare the response envelope, direction payload and ordered stage arrays after final lifecycle visibility. Inspect Reaction/Reset/Blue and A/S/E/StopAll separately. Preserve exact first/break/source/decision/stop times, physical indexes, parent and Order causes, E family/number, StopAll gate/number, version fields, nullable fields, and Decimal prices as strings. Both references §16; trading_pipeline.py lines 239–493, 2549 and 2776–2995.
-
-For a selected display range, distinguish calculation scope from serialization clipping. The engine bridge builds complete physical-input state and then selects visible objects. A caller that prefilters RAW supplies a different physical input; do not treat those two requests as equivalent without checking the integration boundary. trading_pipeline.py lines 1732, 2300 and 2776.
-
-Current audit fields may be inspected directly in the captured source output for diagnostics, but there is no active audit knowledge entity or approved audit validation contract. Do not promote an observed audit discrepancy into an accepted S/E/StopAll rule. A fixture must state the stable output it checks; a count alone is insufficient when object identities or chronology may have changed.
-
-Timing values are telemetry. Verify the timing keys/shape, and compare semantic payload fields exactly for zero-difference claims. See Regression-Policy.md.
+For a future approved runtime comparison, retain complete ordered serialized objects, Decimal strings, nulls, native indexes/times, cause and owner identities, public/internal flags, lifecycle states and per-stage versions. Remove only explicitly permitted nondeterministic top-level timings. Run the same current source/input/configuration repeatedly for determinism. Classify each first difference before evaluating downstream consequences. No runtime expected-output cases or saved market outputs are present now.

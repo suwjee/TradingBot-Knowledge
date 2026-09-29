@@ -1,1695 +1,3342 @@
 {
-  "generated_from": "canonical Markdown frontmatter",
+  "generated_from": "current Markdown frontmatter",
   "entities": {
     "algorithm.a": {
       "file": "04_ALGORITHMS/A.md",
+      "id": "algorithm.a",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "A calculation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "A Blue-pair triggers and confirming source",
+      "version": "current",
+      "related_entities": [
+        "algorithm.blue",
+        "algorithm.reaction",
+        "algorithm.s"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L114",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L156",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L219",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L329",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L401",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L424",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L443",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L494",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L568",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L650",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L68",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L689",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L753",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.a_zone_detector",
+        "source.blue_line_detector",
+        "source.reaction_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L116",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L116"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.blue"
+      ],
+      "name": "A",
+      "aliases": [
+        "A Zone",
+        "AZone"
+      ],
+      "content_sha256": "028cf3759c937403beb7da914fb784bc772bdd53b291bc298f06709eba85b117",
+      "content_bytes": 10681
     },
     "algorithm.blue": {
       "file": "04_ALGORITHMS/Blue.md",
+      "id": "algorithm.blue",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Blue Line",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Scale and Reset Blue calculation",
+      "version": "current",
+      "related_entities": [
+        "algorithm.a",
+        "algorithm.reaction",
+        "algorithm.reset",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L299",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.blue_line_detector",
+        "source.reaction_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L96",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L96"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.reaction",
+        "algorithm.reset"
+      ],
+      "name": "Blue",
+      "aliases": [
+        "Blue Line",
+        "BlueLine"
+      ],
+      "reference_agreement": "conflict",
+      "reference_conflicts": [
+        "REF-BLUE-ENDPOINT"
+      ],
+      "content_sha256": "34ff2bb63522d09e9b18319d41ad27c94c277acc5a9154678d2d222b6776587f",
+      "content_bytes": 7339
     },
     "algorithm.e": {
       "file": "04_ALGORITHMS/E.md",
+      "id": "algorithm.e",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "E construction and recursive chains",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": true
+      "status": "active",
+      "authority": "executable",
+      "title": "E physical-Order race and recursive accepted lifecycle",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order",
+        "algorithm.reconciliation",
+        "algorithm.s",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L308",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L749",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L880",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1053",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1179",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1202",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1263",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L476",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L816",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.e_zone_detector",
+        "source.order_audit_engine",
+        "source.lifecycle_engine",
+        "source.reaction_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L177",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L177"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.s",
+        "algorithm.order",
+        "algorithm.orderaudit"
+      ],
+      "name": "E",
+      "aliases": [
+        "E Zone",
+        "EZone"
+      ],
+      "reference_agreement": "ambiguous",
+      "reference_conflicts": [
+        "REF-E-TIE-SCOPE"
+      ],
+      "content_sha256": "d0206de1429b13f0cc6723a5ca55070fa31d654eb7be6abf7648d6e0823812d9",
+      "content_bytes": 14715
     },
     "algorithm.internal_reaction": {
       "file": "04_ALGORITHMS/Reaction/Internal-Reaction.md",
+      "id": "algorithm.internal_reaction",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Internal Reaction",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Cross-direction internal Reaction ownership",
+      "version": "current",
+      "related_entities": [
+        "algorithm.blue",
+        "algorithm.reaction",
+        "algorithm.visibility"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.reaction_engine",
+        "source.blue_line_detector",
+        "source.lifecycle_engine",
+        "source.trading_pipeline"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Internal Reaction",
+      "aliases": [
+        "InternalReaction"
+      ],
+      "content_sha256": "40b646f3109663b202fffdf82fd99bebef572c8c293b4fe39597c3d2daff394b",
+      "content_bytes": 2844
     },
     "algorithm.lifecycle": {
       "file": "04_ALGORITHMS/Lifecycle.md",
+      "id": "algorithm.lifecycle",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Lifecycle eligibility and stage ownership",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": true
+      "status": "active",
+      "authority": "executable",
+      "title": "Accepted lifecycle and cross-stage ownership",
+      "version": "current",
+      "related_entities": [
+        "algorithm.visibility",
+        "core.ownership",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.trading_pipeline",
+        "source.e_zone_detector",
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.a",
+        "algorithm.s",
+        "algorithm.e"
+      ],
+      "name": "Lifecycle",
+      "aliases": [
+        "Behavior lifecycle"
+      ],
+      "content_sha256": "276efb119f312d4562bc0c026430787d51097a95fc5051da107546a9b5ee34a3",
+      "content_bytes": 7329
     },
     "algorithm.order": {
       "file": "04_ALGORITHMS/Order/Order.md",
+      "id": "algorithm.order",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Physical Order and provenance",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Physical Orders, causes and consumption",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order.a",
+        "algorithm.order.b",
+        "algorithm.orderaudit"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.order_audit_engine",
+        "source.reaction_engine",
+        "source.e_zone_detector",
+        "source.s_zone_detector",
+        "source.core_utils"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Order",
+      "aliases": [
+        "Physical Order",
+        "Orders"
+      ],
+      "content_sha256": "2318b1bd17f44d9b343f7faf38c6ab5dd2134bbdbbf74558e0211aa835f77da3",
+      "content_bytes": 3930
     },
     "algorithm.order.a": {
       "file": "04_ALGORITHMS/Order/Order-A.md",
+      "id": "algorithm.order.a",
       "type": "algorithm",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Order_A parent-stop cause",
-      "valid_for_reasoning": true,
-      "implementation_validity": "accepted",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Order_A canonical accepted parent-stop creation",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order",
+        "algorithm.orderaudit"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1313",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1758",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1892",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.order_audit_engine",
+        "source.reaction_engine",
+        "source.s_zone_detector",
+        "source.e_zone_detector",
+        "source.core_utils"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L203",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L203"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Order_A",
+      "aliases": [
+        "Order A",
+        "Parent-stop Order"
+      ],
+      "content_sha256": "4d33aa6f6900268a799a03137b161cecaabe06a9a420e203c82365e72e35c50a",
+      "content_bytes": 7336
     },
     "algorithm.order.b": {
       "file": "04_ALGORITHMS/Order/Order-B.md",
+      "id": "algorithm.order.b",
       "type": "algorithm",
-      "status": "pending-fix",
-      "authority": "non-canonical",
-      "title": "Order_B current implementation, quarantined",
-      "valid_for_reasoning": false,
-      "implementation_validity": "known-invalid",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Order_B accepted HH/LL reset-leg creation",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order",
+        "algorithm.orderaudit",
+        "algorithm.reset"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L101",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.order_audit_engine",
+        "source.trading_pipeline",
+        "source.reaction_engine",
+        "source.e_zone_detector",
+        "source.lifecycle_engine"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L219",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L219"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Order_B",
+      "aliases": [
+        "Order B",
+        "Reset-leg Order"
+      ],
+      "content_sha256": "5bdb9de219aba0c7fad0c0f85aaa075ec813d0cebaf8db94e72e204566e271e9",
+      "content_bytes": 8062
     },
-    "algorithm.order.c": {
-      "file": "04_ALGORITHMS/Order/Order-C.md",
+    "algorithm.orderaudit": {
+      "file": "04_ALGORITHMS/Order/OrderAudit.md",
+      "id": "algorithm.orderaudit",
       "type": "algorithm",
-      "status": "pending-fix",
-      "authority": "non-canonical",
-      "title": "Order_C current implementation, quarantined",
-      "valid_for_reasoning": false,
-      "implementation_validity": "known-invalid",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "First-class physical OrderAudit ledger",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order",
+        "algorithm.order.a",
+        "algorithm.order.b",
+        "algorithm.serialization"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1578",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "implemented_by": [
+        "source.order_audit_engine",
+        "source.trading_pipeline",
+        "source.e_zone_detector",
+        "source.s_zone_detector",
+        "source.lifecycle_engine",
+        "source.core_utils"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.reaction"
+      ],
+      "name": "OrderAudit",
+      "aliases": [
+        "Order Audit"
+      ],
+      "content_sha256": "21bf519cf8cfac3a66b02cf5a165b313aa1ab750b1670821041bddf0f987553f",
+      "content_bytes": 6046
     },
     "algorithm.raw": {
       "file": "04_ALGORITHMS/RAW.md",
+      "id": "algorithm.raw",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "RAW normalization and candle construction",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "RAW normalization and selected candle construction",
+      "version": "current",
+      "related_entities": [
+        "algorithm.reaction",
+        "core.chronology",
+        "core.pipeline",
+        "core.precision"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "implemented_by": [
+        "source.trading_pipeline",
+        "source.reaction_engine",
+        "source.core_utils"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "2ca8b9539c0bfb756300857b3244926ee871985d15735b69e8567ada5ecf27b4",
+      "content_bytes": 2425
     },
     "algorithm.reaction": {
       "file": "04_ALGORITHMS/Reaction/Reaction.md",
+      "id": "algorithm.reaction",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Reaction",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Reaction geometry and structural ownership",
+      "version": "current",
+      "related_entities": [
+        "algorithm.internal_reaction",
+        "algorithm.reset",
+        "core.identity",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1426",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1554",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1582",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1648",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1966",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2108",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2283",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2324",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2362"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.reaction_engine",
+        "source.direction_policy",
+        "source.core_utils"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Reaction",
+      "aliases": [
+        "Reaction detection"
+      ],
+      "reference_agreement": "ambiguous",
+      "reference_conflicts": [
+        "REF-REACTION-SUCCESSOR"
+      ],
+      "content_sha256": "57d2f5f7969c48b9ba52fd7fc992a8f7a1252251023eb7bbbbb629ec485ede86",
+      "content_bytes": 12777
     },
     "algorithm.reconciliation": {
       "file": "04_ALGORITHMS/Reconciliation.md",
+      "id": "algorithm.reconciliation",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "E and lifecycle reconciliation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": true
+      "status": "active",
+      "authority": "executable",
+      "title": "Accepted E, S and physical Order reconciliation",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "algorithm.orderaudit",
+        "algorithm.s",
+        "algorithm.stopall"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2119",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2189",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2510",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1019",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1041",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L964",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "implemented_by": [
+        "source.e_zone_detector",
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.lifecycle_engine",
+        "source.trading_pipeline"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Reconciliation",
+      "aliases": [
+        "Accepted-state reconciliation"
+      ],
+      "content_sha256": "983848ef247495aa8d79d306dc34ed1d7e8f7831d35c0792987555f74b962e87",
+      "content_bytes": 10044
     },
     "algorithm.reset": {
       "file": "04_ALGORITHMS/Reaction/Reset.md",
+      "id": "algorithm.reset",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Reset",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Reset events and same-direction restart",
+      "version": "current",
+      "related_entities": [
+        "algorithm.blue",
+        "algorithm.order.b",
+        "algorithm.reaction"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.reaction_engine",
+        "source.order_audit_engine",
+        "source.blue_line_detector",
+        "source.s_zone_detector"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "name": "Reset",
+      "aliases": [
+        "Reaction Reset"
+      ],
+      "content_sha256": "3aef1637a576cfbc8adb20acc33f51fbc74ee9f3a77661efd197a445f4cf7450",
+      "content_bytes": 4473
     },
     "algorithm.s": {
       "file": "04_ALGORITHMS/S/S.md",
+      "id": "algorithm.s",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S calculation and decision",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S opening, candidates and decisions",
+      "version": "current",
+      "related_entities": [
+        "algorithm.a",
+        "algorithm.orderaudit",
+        "algorithm.s.type1",
+        "algorithm.s.type2",
+        "algorithm.s.type3",
+        "algorithm.s.type4"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1228",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L640"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.lifecycle_engine",
+        "source.trading_pipeline",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.a",
+        "algorithm.order",
+        "algorithm.reaction",
+        "algorithm.blue"
+      ],
+      "name": "S",
+      "aliases": [
+        "S Zone",
+        "SZone"
+      ],
+      "content_sha256": "adab068be24068fac6b6c06384ca7b8e27883c994585988774bb75b9877b9ba1",
+      "content_bytes": 13650
     },
     "algorithm.s.type1": {
       "file": "04_ALGORITHMS/S/Type-1.md",
+      "id": "algorithm.s.type1",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Type-1 Simple",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Type-1 Simple physical-Order route",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order.a",
+        "algorithm.s"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.reaction_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "d54504356833ddfbd9d0e391ef6158f220d2bfe58de35c4b67ab817cede17935",
+      "content_bytes": 6020
     },
     "algorithm.s.type2": {
       "file": "04_ALGORITHMS/S/Type-2.md",
+      "id": "algorithm.s.type2",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Type-2 Advanced",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Type-2 Advanced nested-Reaction route",
+      "version": "current",
+      "related_entities": [
+        "algorithm.order.a",
+        "algorithm.s"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.reaction_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "302cb688a8b48246a93f00419e2d34279e90ddf5d6e47cf5f4b54151dc319d6c",
+      "content_bytes": 5717
     },
     "algorithm.s.type3": {
       "file": "04_ALGORITHMS/S/Type-3.md",
+      "id": "algorithm.s.type3",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Type-3 Reset-leg",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Type-3 opposite-Reset continuation",
+      "version": "current",
+      "related_entities": [
+        "algorithm.reset",
+        "algorithm.s",
+        "algorithm.s.type4"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.reaction_engine",
+        "source.order_audit_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "96fd25803518088c9f6559aeebf368bf9a6165a9ce1516023f258c68654b2387",
+      "content_bytes": 3022
     },
     "algorithm.s.type4": {
       "file": "04_ALGORITHMS/S/Type-4.md",
+      "id": "algorithm.s.type4",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Type-4 Blue-qualified aligned Reaction",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Type-4 public-Blue-qualified aligned continuation",
+      "version": "current",
+      "related_entities": [
+        "algorithm.blue",
+        "algorithm.s",
+        "algorithm.s.type3"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.blue_line_detector",
+        "source.reaction_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "74ea746767c2245a6bdb4f769658461b6374b4c0a9e2e8161870c987b84e0927",
+      "content_bytes": 3811
     },
     "algorithm.serialization": {
       "file": "04_ALGORITHMS/Serialization.md",
+      "id": "algorithm.serialization",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Public serialization",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": true
+      "status": "active",
+      "authority": "executable",
+      "title": "Final public serialization and optional Bridge Output",
+      "version": "current",
+      "related_entities": [
+        "algorithm.orderaudit",
+        "algorithm.visibility"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L1027",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L508",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L718",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L833",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L979",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "implemented_by": [
+        "source.trading_pipeline",
+        "source.order_audit_engine",
+        "source.reaction_engine",
+        "source.lifecycle_engine",
+        "source.core_utils"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L309",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L309"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.visibility",
+        "algorithm.orderaudit"
+      ],
+      "name": "Serialization",
+      "aliases": [
+        "Bridge Output"
+      ],
+      "content_sha256": "8100f9118d565686ebcb47b7da257e1356648a99b15bc40ed26fd993c5a230cd",
+      "content_bytes": 14833
     },
     "algorithm.stopall": {
       "file": "04_ALGORITHMS/StopAll.md",
+      "id": "algorithm.stopall",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "StopAll gate state machine",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": true
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll sequence gates and hard cycle boundary",
+      "version": "current",
+      "related_entities": [
+        "algorithm.stopall.blue_reversal",
+        "algorithm.stopall.sequence_group",
+        "algorithm.stopall.stopall_stop",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.trading_pipeline",
+        "source.order_audit_engine",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.lifecycle"
+      ],
+      "name": "StopAll",
+      "aliases": [
+        "Stop All"
+      ],
+      "reference_agreement": "ambiguous",
+      "reference_conflicts": [
+        "REF-S-MODE-B"
+      ],
+      "content_sha256": "0aaa5aee0c87cc11067f9907672cfc3d3c5a40836a6022ee66d210a5cd1fc283",
+      "content_bytes": 8759
+    },
+    "algorithm.stopall.blue_reversal": {
+      "file": "04_ALGORITHMS/StopAll/Blue-Repeat-Reversal.md",
+      "id": "algorithm.stopall.blue_reversal",
+      "type": "algorithm",
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll opposite-s-group-stop gate",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s",
+        "algorithm.stopall",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.s_zone_detector",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "reference_agreement": "ambiguous",
+      "reference_conflicts": [
+        "REF-S-MODE-B"
+      ],
+      "content_sha256": "9b758851be64b18301385f48b64ec39d708ddedea70bfbbfae29c87a2c00dac0",
+      "content_bytes": 4991
+    },
+    "algorithm.stopall.sequence_group": {
+      "file": "04_ALGORITHMS/StopAll/Sequence-Group-Stop.md",
+      "id": "algorithm.stopall.sequence_group",
+      "type": "algorithm",
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll sequence-group-stop gate",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "algorithm.stopall"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "d23bbf9c861fa6db37be15ca1229db4122491629d27cfa95f7db6ac407e299d1",
+      "content_bytes": 3461
+    },
+    "algorithm.stopall.stopall_stop": {
+      "file": "04_ALGORITHMS/StopAll/StopAll-Stop.md",
+      "id": "algorithm.stopall.stopall_stop",
+      "type": "algorithm",
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll stopall-stop continuation gate",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "algorithm.stopall"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.direction_policy"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "content_sha256": "8fa3d01db75d236fb62ee4cf0f3ef2cb8439cd182f236aad40b1dc96e3118e44",
+      "content_bytes": 4010
     },
     "algorithm.visibility": {
       "file": "04_ALGORITHMS/Visibility.md",
+      "id": "algorithm.visibility",
       "type": "algorithm",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Final visibility and lineage",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": true
+      "status": "active",
+      "authority": "executable",
+      "title": "Final behavior visibility, range and lineage",
+      "version": "current",
+      "related_entities": [
+        "algorithm.lifecycle",
+        "algorithm.orderaudit",
+        "algorithm.serialization"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1155",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1357",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.trading_pipeline",
+        "source.order_audit_engine",
+        "source.blue_line_detector",
+        "source.reaction_engine"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+      ],
+      "mirror_links": [
+        "mirror.contract"
+      ],
+      "depends_on": [
+        "algorithm.lifecycle",
+        "algorithm.stopall"
+      ],
+      "name": "Visibility",
+      "aliases": [
+        "Final visibility"
+      ],
+      "content_sha256": "d49b3e3208ce3dd057755331367f29b657e74a964c6f841138609eee6763f2d6",
+      "content_bytes": 6618
     },
     "behavior.a": {
       "file": "03_BEHAVIORS/A.md",
+      "id": "behavior.a",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "A",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "A accepted behavior",
+      "version": "current",
+      "related_entities": [
+        "algorithm.a",
+        "core.behavior_model",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.a_zone_detector",
+        "source.lifecycle_engine",
+        "source.s_zone_detector"
+      ],
+      "content_sha256": "3554ad3645b7152c533e8c30f9bb75353b48b8c0bb0bcec017e153535d9d8f09",
+      "content_bytes": 1239
     },
     "behavior.e": {
       "file": "03_BEHAVIORS/E/E.md",
+      "id": "behavior.e",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "E",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Numbered E accepted behavior",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "behavior.e.blue",
+        "behavior.e.red",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.e_zone_detector",
+        "source.lifecycle_engine",
+        "source.order_audit_engine"
+      ],
+      "content_sha256": "4e7968d00bb2e7d2afef4fa48df4a23931ad1d8a64a1e4e8fdf4256cdb4e85f7",
+      "content_bytes": 1301
     },
     "behavior.e.blue": {
       "file": "03_BEHAVIORS/E/Blue.md",
+      "id": "behavior.e.blue",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "E Blue",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "E Blue family",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.e_zone_detector",
+        "source.lifecycle_engine",
+        "source.order_audit_engine"
+      ],
+      "content_sha256": "7bfbbde28414f34d218e530480153b13d2324ae03a6fc7ff6eaa32164f40eddb",
+      "content_bytes": 1251
     },
     "behavior.e.red": {
       "file": "03_BEHAVIORS/E/Red.md",
+      "id": "behavior.e.red",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "E Red",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "E Red family",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.e_zone_detector",
+        "source.lifecycle_engine",
+        "source.order_audit_engine"
+      ],
+      "content_sha256": "226876e5699bfdccafce7bcb29b208a83aef824f7f85b0950d359ba869b58b42",
+      "content_bytes": 1246
     },
     "behavior.s": {
       "file": "03_BEHAVIORS/S/S.md",
+      "id": "behavior.s",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S accepted behavior taxonomy",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s",
+        "behavior.s.blue",
+        "behavior.s.red",
+        "core.behavior_model"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.order_audit_engine"
+      ],
+      "content_sha256": "fe068bd1e84fbd7572d67ae4eaf051052c64d4883febc21380d24e3f77acd099",
+      "content_bytes": 1403
     },
     "behavior.s.blue": {
       "file": "03_BEHAVIORS/S/Blue.md",
+      "id": "behavior.s.blue",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Blue",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Blue accepted candidate-cross family",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s",
+        "behavior.s.blue.type1",
+        "behavior.s.blue.type2",
+        "behavior.s.blue.type3",
+        "behavior.s.blue.type4"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.lifecycle_engine",
+        "source.blue_line_detector"
+      ],
+      "content_sha256": "f11fcfb417f71a192b8b64e5bd5068bf44fd0a64585381d7655fe3ed753ac9dc",
+      "content_bytes": 1311
     },
     "behavior.s.blue.type1": {
       "file": "03_BEHAVIORS/S/Blue-Type-1.md",
+      "id": "behavior.s.blue.type1",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Blue Type-1",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Blue Type-1 Simple",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s.type1",
+        "behavior.s.blue"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.blue_line_detector"
+      ],
+      "content_sha256": "03e9dee3841994c4d2a6aa55cd541da612037c705c0b2ab5a219a66b104402e9",
+      "content_bytes": 1258
     },
     "behavior.s.blue.type2": {
       "file": "03_BEHAVIORS/S/Blue-Type-2.md",
+      "id": "behavior.s.blue.type2",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Blue Type-2",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Blue Type-2 Advanced",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s.type2",
+        "behavior.s.blue"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.reaction_engine"
+      ],
+      "content_sha256": "0f308fb67465358c01a734a467a535580b1cfc2a986ef1b7b800b630a61289a2",
+      "content_bytes": 1238
     },
     "behavior.s.blue.type3": {
       "file": "03_BEHAVIORS/S/Blue-Type-3.md",
+      "id": "behavior.s.blue.type3",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Blue Type-3",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Blue Type-3 Opposite Reset",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s.type3",
+        "behavior.s.blue"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.reaction_engine",
+        "source.order_audit_engine"
+      ],
+      "content_sha256": "099d602d4d0be2e90f3dabb5d67a642fdede6311829b6be4f56bde319b3ae367",
+      "content_bytes": 1224
     },
     "behavior.s.blue.type4": {
       "file": "03_BEHAVIORS/S/Blue-Type-4.md",
+      "id": "behavior.s.blue.type4",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Blue Type-4",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Blue Type-4 Aligned Blue",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s.type4",
+        "behavior.s.blue"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.blue_line_detector",
+        "source.reaction_engine"
+      ],
+      "content_sha256": "2a4956f24b594b28ae8e1d228ab1271abf005e201fddfcb830587e709a77ef42",
+      "content_bytes": 1244
     },
     "behavior.s.red": {
       "file": "03_BEHAVIORS/S/Red.md",
+      "id": "behavior.s.red",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "S Red",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "S Red physical Order-stop decision",
+      "version": "current",
+      "related_entities": [
+        "algorithm.s",
+        "algorithm.stopall.blue_reversal",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.s_zone_detector",
+        "source.order_audit_engine",
+        "source.lifecycle_engine"
+      ],
+      "content_sha256": "651ed76a68ee8f9c695ab3c6be3a031fc62eb4452f4474f01bb48bdaaa7c2b7f",
+      "content_bytes": 1419
     },
     "behavior.stopall": {
       "file": "03_BEHAVIORS/StopAll/StopAll.md",
+      "id": "behavior.stopall",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "StopAll",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll hard-cycle behavior",
+      "version": "current",
+      "related_entities": [
+        "algorithm.stopall",
+        "behavior.stopall.blue_reversal",
+        "behavior.stopall.sequence_group",
+        "behavior.stopall.stopall_stop"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.s_zone_detector"
+      ],
+      "content_sha256": "894ee6987e86132f2c5d6dd64d3869ac97b92251c05e5e469e4d5ddd6183a707",
+      "content_bytes": 1248
     },
-    "behavior.stopall.type1": {
-      "file": "03_BEHAVIORS/StopAll/Type-1.md",
+    "behavior.stopall.blue_reversal": {
+      "file": "03_BEHAVIORS/StopAll/Blue-Repeat-Reversal.md",
+      "id": "behavior.stopall.blue_reversal",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "StopAll Type-1",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll opposite-s-group-stop gate",
+      "version": "current",
+      "related_entities": [
+        "algorithm.stopall.blue_reversal",
+        "behavior.stopall",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.s_zone_detector"
+      ],
+      "reference_agreement": "ambiguous",
+      "reference_conflicts": [
+        "REF-S-MODE-B"
+      ],
+      "name": "StopAll reversal behavior",
+      "content_sha256": "5e2f52b2ba3c2946e663e303ba432db8106ec01d4d51263ff498e4e7f37c2501",
+      "content_bytes": 1508
     },
-    "behavior.stopall.type2": {
-      "file": "03_BEHAVIORS/StopAll/Type-2.md",
+    "behavior.stopall.sequence_group": {
+      "file": "03_BEHAVIORS/StopAll/Sequence-Group-Stop.md",
+      "id": "behavior.stopall.sequence_group",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "StopAll Type-2",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "StopAll sequence-group-stop gate",
+      "version": "current",
+      "related_entities": [
+        "algorithm.stopall.sequence_group",
+        "behavior.stopall"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.s_zone_detector"
+      ],
+      "name": "StopAll sequence group behavior",
+      "content_sha256": "1c81565fe7fddf92dac2ea498a89ad8b325b08578595c0d24bb7009ad1de518e",
+      "content_bytes": 1130
     },
-    "behavior.stopall.type3": {
-      "file": "03_BEHAVIORS/StopAll/Type-3.md",
+    "behavior.stopall.stopall_stop": {
+      "file": "03_BEHAVIORS/StopAll/StopAll-Stop.md",
+      "id": "behavior.stopall.stopall_stop",
       "type": "behavior",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "StopAll Type-3",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_1": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-1.md",
-      "type": "case",
       "status": "active",
-      "authority": "empirical",
-      "title": "1.1 2026-08-25 — Order_A ownership / immutable first Order",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_10": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-10.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.10 2026-08-28 — exact-key StopAll",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_11": {
-      "file": "07_VALIDATION/Fixtures/EdgeCases/Fixture-1-11.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "1.11 2026-08-28 — S Blue Type-4",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_12": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-12.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.12 2026-09-04 02:36:00 — repeated-Blue reversal StopAll",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_13": {
-      "file": "07_VALIDATION/Fixtures/Bugs/Fixture-1-13.md",
-      "type": "case",
-      "status": "archived",
-      "authority": "historical",
-      "title": "1.13 2026-09-09 — historical Mode-B refresh chain",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_4": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-4.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.4 2026-08-26 — A→S / native Mode-B eligibility anchor #1",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_5": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-5.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.5 2026-08-26 — A→S / native Mode-B eligibility anchor #2",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_6": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-6.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.6 2026-08-28 — A→S / native Mode-B eligibility anchor #3",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_7": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-7.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.7 V5.4.2 lifecycle chain — Bearish",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_8": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-1-8.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "1.8 V5.4.3 dominant Red E / cycle ownership",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_1_9": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-1-9.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "1.9 Canonical Bullish Order geometry inside Bearish regression",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_2_3": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-2-3.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "2.3 2026-09-17 — Exact-source E continuation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_2_4": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-2-4.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "2.4 2026-09-17 — downstream StopAll consequence",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_2_5": {
-      "file": "07_VALIDATION/Fixtures/Bugs/Fixture-2-5.md",
-      "type": "case",
-      "status": "archived",
-      "authority": "historical",
-      "title": "2.5 2026-09-17 — S reversal historical example",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_3_1": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-3-1.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "3.1 2026-09-04 — exact lower-TF Reaction confirmation / A ownership",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_3_2": {
-      "file": "07_VALIDATION/Fixtures/EdgeCases/Fixture-3-2.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "3.2 2026-09-07 — bounded Mode-A anchor",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_4_1": {
-      "file": "07_VALIDATION/Fixtures/Confirmed/Fixture-4-1.md",
-      "type": "case",
-      "status": "active",
-      "authority": "empirical",
-      "title": "4.1 2026-09-09 — same-Break Bullish confirmation/reset",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_4_3": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-4-3.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "4.3 2026-09-10 — stage ownership / invalid fallback",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_5_1": {
-      "file": "07_VALIDATION/Fixtures/EdgeCases/Fixture-5-1.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "5.1 2026-09-11 — Bearish chained Blue carried-stop",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_5_2": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-5-2.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "5.2 2026-09-11 — stage ownership",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_6_1": {
-      "file": "07_VALIDATION/Fixtures/Regression/Fixture-6-1.md",
-      "type": "case",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "6.1 2026-09-22 — stopped dominant E must advance +1",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "case.fixture_8_1": {
-      "file": "07_VALIDATION/Fixtures/Bugs/Fixture-8-1.md",
-      "type": "case",
-      "status": "archived",
-      "authority": "historical",
-      "title": "8.1 `2026-09-04 02:36:00` Bullish StopAll",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "StopAll stopall-stop gate",
+      "version": "current",
+      "related_entities": [
+        "algorithm.stopall.stopall_stop",
+        "behavior.stopall"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "implemented_by": [
+        "source.lifecycle_engine",
+        "source.e_zone_detector",
+        "source.s_zone_detector"
+      ],
+      "content_sha256": "59e251a292c7bf7781a65df0d20a478120d2ac244fbffa7c6849091ba0a6319c",
+      "content_bytes": 1116
     },
     "core.behavior_model": {
       "file": "01_CORE/Behavior-Model.md",
+      "id": "core.behavior_model",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Behavior model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current behavior taxonomy",
+      "version": "current",
+      "related_entities": [
+        "algorithm.e",
+        "algorithm.order",
+        "algorithm.s",
+        "algorithm.stopall",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "f5d2c1d0b37bf77bbb8a332deca21c28fec7354b82b9e735fa4109b53899f7b1",
+      "content_bytes": 2325
     },
     "core.chronology": {
       "file": "01_CORE/Time-Chronology.md",
+      "id": "core.chronology",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Time and chronology",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Physical lower-timeframe chronology",
+      "version": "current",
+      "related_entities": [
+        "algorithm.raw",
+        "core.determinism",
+        "core.pipeline",
+        "core.precision"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "14eefd1e56f5e2bc30887698efe0207de099d28849f0c612979796c4a63594df",
+      "content_bytes": 2228
     },
-    "core.e_numbering": {
-      "file": "03_BEHAVIORS/E/Numbering.md",
+    "core.determinism": {
+      "file": "01_CORE/Determinism-Model.md",
+      "id": "core.determinism",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "E numbering",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Deterministic event, source and ledger selection",
+      "version": "current",
+      "related_entities": [
+        "core.identity",
+        "core.invariants",
+        "mirror.validation_rules",
+        "source.reference_consistency"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "reference_agreement": "ambiguous",
+      "reference_conflicts": [
+        "REF-E-TIE-SCOPE"
+      ],
+      "content_sha256": "656f20ad674f0f80f645d1698a67d2261200893ac6e47f8f9d5a6d193798236d",
+      "content_bytes": 3454
+    },
+    "core.identity": {
+      "file": "01_CORE/Identity-Model.md",
+      "id": "core.identity",
+      "type": "core",
+      "status": "active",
+      "authority": "executable",
+      "title": "Physical identity and provenance model",
+      "version": "current",
+      "related_entities": [
+        "algorithm.orderaudit",
+        "algorithm.reconciliation",
+        "core.determinism"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "name": "Identity",
+      "aliases": [
+        "Physical identity"
+      ],
+      "content_sha256": "9a5d3182ec74db50a1662aa6544f91087e23bd3514037ce864d318fc19763bae",
+      "content_bytes": 2401
     },
     "core.invariants": {
       "file": "01_CORE/Core-Invariants.md",
+      "id": "core.invariants",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Core invariants",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current calculation invariants",
+      "version": "current",
+      "related_entities": [
+        "core.determinism",
+        "core.identity",
+        "core.ownership",
+        "core.pipeline",
+        "mirror.invariants"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "8149058adb7b82f8d683447dddf72bb8314db68661619e14b2eeea97d5c33ff0",
+      "content_bytes": 2764
     },
     "core.lifecycle": {
       "file": "01_CORE/Lifecycle.md",
+      "id": "core.lifecycle",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Lifecycle ownership",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Accepted lifecycle model",
+      "version": "current",
+      "related_entities": [
+        "algorithm.lifecycle",
+        "algorithm.stopall",
+        "core.ownership",
+        "core.priority"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "ea5fd656c2bdef7f3ff2a98c5cc4993a05681d2c60d43a9794857a5e8ccb79ba",
+      "content_bytes": 2459
+    },
+    "core.ownership": {
+      "file": "01_CORE/Ownership-Model.md",
+      "id": "core.ownership",
+      "type": "core",
+      "status": "active",
+      "authority": "executable",
+      "title": "Calculation, acceptance and public ownership",
+      "version": "current",
+      "related_entities": [
+        "algorithm.lifecycle",
+        "algorithm.orderaudit",
+        "algorithm.visibility",
+        "core.identity"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "name": "Ownership",
+      "aliases": [
+        "Behavior ownership"
+      ],
+      "content_sha256": "cb345070cd14cbabc87b5e4b9bad29c2ebd7b86b1ddf824d70da3442c0956ba5",
+      "content_bytes": 2458
     },
     "core.pipeline": {
       "file": "01_CORE/Pipeline.md",
+      "id": "core.pipeline",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Calculation pipeline",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current full calculation pipeline",
+      "version": "current",
+      "related_entities": [
+        "algorithm.orderaudit",
+        "algorithm.raw",
+        "algorithm.reaction",
+        "algorithm.reconciliation",
+        "algorithm.serialization",
+        "algorithm.visibility"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37"
+      ],
+      "name": "Pipeline",
+      "aliases": [
+        "Trading pipeline"
+      ],
+      "content_sha256": "8a2fbb5dc97762b45b308e4d3f6765af5b5493c37bbdec77a3d76ff86f91f693",
+      "content_bytes": 3175
     },
     "core.precision": {
       "file": "01_CORE/Precision.md",
+      "id": "core.precision",
       "type": "core",
       "status": "active",
-      "authority": "empirical",
-      "title": "Precision and strictness",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current Decimal semantics",
+      "version": "current",
+      "related_entities": [
+        "core.invariants"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "947a55f92c650e7dec4cfaccff93743fbdc33cc6371f00ea70b992a57084113f",
+      "content_bytes": 978
     },
     "core.priority": {
       "file": "01_CORE/Priority.md",
+      "id": "core.priority",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Priority",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Shared lifecycle priority and chronology",
+      "version": "current",
+      "related_entities": [
+        "algorithm.lifecycle",
+        "algorithm.reconciliation",
+        "algorithm.stopall"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "6bc5351b7d7f58954399522abbb716be0c880f9e0de552b639245a572741148b",
+      "content_bytes": 1745
     },
     "core.project": {
       "file": "01_CORE/Project.md",
+      "id": "core.project",
       "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "TradingBot project",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "core.terminology": {
-      "file": "01_CORE/Terminology.md",
-      "type": "core",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Terminology",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.candle_model": {
-      "file": "08_DATA/Candle-Model.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "RAW and normalized candle identities",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.data_validation": {
-      "file": "08_DATA/Data-Validation.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Dataset validation procedure",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_062df750": {
-      "file": "08_DATA/Datasets/Dataset-062df750.md",
-      "type": "data",
       "status": "active",
-      "authority": "empirical",
-      "title": "USOIL 5s RAW 2026-09-08 / 062df750",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_7e12ea5f": {
-      "file": "08_DATA/Datasets/Dataset-7e12ea5f.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "USOIL 5s RAW 2026-09-21 / 7e12ea5f",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_9e2e159a": {
-      "file": "08_DATA/Datasets/Dataset-9e2e159a.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "USOIL 5s RAW 2026-09-11 / 9e2e159a",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_b47246b4": {
-      "file": "08_DATA/Datasets/Dataset-b47246b4.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-09-22 / b47246b4",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_ea82be1a": {
-      "file": "08_DATA/Datasets/Dataset-ea82be1a.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-08-25 / ea82be1a",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_f531a06d": {
-      "file": "08_DATA/Datasets/Dataset-f531a06d.md",
-      "type": "data",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "XAUUSD 1s RAW 2026-09-03 / f531a06d",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_f5bc29e3": {
-      "file": "08_DATA/Datasets/Dataset-f5bc29e3.md",
-      "type": "data",
-      "status": "active",
-      "authority": "empirical",
-      "title": "XAUUSD 5s RAW 2026-08-25 / f5bc29e3",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_manifest": {
-      "file": "08_DATA/Manifests/Dataset-Manifest.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Observed RAW inventory manifest",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current project architecture",
+      "version": "current",
+      "related_entities": [
+        "core.pipeline",
+        "source.integration_boundary"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+      ],
+      "content_sha256": "f201cceb0347a732b05739660154fcdd2407799de8af557abfded655ee3a8f8d",
+      "content_bytes": 1362
     },
     "data.dataset_registry": {
-      "file": "08_DATA/Datasets/Dataset-Registry.md",
+      "file": "08_DATA/Dataset-Registry.md",
+      "id": "data.dataset_registry",
       "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Inventory of byte-distinct RAW datasets",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.dataset_template": {
-      "file": "08_DATA/Datasets/Dataset-Template.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Dataset entity template contract",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.datasets_compat": {
-      "file": "08_DATA/Datasets.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Dataset navigation compatibility",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.hash_policy": {
-      "file": "08_DATA/Hash-Policy.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "RAW hash and version policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.hash_registry": {
-      "file": "08_DATA/Hashes/Hash-Registry.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "RAW SHA-256 registry",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.integrity": {
-      "file": "08_DATA/Data-Integrity.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Data integrity checks and observed limits",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.lineage": {
-      "file": "08_DATA/Data-Lineage.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Dataset to validation lineage",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Empty current Dataset registry",
+      "version": "current",
+      "related_entities": [
+        "data.policy"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "data_kind": "registry",
+      "content_sha256": "a5556a8be0e917d72bb91e07fdf68f0879b8c854b41a786e76297cd04fafe94c",
+      "content_bytes": 691
     },
     "data.policy": {
-      "file": "08_DATA/Data-Policy.md",
+      "file": "08_DATA/README.md",
+      "id": "data.policy",
       "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Data knowledge and authority policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.raw_authority": {
-      "file": "08_DATA/Raw/RAW-Authority.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Physical RAW authority and scope",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.raw_format": {
-      "file": "08_DATA/Raw/RAW-Format.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Observed RAW JSON format",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Intentionally empty current Data store",
+      "version": "current",
+      "related_entities": [
+        "test.fixture_model",
+        "workflow.analyze_raw"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "data_kind": "policy",
+      "content_sha256": "62a79dd640eb03ec5ea3ea71efb760ae26432b3022d4bae724dcc3a6fc117d08",
+      "content_bytes": 1223
     },
     "data.raw_model": {
       "file": "08_DATA/RAW-Model.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Physical RAW input model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.raw_schema": {
-      "file": "08_DATA/Raw/RAW-Schema.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "RAW row schema and validation boundary",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.registry_root": {
-      "file": "08_DATA/Dataset-Registry.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Data registry entry point",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.timeframe_registry": {
-      "file": "08_DATA/Timeframe-Registry.md",
-      "type": "data",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Input resolution and analysis timeframe registry",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "data.window_0291455b": {
-      "file": "08_DATA/Datasets/Window-0291455b.md",
+      "id": "data.raw_model",
       "type": "data",
       "status": "active",
-      "authority": "empirical",
-      "title": "Verified RAW window 0291455b",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Generic future RAW schema",
+      "version": "current",
+      "related_entities": [
+        "data.policy",
+        "market.raw"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "data_kind": "raw_model",
+      "content_sha256": "1ec6767e9e4ac267daa74e70a7d95ba53925b599d4bf8e578ea8e604837fc0ba",
+      "content_bytes": 858
     },
-    "data.window_18632e27": {
-      "file": "08_DATA/Datasets/Window-18632e27.md",
-      "type": "data",
+    "decision.authority_boundary": {
+      "file": "10_DECISIONS/Authority-Boundary.md",
+      "id": "decision.authority_boundary",
+      "type": "decision",
       "status": "active",
-      "authority": "empirical",
-      "title": "Verified RAW window 18632e27",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current authority boundary",
+      "version": "current",
+      "related_entities": [
+        "system.authority"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "1122d7dcaddda5315edcb25f6c64952cd94b5dfca3072ff622229dc8ecacb7ac",
+      "content_bytes": 604
     },
-    "data.window_d33c7e2c": {
-      "file": "08_DATA/Datasets/Window-d33c7e2c.md",
-      "type": "data",
+    "decision.calculation_presentation": {
+      "file": "10_DECISIONS/Calculation-Presentation.md",
+      "id": "decision.calculation_presentation",
+      "type": "decision",
       "status": "active",
-      "authority": "empirical",
-      "title": "Verified RAW window d33c7e2c",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current calculation/presentation separation",
+      "version": "current",
+      "related_entities": [
+        "system.authority"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "209c642741b4573066ca2b71f5e52c1dd0d7177b06e211cef8db7c0acf9ddef9",
+      "content_bytes": 625
+    },
+    "decision.empty_evidence_stores": {
+      "file": "10_DECISIONS/Empty-Evidence-Stores.md",
+      "id": "decision.empty_evidence_stores",
+      "type": "decision",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current intentionally empty evidence stores",
+      "version": "current",
+      "related_entities": [
+        "system.authority"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "32afb7e5ca11d8733c1814fe5772b486a0a8a3ba1ba8e02c99e13603f075ac04",
+      "content_bytes": 655
     },
     "market.candle": {
       "file": "02_MARKET_MODEL/Candle.md",
+      "id": "market.candle",
       "type": "market",
       "status": "active",
-      "authority": "empirical",
-      "title": "Candle",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current candle and Doji contract",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "content_sha256": "9815424841a45a27076a2d457125359a64696eb1e5fc3ef36a6eea6194a26451",
+      "content_bytes": 773
+    },
+    "market.chronology": {
+      "file": "02_MARKET_MODEL/Exact-Chronology.md",
+      "id": "market.chronology",
+      "type": "market",
+      "status": "active",
+      "authority": "executable",
+      "title": "Exact lower-timeframe chronology",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1017",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L102",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L142",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L185"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "content_sha256": "01b1fd84a5b082c5c03e704d78866a2cad6defe134c3f64721404b49913aa9d6",
+      "content_bytes": 1833
     },
     "market.crossing": {
       "file": "02_MARKET_MODEL/Crossing.md",
+      "id": "market.crossing",
       "type": "market",
       "status": "active",
-      "authority": "empirical",
-      "title": "Strict crossing",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Strict price crossing and equality",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "name": "Strict Crossing",
+      "aliases": [
+        "Strict crossing and equality"
+      ],
+      "content_sha256": "07e45abfb7882c8487c2d369c934fb2f7c13a695c838da6059c9eca21bff2e3b",
+      "content_bytes": 915
     },
     "market.direction": {
       "file": "02_MARKET_MODEL/Direction.md",
+      "id": "market.direction",
       "type": "market",
       "status": "active",
-      "authority": "empirical",
-      "title": "Direction",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "market.events": {
-      "file": "02_MARKET_MODEL/Market-Events.md",
-      "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Market events",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "market.exact_chronology": {
-      "file": "02_MARKET_MODEL/Exact-Chronology.md",
-      "type": "market",
-      "status": "active",
-      "authority": "empirical",
-      "title": "Exact lower-timeframe chronology",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current direction primitives",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "name": "Direction",
+      "aliases": [
+        "Bullish and Bearish"
+      ],
+      "content_sha256": "974742c27d382a8c0b808a576a7943fa24ea3783a987adeeec1f82522dd1f9dd",
+      "content_bytes": 829
     },
     "market.leg": {
       "file": "02_MARKET_MODEL/Leg/Leg.md",
+      "id": "market.leg",
       "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "General Leg model pending",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "market.leg_calculation": {
-      "file": "02_MARKET_MODEL/Leg/Calculation.md",
-      "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "General Leg calculation pending",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "market.leg_recognition": {
-      "file": "02_MARKET_MODEL/Leg/Recognition.md",
-      "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "General Leg recognition pending",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current Reaction leg state",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "content_sha256": "854191e9e438e04506b2eba418485ec41f9c2225615f29a1c152ff797d6d91a0",
+      "content_bytes": 923
     },
     "market.model": {
       "file": "02_MARKET_MODEL/Market-Model.md",
+      "id": "market.model",
       "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Market model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current market model",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "content_sha256": "16057ff55547bc6b5ff370ee7808580691d0809b9233086f534282c74dd1e709",
+      "content_bytes": 837
     },
     "market.raw": {
       "file": "02_MARKET_MODEL/RAW.md",
+      "id": "market.raw",
       "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "RAW input",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Supplied RAW normalization",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "content_sha256": "374156fd6ac7235b0aef57c4339a057e7755ba3678dd9e4bcbc016e8111f4612",
+      "content_bytes": 837
     },
     "market.timeframe": {
       "file": "02_MARKET_MODEL/Timeframe.md",
+      "id": "market.timeframe",
       "type": "market",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Timeframe",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Analysis timeframe and supplied input scope",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "content_sha256": "5f5ab70df95dc4bb2917e3cc9937c24b407b9fbf1f7042a712ad40c72efbe618",
+      "content_bytes": 921
     },
     "mirror.algorithm_matrix": {
       "file": "05_MIRROR/Algorithm-Mirror.md",
+      "id": "mirror.algorithm_matrix",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Algorithm mirror matrix",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current algorithm mirror coverage",
+      "version": "current",
+      "related_entities": [
+        "core.pipeline",
+        "mirror.source_map",
+        "mirror.validation_rules"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "9c69c208641efd3b49836a896a2c23b52042c7a76102ad79289d6785cbb17b54",
+      "content_bytes": 1902
     },
     "mirror.behavior": {
       "file": "05_MIRROR/Behavior-Mirror.md",
+      "id": "mirror.behavior",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Behavior mirror model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current behavior family mirror",
+      "version": "current",
+      "related_entities": [
+        "core.behavior_model",
+        "mirror.directional_rules",
+        "mirror.invariants"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "6aa36b9f04b214af4151e5c7a98a067d3ce2ae83ed2bb77ae2d92433fa97b43d",
+      "content_bytes": 1519
     },
     "mirror.contract": {
       "file": "05_MIRROR/Mirror-Contract.md",
+      "id": "mirror.contract",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mirror contract",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current directional mirror contract",
+      "version": "current",
+      "related_entities": [
+        "mirror.direction_mapping",
+        "mirror.exceptions",
+        "mirror.invariants",
+        "mirror.validation_rules"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "a56258ea85b397dddb13b6fe942cac04fe8932feeffee68eeaee07f7655ed117",
+      "content_bytes": 2392
     },
     "mirror.direction_mapping": {
       "file": "05_MIRROR/Direction-Mapping.md",
+      "id": "mirror.direction_mapping",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Verified direction mapping",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current directional price and candle-role map",
+      "version": "current",
+      "related_entities": [
+        "mirror.contract",
+        "mirror.invariants"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "content_sha256": "e60eac1421bd472ac540a859209c79a5632df98d3a05bee1c54c1aa273f72f62",
+      "content_bytes": 1691
     },
     "mirror.directional_rules": {
       "file": "05_MIRROR/Directional-Rules.md",
+      "id": "mirror.directional_rules",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Directional rule components",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Direction-sensitive stage rules",
+      "version": "current",
+      "related_entities": [
+        "mirror.direction_mapping",
+        "mirror.mixed_rules"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "content_sha256": "705b3233be20e01bfcc82cfbf246b1cc56a028529e30e3a72a32e93849cf59fc",
+      "content_bytes": 1764
     },
     "mirror.exceptions": {
       "file": "05_MIRROR/Mirror-Exceptions.md",
+      "id": "mirror.exceptions",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mirror exceptions and pending checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current mirror boundary qualifications",
+      "version": "current",
+      "related_entities": [
+        "algorithm.reset",
+        "algorithm.s",
+        "core.chronology",
+        "mirror.contract"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "830aff7dc631fbce8bd71b9d6e580d37c77479f4c43ab9cdd04d3d87462112f2",
+      "content_bytes": 2046
     },
     "mirror.invariants": {
       "file": "05_MIRROR/Invariant-Rules.md",
+      "id": "mirror.invariants",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mirror invariants",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Direction-invariant rule dimensions",
+      "version": "current",
+      "related_entities": [
+        "core.determinism",
+        "core.invariants",
+        "mirror.contract"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "d87e516beddea2a07a5c72f9f9bad55b95b83b86066fad8da82e3cd48d0df057",
+      "content_bytes": 1985
     },
     "mirror.mixed_rules": {
       "file": "05_MIRROR/Mixed-Rules.md",
+      "id": "mirror.mixed_rules",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mixed mirror rules",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Rules combining price reflection and invariant ownership",
+      "version": "current",
+      "related_entities": [
+        "mirror.contract",
+        "mirror.directional_rules",
+        "mirror.invariants"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-sensitive geometry",
+      "content_sha256": "c9827337bb1584f40acb804ae4750d327d64a414f55a4bfe5b93c72a059c0ce6",
+      "content_bytes": 1968
     },
     "mirror.source_map": {
       "file": "05_MIRROR/Source-Mirror.md",
+      "id": "mirror.source_map",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mirror source ownership",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current mirror source ownership",
+      "version": "current",
+      "related_entities": [
+        "mirror.algorithm_matrix",
+        "mirror.contract"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "d42004ed3f1c26128d90397f1042b58ef1c57a2f91da06b68c8ee9052df047ba",
+      "content_bytes": 1962
     },
     "mirror.validation_rules": {
       "file": "05_MIRROR/Validation-Rules.md",
+      "id": "mirror.validation_rules",
       "type": "mirror",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mirror validation requirements",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Mirror validation and evidence scope",
+      "version": "current",
+      "related_entities": [
+        "core.determinism",
+        "core.invariants",
+        "mirror.contract"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"
+      ],
+      "evidence_basis": "Current source and synchronized current references",
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "content_sha256": "d5d34c2d90c7bf9d71bab4d9159ed6f79c03513231bb9237fd02b591d0a4f886",
+      "content_bytes": 1609
+    },
+    "source.__init__": {
+      "file": "06_SOURCE/Modules/__init__.md",
+      "id": "source.__init__",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Exact current Python package marker; unsupported package imports do not define the production entry path",
+      "version": "unversioned package marker",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "Engine package marker",
+      "content_sha256": "302b68df7fd2c915918d095b24df7a9ba52abcb6ce193abea3156d1afc02c175",
+      "content_bytes": 1461
     },
     "source.a_zone_detector": {
       "file": "06_SOURCE/Modules/a_zone_detector.md",
+      "id": "source.a_zone_detector",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "a zone detector",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "A formation, paired Blue provenance and inherited stops",
+      "version": "1.6.4",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097",
+      "content_sha256": "0d627c23381d2ada15a3d69da86cf22f8069425223bcdbfeb39bf2d9f70e5a53",
+      "content_bytes": 3441
     },
     "source.blue_line_detector": {
       "file": "06_SOURCE/Modules/blue_line_detector.md",
+      "id": "source.blue_line_detector",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "blue line detector",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "Scale and Reset Blue construction and public/calculation-valid Blue ownership",
+      "version": "2.3.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448",
+      "content_sha256": "84ccc67752bf49d60fc1d4015277c0ff99d0436232a38014417954f3566f89b4",
+      "content_bytes": 3167
+    },
+    "source.bridge.__init__": {
+      "file": "06_SOURCE/Modules/bridge.__init__.md",
+      "id": "source.bridge.__init__",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Exact current Python package marker; unsupported package imports do not define the production entry path",
+      "version": "unversioned package marker",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/__init__.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/bridge/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/bridge/__init__.py",
+      "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
+      "name": "Bridge package marker",
+      "content_sha256": "f3b67ec6ce15de05df8bda1fe249f8cb399d3d86a5e6621f0e5f216845e993e6",
+      "content_bytes": 1497
     },
     "source.core_utils": {
       "file": "06_SOURCE/Modules/core_utils.md",
+      "id": "source.core_utils",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "core utils",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "Behavior-neutral Decimal normalization and physical Reaction/Order identity",
+      "version": "1.0.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/core_utils.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/core_utils.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/core_utils.py",
+      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de",
+      "content_sha256": "9b0a449c5f26d9b88ce4bd565bc1986e39218bca00d3a3ec9a7ff7c104d390b2",
+      "content_bytes": 1546
     },
-    "source.dependencies": {
+    "source.dependency_map": {
       "file": "06_SOURCE/Dependency-Map.md",
+      "id": "source.dependency_map",
       "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Source dependency map",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current dependency map",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py",
+        "06_SOURCE/Code/engine/bridge/__init__.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/__init__.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "1f5948a7431c37822ee72b4d11f9ddb01e2871ee13a6ed3b5f1720a450ff742c",
+      "content_bytes": 9286
     },
     "source.direction_policy": {
       "file": "06_SOURCE/Modules/direction_policy.md",
+      "id": "source.direction_policy",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "direction policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "Shared direction-sensitive geometry, strict comparisons, extrema and confirmation",
+      "version": "1.0.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+      "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
+      "content_sha256": "ec25f4d256bb35b3d7bf02cdb2dbe14c480e4813aa5707217db135e87116ee0c",
+      "content_bytes": 1906
     },
     "source.e_zone_detector": {
       "file": "06_SOURCE/Modules/e_zone_detector.md",
+      "id": "source.e_zone_detector",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "E zone detector: mixed source evidence",
-      "valid_for_reasoning": null,
-      "implementation_validity": "mixed",
-      "affected_by_known_invalid_order_route": true
+      "title": "E parent-stop cycles, recursive families and reconciled Order-backed continuation",
+      "version": "6.16.1",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "sha256": "38834e96cc58931fe2e12096f4465ecaa046387d30fd40fecbd6891971020988",
+      "content_sha256": "5b3d1ea48e4a768fc08934f356e053974aae9190d63f0302d95ccd1d39e84bb6",
+      "content_bytes": 5496
     },
     "source.integration_boundary": {
       "file": "06_SOURCE/Integration-Boundary.md",
+      "id": "source.integration_boundary",
       "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Chart-to-bridge input scope",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current chart and bridge input boundary",
+      "version": "current",
+      "related_entities": [
+        "core.pipeline",
+        "source.trading_pipeline"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/apps/chart/vite.config.js",
+        "06_SOURCE/Code/apps/chart/server/indicator-range-input.js",
+        "06_SOURCE/Code/apps/chart/server/raw-resource-store.js"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "a532410792b937fc8b1fc74199519c08b0cef7d11b7b477d991ca6167ebd2561",
+      "content_bytes": 1682
     },
     "source.lifecycle_engine": {
       "file": "06_SOURCE/Modules/lifecycle_engine.md",
+      "id": "source.lifecycle_engine",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "Lifecycle and StopAll: mixed source evidence",
-      "valid_for_reasoning": null,
-      "implementation_validity": "mixed",
-      "affected_by_known_invalid_order_route": true
+      "title": "Lifecycle ownership, StopAll gates, retained calculation lineage and final visibility",
+      "version": "1.17.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "sha256": "94feb038e1e78b291762cfc03dfc370e48bb94f3e1fe1171b7a5206301e8be13",
+      "content_sha256": "ea7caa3dd735e3944a34327751758851b74f8c8a5ff6ae521224e49e25f3e718",
+      "content_bytes": 5737
     },
-    "source.map": {
-      "file": "06_SOURCE/Source-Map.md",
+    "source.module_map": {
+      "file": "06_SOURCE/Module-Map.md",
+      "id": "source.module_map",
       "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Source map",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current module map",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py",
+        "06_SOURCE/Code/engine/bridge/__init__.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/__init__.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "c4b33e34934184aa2141ddad34055919d17679da8f31c3d114274384e69ba4cf",
+      "content_bytes": 3153
+    },
+    "source.order_audit_engine": {
+      "file": "06_SOURCE/Modules/order_audit_engine.md",
+      "id": "source.order_audit_engine",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Physical Order_A and Order_B discovery, reset-leg anchors, immutable identity/provenance and accepted/live ledgers",
+      "version": "1.5.1",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+      "sha256": "09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc",
+      "content_sha256": "3f7d232533420347b707d0a12774edead1fc42aaf8bd76dc68259641bcabfd1c",
+      "content_bytes": 7547
+    },
+    "source.ownership_map": {
+      "file": "06_SOURCE/Ownership-Map.md",
+      "id": "source.ownership_map",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current ownership map",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py",
+        "06_SOURCE/Code/engine/bridge/__init__.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/__init__.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "36ec52fb5725cede29e635a4f74351feff6582be9a91fc7e14f20c5ae173faf1",
+      "content_bytes": 2714
+    },
+    "source.pipeline.__init__": {
+      "file": "06_SOURCE/Modules/pipeline.__init__.md",
+      "id": "source.pipeline.__init__",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Exact current Python package marker; unsupported package imports do not define the production entry path",
+      "version": "unversioned package marker",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/__init__.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/__init__.py",
+      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
+      "name": "Pipeline package surface",
+      "content_sha256": "7f333c6efeb1a0a4deeb0f643fdfb3da4bd49f392ffe019cf671f7dd5a7cc25c",
+      "content_bytes": 1512
     },
     "source.reaction_engine": {
       "file": "06_SOURCE/Modules/reaction_engine.md",
+      "id": "source.reaction_engine",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "reaction engine",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "Reaction, Reset, reflected direction geometry, exact lower-timeframe chronology and internal Reaction classification",
+      "version": "9.8.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6",
+      "content_sha256": "0415c6686add52dcfb179937c994d52ceec0e91d05b6f3d743a865af3594351a",
+      "content_bytes": 9778
+    },
+    "source.reference_consistency": {
+      "file": "06_SOURCE/Source-Reference-Consistency.md",
+      "id": "source.reference_consistency",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current Source and Reference semantic consistency",
+      "name": "Source Reference Consistency",
+      "aliases": [
+        "Source Reference Conflicts"
+      ],
+      "version": "current",
+      "related_entities": [
+        "algorithm.blue",
+        "algorithm.reaction",
+        "algorithm.e",
+        "algorithm.stopall.blue_reversal",
+        "algorithm.serialization",
+        "source.reference_registry"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1554",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L308",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L816",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L366",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1393",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L833"
+      ],
+      "algorithm_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md"
+      ],
+      "evidence_basis": "Fresh complete Source and directional Reference review; exact byte identity checked separately",
+      "reference_agreement": "conflict",
+      "reference_conflicts": [
+        "REF-BLUE-ENDPOINT",
+        "REF-REACTION-SUCCESSOR",
+        "REF-E-TIE-SCOPE",
+        "REF-S-MODE-B"
+      ],
+      "content_sha256": "3182c95ff18e01eb6a31e503b4edd726bf793889674ea55cb59a04d4d218461f",
+      "content_bytes": 5949
     },
     "source.reference_registry": {
       "file": "06_SOURCE/Reference-Registry.md",
+      "id": "source.reference_registry",
       "type": "source",
       "status": "active",
-      "authority": "empirical",
-      "title": "Directional reference registry",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "authority": "executable",
+      "title": "Current local directional Reference registry",
+      "version": "current",
+      "related_entities": [
+        "source.reference_consistency",
+        "source.source_manifest",
+        "version.current"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "c366d5789546b5eeda14108f7c5108f3bc1a2bf6451694aed573a04bd09b60bd",
+      "content_bytes": 2120
     },
     "source.s_zone_detector": {
       "file": "06_SOURCE/Modules/s_zone_detector.md",
+      "id": "source.s_zone_detector",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "s zone detector",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "S candidate races, source geometry, color decisions and shared accepted-Order stop reconciliation",
+      "version": "4.20.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+      "sha256": "ef71a2e4176caaabc25d1ef0c1f0f24efb54ed3110982cdb7cf52d2449cca2ee",
+      "content_sha256": "5b7a60c2afde4c1a23e230c853f63fb785b79ac2c165081b2dabea037222c20e",
+      "content_bytes": 6658
+    },
+    "source.source_manifest": {
+      "file": "06_SOURCE/Source-Manifest.md",
+      "id": "source.source_manifest",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Complete current Source manifest",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "version.current"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py",
+        "06_SOURCE/Code/engine/bridge/__init__.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/__init__.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "name": "Source Manifest",
+      "aliases": [
+        "Source provenance"
+      ],
+      "content_sha256": "e5a91367ec0f7a4c7399c304970897493f0544fb48e37bc500b7d6be0f5df8f0",
+      "content_bytes": 3339
+    },
+    "source.source_map": {
+      "file": "06_SOURCE/Source-Map.md",
+      "id": "source.source_map",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current Source navigation",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py",
+        "06_SOURCE/Code/engine/bridge/__init__.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/__init__.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "b86bac2a5905ec91b93b53b348266596a34b0cc9bea737e8e24e88ce588b169e",
+      "content_bytes": 59379
     },
     "source.state_map": {
       "file": "06_SOURCE/State-Map.md",
-      "type": "source",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "State and ownership map",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "source.trading_pipeline": {
-      "file": "06_SOURCE/Modules/trading_pipeline.md",
+      "id": "source.state_map",
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "Bridge orchestration and serialization: mixed source evidence",
-      "valid_for_reasoning": null,
-      "implementation_validity": "mixed",
-      "affected_by_known_invalid_order_route": true
+      "title": "Current state map",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/__init__.py",
+        "06_SOURCE/Code/engine/bridge/__init__.py",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+        "06_SOURCE/Code/engine/pipeline/__init__.py",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+        "06_SOURCE/Code/engine/pipeline/core_utils.py",
+        "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "ee76d77456ccb467ad0b7f3856a680003be7489b11a64bca1b4cdbe6c169f6db",
+      "content_bytes": 19258
+    },
+    "source.trading_pipeline": {
+      "file": "06_SOURCE/Modules/trading_pipeline.md",
+      "id": "source.trading_pipeline",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "CLI input normalization, dynamic module loading, cross-stage coordination, OrderAudit preparation and JSON serialization",
+      "version": "1.7.0",
+      "related_entities": [
+        "source.source_manifest"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
+      ],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "source_path": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+      "mirror": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
+      "sha256": "ef5109f4ebb95bc0e04b3d964b14da5f764ae4472f3d10a1a9b7192d59fec683",
+      "content_sha256": "a2858ddbdea526115465679f159f32fb0ad0e95122fe50919b24960b53627058",
+      "content_bytes": 9488
     },
     "system.authority": {
       "file": "00_SYSTEM/AUTHORITY_MODEL.md",
-      "type": "system",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Authority and status model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "system.editing": {
-      "file": "00_SYSTEM/EDITING_POLICY.md",
-      "type": "system",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "AI editing policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "system.frontmatter": {
-      "file": "00_SYSTEM/FRONTMATTER_SCHEMA.md",
-      "type": "system",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Frontmatter schema",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "system.ids": {
-      "file": "00_SYSTEM/ID_CONVENTIONS.md",
-      "type": "system",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Stable ID conventions",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "system.knowledge_model": {
-      "file": "00_SYSTEM/KNOWLEDGE_MODEL.md",
-      "type": "system",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Knowledge model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "system.manifest": {
-      "file": "00_SYSTEM/VAULT_MANIFEST.md",
-      "type": "system",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Vault manifest",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "system.readme": {
-      "file": "README.md",
+      "id": "system.authority",
       "type": "system",
       "status": "active",
       "authority": "normative",
-      "title": "Standalone TradingBot Knowledge Vault",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "Current authority model",
+      "version": "current",
+      "related_entities": [
+        "source.reference_consistency",
+        "source.reference_registry",
+        "source.source_manifest",
+        "system.retrieval",
+        "version.current"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "ed1628cebafcd007e63e220b8b22845dcc82e9740e7d7d1af1a218bbabd71bdb",
+      "content_bytes": 2085
+    },
+    "system.editing": {
+      "file": "00_SYSTEM/EDITING_POLICY.md",
+      "id": "system.editing",
+      "type": "system",
+      "status": "active",
+      "authority": "normative",
+      "title": "Current editing policy",
+      "version": "current",
+      "related_entities": [
+        "system.authority",
+        "workflow.update_vault"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "50a455de220dd80a0eb6fb9c7dbe2719fc82a8d56924a21a87fc91e52fa02f6b",
+      "content_bytes": 1818
+    },
+    "system.frontmatter": {
+      "file": "00_SYSTEM/FRONTMATTER_SCHEMA.md",
+      "id": "system.frontmatter",
+      "type": "system",
+      "status": "active",
+      "authority": "normative",
+      "title": "Frontmatter and evidence schema",
+      "version": "current",
+      "related_entities": [
+        "system.ids",
+        "system.knowledge_model"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "349116ab9cee9fff137e876f3a98e43dd48a8ccb269a70e594871080651b695a",
+      "content_bytes": 2399
+    },
+    "system.ids": {
+      "file": "00_SYSTEM/ID_CONVENTIONS.md",
+      "id": "system.ids",
+      "type": "system",
+      "status": "active",
+      "authority": "normative",
+      "title": "Current stable ID conventions",
+      "version": "current",
+      "related_entities": [],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "91d8e6d7b1d23360e7718b35ade990b5b080caa7b639092a63ddbbce54d7e2e9",
+      "content_bytes": 1172
+    },
+    "system.knowledge_model": {
+      "file": "00_SYSTEM/KNOWLEDGE_MODEL.md",
+      "id": "system.knowledge_model",
+      "type": "system",
+      "status": "active",
+      "authority": "normative",
+      "title": "Current knowledge model",
+      "version": "current",
+      "related_entities": [
+        "core.pipeline",
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "bfe8c5d9ed12f9b88ad9bc8e143b7836450d4e248cde0ccc9cd562abe09a9fa9",
+      "content_bytes": 1676
+    },
+    "system.manifest": {
+      "file": "00_SYSTEM/VAULT_MANIFEST.md",
+      "id": "system.manifest",
+      "type": "system",
+      "status": "active",
+      "authority": "normative",
+      "title": "Current-only Vault manifest",
+      "version": "current",
+      "related_entities": [
+        "data.policy",
+        "source.reference_consistency",
+        "source.reference_registry",
+        "source.source_manifest",
+        "system.authority",
+        "test.validation_contract",
+        "version.current"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "99d3d238a8041eaa4b621863e089a7b3917d92f98316350da6942cdb8685b0f2",
+      "content_bytes": 1835
+    },
+    "system.readme": {
+      "file": "README.md",
+      "id": "system.readme",
+      "type": "system",
+      "status": "active",
+      "authority": "normative",
+      "title": "Current-only TradingBot Knowledge Vault",
+      "version": "current",
+      "related_entities": [
+        "source.reference_consistency",
+        "system.authority",
+        "system.manifest",
+        "system.retrieval"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "55109c670c20358e149473e91e7b44bc76070646f5f1563597b5fff59864561e",
+      "content_bytes": 2985
     },
     "system.retrieval": {
       "file": "00_SYSTEM/RETRIEVAL_POLICY.md",
+      "id": "system.retrieval",
       "type": "system",
-      "status": "canonical",
+      "status": "active",
       "authority": "normative",
-      "title": "Retrieval policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.baseline_policy": {
-      "file": "07_VALIDATION/Regression/Baseline-Policy.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Trusted baseline policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.behavior_invariants": {
-      "file": "07_VALIDATION/Invariants/Behavior-Invariants.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Behavior invariant checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.change_impact": {
-      "file": "07_VALIDATION/Regression/Change-Impact.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Regression change impact",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.chronology_invariants": {
-      "file": "07_VALIDATION/Invariants/Chronology-Invariants.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Chronology invariant checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.direction_tests": {
-      "file": "07_VALIDATION/Mirror/Direction-Tests.md",
-      "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Directional rule checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "title": "Current retrieval and Plugin bootstrap",
+      "version": "current",
+      "related_entities": [
+        "core.invariants",
+        "core.pipeline",
+        "source.reference_registry",
+        "source.source_manifest",
+        "system.authority",
+        "version.current",
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "d3a5fc1548eebb4a73a51996237af6244ff60a69c5f60508650c75aee6ac4ce4",
+      "content_bytes": 1786
     },
     "test.fixture_model": {
       "file": "07_VALIDATION/Fixture-Model.md",
+      "id": "test.fixture_model",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Fixture entity model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.fixture_registry": {
-      "file": "07_VALIDATION/Fixtures/Fixture-Registry.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Fixture registry",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.identity_invariants": {
-      "file": "07_VALIDATION/Invariants/Identity-Invariants.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Physical identity and provenance checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.integration_test_policy": {
-      "file": "07_VALIDATION/Tests/Integration-Test-Policy.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Full pipeline integration test policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.invariant_validation": {
-      "file": "07_VALIDATION/Invariant-Validation.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Invariant validation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.legacy_memory_fixture_review": {
-      "file": "07_VALIDATION/Fixtures/Legacy-Memory-Review.md",
-      "type": "test",
-      "status": "draft",
-      "authority": "non-canonical",
-      "title": "Review of legacy memory fixture candidates",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.lifecycle_invariants": {
-      "file": "07_VALIDATION/Invariants/Lifecycle-Invariants.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Lifecycle invariant checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.memory_benchmark": {
-      "file": "07_VALIDATION/Performance/Memory-Benchmark.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Memory benchmark contract",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Future fixture schema and provenance",
+      "version": "current",
+      "related_entities": [
+        "data.policy",
+        "test.validation_contract"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "aefe7403dcfcf2a631ce2c68150066dafa2c7dc205219e31744db99c87cf634c",
+      "content_bytes": 1178
     },
     "test.mirror_policy": {
-      "file": "07_VALIDATION/Mirror-Policy.md",
-      "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Mirror validation routing policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.mirror_regression": {
-      "file": "07_VALIDATION/Mirror/Mirror-Regression.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Bullish and Bearish mirror regression",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.mirror_validation": {
       "file": "07_VALIDATION/Mirror-Validation.md",
+      "id": "test.mirror_policy",
       "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Mirror validation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.optimization_rules": {
-      "file": "07_VALIDATION/Performance/Optimization-Rules.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Performance optimization acceptance rules",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current mirror validation scope",
+      "version": "current",
+      "related_entities": [
+        "source.direction_policy",
+        "source.reaction_engine"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "00c1efbd992a8166ce6b5c800615c6eefce66ef58b201d38255320662478f8f0",
+      "content_bytes": 925
     },
     "test.output_validation": {
       "file": "07_VALIDATION/Output-Validation.md",
+      "id": "test.output_validation",
       "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Public output validation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.precision_invariants": {
-      "file": "07_VALIDATION/Invariants/Precision-Invariants.md",
-      "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Precision and strictness checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.regression_model": {
-      "file": "07_VALIDATION/Regression/Regression-Model.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Regression evidence model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.regression_policy": {
-      "file": "07_VALIDATION/Regression-Policy.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Regression comparison policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.regression_test_execution": {
-      "file": "07_VALIDATION/Tests/Regression-Test-Execution.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Regression test execution protocol",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.runtime_benchmark": {
-      "file": "07_VALIDATION/Performance/Runtime-Benchmark.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Runtime benchmark contract",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Future stable output validation",
+      "version": "current",
+      "related_entities": [
+        "workflow.run_regression"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "3db4325116acb2bdae9e265437e697b9c10014a817e20d183aff32bafd091f44",
+      "content_bytes": 854
     },
     "test.source_validation": {
       "file": "07_VALIDATION/Source-Validation.md",
+      "id": "test.source_validation",
       "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Fixture to source validation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.stage_profiling": {
-      "file": "07_VALIDATION/Performance/Stage-Profiling.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "Stage profiling and timing interpretation",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.symmetry_tests": {
-      "file": "07_VALIDATION/Mirror/Symmetry-Tests.md",
-      "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Constructed mirror symmetry checks",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.test_model": {
-      "file": "07_VALIDATION/Tests/Test-Model.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "TradingBot test evidence model",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.test_policy": {
-      "file": "07_VALIDATION/Test-Policy.md",
-      "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "TradingBot test policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
-    },
-    "test.unit_test_policy": {
-      "file": "07_VALIDATION/Tests/Unit-Test-Policy.md",
-      "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Engine unit test policy",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Current source validation method",
+      "version": "current",
+      "related_entities": [
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "2ace2880974d59056f028ce820b4c4c09c89aa8236265db9521d8bb636c97fa5",
+      "content_bytes": 945
     },
     "test.validation_contract": {
-      "file": "07_VALIDATION/Validation-Contract.md",
+      "file": "07_VALIDATION/README.md",
+      "id": "test.validation_contract",
       "type": "test",
-      "status": "pending",
-      "authority": "non-canonical",
-      "title": "TradingBot validation contract",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+      "status": "active",
+      "authority": "executable",
+      "title": "Empty validation store and current gates",
+      "version": "current",
+      "related_entities": [
+        "data.policy",
+        "source.source_manifest",
+        "workflow.run_regression"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "3f07bdf7097ba9fd13fa42ae71979d9bfc5788fafaf896fb6e42e1999d457b7c",
+      "content_bytes": 1510
     },
-    "test.zero_difference": {
-      "file": "07_VALIDATION/Zero-Difference.md",
-      "type": "test",
-      "status": "canonical",
-      "authority": "normative",
-      "title": "Zero-difference refactor rule",
-      "valid_for_reasoning": null,
-      "implementation_validity": "unreviewed",
-      "affected_by_known_invalid_order_route": false
+    "version.current": {
+      "file": "11_VERSIONS/Current.md",
+      "id": "version.current",
+      "type": "version",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current Engine and Reference identities",
+      "version": "5.4.19-EX1",
+      "related_entities": [
+        "source.reference_consistency",
+        "source.reference_registry",
+        "source.source_manifest"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "5ce066f37e58522cafd5dff500769cf7565e246e6f9a600245b7a66ab140b796",
+      "content_bytes": 2893
+    },
+    "workflow.analyze_raw": {
+      "file": "12_WORKFLOWS/Analyze-RAW.md",
+      "id": "workflow.analyze_raw",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Analyze future supplied RAW",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "2888b0bf564ed8352fbac157d759053441ce98c4143b0f13f1e9eddcd00452b3",
+      "content_bytes": 714
+    },
+    "workflow.investigate_behavior": {
+      "file": "12_WORKFLOWS/Investigate-Behavior.md",
+      "id": "workflow.investigate_behavior",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Investigate current behavior",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "f04d77a9465fded933431fa66341321a513292576fd17b58368416578b5eeb81",
+      "content_bytes": 761
+    },
+    "workflow.modify_algorithm": {
+      "file": "12_WORKFLOWS/Modify-Algorithm.md",
+      "id": "workflow.modify_algorithm",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Modify an approved algorithm rule",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "576f81ed09a410e75eb90dc1d14473d36f279e0dc58d556fe24be7ceb9545c1a",
+      "content_bytes": 856
+    },
+    "workflow.modify_source": {
+      "file": "12_WORKFLOWS/Modify-Source.md",
+      "id": "workflow.modify_source",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Modify current Source safely",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "6f3f7d2aa1c64b43916186d6bd3f4a07c6bcf6ee4abfd3c2ae326f4f4f542d2f",
+      "content_bytes": 787
+    },
+    "workflow.operating": {
+      "file": "12_WORKFLOWS/Operating-Workflow.md",
+      "id": "workflow.operating",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current AI operating workflow",
+      "version": "current",
+      "related_entities": [
+        "core.pipeline",
+        "system.authority"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "56723574cf1cb8f7486f563ce6d65fb606fe539a027daba713d5871afd64e5cf",
+      "content_bytes": 2356
+    },
+    "workflow.release": {
+      "file": "12_WORKFLOWS/Release.md",
+      "id": "workflow.release",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Release an authorized current change",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "edbb439e1c3c9b08c830d940fa431a744301f8857d8ca2cb34605250f6c26519",
+      "content_bytes": 827
+    },
+    "workflow.run_regression": {
+      "file": "12_WORKFLOWS/Run-Regression.md",
+      "id": "workflow.run_regression",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Run future approved regression",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "dad9e8d1f601ada31484e8c13f0940dc6ec4c7fdaa51cd3df858125544a70ae2",
+      "content_bytes": 813
+    },
+    "workflow.update_vault": {
+      "file": "12_WORKFLOWS/Update-Vault.md",
+      "id": "workflow.update_vault",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Update current Vault knowledge",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "f5a17c6f58f9cba05a2adee83139ebb633f7f06cdcc5f338d955f4e94b5f46b7",
+      "content_bytes": 864
+    },
+    "workflow.validate_mirror": {
+      "file": "12_WORKFLOWS/Validate-Mirror.md",
+      "id": "workflow.validate_mirror",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Validate current directional mirror",
+      "version": "current",
+      "related_entities": [
+        "workflow.operating"
+      ],
+      "source_reference": [],
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "content_sha256": "c2872ccf806b13cc5f24ea44880f8819e91cfa6340f77a8729d4d53cbcad0a49",
+      "content_bytes": 759
     }
   }
 }

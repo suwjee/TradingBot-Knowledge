@@ -1,15 +1,16 @@
 ---
 id: "market.raw"
 type: "market"
-status: "pending"
-authority: "non-canonical"
-title: "RAW input"
-relates_to: ["source.integration_boundary"]
-source_refs: []
-related_entities: ["data.raw_model", "source.trading_pipeline"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Supplied RAW normalization"
+version: "current"
+related_entities: []
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "mixed: geometry changes, native chronology and identity remain invariant"
 ---
 
-# RAW input
+# Supplied RAW normalization
 
-Each input row carries time, open, high, low, close. The bridge reads the entire supplied JSON; a UTF-8 BOM is removed before orjson parsing. Duplicate exact timestamps collapse with first Open, maximum High, minimum Low, last Close. An empty parsed row array raises `ValueError`; a missing file fails at the earlier file-read boundary. A chart server may supply a prefiltered JSON stream, so preserve the distinction between engine input and the original resource.
+The bridge accepts the complete JSON it receives, normalizes numeric prices through Decimal semantics, collapses duplicate exact seconds according to its current normalization path and builds selected-timeframe candles and exact lower-timeframe indexes. Validate original input chronology and scope before interpreting an output. No physical RAW bytes or symbol-specific data registry are stored in this Vault.

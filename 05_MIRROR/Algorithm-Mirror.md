@@ -1,31 +1,26 @@
 ---
 id: "mirror.algorithm_matrix"
 type: "mirror"
-status: "pending"
-authority: "non-canonical"
-title: "Algorithm mirror matrix"
-created: "2026-09-25"
-updated: "2026-09-26"
-related_entities: ["algorithm.raw", "algorithm.reaction", "algorithm.reset", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e", "algorithm.order", "algorithm.lifecycle", "algorithm.serialization", "source.reaction_engine", "source.blue_line_detector", "source.a_zone_detector", "source.s_zone_detector", "source.e_zone_detector", "source.lifecycle_engine", "source.core_utils", "source.trading_pipeline"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21"]
+status: "active"
+authority: "executable"
+title: "Current algorithm mirror coverage"
+version: "current"
+related_entities: ["core.pipeline", "mirror.source_map", "mirror.validation_rules"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/core_utils.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-invariant or explicitly mixed"
 ---
 
-# Algorithm mirror matrix
+# Current algorithm mirror coverage
 
-> Scope: All nine main Engine modules are captured. Both V5.4.11 HPZR6 references are hash-pinned optional external evidence; current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
+| Owner | Directional dimension | Invariant dimension |
+| --- | --- | --- |
+| Reaction/Reset | reflected geometry,explicit Unified price sides | identity,chronology,mode/Reset priority |
+| Blue/A | Fibonacci/render,strict strikes/stops/extrema | spacing,formation/expiry,Blue provenance |
+| S/E | candidate/parent/Order stops,source extrema | subtype,family/number,accepted lineage/race |
+| OrderAudit | canonical opposite stop,LL/HH | cause creation/use,identity,dedup,retention |
+| Lifecycle/StopAll | strict stop/boundary comparator | priority,exact group keys,hard prefix |
 
-Classification below remains non-canonical where full paired runtime evidence or an accepted B/C rewrite is required; it is not provisional because a main Engine source module is missing. A Mixed row contains separate Directional and Invariant atomic rules; it does not place one atomic rule in two categories.
+RAW normalization/serialization preserve normalized inputs and finalized fields instead of mirrored trading selection. DirectionPolicy owns price primitives;core_utils owns Decimal/identity.
 
-| Algorithm | Category | Directional component | Invariant component | Source owner / anchor |
-|---|---|---|---|---|
-| RAW | Invariant | None: the RAW rows are input, not mirrored data. | Physical OHLC/time parsing, candle color and chronology input identity. | `trading_pipeline.py#L120-L174`, `#L1732`; `reaction_engine.py#L91` |
-| Reaction | Mixed | First/context role, box side, invalidation and confirmation comparison. | One Mode A/B state machine, Candidate identity, exact event order and ownership. | `reaction_engine.py#L174-L703`, `#L1376` |
-| Reset | Mixed | Opposite-boundary price side and strict break. | Event identity, same-Break ownership and chronology. | `reaction_engine.py#L247-L267`, `#L1550-L1581` |
-| Blue | Mixed | Fibonacci, strikes, directional line and stop price. | Scale/Reset identities and strike state. | `blue_line_detector.py#L75-L81`, `#L139-L299` |
-| A | Mixed | Candidate extreme, Blue stop and trigger side. | A identity, Blue provenance and stage order. | `a_zone_detector.py#L97-L166`, `#L219-L311` |
-| S | Mixed | Candidate/Order stop geometry and strict race. | Red/Blue and Type-1..4 identities, A/Order ownership. | `s_zone_detector.py#L223-L331`, `#L482-L638` |
-| Order_A | Mixed | Opposite direction and source-owned strict stop geometry. | The first eligible opposite Reaction after an A stop owns the parent-stop cause; physical identity uses `(FirstIndex,BreakIndex)`. | `s_zone_detector.py#L274-L331`; `core_utils.py#L19-L29` |
-| Lifecycle | Invariant | None in the *stage/priority/ownership rules*; detector price comparisons are delegated directional components. | A → S → E → StopAll stage cycle, priority, eligibility and visibility/lineage rules. | `lifecycle_engine.py#L25-L35`, `#L946-L1177`, `#L1708`; `trading_pipeline.py#L2549` |
-| Serialization | Invariant | None in field/key structure; emitted values carry direction. | Shared collection keys, nullability, versions, Decimal string format and physical indexes. | `trading_pipeline.py#L239-L493`, `#L2776-L2950` |
-
-StopAll itself is **Mixed** (see `Mixed-Rules.md`), even though the lifecycle controller row is Invariant. RAW invariance applies to engine input, not to external selection of a partial chart range; that external boundary is described in existing Vault integration notes and is not a mirror transformation. Both references §3 and §13; `lifecycle_engine.py#L115-L127`; `trading_pipeline.py#L1732`.
+A future changed rule must cover every dependent owner/field. This matrix describes current Source documentation scope,not executed parity or independent market proof.

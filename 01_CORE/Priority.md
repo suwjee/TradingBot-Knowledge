@@ -1,16 +1,23 @@
 ---
 id: "core.priority"
 type: "core"
-status: "pending"
-authority: "non-canonical"
-title: "Priority"
-source_refs: []
-related_entities: ["algorithm.lifecycle", "test.lifecycle_invariants"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Shared lifecycle priority and chronology"
+version: "current"
+related_entities: ["algorithm.lifecycle", "algorithm.reconciliation", "algorithm.stopall"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-invariant or explicitly mixed"
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"]
 ---
 
-# Priority
+# Shared lifecycle priority and chronology
 
-The direction-invariant sequence table is S Blue=1, E Blue=2, S Red=3, E Red=4. StopAll outranks these; A is below them. Priority resolves competing accepted owners at the relevant transition, but an old high-priority behavior does not own later chronology forever. For E candidates at one physical source, ownership priority precedes decision time and parent-stop time. Red E wins over Blue E at the same source, then higher number wins within one family.
+Shared exact hierarchy is StopAll>E Red>S Red>E Blue>S Blue>A,represented 5,4,3,2,1,0. sequence_priority covers S/E. Family names and hierarchy are direction-invariant.
 
-The complete rank, from highest to lowest, is **StopAll > E Red > S Red > E Blue > S Blue > A**. Apply it only after the chronology and eligibility checks for the same competing transition; `test.lifecycle_invariants` protects the rank and its ownership boundary.
+Priority does not make every old high-level object permanent owner. Closed A transitions use latest stopped main candle,then same-boundary priority/number/source. S ownership uses exact stopped-owner and source-event chronology.
+
+Same-source E Red outranks Blue regardless of number; same-family larger number wins; exact remaining tie preserves prior provenance. Active Red E cannot be stolen by S; accepted Red S may supersede Blue E under lifecycle gates.
+
+Dominant occurrence counters and independent accepted Blue-repeat counters differ. Lower-priority accepted events can remain output without replacing dominant. Same-family larger E advances dominant E group; different Blue E numbers cannot combine in reversal key.

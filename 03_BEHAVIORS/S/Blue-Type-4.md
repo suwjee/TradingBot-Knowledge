@@ -1,17 +1,19 @@
 ---
 id: "behavior.s.blue.type4"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "S Blue Type-4"
-calculated_by: ["algorithm.s.type4"]
-implemented_by: ["source.s_zone_detector"]
-depends_on: ["behavior.s.blue", "algorithm.blue"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L543", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L613"]
-related_entities: ["test.behavior_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L543", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L613"]
+status: "active"
+authority: "executable"
+title: "S Blue Type-4 Aligned Blue"
+version: "current"
+related_entities: ["algorithm.s.type4", "behavior.s.blue"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.s_zone_detector", "source.blue_line_detector", "source.reaction_engine"]
 ---
 
-# S Blue Type-4
+# S Blue Type-4 Aligned Blue
 
-Public formation Type-4 is an order-free aligned-Reaction S Blue route. After A strictly stops, the latest same-direction Reaction rebuilds its candidate. A strict directional cross becomes S Blue only with calculation-valid, non-Internal Blue evidence formed no later than the crossing. The route ends when the first eligible opposite Order confirms. An unqualified cross emits no Type-4; a later aligned Reaction can rebuild the candidate. Exact event and interval rules live in algorithm.s.type4.
+Native Type-4 Blue is order-free. Aligned confirmation after A stop builds complete A-stop..aligned Break directional candidate,last equality source. Search starts max(A stop,confirmation,candidate event),ends before next aligned confirmation/Order deadline. Public valid Blue formation must lie candidate-source..strict cross inclusive. Unqualified cross emits nothing and next aligned Reaction rebuilds. Order/Reset fields null.
+
+Native formation_type=type4. Later shared accepted-Order reconciliation can recolor the subtype without changing frozen source/price;it does not create a new Order route.

@@ -1,20 +1,16 @@
 ---
 id: "data.raw_model"
 type: "data"
+status: "active"
+authority: "executable"
+title: "Generic future RAW schema"
+version: "current"
+related_entities: ["data.policy", "market.raw"]
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
+evidence_basis: "Current source and synchronized current references"
 data_kind: "raw_model"
-status: "pending"
-authority: "non-canonical"
-title: "Physical RAW input model"
-created: "2026-09-25"
-updated: "2026-09-25"
-related_entities: ["data.raw_format", "data.raw_schema", "data.raw_authority", "algorithm.raw", "source.trading_pipeline", "data.candle_model"]
-source_reference: []
 ---
 
-# Physical RAW input model
+# Generic future RAW schema
 
-RAW is the original JSON candle input received by the calculation bridge. Its byte stream preserves row order, epoch timestamps and the written JSON price tokens. Every inspected RAW array contains records with exactly `time`, `open`, `high`, `low`, `close`; sidecar `.meta.json` files are separate metadata, not candle rows. The bridge strips a leading UTF-8 BOM if present, parses JSON, normalizes OHLC and builds lower/main candle views. It must not mutate the physical file to do that.
-
-Byte preservation and calculation precision are related but distinct. The physical hash identifies the exact original JSON, including textual number representation. Current bridge parsing uses `orjson`, then `as_decimal`/`Decimal(str(value))` for logic; that path preserves its parsed numeric value under Decimal comparisons but cannot be claimed to retain lexical trailing zeros from a JSON number. No data note may promise more precision than the source path actually provides.
-
-See [RAW-Format.md](Raw/RAW-Format.md), [RAW-Schema.md](Raw/RAW-Schema.md), [RAW-Authority.md](Raw/RAW-Authority.md) and `algorithm.raw` for the distinct storage, validation and normalization boundaries.
+The production boundary consumes a JSON array of candle rows with native time and OHLC fields. Verify actual current parser requirements in the local bridge and raw-resource-store snapshots before registering supplied data. Preserve numeric lexical precision for Decimal decisions and record metadata separately. Main timeframe geometry and lower-timeframe chronology derive from the supplied input scope. No populated market-data schema example, hash or filename is stored here.

@@ -1,21 +1,19 @@
 ---
 id: "behavior.a"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "A"
-calculated_by: ["algorithm.a"]
-implemented_by: ["source.a_zone_detector", "source.lifecycle_engine"]
-depends_on: ["algorithm.blue", "algorithm.reaction"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L38"]
-related_entities: ["test.behavior_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L38"]
+status: "active"
+authority: "executable"
+title: "A accepted behavior"
+version: "current"
+related_entities: ["algorithm.a", "core.behavior_model", "core.priority"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.a_zone_detector", "source.lifecycle_engine", "source.s_zone_detector"]
 ---
 
-# A
+# A accepted behavior
 
-A is one public behavior. An ordinary adjacent-Blue route and a special double-stop route may create it, but these are calculation routes, not separate A behaviors. A carries Blue pair, validating Reaction, trigger, source, and price provenance. A is the smallest lifecycle owner.
+A is the smallest lifecycle behavior. Adjacent valid Blue-pair trigger plus first qualifying canonical aligned Reaction freezes its directional source from trigger main open through exact confirmation inclusive. Price is minimum Low Bullish/maximum High Bearish;first strict directional stop opens S.
 
-A may become S parent only after its first strict directional stop: Bullish Low < A.price; Bearish High > A.price. The exact lower event and main candle are distinct. A can be hidden at an S/E/StopAll source or invalidated by a dominant stopped owner. A fallback rejected under accepted S cannot consume that S or produce valid S descendants. A historical A referenced by final S may remain visible unless a higher-stage source occupies the same candle.
-
-Calculation details: algorithm.a and algorithm.lifecycle.
+A carries original Blue ordinals,stop/continuation provenance,trigger exact event,confirming Reaction and source/price. Lifecycle may consume a strict beyond-boundary A as closed-owner leg head. Equality does not strict-stop. Public source occupancy can remove label while accepted historical lineage remains.

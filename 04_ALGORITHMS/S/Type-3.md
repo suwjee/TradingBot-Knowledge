@@ -1,34 +1,35 @@
 ---
 id: "algorithm.s.type3"
 type: "algorithm"
-status: "pending"
-authority: "non-canonical"
-title: "S Type-3 Reset-leg"
-implemented_by: ["source.s_zone_detector"]
-produces: ["behavior.s.blue.type3"]
-depends_on: ["algorithm.s", "algorithm.reset"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L457", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L482", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1090", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1355"]
-related_entities: ["test.source_validation", "test.behavior_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L457", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L482", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1090", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1355"]
+status: "active"
+authority: "executable"
+title: "S Type-3 opposite-Reset continuation"
+version: "current"
+related_entities: ["algorithm.reset", "algorithm.s", "algorithm.s.type4"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.s_zone_detector", "source.reaction_engine", "source.order_audit_engine", "source.direction_policy"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"]
+mirror_links: ["mirror.contract"]
 ---
 
-# S Type-3 Reset-leg
+# S Type-3 opposite-Reset continuation
 
-## Calculation logic
+## Bullish
 
-For one stopped A, set the no-Order deadline to the first newly eligible opposite Order confirmation, or to the received-range end when there is no such Order. Consider an opposite Reset whose exact event is strictly after the A-stop event and strictly before that deadline. Its owner must have confirmed no later than the A stop and must not already have reset on or before that stop.
+#### 7.2 Order-free Type-3 S Blue
 
-Resolve the owner by the Reset's `from_first_idx`. The candidate leg is the inclusive interval from that owner's Break main index through the main index containing the Reset event. Bullish selects the minimum Low; Bearish selects the maximum High; the shared candidate helper assigns an equal extreme to the last candle. Starting at the exact Reset event and ending before the deadline, find the first strict lower-timeframe crossing (`Low < boundary` for Bullish, `High > boundary` for Bearish).
+Type-3 is an opposite-Reset-leg route available after A stop and before the first Order deadline. The opposite Reaction owning the Reset must have confirmed by the A-stop event and must not already have Reset before that A stop. Candidate geometry spans the **complete opposite Reaction Break main candle through the Reset main candle**, inclusive, and selects the minimum Low with **last-candle ownership on equality**. After Reset, the first strict Bullish cross of that candidate wins only if at least one ordinary same-direction Reaction confirms after A stop and no later than the cross. Earliest valid Type-3 decision wins.
 
-Require a same-direction trend Reaction confirmation strictly after the A-stop event and no later than that crossing. Among eligible Reset legs, the detector retains the earliest crossing event. The resulting zone is Blue/public Type-3, records the Reset reaction number/time and source/decision provenance, and sets every forming-Order field to `None`.
+## Bearish
 
-Type-3 and Type-4 are independent order-free routes evaluated to the same deadline. Earlier exact decision chronology wins; a true equal decision event keeps established Type-3 precedence. Bullish HPZR6 §9.2 and Bearish HPZR6 §9.2 state the same route with the corresponding Low/High directional source; neither supplies an additional Order rule.
+#### 7.2 Order-free Type-3 S Blue
 
-## Contract interface
+Type-3 is an opposite-Reset-leg route available after A stop and before the first Order deadline. The opposite Reaction owning the Reset must have confirmed by the A-stop event and must not already have Reset before that A stop. Candidate geometry spans the **complete opposite Reaction Break main candle through the Reset main candle**, inclusive, and selects the maximum High with **last-candle ownership on equality**. After Reset, the first strict Bearish cross of that candidate wins only if at least one ordinary same-direction Reaction confirms after A stop and no later than the cross. Earliest valid Type-3 decision wins.
 
-- **Purpose:** Evaluate the pre-Order Reset-led S candidate route.
-- **Inputs:** Stopped A, pre-existing opposite Reaction Reset, interval extreme and Order deadline.
-- **Calculation logic:** The source-grounded rule and its exact ordering are stated above.
-- **Output:** Type-3 Blue S or competing Red S decision evidence.
-- **Source ownership:** source.s_zone_detector.
-- **Validation relationship:** test.behavior_invariants; test.source_validation checks the line anchors and owner.
+## Source-level contract
+
+Opposite Reset is strictly after A stop and before first immutable opposite Order confirmation. Opposite owner confirms <= A stop and first Reset > A stop. Candidate complete Break..Reset uses last-on-equality. Crossing window includes Reset event and excludes Order deadline; ordinary aligned confirmation must be > A stop and <= cross.
+
+Native Blue/type3 has all physical Order fields null and exact opposite reset owner/time explicit. Earliest exact decision wins; true tie vs Type-4 belongs to Type-3. Later accepted-Order reconciliation may recolor subtype while retaining frozen source/price.

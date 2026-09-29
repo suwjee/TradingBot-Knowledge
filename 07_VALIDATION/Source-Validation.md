@@ -1,18 +1,15 @@
 ---
 id: "test.source_validation"
 type: "test"
-status: "canonical"
-authority: "normative"
-title: "Fixture to source validation"
-created: "2026-09-25"
-updated: "2026-09-25"
-related_entities: ["test.fixture_model", "test.fixture_registry", "mirror.source_map", "algorithm.reaction", "algorithm.order", "source.reaction_engine", "source.s_zone_detector", "source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L277"]
+status: "active"
+authority: "executable"
+title: "Current source validation method"
+version: "current"
+related_entities: ["source.reference_registry", "source.source_manifest"]
+source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Fixture to source validation
+# Current source validation method
 
-For each case, trace Fixture → public Behavior when one exists → Algorithm → physical Source module → real function. Reaction, Reset, Blue and Order cases may have behavior=unknown because they are not Behaviors. Keep the algorithm/source edge even then. The Vault builder checks case relation targets, retained source module existence and named top-level/class method symbols. The bridge source is captured; a complete accepted bridge trace still requires an input-scope-specific runtime comparison and B/C impact review.
-
-
-An optional source_function must be a function or Class.method present in the cited module. Use unknown rather than a guessed symbol. The supplied prompt's conditional Reaction Mode-B refresh is **not** an active rule: retained `s_zone_detector.py` lines 277–321 keep the first stopped-A Order_A even before S decision. Reaction Mode-B names a Reaction mode, not another physical Order creation route. Preserve older refresh results only as Historical fixtures.
+Compare every manifest entry to exact local snapshot bytes and then to its current Production origin. Check SHA-256, byte count, line count, actual version constants and complete inventory. Parse and compile Python in memory to avoid writing Production caches. Use the normal dynamic bridge loading path to check functional imports. Unsupported flat package imports are reported separately from the successful production entry path. Extract both raw Reference embedded blocks and compare all 13 current Python copies per direction byte-for-byte before claiming synchronization.

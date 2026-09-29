@@ -1,31 +1,22 @@
 ---
 id: "mirror.invariants"
 type: "mirror"
-status: "pending"
-authority: "non-canonical"
-title: "Mirror invariants"
-created: "2026-09-25"
-updated: "2026-09-25"
-related_entities: ["core.behavior_model", "core.priority", "core.lifecycle", "core.chronology", "core.precision", "core.e_numbering", "algorithm.order", "algorithm.serialization", "source.core_utils", "source.lifecycle_engine", "source.trading_pipeline"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L11"]
+status: "active"
+authority: "executable"
+title: "Direction-invariant rule dimensions"
+version: "current"
+related_entities: ["core.determinism", "core.invariants", "mirror.contract"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/core_utils.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-invariant or explicitly mixed"
 ---
 
-# Mirror invariants
+# Direction-invariant rule dimensions
 
-> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
+Decimal normalization,physical market Doji,color contract,time/epoch,physical source/Break indexes,range windows,identity,provenance,Reaction mode,original canonical number,accepted family labels,priority and public fields are invariant. Direction changes only owner-defined price sides/comparators.
 
-These atomic rules do not change when direction changes. The surrounding algorithm can still be **Mixed** when its price predicate is directional.
+Internal containment retains temporal/box inclusion; same lower-position invalidation/Reset priority stays. S simultaneous native crossings yield no decision in both directions. Earliest/last equal-source policy is owner-specific and not inverted. Blue confirmation row/shared S main-open inclusion is identical by explicit task clarification.
 
-| Invariant | Exact contract | Evidence |
-|---|---|---|
-| Behavior identity | A, S, E, StopAll are shared behavior identities; `Bullish A`, `Bearish S`, etc. are not new entities. S Red/Blue and Blue Type-1..4 are family/formation identities shared across directions. | Both references §0.1, §23.2; `trading_pipeline.py#L1040-L1307` |
-| E numbering | E1/E2/E3 are numbered states/instances of one E algorithm, not separate algorithms. Same-family stopped-owner and reconciliation rules govern the next number. | Both references §10.7; `e_zone_detector.py#L2267-L2463` |
-| Priority | `StopAll > E Red > S Red > E Blue > S Blue > A` (`5 > 4 > 3 > 2 > 1 > smallest`). Red/Blue **family labels** never swap with market direction. | Both references §12 and §13; `lifecycle_engine.py#L25-L35` |
-| Stage cycle | Accepted stage progression is `A → S → E → StopAll`; after a hard StopAll boundary, a new cycle may begin at A. StopAll clears active owner and pending repeat state. | Both references §12, §13, §15A; `lifecycle_engine.py#L403-L455` |
-| Chronology | The exact lower-timeframe event order determines confirmation, breakout, strict stops and A/S/E/StopAll decisions; main-candle OHLC alone cannot reorder those events. Physical source and event indexes/times stay attached to their objects. | Both references §5, §12, §15A; `trading_pipeline.py#L1732-L1903` |
-| Precision | Calculation-side prices use `Decimal`; `as_decimal` keeps an existing Decimal or uses `Decimal(str(value))`. No float conversion is permitted as a substitute for calculation comparisons. | Both references §3.2; `core_utils.py#L11-L13`; `trading_pipeline.py#L120-L134` |
-| Physical Order identity | `(FirstIndex, BreakIndex)` identifies one physical opposite Reaction/Order; multiple independently proven causes may belong to it. Identity is independent of direction and native Reaction mode. | Both references §6.12, §11; `core_utils.py#L19-L29`; `lifecycle_engine.py#L728-L776` |
-| Serialization structure | The same public JSON keys, collection shape, nullable slots and version fields apply in both directions; only direction-dependent **values** change. Decimal prices serialize as strings. Source-only audit material is excluded from this mirror-invariant table and is not a normative dependency. | Both references §16; `trading_pipeline.py#L239-L493`, `#L2776-L2950` |
-| Doji market color | `open == close` remains GREEN in either market direction; internal reflected tags are an adapter, not a market-color reclassification. | Both references §3.6; `reaction_engine.py#L91-L93`, `#L560-L577` |
+Order_B eligibility stop differs from geometric anchor in both directions. Next-A trigger expiry,inclusive First-time,strict confirmation,canonical membership,parent validity,persistent valid causes and complete feedback identity stay. StopAll exact accepted Blue keys,native Mode-B reversal,hard prefix/cycle reset stay.
 
-StopAll priority outranks the other behaviors, while its *formation* remains Mixed because strict price stops use `Low <` or `High >`. Stage order must be applied before priority resolves eligible ownership; priority alone does not justify skipping A/S/E state transitions. Both references §12; `lifecycle_engine.py#L25-L35`, `#L946-L1177`.
+Schemas,nulls,array order and cause joins remain. Behavior Red/Blue is not chart GREEN/RED. Mirror parity alone is not independent target-direction real-data correctness.

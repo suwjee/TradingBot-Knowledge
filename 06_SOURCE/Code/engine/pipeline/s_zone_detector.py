@@ -1,9 +1,9 @@
 """S-zone calculation from authoritative A, Reaction, Blue, and Order state.
 
 Owns A-to-S handoff, S Red/Blue Simple/Advanced/Type3 formation, S decision
-chronology, shared accepted-Order stop reconciliation, and the initial Order
-audit created by stopped A zones. Larger E/StopAll arbitration remains
-lifecycle-owned.
+chronology, and shared accepted-Order stop reconciliation. The Order module
+owns physical creation and the initial audit of stopped A zones. Larger
+E/StopAll arbitration remains lifecycle-owned.
 """
 
 from __future__ import annotations
@@ -14,12 +14,14 @@ from datetime import datetime, timedelta
 from decimal import Decimal
 from typing import Callable, Sequence
 
-from core_utils import as_decimal, reaction_identity
+from core_utils import as_decimal
+from order_audit_engine import SOrderAuditMixin
 from direction_policy import policy_for
 
 
 S_ZONE_VERSION = "4.20.0"
-S_ZONE_LAST_MODIFIED = "2026-09-23 10:19:31 +03:30"
+S_ZONE_IMPLEMENTATION_VERSION = "4.21.0"
+S_ZONE_LAST_MODIFIED = "2026-09-27 23:17:17 +03:30"
 
 
 @dataclass(frozen=True, slots=True)
@@ -61,7 +63,7 @@ class SZone:
     decision_event_time: datetime
 
 
-class SZoneDetector:
+class SZoneDetector(SOrderAuditMixin):
     def __init__(
         self,
         direction: str,
@@ -271,39 +273,6 @@ class SZoneDetector:
         return self._first_a_stop(level, start)
 
 
-    def _first_order_after(
-        self, a_stop_event_time: datetime
-    ) -> tuple[int, object, datetime] | None:
-        """Return the immutable first canonical opposite Order after A-stop.
-
-        Each stopped A creates at most one parent-stop Order_A.  Subsequent
-        native Mode-B Reactions cannot refresh that physical identity; they
-        may be accepted only through independently valid creation causes.
-        """
-        matches = self._order_matches_after(a_stop_event_time)
-        return matches[0] if matches else None
-
-    def _order_matches_after(
-        self, a_stop_event_time: datetime
-    ) -> list[tuple[int, object, datetime]]:
-        """Expose canonical opposite-Order chronology without changing ownership."""
-        cached = self._order_matches_after_cache.get(a_stop_event_time)
-        if cached is not None:
-            return list(cached)
-
-        gate_index = self._main_index(a_stop_event_time)
-        position = bisect_right(
-            self._opposite_order_confirmation_times, a_stop_event_time
-        )
-        matches = tuple(
-            (number, reaction, confirmation)
-            for confirmation, first_index, _break, number, reaction
-            in self._opposite_order_matches[position:]
-            if first_index >= gate_index
-        )
-        self._order_matches_after_cache[a_stop_event_time] = matches
-        return list(matches)
-
     def _resolved_order_backed_zone(
         self,
         zone: object,
@@ -322,51 +291,6 @@ class SZoneDetector:
             zone, a_ordinal, a_price, a_stop, first_order_match
         )
 
-    def _record_a_order_audit(
-        self,
-        zone: object,
-        a_stop_event_time: datetime,
-        order_match: tuple[int, object, datetime],
-    ) -> None:
-        """Attach one stopped-A creation cause to a physical Order identity."""
-        source_time = getattr(zone, "source_time")
-        order_number, order, order_confirmation_time = order_match
-        (
-            order_stop_level,
-            order_stop_source_index,
-            order_stop_source_time,
-        ) = self._order_stop(order_number, order)
-        identity = reaction_identity(order)
-        cause = (source_time, a_stop_event_time)
-        entry = self.order_audit.get(identity)
-        if entry is None:
-            entry = {
-                "reaction_number": order_number,
-                "reaction": order,
-                "confirmation_time": order_confirmation_time,
-                "stop_level": order_stop_level,
-                "stop_source_index": order_stop_source_index,
-                "stop_source_time": order_stop_source_time,
-                "a_source_time": source_time,
-                "a_stop_event_time": a_stop_event_time,
-                "a_causes": [],
-            }
-            self.order_audit[identity] = entry
-        a_causes = entry.setdefault("a_causes", [])
-        if cause not in a_causes:
-            a_causes.append(cause)
-
-    def _audit_stopped_a(self, zone: object) -> None:
-        """Record the independent order gender created by one stopped A."""
-        a_price = as_decimal(getattr(zone, "price"))
-        a_stop = self._first_a_stop(a_price, self._a_confirmation_time(zone))
-        if a_stop is None:
-            return
-        _, _, a_stop_event_time = a_stop
-        order_match = self._first_order_after(a_stop_event_time)
-        if order_match is None:
-            return
-        self._record_a_order_audit(zone, a_stop_event_time, order_match)
 
     def _candidate_source(
         self, start_index: int, end_index: int
@@ -941,25 +865,10 @@ class SZoneDetector:
         )
 
 
-    def _order_stop(
-        self, order_number: int, reaction: object
-    ) -> tuple[Decimal, int, datetime]:
-        return self.chronology.canonical_order_stop(
-            self.order_direction,
-            order_number,
-            reaction,
-            self.opposite_reactions,
-            start_index=self.start_index,
-        )
-
     def _candidate_crossed(self, candle: object, level: Decimal) -> bool:
         value = self._trend_extreme(candle)
         return self._a_stopped(value, level)
 
-    def _order_stop_crossed(self, candle: object, level: Decimal) -> bool:
-        if self.order_direction == "bearish":
-            return as_decimal(getattr(candle, "high")) > level
-        return as_decimal(getattr(candle, "low")) < level
 
     def _decision(
         self,
@@ -1393,32 +1302,6 @@ class SZoneDetector:
         )
 
 
-    def _shared_order_stop_cross(
-        self, confirmation: datetime, level: Decimal
-    ) -> tuple[int, datetime, datetime] | None:
-        """Return the first strict stop of an accepted Order after confirmation."""
-        scan_start = max(confirmation, self.range_start)
-        left = bisect_left(self.lower_times, scan_start)
-        right = bisect_left(self.lower_times, self.range_end)
-        if right > left and self.lower_index is not None:
-            position = (
-                self.lower_index.first_greater(left, right, level)
-                if self.order_direction == "bearish"
-                else self.lower_index.first_less(left, right, level)
-            )
-            if position is None:
-                return None
-            event_time = self.lower_times[position]
-            index = self._main_index(event_time)
-            return index, getattr(self.candles[index], "timestamp"), event_time
-
-        for item in self.lower[left:right]:
-            if self._order_stop_crossed(item, level):
-                event_time = getattr(item, "timestamp")
-                index = self._main_index(event_time)
-                return index, getattr(self.candles[index], "timestamp"), event_time
-        return None
-
     def reconcile_shared_order_stops(
         self,
         zones: Sequence[SZone],
@@ -1533,7 +1416,6 @@ class SZoneDetector:
                 decision_event_time=crossed[2],
             ))
         return output
-
 
 
 def detect_s_zones(

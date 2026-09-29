@@ -2,13 +2,17 @@
 id: "market.crossing"
 type: "market"
 status: "active"
-authority: "empirical"
-title: "Strict crossing"
-source_refs: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L32", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L211", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1066"]
-related_entities: ["mirror.direction_mapping", "test.precision_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L32", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L211", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1066"]
+authority: "executable"
+title: "Strict price crossing and equality"
+version: "current"
+related_entities: []
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "mixed: geometry changes, native chronology and identity remain invariant"
+name: "Strict Crossing"
+aliases: ["Strict crossing and equality"]
 ---
 
-# Strict crossing
+# Strict price crossing and equality
 
-The retained Reaction, direction-policy, A, and S crossing routines use strict < or > comparisons; equality does not satisfy those crossings. Their lower-timeframe scans choose the first qualifying event inside each routine's bounds. Reaction invalidation can win a same-second tie with confirmation; the retained S routine invalidates its candidate when the candidate and Order stop cross at the same lower event. Other stages and their bounds remain pending.
+Strict price crossing excludes equality. Reaction confirmation is High > BoxTop for Bullish and Low < BoxBottom for Bearish. Behavior-space strict stops use Low < level for Bullish and High > level for Bearish. Strictness of a time window is independently owned by its component; do not infer time exclusion merely from a strict price comparator.

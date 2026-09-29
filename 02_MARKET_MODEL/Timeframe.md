@@ -1,14 +1,16 @@
 ---
 id: "market.timeframe"
 type: "market"
-status: "pending"
-authority: "non-canonical"
-title: "Timeframe"
-source_refs: []
-related_entities: ["data.timeframe_registry", "algorithm.raw", "source.trading_pipeline"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Analysis timeframe and supplied input scope"
+version: "current"
+related_entities: []
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "mixed: geometry changes, native chronology and identity remain invariant"
 ---
 
-# Timeframe
+# Analysis timeframe and supplied input scope
 
-For T seconds, main bucket timestamp is time for T=1 and floor(time/T)*T otherwise. The bridge's lower candle stream is built from the supplied RAW rows after same-second aggregation; its available event resolution is bounded by the input. The registered local RAW files include nominal 1-second and 5-second inputs, so a 5-second file does not provide unrecorded one-second events. Main-candle source indexes and closed extrema ranges cannot be reconstructed by clipping or renumbering a presentation window. See `data.timeframe_registry` for the inspected inputs and `algorithm.raw` for bucket construction.
+The bridge normalizes its supplied rows before constructing analysis candles in timeframe buckets. Chart timeframe and analysis timeframe are distinct request parameters. Main physical indexes and exact lower-timeframe event positions must survive output projection. Requested visibility bounds do not alter a complete supplied bridge input, but a server-selected stream cannot supply omitted history.

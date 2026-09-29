@@ -3,48 +3,40 @@ id: "source.direction_policy"
 type: "source"
 status: "active"
 authority: "executable"
-title: "direction policy"
+title: "Shared direction-sensitive geometry, strict comparisons, extrema and confirmation"
+version: "1.0.0"
+related_entities: ["source.source_manifest"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py"]
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 source_path: "06_SOURCE/Code/engine/pipeline/direction_policy.py"
 mirror: "06_SOURCE/Code/engine/pipeline/direction_policy.py"
 sha256: "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea"
-affects: []
-source_refs: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L1"]
-supports: ["algorithm.reaction", "algorithm.blue", "algorithm.a", "algorithm.s", "algorithm.e"]
-related_entities: ["test.source_validation"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L1"]
 ---
 
-# direction policy
-## Identity and snapshot
-Production: 06_SOURCE/Code/engine/pipeline/direction_policy.py
-Mirror: 06_SOURCE/Code/engine/pipeline/direction_policy.py
-SHA-256: a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea
-Declared versions: [('DIRECTION_POLICY_VERSION', '1.0.0')]
+# direction_policy.py
 
-## Responsibility
-Owns behavior-neutral directional primitives only, not chronology, family, lifecycle or numbering.
+Shared direction-sensitive geometry, strict comparisons, extrema and confirmation.
 
-## Classes and owned concepts
-DirectionPolicy (L21)
+Current working-tree bytes are executable evidence; Source identity alone is not independent market correctness. The supported bridge dynamically loads owners; the legacy ordinary package wrapper is unsupported.
 
-## Important symbols
-- DirectionPolicy.strict_cross: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L32
-- DirectionPolicy.better_extreme: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L35
-- DirectionPolicy.choose_extreme: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L38
-- DirectionPolicy.confirmation_cross: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L41
-- policy_for: 06_SOURCE/Code/engine/pipeline/direction_policy.py#L49
+| Property | Current value |
+|---|---|
+| Source | 06_SOURCE/Code/engine/pipeline/direction_policy.py |
+| SHA-256 | a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea |
+| Bytes | 2282 |
+| Lines | 70 |
+| Declared version | 1.0.0 |
 
-## Inputs and outputs
-Direction and Decimal values -> opposite direction, strict cross, better extreme, confirmation predicate.
+## Current symbols
 
-## State, direction, chronology, and invariants
-Frozen policy: Bullish Low/min/<, First RED/GREEN context, High>BoxTop; Bearish High/max/>, First GREEN/RED context, Low<BoxBottom. Family and priority do not mirror.
+Every lexical class/function is listed, including nested definitions inside control blocks. Qualified name plus source line identifies repeated property accessors.
 
-## Upstream dependencies and downstream consumers
-Upstream: none.
-
-Downstream: reaction_engine, blue_line_detector, a_zone_detector, s_zone_detector, e_zone_detector, lifecycle_engine.
-
-## Relationships
-Supports algorithm.reaction, algorithm.blue, algorithm.a, algorithm.s, and algorithm.e with shared directional primitives; it does not own those algorithms.
-Behaviors: No direct behavior ownership.
+| Symbol | Source line | End line | Signature or role |
+|---|---:|---:|---|
+| DirectionPolicy | 21 | 46 | class |
+| DirectionPolicy.opposite_direction | 29 | 30 | self |
+| DirectionPolicy.strict_cross | 32 | 33 | self, value: Decimal, level: Decimal |
+| DirectionPolicy.better_extreme | 35 | 36 | self, value: Decimal, current: Decimal |
+| DirectionPolicy.choose_extreme | 38 | 39 | self, left: Decimal, right: Decimal |
+| DirectionPolicy.confirmation_cross | 41 | 46 | self, value: Decimal, level: Decimal |
+| policy_for | 49 | 54 | direction: str |

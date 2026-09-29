@@ -1,11 +1,9 @@
-"""Validate Vault frontmatter and evidence, then rebuild derived indexes.
+"""Validate current Vault metadata/evidence and deterministically derive retrieval indexes.
 
-Requires jsonschema for schema checks. Reads only files inside this Vault;
-writes _INDEX/*.json only when every validation succeeds.
-Run with: python -B _SCHEMA/build_indexes.py
+Production and source evidence are read only. build(check=True) never writes.
+Semantic rules are provided by current notes/source; this tool has no trading-rule gates.
 """
 from __future__ import annotations
-
 from pathlib import Path
 import argparse
 import ast
@@ -14,457 +12,616 @@ import hashlib
 import json
 import re
 import sys
-
+from urllib.parse import unquote, urlsplit
 from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
-REL_KEYS = (
-    "calculated_by", "implemented_by", "depends_on", "produces", "implements",
-    "affects", "parent_of", "child_of", "relates_to", "supports", "orchestrates",
-)
+REL_KEYS = ("calculated_by", "implemented_by", "depends_on", "produces", "implements",
+            "affects", "parent_of", "child_of", "relates_to", "supports", "orchestrates")
 SCHEMA_TYPES = {"behavior", "algorithm", "source", "test", "case", "data"}
-STOPALL_GATES = {
-    "behavior.stopall.type1": "sequence-group-stop",
-    "behavior.stopall.type2": "stopall-stop",
-    "behavior.stopall.type3": "opposite-s-group-stop",
+ID_PATTERN = re.compile(r"^[a-z][a-z0-9]*(\.[a-z0-9_]+)+$")
+HASH_PATTERN = re.compile(r"^[0-9a-f]{64}$")
+SCHEMA_URI = "https://json-schema.org/draft/2020-12/schema"
+METADATA_ARRAY_LINKS = {
+    "consumed_by_algorithms": {"algorithm"},
+    "produces_behaviors": {"behavior"},
+    "used_by_fixtures": {"case"},
+    "validated_by": {"test"},
+}
+METADATA_SCALAR_LINKS = {
+    "algorithm": {"algorithm"},
+    "validation_rule": {"test"},
+    "chronology_model": {"core", "market"},
+    "hash_reference": {"data"},
+    "parent_dataset": {"data"},
 }
 
+def _pairs(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"Duplicate JSON key: {key}")
+        result[key] = value
+    return result
 
-def frontmatter(path: Path) -> dict | None:
+def loads(value):
+    def invalid_constant(token):
+        raise ValueError(f"Invalid JSON constant: {token}")
+    return json.loads(value, object_pairs_hook=_pairs, parse_constant=invalid_constant)
+
+def _read_json(path):
+    return loads(path.read_text(encoding="utf-8-sig"))
+
+def frontmatter(path):
     raw = path.read_text(encoding="utf-8-sig")
     if not raw.startswith("---\n"):
         return None
-    end = raw.find("\n---\n", 4)
-    if end < 0:
+    boundary = raw.find("\n---\n", 4)
+    if boundary < 0:
         raise ValueError(f"Unclosed frontmatter: {path}")
-    data: dict = {}
-    for line in raw[4:end].splitlines():
+    fields = {}
+    for line in raw[4:boundary].splitlines():
         if not line.strip():
             continue
         if ":" not in line:
-            raise ValueError(f"Bad frontmatter line: {path}: {line}")
+            raise ValueError(f"Invalid frontmatter line: {path}: {line}")
         key, value = line.split(":", 1)
         if not re.fullmatch(r"[a-z][a-z0-9_]*", key):
-            raise ValueError(f"Invalid key {key!r}: {path}")
-        if key in data:
-            raise ValueError(f"Duplicate key {key}: {path}")
-        data[key] = json.loads(value.strip())
-    return data
+            raise ValueError(f"Invalid frontmatter field: {key}")
+        if key in fields:
+            raise ValueError(f"Duplicate frontmatter field: {key}")
+        fields[key] = loads(value.strip())
+    return fields
 
+def safe_path(root, relative):
+    if (not isinstance(relative, str) or not relative or "\\" in relative or ":" in relative
+            or any(part in {"", ".", ".."} for part in relative.split("/"))):
+        raise ValueError(f"Non-normalized path: {relative!r}")
+    path = (root / relative).resolve()
+    if not path.is_relative_to(root.resolve()):
+        raise ValueError(f"Path outside root: {relative}")
+    return path
 
-def sha(path: Path) -> str:
+def sha(path):
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         while chunk := handle.read(1024 * 1024):
             digest.update(chunk)
     return digest.hexdigest()
 
+def _without_code(text):
+    fence = chr(96)
+    text = re.sub(r"(?ms)^[ \t]*(" + fence + r"{3,}|~{3,})[^\n]*\n.*?^[ \t]*\1[ \t]*$", "", text)
+    return re.sub(fence + r"[^" + fence + r"]*" + fence, "", text)
 
-def safe_path(root: Path, relative: str) -> Path:
-    if (not isinstance(relative, str) or not relative or "\\" in relative
-            or ":" in relative or any(part in {"", ".", ".."} for part in relative.split("/"))):
-        raise ValueError(f"Non-normalized path: {relative!r}")
-    full = (root / relative).resolve()
-    if not full.is_relative_to(root.resolve()):
-        raise ValueError(f"Path outside root: {relative!r}")
-    return full
+def _heading_ids(path):
+    seen = {}
+    ids = set()
+    for line in _without_code(path.read_text(encoding="utf-8-sig")).splitlines():
+        match = re.match(r"^\s{0,3}#{1,6}\s+(.+?)\s*#*\s*$", line)
+        if match:
+            heading = re.sub(r"<[^>]*>", "", match[1]).strip().lower()
+            slug = re.sub(r"[^\w\- ]", "", heading).replace(" ", "-")
+            count = seen.get(slug, 0)
+            seen[slug] = count + 1
+            ids.add(slug + (f"-{count}" if count else ""))
+    return ids
 
+def _validate_anchor(path, anchor, label):
+    if not anchor:
+        return
+    match = re.fullmatch(r"L([1-9][0-9]*)(?:-L?([1-9][0-9]*))?", anchor, re.IGNORECASE)
+    if match:
+        start = int(match[1])
+        end = int(match[2] or start)
+        if start > end or end > len(path.read_text(encoding="utf-8-sig").splitlines()):
+            raise ValueError(f"Invalid source line: {label}")
+    elif path.suffix.lower() == ".md" and unquote(anchor).lower() in _heading_ids(path):
+        return
+    else:
+        raise ValueError(f"Invalid Markdown anchor: {label}")
 
-def build(check: bool = False, mode: str = "full-data") -> int:
+def _validate_code_ref(root, value):
+    relative, _, anchor = value.partition("#")
+    if not relative.startswith("06_SOURCE/Code/"):
+        raise ValueError(f"Source reference outside Code: {value}")
+    path = safe_path(root, relative)
+    if not path.is_file():
+        raise ValueError(f"Missing source reference: {value}")
+    _validate_anchor(path, anchor, value)
+
+def _source_symbols(path):
+    tree = ast.parse(path.read_text(encoding="utf-8-sig"), filename=path.name)
+    return {row["qualified_name"] for row in _symbol_details(tree)}
+
+def _symbol_details(tree):
+    """Retain lexical owners even when definitions occur inside control blocks."""
+    symbols = []
+    def visit(node, prefix=""):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+            name = prefix + node.name
+            symbols.append({"qualified_name": name, "name": node.name,
+                            "kind": "class" if isinstance(node, ast.ClassDef) else "function",
+                            "line": node.lineno, "end_line": node.end_lineno})
+            prefix = name + "."
+        for child in ast.iter_child_nodes(node):
+            visit(child, prefix)
+    visit(tree)
+    return symbols
+
+def _validate_links(root, note_path, text, notes, files):
+    text = _without_code(text)
+    targets = re.findall(r"!?\[[^\]]*\]\((<[^>]+>|[^)\n]+)\)", text)
+    definitions = re.findall(r"(?m)^\s{0,3}\[[^\]]+\]:\s*(<[^>]+>|\S+)", text)
+    for raw_target in [*targets, *definitions]:
+        target = raw_target.strip()
+        if target.startswith("<"):
+            target = target[1:target.index(">")]
+        else:
+            target = re.split(r'\s+["\']', target, maxsplit=1)[0]
+        target = unquote(target)
+        parsed = urlsplit(target)
+        if parsed.scheme in {"http", "https", "mailto"}:
+            continue
+        if parsed.scheme or parsed.netloc or "\\" in target:
+            raise ValueError(f"Unsafe Markdown link: {target}")
+        relative, _, anchor = target.partition("#")
+        path = (note_path.parent / relative).resolve() if relative else note_path.resolve()
+        if not path.is_relative_to(root.resolve()) or not path.exists():
+            raise ValueError(f"Broken Markdown link: {target}")
+        if anchor:
+            if not path.is_file():
+                raise ValueError(f"Invalid Markdown anchor: {target}")
+            _validate_anchor(path, anchor, target)
+    for target in re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", text):
+        value, _, anchor = target.partition("#")
+        if value in notes:
+            path = safe_path(root, files[value])
+        else:
+            path = (note_path.parent / value).resolve()
+            if not path.suffix:
+                path = path.with_suffix(".md")
+        if not path.is_relative_to(root.resolve()) or not path.is_file():
+            raise ValueError(f"Broken Wiki link: {target}")
+        _validate_anchor(path, anchor, target)
+
+def _ast_structure(path, relative):
+    tree = ast.parse(path.read_text(encoding="utf-8-sig"), filename=relative)
+    functions = []
+    classes = []
+    imports = []
+    constants = []
+    for node in tree.body:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            functions.append({"name": node.name, "line": node.lineno, "end_line": node.end_lineno,
+                              "parameters": [arg.arg for arg in [*node.args.posonlyargs, *node.args.args,
+                                                               *node.args.kwonlyargs]]})
+        elif isinstance(node, ast.ClassDef):
+            classes.append({"name": node.name, "line": node.lineno, "end_line": node.end_lineno,
+                            "decorators": [ast.unparse(item) for item in node.decorator_list],
+                            "fields": [{"name": item.target.id,
+                                        "annotation": ast.unparse(item.annotation), "line": item.lineno}
+                                       for item in node.body if isinstance(item, ast.AnnAssign)
+                                       and isinstance(item.target, ast.Name)],
+                            "methods": [{"name": item.name, "line": item.lineno, "end_line": item.end_lineno}
+                                        for item in node.body if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))]})
+        elif isinstance(node, ast.Import):
+            imports.extend({"module": item.name, "line": node.lineno} for item in node.names)
+        elif isinstance(node, ast.ImportFrom):
+            imports.append({"module": "." * node.level + (node.module or ""),
+                            "names": [item.name for item in node.names], "line": node.lineno})
+        elif isinstance(node, (ast.Assign, ast.AnnAssign)):
+            targets = node.targets if isinstance(node, ast.Assign) else [node.target]
+            for item in targets:
+                if isinstance(item, ast.Name) and (item.id.isupper() or item.id == "__version__"):
+                    constants.append({"name": item.id, "line": node.lineno})
+    return {"path": relative, "functions": functions, "classes": classes,
+            "symbols": _symbol_details(tree),
+            "imports": imports, "constants": constants}
+
+def _embedded_sources(data):
+    fence = bytes([96])
+    pattern = (rb"<!-- EXACT-SOURCE-BEGIN:([^>\r\n]+) -->\r?\n("
+               + re.escape(fence) + rb"{3,})python[^\r\n]*\r?\n(.*?)^\2[ \t]*\r?\n"
+               + rb"<!-- EXACT-SOURCE-END:\1 -->")
+    sources = {}
+    matches = list(re.finditer(pattern, data, re.MULTILINE | re.DOTALL))
+    starts = re.findall(rb"<!-- EXACT-SOURCE-BEGIN:([^>\r\n]+) -->", data)
+    if len(matches) != len(starts):
+        raise ValueError("Malformed embedded source block")
+    for match in matches:
+        relative = match[1].decode("utf-8")
+        if relative in sources:
+            raise ValueError(f"Duplicate embedded source: {relative}")
+        sources[relative] = match[3]
+    return sources
+
+def build(check=False, mode="full-data"):
     if mode not in {"knowledge", "full-data"}:
         raise ValueError("Validation mode must be knowledge or full-data")
-    errors: list[str] = []
-    warnings: list[str] = []
-    digest_cache: dict[Path, str] = {}
-    candles_cache: dict[Path, list] = {}
-    symbol_cache: dict[Path, set[str]] = {}
-
-    def cached_sha(path: Path) -> str:
-        resolved = path.resolve()
-        if resolved not in digest_cache:
-            digest_cache[resolved] = sha(resolved)
-        return digest_cache[resolved]
-
-    def validate_window(path: Path, first: int, last: int, rows: int, expected_sha: str) -> bool:
-        resolved = path.resolve()
-        if resolved not in candles_cache:
-            candles_cache[resolved] = json.loads(resolved.read_bytes())
-        candles = candles_cache[resolved]
-        times = [row["time"] for row in candles]
-        start = bisect.bisect_left(times, first)
-        end = bisect.bisect_right(times, last)
-        selected = candles[start:end]
-        if len(selected) != rows or not selected or selected[0]["time"] != first or selected[-1]["time"] != last:
-            return False
-        packed = json.dumps(selected, separators=(",", ":")).encode("utf-8")
-        return hashlib.sha256(packed).hexdigest() == expected_sha
-
-    def source_symbols(path: Path) -> set[str]:
-        resolved = path.resolve()
-        if resolved not in symbol_cache:
-            tree = ast.parse(resolved.read_text(encoding="utf-8-sig"))
-            names = set()
-            for node in tree.body:
-                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-                    names.add(node.name)
-                elif isinstance(node, ast.ClassDef):
-                    for child in node.body:
-                        if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)):
-                            names.add(f"{node.name}.{child.name}")
-            symbol_cache[resolved] = names
-        return symbol_cache[resolved]
-    schemas: dict[str, Draft202012Validator] = {}
+    root = ROOT.resolve()
+    errors = []
+    schemas = {}
     for name in ["note", *sorted(SCHEMA_TYPES)]:
         try:
-            schema = json.loads((ROOT / "_SCHEMA" / f"{name}.schema.json").read_text(encoding="utf-8-sig"))
+            schema = _read_json(root / "_SCHEMA" / (name + ".schema.json"))
+            if schema.get("$schema") != SCHEMA_URI:
+                raise ValueError("Unsupported schema dialect")
             Draft202012Validator.check_schema(schema)
             schemas[name] = Draft202012Validator(schema)
-        except Exception as exc:
-            errors.append(f"Invalid schema {name}: {exc}")
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append(f"Schema {name}: {exc}")
+    notes, files, bodies = {}, {}, {}
+    for path in sorted(root.rglob("*.md")):
+        relative = path.relative_to(root).as_posix()
+        parts = path.relative_to(root).parts
+        if any(part in {".git", ".obsidian", "_GENERATED", "Code"} for part in parts) or path.stat().st_size == 0:
+            continue
+        try:
+            safe_path(root, relative)
+            fields = frontmatter(path)
+            if fields is None:
+                raise ValueError("Populated Markdown missing frontmatter")
+            note_invalid = False
+            for name in ("note", fields.get("type")):
+                if name in schemas:
+                    for failure in schemas[name].iter_errors(fields):
+                        location = ".".join(str(part) for part in failure.absolute_path) or "<root>"
+                        errors.append(f"{relative}: {name} schema at {location}: {failure.message}")
+                        note_invalid = True
+            if note_invalid:
+                raise ValueError("Invalid note frontmatter")
+            ident = fields.get("id")
+            if not isinstance(ident, str) or not ID_PATTERN.fullmatch(ident):
+                raise ValueError("Invalid stable ID")
+            if ident in notes:
+                raise ValueError(f"Duplicate ID: {ident}")
+            if ident.split(".", 1)[0] != fields.get("type"):
+                raise ValueError(f"ID/type prefix mismatch: {ident}")
+            for ref in [*fields.get("source_reference", []), *fields.get("source_refs", [])]:
+                _validate_code_ref(root, ref)
+            if relative.startswith("06_SOURCE/Modules/") and not fields.get("source_path"):
+                raise ValueError(f"Physical module note missing source_path: {ident}")
+            if "source_path" in fields:
+                for key in ("source_path", "mirror"):
+                    source = safe_path(root, fields[key])
+                    if not source.is_file() or sha(source) != fields["sha256"]:
+                        raise ValueError(f"Module note SHA mismatch: {ident}")
+            notes[ident], files[ident], bodies[ident] = fields, relative, path.read_text(encoding="utf-8-sig")
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append(f"{relative}: {exc}")
+    labels = {}
+    for ident, fields in sorted(notes.items()):
+        for label in [ident, fields.get("name", fields["title"]), *fields.get("aliases", [])]:
+            key = label.strip().casefold()
+            if not key:
+                errors.append(f"Empty entity name: {ident}")
+            elif key in labels and labels[key] != ident:
+                errors.append(f"Ambiguous entity name: {label}: {labels[key]} / {ident}")
+            else:
+                labels[key] = ident
+    edges = []
+    for ident, fields in sorted(notes.items()):
+        for key in (*REL_KEYS, "related_entities"):
+            values = fields.get(key, [])
+            if not isinstance(values, list):
+                errors.append(f"Relation field is not an array: {ident}.{key}")
+                continue
+            for target in values:
+                if target not in notes:
+                    errors.append(f"Unresolved relation: {ident}.{key} -> {target}")
+                    continue
+                if key == "implemented_by" and notes[target]["type"] != "source":
+                    errors.append(f"implemented_by target is not source: {ident} -> {target}")
+                if key == "calculated_by" and notes[target]["type"] != "algorithm":
+                    errors.append(f"calculated_by target is not algorithm: {ident} -> {target}")
+                if key == "depends_on" and ident == target:
+                    errors.append(f"Self dependency: {ident}")
+                edges.append({"from": ident, "type": "relates_to" if key == "related_entities" else key,
+                              "to": target})
+    edge_keys = {(item["from"], item["type"], item["to"]) for item in edges}
+    if len(edge_keys) != len(edges):
+        errors.append("Duplicate relations")
+    symbol_cache = {}
+    for ident, fields in sorted(notes.items()):
+        for key, allowed_types in {**METADATA_ARRAY_LINKS, **METADATA_SCALAR_LINKS}.items():
+            if key not in fields:
+                continue
+            targets = fields[key] if key in METADATA_ARRAY_LINKS else [fields[key]]
+            for target in targets:
+                if target == "unknown" and key == "algorithm":
+                    continue
+                if target not in notes:
+                    errors.append(f"Unresolved metadata link: {ident}.{key} -> {target}")
+                elif notes[target]["type"] not in allowed_types:
+                    errors.append(f"Metadata link target type: {ident}.{key} -> {target}")
+                elif key == "parent_dataset" and notes[target].get("data_kind") != "dataset":
+                    errors.append(f"Metadata link target type: {ident}.{key} needs a physical dataset")
+        try:
+            source_module = fields.get("source_module")
+            source_function = fields.get("source_function")
+            if source_module and source_module != "unknown":
+                _validate_code_ref(root, source_module)
+                module_path = safe_path(root, source_module)
+                if source_function and source_function != "unknown":
+                    if module_path not in symbol_cache:
+                        symbol_cache[module_path] = _source_symbols(module_path)
+                    if source_function not in symbol_cache[module_path]:
+                        raise ValueError(f"Unknown source function: {ident}: {source_function}")
+            elif source_function and source_function != "unknown":
+                raise ValueError(f"Source function has no physical source module: {ident}")
+        except (OSError, ValueError, TypeError, KeyError, SyntaxError) as exc:
+            errors.append(f"{ident}: {exc}")
+    manifest = {"files": [], "algorithm_references": [], "supporting_files": []}
+    pins = {}
+    structures = []
+    try:
+        sync_status_path = root / "_INDEX/sync-status.json"
+        if sync_status_path.is_file():
+            sync_status = _read_json(sync_status_path)
+            if not isinstance(sync_status, dict) or not isinstance(sync_status.get("review_state"), str):
+                raise ValueError("Invalid sync status structure")
+        manifest = _read_json(root / "_INDEX/source-hashes.json")
+        for key in ("files", "algorithm_references", "supporting_files"):
+            values = manifest.get(key, [])
+            if not isinstance(values, list) or (key != "supporting_files" and key not in manifest):
+                raise ValueError(f"Missing/invalid manifest array: {key}")
+            for row in values:
+                names = [row["source"], row["mirror"]] if key == "files" else [row.get("mirror", row.get("source", row.get("path")))]
+                for value in names:
+                    safe_path(root, value)
+                if key == "files" and not all(value.startswith("06_SOURCE/Code/") for value in names):
+                    raise ValueError("Source snapshot outside Code")
+                for relative in dict.fromkeys(names):
+                    path = safe_path(root, relative)
+                    if (not HASH_PATTERN.fullmatch(row["sha256"]) or not isinstance(row["bytes"], int)
+                            or isinstance(row["bytes"], bool) or row["bytes"] < 0):
+                        raise ValueError(f"Invalid evidence identity: {relative}")
+                    if relative in pins:
+                        raise ValueError(f"Duplicate manifest path: {relative}")
+                    pins[relative] = row
+                    if mode == "knowledge" and relative.startswith("08_DATA/Raw/"):
+                        continue
+                    if not path.is_file() or path.stat().st_size != row["bytes"] or sha(path) != row["sha256"]:
+                        errors.append(f"Evidence SHA/size mismatch: {relative}")
+                    elif row.get("line_count") is not None and row["line_count"] != len(path.read_text(encoding="utf-8-sig").splitlines()):
+                        errors.append(f"Evidence line count mismatch: {relative}")
+        code_root = root / "06_SOURCE/Code"
+        physical_code = {path.relative_to(root).as_posix() for path in code_root.rglob("*") if path.is_file()} if code_root.is_dir() else set()
+        pinned_code = {relative for relative in pins if relative.startswith("06_SOURCE/Code/")}
+        if physical_code != pinned_code:
+            errors.append(f"Code inventory mismatch: missing={sorted(pinned_code-physical_code)} extra={sorted(physical_code-pinned_code)}")
+        module_notes = [fields["source_path"] for fields in notes.values() if fields.get("source_path")]
+        if len(module_notes) != len(set(module_notes)):
+            errors.append("Duplicate module source_path")
+        for relative in sorted(pinned_code):
+            path = safe_path(root, relative)
+            if path.suffix == ".py" and path.is_file():
+                structures.append(_ast_structure(path, relative))
+                if path.name != "__init__.py" and relative not in module_notes:
+                    errors.append(f"Missing physical module note: {relative}")
+        for relative in module_notes:
+            if relative not in pins:
+                errors.append(f"Module note source missing from manifest: {relative}")
+    except (OSError, ValueError, TypeError, KeyError, SyntaxError) as exc:
+        errors.append(f"Manifest/evidence validation: {exc}")
+
+    registry = {"references": []}
+    reconstructions = []
+    try:
+        registry_path = root / "06_SOURCE/References/registry.json"
+        registry = _read_json(registry_path)
+        if registry.get("schema_version") != 1 or not isinstance(registry.get("references"), list):
+            raise ValueError("Unsupported reference registry")
+        if "06_SOURCE/References/registry.json" not in pins:
+            raise ValueError("Reference registry not pinned in manifest")
+        refs = registry["references"]
+        if len(refs) != 2 or {row["direction"] for row in refs} != {"Bullish", "Bearish"}:
+            raise ValueError("Registry must contain exactly both current directions")
+        if len({row["id"] for row in refs}) != len(refs):
+            raise ValueError("Duplicate reference ID")
+        required_sources = {relative.removeprefix("06_SOURCE/Code/engine/")
+                            for relative in pins if relative.startswith("06_SOURCE/Code/engine/")
+                            and relative.endswith(".py")}
+        registered_local = set()
+        for row in refs:
+            origin = row["repository_relative_path"]
+            safe_path(root, origin)
+            if not origin.startswith("engine/algorithms/") or Path(origin).name != row["name"]:
+                raise ValueError(f"Unsafe reference registry path: {origin}")
+            local = row["local_path"]
+            path = safe_path(root, local)
+            if not local.startswith("06_SOURCE/Code/engine/algorithms/") or path.name != row["name"]:
+                raise ValueError(f"Unsafe local reference path: {local}")
+            registered_local.add(local)
+            if not path.is_file() or sha(path) != row["sha256"] or path.stat().st_size != row["bytes"]:
+                raise ValueError(f"Reference identity mismatch: {row['id']}")
+            pin_row = pins.get(local)
+            if pin_row is None or pin_row["sha256"] != row["sha256"] or pin_row["bytes"] != row["bytes"]:
+                raise ValueError(f"Reference manifest mismatch: {row['id']}")
+            sources = _embedded_sources(path.read_bytes())
+            if set(sources) != required_sources:
+                errors.append(f"Embedded source inventory mismatch: {row['id']}: missing={sorted(required_sources-set(sources))} extra={sorted(set(sources)-required_sources)}")
+            for relative, payload in sources.items():
+                source = safe_path(root, "06_SOURCE/Code/engine/" + relative)
+                matches = source.is_file() and source.read_bytes() == payload
+                if not matches:
+                    errors.append(f"Embedded source mismatch: {row['id']}:{relative}")
+                reconstructions.append({"reference_id": row["id"], "source": relative,
+                                        "sha256": hashlib.sha256(payload).hexdigest(),
+                                        "bytes": len(payload), "exact": matches})
+        manifest_refs = {row.get("mirror", row["source"]) for row in manifest.get("algorithm_references", [])}
+        if manifest_refs != registered_local:
+            errors.append("Reference manifest/registry inventory mismatch")
+    except (OSError, ValueError, TypeError, KeyError) as exc:
+        errors.append(f"Reference validation: {exc}")
+    for ident, fields in notes.items():
+        try:
+            _validate_links(root, safe_path(root, files[ident]), bodies[ident], notes, files)
+            for value in fields.get("algorithm_reference", []):
+                if value not in {row["id"] for row in registry["references"]}:
+                    _validate_code_ref(root, value)
+            for value in fields.get("mirror_links", []):
+                if value not in notes:
+                    relative, _, anchor = value.partition("#")
+                    path = safe_path(root, relative)
+                    if not path.is_file():
+                        raise ValueError(f"Missing mirror link: {value}")
+                    _validate_anchor(path, anchor, value)
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append(f"{ident}: {exc}")
+    datasets = {ident: fields for ident, fields in notes.items()
+                if fields["type"] == "data" and fields.get("data_kind") == "dataset"}
+    windows = {ident: fields for ident, fields in notes.items()
+               if fields["type"] == "data" and fields.get("data_kind") == "window"}
+    cases = {ident: fields for ident, fields in notes.items() if fields["type"] == "case"}
+    registered_raw = set()
+    candle_cache = {}
+    def raw_path(value):
+        path = safe_path(root, value)
+        if not path.is_relative_to((root / "08_DATA/Raw").resolve()):
+            raise ValueError(f"Dataset outside Raw: {value}")
+        return path
+    def verify_window(path, fields, hash_field="raw_sha256", first_field="first_epoch", last_field="last_epoch", count_field="row_count"):
+        if path not in candle_cache:
+            candle_cache[path] = loads(path.read_bytes())
+        candles = candle_cache[path]
+        if not isinstance(candles, list) or not all(isinstance(row, dict) and isinstance(row.get("time"), int) for row in candles):
+            raise ValueError(f"Invalid RAW array: {path.name}")
+        times = [row["time"] for row in candles]
+        if any(left >= right for left, right in zip(times, times[1:])):
+            raise ValueError(f"Invalid RAW chronology: {path.name}")
+        selected = candles[bisect.bisect_left(times, fields[first_field]):bisect.bisect_right(times, fields[last_field])]
+        if (not selected or len(selected) != fields[count_field] or selected[0]["time"] != fields[first_field]
+                or selected[-1]["time"] != fields[last_field]
+                or hashlib.sha256(json.dumps(selected, separators=(",", ":")).encode()).hexdigest() != fields[hash_field]):
+            raise ValueError(f"RAW window mismatch: {path.name}")
+    for ident, fields in datasets.items():
+        try:
+            locations = fields["raw_locations"]
+            if fields["raw_path"] not in locations:
+                raise ValueError("Primary RAW not in locations")
+            for relative in locations:
+                path = raw_path(relative)
+                registered_raw.add(relative)
+                if mode == "full-data" and (not path.is_file() or sha(path) != fields["raw_sha256"] or path.stat().st_size != fields["raw_bytes"]):
+                    raise ValueError(f"Dataset SHA/size mismatch: {relative}")
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append(f"{ident}: {exc}")
+    for ident, fields in windows.items():
+        try:
+            path = raw_path(fields["raw_path"])
+            if fields["parent_dataset"] not in datasets:
+                raise ValueError("Window parent dataset missing")
+            if mode == "full-data":
+                if sha(path) != fields["retained_raw_sha256"]:
+                    raise ValueError("Window parent SHA mismatch")
+                verify_window(path, fields)
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append(f"{ident}: {exc}")
+    for ident, fields in cases.items():
+        try:
+            dataset = raw_path(fields["dataset"])
+            if not any(fields["dataset_sha256"] == item["raw_sha256"] for item in datasets.values()):
+                raise ValueError("Fixture dataset entity missing")
+            source = safe_path(root, fields["source_fixture"])
+            if not source.is_file() or sha(source) != fields["source_fixture_sha256"]:
+                raise ValueError("Fixture source SHA mismatch")
+            line = fields["source_fixture_line"]
+            lines = source.read_text(encoding="utf-8-sig").splitlines()
+            if not 1 <= line <= len(lines) or lines[line - 1] != "### " + fields["title"]:
+                raise ValueError("Fixture source line/heading mismatch")
+            if mode == "full-data" and (not dataset.is_file() or sha(dataset) != fields["dataset_sha256"]):
+                raise ValueError("Fixture dataset SHA mismatch")
+            if mode == "full-data" and fields.get("dataset_window_sha256"):
+                verify_window(dataset, fields, "dataset_window_sha256", "dataset_window_first_epoch",
+                              "dataset_window_last_epoch", "dataset_window_row_count")
+        except (OSError, ValueError, TypeError, KeyError) as exc:
+            errors.append(f"{ident}: {exc}")
+    if mode == "full-data":
+        raw_root = root / "08_DATA/Raw"
+        for path in raw_root.rglob("*.json") if raw_root.is_dir() else []:
+            relative = path.relative_to(root).as_posix()
+            if path.name.endswith(".meta.json"):
+                if relative not in pins:
+                    errors.append(f"Unregistered RAW sidecar: {relative}")
+            elif relative not in registered_raw:
+                errors.append(f"Unregistered RAW file: {relative}")
+    contract = manifest.get("current_contract")
+    if contract is not None:
+        try:
+            if not isinstance(contract, dict):
+                raise ValueError("Current contract must be an object")
+            declared = contract.get("entities", {})
+            if not isinstance(declared, dict):
+                raise ValueError("Current entity contract must be an object")
+            if contract.get("closed_entity_inventory") and set(declared) != set(notes):
+                errors.append("Current entity inventory differs from its declared contract")
+            for ident, constraints in declared.items():
+                if ident not in notes or not isinstance(constraints, dict):
+                    errors.append(f"Missing current contract entity: {ident}")
+                    continue
+                for field, value in constraints.items():
+                    if json.dumps(notes[ident].get(field), sort_keys=True) != json.dumps(value, sort_keys=True):
+                        errors.append(f"Current contract metadata mismatch: {ident}:{field}")
+            for kind in contract.get("empty_entity_types", []):
+                if any(fields["type"] == kind for fields in notes.values()):
+                    errors.append(f"Current contract requires empty entity type: {kind}")
+            for selector in contract.get("empty_entity_filters", []):
+                if not isinstance(selector, dict) or not selector:
+                    raise ValueError("Empty entity filter must be a nonempty metadata object")
+                if any(all(json.dumps(fields.get(key), sort_keys=True) == json.dumps(value, sort_keys=True)
+                           for key, value in selector.items()) for fields in notes.values()):
+                    errors.append(f"Current contract requires empty entity filter: {selector}")
+        except (ValueError, TypeError, KeyError) as exc:
+            errors.append(f"Current contract validation: {exc}")
+    if errors:
+        print("\n".join(sorted(set(errors))), file=sys.stderr)
+        print(f"FAILED: {len(set(errors))} errors", file=sys.stderr)
+        return 1
+    rows = {ident: {"file": files[ident], **fields,
+                    "content_sha256": sha(safe_path(root, files[ident])),
+                    "content_bytes": safe_path(root, files[ident]).stat().st_size}
+            for ident, fields in sorted(notes.items())}
+    edges.sort(key=lambda item: (item["from"], item["type"], item["to"]))
+    label = "current Markdown frontmatter"
+    source_map = {ident: sorted(fields.get("implemented_by", []))
+                  for ident, fields in sorted(notes.items()) if fields["type"] == "algorithm"}
+    outputs = {
+        "_INDEX/entities.json": {"generated_from": label, "entities": rows},
+        "_INDEX/relations.json": {"generated_from": label, "relations": edges},
+        "_INDEX/files.json": {"generated_from": label, "files": dict(sorted(files.items()))},
+        "_INDEX/source-map.json": {"generated_from": label, "algorithm_to_source": source_map},
+        "_INDEX/knowledge-graph.json": {"generated_from": label,
+                                      "nodes": [{"id": ident, **row} for ident, row in rows.items()], "edges": edges},
+        "_GENERATED/source-structure.json": {"schema_version": 1, "generated_from": "captured current Python AST",
+                                           "modules": structures, "reference_reconstructions": reconstructions},
+        "_GENERATED/knowledge-model.json": {"schema_version": 1, "generated_from": label,
+                                            "entities": [{"id": ident, "file": files[ident], **fields}
+                                                         for ident, fields in sorted(notes.items())],
+                                            "relations": edges, "dataset_count": len(datasets),
+                                            "fixture_count": len(cases), "window_count": len(windows),
+                                            "raw_store_status": "EMPTY_BY_DESIGN" if not datasets and not windows else "REGISTERED",
+                                            "fixture_store_status": "EMPTY_BY_DESIGN" if not cases else "REGISTERED"},
+    }
+    for relative, data in outputs.items():
+        path = safe_path(root, relative)
+        rendered = (json.dumps(data, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
+        if check:
+            if not path.is_file() or path.read_bytes() != rendered:
+                errors.append(f"Stale generated file: {relative}")
+        else:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(rendered)
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-
-    notes: dict[str, dict] = {}
-    files: dict[str, str] = {}
-    module_paths: set[str] = set()
-    for path in sorted(ROOT.rglob("*.md")):
-        rel = path.relative_to(ROOT).as_posix()
-        if (".obsidian" in path.parts or "_GENERATED" in path.parts or "Code" in path.parts
-                or rel.startswith("07_VALIDATION/Fixtures/Sources/") or path.stat().st_size == 0):
-            continue
-        try:
-            data = frontmatter(path)
-            if data is None:
-                raise ValueError("Populated Markdown missing frontmatter")
-            for name in ("note", data.get("type")):
-                if name not in schemas:
-                    continue
-                for err in schemas[name].iter_errors(data):
-                    errors.append(f"{rel}: {name} schema: {err.message}")
-            ident = data.get("id")
-            if not isinstance(ident, str):
-                raise ValueError("Missing or invalid ID")
-            if ident in notes:
-                raise ValueError(f"Duplicate ID {ident}: already in {files[ident]}")
-            if ident.split(".", 1)[0] != data.get("type"):
-                raise ValueError(f"ID/type prefix mismatch: {ident} / {data.get('type')}")
-            if ident == "algorithm.orderaudit":
-                errors.append("OrderAudit must not be indexed as a knowledge concept")
-            if ident == "algorithm.order.a":
-                required = {"status": "canonical", "authority": "normative",
-                             "implementation_validity": "accepted", "valid_for_reasoning": True,
-                             "valid_for_validation": True, "valid_for_regression_baseline": True}
-                for field, expected in required.items():
-                    if data.get(field) != expected:
-                        errors.append(f"Accepted Order_A metadata mismatch: {ident}.{field}")
-            if ident in {"algorithm.order.b", "algorithm.order.c"}:
-                required = {"status": "pending-fix", "authority": "non-canonical",
-                            "implementation_validity": "known-invalid", "valid_for_reasoning": False,
-                            "valid_for_validation": False, "valid_for_regression_baseline": False,
-                            "rewrite_required": True}
-                for field, expected in required.items():
-                    if data.get(field) != expected:
-                        errors.append(f"Quarantine metadata mismatch: {ident}.{field}")
-            if rel.startswith("06_SOURCE/Modules/"):
-                if "source_path" not in data:
-                    raise ValueError("Physical module note missing source_path")
-            if "source_path" in data:
-                source = data["source_path"]
-                source_file = safe_path(ROOT, source)
-                mirror = safe_path(ROOT, data.get("mirror"))
-                if not source_file.is_file() or not mirror.is_file():
-                    errors.append(f"Missing source/mirror for {ident}")
-                elif sha(source_file) != data.get("sha256") or sha(mirror) != data.get("sha256"):
-                    errors.append(f"Module SHA mismatch: {ident}")
-                if source in module_paths:
-                    errors.append(f"Duplicate module source_path: {source}")
-                module_paths.add(source)
-            for ref in [*data.get("source_refs", []), *data.get("source_reference", [])]:
-                source, sep, anchor = ref.partition("#L")
-                actual = safe_path(ROOT, source)
-                if not actual.is_file():
-                    errors.append(f"Missing source ref: {ident}: {ref}")
-                elif sep and (not anchor.isdigit() or int(anchor) < 1
-                              or int(anchor) > len(actual.read_text(encoding="utf-8-sig").splitlines())):
-                    errors.append(f"Invalid source line: {ident}: {ref}")
-            if data.get("type") == "case":
-                body = path.read_text(encoding="utf-8-sig")
-                claim = re.search(r"[*]{2}Status:[*]{2} (Active|Pending|Historical); [*]{2}authority:[*]{2} (Canonical|Pending|Historical)[.]", body)
-                if (claim is None or claim.group(1) != data["fixture_status"]
-                        or claim.group(2) != data["fixture_authority"]):
-                    errors.append(f"Fixture frontmatter/body status contradiction: {ident}")
-                if data["fixture_status"] == "Pending" and re.search(r"(?m)^- Status: \*\*Active ", body):
-                    errors.append(f"Pending fixture has active scenario label: {ident}")
-                if data.get("algorithm") in {"algorithm.order.b", "algorithm.order.c"}:
-                    if data.get("fixture_authority") == "Canonical" or data.get("valid_for_regression_baseline") is not False:
-                        errors.append(f"Known-invalid Order fixture is an approved baseline: {ident}")
-                order_identity = data["order_identity"]
-                first_index, break_index = data["first_index"], data["break_index"]
-                if isinstance(order_identity, list):
-                    if [first_index, break_index] != order_identity:
-                        errors.append(f"Fixture physical Order index mismatch: {ident}")
-                elif first_index != "unknown" or break_index != "unknown":
-                    errors.append(f"Fixture indexes without physical Order evidence: {ident}")
-                fixture_ref = data["source_fixture"]
-                fixture = safe_path(ROOT, fixture_ref)
-                if not fixture.is_file():
-                    errors.append(f"Missing Vault fixture source: {ident}: {fixture_ref}")
-                else:
-                    if cached_sha(fixture) != data["source_fixture_sha256"]:
-                        if data.get("source_fixture_review") == "pending-manual-review":
-                            warnings.append(f"KNOWN_PENDING: Fixture source SHA mismatch: {ident}")
-                        else:
-                            errors.append(f"Fixture source SHA mismatch: {ident}")
-                    fixture_lines = fixture.read_text(encoding="utf-8-sig").splitlines()
-                    fixture_line = data["source_fixture_line"]
-                    if not isinstance(fixture_line, int) or fixture_line < 1 or fixture_line > len(fixture_lines):
-                        errors.append(f"Fixture source line out of range: {ident}")
-                    else:
-                        section = re.fullmatch(r"case\.fixture_([0-9]+)_([0-9]+)", ident)
-                        if section and not fixture_lines[fixture_line - 1].startswith(
-                            f"### {section.group(1)}.{section.group(2)} "
-                        ):
-                            errors.append(f"Fixture source heading mismatch: {ident}")
-                dataset = safe_path(ROOT, data["dataset"])
-                allowed_data_roots = (ROOT / "08_DATA/Raw",)
-                if not any(dataset.resolve().is_relative_to(root.resolve()) for root in allowed_data_roots):
-                    errors.append(f"Fixture dataset outside RAW roots: {ident}: {dataset}")
-                elif mode == "full-data" and not dataset.is_file():
-                    errors.append(f"Missing fixture dataset: {ident}: {dataset}")
-                elif mode == "full-data" and cached_sha(dataset) != data["dataset_sha256"]:
-                    errors.append(f"Fixture dataset SHA mismatch: {ident}")
-                if mode == "full-data" and data.get("dataset_window_sha256"):
-                    if not validate_window(dataset, data["dataset_window_first_epoch"],
-                                           data["dataset_window_last_epoch"],
-                                           data["dataset_window_row_count"],
-                                           data["dataset_window_sha256"]):
-                        errors.append(f"Fixture RAW window mismatch: {ident}")
-                source_module = data["source_module"]
-                if source_module != "unknown":
-                    module = safe_path(ROOT, source_module)
-                    if not module.is_file():
-                        errors.append(f"Missing fixture source module: {ident}: {source_module}")
-                    elif data["source_function"] != "unknown" and data["source_function"] not in source_symbols(module):
-                        errors.append(f"Unknown fixture source function: {ident}: {data['source_function']}")
-            if data.get("type") == "data" and data.get("data_kind") == "dataset":
-                allowed_data_roots = (ROOT / "08_DATA/Raw",)
-                raw_locations = data["raw_locations"]
-                if data["raw_path"] not in raw_locations:
-                    errors.append(f"Primary RAW missing from locations: {ident}")
-                if data["name"] != Path(data["raw_path"]).name:
-                    errors.append(f"Dataset name/path mismatch: {ident}")
-                if ident != f"data.dataset_{data['raw_sha256'][:8]}":
-                    errors.append(f"Dataset ID/hash mismatch: {ident}")
-                for location in raw_locations:
-                    raw_file = safe_path(ROOT, location)
-                    if not any(raw_file.resolve().is_relative_to(root.resolve()) for root in allowed_data_roots):
-                        errors.append(f"Dataset RAW outside approved roots: {ident}: {location}")
-                    elif mode == "full-data" and not raw_file.is_file():
-                        errors.append(f"Dataset RAW missing: {ident}: {location}")
-                    elif mode == "full-data" and cached_sha(raw_file) != data["raw_sha256"]:
-                        errors.append(f"Dataset RAW SHA mismatch: {ident}: {location}")
-                    elif mode == "full-data" and raw_file.stat().st_size != data["raw_bytes"]:
-                        errors.append(f"Dataset RAW byte count mismatch: {ident}: {location}")
-            if data.get("type") == "data" and data.get("data_kind") == "window":
-                raw_file = safe_path(ROOT, data["raw_path"])
-                if not raw_file.resolve().is_relative_to((ROOT / "08_DATA/Raw").resolve()):
-                    errors.append(f"RAW window outside Vault: {ident}")
-                elif mode == "full-data" and (not raw_file.is_file() or cached_sha(raw_file) != data["retained_raw_sha256"]):
-                    errors.append(f"RAW window parent mismatch: {ident}")
-                elif mode == "full-data" and not validate_window(raw_file, data["first_epoch"], data["last_epoch"],
-                                         data["row_count"], data["raw_sha256"]):
-                    errors.append(f"RAW window content mismatch: {ident}")
-            external_paths = data.get("external_source_paths", [])
-            external_hashes = data.get("external_source_hashes", {})
-            if external_paths and set(external_paths) != set(external_hashes):
-                errors.append(f"External source/hash inventory mismatch: {ident}")
-            for source in external_paths:
-                actual = safe_path(ROOT, source)
-                if not actual.is_file():
-                    errors.append(f"Missing external source: {ident}: {source}")
-                elif sha(actual) != external_hashes.get(source):
-                    errors.append(f"External source hash changed: {ident}: {source}")
-            if ident in STOPALL_GATES and data.get("source_gate_type") != STOPALL_GATES[ident]:
-                errors.append(f"Wrong StopAll gate mapping: {ident}")
-            notes[ident] = data
-            files[ident] = rel
-        except Exception as exc:
-            errors.append(f"{rel}: {exc}")
-
-    edges = []
-    source_entities = {data["source_path"]: ident for ident, data in notes.items() if "source_path" in data}
-    datasets_by_hash: dict[str, str] = {}
-    for ident, data in notes.items():
-        if data["type"] != "data" or data.get("data_kind") != "dataset":
-            continue
-        raw_hash = data["raw_sha256"]
-        if raw_hash in datasets_by_hash:
-            errors.append(f"Duplicate dataset content hash: {ident} / {datasets_by_hash[raw_hash]}")
-        datasets_by_hash[raw_hash] = ident
-        expected = {data["hash_reference"], data["chronology_model"], "test.regression_policy",
-                    *data["consumed_by_algorithms"], *data["produces_behaviors"],
-                    *data["used_by_fixtures"], *data["validated_by"]}
-        missing = expected - set(data["related_entities"])
-        if missing:
-            errors.append(f"Missing dataset relations: {ident}: {sorted(missing)}")
-        for fixture_id in data["used_by_fixtures"]:
-            fixture = notes.get(fixture_id)
-            if fixture is None or fixture.get("type") != "case" or fixture.get("dataset_sha256") != raw_hash:
-                errors.append(f"Dataset/fixture hash relationship mismatch: {ident} -> {fixture_id}")
-    for ident, data in notes.items():
-        if data["type"] != "case":
-            continue
-        if data["dataset_sha256"] not in datasets_by_hash:
-            errors.append(f"Fixture dataset has no data entity: {ident}")
-        expected = {data["validation_rule"]}
-        if data["behavior"] != "unknown":
-            expected.add(f"behavior.{data['behavior'].lower()}")
-        if data["algorithm"] != "unknown":
-            expected.add(data["algorithm"])
-        if data["source_module"] != "unknown":
-            expected.add(source_entities.get(data["source_module"], "unknown-source-entity"))
-        missing = expected - set(data["related_entities"])
-        if missing:
-            errors.append(f"Missing fixture relations: {ident}: {sorted(missing)}")
-    for ident, data in notes.items():
-        for key in (*REL_KEYS, "related_entities"):
-            for target in data.get(key, []):
-                if target not in notes:
-                    errors.append(f"Unresolved {key}: {ident} -> {target}")
-                    continue
-                edge_key = "relates_to" if key == "related_entities" else key
-                source_type = data["type"]
-                target_type = notes[target]["type"]
-                if edge_key in {"implemented_by"} and target_type != "source":
-                    errors.append(f"implemented_by target not Source: {ident} -> {target}")
-                if edge_key == "calculated_by" and target_type != "algorithm":
-                    errors.append(f"calculated_by target not Algorithm: {ident} -> {target}")
-                if edge_key in {"implements", "supports", "orchestrates"} and (source_type != "source" or target_type != "algorithm"):
-                    errors.append(f"Wrong {edge_key} types: {ident} -> {target}")
-                if edge_key == "depends_on" and ident == target:
-                    errors.append(f"Self dependency: {ident}")
-                if (data["authority"] == "normative" and notes[target]["authority"] == "non-canonical"
-                        and edge_key not in {"relates_to", "affects"}):
-                    errors.append(f"Normative edge into non-canonical knowledge: {ident} {edge_key} {target}")
-                edges.append({"from": ident, "type": edge_key, "to": target})
-    pairs = {(row["from"], row["type"], row["to"]) for row in edges}
-    if len(pairs) != len(edges):
-        errors.append(f"Duplicate relations: {len(edges) - len(pairs)}")
-    for source, key, target in pairs:
-        if key == "implemented_by" and notes[source]["type"] == "algorithm" and (target, "implements", source) not in pairs:
-            errors.append(f"Missing inverse implements: {source} -> {target}")
-        if key == "implements" and (target, "implemented_by", source) not in pairs:
-            errors.append(f"Missing inverse implemented_by: {source} -> {target}")
-        if key == "calculated_by" and notes[source]["type"] == "behavior" and (target, "produces", source) not in pairs:
-            errors.append(f"Missing inverse produces: {source} -> {target}")
-
-    try:
-        manifest = json.loads((ROOT / "_INDEX/source-hashes.json").read_text(encoding="utf-8-sig"))
-        mirror_expected: set[str] = set()
-        source_expected: set[str] = set()
-        for row in manifest["files"]:
-            source = safe_path(ROOT, row["source"])
-            mirror = safe_path(ROOT, row["mirror"])
-            mirror_expected.add(row["mirror"])
-            source_expected.add(row["source"])
-            if not source.is_file() or not mirror.is_file():
-                errors.append(f"Missing mirror/source: {row['source']}")
-            elif sha(source) != row["sha256"] or sha(mirror) != row["sha256"] or source.stat().st_size != row["bytes"]:
-                errors.append(f"SHA/size mismatch: {row['source']}")
-        mirror_actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / "06_SOURCE/Code").rglob("*.py")}
-        if mirror_actual != mirror_expected:
-            errors.append(f"Mirror inventory mismatch: missing={sorted(mirror_expected-mirror_actual)} extra={sorted(mirror_actual-mirror_expected)}")
-        if not module_paths.issubset(source_expected):
-            errors.append(f"Module notes missing from manifest: {sorted(module_paths-source_expected)}")
-        refs = manifest.get("algorithm_references", [])
-        for row in refs:
-            source = safe_path(ROOT, row["source"])
-            if not source.is_file() or sha(source) != row["sha256"] or source.stat().st_size != row["bytes"]:
-                errors.append(f"Reference changed: {row['source']}")
-        for row in manifest.get("supporting_files", []):
-            if mode == "knowledge" and row["path"].startswith("08_DATA/Raw/"):
-                continue
-            support = safe_path(ROOT, row["path"])
-            if not support.is_file() or sha(support) != row["sha256"] or support.stat().st_size != row["bytes"]:
-                errors.append(f"Supporting evidence changed: {row['path']}")
-        code_expected = mirror_expected | {row["source"] for row in refs if row["source"].startswith("06_SOURCE/Code/")} | {
-            row["path"] for row in manifest.get("supporting_files", []) if row["path"].startswith("06_SOURCE/Code/")
-        }
-        code_actual = {path.relative_to(ROOT).as_posix() for path in (ROOT / "06_SOURCE/Code").rglob("*")
-                       if path.is_file() and path.suffix in {".py", ".js", ".md"}}
-        if code_actual != code_expected:
-            errors.append(f"Code evidence inventory mismatch: missing={sorted(code_expected-code_actual)} extra={sorted(code_actual-code_expected)}")
-    except Exception as exc:
-        errors.append(f"Hash manifest validation failed: {exc}")
-        manifest = {"files": [], "algorithm_references": []}
-
-    registered_references = 0
-    try:
-        registry = json.loads((ROOT / "06_SOURCE/References/registry.json").read_text(encoding="utf-8-sig"))
-        references = registry["references"]
-        registered_references = len(references)
-        if {row["id"] for row in references} != {"bullish_hpzr6", "bearish_hpzr6"}:
-            errors.append("Directional reference registry must identify both HPZR6 directions")
-        for row in references:
-            relative = row["repository_relative_path"]
-            if (not relative.startswith("engine/algorithms/") or "\\" in relative or ":" in relative
-                    or any(part in {"", ".", ".."} for part in relative.split("/"))
-                    or Path(relative).name != row["name"]):
-                errors.append(f"Unsafe reference registry path: {relative}")
-            if not re.fullmatch(r"[0-9a-f]{64}", row["sha256"]) or row["bytes"] < 1:
-                errors.append(f"Invalid reference identity: {row['id']}")
-            if not row["known_invalid_sections"] or not row["inactive_sections"]:
-                errors.append(f"Missing reference quarantine scope: {row['id']}")
-    except (OSError, ValueError, KeyError, TypeError) as exc:
-        errors.append(f"Invalid directional reference registry: {exc}")
-
-    if errors:
-        if warnings:
-            print("\n".join(sorted(warnings)), file=sys.stderr)
-        print("\n".join(sorted(errors)), file=sys.stderr)
-        print(f"FAILED: {len(errors)} errors", file=sys.stderr)
-        return 1
-
-    entity_rows = {ident: {"file": files[ident], "type": data["type"], "status": data["status"],
-                            "authority": data["authority"], "title": data["title"],
-                            "valid_for_reasoning": data.get("valid_for_reasoning"),
-                            "implementation_validity": data.get("implementation_validity", "unreviewed"),
-                            "affected_by_known_invalid_order_route": data.get("affected_by_known_invalid_order_route", False)}
-                   for ident, data in sorted(notes.items())}
-    source_map = {ident: sorted(set(data.get("implemented_by", [])))
-                  for ident, data in sorted(notes.items()) if data["type"] == "algorithm"}
-    sorted_edges = sorted(edges, key=lambda row: (row["from"], row["type"], row["to"]))
-    outputs = {
-        "entities.json": {"generated_from": "canonical Markdown frontmatter", "entities": entity_rows},
-        "relations.json": {"generated_from": "canonical Markdown frontmatter", "relations": sorted_edges},
-        "files.json": {"generated_from": "canonical Markdown frontmatter", "files": dict(sorted(files.items()))},
-        "source-map.json": {"generated_from": "canonical Markdown frontmatter", "algorithm_to_source": source_map},
-        "knowledge-graph.json": {"generated_from": "canonical Markdown frontmatter",
-                                 "nodes": [{"id": ident, **row} for ident, row in entity_rows.items()], "edges": sorted_edges},
-    }
-    for name, obj in outputs.items():
-        path = ROOT / "_INDEX" / name
-        rendered = json.dumps(obj, indent=2, ensure_ascii=False) + "\n"
-        if check:
-            if not path.is_file() or path.read_text(encoding="utf-8-sig") != rendered:
-                errors.append(f"Stale index: {name}")
-        else:
-            path.write_text(rendered, encoding="utf-8")
-    if errors:
-        if warnings:
-            print("\n".join(sorted(warnings)), file=sys.stderr)
-        print("\n".join(sorted(errors)), file=sys.stderr)
-        return 1
-    if warnings:
-        print("\n".join(sorted(warnings)), file=sys.stderr)
-    print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(manifest['files'])} source snapshots, {registered_references} optional references, {len(manifest.get('supporting_files', []))} supporting files")
+    print(f"OK: {len(notes)} entities, {len(edges)} relations, {len(structures)} Python sources, {len(registry['references'])} local references; datasets={len(datasets)}, fixtures={len(cases)}, windows={len(windows)}")
     return 0
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="validate without writing indexes")
+    parser.add_argument("--check", action="store_true", help="validate generated bytes without writing")
     parser.add_argument("--mode", choices=("knowledge", "full-data"), default="full-data")
     args = parser.parse_args()
-    raise SystemExit(build(args.check, args.mode))
+    raise SystemExit(build(check=args.check, mode=args.mode))

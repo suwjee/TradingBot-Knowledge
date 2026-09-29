@@ -1,73 +1,155 @@
 {
-  "generated_from": "canonical Markdown frontmatter",
+  "generated_from": "current Markdown frontmatter",
   "algorithm_to_source": {
     "algorithm.a": [
-      "source.a_zone_detector"
-    ],
-    "algorithm.blue": [
-      "source.blue_line_detector"
-    ],
-    "algorithm.e": [
-      "source.e_zone_detector"
-    ],
-    "algorithm.internal_reaction": [
+      "source.a_zone_detector",
+      "source.blue_line_detector",
+      "source.direction_policy",
       "source.reaction_engine"
     ],
+    "algorithm.blue": [
+      "source.blue_line_detector",
+      "source.direction_policy",
+      "source.reaction_engine"
+    ],
+    "algorithm.e": [
+      "source.direction_policy",
+      "source.e_zone_detector",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.reaction_engine"
+    ],
+    "algorithm.internal_reaction": [
+      "source.blue_line_detector",
+      "source.lifecycle_engine",
+      "source.reaction_engine",
+      "source.trading_pipeline"
+    ],
     "algorithm.lifecycle": [
-      "source.lifecycle_engine"
+      "source.direction_policy",
+      "source.e_zone_detector",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.s_zone_detector",
+      "source.trading_pipeline"
     ],
     "algorithm.order": [
+      "source.core_utils",
+      "source.e_zone_detector",
+      "source.order_audit_engine",
       "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.order.a": [
+      "source.core_utils",
       "source.e_zone_detector",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.order.b": [
-      "source.e_zone_detector"
+      "source.e_zone_detector",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.reaction_engine",
+      "source.trading_pipeline"
     ],
-    "algorithm.order.c": [
-      "source.e_zone_detector"
+    "algorithm.orderaudit": [
+      "source.core_utils",
+      "source.e_zone_detector",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.s_zone_detector",
+      "source.trading_pipeline"
     ],
     "algorithm.raw": [
+      "source.core_utils",
       "source.reaction_engine",
       "source.trading_pipeline"
     ],
     "algorithm.reaction": [
+      "source.core_utils",
+      "source.direction_policy",
       "source.reaction_engine"
     ],
     "algorithm.reconciliation": [
       "source.e_zone_detector",
       "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.s_zone_detector",
       "source.trading_pipeline"
     ],
     "algorithm.reset": [
-      "source.reaction_engine"
-    ],
-    "algorithm.s": [
+      "source.blue_line_detector",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.s_zone_detector"
     ],
+    "algorithm.s": [
+      "source.direction_policy",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.s_zone_detector",
+      "source.trading_pipeline"
+    ],
     "algorithm.s.type1": [
+      "source.direction_policy",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.s.type2": [
+      "source.direction_policy",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.s.type3": [
+      "source.direction_policy",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.s.type4": [
+      "source.blue_line_detector",
+      "source.direction_policy",
+      "source.reaction_engine",
       "source.s_zone_detector"
     ],
     "algorithm.serialization": [
+      "source.core_utils",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.trading_pipeline"
     ],
     "algorithm.stopall": [
+      "source.direction_policy",
+      "source.e_zone_detector",
+      "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.trading_pipeline"
+    ],
+    "algorithm.stopall.blue_reversal": [
+      "source.direction_policy",
+      "source.lifecycle_engine",
+      "source.s_zone_detector"
+    ],
+    "algorithm.stopall.sequence_group": [
+      "source.direction_policy",
+      "source.e_zone_detector",
+      "source.lifecycle_engine"
+    ],
+    "algorithm.stopall.stopall_stop": [
+      "source.direction_policy",
+      "source.e_zone_detector",
       "source.lifecycle_engine"
     ],
     "algorithm.visibility": [
+      "source.blue_line_detector",
       "source.lifecycle_engine",
+      "source.order_audit_engine",
+      "source.reaction_engine",
       "source.trading_pipeline"
     ]
   }

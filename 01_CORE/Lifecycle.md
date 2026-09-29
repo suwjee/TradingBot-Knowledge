@@ -1,18 +1,25 @@
 ---
 id: "core.lifecycle"
 type: "core"
-status: "pending"
-authority: "non-canonical"
-title: "Lifecycle ownership"
-source_refs: []
-related_entities: ["algorithm.lifecycle", "test.lifecycle_invariants"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Accepted lifecycle model"
+version: "current"
+related_entities: ["algorithm.lifecycle", "algorithm.stopall", "core.ownership", "core.priority"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-invariant or explicitly mixed"
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"]
 ---
 
-# Lifecycle ownership
+# Accepted lifecycle model
 
-A -> S -> E -> StopAll is the fixed stage order. A fallback rejected under accepted S cannot consume that S or feed descendants into E. Dominant stopped owner selection uses the most recent relevant stop main index before priority and number tie breaking. A starts a new cycle only when its trigger is strictly after a prior A stop; at/before overlaps.
+Canonical aligned confirmation validates A's source. First strict A stop opens S; next-A confirmation already reached makes older handoff stale. Accepted S/E strict stops from decision open E cycles; accepted parent/family priority reconciles recursive numbers.
 
-S/E candidates can remain calculation evidence even when hidden from public display, subject to stage-invalid rules. Same physical source occupied by final E or StopAll suppresses lower-stage labels; calculation-eligible historical parents may be restored solely to keep lineage. StopAll resets active owner and Blue-repeat counters.
+Lower half-leg A/S discovery may continue inside larger active owner. Closed-owner leg head can consume a strict beyond-boundary candidate. A prior cycle first stop cannot be recreated by later recross. Historical accepted owners remain lineage/evidence independent of public label.
 
-For validation, distinguish **candidate → accepted owner → stopped owner → historical lineage or suppressed output**. A strict A stop can open S; an accepted S stop can open E1; a stopped eligible E can open its successor. A later accepted owner may hide an earlier public label while preserving its physical parent/cause history. A StopAll boundary clears the active sequence and pending Blue-repeat evidence; a new eligible post-boundary owner begins the next sequence. `test.lifecycle_invariants` checks these transitions and `algorithm.lifecycle` owns the detailed tie and priority rules.
+StopAll freezes accepted hard prefix and clears dominant keys/counts,pending Blue repeats. Future state cannot delete/move prefix. Independent accepted-S E1 roots can restore after hard boundary without changing dominant StopAll sequence.
+
+Valid physical Order parent provenance persists across consumers; explicit invalid S has no accepted parent-stop creation rights. Order_B uses accepted stopped-main owner and latest accepted geometric source before reset aligned First,with next accepted A trigger expiry.
+
+Publishing sequence_resets atomically copies its map, refreshes sorted reset times and clears dependent candidate/carried context caches once. Immutable physical stop/cross caches and historical accepted Order_A causes remain retained. The reset lookup window is (start,end]. Explicit invalid S identities are rejected at parent registration and reconstructed parent-stop cause retention; valid historical S and shared Order_B reset-leg provenance remain eligible.

@@ -1,5 +1,5 @@
 {
-  "generated_from": "canonical Markdown frontmatter",
+  "generated_from": "current Markdown frontmatter",
   "relations": [
     {
       "from": "algorithm.a",
@@ -8,33 +8,38 @@
     },
     {
       "from": "algorithm.a",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.a",
-      "type": "depends_on",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "algorithm.a",
       "type": "implemented_by",
       "to": "source.a_zone_detector"
     },
     {
       "from": "algorithm.a",
-      "type": "produces",
-      "to": "behavior.a"
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
     },
     {
       "from": "algorithm.a",
       "type": "relates_to",
-      "to": "test.lifecycle_invariants"
+      "to": "algorithm.blue"
     },
     {
       "from": "algorithm.a",
       "type": "relates_to",
-      "to": "test.source_validation"
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.a",
+      "type": "relates_to",
+      "to": "algorithm.s"
     },
     {
       "from": "algorithm.blue",
@@ -48,23 +53,38 @@
     },
     {
       "from": "algorithm.blue",
-      "type": "depends_on",
-      "to": "market.direction"
-    },
-    {
-      "from": "algorithm.blue",
       "type": "implemented_by",
       "to": "source.blue_line_detector"
     },
     {
       "from": "algorithm.blue",
-      "type": "relates_to",
-      "to": "test.precision_invariants"
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
     },
     {
       "from": "algorithm.blue",
       "type": "relates_to",
-      "to": "test.source_validation"
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.blue",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
     },
     {
       "from": "algorithm.e",
@@ -74,7 +94,17 @@
     {
       "from": "algorithm.e",
       "type": "depends_on",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "depends_on",
       "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
     },
     {
       "from": "algorithm.e",
@@ -83,18 +113,23 @@
     },
     {
       "from": "algorithm.e",
-      "type": "produces",
-      "to": "behavior.e"
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
     },
     {
       "from": "algorithm.e",
-      "type": "produces",
-      "to": "behavior.e.blue"
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
     },
     {
       "from": "algorithm.e",
-      "type": "produces",
-      "to": "behavior.e.red"
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.e",
+      "type": "relates_to",
+      "to": "algorithm.order"
     },
     {
       "from": "algorithm.e",
@@ -104,3817 +139,1682 @@
     {
       "from": "algorithm.e",
       "type": "relates_to",
-      "to": "test.identity_invariants"
+      "to": "algorithm.s"
     },
     {
       "from": "algorithm.e",
       "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.internal_reaction",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
+      "to": "source.reference_consistency"
     },
     {
       "from": "algorithm.internal_reaction",
       "type": "implemented_by",
-      "to": "source.reaction_engine"
+      "to": "source.blue_line_detector"
     },
     {
       "from": "algorithm.internal_reaction",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "algorithm.internal_reaction",
-      "type": "relates_to",
-      "to": "test.direction_tests"
-    },
-    {
-      "from": "algorithm.internal_reaction",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "depends_on",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "depends_on",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "depends_on",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "algorithm.lifecycle",
       "type": "implemented_by",
       "to": "source.lifecycle_engine"
     },
     {
-      "from": "algorithm.lifecycle",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "algorithm.lifecycle",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.order",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.order",
-      "type": "depends_on",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "algorithm.order",
+      "from": "algorithm.internal_reaction",
       "type": "implemented_by",
       "to": "source.reaction_engine"
     },
     {
-      "from": "algorithm.order",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.order",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "algorithm.order",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "algorithm.order.a",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "algorithm.order.b",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.order.c",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.raw",
-      "type": "implemented_by",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "algorithm.raw",
+      "from": "algorithm.internal_reaction",
       "type": "implemented_by",
       "to": "source.trading_pipeline"
     },
     {
-      "from": "algorithm.raw",
-      "type": "produces",
-      "to": "market.candle"
-    },
-    {
-      "from": "algorithm.raw",
-      "type": "produces",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "algorithm.raw",
+      "from": "algorithm.internal_reaction",
       "type": "relates_to",
-      "to": "source.integration_boundary"
-    },
-    {
-      "from": "algorithm.raw",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "algorithm.raw",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "depends_on",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "depends_on",
-      "to": "market.direction"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "depends_on",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "implemented_by",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "produces",
-      "to": "algorithm.internal_reaction"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "produces",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "relates_to",
-      "to": "test.direction_tests"
-    },
-    {
-      "from": "algorithm.reaction",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "depends_on",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "depends_on",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "implemented_by",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "produces",
-      "to": "behavior.e"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "produces",
-      "to": "behavior.e.blue"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "produces",
-      "to": "behavior.e.red"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "produces",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "algorithm.reconciliation",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.reset",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.reset",
-      "type": "depends_on",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "algorithm.reset",
-      "type": "implemented_by",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "algorithm.reset",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "algorithm.reset",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "depends_on",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "produces",
-      "to": "behavior.s"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "produces",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "produces",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "algorithm.s",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "depends_on",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "depends_on",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "produces",
-      "to": "behavior.s.blue.type1"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "produces",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "algorithm.s.type1",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "depends_on",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "produces",
-      "to": "behavior.s.blue.type2"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "produces",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "algorithm.s.type2",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.s.type3",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "algorithm.s.type3",
-      "type": "depends_on",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "algorithm.s.type3",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.s.type3",
-      "type": "produces",
-      "to": "behavior.s.blue.type3"
-    },
-    {
-      "from": "algorithm.s.type3",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "algorithm.s.type3",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.s.type4",
-      "type": "depends_on",
       "to": "algorithm.blue"
     },
     {
-      "from": "algorithm.s.type4",
-      "type": "depends_on",
+      "from": "algorithm.internal_reaction",
+      "type": "relates_to",
       "to": "algorithm.reaction"
     },
     {
-      "from": "algorithm.s.type4",
-      "type": "depends_on",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "algorithm.s.type4",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "algorithm.s.type4",
-      "type": "produces",
-      "to": "behavior.s.blue.type4"
-    },
-    {
-      "from": "algorithm.s.type4",
+      "from": "algorithm.internal_reaction",
       "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "algorithm.s.type4",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.serialization",
-      "type": "depends_on",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "algorithm.serialization",
-      "type": "depends_on",
       "to": "algorithm.visibility"
     },
     {
-      "from": "algorithm.serialization",
-      "type": "implemented_by",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "algorithm.serialization",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "algorithm.serialization",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.stopall",
+      "from": "algorithm.lifecycle",
       "type": "depends_on",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "depends_on",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "depends_on",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "produces",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "produces",
-      "to": "behavior.stopall.type1"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "produces",
-      "to": "behavior.stopall.type2"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "produces",
-      "to": "behavior.stopall.type3"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "algorithm.stopall",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "depends_on",
-      "to": "algorithm.internal_reaction"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "depends_on",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "depends_on",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "implemented_by",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "algorithm.visibility",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "behavior.a",
-      "type": "calculated_by",
       "to": "algorithm.a"
     },
     {
-      "from": "behavior.a",
+      "from": "algorithm.lifecycle",
       "type": "depends_on",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "behavior.a",
-      "type": "depends_on",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "behavior.a",
-      "type": "implemented_by",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "behavior.a",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.a",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.e",
-      "type": "calculated_by",
       "to": "algorithm.e"
     },
     {
-      "from": "behavior.e",
-      "type": "calculated_by",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "behavior.e",
+      "from": "algorithm.lifecycle",
       "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "behavior.e",
-      "type": "depends_on",
-      "to": "behavior.s"
-    },
-    {
-      "from": "behavior.e",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "behavior.e",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.e",
-      "type": "parent_of",
-      "to": "behavior.e.blue"
-    },
-    {
-      "from": "behavior.e",
-      "type": "parent_of",
-      "to": "behavior.e.red"
-    },
-    {
-      "from": "behavior.e",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "calculated_by",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "calculated_by",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "depends_on",
-      "to": "behavior.e"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "depends_on",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.e.blue",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "calculated_by",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "calculated_by",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "depends_on",
-      "to": "behavior.e"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "depends_on",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.e.red",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s",
-      "type": "calculated_by",
       "to": "algorithm.s"
     },
     {
-      "from": "behavior.s",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "behavior.s",
-      "type": "depends_on",
-      "to": "behavior.a"
-    },
-    {
-      "from": "behavior.s",
+      "from": "algorithm.lifecycle",
       "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.s",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s",
-      "type": "parent_of",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "behavior.s",
-      "type": "parent_of",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "behavior.s",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "calculated_by",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "depends_on",
-      "to": "behavior.s"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "parent_of",
-      "to": "behavior.s.blue.type1"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "parent_of",
-      "to": "behavior.s.blue.type2"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "parent_of",
-      "to": "behavior.s.blue.type3"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "parent_of",
-      "to": "behavior.s.blue.type4"
-    },
-    {
-      "from": "behavior.s.blue",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s.blue.type1",
-      "type": "calculated_by",
-      "to": "algorithm.s.type1"
-    },
-    {
-      "from": "behavior.s.blue.type1",
-      "type": "depends_on",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "behavior.s.blue.type1",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s.blue.type1",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s.blue.type2",
-      "type": "calculated_by",
-      "to": "algorithm.s.type2"
-    },
-    {
-      "from": "behavior.s.blue.type2",
-      "type": "depends_on",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "behavior.s.blue.type2",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s.blue.type2",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s.blue.type3",
-      "type": "calculated_by",
-      "to": "algorithm.s.type3"
-    },
-    {
-      "from": "behavior.s.blue.type3",
-      "type": "depends_on",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "behavior.s.blue.type3",
-      "type": "depends_on",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "behavior.s.blue.type3",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s.blue.type3",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s.blue.type4",
-      "type": "calculated_by",
-      "to": "algorithm.s.type4"
-    },
-    {
-      "from": "behavior.s.blue.type4",
-      "type": "depends_on",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "behavior.s.blue.type4",
-      "type": "depends_on",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "behavior.s.blue.type4",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s.blue.type4",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.s.red",
-      "type": "calculated_by",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "behavior.s.red",
-      "type": "depends_on",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "behavior.s.red",
-      "type": "depends_on",
-      "to": "behavior.s"
-    },
-    {
-      "from": "behavior.s.red",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.s.red",
-      "type": "implemented_by",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "behavior.s.red",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "calculated_by",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "depends_on",
-      "to": "behavior.e"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "depends_on",
-      "to": "behavior.s"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "parent_of",
-      "to": "behavior.stopall.type1"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "parent_of",
-      "to": "behavior.stopall.type2"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "parent_of",
-      "to": "behavior.stopall.type3"
-    },
-    {
-      "from": "behavior.stopall",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "behavior.stopall.type1",
-      "type": "calculated_by",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "behavior.stopall.type1",
-      "type": "depends_on",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "behavior.stopall.type1",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.stopall.type1",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "behavior.stopall.type2",
-      "type": "calculated_by",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "behavior.stopall.type2",
-      "type": "depends_on",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "behavior.stopall.type2",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.stopall.type2",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "behavior.stopall.type3",
-      "type": "calculated_by",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "behavior.stopall.type3",
-      "type": "depends_on",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "behavior.stopall.type3",
-      "type": "depends_on",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "behavior.stopall.type3",
-      "type": "implemented_by",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "behavior.stopall.type3",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_1_1",
-      "type": "relates_to",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "case.fixture_1_1",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "case.fixture_1_1",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_1",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_1_10",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_1_10",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_10",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_10",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_10",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_1_11",
-      "type": "relates_to",
-      "to": "algorithm.s.type4"
-    },
-    {
-      "from": "case.fixture_1_11",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_11",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_11",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_1_11",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_12",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_1_12",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "case.fixture_1_12",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_12",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_12",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_1_13",
-      "type": "relates_to",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "case.fixture_1_13",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_13",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "case.fixture_1_13",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_13",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_1_4",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_1_4",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_4",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_4",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_4",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_1_5",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_1_5",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_5",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_5",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_5",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_1_6",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_1_6",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_6",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_6",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_1_6",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_7",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "case.fixture_1_7",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_7",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_7",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_7",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_1_8",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "case.fixture_1_8",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_1_8",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_1_8",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_1_8",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_1_9",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "case.fixture_1_9",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "case.fixture_1_9",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_1_9",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_3",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "case.fixture_2_3",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "case.fixture_2_3",
-      "type": "relates_to",
-      "to": "data.window_18632e27"
-    },
-    {
-      "from": "case.fixture_2_3",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_2_3",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "case.fixture_2_3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_4",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_2_4",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "case.fixture_2_4",
-      "type": "relates_to",
-      "to": "data.window_18632e27"
-    },
-    {
-      "from": "case.fixture_2_4",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_2_4",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_4",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_2_5",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_2_5",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "case.fixture_2_5",
-      "type": "relates_to",
-      "to": "data.window_18632e27"
-    },
-    {
-      "from": "case.fixture_2_5",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_2_5",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_2_5",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_3_1",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "case.fixture_3_1",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "case.fixture_3_1",
-      "type": "relates_to",
-      "to": "data.window_0291455b"
-    },
-    {
-      "from": "case.fixture_3_1",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "case.fixture_3_1",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_3_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_3_2",
-      "type": "relates_to",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "case.fixture_3_2",
-      "type": "relates_to",
-      "to": "data.window_0291455b"
-    },
-    {
-      "from": "case.fixture_3_2",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "case.fixture_3_2",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_3_2",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "case.fixture_4_1",
-      "type": "relates_to",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "case.fixture_4_1",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "case.fixture_4_1",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "case.fixture_4_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_4_3",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "case.fixture_4_3",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "case.fixture_4_3",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_4_3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_4_3",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_5_1",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "case.fixture_5_1",
-      "type": "relates_to",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "case.fixture_5_1",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "case.fixture_5_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_5_1",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "case.fixture_5_2",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "case.fixture_5_2",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "case.fixture_5_2",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_5_2",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_5_2",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "case.fixture_6_1",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "case.fixture_6_1",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "case.fixture_6_1",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "case.fixture_6_1",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "case.fixture_6_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_8_1",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "case.fixture_8_1",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "case.fixture_8_1",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "case.fixture_8_1",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "case.fixture_8_1",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "core.behavior_model",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "core.behavior_model",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "core.behavior_model",
-      "type": "relates_to",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "core.behavior_model",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "core.behavior_model",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "core.chronology",
-      "type": "relates_to",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "core.chronology",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "core.e_numbering",
-      "type": "calculated_by",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "core.e_numbering",
-      "type": "depends_on",
-      "to": "behavior.e"
-    },
-    {
-      "from": "core.e_numbering",
-      "type": "implemented_by",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "core.e_numbering",
-      "type": "relates_to",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "core.e_numbering",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "core.invariants",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "core.lifecycle",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "core.lifecycle",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "core.pipeline",
-      "type": "relates_to",
-      "to": "source.integration_boundary"
-    },
-    {
-      "from": "core.pipeline",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "core.pipeline",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "core.precision",
-      "type": "relates_to",
-      "to": "source.core_utils"
-    },
-    {
-      "from": "core.precision",
-      "type": "relates_to",
-      "to": "test.precision_invariants"
-    },
-    {
-      "from": "core.priority",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "core.priority",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "core.project",
-      "type": "relates_to",
-      "to": "system.manifest"
-    },
-    {
-      "from": "core.terminology",
-      "type": "relates_to",
-      "to": "system.knowledge_model"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "data.raw_schema"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "data.timeframe_registry"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "market.candle"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "data.candle_model",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "data.integrity"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.data_validation",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "case.fixture_4_1"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "case.fixture_4_3"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_062df750",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_7e12ea5f",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "case.fixture_5_1"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "case.fixture_5_2"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_9e2e159a",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "case.fixture_6_1"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_b47246b4",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "case.fixture_2_3"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "case.fixture_2_4"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "case.fixture_2_5"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_ea82be1a",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "case.fixture_3_1"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "case.fixture_3_2"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_f531a06d",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_1"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_10"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_11"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_12"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_13"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_4"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_5"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_6"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_7"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_8"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_1_9"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "case.fixture_8_1"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_f5bc29e3",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.dataset_manifest",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_manifest",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.dataset_manifest",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_manifest",
-      "type": "relates_to",
-      "to": "data.integrity"
-    },
-    {
-      "from": "data.dataset_manifest",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.dataset_registry",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_registry",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.dataset_registry",
-      "type": "relates_to",
-      "to": "data.dataset_template"
-    },
-    {
-      "from": "data.dataset_registry",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.dataset_registry",
-      "type": "relates_to",
-      "to": "data.registry_root"
-    },
-    {
-      "from": "data.dataset_registry",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.dataset_template",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.dataset_template",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.dataset_template",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.dataset_template",
-      "type": "relates_to",
-      "to": "data.hash_policy"
-    },
-    {
-      "from": "data.dataset_template",
-      "type": "relates_to",
-      "to": "data.integrity"
-    },
-    {
-      "from": "data.dataset_template",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "data.datasets_compat",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.datasets_compat",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.datasets_compat",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.datasets_compat",
-      "type": "relates_to",
-      "to": "data.registry_root"
-    },
-    {
-      "from": "data.hash_policy",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.hash_policy",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.hash_policy",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.hash_policy",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.hash_policy",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.hash_registry",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.hash_registry",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.hash_registry",
-      "type": "relates_to",
-      "to": "data.hash_policy"
-    },
-    {
-      "from": "data.hash_registry",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.integrity",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.integrity",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.integrity",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.integrity",
-      "type": "relates_to",
-      "to": "data.raw_schema"
-    },
-    {
-      "from": "data.integrity",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.integrity",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.lineage",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "data.hash_policy"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "data.raw_authority"
-    },
-    {
-      "from": "data.policy",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "data.hash_policy"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "data.lineage"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.raw_authority",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.raw_format",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.raw_format",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.raw_format",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.raw_format",
-      "type": "relates_to",
-      "to": "data.raw_schema"
-    },
-    {
-      "from": "data.raw_format",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.raw_model",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.raw_model",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.raw_model",
-      "type": "relates_to",
-      "to": "data.raw_authority"
-    },
-    {
-      "from": "data.raw_model",
-      "type": "relates_to",
-      "to": "data.raw_format"
-    },
-    {
-      "from": "data.raw_model",
-      "type": "relates_to",
-      "to": "data.raw_schema"
-    },
-    {
-      "from": "data.raw_model",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.raw_schema",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.raw_schema",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.raw_schema",
-      "type": "relates_to",
-      "to": "data.integrity"
-    },
-    {
-      "from": "data.raw_schema",
-      "type": "relates_to",
-      "to": "data.raw_format"
-    },
-    {
-      "from": "data.raw_schema",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.registry_root",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.registry_root",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.registry_root",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.registry_root",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.registry_root",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.registry_root",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.timeframe_registry",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.timeframe_registry",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.timeframe_registry",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.timeframe_registry",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "data.timeframe_registry",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.timeframe_registry",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "case.fixture_3_1"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "case.fixture_3_2"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "data.dataset_f531a06d"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.window_0291455b",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_3"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_4"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "case.fixture_2_5"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "data.dataset_ea82be1a"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.window_18632e27",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.data_validation"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.dataset_ea82be1a"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.dataset_manifest"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.hash_registry"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "data.window_d33c7e2c",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "market.candle",
-      "type": "relates_to",
-      "to": "data.candle_model"
-    },
-    {
-      "from": "market.candle",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "market.crossing",
-      "type": "relates_to",
-      "to": "mirror.direction_mapping"
-    },
-    {
-      "from": "market.crossing",
-      "type": "relates_to",
-      "to": "test.precision_invariants"
-    },
-    {
-      "from": "market.direction",
-      "type": "relates_to",
-      "to": "mirror.direction_mapping"
-    },
-    {
-      "from": "market.direction",
-      "type": "relates_to",
       "to": "source.direction_policy"
     },
     {
-      "from": "market.events",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "market.events",
-      "type": "relates_to",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "market.exact_chronology",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "market.exact_chronology",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "market.leg",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "market.leg",
-      "type": "relates_to",
-      "to": "market.leg_calculation"
-    },
-    {
-      "from": "market.leg",
-      "type": "relates_to",
-      "to": "market.leg_recognition"
-    },
-    {
-      "from": "market.leg",
-      "type": "relates_to",
-      "to": "market.model"
-    },
-    {
-      "from": "market.leg",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "market.leg_calculation",
-      "type": "relates_to",
-      "to": "market.leg"
-    },
-    {
-      "from": "market.leg_calculation",
-      "type": "relates_to",
-      "to": "market.leg_recognition"
-    },
-    {
-      "from": "market.leg_calculation",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "market.leg_recognition",
-      "type": "relates_to",
-      "to": "market.leg"
-    },
-    {
-      "from": "market.leg_recognition",
-      "type": "relates_to",
-      "to": "market.leg_calculation"
-    },
-    {
-      "from": "market.leg_recognition",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "market.model",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "market.model",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "market.model",
-      "type": "relates_to",
-      "to": "market.leg"
-    },
-    {
-      "from": "market.raw",
-      "type": "relates_to",
-      "to": "data.raw_model"
-    },
-    {
-      "from": "market.raw",
-      "type": "relates_to",
-      "to": "source.integration_boundary"
-    },
-    {
-      "from": "market.raw",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "market.timeframe",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "market.timeframe",
-      "type": "relates_to",
-      "to": "data.timeframe_registry"
-    },
-    {
-      "from": "market.timeframe",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "source.blue_line_detector"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "source.core_utils"
-    },
-    {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
       "to": "source.e_zone_detector"
     },
     {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
       "to": "source.lifecycle_engine"
     },
     {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
     },
     {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
       "to": "source.s_zone_detector"
     },
     {
-      "from": "mirror.algorithm_matrix",
-      "type": "relates_to",
+      "from": "algorithm.lifecycle",
+      "type": "implemented_by",
       "to": "source.trading_pipeline"
     },
     {
-      "from": "mirror.behavior",
+      "from": "algorithm.lifecycle",
       "type": "relates_to",
-      "to": "behavior.a"
+      "to": "algorithm.visibility"
     },
     {
-      "from": "mirror.behavior",
+      "from": "algorithm.lifecycle",
       "type": "relates_to",
-      "to": "behavior.e"
+      "to": "core.ownership"
     },
     {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s.blue.type1"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s.blue.type2"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s.blue.type3"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s.blue.type4"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "mirror.behavior",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "core.behavior_model"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "core.lifecycle"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "market.direction"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "mirror.contract",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "market.candle"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "market.crossing"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "market.direction"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "source.blue_line_detector"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "mirror.direction_mapping",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.blue_line_detector"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "mirror.directional_rules",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.internal_reaction"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "mirror.exceptions",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "core.behavior_model"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "core.lifecycle"
-    },
-    {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "core.precision"
-    },
-    {
-      "from": "mirror.invariants",
+      "from": "algorithm.lifecycle",
       "type": "relates_to",
       "to": "core.priority"
     },
     {
-      "from": "mirror.invariants",
-      "type": "relates_to",
+      "from": "algorithm.order",
+      "type": "implemented_by",
       "to": "source.core_utils"
     },
     {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
     },
     {
-      "from": "mirror.invariants",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
     },
     {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
-      "to": "algorithm.e"
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
     },
     {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
-      "to": "algorithm.internal_reaction"
+      "from": "algorithm.order",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
     },
     {
-      "from": "mirror.mixed_rules",
+      "from": "algorithm.order",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "relates_to",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "algorithm.order",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.order.a",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.order.a",
       "type": "relates_to",
       "to": "algorithm.order"
     },
     {
-      "from": "mirror.mixed_rules",
+      "from": "algorithm.order.a",
       "type": "relates_to",
-      "to": "algorithm.stopall"
+      "to": "algorithm.orderaudit"
     },
     {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
-      "to": "algorithm.visibility"
-    },
-    {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
-      "to": "source.core_utils"
-    },
-    {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
       "to": "source.e_zone_detector"
     },
     {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
       "to": "source.lifecycle_engine"
     },
     {
-      "from": "mirror.mixed_rules",
-      "type": "relates_to",
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
       "to": "source.reaction_engine"
     },
     {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "algorithm.a"
+      "from": "algorithm.order.b",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
     },
     {
-      "from": "mirror.source_map",
+      "from": "algorithm.order.b",
       "type": "relates_to",
-      "to": "algorithm.blue"
+      "to": "algorithm.order"
     },
     {
-      "from": "mirror.source_map",
+      "from": "algorithm.order.b",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.order.b",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "relates_to",
+      "to": "algorithm.order.b"
+    },
+    {
+      "from": "algorithm.orderaudit",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "implemented_by",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "algorithm.raw",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "implemented_by",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "algorithm.internal_reaction"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "core.identity"
+    },
+    {
+      "from": "algorithm.reaction",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.reconciliation",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.reconciliation",
       "type": "relates_to",
       "to": "algorithm.e"
     },
     {
-      "from": "mirror.source_map",
+      "from": "algorithm.reconciliation",
       "type": "relates_to",
-      "to": "algorithm.lifecycle"
+      "to": "algorithm.orderaudit"
     },
     {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "mirror.source_map",
+      "from": "algorithm.reconciliation",
       "type": "relates_to",
       "to": "algorithm.s"
     },
     {
-      "from": "mirror.source_map",
+      "from": "algorithm.reconciliation",
       "type": "relates_to",
-      "to": "algorithm.serialization"
+      "to": "algorithm.stopall"
     },
     {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "source.a_zone_detector"
-    },
-    {
-      "from": "mirror.source_map",
-      "type": "relates_to",
+      "from": "algorithm.reset",
+      "type": "implemented_by",
       "to": "source.blue_line_detector"
     },
     {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "source.core_utils"
+      "from": "algorithm.reset",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
     },
     {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "mirror.source_map",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "mirror.source_map",
-      "type": "relates_to",
+      "from": "algorithm.reset",
+      "type": "implemented_by",
       "to": "source.reaction_engine"
     },
     {
-      "from": "mirror.source_map",
-      "type": "relates_to",
+      "from": "algorithm.reset",
+      "type": "implemented_by",
       "to": "source.s_zone_detector"
     },
     {
-      "from": "mirror.source_map",
+      "from": "algorithm.reset",
       "type": "relates_to",
-      "to": "source.trading_pipeline"
+      "to": "algorithm.blue"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "algorithm.reset",
       "type": "relates_to",
-      "to": "algorithm.lifecycle"
+      "to": "algorithm.order.b"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "algorithm.reset",
       "type": "relates_to",
       "to": "algorithm.reaction"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "depends_on",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "algorithm.s.type1"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "algorithm.s.type2"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "algorithm.s.type3"
+    },
+    {
+      "from": "algorithm.s",
+      "type": "relates_to",
+      "to": "algorithm.s.type4"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "algorithm.s.type1",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "relates_to",
+      "to": "algorithm.order.a"
+    },
+    {
+      "from": "algorithm.s.type2",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type3",
+      "type": "relates_to",
+      "to": "algorithm.s.type4"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "relates_to",
+      "to": "algorithm.blue"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.s.type4",
+      "type": "relates_to",
+      "to": "algorithm.s.type3"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "depends_on",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "depends_on",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.core_utils"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.serialization",
+      "type": "relates_to",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "depends_on",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
+      "to": "algorithm.stopall.blue_reversal"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
+      "to": "algorithm.stopall.sequence_group"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
+      "to": "algorithm.stopall.stopall_stop"
+    },
+    {
+      "from": "algorithm.stopall",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "algorithm.stopall.blue_reversal",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.stopall.blue_reversal",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.stopall.blue_reversal",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "algorithm.stopall.blue_reversal",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "algorithm.stopall.blue_reversal",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "algorithm.stopall.blue_reversal",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "algorithm.stopall.sequence_group",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.stopall.sequence_group",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.stopall.sequence_group",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.stopall.sequence_group",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "algorithm.stopall.sequence_group",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "algorithm.stopall.stopall_stop",
+      "type": "implemented_by",
+      "to": "source.direction_policy"
+    },
+    {
+      "from": "algorithm.stopall.stopall_stop",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "algorithm.stopall.stopall_stop",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.stopall.stopall_stop",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "algorithm.stopall.stopall_stop",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "depends_on",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "depends_on",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "implemented_by",
+      "to": "source.trading_pipeline"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "algorithm.visibility",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "algorithm.visibility",
       "type": "relates_to",
       "to": "algorithm.serialization"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "behavior.a",
+      "type": "implemented_by",
+      "to": "source.a_zone_detector"
+    },
+    {
+      "from": "behavior.a",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.a",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.a",
+      "type": "relates_to",
+      "to": "algorithm.a"
+    },
+    {
+      "from": "behavior.a",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "behavior.a",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "behavior.e",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.e",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.e",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "behavior.e",
+      "type": "relates_to",
+      "to": "behavior.e.blue"
+    },
+    {
+      "from": "behavior.e",
+      "type": "relates_to",
+      "to": "behavior.e.red"
+    },
+    {
+      "from": "behavior.e",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "behavior.e.blue",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "behavior.e.red",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.s",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "behavior.s",
+      "type": "relates_to",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s",
+      "type": "relates_to",
+      "to": "behavior.s.red"
+    },
+    {
+      "from": "behavior.s",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type1"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type2"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type3"
+    },
+    {
+      "from": "behavior.s.blue",
+      "type": "relates_to",
+      "to": "behavior.s.blue.type4"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "relates_to",
+      "to": "algorithm.s.type1"
+    },
+    {
+      "from": "behavior.s.blue.type1",
+      "type": "relates_to",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "relates_to",
+      "to": "algorithm.s.type2"
+    },
+    {
+      "from": "behavior.s.blue.type2",
+      "type": "relates_to",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "relates_to",
+      "to": "algorithm.s.type3"
+    },
+    {
+      "from": "behavior.s.blue.type3",
+      "type": "relates_to",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "implemented_by",
+      "to": "source.blue_line_detector"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "implemented_by",
+      "to": "source.reaction_engine"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "relates_to",
+      "to": "algorithm.s.type4"
+    },
+    {
+      "from": "behavior.s.blue.type4",
+      "type": "relates_to",
+      "to": "behavior.s.blue"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "implemented_by",
+      "to": "source.order_audit_engine"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "relates_to",
+      "to": "algorithm.stopall.blue_reversal"
+    },
+    {
+      "from": "behavior.s.red",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "relates_to",
+      "to": "behavior.stopall.blue_reversal"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "relates_to",
+      "to": "behavior.stopall.sequence_group"
+    },
+    {
+      "from": "behavior.stopall",
+      "type": "relates_to",
+      "to": "behavior.stopall.stopall_stop"
+    },
+    {
+      "from": "behavior.stopall.blue_reversal",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.stopall.blue_reversal",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.blue_reversal",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.stopall.blue_reversal",
+      "type": "relates_to",
+      "to": "algorithm.stopall.blue_reversal"
+    },
+    {
+      "from": "behavior.stopall.blue_reversal",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "behavior.stopall.blue_reversal",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "behavior.stopall.sequence_group",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.stopall.sequence_group",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.sequence_group",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.stopall.sequence_group",
+      "type": "relates_to",
+      "to": "algorithm.stopall.sequence_group"
+    },
+    {
+      "from": "behavior.stopall.sequence_group",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "behavior.stopall.stopall_stop",
+      "type": "implemented_by",
+      "to": "source.e_zone_detector"
+    },
+    {
+      "from": "behavior.stopall.stopall_stop",
+      "type": "implemented_by",
+      "to": "source.lifecycle_engine"
+    },
+    {
+      "from": "behavior.stopall.stopall_stop",
+      "type": "implemented_by",
+      "to": "source.s_zone_detector"
+    },
+    {
+      "from": "behavior.stopall.stopall_stop",
+      "type": "relates_to",
+      "to": "algorithm.stopall.stopall_stop"
+    },
+    {
+      "from": "behavior.stopall.stopall_stop",
+      "type": "relates_to",
+      "to": "behavior.stopall"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.e"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.order"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "core.behavior_model",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "core.chronology",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "core.chronology",
+      "type": "relates_to",
+      "to": "core.determinism"
+    },
+    {
+      "from": "core.chronology",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "core.chronology",
+      "type": "relates_to",
+      "to": "core.precision"
+    },
+    {
+      "from": "core.determinism",
+      "type": "relates_to",
+      "to": "core.identity"
+    },
+    {
+      "from": "core.determinism",
+      "type": "relates_to",
+      "to": "core.invariants"
+    },
+    {
+      "from": "core.determinism",
+      "type": "relates_to",
+      "to": "mirror.validation_rules"
+    },
+    {
+      "from": "core.determinism",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "core.identity",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "core.identity",
+      "type": "relates_to",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "core.identity",
+      "type": "relates_to",
+      "to": "core.determinism"
+    },
+    {
+      "from": "core.invariants",
+      "type": "relates_to",
+      "to": "core.determinism"
+    },
+    {
+      "from": "core.invariants",
+      "type": "relates_to",
+      "to": "core.identity"
+    },
+    {
+      "from": "core.invariants",
+      "type": "relates_to",
+      "to": "core.ownership"
+    },
+    {
+      "from": "core.invariants",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "core.invariants",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "core.lifecycle",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "core.lifecycle",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "core.lifecycle",
+      "type": "relates_to",
+      "to": "core.ownership"
+    },
+    {
+      "from": "core.lifecycle",
+      "type": "relates_to",
+      "to": "core.priority"
+    },
+    {
+      "from": "core.ownership",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "core.ownership",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "core.ownership",
+      "type": "relates_to",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "core.ownership",
+      "type": "relates_to",
+      "to": "core.identity"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "algorithm.orderaudit"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "algorithm.raw"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "algorithm.reaction"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "algorithm.serialization"
+    },
+    {
+      "from": "core.pipeline",
+      "type": "relates_to",
+      "to": "algorithm.visibility"
+    },
+    {
+      "from": "core.precision",
+      "type": "relates_to",
+      "to": "core.invariants"
+    },
+    {
+      "from": "core.priority",
+      "type": "relates_to",
+      "to": "algorithm.lifecycle"
+    },
+    {
+      "from": "core.priority",
+      "type": "relates_to",
+      "to": "algorithm.reconciliation"
+    },
+    {
+      "from": "core.priority",
+      "type": "relates_to",
+      "to": "algorithm.stopall"
+    },
+    {
+      "from": "core.project",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "core.project",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "data.dataset_registry",
+      "type": "relates_to",
+      "to": "data.policy"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "test.fixture_model"
+    },
+    {
+      "from": "data.policy",
+      "type": "relates_to",
+      "to": "workflow.analyze_raw"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "data.policy"
+    },
+    {
+      "from": "data.raw_model",
+      "type": "relates_to",
+      "to": "market.raw"
+    },
+    {
+      "from": "decision.authority_boundary",
+      "type": "relates_to",
+      "to": "system.authority"
+    },
+    {
+      "from": "decision.calculation_presentation",
+      "type": "relates_to",
+      "to": "system.authority"
+    },
+    {
+      "from": "decision.empty_evidence_stores",
+      "type": "relates_to",
+      "to": "system.authority"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "mirror.source_map"
+    },
+    {
+      "from": "mirror.algorithm_matrix",
+      "type": "relates_to",
+      "to": "mirror.validation_rules"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "core.behavior_model"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "mirror.directional_rules"
+    },
+    {
+      "from": "mirror.behavior",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "mirror.exceptions"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "mirror.contract",
+      "type": "relates_to",
+      "to": "mirror.validation_rules"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "mirror.direction_mapping",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "mirror.direction_mapping"
+    },
+    {
+      "from": "mirror.directional_rules",
+      "type": "relates_to",
+      "to": "mirror.mixed_rules"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.reset"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "algorithm.s"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "core.chronology"
+    },
+    {
+      "from": "mirror.exceptions",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.determinism"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "core.invariants"
+    },
+    {
+      "from": "mirror.invariants",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "mirror.directional_rules"
+    },
+    {
+      "from": "mirror.mixed_rules",
+      "type": "relates_to",
+      "to": "mirror.invariants"
+    },
+    {
+      "from": "mirror.source_map",
       "type": "relates_to",
       "to": "mirror.algorithm_matrix"
+    },
+    {
+      "from": "mirror.source_map",
+      "type": "relates_to",
+      "to": "mirror.contract"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "core.determinism"
+    },
+    {
+      "from": "mirror.validation_rules",
+      "type": "relates_to",
+      "to": "core.invariants"
     },
     {
       "from": "mirror.validation_rules",
@@ -3922,399 +1822,284 @@
       "to": "mirror.contract"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.__init__",
       "type": "relates_to",
-      "to": "mirror.direction_mapping"
+      "to": "source.source_manifest"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.a_zone_detector",
       "type": "relates_to",
-      "to": "mirror.invariants"
+      "to": "source.source_manifest"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.blue_line_detector",
       "type": "relates_to",
-      "to": "source.direction_policy"
+      "to": "source.source_manifest"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.bridge.__init__",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.core_utils",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.dependency_map",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "source.dependency_map",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.direction_policy",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.e_zone_detector",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "core.pipeline"
+    },
+    {
+      "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "source.trading_pipeline"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.lifecycle_engine",
       "type": "relates_to",
-      "to": "test.direction_tests"
+      "to": "source.source_manifest"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.module_map",
       "type": "relates_to",
-      "to": "test.mirror_policy"
+      "to": "source.reference_registry"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.module_map",
       "type": "relates_to",
-      "to": "test.mirror_regression"
+      "to": "source.source_manifest"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.order_audit_engine",
       "type": "relates_to",
-      "to": "test.mirror_validation"
+      "to": "source.source_manifest"
     },
     {
-      "from": "mirror.validation_rules",
+      "from": "source.ownership_map",
       "type": "relates_to",
-      "to": "test.symmetry_tests"
+      "to": "source.reference_registry"
     },
     {
-      "from": "source.a_zone_detector",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "source.a_zone_detector",
-      "type": "implements",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "source.a_zone_detector",
+      "from": "source.ownership_map",
       "type": "relates_to",
-      "to": "test.source_validation"
+      "to": "source.source_manifest"
     },
     {
-      "from": "source.blue_line_detector",
-      "type": "affects",
-      "to": "behavior.a"
+      "from": "source.pipeline.__init__",
+      "type": "relates_to",
+      "to": "source.source_manifest"
     },
     {
-      "from": "source.blue_line_detector",
-      "type": "affects",
-      "to": "behavior.s.blue.type4"
+      "from": "source.reaction_engine",
+      "type": "relates_to",
+      "to": "source.source_manifest"
     },
     {
-      "from": "source.blue_line_detector",
-      "type": "implements",
+      "from": "source.reference_consistency",
+      "type": "relates_to",
       "to": "algorithm.blue"
     },
     {
-      "from": "source.blue_line_detector",
+      "from": "source.reference_consistency",
       "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.core_utils",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.core_utils",
-      "type": "supports",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "source.core_utils",
-      "type": "supports",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "source.dependencies",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "source.dependencies",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.direction_policy",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.direction_policy",
-      "type": "supports",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "source.direction_policy",
-      "type": "supports",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "source.direction_policy",
-      "type": "supports",
       "to": "algorithm.e"
     },
     {
-      "from": "source.direction_policy",
-      "type": "supports",
+      "from": "source.reference_consistency",
+      "type": "relates_to",
       "to": "algorithm.reaction"
     },
     {
-      "from": "source.direction_policy",
-      "type": "supports",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.b"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.c"
-    },
-    {
-      "from": "source.e_zone_detector",
-      "type": "implements",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "source.e_zone_detector",
+      "from": "source.reference_consistency",
       "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.integration_boundary",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "source.integration_boundary",
-      "type": "relates_to",
-      "to": "market.raw"
-    },
-    {
-      "from": "source.integration_boundary",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "implements",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "implements",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "implements",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "implements",
-      "to": "algorithm.visibility"
-    },
-    {
-      "from": "source.lifecycle_engine",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.map",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "source.map",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "affects",
-      "to": "behavior.a"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "affects",
-      "to": "behavior.e"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "implements",
-      "to": "algorithm.internal_reaction"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "implements",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "implements",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "implements",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "implements",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "source.reaction_engine",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.reference_registry",
-      "type": "relates_to",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.reference_registry",
-      "type": "relates_to",
-      "to": "algorithm.order.b"
-    },
-    {
-      "from": "source.reference_registry",
-      "type": "relates_to",
-      "to": "algorithm.order.c"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "affects",
-      "to": "behavior.s"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "affects",
-      "to": "behavior.s.blue"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "affects",
-      "to": "behavior.s.red"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.order.a"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.s.type1"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.s.type2"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.s.type3"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "implements",
-      "to": "algorithm.s.type4"
-    },
-    {
-      "from": "source.s_zone_detector",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.state_map",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "source.state_map",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "implements",
-      "to": "algorithm.raw"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "implements",
-      "to": "algorithm.reconciliation"
-    },
-    {
-      "from": "source.trading_pipeline",
-      "type": "implements",
       "to": "algorithm.serialization"
     },
     {
+      "from": "source.reference_consistency",
+      "type": "relates_to",
+      "to": "algorithm.stopall.blue_reversal"
+    },
+    {
+      "from": "source.reference_consistency",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.reference_registry",
+      "type": "relates_to",
+      "to": "version.current"
+    },
+    {
+      "from": "source.s_zone_detector",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.source_manifest",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "source.source_manifest",
+      "type": "relates_to",
+      "to": "version.current"
+    },
+    {
+      "from": "source.source_map",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "source.source_map",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "source.state_map",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "source.state_map",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
       "from": "source.trading_pipeline",
-      "type": "implements",
-      "to": "algorithm.visibility"
-    },
-    {
-      "from": "source.trading_pipeline",
       "type": "relates_to",
-      "to": "test.source_validation"
+      "to": "source.source_manifest"
     },
     {
       "from": "system.authority",
       "type": "relates_to",
-      "to": "algorithm.order.b"
+      "to": "source.reference_consistency"
     },
     {
       "from": "system.authority",
       "type": "relates_to",
-      "to": "algorithm.order.c"
+      "to": "source.reference_registry"
     },
     {
       "from": "system.authority",
       "type": "relates_to",
-      "to": "market.leg"
+      "to": "source.source_manifest"
     },
     {
-      "from": "system.manifest",
+      "from": "system.authority",
+      "type": "relates_to",
+      "to": "system.retrieval"
+    },
+    {
+      "from": "system.authority",
+      "type": "relates_to",
+      "to": "version.current"
+    },
+    {
+      "from": "system.editing",
+      "type": "relates_to",
+      "to": "system.authority"
+    },
+    {
+      "from": "system.editing",
+      "type": "relates_to",
+      "to": "workflow.update_vault"
+    },
+    {
+      "from": "system.frontmatter",
+      "type": "relates_to",
+      "to": "system.ids"
+    },
+    {
+      "from": "system.frontmatter",
+      "type": "relates_to",
+      "to": "system.knowledge_model"
+    },
+    {
+      "from": "system.knowledge_model",
       "type": "relates_to",
       "to": "core.pipeline"
     },
     {
+      "from": "system.knowledge_model",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "system.knowledge_model",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
       "from": "system.manifest",
       "type": "relates_to",
-      "to": "data.dataset_registry"
+      "to": "data.policy"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "source.source_manifest"
     },
     {
       "from": "system.manifest",
       "type": "relates_to",
       "to": "system.authority"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "test.validation_contract"
+    },
+    {
+      "from": "system.manifest",
+      "type": "relates_to",
+      "to": "version.current"
+    },
+    {
+      "from": "system.readme",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
     },
     {
       "from": "system.readme",
@@ -4332,1184 +2117,154 @@
       "to": "system.retrieval"
     },
     {
-      "from": "test.baseline_policy",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "test.baseline_policy",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.baseline_policy",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "test.baseline_policy",
-      "type": "relates_to",
-      "to": "test.regression_model"
-    },
-    {
-      "from": "test.baseline_policy",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.baseline_policy",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "behavior.a"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "behavior.e"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "behavior.s"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "core.behavior_model"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "test.behavior_invariants",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.a"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.blue"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.e"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.s"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "algorithm.stopall"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "test.regression_model"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.change_impact",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "algorithm.reset"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "market.exact_chronology"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.chronology_invariants",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "mirror.direction_mapping"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "mirror.directional_rules"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "test.mirror_policy"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "test.precision_invariants"
-    },
-    {
-      "from": "test.direction_tests",
-      "type": "relates_to",
-      "to": "test.symmetry_tests"
-    },
-    {
-      "from": "test.fixture_model",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "test.fixture_model",
-      "type": "relates_to",
-      "to": "core.behavior_model"
-    },
-    {
-      "from": "test.fixture_model",
-      "type": "relates_to",
-      "to": "mirror.invariants"
-    },
-    {
-      "from": "test.fixture_model",
-      "type": "relates_to",
-      "to": "source.core_utils"
-    },
-    {
-      "from": "test.fixture_model",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "test.fixture_model",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.regression_test_execution"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.test_model"
-    },
-    {
-      "from": "test.fixture_registry",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "core.e_numbering"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "source.core_utils"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "test.identity_invariants",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "core.pipeline"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "source.integration_boundary"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "test.regression_test_execution"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "test.test_model"
-    },
-    {
-      "from": "test.integration_test_policy",
-      "type": "relates_to",
-      "to": "test.unit_test_policy"
-    },
-    {
-      "from": "test.invariant_validation",
+      "from": "system.retrieval",
       "type": "relates_to",
       "to": "core.invariants"
     },
     {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "mirror.invariants"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.behavior_invariants"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.chronology_invariants"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.identity_invariants"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.integration_test_policy"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.lifecycle_invariants"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.precision_invariants"
-    },
-    {
-      "from": "test.invariant_validation",
-      "type": "relates_to",
-      "to": "test.unit_test_policy"
-    },
-    {
-      "from": "test.legacy_memory_fixture_review",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "test.legacy_memory_fixture_review",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "test.legacy_memory_fixture_review",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "test.legacy_memory_fixture_review",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.legacy_memory_fixture_review",
-      "type": "relates_to",
-      "to": "test.source_validation"
-    },
-    {
-      "from": "test.lifecycle_invariants",
-      "type": "relates_to",
-      "to": "algorithm.lifecycle"
-    },
-    {
-      "from": "test.lifecycle_invariants",
-      "type": "relates_to",
-      "to": "behavior.stopall"
-    },
-    {
-      "from": "test.lifecycle_invariants",
-      "type": "relates_to",
-      "to": "core.lifecycle"
-    },
-    {
-      "from": "test.lifecycle_invariants",
-      "type": "relates_to",
-      "to": "core.priority"
-    },
-    {
-      "from": "test.lifecycle_invariants",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "test.lifecycle_invariants",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.memory_benchmark",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "test.memory_benchmark",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.memory_benchmark",
-      "type": "relates_to",
-      "to": "test.optimization_rules"
-    },
-    {
-      "from": "test.memory_benchmark",
-      "type": "relates_to",
-      "to": "test.runtime_benchmark"
-    },
-    {
-      "from": "test.memory_benchmark",
-      "type": "relates_to",
-      "to": "test.stage_profiling"
-    },
-    {
-      "from": "test.memory_benchmark",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "mirror.contract"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "test.direction_tests"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "test.mirror_regression"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "test.symmetry_tests"
-    },
-    {
-      "from": "test.mirror_policy",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.direction_tests"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.mirror_policy"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.symmetry_tests"
-    },
-    {
-      "from": "test.mirror_regression",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "mirror.contract"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "mirror.direction_mapping"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "mirror.invariants"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "test.direction_tests"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "test.mirror_policy"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "test.mirror_regression"
-    },
-    {
-      "from": "test.mirror_validation",
-      "type": "relates_to",
-      "to": "test.symmetry_tests"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "core.precision"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "test.memory_benchmark"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "test.runtime_benchmark"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "test.stage_profiling"
-    },
-    {
-      "from": "test.optimization_rules",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.output_validation",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "test.output_validation",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "test.output_validation",
-      "type": "relates_to",
-      "to": "algorithm.visibility"
-    },
-    {
-      "from": "test.output_validation",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.output_validation",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.output_validation",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "core.precision"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "market.candle"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "market.crossing"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "source.blue_line_detector"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "source.core_utils"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "source.direction_policy"
-    },
-    {
-      "from": "test.precision_invariants",
-      "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.regression_model",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "test.regression_model",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.regression_model",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "test.regression_model",
-      "type": "relates_to",
-      "to": "test.change_impact"
-    },
-    {
-      "from": "test.regression_model",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "test.regression_model",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "test.regression_model"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "test.regression_policy",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "data.hash_policy"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "test.baseline_policy"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "test.integration_test_policy"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "test.mirror_regression"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "test.test_model"
-    },
-    {
-      "from": "test.regression_test_execution",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "test.memory_benchmark"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "test.optimization_rules"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "test.stage_profiling"
-    },
-    {
-      "from": "test.runtime_benchmark",
-      "type": "relates_to",
-      "to": "test.zero_difference"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "algorithm.order"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "algorithm.reaction"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "mirror.source_map"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "source.e_zone_detector"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "source.lifecycle_engine"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "source.s_zone_detector"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "test.source_validation",
-      "type": "relates_to",
-      "to": "test.fixture_registry"
-    },
-    {
-      "from": "test.stage_profiling",
+      "from": "system.retrieval",
       "type": "relates_to",
       "to": "core.pipeline"
     },
     {
-      "from": "test.stage_profiling",
+      "from": "system.retrieval",
       "type": "relates_to",
-      "to": "source.trading_pipeline"
+      "to": "source.reference_registry"
     },
     {
-      "from": "test.stage_profiling",
+      "from": "system.retrieval",
       "type": "relates_to",
-      "to": "test.memory_benchmark"
+      "to": "source.source_manifest"
     },
     {
-      "from": "test.stage_profiling",
+      "from": "system.retrieval",
       "type": "relates_to",
-      "to": "test.optimization_rules"
+      "to": "system.authority"
     },
     {
-      "from": "test.stage_profiling",
+      "from": "system.retrieval",
       "type": "relates_to",
-      "to": "test.output_validation"
+      "to": "version.current"
     },
     {
-      "from": "test.stage_profiling",
+      "from": "system.retrieval",
       "type": "relates_to",
-      "to": "test.runtime_benchmark"
+      "to": "workflow.operating"
     },
     {
-      "from": "test.symmetry_tests",
+      "from": "test.fixture_model",
       "type": "relates_to",
-      "to": "mirror.contract"
+      "to": "data.policy"
     },
     {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "mirror.exceptions"
-    },
-    {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "mirror.invariants"
-    },
-    {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "source.reaction_engine"
-    },
-    {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "test.direction_tests"
-    },
-    {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "test.mirror_policy"
-    },
-    {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "test.mirror_regression"
-    },
-    {
-      "from": "test.symmetry_tests",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.test_model",
-      "type": "relates_to",
-      "to": "data.dataset_registry"
-    },
-    {
-      "from": "test.test_model",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "test.test_model",
-      "type": "relates_to",
-      "to": "test.integration_test_policy"
-    },
-    {
-      "from": "test.test_model",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "test.test_model",
-      "type": "relates_to",
-      "to": "test.regression_test_execution"
-    },
-    {
-      "from": "test.test_model",
-      "type": "relates_to",
-      "to": "test.unit_test_policy"
-    },
-    {
-      "from": "test.test_model",
+      "from": "test.fixture_model",
       "type": "relates_to",
       "to": "test.validation_contract"
     },
     {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "source.trading_pipeline"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.fixture_model"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.integration_test_policy"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.mirror_validation"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.regression_test_execution"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.test_model"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.unit_test_policy"
-    },
-    {
-      "from": "test.test_policy",
-      "type": "relates_to",
-      "to": "test.validation_contract"
-    },
-    {
-      "from": "test.unit_test_policy",
+      "from": "test.mirror_policy",
       "type": "relates_to",
       "to": "source.direction_policy"
     },
     {
-      "from": "test.unit_test_policy",
+      "from": "test.mirror_policy",
       "type": "relates_to",
-      "to": "test.chronology_invariants"
+      "to": "source.reaction_engine"
     },
     {
-      "from": "test.unit_test_policy",
+      "from": "test.output_validation",
       "type": "relates_to",
-      "to": "test.fixture_model"
+      "to": "workflow.run_regression"
     },
     {
-      "from": "test.unit_test_policy",
+      "from": "test.source_validation",
       "type": "relates_to",
-      "to": "test.integration_test_policy"
+      "to": "source.reference_registry"
     },
     {
-      "from": "test.unit_test_policy",
+      "from": "test.source_validation",
       "type": "relates_to",
-      "to": "test.invariant_validation"
-    },
-    {
-      "from": "test.unit_test_policy",
-      "type": "relates_to",
-      "to": "test.precision_invariants"
-    },
-    {
-      "from": "test.unit_test_policy",
-      "type": "relates_to",
-      "to": "test.test_model"
+      "to": "source.source_manifest"
     },
     {
       "from": "test.validation_contract",
       "type": "relates_to",
-      "to": "algorithm.serialization"
+      "to": "data.policy"
     },
     {
       "from": "test.validation_contract",
       "type": "relates_to",
-      "to": "core.behavior_model"
+      "to": "source.source_manifest"
     },
     {
       "from": "test.validation_contract",
+      "type": "relates_to",
+      "to": "workflow.run_regression"
+    },
+    {
+      "from": "version.current",
+      "type": "relates_to",
+      "to": "source.reference_consistency"
+    },
+    {
+      "from": "version.current",
+      "type": "relates_to",
+      "to": "source.reference_registry"
+    },
+    {
+      "from": "version.current",
+      "type": "relates_to",
+      "to": "source.source_manifest"
+    },
+    {
+      "from": "workflow.analyze_raw",
+      "type": "relates_to",
+      "to": "workflow.operating"
+    },
+    {
+      "from": "workflow.investigate_behavior",
+      "type": "relates_to",
+      "to": "workflow.operating"
+    },
+    {
+      "from": "workflow.modify_algorithm",
+      "type": "relates_to",
+      "to": "workflow.operating"
+    },
+    {
+      "from": "workflow.modify_source",
+      "type": "relates_to",
+      "to": "workflow.operating"
+    },
+    {
+      "from": "workflow.operating",
       "type": "relates_to",
       "to": "core.pipeline"
     },
     {
-      "from": "test.validation_contract",
+      "from": "workflow.operating",
       "type": "relates_to",
-      "to": "mirror.contract"
+      "to": "system.authority"
     },
     {
-      "from": "test.validation_contract",
+      "from": "workflow.release",
       "type": "relates_to",
-      "to": "source.trading_pipeline"
+      "to": "workflow.operating"
     },
     {
-      "from": "test.validation_contract",
+      "from": "workflow.run_regression",
       "type": "relates_to",
-      "to": "test.fixture_model"
+      "to": "workflow.operating"
     },
     {
-      "from": "test.validation_contract",
+      "from": "workflow.update_vault",
       "type": "relates_to",
-      "to": "test.invariant_validation"
+      "to": "workflow.operating"
     },
     {
-      "from": "test.validation_contract",
+      "from": "workflow.validate_mirror",
       "type": "relates_to",
-      "to": "test.memory_benchmark"
-    },
-    {
-      "from": "test.validation_contract",
-      "type": "relates_to",
-      "to": "test.mirror_policy"
-    },
-    {
-      "from": "test.validation_contract",
-      "type": "relates_to",
-      "to": "test.optimization_rules"
-    },
-    {
-      "from": "test.validation_contract",
-      "type": "relates_to",
-      "to": "test.runtime_benchmark"
-    },
-    {
-      "from": "test.validation_contract",
-      "type": "relates_to",
-      "to": "test.test_model"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "algorithm.serialization"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "core.chronology"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "core.precision"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "mirror.invariants"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "test.memory_benchmark"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "test.optimization_rules"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "test.output_validation"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "test.regression_policy"
-    },
-    {
-      "from": "test.zero_difference",
-      "type": "relates_to",
-      "to": "test.runtime_benchmark"
+      "to": "workflow.operating"
     }
   ]
 }

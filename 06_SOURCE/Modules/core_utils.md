@@ -3,46 +3,36 @@ id: "source.core_utils"
 type: "source"
 status: "active"
 authority: "executable"
-title: "core utils"
+title: "Behavior-neutral Decimal normalization and physical Reaction/Order identity"
+version: "1.0.0"
+related_entities: ["source.source_manifest"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py"]
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 source_path: "06_SOURCE/Code/engine/pipeline/core_utils.py"
 mirror: "06_SOURCE/Code/engine/pipeline/core_utils.py"
 sha256: "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de"
-affects: []
-source_refs: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L1"]
-supports: ["algorithm.raw", "algorithm.order"]
-related_entities: ["test.source_validation"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L1"]
 ---
 
-# core utils
-## Identity and snapshot
-Production: 06_SOURCE/Code/engine/pipeline/core_utils.py
-Mirror: 06_SOURCE/Code/engine/pipeline/core_utils.py
-SHA-256: 3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de
-Declared versions: [('CORE_UTILS_VERSION', '1.0.0')]
+# core_utils.py
 
-## Responsibility
-Owns shared Decimal normalization and physical Order/Reaction identity.
+Behavior-neutral Decimal normalization and physical Reaction/Order identity.
 
-## Classes and owned concepts
-No classes.
+Current working-tree bytes are executable evidence; Source identity alone is not independent market correctness. The supported bridge dynamically loads owners; the legacy ordinary package wrapper is unsupported.
 
-## Important symbols
-- as_decimal: 06_SOURCE/Code/engine/pipeline/core_utils.py#L11
-- order_identity: 06_SOURCE/Code/engine/pipeline/core_utils.py#L19
-- reaction_identity: 06_SOURCE/Code/engine/pipeline/core_utils.py#L24
+| Property | Current value |
+|---|---|
+| Source | 06_SOURCE/Code/engine/pipeline/core_utils.py |
+| SHA-256 | 3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de |
+| Bytes | 885 |
+| Lines | 29 |
+| Declared version | 1.0.0 |
 
-## Inputs and outputs
-Numeric values or Reaction-like object -> Decimal or (FirstIndex,BreakIndex).
+## Current symbols
 
-## State, direction, chronology, and invariants
-Preserve existing Decimal; otherwise Decimal(str(value)). Identity is physical indexes, independent of timestamp, native mode, cause or direction.
+Every lexical class/function is listed, including nested definitions inside control blocks. Qualified name plus source line identifies repeated property accessors.
 
-## Upstream dependencies and downstream consumers
-Upstream: none.
-
-Downstream: reaction_engine, a_zone_detector, s_zone_detector, e_zone_detector, lifecycle_engine, trading_pipeline.
-
-## Relationships
-Supports algorithm.raw Decimal normalization and algorithm.order physical identity; it does not own RAW ingestion or Order formation.
-Behaviors: No direct behavior ownership.
+| Symbol | Source line | End line | Signature or role |
+|---|---:|---:|---|
+| as_decimal | 11 | 13 | value: object |
+| order_identity | 19 | 21 | first_index: object, break_index: object |
+| reaction_identity | 24 | 29 | reaction: object |

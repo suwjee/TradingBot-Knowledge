@@ -1,22 +1,21 @@
 ---
 id: "system.manifest"
 type: "system"
-status: "canonical"
+status: "active"
 authority: "normative"
-title: "Vault manifest"
-source_refs: []
-related_entities: ["system.authority", "core.pipeline", "data.dataset_registry"]
+title: "Current-only Vault manifest"
+version: "current"
+related_entities: ["data.policy", "source.reference_consistency", "source.reference_registry", "source.source_manifest", "system.authority", "test.validation_contract", "version.current"]
 source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Vault manifest
+# Current-only Vault manifest
 
-This Vault records a scoped TradingBot knowledge snapshot for AI retrieval. Canonical and pending notes have stable IDs. `_INDEX` is derived; `06_SOURCE/Code` holds byte-exact snapshots of all nine main Engine modules, including mixed E, lifecycle and bridge source. `Order_A` is the accepted route. Current `Order_B` and `Order_C` logic is registered as known-invalid diagnostic evidence and excluded from normative reasoning and regression baselines. The full HPZR6 references are registered by hash in `06_SOURCE/References/registry.json` and are optional external evidence; their B/C sections do not define accepted future rules.
+This Vault represents the current audited TradingBot implementation with exact Reference version 5.4.19-EX1 evidence. Narrative scope discrepancies are registered in source.reference_consistency. Legacy active rules, old Reference copies, correction overrides and market examples are removed. Source inventory contains 13 exact current Python files, including package files. Current hashes and per-owner versions are in source-hashes.json and version.current; Reference versions are independent.
 
-Phase 1 covers system controls and the minimum core/market model. Phase 2 covers A, S, E, StopAll. Phase 3 covers the calculation path. Phase 4 maps source modules and captures hashes. Phase 4.8 adds the Mirror layer; Phase 5 adds fixture and validation knowledge; Phase 6 identifies byte-pinned RAW datasets and exact retained windows in `08_DATA`. Plugin runtime code and its documentation live outside this Vault. Empty future directories have no authority. Zero-byte tracked placeholders preserve the selected future folder structure in Git; truly empty directories appear only when populated. No blanket .gitkeep policy is used.
+RAW datasets, windows and regression cases are zero: EMPTY_BY_DESIGN. Market regression is NOT_REQUIRED_THIS_PHASE under the current task. Empty future directories are documented by Data/Fixture policies. Indexes and graph are derived navigation and never authority.
 
-Read [Authority Model](AUTHORITY_MODEL.md) before resolving any rule and [Pipeline](../01_CORE/Pipeline.md) before tracing a stage. The [Source Map](../06_SOURCE/Source-Map.md) identifies retained and pending source owners; [Data Registry](../08_DATA/Dataset-Registry.md) locates physical inputs; [Integration Boundary](../06_SOURCE/Integration-Boundary.md) records the unresolved chart input scope. Resolve IDs through `_INDEX/entities.json`, then open the owning Markdown note. An index never overrides its note.
+The current-contract declaration in _INDEX/source-hashes.json pins the reviewed active entity inventory, statuses and owners. Generic validation rejects missing/extra current concepts or status/owner drift. Exact source/reference inventories are checked without baked-in counts or versions. Full metadata is preserved in generated entity rows and validated by the Plugin.
 
-All operational paths in this Vault are relative to its own root. The retained source came from a dirty working tree; do not infer its identity from a Git commit alone. A later source refresh requires new hashes and review of affected claims. The Vault reader needs no access to the production checkout.
-
-Current open issue: the chart server may send a selected-range stream to the bridge, while full-RAW chronology was assumed by earlier rule descriptions. The retained Vault does not resolve that integration contract. Until the affected source is republished and reviewed, related calculation claims remain pending.
+Read _GENERATED/Current-Validation.md for completed command exits, counts, integrity/mirror scope and readiness. Until the final matrix completes, release status is INCOMPLETE. This manifest does not turn a pending check into PASS.

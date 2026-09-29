@@ -1,16 +1,19 @@
 ---
 id: "system.ids"
 type: "system"
-status: "canonical"
+status: "active"
 authority: "normative"
-title: "Stable ID conventions"
+title: "Current stable ID conventions"
+version: "current"
 related_entities: []
 source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Stable ID conventions
+# Current stable ID conventions
 
+Use lowercase dot-separated IDs with the entity type as the first segment. A file path is a locator and may change without changing a concept ID. Preserve an existing ID only for the same independently reconfirmed current concept. Removed concepts have no active entity or relations. A new physical Source owner, such as OrderAudit, receives its own source and algorithm IDs.
 
-Never reuse an ID for changed meaning. Moving a note changes its locator in regenerated indexes while retaining the ID. If meaning splits, retain the original as an umbrella or mark it superseded and migrate every relation atomically. A changed RAW hash gets a new dataset ID, not an overwrite of the old byte identity. Future decision/version/workflow/plugin/policy prefixes require a documented schema revision when their phases are implemented; do not assign them preemptively from empty folders.
+Do not treat an E family number as a separate algorithm identity. Current StopAll knowledge uses actual gate names rather than inheriting undocumented numeric type labels. Reaction, Reset, Blue and physical Orders are calculation structures; A, S, E and StopAll form the behavior layer.
 
-StopAll Type-1/2/3 IDs follow the public bridge formation mapping: `sequence-group-stop` -> Type-1, `stopall-stop` -> Type-2, and `opposite-s-group-stop` -> Type-3. S Blue Type-1/2/3/4 map `simple`/`advanced`/`type3`/`type4`. E numbers are state, not distinct algorithm IDs.
+Do not invent Data or Fixture IDs while their stores are empty. Future physical input identity must use the actual supplied bytes; a new byte identity cannot silently replace an earlier approved fixture input.

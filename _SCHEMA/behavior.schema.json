@@ -1,15 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "behavior note",
   "type": "object",
   "required": [
-    "calculated_by",
     "implemented_by"
   ],
   "properties": {
-    "calculated_by": {
-      "minItems": 1
-    },
     "implemented_by": {
       "minItems": 1
     }

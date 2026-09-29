@@ -1,16 +1,18 @@
 ---
 id: "core.project"
 type: "core"
-status: "pending"
-authority: "non-canonical"
-title: "TradingBot project"
-source_refs: []
-related_entities: ["system.manifest"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Current project architecture"
+version: "current"
+related_entities: ["core.pipeline", "source.integration_boundary"]
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
+evidence_basis: "Current source and synchronized current references"
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"]
 ---
 
-# TradingBot project
+# Current project architecture
 
-TradingBot is a local chart and calculation workstation. The browser and Vite middleware supply RAW candles and display results. The Python engine under engine/bridge and engine/pipeline owns trading calculations. The bridge dynamically loads flat-import detector modules, constructs chronology, computes both directional Reaction streams when dependent stages run, reconciles A/S/E/StopAll, and serializes JSON.
+TradingBot is a local Windows candlestick workstation. The native ES-module browser acquires and displays candles, drawings and indicator state. HTTP JSON and progress SSE connect the browser to Vite middleware. Vite supplies an explicit input scope and starts the Python bridge. The Engine owns Decimal calculation, Reaction/Reset, Blue, A, S, E, physical Orders, lifecycle, StopAll, visibility and final audit state. JSON serialization projects finalized state back to the UI.
 
-The current engine source is nine production Python modules. Browser range filtering may change what input reaches the bridge; distinguish the full input received by the engine from the original RAW resource. See Pipeline and 06_SOURCE/Source-Map.
+Current chart package metadata is retained exactly in 06_SOURCE/Code/apps/chart/package.json. Module versions and Reference version are separate. A Git tag, package version or old audit snapshot cannot identify the exact dirty working-tree Engine bytes.

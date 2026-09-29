@@ -1,41 +1,26 @@
 ---
 id: "mirror.direction_mapping"
 type: "mirror"
-status: "pending"
-authority: "non-canonical"
-title: "Verified direction mapping"
-created: "2026-09-25"
-updated: "2026-09-25"
-related_entities: ["market.direction", "market.crossing", "market.candle", "algorithm.reaction", "algorithm.blue", "algorithm.order", "source.direction_policy", "source.reaction_engine", "source.blue_line_detector", "source.a_zone_detector", "source.e_zone_detector"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L75", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L311"]
+status: "active"
+authority: "executable"
+title: "Current directional price and candle-role map"
+version: "current"
+related_entities: ["mirror.contract", "mirror.invariants"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
 ---
 
-# Verified direction mapping
+# Current directional price and candle-role map
 
-> Scope: All nine main Engine modules are captured, but full HPZR6 references are optional external evidence. Current Order_B/C mirror behavior is diagnostic only until those routes are rewritten and accepted.
+| Rule | Bullish | Bearish |
+| --- | --- | --- |
+| First/context | RED/GREEN | GREEN/RED |
+| Reaction confirmation | High>BoxTop | Low<BoxBottom |
+| Behavior extreme/stop | minimum Low / Low<level | maximum High / High>level |
+| Opposite physical Order stop | High>OrderStop | Low<OrderStop |
+| Frozen Order_B boundary/break | LL minimum Low / Low<LL | HH maximum High / High>HH |
 
-`direction_policy.py#L21-L70` supplies the shared primitive map; both synchronized references §15 list the same directional pairs. The mapped `value` must already be the appropriate price side. Do not substitute the stop predicate for the separate Reaction confirmation predicate.
+Scale Fibonacci is top-0.618*(top-reference) or bottom+0.618*(reference-bottom). Scale rendered line is low+(high-low)/3 or high-(high-low)/3; Reset divisor is5. A/S/E use mirrored extrema with same interval and tie owner.
 
-| Atomic concept | Bullish | Bearish | Source |
-|---|---|---|---|
-| Trend extreme / strict stop input | Low | High | `direction_policy.py#L23`, `#L59-L69` |
-| Opposite extreme | High | Low | `direction_policy.py#L24`, `#L59-L69` |
-| Better trend extreme | smaller; minimum | larger; maximum | `direction_policy.py#L35-L39` |
-| Directional strict crossing | `Low < level` | `High > level` | `direction_policy.py#L32-L33` |
-| Reaction confirmation | `High > BoxTop` | `Low < BoxBottom` | `direction_policy.py#L41-L46`; `reaction_engine.py#L197`, `#L688` |
-| Reaction confirmation box edge | Top | Bottom | `reaction_engine.py#L560-L598`; both references §6.2 |
-| First Reaction tag | RED | GREEN | `direction_policy.py#L25`, `#L59-L69` |
-| Reaction context tag | GREEN | RED | `direction_policy.py#L26`, `#L59-L69` |
-| Opposite Order direction | Bearish | Bullish | `direction_policy.py#L28-L30`; `e_zone_detector.py#L151` |
-| Mode-B Order inherited stop edge | prior healthy BoxTop | prior healthy BoxBottom | `reaction_engine.py#L1185-L1195`; both references §6.12 |
-| Mode-A opposite Order outer stop | Bearish Order: maximum High | Bullish Order: minimum Low | `reaction_engine.py#L1137-L1195`; both references §6.12 |
-| Blue Fibonacci level | `Top − 0.618 × (Top − reference)` | `Bottom + 0.618 × (reference − Bottom)` | `blue_line_detector.py#L75-L81` |
-| Scale Blue line price | `Low + (High − Low)/3` | `High − (High − Low)/3` | `blue_line_detector.py#L217-L238` |
-| Reset Blue line price | `Low + (High − Low)/5` | `High − (High − Low)/5` | `blue_line_detector.py#L246-L263` |
-| Chained stopped-Blue source extreme | minimum Low over the fixed next-Break main candle | maximum High over the same time window | Both references §15; `a_zone_detector.py#L311-L390` |
-
-All displayed crossings are strict: equality does **not** cross. Source: `direction_policy.py#L32-L46`, `blue_line_detector.py#L114-L116`, both references §15.
-
-`Bottom ↔ Top` is a **role mapping**, not a command to swap all serialized `boxBottom`/`boxTop` field names. The Bearish adapter maps `box_top` to negated Bullish `box_bottom` and swaps their physical source indices/times; the public schema keeps both field names. `reaction_engine.py#L560-L598`; `trading_pipeline.py#L267-L282`.
-
-The market candle color classifier is invariant: `open <= close` is GREEN, including a Doji. Only the detector-internal reflected role swaps GREEN/RED. `reaction_engine.py#L91-L93`, `#L560-L577`; both references §3.6.
+mirror_candle maps open/close to exact negatives,high=-original low,low=-original high,swaps internal role tag,preserves index/timestamp/display_time. Candidate top/bottom price-source pairs swap/sign,anchor/boundary negate; mode/gate state persists. Original market Doji remains GREEN.

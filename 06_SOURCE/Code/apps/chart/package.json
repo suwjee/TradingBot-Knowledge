@@ -1,0 +1,21 @@
+{
+  "name": "qg-chart-workstation",
+  "version": "3.4.1",
+  "description": "QG Indicator and local candlestick workstation",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "lightweight-charts": "^5.2.1"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.62.1",
+    "vite": "^8.2.1"
+  }
+}

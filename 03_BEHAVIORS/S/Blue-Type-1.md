@@ -1,17 +1,19 @@
 ---
 id: "behavior.s.blue.type1"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "S Blue Type-1"
-calculated_by: ["algorithm.s.type1"]
-implemented_by: ["source.s_zone_detector"]
-depends_on: ["behavior.s.blue"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1148"]
-related_entities: ["test.behavior_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1148"]
+status: "active"
+authority: "executable"
+title: "S Blue Type-1 Simple"
+version: "current"
+related_entities: ["algorithm.s.type1", "behavior.s.blue"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.s_zone_detector", "source.order_audit_engine", "source.blue_line_detector"]
 ---
 
-# S Blue Type-1
+# S Blue Type-1 Simple
 
-Public formation Type-1 is the simple S Blue route (source formation_type=simple). It uses an ordinary directional candidate associated with the stopped A and opposite Order handoff. Pre-Order and post-Order ownership windows can select distinct candidate geometry. A qualifying strict candidate cross before the Order strict stop decides Blue; the exact geometry and tie behavior are in algorithm.s.type1.
+Native Simple Blue uses immutable first A-owned physical opposite Order. Pre-Order geometry includes A-stop..Order First with only post-stop lower remainder of A-stop main;post-Order uses first later aligned Reaction and complete Order Break..aligned Break,last equality source. Exact candidate cross wins after required aligned Reset Blue/ordinary Reaction qualification;price crossing is strict. Equality to Order First keeps after classification.
+
+Native formation_type=simple. Later shared accepted-Order reconciliation can recolor the subtype without changing frozen source/price;it does not create a new Order route.

@@ -1,19 +1,21 @@
 ---
 id: "behavior.s.red"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "S Red"
-calculated_by: ["algorithm.s"]
-implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
-depends_on: ["behavior.s", "algorithm.order"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L964"]
-related_entities: ["test.behavior_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L964"]
+status: "active"
+authority: "executable"
+title: "S Red physical Order-stop decision"
+version: "current"
+related_entities: ["algorithm.s", "algorithm.stopall.blue_reversal", "core.priority"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.s_zone_detector", "source.order_audit_engine", "source.lifecycle_engine"]
 ---
 
-# S Red
+# S Red physical Order-stop decision
 
-S Red is an S whose decision is owned by a strict stop of a calculation-accepted opposite physical Order. It may result from the original stopped-A Order or from shared accepted-Order stop reconciliation. Its parent is still the stopped A; accepted-live Order use does not transfer the Order's creation cause to that A.
+S Red is native family selected when exact strict opposite Order stop wins before qualified candidate cross. Same lower-position tie yields no native decision. Native Red recomputes complete Order Break..Red decision directional source except accepted authoritative pre-Order geometry.
 
-Red S outranks E Blue and S Blue but not E Red or StopAll. An accepted Red S resolves pending exact-key Blue-repeat evidence. If its native forming Order is Mode B and a same exact Blue group has at least two accepted occurrences, the S is promoted to StopAll Type-3 before ordinary S replacement. A Mode A or absent Order leaves it S Red and still clears that pending evidence.
+Shared accepted-Order stop may recolor any native S subtype while frozen source/price/subtype persist. Its window includes source main-time equality and excludes current decision equality. Physical confirmation must be strictly earlier than stop. Original accepted creation cause remains parent-neutral.
+
+Red outranks Blue S/Blue E through lifecycle gates. Native Mode-B S Red can consume qualified exact accepted Blue repeats to create fresh StopAll1.

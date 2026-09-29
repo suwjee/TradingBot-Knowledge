@@ -1,132 +1,1201 @@
 {
-  "created_utc": "2026-09-25T02:21:32.7688721Z",
-  "mirror_kind": "byte-exact engine source snapshot; semantic validity is per knowledge note",
+  "schema_version": 1,
+  "captured_utc": "2026-09-28T19:12:46.969813+00:00",
+  "vault_root": ".",
+  "source_commit": "822c5ce1c1e7f464d2e08085fd6d991ee1d5d8ed",
+  "scope": "Current audited dirty working-tree bytes; HEAD is provenance metadata only",
+  "engine_path": "D:\\My-Projects\\TradingBot\\engine",
   "files": [
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/__init__.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/__init__.py",
-      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
-      "bytes": 348
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
-      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097",
-      "bytes": 31007
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
-      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448",
-      "bytes": 15802
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/core_utils.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/core_utils.py",
-      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de",
-      "bytes": 885
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
-      "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
-      "bytes": 2282
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
-      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6",
-      "bytes": 103120
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
-      "sha256": "7714025b3f43087b09844df6feeef4eef0ec72eeb841115293df4c126fd202ee",
-      "bytes": 65869
-    },
     {
       "source": "06_SOURCE/Code/engine/__init__.py",
       "mirror": "06_SOURCE/Code/engine/__init__.py",
-      "sha256": "b8cf63f6eb68b0cdb2b05f1173d4e0d03ab01b68c54f7a26b29fb3180377de8c",
-      "bytes": 45
+      "repository_relative_path": "engine/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "line_count": 0,
+      "version": "unversioned package marker",
+      "version_metadata": {},
+      "last_modified": "2026-09-27T23:29:49.464725+03:30"
     },
     {
       "source": "06_SOURCE/Code/engine/bridge/__init__.py",
       "mirror": "06_SOURCE/Code/engine/bridge/__init__.py",
+      "repository_relative_path": "engine/bridge/__init__.py",
       "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
-      "bytes": 64
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
-      "sha256": "6becc792a17e40f572673bf65bc9818c9a957244de811be2823402d41c36e628",
-      "bytes": 139655
-    },
-    {
-      "source": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
-      "mirror": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
-      "sha256": "330e26ffc04c24dea952e9a1e8e39da1a434936d0f80ef2233bd279fc32e8af1",
-      "bytes": 74496
+      "bytes": 64,
+      "line_count": 1,
+      "version": "unversioned package marker",
+      "version_metadata": {},
+      "last_modified": "2026-09-27T23:14:32.201800+03:30"
     },
     {
       "source": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
       "mirror": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
-      "sha256": "a14b00ef08e3e97260b856ffe0dab8044cc70026d272e08e3d4350e9cff249cd",
-      "bytes": 111984
+      "repository_relative_path": "engine/bridge/trading_pipeline.py",
+      "sha256": "ef5109f4ebb95bc0e04b3d964b14da5f764ae4472f3d10a1a9b7192d59fec683",
+      "bytes": 107807,
+      "line_count": 2952,
+      "version": "1.7.0",
+      "version_metadata": {
+        "TRADING_PIPELINE_VERSION": "1.7.0",
+        "TRADING_PIPELINE_IMPLEMENTATION_VERSION": "1.8.0"
+      },
+      "last_modified": "2026-09-27 23:17:17 +03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/__init__.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/__init__.py",
+      "repository_relative_path": "engine/pipeline/__init__.py",
+      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
+      "bytes": 348,
+      "line_count": 19,
+      "version": "unversioned package marker",
+      "version_metadata": {},
+      "last_modified": "2026-09-27T23:14:32.202809+03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
+      "repository_relative_path": "engine/pipeline/a_zone_detector.py",
+      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097",
+      "bytes": 31007,
+      "line_count": 797,
+      "version": "1.6.4",
+      "version_metadata": {
+        "A_ZONE_VERSION": "1.6.4"
+      },
+      "last_modified": "2026-09-21"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
+      "repository_relative_path": "engine/pipeline/blue_line_detector.py",
+      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448",
+      "bytes": 15802,
+      "line_count": 458,
+      "version": "2.3.0",
+      "version_metadata": {
+        "BLUE_LINE_VERSION": "2.3.0"
+      },
+      "last_modified": "2026-09-24T03:20:53+03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/core_utils.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/core_utils.py",
+      "repository_relative_path": "engine/pipeline/core_utils.py",
+      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de",
+      "bytes": 885,
+      "line_count": 29,
+      "version": "1.0.0",
+      "version_metadata": {
+        "CORE_UTILS_VERSION": "1.0.0"
+      },
+      "last_modified": "2026-09-24T03:20:52+03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
+      "repository_relative_path": "engine/pipeline/direction_policy.py",
+      "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
+      "bytes": 2282,
+      "line_count": 70,
+      "version": "1.0.0",
+      "version_metadata": {
+        "DIRECTION_POLICY_VERSION": "1.0.0"
+      },
+      "last_modified": "2026-09-24T03:20:52+03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
+      "repository_relative_path": "engine/pipeline/e_zone_detector.py",
+      "sha256": "38834e96cc58931fe2e12096f4465ecaa046387d30fd40fecbd6891971020988",
+      "bytes": 44859,
+      "line_count": 1033,
+      "version": "6.16.1",
+      "version_metadata": {
+        "E_ZONE_VERSION": "6.16.1",
+        "E_ZONE_IMPLEMENTATION_VERSION": "6.18.1"
+      },
+      "last_modified": "2026-09-28 19:35:32 +03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
+      "repository_relative_path": "engine/pipeline/lifecycle_engine.py",
+      "sha256": "94feb038e1e78b291762cfc03dfc370e48bb94f3e1fe1171b7a5206301e8be13",
+      "bytes": 64325,
+      "line_count": 1555,
+      "version": "1.17.0",
+      "version_metadata": {
+        "STOP_ALL_VERSION": "1.17.0",
+        "STOP_ALL_IMPLEMENTATION_VERSION": "1.18.0"
+      },
+      "last_modified": "2026-09-27 23:17:17 +03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
+      "repository_relative_path": "engine/pipeline/order_audit_engine.py",
+      "sha256": "09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc",
+      "bytes": 75219,
+      "line_count": 1863,
+      "version": "1.5.1",
+      "version_metadata": {
+        "ORDER_AUDIT_ENGINE_VERSION": "1.5.1"
+      },
+      "last_modified": "2026-09-28 19:35:32 +03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
+      "repository_relative_path": "engine/pipeline/reaction_engine.py",
+      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6",
+      "bytes": 103120,
+      "line_count": 2406,
+      "version": "9.8.0",
+      "version_metadata": {
+        "REACTION_ENGINE_VERSION": "9.8.0"
+      },
+      "last_modified": "2026-09-22 00:35:00 +03:30"
+    },
+    {
+      "source": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+      "mirror": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+      "repository_relative_path": "engine/pipeline/s_zone_detector.py",
+      "sha256": "ef71a2e4176caaabc25d1ef0c1f0f24efb54ed3110982cdb7cf52d2449cca2ee",
+      "bytes": 60888,
+      "line_count": 1444,
+      "version": "4.20.0",
+      "version_metadata": {
+        "S_ZONE_VERSION": "4.20.0",
+        "S_ZONE_IMPLEMENTATION_VERSION": "4.21.0"
+      },
+      "last_modified": "2026-09-27 23:17:17 +03:30"
     }
   ],
-  "algorithm_references": [],
-  "vault_root": ".",
+  "algorithm_references": [
+    {
+      "source": "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "mirror": "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "repository_relative_path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "direction": "Bearish",
+      "version": "5.4.19-EX1",
+      "sha256": "109753d7d056b6b9ee173cc7f47472b53a77174d26e89f38b00b81061f310e18",
+      "bytes": 569305,
+      "line_count": 13267
+    },
+    {
+      "source": "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "mirror": "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "repository_relative_path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "direction": "Bullish",
+      "version": "5.4.19-EX1",
+      "sha256": "d3a0b89c59f1304ddefe6f6931cedf7ea2e17a15893c63d652c89489f3e6387f",
+      "bytes": 569275,
+      "line_count": 13267
+    }
+  ],
   "supporting_files": [
     {
+      "path": "06_SOURCE/Code/apps/chart/vite.config.js",
+      "repository_relative_path": "apps/chart/vite.config.js",
+      "sha256": "4e8966a126d3027f8db359e712f2298bbe61a82cdbce61d1c888f10cdf609ddf",
+      "bytes": 36379,
+      "line_count": 692
+    },
+    {
       "path": "06_SOURCE/Code/apps/chart/server/indicator-range-input.js",
+      "repository_relative_path": "apps/chart/server/indicator-range-input.js",
       "sha256": "bf9b2c5eac9457435f9aaed9615ca062dfabcb7541ca70fbf114c9dd2f1a419f",
-      "bytes": 4248
+      "bytes": 4248,
+      "line_count": 115
     },
     {
       "path": "06_SOURCE/Code/apps/chart/server/raw-resource-store.js",
+      "repository_relative_path": "apps/chart/server/raw-resource-store.js",
       "sha256": "4b34716fc1537f6983d9b2d8200561fa65819180f1033d71dad978c8328c3baa",
-      "bytes": 17253
+      "bytes": 17253,
+      "line_count": 304
     },
     {
-      "path": "06_SOURCE/Code/apps/chart/vite.config.js",
-      "sha256": "9baf5c9745a96058e27b485b885dfc5a868e4256016d9ec38e14a442f7a5f58c",
-      "bytes": 36108
-    },
-    {
-      "path": "07_VALIDATION/Fixtures/Sources/TradingBot_Fixtures_Regression_Anchors.md",
-      "sha256": "0f49b80a0caa687b8f5e8fc5cb7d16dc934393528db5e0a7694d6ef744f440e5",
-      "bytes": 11187
-    },
-    {
-      "path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-08 07-23-20 TO 2026-09-12 00-14-55.json.meta.json",
-      "sha256": "b97d11eebb3a77930412d37a13b0484a8ba44b92cd8d229d51a8587099880ede",
-      "bytes": 641
-    },
-    {
-      "path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-11 02-53-30 TO 2026-09-15 11-03-45.json.meta.json",
-      "sha256": "d149cc7e2ab5f8f703fd31613a137d687847c103f518b5a2d98f2531d1756112",
-      "bytes": 641
-    },
-    {
-      "path": "08_DATA/Raw/USOIL/RAW FXCM_USOIL 5S FROM 2026-09-21 22-50-00 TO 2026-09-24 00-26-20.json.meta.json",
-      "sha256": "5bdb78560c6f1d95a4f826228352bf9d2d7d9d7c5a45d197b29b9eb77e1a5f9c",
-      "bytes": 732
-    },
-    {
-      "path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-08-25 03-53-30 TO 2026-09-23 18-01-15.json.meta.json",
-      "sha256": "ebd212a083020e7c7ce794661dc113c3e9589b4214dc52dfc7d3caf735f6378d",
-      "bytes": 351497
-    },
-    {
-      "path": "08_DATA/Raw/XAUUSD/RAW FOREXCOM_XAUUSD 5S FROM 2026-09-22 11-00-00 TO 2026-09-24 00-05-40.json.meta.json",
-      "sha256": "3297ed1e023b38cc9d2045a809a1796887338f5195e71b8cd7b9a19f11c1a949",
-      "bytes": 742
+      "path": "06_SOURCE/Code/apps/chart/package.json",
+      "repository_relative_path": "apps/chart/package.json",
+      "sha256": "f2a6715c2a2dbf9406e38772f510622a9f2db71d103fa9ad6a9f86ed5944991d",
+      "bytes": 506,
+      "line_count": 21
     },
     {
       "path": "06_SOURCE/References/registry.json",
-      "sha256": "87d606760d3f2aebf97554987aa5ad277cbb7c712a53f6b0471f59edc981057d",
-      "bytes": 1603
+      "sha256": "42445065e1432c28446a41f771ebb1ac5ae1b46715695085e56b804b6189b486",
+      "bytes": 2557,
+      "line_count": 55
     }
-  ]
+  ],
+  "raw_count": 0,
+  "fixture_count": 0,
+  "raw_store_status": "EMPTY BY DESIGN",
+  "fixture_store_status": "EMPTY BY DESIGN",
+  "current_contract": {
+    "closed_entity_inventory": true,
+    "empty_entity_types": [
+      "case"
+    ],
+    "entities": {
+      "algorithm.a": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.a_zone_detector",
+          "source.blue_line_detector",
+          "source.reaction_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.blue": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.blue_line_detector",
+          "source.reaction_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.e": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.e_zone_detector",
+          "source.order_audit_engine",
+          "source.lifecycle_engine",
+          "source.reaction_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.internal_reaction": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.reaction_engine",
+          "source.blue_line_detector",
+          "source.lifecycle_engine",
+          "source.trading_pipeline"
+        ]
+      },
+      "algorithm.lifecycle": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.trading_pipeline",
+          "source.e_zone_detector",
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.order": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.order_audit_engine",
+          "source.reaction_engine",
+          "source.e_zone_detector",
+          "source.s_zone_detector",
+          "source.core_utils"
+        ]
+      },
+      "algorithm.order.a": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.order_audit_engine",
+          "source.reaction_engine",
+          "source.s_zone_detector",
+          "source.e_zone_detector",
+          "source.core_utils"
+        ]
+      },
+      "algorithm.order.b": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.order_audit_engine",
+          "source.trading_pipeline",
+          "source.reaction_engine",
+          "source.e_zone_detector",
+          "source.lifecycle_engine"
+        ]
+      },
+      "algorithm.orderaudit": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.order_audit_engine",
+          "source.trading_pipeline",
+          "source.e_zone_detector",
+          "source.s_zone_detector",
+          "source.lifecycle_engine",
+          "source.core_utils"
+        ]
+      },
+      "algorithm.raw": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.trading_pipeline",
+          "source.reaction_engine",
+          "source.core_utils"
+        ]
+      },
+      "algorithm.reaction": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.reaction_engine",
+          "source.direction_policy",
+          "source.core_utils"
+        ]
+      },
+      "algorithm.reconciliation": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.e_zone_detector",
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.lifecycle_engine",
+          "source.trading_pipeline"
+        ]
+      },
+      "algorithm.reset": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.reaction_engine",
+          "source.order_audit_engine",
+          "source.blue_line_detector",
+          "source.s_zone_detector"
+        ]
+      },
+      "algorithm.s": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.lifecycle_engine",
+          "source.trading_pipeline",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.s.type1": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.reaction_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.s.type2": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.reaction_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.s.type3": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.reaction_engine",
+          "source.order_audit_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.s.type4": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.blue_line_detector",
+          "source.reaction_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.serialization": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.trading_pipeline",
+          "source.order_audit_engine",
+          "source.reaction_engine",
+          "source.lifecycle_engine",
+          "source.core_utils"
+        ]
+      },
+      "algorithm.stopall": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.trading_pipeline",
+          "source.order_audit_engine",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.stopall.blue_reversal": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.s_zone_detector",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.stopall.sequence_group": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.stopall.stopall_stop": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.direction_policy"
+        ]
+      },
+      "algorithm.visibility": {
+        "type": "algorithm",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.trading_pipeline",
+          "source.order_audit_engine",
+          "source.blue_line_detector",
+          "source.reaction_engine"
+        ]
+      },
+      "behavior.a": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.a_zone_detector",
+          "source.lifecycle_engine",
+          "source.s_zone_detector"
+        ]
+      },
+      "behavior.e": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.e_zone_detector",
+          "source.lifecycle_engine",
+          "source.order_audit_engine"
+        ]
+      },
+      "behavior.e.blue": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.e_zone_detector",
+          "source.lifecycle_engine",
+          "source.order_audit_engine"
+        ]
+      },
+      "behavior.e.red": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.e_zone_detector",
+          "source.lifecycle_engine",
+          "source.order_audit_engine"
+        ]
+      },
+      "behavior.s": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.order_audit_engine"
+        ]
+      },
+      "behavior.s.blue": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.lifecycle_engine",
+          "source.blue_line_detector"
+        ]
+      },
+      "behavior.s.blue.type1": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.blue_line_detector"
+        ]
+      },
+      "behavior.s.blue.type2": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.reaction_engine"
+        ]
+      },
+      "behavior.s.blue.type3": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.reaction_engine",
+          "source.order_audit_engine"
+        ]
+      },
+      "behavior.s.blue.type4": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.blue_line_detector",
+          "source.reaction_engine"
+        ]
+      },
+      "behavior.s.red": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.s_zone_detector",
+          "source.order_audit_engine",
+          "source.lifecycle_engine"
+        ]
+      },
+      "behavior.stopall": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.s_zone_detector"
+        ]
+      },
+      "behavior.stopall.blue_reversal": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.s_zone_detector"
+        ]
+      },
+      "behavior.stopall.sequence_group": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.s_zone_detector"
+        ]
+      },
+      "behavior.stopall.stopall_stop": {
+        "type": "behavior",
+        "status": "active",
+        "authority": "executable",
+        "version": "current",
+        "implemented_by": [
+          "source.lifecycle_engine",
+          "source.e_zone_detector",
+          "source.s_zone_detector"
+        ]
+      },
+      "core.behavior_model": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.chronology": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.determinism": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.identity": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.invariants": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.lifecycle": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.ownership": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.pipeline": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.precision": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.priority": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "core.project": {
+        "type": "core",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "data.dataset_registry": {
+        "type": "data",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "data.policy": {
+        "type": "data",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "data.raw_model": {
+        "type": "data",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "decision.authority_boundary": {
+        "type": "decision",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "decision.calculation_presentation": {
+        "type": "decision",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "decision.empty_evidence_stores": {
+        "type": "decision",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.candle": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.chronology": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.crossing": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.direction": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.leg": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.model": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.raw": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "market.timeframe": {
+        "type": "market",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.algorithm_matrix": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.behavior": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.contract": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.direction_mapping": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.directional_rules": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.exceptions": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.invariants": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.mixed_rules": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.source_map": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "mirror.validation_rules": {
+        "type": "mirror",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.__init__": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "unversioned package marker"
+      },
+      "source.a_zone_detector": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "1.6.4"
+      },
+      "source.blue_line_detector": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "2.3.0"
+      },
+      "source.bridge.__init__": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "unversioned package marker"
+      },
+      "source.core_utils": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "1.0.0"
+      },
+      "source.dependency_map": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.direction_policy": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "1.0.0"
+      },
+      "source.e_zone_detector": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "6.16.1"
+      },
+      "source.integration_boundary": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.lifecycle_engine": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "1.17.0"
+      },
+      "source.module_map": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.order_audit_engine": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "1.5.1"
+      },
+      "source.ownership_map": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.pipeline.__init__": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "unversioned package marker"
+      },
+      "source.reaction_engine": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "9.8.0"
+      },
+      "source.reference_registry": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.s_zone_detector": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "4.20.0"
+      },
+      "source.source_manifest": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.source_map": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.state_map": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.trading_pipeline": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "1.7.0"
+      },
+      "system.authority": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.editing": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.frontmatter": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.ids": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.knowledge_model": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.manifest": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.readme": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "system.retrieval": {
+        "type": "system",
+        "status": "active",
+        "authority": "normative",
+        "version": "current"
+      },
+      "test.fixture_model": {
+        "type": "test",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "test.mirror_policy": {
+        "type": "test",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "test.output_validation": {
+        "type": "test",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "test.source_validation": {
+        "type": "test",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "test.validation_contract": {
+        "type": "test",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "version.current": {
+        "type": "version",
+        "status": "active",
+        "authority": "executable",
+        "version": "5.4.19-EX1"
+      },
+      "workflow.analyze_raw": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.investigate_behavior": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.modify_algorithm": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.modify_source": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.operating": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.release": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.run_regression": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.update_vault": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "workflow.validate_mirror": {
+        "type": "workflow",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      },
+      "source.reference_consistency": {
+        "type": "source",
+        "status": "active",
+        "authority": "executable",
+        "version": "current"
+      }
+    },
+    "empty_entity_filters": [
+      {
+        "type": "data",
+        "data_kind": "dataset"
+      },
+      {
+        "type": "data",
+        "data_kind": "window"
+      }
+    ],
+    "require_note_identity": true
+  },
+  "phase1_review_utc": "2026-09-29T02:26:11.096937+00:00",
+  "knowledge_version": "2026-09-29-phase1"
 }

@@ -1,22 +1,19 @@
 ---
 id: "behavior.s"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "S"
-calculated_by: ["algorithm.s"]
-implemented_by: ["source.s_zone_detector", "source.lifecycle_engine"]
-depends_on: ["behavior.a", "algorithm.order"]
-parent_of: ["behavior.s.red", "behavior.s.blue"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L26"]
-related_entities: ["test.behavior_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L26"]
+status: "active"
+authority: "executable"
+title: "S accepted behavior taxonomy"
+version: "current"
+related_entities: ["algorithm.s", "behavior.s.blue", "behavior.s.red", "core.behavior_model"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.s_zone_detector", "source.lifecycle_engine", "source.e_zone_detector", "source.order_audit_engine"]
 ---
 
-# S
+# S accepted behavior taxonomy
 
-S is the behavior opened by an eligible A strict stop. It owns an A parent and carries an A-stop event, source/decision event, price, family color, and optional physical Order provenance. A first opposite Order_A after A stop is immutable for the stopped-A route. S may also form through order-free Type-3 or Type-4 Blue routes.
+S opens from accepted A's first strict stop. Native formation_type=simple,advanced,type3,type4. Native Simple/Advanced are physical-Order-backed and Red/Blue;native Type-3/Type-4 are order-free Blue. Exact route selection,later shared accepted-Order recoloring and final ownership are separate.
 
-The S family is Red when an accepted opposite Order strict stop wins; Blue when a qualified directional candidate strict cross wins. A same lower event crossing both candidate and Order stop invalidates the candidate. Later accepted physical Order stops may recolor an open S Red without moving its source or fabricating Order creation provenance. Lifecycle can consume S as non-public evidence for E continuation; stage-invalid A descendants cannot return.
-
-Public Blue formation values Type-1..4 correspond to simple, advanced, type3, type4. Red S has no public numbered formation.
+S retains A source/price/stop,candidate source/price and exact decision. Native optional Order/Reset fields remain null when absent. Shared reconciliation can decide Red using accepted physical identity while preserving original subtype/source and creating cause. Stopped accepted S can open E;explicit invalid S has no accepted parent-stop Order_A rights.

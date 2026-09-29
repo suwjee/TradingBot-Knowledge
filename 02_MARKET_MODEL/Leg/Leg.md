@@ -1,16 +1,16 @@
 ---
 id: "market.leg"
 type: "market"
-status: "pending"
-authority: "non-canonical"
-title: "General Leg model pending"
-related_entities: ["algorithm.reaction", "market.model", "market.leg_recognition", "market.leg_calculation", "test.source_validation"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Current Reaction leg state"
+version: "current"
+related_entities: []
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "mixed: geometry changes, native chronology and identity remain invariant"
 ---
 
-# General Leg model pending
+# Current Reaction leg state
 
-The current Vault has no independently established, reusable rule for recognizing or calculating a general market Leg. This note records that boundary; it does not define a new trading object or calculation.
-
-
-General recognition and calculation remain pending in `Recognition.md` and `Calculation.md`. Those notes name the missing evidence without claiming a rule. No fixture or downstream rule may treat this pending note as a canonical Leg definition.
+A Reaction leg is the detector structural ownership interval. Mode A establishes the first candidate of a leg from context and First color with an outer boundary; strict invalidation releases that candidate before later confirmation when chronology proves it first. Mode B follows an accepted Reaction. A reset leg used for Order_B is a distinct current OrderAudit structure, not a generic conversion of every Reaction Reset into an Order.

@@ -19,6 +19,7 @@ from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
 from time import perf_counter
+from typing import Sequence
 from zoneinfo import ZoneInfo
 
 # This bridge lives in ``engine/bridge`` while the calculation modules live in
@@ -34,12 +35,14 @@ if _pipeline_dir_text not in sys.path:
     sys.path.insert(0, _pipeline_dir_text)
 
 from core_utils import as_decimal, order_identity
+from order_audit_engine import order_b_leg_identity
 
 _DTFMT = "{:04d}-{:02d}-{:02d} {:02d}:{:02d}:{:02d}"
 
 
-TRADING_PIPELINE_VERSION = "1.5.1"
-TRADING_PIPELINE_LAST_MODIFIED = "2026-09-24 03:54:00 +03:30"
+TRADING_PIPELINE_VERSION = "1.7.0"
+TRADING_PIPELINE_IMPLEMENTATION_VERSION = "1.8.0"
+TRADING_PIPELINE_LAST_MODIFIED = "2026-09-27 23:17:17 +03:30"
 
 TEHRAN = ZoneInfo("Asia/Tehran")
 
@@ -412,14 +415,6 @@ def serialize_e_zones(items):
             epoch(item.order_parent_stop_cause_time)
             if item.order_parent_stop_cause_time is not None else None
         ),
-        "orderResetLegResetTime": (
-            epoch(item.order_reset_leg_reset_time)
-            if item.order_reset_leg_reset_time is not None else None
-        ),
-        "orderResetLegBreakTime": (
-            epoch(item.order_reset_leg_break_time)
-            if item.order_reset_leg_break_time is not None else None
-        ),
         "orderFirstIndex": item.order_first_index,
         "orderFirstTime": epoch(item.order_first_time),
         "orderBreakIndex": item.order_break_index,
@@ -467,14 +462,6 @@ def serialize_stopalls(items):
         "orderParentStopCauseTime": (
             epoch(item.order_parent_stop_cause_time)
             if item.order_parent_stop_cause_time is not None else None
-        ),
-        "orderResetLegResetTime": (
-            epoch(item.order_reset_leg_reset_time)
-            if item.order_reset_leg_reset_time is not None else None
-        ),
-        "orderResetLegBreakTime": (
-            epoch(item.order_reset_leg_break_time)
-            if item.order_reset_leg_break_time is not None else None
         ),
         "orderFirstIndex": item.order_first_index,
         "orderFirstTime": (
@@ -735,10 +722,10 @@ class BridgeProjection:
         parent_family: str | None,
         strict_stop_event: datetime | None,
     ) -> dict[str, object] | None:
-        """Resolve a creator Order only from an exact final parent-stop cause.
+        """Resolve a creator Order from an exact final stop-linked cause.
 
         This intentionally declines to infer ownership from a behavior's
-        formation Order, timestamps, row order, Reset-leg provenance, or a
+        formation Order, timestamps, row order, unrelated provenance, or a
         provisional Order.  A conflict or a missing exact cause returns null.
         """
         if strict_stop_event is None:
@@ -749,19 +736,34 @@ class BridgeProjection:
         matching: dict[tuple[int, int], object] = {}
         for identity, prepared in self.audit_by_identity.items():
             for cause in prepared["causes"]:
-                if cause.get("kind") != "parent-stop":
-                    continue
-                if (
-                    cause.get("parentType") != parent_type
-                    or cause.get("parentSourceTime") != source_time
-                    or cause.get("eventTime") != strict_stop_event
-                ):
-                    continue
-                recorded_family = cause.get("parentFamily")
-                if parent_family is None:
-                    if recorded_family not in (None, ""):
+                kind = cause.get("kind")
+                if kind == "parent-stop":
+                    if (
+                        cause.get("parentType") != parent_type
+                        or cause.get("parentSourceTime") != source_time
+                        or cause.get("eventTime") != strict_stop_event
+                    ):
                         continue
-                elif recorded_family != parent_family:
+                    recorded_family = cause.get("parentFamily")
+                    if parent_family is None:
+                        if recorded_family not in (None, ""):
+                            continue
+                    elif recorded_family != parent_family:
+                        continue
+                elif kind == "reset-leg":
+                    post_type = cause.get("postBehaviorType")
+                    matches_type = (
+                        post_type == parent_type
+                        or post_type == "E" and parent_type.startswith("E")
+                        or post_type == "StopAll" and parent_type.startswith("StopAll")
+                    )
+                    if (
+                        not matches_type
+                        or cause.get("postBehaviorSourceTime") != source_time
+                        or cause.get("postBehaviorStopTime") != strict_stop_event
+                    ):
+                        continue
+                else:
                     continue
                 matching[identity] = prepared
         if len(matching) != 1:
@@ -785,25 +787,10 @@ class BridgeProjection:
                     "eventTime": bridge_datetime(cause["eventTime"]),
                     "parentSourceTime": bridge_datetime(cause["parentSourceTime"]),
                 })
-            elif cause["kind"] == "blue-leg":
+            elif cause["kind"] == "reset-leg":
                 causes.append({
-                    "kind": "blue-leg",
-                    "resetTime": bridge_datetime(cause["resetTime"]),
-                    "nextBreakoutTime": bridge_datetime(cause["nextBreakoutTime"]),
-                    "legLevel": cause["legLevel"],
-                    "levelSourceIndex": cause["levelSourceIndex"],
-                    "levelSourceTime": bridge_datetime(cause["levelSourceTime"]),
-                    "blueSourceTime": bridge_datetime(cause["blueSourceTime"]),
-                    "strictBreakTime": bridge_datetime(cause["strictBreakTime"]),
-                    "blueFormationEventTime": bridge_datetime(cause["blueFormationEventTime"]),
-                    "legStartBreakoutTime": bridge_datetime(cause["legStartBreakoutTime"]),
-                    "previousBreakoutTime": bridge_datetime(cause["previousBreakoutTime"]),
-                })
-            else:
-                causes.append({
-                    "kind": "reset-leg",
-                    "resetTime": bridge_datetime(cause["resetTime"]),
-                    "boundaryBreakTime": bridge_datetime(cause["boundaryBreakTime"]),
+                    key: bridge_datetime(value) if isinstance(value, datetime) else value
+                    for key, value in cause.items()
                 })
         return {
             "type": "Order Audit",
@@ -1546,32 +1533,16 @@ def serialize_order_audit(prepared_items, detector):
         for cause in prepared["causes"]:
             if cause["kind"] == "parent-stop":
                 causes.append({
-                    "kind": cause["kind"],
+                    "kind": "parent-stop",
                     "parentType": cause["parentType"],
                     "parentFamily": cause["parentFamily"],
                     "eventTime": epoch(cause["eventTime"]),
                     "parentSourceTime": epoch(cause["parentSourceTime"]),
                 })
-            elif cause["kind"] == "blue-leg":
+            elif cause["kind"] == "reset-leg":
                 causes.append({
-                    "kind": "blue-leg",
-                    "resetTime": epoch(cause["resetTime"]),
-                    "nextBreakoutTime": (epoch(cause["nextBreakoutTime"])
-                                         if cause["nextBreakoutTime"] is not None else None),
-                    "legLevel": cause["legLevel"],
-                    "levelSourceIndex": cause["levelSourceIndex"],
-                    "levelSourceTime": epoch(cause["levelSourceTime"]),
-                    "blueSourceTime": epoch(cause["blueSourceTime"]),
-                    "strictBreakTime": epoch(cause["strictBreakTime"]),
-                    "blueFormationEventTime": epoch(cause["blueFormationEventTime"]),
-                    "legStartBreakoutTime": epoch(cause["legStartBreakoutTime"]),
-                    "previousBreakoutTime": epoch(cause["previousBreakoutTime"]),
-                })
-            else:
-                causes.append({
-                    "kind": cause["kind"],
-                    "resetTime": epoch(cause["resetTime"]),
-                    "boundaryBreakTime": epoch(cause["boundaryBreakTime"]),
+                    key: epoch(value) if isinstance(value, datetime) else value
+                    for key, value in cause.items()
                 })
         output.append({
             "direction": detector.order_direction,
@@ -1842,6 +1813,7 @@ class FullDirectionState:
     invalid_s_identities: set[tuple[datetime, int]]
     s_zones: list[object]
     s_candidates: list[object]
+    initial_s_zones: list[object]
 
 
 def create_e_detector(
@@ -1856,19 +1828,11 @@ def create_e_detector(
     *,
     blocked_order_first_times: set[datetime] | None = None,
     invalid_s_root_identities: set[tuple[datetime, int]] | None = None,
-    trend_blue_lines: Sequence[object] = (),
+    order_b_legs: Sequence[object] = (),
 ):
-    """Construct one E detector from the shared geometry/lifecycle contract."""
+    """Construct one E detector from shared geometry and physical Orders."""
     opposite = chronology.opposite_direction(direction)
     end_index = len(chronology.candles) - 1
-
-    def bounded_geometry(geometry_direction, geometry_start, geometry_end):
-        """Return raw Reaction geometry inside a closed main-candle range."""
-        return geometry_detectors[geometry_direction].first_geometry_after_reset(
-            geometry_direction,
-            max(0, geometry_start - 1),
-            geometry_end,
-        )
 
     def direct_geometry(
         geometry_direction, geometry_start, geometry_end, gate_event
@@ -1885,18 +1849,16 @@ def create_e_detector(
         full_results[direction].reactions,
         full_results[opposite].reactions,
         s_zones,
-        full_results[direction].resets,
         full_results[opposite].resets,
         chronology,
         0,
         end_index,
-        bounded_geometry,
         direct_geometry,
         blocked_order_first_times=blocked_order_first_times,
         initial_order_audit=initial_order_audit,
         sequence_priority=lifecycle_engine.sequence_priority,
         invalid_s_root_identities=invalid_s_root_identities,
-        trend_blue_lines=trend_blue_lines,
+        order_b_legs=order_b_legs,
     )
 
 
@@ -1908,6 +1870,8 @@ def calculate_full_direction_state(
     geometry_detectors: dict[str, object],
     initial_order_geometry: dict[str, object],
     timings: dict[str, float],
+    order_b_legs: Sequence[object] = (),
+    shared_stages: FullDirectionState | None = None,
 ) -> FullDirectionState:
     """Run Blue→A→S→E calculation and lifecycle reconciliation for one direction."""
     blue_engine = engines.blue_line
@@ -1920,82 +1884,51 @@ def calculate_full_direction_state(
     chronology = market.chronology
     opposite = engines.reaction.opposite_direction(direction)
 
-    blue_lines = timed(
-        timings,
-        f"Blue Line • {direction.title()}",
-        lambda: blue_engine.detect_blue_lines(
+    if shared_stages is None:
+        blue_lines = timed(
+            timings,
+            f"Blue Line • {direction.title()}",
+            lambda: blue_engine.detect_blue_lines(
+                direction,
+                full_results[direction].reactions,
+                chronology,
+                full_results[direction].resets,
+            ),
+        )
+        a_zones = timed(
+            timings,
+            f"A • {direction.title()}",
+            lambda: a_engine.detect_a_zones(
+                direction,
+                full_results[direction].reactions,
+                blue_lines,
+                chronology,
+            ),
+        )
+        s_detector = s_engine.SZoneDetector(
             direction,
             full_results[direction].reactions,
-            chronology,
-            full_results[direction].resets,
-        ),
-    )
-    a_zones = timed(
-        timings,
-        f"A • {direction.title()}",
-        lambda: a_engine.detect_a_zones(
-            direction,
-            full_results[direction].reactions,
+            full_results[opposite].reactions,
             blue_lines,
+            a_zones,
             chronology,
-        ),
-    )
-    s_detector = s_engine.SZoneDetector(
-        direction,
-        full_results[direction].reactions,
-        full_results[opposite].reactions,
-        blue_lines,
-        a_zones,
-        chronology,
-        0,
-        len(candles) - 1,
-        full_results[opposite].resets,
-        initial_order_geometry=initial_order_geometry[direction],
-    )
-    s_zones = timed(timings, f"S • {direction.title()}", s_detector.detect)
+            0,
+            len(candles) - 1,
+            full_results[opposite].resets,
+            initial_order_geometry=initial_order_geometry[direction],
+        )
+        s_zones = timed(timings, f"S • {direction.title()}", s_detector.detect)
+        initial_s_zones = list(s_zones)
+    else:
+        # Reaction, Blue, A and the initial S pass do not depend on Order_B.
+        blue_lines = shared_stages.blue_lines
+        a_zones = shared_stages.a_zones
+        s_detector = shared_stages.s_detector
+        s_zones = list(shared_stages.initial_s_zones)
+        initial_s_zones = shared_stages.initial_s_zones
     s_candidates = list(s_zones)
 
-    historical_e_rescues: list[object] = []
-    accepted_e_history: list[object] = []
 
-    def collect_accepted_e_history(zones) -> None:
-        existing = {
-            (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            for item in accepted_e_history
-        }
-        for item in zones:
-            # Keep this safeguard intentionally narrow: only E-parented Blue
-            # Orders carrying the independent Order_B/reset-leg cause are
-            # eligible for later-pass historical preservation.
-            if str(getattr(item, "parent_type", "")).upper() != "E":
-                continue
-            if str(getattr(item, "family", "")).lower() != "blue":
-                continue
-            if "reset-leg" not in {
-                str(value) for value in getattr(item, "order_causes", ())
-            }:
-                continue
-            identity = (
-                int(getattr(item, "source_index")),
-                getattr(item, "source_time"),
-            )
-            if identity not in existing:
-                accepted_e_history.append(item)
-                existing.add(identity)
-
-    def collect_historical_e_rescues(detector) -> None:
-        existing = {
-            (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            for item in historical_e_rescues
-        }
-        for item in getattr(detector, "historical_rescued_zones", []):
-            identity = (
-                int(getattr(item, "source_index")),
-                getattr(item, "source_time"),
-            )
-            if identity not in existing:
-                historical_e_rescues.append(item)
-                existing.add(identity)
 
     e_detector = create_e_detector(
         direction,
@@ -2006,13 +1939,11 @@ def calculate_full_direction_state(
         geometry_detectors,
         s_detector.order_audit,
         lifecycle_engine,
-        trend_blue_lines=blue_lines,
+        order_b_legs=order_b_legs,
     )
     e_zones = timed(
         timings, f"E • {direction.title()} • initial", e_detector.detect
     )
-    collect_historical_e_rescues(e_detector)
-    collect_accepted_e_history(e_zones)
     valid_s_zones = lifecycle_engine.s_zones_for_module_engines(
         s_zones, e_zones, direction
     )
@@ -2031,15 +1962,13 @@ def calculate_full_direction_state(
                 for item in s_zones
                 if item not in valid_s_zones
             },
-            trend_blue_lines=blue_lines,
+            order_b_legs=order_b_legs,
         )
         e_zones = timed(
             timings,
             f"E • {direction.title()} • S reconciliation",
             e_detector.detect,
         )
-        collect_historical_e_rescues(e_detector)
-        collect_accepted_e_history(e_zones)
         s_zones = valid_s_zones
 
     candidate_a = lifecycle_engine.visible_a_zones(
@@ -2137,13 +2066,11 @@ def calculate_full_direction_state(
         lifecycle_engine,
         blocked_order_first_times=blocked_order_first_times,
         invalid_s_root_identities=invalid_s_identities,
-        trend_blue_lines=blue_lines,
+        order_b_legs=order_b_legs,
     )
     e_zones = timed(
         timings, f"E • {direction.title()} • final audit", e_detector.detect
     )
-    collect_historical_e_rescues(e_detector)
-    collect_accepted_e_history(e_zones)
 
     # A still-open S candidate may be decided by the strict stop of a later
     # calculation-accepted physical Order in the same chronology.  Reconcile
@@ -2181,16 +2108,14 @@ def calculate_full_direction_state(
             lifecycle_engine,
             blocked_order_first_times=blocked_order_first_times,
             invalid_s_root_identities=invalid_s_identities,
-            trend_blue_lines=blue_lines,
+            order_b_legs=order_b_legs,
         )
         e_zones = timed(
             timings,
             f"E • {direction.title()} • shared Order-stop reconciliation",
             e_detector.detect,
         )
-        collect_historical_e_rescues(e_detector)
-        collect_accepted_e_history(e_zones)
-
+        
     calculation_s_candidates = [
         item for item in s_candidates
         if (getattr(item, "source_time"), int(getattr(item, "source_index")))
@@ -2233,57 +2158,6 @@ def calculate_full_direction_state(
         not in invalid_s_identities
     ]
 
-    # Preserve presentation-only historical E acceptance without changing
-    # calculation ownership. An earlier accepted E that disappears during a
-    # later detector rebuild is recoverable only when it is not merely a
-    # hidden intermediate parent of a surviving final E. Hidden intermediate
-    # parents remain intentionally non-public; independent accepted history is
-    # retained for reporting.
-    if accepted_e_history:
-        historical_e_rescues.extend(accepted_e_history)
-    if historical_e_rescues:
-        historical_e_rescues = e_detector.resolve_same_source_conflicts(
-            historical_e_rescues
-        )
-        final_e_ids = {
-            (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            for item in e_zones
-        }
-        referenced_e_parent_ids = {
-            (
-                int(getattr(item, "parent_source_index")),
-                getattr(item, "parent_source_time"),
-            )
-            for item in e_zones
-            if str(getattr(item, "parent_type", "")).upper() == "E"
-        }
-        def blocked_by_dominant_final_e(item) -> bool:
-            candidate_priority = lifecycle_engine.sequence_priority(
-                "e", str(getattr(item, "family"))
-            )
-            candidate_decision = getattr(item, "decision_event_time")
-            for owner in e_zones:
-                if getattr(owner, "source_time") >= getattr(item, "source_time"):
-                    continue
-                owner_priority = lifecycle_engine.sequence_priority(
-                    "e", str(getattr(owner, "family"))
-                )
-                if owner_priority <= candidate_priority:
-                    continue
-                stop = e_detector.parent_stop("E", owner)
-                if stop is None or stop[1] >= candidate_decision:
-                    return True
-            return False
-
-        e_detector.historical_rescued_zones = [
-            item for item in historical_e_rescues
-            if (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            not in final_e_ids
-            and (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            not in referenced_e_parent_ids
-            and not blocked_by_dominant_final_e(item)
-        ]
-
     return FullDirectionState(
         e_zones=e_zones,
         e_detector=e_detector,
@@ -2294,7 +2168,63 @@ def calculate_full_direction_state(
         invalid_s_identities=invalid_s_identities,
         s_zones=s_zones,
         s_candidates=s_candidates,
+        initial_s_zones=initial_s_zones,
     )
+
+
+def calculate_direction_with_order_b_feedback(
+    direction: str,
+    engines: EngineBundle,
+    market: MarketContext,
+    full_results: dict[str, object],
+    geometry_detectors: dict[str, object],
+    initial_order_geometry: dict[str, object],
+    timings: dict[str, float],
+) -> FullDirectionState:
+    """Recalculate only while proven Order_B causes change accepted state."""
+    opposite = engines.reaction.opposite_direction(direction)
+    order_b_legs: list[object] = []
+    seen: set[tuple[object, ...]] = set()
+    shared_stages: FullDirectionState | None = None
+    for _pass in range(8):
+        state = calculate_full_direction_state(
+            direction, engines, market, full_results, geometry_detectors,
+            initial_order_geometry, timings, order_b_legs=order_b_legs,
+            shared_stages=shared_stages,
+        )
+        if shared_stages is None:
+            shared_stages = state
+        e_zones, stopalls = engines.lifecycle.reconcile_stopall_lifecycle(
+            state.e_detector, state.s_zones, state.e_zones,
+            market.chronology, direction,
+        )
+        e_zones = state.e_detector.restore_independent_s_roots(e_zones)
+        e_zones = state.e_detector.ensure_accepted_order_audit(e_zones)
+        discovered = engines.e_zone.discover_accepted_order_b_reset_legs(
+            direction,
+            market.chronology,
+            full_results[direction].reactions,
+            full_results[direction].resets,
+            full_results[opposite].reactions,
+            state.s_detector.eligible_a_zones,
+            state.invalid_a_identities,
+            state.s_zones,
+            e_zones,
+            stopalls,
+            state.s_detector,
+            state.e_detector,
+            engines.lifecycle.module_priority,
+        )
+
+        old_identity = order_b_leg_identity(order_b_legs)
+        new_identity = order_b_leg_identity(discovered)
+        if new_identity == old_identity:
+            return state
+        if new_identity in seen:
+            raise RuntimeError("Order_B lifecycle feedback did not converge.")
+        seen.add(new_identity)
+        order_b_legs = discovered
+    raise RuntimeError("Order_B lifecycle feedback exceeded eight passes.")
 
 
 def prepare_pipeline_state(
@@ -2357,7 +2287,7 @@ def prepare_pipeline_state(
             lambda: engine.build_behavior_reaction_views(results, chronology),
         )
         for direction in directions:
-            state = calculate_full_direction_state(
+            state = calculate_direction_with_order_b_feedback(
                 direction,
                 engines,
                 market,
@@ -2601,6 +2531,31 @@ def finalize_direction_visibility(
         visibility_stop = lambda item: detector.parent_stop(
             "S" if hasattr(item, "a_source_time") else "E", item
         )
+
+        reset_legs = timed(
+            timings,
+            f"Order_B reset legs - {direction.title()}",
+            lambda: engines.e_zone.discover_accepted_order_b_reset_legs(
+                direction,
+                market.chronology,
+                state.results[direction].reactions,
+                state.results[direction].resets,
+                state.results[opposite].reactions,
+                direction_state.a_zones,
+                direction_state.invalid_a_identities,
+                direction_state.accepted_s_zones,
+                e_zones,
+                stopalls,
+                state.full_s_detectors[direction],
+                detector,
+                lifecycle_engine.module_priority,
+            ),
+        )
+        if order_b_leg_identity(reset_legs) != order_b_leg_identity(detector.order_b_legs):
+            raise RuntimeError(
+                "Final Order_B lifecycle causes differ from converged E feedback."
+            )
+        detector.register_order_b_reset_legs(reset_legs)
     else:
         visibility_stop = lambda item: state.full_s_detectors[direction].first_a_stop(
             Decimal(str(item.price)), item.decision_event_time
@@ -2698,42 +2653,6 @@ def finalize_direction_visibility(
             all_behavior_reactions,
         )
     )
-
-    # Historical rescue is presentation-only.  It runs after all lifecycle,
-    # StopAll, visibility, and OrderAudit ownership calculations so restoring a
-    # fully formed historical E can never rewrite an already-correct behavior,
-    # number, parent, StopAll sequence, or physical Order provenance.
-    if direction in state.full_e_detectors:
-        detector = state.full_e_detectors[direction]
-        occupied_e_sources = {
-            (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            for item in e_zones
-        }
-        occupied_stopall_sources = {
-            (int(getattr(item, "source_index")), getattr(item, "source_time"))
-            for item in stopalls
-        }
-        rescued_e_zones = [
-            item
-            for item in getattr(detector, "historical_rescued_zones", [])
-            if start_index <= int(getattr(item, "source_index")) <= end_index
-            and (int(getattr(item, "source_index")), getattr(item, "source_time"))
-                not in occupied_e_sources
-            and (int(getattr(item, "source_index")), getattr(item, "source_time"))
-                not in occupied_stopall_sources
-            and not lifecycle_engine.forbidden_internal_order_b(
-                item, state.internal_reaction_identities.get(opposite, set())
-            )
-        ]
-        if rescued_e_zones:
-            e_zones = sorted(
-                [*e_zones, *rescued_e_zones],
-                key=lambda item: (
-                    getattr(item, "source_time"),
-                    int(getattr(item, "source_index")),
-                    getattr(item, "decision_event_time"),
-                ),
-            )
 
     required_order_identities = {
         order_identity(int(first_index), int(break_index))

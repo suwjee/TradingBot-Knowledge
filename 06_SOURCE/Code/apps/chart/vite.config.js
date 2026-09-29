@@ -26,8 +26,11 @@ const aEnginePath = path.join(pipelineRoot, 'a_zone_detector.py');
 const sEnginePath = path.join(pipelineRoot, 's_zone_detector.py');
 const eEnginePath = path.join(pipelineRoot, 'e_zone_detector.py');
 const stopAllEnginePath = path.join(pipelineRoot, 'lifecycle_engine.py');
+const orderEnginePath = path.join(pipelineRoot, 'order_audit_engine.py');
+const directionPolicyPath = path.join(pipelineRoot, 'direction_policy.py');
+const coreUtilsPath = path.join(pipelineRoot, 'core_utils.py');
 const indicatorRangeInputPath = path.join(chartRoot, 'server', 'indicator-range-input.js');
-const calculationSources = [bridgePath, enginePath, blueEnginePath, aEnginePath, sEnginePath, eEnginePath, stopAllEnginePath, indicatorRangeInputPath];
+const calculationSources = [bridgePath, enginePath, blueEnginePath, aEnginePath, sEnginePath, eEnginePath, stopAllEnginePath, orderEnginePath, directionPolicyPath, coreUtilsPath, indicatorRangeInputPath];
 const pythonCommand = process.env.TRADINGBOT_PYTHON || 'python';
 // VMware shared folders reject native watches, while polling can monopolize
 // Vite's event loop. The launcher therefore serves without filesystem watches;

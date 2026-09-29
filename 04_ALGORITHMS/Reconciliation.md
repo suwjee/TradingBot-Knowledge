@@ -1,33 +1,72 @@
 ---
 id: "algorithm.reconciliation"
 type: "algorithm"
-status: "pending"
-authority: "non-canonical"
-title: "E and lifecycle reconciliation"
-affected_by_known_invalid_order_route: true
-implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.trading_pipeline"]
-produces: ["behavior.e", "behavior.e.red", "behavior.e.blue", "core.e_numbering"]
-depends_on: ["algorithm.e", "algorithm.lifecycle"]
-source_refs: []
-related_entities: ["test.source_validation", "test.lifecycle_invariants"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Accepted E, S and physical Order reconciliation"
+version: "current"
+related_entities: ["algorithm.e", "algorithm.orderaudit", "algorithm.s", "algorithm.stopall"]
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2119", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2189", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2510", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1019", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1041", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L964", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-invariant or explicitly mixed"
+implemented_by: ["source.e_zone_detector", "source.s_zone_detector", "source.order_audit_engine", "source.lifecycle_engine", "source.trading_pipeline"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"]
+mirror_links: ["mirror.contract"]
+name: "Reconciliation"
+aliases: ["Accepted-state reconciliation"]
 ---
 
-# E and lifecycle reconciliation
+# Accepted E, S and physical Order reconciliation
 
-## Calculation logic
+## Bullish
 
-Discovery creates provisional Red/Blue E chains; accepted ownership is resolved chronologically with active parent state. At one physical source, rank candidates by (-behaviorPriority,decisionEventTime,parentStopEventTime), so family priority precedes chronology. An active accepted parent determines inherited family; otherwise candidate family applies. Partition active E owners strictly stopped by winner. Red parent or stopped Red owner yields Red with max stopped Red number +1, else Blue parent or stopped Blue yields Blue with max stopped Blue number +1, otherwise candidate family number 1.
+#### 8.4 Recursive family/number lifecycle
 
-An S can reopen after a prior E only when rebuilt after that E or a still-unconsumed Red S legitimately outranks Blue E; it cannot steal active Red E. Suppress a direct S candidate that would replace an active owner when that owner already has an E child at/no earlier than the candidate decision under the source rule. One sourceIndex/sourceTime accepts one E: Red > Blue; within family higher number > lower; exact tie keeps first accepted provenance. Final order is (sourceTime,sourceIndex,decisionEventTime).
+Every fully formed accepted S starts a provisional E1 chain in S color. Recursive children are built after the preceding E's strict stop. Reconciliation is chronological: a stopped E leaves the active set but remains historical output. Family follows the accepted stopped parent. Red family outranks Blue at a shared physical source; within equal behavioral priority exact decision chronology is the tie-breaker. When stopped members of the same accepted family exist, the next number is `max(stopped family number)+1`; otherwise the family starts at 1. An active Red E cannot be superseded by S; a Red S may supersede a Blue E under the source lifecycle rules, while Blue S cannot steal an active E continuation.
 
-After dominant reconciliation, restore eligible independent accepted-S E1 roots without rewriting StopAll history. A provisional invalid-S E1 chain is blocked only when its invalid S shares exact source with an accepted E-parent continuation of a different family. Historical rescues are presentation-only.
+#### 8.5 Consumed S evidence and independent roots
 
-## Contract interface
+A suppressed/non-public S can remain calculation evidence for continuation of a stopped larger E when lifecycle ownership proves it belongs to that continuation. Its first E inherits the stopped larger E's reconciled family and next number, then recursive children are rebuilt natively. Separately, each accepted stopped S may retain an independent direct E1 root. A same-source accepted E owns that physical source and prevents a provisional S at that source from manufacturing a competing later root. Explicitly invalid S evidence cannot create cross-family competing root provenance when native E continuation already owns the source.
 
-- **Purpose:** Resolve provisional E/S/Order conflicts into accepted ownership.
-- **Inputs:** Candidate families, parent states, source identity and decision/stop times.
-- **Calculation logic:** The source-grounded rule and its exact ordering are stated above.
-- **Output:** Accepted families, numbers, causes and lineage for final lifecycle.
-- **Source ownership:** source.e_zone_detector, source.lifecycle_engine, source.trading_pipeline.
-- **Validation relationship:** test.lifecycle_invariants; test.source_validation checks the line anchors and owner.
+#### 8.6 Same-source reconciliation and OrderAudit rebuild
+
+At one physical E source, Red E outranks Blue E; within the same family higher number wins; exact remaining ties preserve the earlier accepted object. After reconciliation, the canonical Order ledger is rebuilt from the accepted E state. Valid parent-stop Order_A identities are retained even if later visibility changes their consuming owner. External restoration/continuation replacement must resynchronize OrderAudit before serialization.
+
+#### 12.5 Hard StopAll boundary
+
+StopAll is a hard historical boundary. Once decided from already-reconciled chronology, future state cannot retroactively remove or move that prefix boundary. Creation resets active sequence keys/counts, dominant owners and pending Blue-repeat evidence. Historical StopAll objects remain output; only current-cycle ownership resets. E receives the accepted StopAll source map through an atomic sequence-reset publication: the sorted boundary index is refreshed and candidate/carried context caches are invalidated once, while immutable physical crossing/stop caches and historical accepted causes remain retained. For downstream audit semantics, but StopAll reconciliation does not rebuild past E from future reset state.
+
+## Bearish
+
+#### 8.4 Recursive family/number lifecycle
+
+Every fully formed accepted S starts a provisional E1 chain in S color. Recursive children are built after the preceding E's strict stop. Reconciliation is chronological: a stopped E leaves the active set but remains historical output. Family follows the accepted stopped parent. Red family outranks Blue at a shared physical source; within equal behavioral priority exact decision chronology is the tie-breaker. When stopped members of the same accepted family exist, the next number is `max(stopped family number)+1`; otherwise the family starts at 1. An active Red E cannot be superseded by S; a Red S may supersede a Blue E under the source lifecycle rules, while Blue S cannot steal an active E continuation.
+
+#### 8.5 Consumed S evidence and independent roots
+
+A suppressed/non-public S can remain calculation evidence for continuation of a stopped larger E when lifecycle ownership proves it belongs to that continuation. Its first E inherits the stopped larger E's reconciled family and next number, then recursive children are rebuilt natively. Separately, each accepted stopped S may retain an independent direct E1 root. A same-source accepted E owns that physical source and prevents a provisional S at that source from manufacturing a competing later root. Explicitly invalid S evidence cannot create cross-family competing root provenance when native E continuation already owns the source.
+
+#### 8.6 Same-source reconciliation and OrderAudit rebuild
+
+At one physical E source, Red E outranks Blue E; within the same family higher number wins; exact remaining ties preserve the earlier accepted object. After reconciliation, the canonical Order ledger is rebuilt from the accepted E state. Valid parent-stop Order_A identities are retained even if later visibility changes their consuming owner. External restoration/continuation replacement must resynchronize OrderAudit before serialization.
+
+#### 12.5 Hard StopAll boundary
+
+StopAll is a hard historical boundary. Once decided from already-reconciled chronology, future state cannot retroactively remove or move that prefix boundary. Creation resets active sequence keys/counts, dominant owners and pending Blue-repeat evidence. Historical StopAll objects remain output; only current-cycle ownership resets. E receives the accepted StopAll source map through an atomic sequence-reset publication: the sorted boundary index is refreshed and candidate/carried context caches are invalidated once, while immutable physical crossing/stop caches and historical accepted causes remain retained. For downstream audit semantics, but StopAll reconciliation does not rebuild past E from future reset state.
+
+## Source-level contract
+
+Bridge calculates initial S/E,filters S eligibility,resolves A-cycle invalidity/accepted Order context,then final E. Changed earlier shared Order-stop S decision rebuilds E. Consumed S continuation replaces only later descendants; accepted ledger rebuild follows.
+
+Same-source E chooses Red,then greater same-family number,then earlier accepted object/provenance. Stopped E leaves active but remains history. Independent accepted-S E1 restoration occurs after hard StopAll with audit synchronization retaining canonical history Orders. Same-source E prevents competing provisional S root.
+
+Order_B feedback compares the complete exact reset-leg identity after each dependent calculation pass, with at most eight passes. Every feedback pass invokes a fresh StopAll reconciliation over that pass's accepted S/E state for accepted reset-leg discovery; final visibility invokes reconciliation again after convergence. Each **reconciliation call** makes one source-order StopAll pass and publishes its sequence-reset map without rebuilding that call's E prefix from future reset state. Reaction, Blue, A and initial S remain shared across feedback passes. Repeated changed cause identity, exhaustion of eight passes or a final cause identity differing from the converged detector identity raises an error.
+
+
+## Consumed S Close gates and selected owner
+
+Consumed-S continuation is evaluated separately from public S visibility. A candidate already accepted under `(a_source_time, source_time)` is excluded. Its owning E must have formed strictly before the candidate's parent A source, must have strictly stopped before that A source, and must have higher lifecycle priority than the S. The price gate compares the S source main-candle **Close** with the owning E stop main-candle **Close**, not the S extreme or E behavior price: Bullish requires `sourceClose < stopClose`; Bearish requires `sourceClose > stopClose`; equality does not qualify.
+
+The latest accepted E source strictly before A source marks current lineage. That E can qualify directly. An older E can qualify only when `(priority, number)` is strictly larger than the latest source's rank, its exact stop is strictly later than the latest source's decision, and, when the latest source also qualifies, its stop main index is no earlier. Among the remaining owners, choose greatest `(stopMainIndex, priority, number, sourceTime, sourceIndex)`. For each owner retain the earliest suppressed S by `(sourceTime, sourceIndex)`.
+
+The bridge excludes S descendants rejected specifically by S-stage A ownership before this continuation selection. It resolves the chosen owner against current E physical source identity, obtains the native continuation chain, replaces only descendants later than that earlier chain, then rebuilds the accepted OrderAudit ledger from the actual final E list and supplemental consumed S evidence. Public-label suppression and explicit calculation invalidity therefore remain different states.

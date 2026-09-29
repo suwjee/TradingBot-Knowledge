@@ -3,49 +3,58 @@ id: "source.a_zone_detector"
 type: "source"
 status: "active"
 authority: "executable"
-title: "a zone detector"
+title: "A formation, paired Blue provenance and inherited stops"
+version: "1.6.4"
+related_entities: ["source.source_manifest"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py"]
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 source_path: "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
 mirror: "06_SOURCE/Code/engine/pipeline/a_zone_detector.py"
 sha256: "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097"
-implements: ["algorithm.a"]
-affects: ["behavior.a"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L1"]
-related_entities: ["test.source_validation"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L1"]
 ---
 
-# a zone detector
-## Identity and snapshot
-Production: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py
-Mirror: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py
-SHA-256: d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097
-Declared versions: [('A_ZONE_VERSION', '1.6.4')]
+# a_zone_detector.py
 
-## Responsibility
-Owns ordinary adjacent-Blue and special double-stop A formation, inherited stop, exact trigger/source and pair cycle.
+A formation, paired Blue provenance and inherited stops.
 
-## Classes and owned concepts
-BlueState (L25), AZone (L38), AZoneDetector (L67)
+Current working-tree bytes are executable evidence; Source identity alone is not independent market correctness. The supported bridge dynamically loads owners; the legacy ordinary package wrapper is unsupported.
 
-## Important symbols
-- AZoneDetector._build_blue_states: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L219
-- AZoneDetector._pair_trigger: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L311
-- AZoneDetector._inherited_stop: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L494
-- AZoneDetector._detect_ordinary_a: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L568
-- AZoneDetector._double_stop_a_candidates: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L248
-- AZoneDetector.detect: 06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L753
+| Property | Current value |
+|---|---|
+| Source | 06_SOURCE/Code/engine/pipeline/a_zone_detector.py |
+| SHA-256 | d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097 |
+| Bytes | 31007 |
+| Lines | 797 |
+| Declared version | 1.6.4 |
 
-## Inputs and outputs
-Reaction, Blue and chronology -> AZone candidates with Blue ordinals, trigger event, source, price.
+## Current symbols
 
-## State, direction, chronology, and invariants
-BlueState pairs and cycle consumption are local. Open Scale Blue cannot borrow hypothetical inherited stop. Source ends at exact validating confirmation; Bearish/Bullish inherited windows mirror price, not time.
+Every lexical class/function is listed, including nested definitions inside control blocks. Qualified name plus source line identifies repeated property accessors.
 
-## Upstream dependencies and downstream consumers
-Upstream: reaction_engine; blue_line_detector; core_utils; direction_policy.
-
-Downstream: s_zone_detector, lifecycle_engine, trading_pipeline.
-
-## Relationships
-Algorithms: algorithm.a.
-Behaviors: behavior.a.
+| Symbol | Source line | End line | Signature or role |
+|---|---:|---:|---|
+| BlueState | 25 | 34 | class |
+| AZone | 38 | 64 | class |
+| AZoneDetector | 67 | 788 | class |
+| AZoneDetector.__init__ | 68 | 94 | self, direction: str, reactions: Sequence[object], blue_lines: Sequence[object], chronology: object |
+| AZoneDetector.extreme_name | 97 | 98 | self |
+| AZoneDetector._strict_cross | 100 | 101 | self, value: Decimal, level: Decimal |
+| AZoneDetector._better | 103 | 104 | self, value: Decimal, current: Decimal |
+| AZoneDetector._main_index | 106 | 107 | self, timestamp: datetime |
+| AZoneDetector._lower_window | 109 | 112 | self, start: datetime, end: datetime \| None |
+| AZoneDetector._first_crossing | 114 | 154 | self, level: Decimal, start: datetime, end: datetime \| None |
+| AZoneDetector._range_extreme | 156 | 188 | self, start: datetime, end: datetime |
+| AZoneDetector._formation | 190 | 205 | self, line: object |
+| AZoneDetector._reset_formation_time | 207 | 217 | self, line: object, source_index: int |
+| AZoneDetector._build_blue_states | 219 | 246 | self |
+| AZoneDetector._double_stop_a_candidates | 248 | 309 | self |
+| AZoneDetector._pair_trigger | 311 | 469 | self, previous: BlueState, current: BlueState, expires_at: datetime \| None |
+| AZoneDetector._reaction_confirmation_time | 471 | 474 | self, reaction: object |
+| AZoneDetector._first_reaction_after | 476 | 492 | self, trigger_event_time: datetime, *, not_before: datetime \| None=None |
+| AZoneDetector._inherited_stop | 494 | 545 | self, previous: BlueState, current: BlueState |
+| AZoneDetector._a_source | 547 | 566 | self, trigger_index: int, reaction: object |
+| AZoneDetector._detect_ordinary_a | 568 | 687 | self, states: list[BlueState] |
+| AZoneDetector._filter_special_a | 689 | 751 | self, special: list[AZone], ordinary: list[AZone] |
+| AZoneDetector.detect | 753 | 763 | self |
+| AZoneDetector._a_was_stopped_before | 765 | 788 | self, zone: AZone, end_time: datetime, *, not_before: datetime \| None=None |
+| detect_a_zones | 791 | 797 | direction: str, reactions: Sequence[object], blue_lines: Sequence[object], chronology: object |

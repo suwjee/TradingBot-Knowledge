@@ -1,0 +1,292 @@
+{
+  "captured_local": "2026-09-28 23:28:20 +0330 (Asia/Tehran)",
+  "source_status": "CHANGED",
+  "source_static": "PASS",
+  "source_semantic_review": "PASS",
+  "source_reviewed_files": 13,
+  "source_reviewed_units": 383,
+  "source_mirror": "PASS",
+  "mirror_scope": "Complete static owner review plus bounded mirrored/synthetic probes; independent Bearish market correctness is NOT_TESTED.",
+  "reference_semantics": "PASS",
+  "references": [
+    {
+      "path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "direction": "bearish",
+      "version": "5.4.19-EX1",
+      "sha256": "109753d7d056b6b9ee173cc7f47472b53a77174d26e89f38b00b81061f310e18",
+      "bytes": 569305
+    },
+    {
+      "path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "direction": "bullish",
+      "version": "5.4.19-EX1",
+      "sha256": "d3a0b89c59f1304ddefe6f6931cedf7ea2e17a15893c63d652c89489f3e6387f",
+      "bytes": 569275
+    }
+  ],
+  "embedded_reconstruction": {
+    "bearish": {
+      "exact": 13,
+      "total": 13
+    },
+    "bullish": {
+      "exact": 13,
+      "total": 13
+    }
+  },
+  "source_snapshot": {
+    "exact": 13,
+    "total": 13
+  },
+  "local_references_exact": {
+    "exact": 2,
+    "total": 2
+  },
+  "entities": 118,
+  "relations": 435,
+  "schema": "PASS",
+  "schema_tests_passed": 28,
+  "indexes": "PASS",
+  "deterministic_generation": "PASS",
+  "managed_outputs": 7,
+  "broken_links": 0,
+  "duplicate_ids": 0,
+  "stale_active_knowledge": 0,
+  "raw_datasets": 0,
+  "raw_windows": 0,
+  "raw_files": 0,
+  "fixtures": 0,
+  "raw_store_status": "EMPTY_BY_DESIGN",
+  "fixture_store_status": "EMPTY_BY_DESIGN",
+  "order_types": [
+    "Order_A",
+    "Order_B"
+  ],
+  "orderaudit": "FIRST_CLASS",
+  "plugin_version": "0.3.7",
+  "vault_reader": "PASS",
+  "local_reference_reader": "PASS",
+  "plugin_integrity": "PASS",
+  "mcp_tools": {
+    "exercised": 8,
+    "listed": 8
+  },
+  "runtime_doctor": "PASS",
+  "mcp_smoke": "PASS",
+  "doctor_modes": "root/package x local/optional-external",
+  "plugin_tests": {
+    "discovered": 85,
+    "passed": 84,
+    "failed": 0,
+    "skipped": 1,
+    "exit_code": 0,
+    "skip_classification": "UNSUPPORTED_PLATFORM_CAPABILITY",
+    "skip_reason": "File symlink creation requires Windows privilege (WinError 1314)",
+    "complementary_proof": "Actual Windows directory junction escape is rejected before controlled outside file access."
+  },
+  "plugin_package": "PASS",
+  "package_exact_files": 25,
+  "cross_system_traces": {
+    "passed": 8,
+    "total": 8
+  },
+  "retrieval_questions": {
+    "passed": 13,
+    "total": 13
+  },
+  "actual_trace_mcp_calls": 69,
+  "sdk_version_exercised": "2.2.0",
+  "source_tests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "source_defect_counterfactual": {
+    "failed": 9,
+    "passed": 2,
+    "expected_failure": true
+  },
+  "chart_tests": {
+    "passed": 156,
+    "failed": 0,
+    "skipped": 0
+  },
+  "chart_build": "PASS",
+  "market_regression": "NOT_TESTED",
+  "exhaustive_branch_runtime_coverage": "NOT_PROVEN",
+  "ordinary_package_import": "UNSUPPORTED_CONTRACT",
+  "remaining_implementation_issues": [],
+  "production_changes": {
+    "modified": [
+      "AGENTS.md",
+      "engine/pipeline/e_zone_detector.py",
+      "engine/pipeline/order_audit_engine.py",
+      "tests/test_order_b_reset_leg.py",
+      "tests/verify_order_references.py"
+    ],
+    "added": [
+      "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
+      "tests/test_order_audit_lifecycle_contracts.py"
+    ],
+    "deleted": [
+      "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.18_EX1_Source_Synchronized.md",
+      "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.18_EX1_Source_Synchronized.md"
+    ]
+  },
+  "status": "FULLY SYNCHRONIZED",
+  "release_artifacts": "PASS",
+  "vault_readiness": "YES",
+  "plugin_readiness": "YES",
+  "definition_of_done": [
+    {
+      "number": 1,
+      "requirement": "Complete current Engine semantic review",
+      "status": "PASS"
+    },
+    {
+      "number": 2,
+      "requirement": "No unresolved demonstrated Source defect",
+      "status": "PASS"
+    },
+    {
+      "number": 3,
+      "requirement": "Directional and invariant mirror audit",
+      "status": "PASS"
+    },
+    {
+      "number": 4,
+      "requirement": "Current Reference semantic synchronization",
+      "status": "PASS"
+    },
+    {
+      "number": 5,
+      "requirement": "Exact embedded reconstruction",
+      "status": "PASS"
+    },
+    {
+      "number": 6,
+      "requirement": "Blue/S inclusive boundaries",
+      "status": "PASS"
+    },
+    {
+      "number": 7,
+      "requirement": "Exact Vault Source snapshot",
+      "status": "PASS"
+    },
+    {
+      "number": 8,
+      "requirement": "Exact Vault local References",
+      "status": "PASS"
+    },
+    {
+      "number": 9,
+      "requirement": "Current active Vault knowledge",
+      "status": "PASS"
+    },
+    {
+      "number": 10,
+      "requirement": "No stale/obsolete active knowledge",
+      "status": "PASS"
+    },
+    {
+      "number": 11,
+      "requirement": "Zero RAW datasets/windows",
+      "status": "PASS"
+    },
+    {
+      "number": 12,
+      "requirement": "Zero real Fixtures/cases",
+      "status": "PASS"
+    },
+    {
+      "number": 13,
+      "requirement": "Schema tests",
+      "status": "PASS"
+    },
+    {
+      "number": 14,
+      "requirement": "Official index generation",
+      "status": "PASS"
+    },
+    {
+      "number": 15,
+      "requirement": "Independent deterministic builds",
+      "status": "PASS"
+    },
+    {
+      "number": 16,
+      "requirement": "Zero broken links",
+      "status": "PASS"
+    },
+    {
+      "number": 17,
+      "requirement": "Zero duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "number": 18,
+      "requirement": "Plugin local Vault reader",
+      "status": "PASS"
+    },
+    {
+      "number": 19,
+      "requirement": "Plugin local Reference reader",
+      "status": "PASS"
+    },
+    {
+      "number": 20,
+      "requirement": "Strict nested duplicate JSON rejection",
+      "status": "PASS"
+    },
+    {
+      "number": 21,
+      "requirement": "Complete frontmatter/index/schema integrity",
+      "status": "PASS"
+    },
+    {
+      "number": 22,
+      "requirement": "Empty-store contracts",
+      "status": "PASS"
+    },
+    {
+      "number": 23,
+      "requirement": "Currentized complete test suite",
+      "status": "PASS"
+    },
+    {
+      "number": 24,
+      "requirement": "Zero real/stale test failures",
+      "status": "PASS"
+    },
+    {
+      "number": 25,
+      "requirement": "Every MCP tool contract exercised",
+      "status": "PASS"
+    },
+    {
+      "number": 26,
+      "requirement": "Current Plugin documentation",
+      "status": "PASS"
+    },
+    {
+      "number": 27,
+      "requirement": "Fresh official package",
+      "status": "PASS"
+    },
+    {
+      "number": 28,
+      "requirement": "Exact root/package bytes",
+      "status": "PASS"
+    },
+    {
+      "number": 29,
+      "requirement": "Eight complete cross-system traces",
+      "status": "PASS"
+    },
+    {
+      "number": 30,
+      "requirement": "Clean final release artifacts",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,31 +1,29 @@
 ---
 id: "algorithm.raw"
 type: "algorithm"
-status: "pending"
-authority: "non-canonical"
-title: "RAW normalization and candle construction"
-implemented_by: ["source.trading_pipeline", "source.reaction_engine"]
-produces: ["market.candle", "market.exact_chronology"]
-depends_on: []
-relates_to: ["source.integration_boundary"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L11"]
-related_entities: ["test.source_validation", "test.chronology_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py#L11"]
+status: "active"
+authority: "executable"
+title: "RAW normalization and selected candle construction"
+version: "current"
+related_entities: ["algorithm.reaction", "core.chronology", "core.pipeline", "core.precision"]
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/core_utils.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-invariant or explicitly mixed"
+implemented_by: ["source.trading_pipeline", "source.reaction_engine", "source.core_utils"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37"]
+mirror_links: ["mirror.contract"]
 ---
 
-# RAW normalization and candle construction
+# RAW normalization and selected candle construction
 
-## Calculation logic
+## Input normalization
 
-Input is the full JSON that the bridge receives, each row with epoch-second time and OHLC. The bridge strips UTF-8 BOM, parses with orjson, and rejects empty input. as_decimal preserves Decimal and otherwise uses Decimal(str(value)). Same-second rows collapse to one lower candle: first Open, max High, min Low, last Close. For timeframe T, bucket time is original time if T=1 and floor(time/T)*T otherwise. Main bucket OHLC uses the same first/max/min/last rule.
+Bridge parses complete supplied JSON row array after optional UTF-8 BOM removal. Rows use time/open/high/low/close; time becomes integer epoch,prices pass as_decimal. Cache keys include type and value to preserve string-normalized representation. Supplied chronology is consumed directly; build_candle_buckets does not sort,fill gaps or silently repair invalid OHLC.
 
-build_candle_objects converts epoch to Asia/Tehran wall time, stores naive datetimes and color GREEN iff close >= open. One shared lower index supports strict first-event/range-extreme queries. Requested from/to determine presentation indexes after full received-input normalization; no source index renumbering occurs. If upstream sends a prefiltered stream, that stream is the complete engine input and lacks earlier/later RAW chronology.
+Consecutive equal timestamps aggregate lower bucket with first open,max High,min Low,last close. Main time is timestamp when timeframe1,otherwise timestamp//timeframe*timeframe; same OHLC aggregation applies. Lower rows preserve finest supplied timestamps rather than inventing one-second candles.
 
-## Contract interface
+## Candle and event model
 
-- **Purpose:** Normalize supplied RAW rows into lower and main candles.
-- **Inputs:** Complete JSON bytes received by the bridge, timeframe and OHLC epochs.
-- **Calculation logic:** The source-grounded rule and its exact ordering are stated above.
-- **Output:** Exact lower index, main candles, visible bounds and preserved physical indexes.
-- **Source ownership:** source.trading_pipeline, source.reaction_engine.
-- **Validation relationship:** test.chronology_invariants; test.source_validation checks the line anchors and owner.
+Candle index is zero-based in complete supplied input. Epoch becomes Asia/Tehran local naive datetime; display is YYYY-MM-DD HH:MM:SS. GREEN iff close>=open,RED otherwise; Doji remains GREEN in both directions. OHLC stays Decimal. MarketChronology shares main/lower timestamp arrays and strict crossing/range-extreme index.
+
+Requested from/to selects inclusive epoch-aligned presentation main buckets after input preparation. Empty rows or selected range raises. MarketContext outputs seconds,candles,lower_index,chronology,start_index,end_index. All stages share physical normalized input; serialization maps finalized state. This generic contract includes no stored market dataset or expected candle result.

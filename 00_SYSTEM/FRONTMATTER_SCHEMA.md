@@ -1,21 +1,26 @@
 ---
 id: "system.frontmatter"
 type: "system"
-status: "canonical"
+status: "active"
 authority: "normative"
-title: "Frontmatter schema"
-related_entities: []
+title: "Frontmatter and evidence schema"
+version: "current"
+related_entities: ["system.ids", "system.knowledge_model"]
 source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Frontmatter schema
+# Frontmatter and evidence schema
 
-Every populated canonical note has `id`, `type`, `status`, `authority`, `title`, `related_entities`, and `source_reference`. Frontmatter uses JSON scalar/array syntax within YAML-compatible `key: value` lines; duplicate keys and unknown fields are errors. Stable IDs, not file paths, are machine identity. Source references use Vault-root-relative `06_SOURCE/Code/...#Lnumber` anchors; line numbers must be paired with a symbol or claim in prose because they can move. The schema requires a nonempty `source_reference` only for a non-system note with `authority` `normative`, `executable`, or `canonical`. Other policy, registry, aggregate, and non-canonical notes may correctly use `source_reference: []`; no placeholder anchor may be invented. Test, case, and mirror notes must carry the field, while test/mirror relation minimums and the case minimum of two related entities remain schema-enforced. An empty `related_entities` list is valid when no loose relation is justified; typed relations remain in their own fields.
+Each knowledge Markdown note begins with an opening --- line, one unique lowercase key per line whose value is valid JSON, and a closing --- line. This deliberately bounded format supports unambiguous scalars, arrays and objects without requiring a YAML loader. Required fields are id, type, status, authority, title and source_reference.
 
-`status: pending` is reserved here for required general knowledge whose rule is not established, such as the general Leg model; it requires `authority: non-canonical`. It differs from `pending-fix`, which marks the known-invalid current Order_B/C implementations. Their `implementation_validity`, `valid_for_reasoning`, `valid_for_regression_baseline`, and `rewrite_required` fields are enforced by the index builder. Fixture `fixture_status: Pending` continues to map to Vault `status: draft` under the separate case schema. A case may optionally declare only `source_fixture_review: "pending-manual-review"`; only its declared fixture-source hash mismatch becomes `KNOWN_PENDING`/a warning, and it never rewrites the fixture SHA. The source file plus its pinned case line and heading remain strict errors even under that declaration. An undeclared mismatch remains an error. Case notes include scalar `first_index` and `break_index` only when their physical `order_identity` pair is evidenced; otherwise both use `unknown`.
+The stable ID prefix matches the entity type. Source references are normalized Vault-relative paths with optional one-based #L anchors. source_path, mirror and sha256 pin an exact module. Relations are typed arrays of existing stable IDs; implemented_by identifies an actual executable owner, depends_on identifies a dependency and related_entities supplies navigation only.
 
-Canonical relation arrays contain entity IDs. `calculated_by` links a behavior to calculation algorithms; `implemented_by` links an entity to modules that actually own its implementation. `implements` is the inverse for algorithm implementation. `depends_on` denotes a real input/computation dependency, not a loose association. `produces`, `parent_of`, `child_of`, `relates_to`, and `affects` carry their literal meanings. `orchestrates` marks bridge coordination without ownership; `supports` marks shared primitive support. Do not use an authoritative dependency edge into pending-fix knowledge.
+Algorithm and behavior notes name current source owners. algorithm_reference links the precise current raw reference sections; mirror_links links current mirror knowledge. version is per note or Source module; Reference version is independent. Generated output is validated against the Markdown metadata and exact local evidence.
 
-Physical Source module notes use `source_path` and `mirror` for the Vault-local captured source path, and `sha256` for its byte hash. Aggregate Source maps have no `source_path`; `path` is not a valid field. Chart evidence files are listed in `external_source_paths` with byte hashes in `external_source_hashes`; those fields retain their historical names but their values point only inside the Vault. The JSON schemas in `_SCHEMA` validate the structural contract; `_SCHEMA/build_indexes.py` checks cross-note relations and hashes. `_GENERATED` is machine-owned output, not canonical Markdown knowledge, and is excluded from canonical note coverage checks. Generated indexes are derived from frontmatter and must not be hand-edited.
+Schemas support system, core, market, behavior, algorithm, source, mirror, test, case, data, decision, version and workflow records. Empty Data and Fixture stores are valid. Future records must supply provenance; schema validity alone does not establish a correct expected trading output.
 
-Data notes use `type: data` with `data_kind` to distinguish policy, registry, RAW model and physical dataset records. A dataset record includes the exact `raw_path`, all equal-hash `raw_locations`, `raw_sha256`, size, row count, epoch bounds, metadata fields and fixture/validation IDs. The builder verifies approved RAW roots, byte hashes, sizes and fixture hash relationships. The full dataset field contract is in `_SCHEMA/data.schema.json`; an `active` empirical dataset is not a successful trading-output test.
+
+## Names, narrative status and derived note identity
+
+Optional name and aliases are navigation metadata. Case-folded names/aliases cannot shadow another stable ID. reference_agreement records match/conflict/ambiguous/not-applicable; reference_conflicts lists review record keys and does not change executable authority. Every generated entity row carries content_sha256 and content_bytes for the complete Markdown bytes. These three derived row fields (including file) are excluded from frontmatter equality only; every authored metadata field remains compared. The current contract requires note identity pins, so deleting them cannot bypass body currentness. Regeneration follows any authorized Markdown change.

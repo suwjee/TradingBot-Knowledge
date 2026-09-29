@@ -1,27 +1,19 @@
 ---
 id: "source.integration_boundary"
 type: "source"
-status: "pending"
-authority: "non-canonical"
-title: "Chart-to-bridge input scope"
-relates_to: ["core.pipeline", "market.raw"]
-source_refs: ["06_SOURCE/Code/apps/chart/vite.config.js#L581", "06_SOURCE/Code/apps/chart/vite.config.js#L611", "06_SOURCE/Code/apps/chart/server/indicator-range-input.js#L32", "06_SOURCE/Code/apps/chart/server/indicator-range-input.js#L113"]
-external_source_paths: ["06_SOURCE/Code/apps/chart/vite.config.js", "06_SOURCE/Code/apps/chart/server/indicator-range-input.js"]
-external_source_hashes: {"06_SOURCE/Code/apps/chart/vite.config.js": "9baf5c9745a96058e27b485b885dfc5a868e4256016d9ec38e14a442f7a5f58c", "06_SOURCE/Code/apps/chart/server/indicator-range-input.js": "bf9b2c5eac9457435f9aaed9615ca062dfabcb7541ca70fbf114c9dd2f1a419f"}
-related_entities: ["test.source_validation"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "Current chart and bridge input boundary"
+version: "current"
+related_entities: ["core.pipeline", "source.trading_pipeline"]
+source_reference: ["06_SOURCE/Code/apps/chart/vite.config.js", "06_SOURCE/Code/apps/chart/server/indicator-range-input.js", "06_SOURCE/Code/apps/chart/server/raw-resource-store.js"]
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Chart-to-bridge input scope
+# Current chart and bridge input boundary
 
-## Specification / implementation difference
+The direct bridge calculates from the entire supplied physical file or supplied stream and computes presentation bounds separately. It cannot reconstruct chronology that was never supplied. The chart server chooses full-path input for full-chart calculations, but selected-range calculations filter inclusive chart-candle buckets in Node memory and stream that selected JSON through a Windows named pipe. No second RAW file is written by this transport.
 
-**Registered reference evidence:** Both current V5.4.11 HPZR6 directional references are hash-registered external evidence. They describe calculation over the complete physical RAW file, with from/to selecting presentation output (sections 2 and 3A). A Vault-only reader can inspect the registry but needs a configured project checkout to verify the external document bytes; this claim is therefore not an accepted normative integration contract by itself.
+Therefore direct full-file engine behavior and a selected-range HTTP request have different supplied input scopes. A selected stream begins with empty calculation history at its own start and contains no chronology beyond its own end. Record this boundary when analyzing a chart result; do not claim a partial chart request includes a complete original RAW file merely because the Reference describes the direct bridge.
 
-**Retained chart implementation:** The Vite endpoint chooses inputScope=selected-range for a partial chart-candle interval. prepareIndicatorRangeInput filters RAW rows by inclusive chart bucket from..to. runIndicatorRangeCalculation streams that selected JSON through a Windows named pipe to the Python bridge. The bridge module is now captured byte-exact; the end-to-end behavioral consequence still needs a paired runtime comparison.
-
-**Inferred consequence from the retained chart path:** A partial chart request omits original RAW chronology outside the selected interval, so physical indexes and open state may differ from a complete-source run. The complete-source chart path passes the original RAW file. No paired runtime output comparison was performed in this audit; the bridge's from/to semantics remain pending within this Vault.
-
-**Status:** Open integration question. The retained chart source shows that a selected-range request can pre-filter the RAW input. The bridge module is captured, while comprehensive references are optional external evidence; the full-physical-RAW contract and end-to-end effect remain pending runtime review. Future retrieval must inspect the request's inputScope before applying full-file invariants to a chart result.
-
-The chart evidence paths in `external_source_paths` now point to captured Vault files. A Vault-only reader can verify their bytes against `external_source_hashes` and inspect the cited lines. This proves the captured implementation path, not a later production state.
+The local exact vite.config.js, indicator-range-input.js and raw-resource-store.js snapshots establish this integration boundary. Browser rendering remains presentation, while Python owns calculation decisions. This note introduces no change to either implementation.

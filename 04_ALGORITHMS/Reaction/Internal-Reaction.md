@@ -1,28 +1,37 @@
 ---
 id: "algorithm.internal_reaction"
 type: "algorithm"
-status: "pending"
-authority: "non-canonical"
-title: "Internal Reaction"
-implemented_by: ["source.reaction_engine"]
-depends_on: ["algorithm.reaction"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1202"]
-related_entities: ["test.source_validation", "mirror.exceptions", "test.direction_tests"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1202"]
+status: "active"
+authority: "executable"
+title: "Cross-direction internal Reaction ownership"
+version: "current"
+related_entities: ["algorithm.blue", "algorithm.reaction", "algorithm.visibility"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.reaction_engine", "source.blue_line_detector", "source.lifecycle_engine", "source.trading_pipeline"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"]
+mirror_links: ["mirror.contract"]
+name: "Internal Reaction"
+aliases: ["InternalReaction"]
 ---
 
-# Internal Reaction
+# Cross-direction internal Reaction ownership
 
-## Calculation logic
+## Bullish
 
-After both directional streams exist, classify a Reaction internal only when its First is strictly after an opposite Reaction First; its confirmation is no later than the opposite confirmation; its published box lies inside the opposite published box; and every lower event from inner First through confirmation remains inside that outer box.
+#### 4.8 Internal Reaction ownership
 
+Cross-direction internal protection is determined after both directions exist. A candidate is internal only when its temporal/box structure is contained by a healthy opposite Reaction and the complete lower-timeframe physical path through its confirmation remains inside the protecting box. Internal identity affects behavior/public ownership; it does not delete historical calculation evidence or renumber the canonical Reaction stream.
 
-## Contract interface
+## Bearish
 
-- **Purpose:** Classify source-grounded nested cross-direction Reactions.
-- **Inputs:** Both directional Reaction streams, published boxes and exact lower chronology.
-- **Calculation logic:** The source-grounded rule and its exact ordering are stated above.
-- **Output:** Internal classification and downstream visibility eligibility evidence.
-- **Source ownership:** source.reaction_engine.
-- **Validation relationship:** test.direction_tests; test.source_validation checks the line anchors and owner.
+#### 4.8 Internal Reaction ownership
+
+Cross-direction internal protection is determined after both directions exist. A candidate is internal only when its temporal/box structure is contained by a healthy opposite Reaction and the complete lower-timeframe physical path through its confirmation remains inside the protecting box. Internal identity affects behavior/public ownership; it does not delete historical calculation evidence or renumber the canonical Reaction stream.
+
+## Source-level contract
+
+Inner First > outer First; inner confirmation <= outer confirmation; inner published top <= outer top and bottom >= outer bottom. Nonempty complete physical lower path through inner confirmation inclusive requires min Low >= outer bottom and max High <= outer top. Containment permits box-edge equality.
+
+build_behavior_reaction_views attaches internal identity, original public ordinal and published box/time metadata without deleting canonical streams. Blue point protection is strict interior with First < source_time <= confirmation and both source_extreme/line_price inside. Current filter_internal_behavior_outputs returns accepted A/S/E/StopAll unchanged; it does not discard all internal physical Orders.

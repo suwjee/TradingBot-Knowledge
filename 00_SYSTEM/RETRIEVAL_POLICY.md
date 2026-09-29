@@ -1,18 +1,21 @@
 ---
 id: "system.retrieval"
 type: "system"
-status: "canonical"
+status: "active"
 authority: "normative"
-title: "Retrieval policy"
-related_entities: []
+title: "Current retrieval and Plugin bootstrap"
+version: "current"
+related_entities: ["core.invariants", "core.pipeline", "source.reference_registry", "source.source_manifest", "system.authority", "version.current", "workflow.operating"]
 source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Retrieval policy
+# Current retrieval and Plugin bootstrap
 
-For every retrieval session, first load `system.authority` and this policy by ID; load `system.frontmatter` when editing metadata. Resolve IDs through `_INDEX/entities.json`, open the owning Markdown, then follow only relations relevant to the question. Check status, authority, and `_INDEX/sync-status.json` before using a claim. Verify source symbols and lines against the hash-pinned files in `06_SOURCE/Code`. All nine main Engine modules are retained; comprehensive HPZR6 references are hash-registered optional external evidence. Order_B/C current semantics are known invalid, so default retrieval excludes them from normative reasoning even if source and references agree; explicit quarantined retrieval is diagnostic only. A Vault snapshot does not prove that a later production checkout has the same bytes.
+Retrieve system.authority, version.current, source.source_manifest, source.reference_registry, core.invariants, core.pipeline and workflow.operating before semantic reasoning. Resolve Concept → Algorithm → Source → Mirror → Current Version. Inspect the current validation report and stable IDs before selecting evidence.
 
-Follow **Behavior → Algorithm → Source → Validation** for a public-rule answer, and include Data/Fixture only when the question needs concrete input or expected output. For performance questions, load `test.runtime_benchmark`, `test.memory_benchmark`, `test.stage_profiling` and `test.optimization_rules` according to the requested metric. For test execution, load `test.test_model` and the unit, integration or regression policy. For directional proof, load `test.mirror_policy` and the appropriate direction, constructed-symmetry or mirror-regression note. Policy notes specify a method; a PASS needs a separate run artifact.
+The Plugin reads canonical Markdown through its validated local entity index. Local Algorithm References are the default first-class evidence source. Both local bytes/hash and declared version/direction must agree with Registry and Source Manifest. An external Engine checkout is optional cross-verification; configuring it requires exact agreement and never permits a bad local file to fall back silently.
 
+Trusted JSON rejects nested duplicate keys and non-JSON numeric constants. Full frontmatter and schema-owned metadata must equal the index; relations must equal canonical typed arrays. Generated navigation cannot alter a rule. Current Source defines executable behavior and synchronized canonical References specify it. Material disagreement requires evidence and resolution.
 
-Use `implemented_by` for actual rule owners. `orchestrates` identifies pass coordination; `supports` identifies a shared primitive. For a dataset or fixture question, start at `data.dataset_registry` and the hash-pinned dataset note, then follow its case IDs to `test.fixture_registry`; check dataset status and input scope before interpreting an expected output. For chart result questions, inspect `source.integration_boundary` and the request input scope before applying the full-physical-RAW normative contract. Its chart evidence is stored in `06_SOURCE/Code/apps/chart`. OrderAudit is source-only serialized material, not an entity, conceptual retrieval stage, fixture authority, or normative dependency. If a needed relation or reference is absent, report that gap. If a source/reference or RAW hash changed, mark the affected answer stale until re-audited. Tests/cases and data evidence supplement retrieval but cannot silently change a normative trading rule.
+RAW and Fixture stores are EMPTY_BY_DESIGN. Data-dependent tools return explicit ENTITY_NOT_FOUND for absent IDs. No expected market outcome or regression evidence is supplied by knowledge retrieval.

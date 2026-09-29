@@ -1,29 +1,45 @@
 ---
 id: "algorithm.reset"
 type: "algorithm"
-status: "pending"
-authority: "non-canonical"
-title: "Reset"
-implemented_by: ["source.reaction_engine"]
-depends_on: ["algorithm.reaction", "market.exact_chronology"]
-source_refs: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L247", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L267", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1070"]
-related_entities: ["test.source_validation", "test.chronology_invariants"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L247", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L267", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1070"]
+status: "active"
+authority: "executable"
+title: "Reset events and same-direction restart"
+version: "current"
+related_entities: ["algorithm.blue", "algorithm.order.b", "algorithm.reaction"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.reaction_engine", "source.order_audit_engine", "source.blue_line_detector", "source.s_zone_detector"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"]
+mirror_links: ["mirror.contract"]
+name: "Reset"
+aliases: ["Reaction Reset"]
 ---
 
-# Reset
+# Reset events and same-direction restart
 
-## Calculation logic
+## Bullish
 
-A confirmed Reaction's opposite boundary is strictly broken by Bullish Low < BoxBottom or Bearish High > BoxTop. Before a waiting candidate confirms, compare first exact Reset and confirmation lower events in the same main candle; Reset wins when earlier or tied under the detector's Reset-first order.
+#### 4.6 Reset
 
-After confirmation, inspect only the remainder of that same Break main candle, strictly after the confirmation event. Freeze the confirmation-side opposite edge (analysis.extreme in both current directions). A later strict crossing creates Reset with index=Break, secondTime=exact lower event, brokenLevel=frozen edge, fromFirstIndex=confirmed First. That Break cannot also seed the next Mode-B First. If secondTime is absent, main display time supplies Reset chronology. Reset reopens Mode A in the same requested direction.
+A confirmed Bullish Reaction resets only on the first strict `Low < confirmed BoxBottom` event. Equality is not Reset. When Reset and confirmation/break activity share a main candle, selected lower-TF ordering decides which event owns the state transition. Reset reopens **same-direction** Reaction ownership; opposite-direction patterns do not gate that search. A Reset event with an exact lower-TF second exposes that exact second; otherwise the owning main-candle start is the fallback representation.
 
-## Contract interface
+#### 4.7 Post-Reset structural owner vs geometry-only evidence
 
-- **Purpose:** Find exact strict Reset events within Reaction ownership.
-- **Inputs:** Confirmed Reaction boundary, waiting candidate and ordered lower events.
-- **Calculation logic:** The source-grounded rule and its exact ordering are stated above.
-- **Output:** Reset event with owner, source and exact time.
-- **Source ownership:** source.reaction_engine.
-- **Validation relationship:** test.chronology_invariants; test.source_validation checks the line anchors and owner.
+After Reset, `_first_direct_same_direction_after_reset` scans eligible First candidates in chronological First-index order within the configured end index. It returns a candidate only if confirmation wins before strict loss of its frozen owning boundary. If invalidation wins first, candidates with First indexes at or before that invalidation main index are blocked. A candidate unfinished at the bounded end is skipped, so a later eligible candidate that completes healthily may be returned. The standalone initial Mode-A WAITING state retains its selected unfinished structural owner. The returned healthy result joins the canonical same-direction Reaction stream. `_first_geometry_after_reset` separately returns complete geometry without lifecycle acceptance; geometry alone cannot create Order_A.
+
+## Bearish
+
+#### 4.6 Reset
+
+A confirmed Bearish Reaction resets only on the first strict `High > confirmed BoxTop` event. Equality is not Reset. When Reset and confirmation/break activity share a main candle, selected lower-TF ordering decides which event owns the state transition. Reset reopens **same-direction** Reaction ownership; opposite-direction patterns do not gate that search. A Reset event with an exact lower-TF second exposes that exact second; otherwise the owning main-candle start is the fallback representation.
+
+#### 4.7 Post-Reset structural owner vs geometry-only evidence
+
+After Reset, `_first_direct_same_direction_after_reset` scans eligible First candidates in chronological First-index order within the configured end index. It returns a candidate only if confirmation wins before strict loss of its frozen owning boundary. If invalidation wins first, candidates with First indexes at or before that invalidation main index are blocked. A candidate unfinished at the bounded end is skipped, so a later eligible candidate that completes healthily may be returned. The standalone initial Mode-A WAITING state retains its selected unfinished structural owner. The returned healthy result joins the canonical same-direction Reaction stream. `_first_geometry_after_reset` separately returns complete geometry without lifecycle acceptance; geometry alone cannot create Order_A.
+
+## Source-level contract
+
+Reset/confirmation same lower-position tie checks strict Reset first. Post-confirmation Reset excludes the decisive timestamp using one-microsecond later boundary. MarketChronology.reset_time uses second_time then main display_time fallback. Order_B separately demands proven first strict lower Reset crossing; unproven main fallback cannot create a reset leg.
+
+Reset reopens same-direction Mode-A search after Reset main candle. Aligned Reset feeds Reset Blue and Order_B; opposite Reset feeds S Type-3. Reset is distinct from hard StopAll boundary.

@@ -1,17 +1,15 @@
 ---
-id: "test.mirror_validation"
+id: "test.mirror_policy"
 type: "test"
-status: "pending"
-authority: "non-canonical"
-title: "Mirror validation"
-created: "2026-09-25"
-updated: "2026-09-26"
-related_entities: ["mirror.contract", "mirror.direction_mapping", "mirror.invariants", "mirror.exceptions", "test.invariant_validation", "test.mirror_policy", "test.direction_tests", "test.symmetry_tests", "test.mirror_regression", "source.direction_policy", "source.reaction_engine"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/direction_policy.py#L21", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L560"]
+status: "active"
+authority: "executable"
+title: "Current mirror validation scope"
+version: "current"
+related_entities: ["source.direction_policy", "source.reaction_engine"]
+source_reference: []
+evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 ---
 
-# Mirror validation
+# Current mirror validation scope
 
-Validate Bullish fixtures and Bearish fixtures independently on identical physical RAW/settings, then check the directional mapping: trend Low/min/< ↔ High/max/>, opposite Reaction confirmation High > BoxTop ↔ Low < BoxBottom, First/context roles, Blue line geometry and Order direction. Equality never crosses. Market Doji remains GREEN. The retained direction policy and Reaction source support these local predicates. Full lifecycle, numbering, and output-schema symmetry are not a source-capture gap: their source is captured, but accepted paired validation remains pending.
-
-Do not expect naturally observed Bullish and Bearish payloads to be identical. For a constructed reflected-price case, transform OHLC and preserve physical time/index to check the corresponding geometry, then verify lifecycle invariants separately. The bridge is now captured, but full accepted pipeline validation still requires fresh paired runs and a B/C rewrite for affected outcomes.
+Inspect High/Low, min/max, strict comparators, First color roles, box edges, directional confirmation, sources, stops and Orders in both current Source paths. Preserve Decimal, Doji, chronology, identity, provenance, lifecycle priorities, state-machine structure and serialization. Compare both current Reference sections to their exact owners. In-memory primitive and reflection tests establish bounded geometry parity only. Independent Bullish/Bearish RAW correctness and full regression require future supplied inputs; no such evidence is stored by this rebuild.

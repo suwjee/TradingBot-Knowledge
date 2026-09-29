@@ -1,17 +1,19 @@
 ---
 id: "behavior.e.red"
 type: "behavior"
-status: "pending"
-authority: "non-canonical"
-title: "E Red"
-calculated_by: ["algorithm.e", "algorithm.reconciliation"]
-implemented_by: ["source.e_zone_detector", "source.lifecycle_engine"]
-depends_on: ["behavior.e", "core.e_numbering"]
-source_refs: []
-related_entities: ["test.behavior_invariants"]
-source_reference: []
+status: "active"
+authority: "executable"
+title: "E Red family"
+version: "current"
+related_entities: ["algorithm.e", "core.priority"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"]
+evidence_basis: "Current source and synchronized current references"
+direction_sensitivity: "direction-sensitive geometry"
+implemented_by: ["source.e_zone_detector", "source.lifecycle_engine", "source.order_audit_engine"]
 ---
 
-# E Red
+# E Red family
 
-E Red is a reconciled Red-family E, with family inherited from an active accepted parent or won through Red-priority reconciliation. It outranks S Red, E Blue, S Blue, and A, and remains below StopAll. It can advance recursive numbering after a stopped Red E. An accepted Red E clears pending Blue-repeat reversal evidence, but does not itself reset the independent E-driven StopAll owner counters unless a gate forms.
+E red is accepted numbered family inherited/reconciled from stopped-parent lifecycle. Source and strict stops mirror by market direction;family text remains red. Red outranks Blue at shared physical source regardless of number;within same family higher accepted number wins,remaining exact tie keeps earlier accepted provenance.
+
+Stopped same-family accepted state advances next number;stopped Red inheritance can supersede provisional Blue input. Accepted active Red E cannot be stolen by S;Red S may supersede Blue E under lifecycle gates. Exact physical Order/cause,parent source/stop and source/decision remain attached after reconciliation.
