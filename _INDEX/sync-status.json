@@ -1,13 +1,49 @@
 {
-  "source_commit": "822c5ce1c1e7f464d2e08085fd6d991ee1d5d8ed",
-  "captured_utc": "2026-09-28T19:12:46.969813+00:00",
-  "review_state": "reviewed-current-source-with-disclosed-reference-scope-discrepancies",
-  "scope": "current audited working-tree Source and canonical References",
-  "market_regression": "NOT_REQUIRED_THIS_PHASE",
-  "raw_store_status": "EMPTY_BY_DESIGN",
-  "fixture_store_status": "EMPTY_BY_DESIGN",
-  "phase1_review_date": "2026-09-29",
+  "source_commit": "c2e7903890dddfaf8526cb9b11dd1c5e490c7410",
+  "captured_utc": "2026-10-27T16:43:04.492024+00:00",
+  "review_state": "reviewed-scoped-with-disclosed-ambiguity",
+  "source_scope": {
+    "excluded_source_paths": [
+      {
+        "repository_relative_path": "engine/pipeline/PL_PH_detector.py",
+        "reason": "Excluded from standalone capture and semantic audit by current user instruction",
+        "embedded_sha256": "4c03c016762c55006cba98b9dd565a5e0d37c9420c6e0cacdd1a060d4e8bd989",
+        "embedded_bytes": 22048
+      }
+    ],
+    "semantic_review_scope": "Existing Engine Reaction/Reset/Blue/A/S/E/Order/OrderAudit/StopAll owners and current project integration; no new primary-structure concepts",
+    "reference_scope": "complete-exact-current-reference-bytes"
+  },
+  "scope": "Exact current in-scope snapshots and accepted References; semantic ambiguity retained; excluded feature not audited",
   "semantic_review_entity": "source.reference_consistency",
-  "engine_source_modified": false,
-  "reference_bytes_modified": false
+  "remaining_reference_conflicts": [
+    "REF-REACTION-SUCCESSOR"
+  ],
+  "previous_user_status_preserved": {
+    "path": "C:\\Users\\msadr\\.codex\\visualizations\\2026\\10\\27\\01a17e37-79e4-7862-80b8-c4034a6b91da\\knowledge-audit\\sync-status.before.json",
+    "sha256": "f5806624ce793524ec2c1da97bfa903defddb0a894bc6108cc9a7564d8c64988"
+  },
+  "source_snapshot_integrity": "PASS",
+  "market_regression": "NOT RUN",
+  "excluded_feature_semantics": "NOT RUN",
+  "last_verified_at": "2026-10-28T18:17:57+03:30",
+  "plugin_version": "0.3.9",
+  "plugin_suite": {
+    "status": "PASS",
+    "tests": 109,
+    "passed": 108,
+    "skipped": 1,
+    "skip_reason": "Windows symlink privilege unavailable"
+  },
+  "installed_copy": {
+    "status": "PASS",
+    "files": 25,
+    "fresh_mcp_tools": 8,
+    "doctor_ready": true
+  },
+  "current_chat_runtime": {
+    "status": "INCOMPLETE",
+    "reason": "Previously bound 0.3.8 process has not reloaded; new chat loads installed 0.3.9"
+  },
+  "execution_evidence_directory": "C:\\Users\\msadr\\.codex\\visualizations\\2026\\10\\27\\01a17e37-79e4-7862-80b8-c4034a6b91da\\knowledge-audit"
 }

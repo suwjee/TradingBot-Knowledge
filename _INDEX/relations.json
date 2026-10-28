@@ -1842,6 +1842,31 @@
       "to": "source.source_manifest"
     },
     {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.faraz"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.raw_resources"
+    },
+    {
       "from": "source.core_utils",
       "type": "relates_to",
       "to": "source.source_manifest"
@@ -1867,9 +1892,44 @@
       "to": "source.source_manifest"
     },
     {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "source.raw_resources"
+    },
+    {
       "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "core.pipeline"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "source.raw_resources"
     },
     {
       "from": "source.integration_boundary",
@@ -1880,6 +1940,31 @@
       "from": "source.lifecycle_engine",
       "type": "relates_to",
       "to": "source.source_manifest"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.faraz"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.raw_resources"
     },
     {
       "from": "source.module_map",
@@ -1910,6 +1995,31 @@
       "from": "source.pipeline.__init__",
       "type": "relates_to",
       "to": "source.source_manifest"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.faraz"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.local_server"
     },
     {
       "from": "source.reaction_engine",
@@ -2245,6 +2355,31 @@
       "from": "workflow.operating",
       "type": "relates_to",
       "to": "system.authority"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "workflow.operating"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "workflow.release"
     },
     {
       "from": "workflow.release",

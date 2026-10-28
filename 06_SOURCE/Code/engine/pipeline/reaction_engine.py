@@ -18,8 +18,11 @@ from typing import Iterable, Sequence
 from direction_policy import policy_for
 
 
-REACTION_ENGINE_VERSION = "9.8.0"
-REACTION_ENGINE_LAST_MODIFIED = "2026-09-22 00:35:00 +03:30"
+REACTION_ENGINE_VERSION = "9.8.1"
+REACTION_ENGINE_IMPLEMENTATION_VERSION = "9.9.1"
+REACTION_ENGINE_LAST_MODIFIED = "2026-10-07 00:56:52 +03:30"
+
+_ORDER_GATE_CACHE_MAX_ENTRIES = 32_768
 
 _SEQUENCE_TIME_INDEXES: dict[int, tuple[Sequence[Candle], list[datetime]]] = {}
 
@@ -1406,6 +1409,13 @@ class UnifiedReactionDetector(DetectorBase):
             "bearish": [],
         }
         self._geometry_after_reset_cache: dict[tuple, Candidate | None] = {}
+        # Run-scoped performance caches. Order-gate geometry is queried many
+        # times by iterative E/OrderAudit reconciliation with identical immutable
+        # chronology and gate inputs. Cache raw geometry and clone on return so
+        # callers retain the historical fresh-Candidate mutation semantics.
+        self._order_gate_geometry_cache: dict[
+            tuple[str, int, int, datetime | None], Candidate | None
+        ] = {}
 
     @property
     def bull(self) -> BullishDetector:
@@ -1766,6 +1776,21 @@ class UnifiedReactionDetector(DetectorBase):
         limit = self.end_index if end_index is None else min(end_index, self.end_index)
         if gate_index < self.start_index or gate_index >= limit:
             return None
+        cache_key = (direction, gate_index, limit, gate_event_time)
+        if cache_key in self._order_gate_geometry_cache:
+            cached = self._order_gate_geometry_cache[cache_key]
+            return replace(cached) if cached is not None else None
+
+        def cache_result(result: Candidate | None) -> Candidate | None:
+            # The cache is run-scoped and bounded. FIFO eviction is sufficient
+            # because cache order never participates in trading semantics.
+            if len(self._order_gate_geometry_cache) >= _ORDER_GATE_CACHE_MAX_ENTRIES:
+                oldest = next(iter(self._order_gate_geometry_cache))
+                del self._order_gate_geometry_cache[oldest]
+            self._order_gate_geometry_cache[cache_key] = (
+                replace(result) if result is not None else None
+            )
+            return result
 
         def confirmed_no_later_than_gate(reaction: Candidate) -> bool:
             break_index = int(reaction.break_idx)
@@ -1804,7 +1829,7 @@ class UnifiedReactionDetector(DetectorBase):
             )
             if result is not None:
                 result.order_gate_decision = "no-history"
-            return result
+            return cache_result(result)
 
         owner = reactions[owner_position]
         boundary_end = max(int(owner.first_idx), gate_index - 1)
@@ -1825,7 +1850,7 @@ class UnifiedReactionDetector(DetectorBase):
         left = bisect.bisect_left(self.second_times, event_start)
         right = bisect.bisect_left(self.second_times, event_end)
         if left >= right:
-            return None
+            return cache_result(None)
         if direction == "bearish":
             outer_position = self.lower_index.first_greater(
                 left, right, outer_boundary
@@ -1841,7 +1866,7 @@ class UnifiedReactionDetector(DetectorBase):
                 left, right, gate_boundary
             )
         if outer_position is None and gate_position is None:
-            return None
+            return cache_result(None)
         # Legacy loop checks the outer/restart predicate first inside each
         # lower-timeframe candle, so restart owns an exact-position tie.
         restart = outer_position is not None and (
@@ -1854,10 +1879,10 @@ class UnifiedReactionDetector(DetectorBase):
         if decision_kind == "restart":
             source = self.main_source_for_time(decision_time)
             if source is None:
-                return None
+                return cache_result(None)
             search_start = int(source.index) + 1
         if search_start > limit:
-            return None
+            return cache_result(None)
         result = self._earliest_confirmed_geometry(
             direction, search_start, limit
         )
@@ -1887,7 +1912,7 @@ class UnifiedReactionDetector(DetectorBase):
                     result.anchor_idx = source.index
                     result.anchor_value = boundary
                     result.leg_boundary_value = boundary
-        return result
+        return cache_result(result)
 
     def _earliest_confirmed_geometry(
         self, direction: str, start_index: int, end_index: int | None = None,
@@ -2165,6 +2190,14 @@ class UnifiedReactionDetector(DetectorBase):
                 initial_reset_level,
                 initial.first_idx,
                 initial_reset_second.display_time,
+            )
+        else:
+            # Initial confirmation opens the same Normal-search handoff as
+            # every later confirmed Reaction. Reuse the shared confirmation-
+            # candle candidate rule so an eligible same-candle First is not
+            # lost merely because this was the first Reaction of the run.
+            candidate = self._candidate_from_confirmation_remainder(
+                direction, initial, initial_break_candle, initial_analysis
             )
 
         while index <= self.end_index:

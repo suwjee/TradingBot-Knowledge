@@ -8,39 +8,40 @@ name: "Source Reference Consistency"
 aliases: ["Source Reference Conflicts"]
 version: "current"
 related_entities: ["algorithm.blue", "algorithm.reaction", "algorithm.e", "algorithm.stopall.blue_reversal", "algorithm.serialization", "source.reference_registry"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1554", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L308", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L816", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L366", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1393", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L833"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1557", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L142", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L376", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L344", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2542"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md"]
 evidence_basis: "Fresh complete Source and directional Reference review; exact byte identity checked separately"
-reference_agreement: "conflict"
-reference_conflicts: ["REF-BLUE-ENDPOINT", "REF-REACTION-SUCCESSOR", "REF-E-TIE-SCOPE", "REF-S-MODE-B"]
+reference_agreement: "ambiguous"
+reference_conflicts: ["REF-REACTION-SUCCESSOR"]
+last_modified_at: "2026-10-28T18:07:57+03:30"
 ---
-
-
 # Current Source and Reference semantic consistency
 
-Review date: 2026-09-29. VERIFIED STATIC SOURCE FACTS below describe current executable branches. DOCUMENTED CLAIMS preserve the current References' narrative wording. Exact Source reconstruction is PASS for each Reference; it does not prove narrative agreement. No Engine or Reference edits, trading execution or market outcome validation occurred in this phase.
+The 2026-10-27 review compares the current accepted Reference statements with exact in-scope live owner bytes. Source facts below describe executable behavior; Reference wording describes intended semantics under root AGENTS authority. No Source or live accepted Reference was edited. Historical revision results inside exact References are not fresh checks.
 
-| Record | Documented claim in both References | Current Source fact | Classification and rule handling |
-|---|---|---|---|
-| REF-BLUE-ENDPOINT | Section 5.2, line 104 bounds pending Blue at the first strict Reaction confirmation row inclusive | Blue lines 84-136 return at a crossing only when eligible penetrations are nonempty; an empty-set crossing does not end the scan | Conditional mismatch. Retain decisive-row inclusion, use the actual conditional helper as executable knowledge, and keep unconditional intent unresolved |
-| REF-REACTION-SUCCESSOR | Section 4.4, line 78 says post-event chronology controls eligible new-boundary prices | Reaction lines 1554-1630 separate post-event Reset reuse gating from full confirmation-candle successor geometry; initial branch lines 2108-2170 does not seed a successor | Ambiguous boundary scope. Record complete-candle geometry and branch-specific seeding; do not infer a post-event-only successor boundary |
-| REF-E-TIE-SCOPE | Section 8.2, line 185 says exact stop ties prefer larger FirstIndex | Order lines 816-840 choose direct/reset-leg representative by stop then earlier FirstTime; carried and post-stop ranks differ; E lines 325-353 races representatives by stop then larger FirstIndex | Ambiguous route scope. The larger-First rule is final-race-specific, not a universal underlying pool sort |
-| REF-S-MODE-B | Section 12.4, line 295 requires a native Mode-B formation Order | Lifecycle lines 366-373 tests final color Red and order_mode=B; S lines 1393-1417 can replace that Order field after native order-free formation | Ambiguous original-versus-final ownership. Record final-field predicate and preserve stronger native wording separately |
+## Remaining narrative ambiguity
 
-No new intended trading rule is chosen by these records. Determining intended behavior beyond the executable facts requires a separately authorized semantic clarification. A particular market realization of these differences is NOT_REQUIRED_THIS_PHASE. Active/executable algorithm notes retain current Source authority and expose Reference warnings; the disputed stronger narrative interpretation is not promoted to normative authority.
+| Record | Current accepted Reference claim | Current executable fact | Handling |
+| --- | --- | --- | --- |
+| REF-REACTION-SUCCESSOR | Section4.4 permits a complete confirmation candle as the next First, while saying post-event chronology controls eligible new-boundary prices | UnifiedReactionDetector._candidate_from_confirmation_remainder first checks strictly later rows for Reset, then uses whole_confirmation_candle=True, all lower rows in that main candle and main-open intrabar_start for successor geometry. Initial confirmation now invokes the helper too. | Ambiguous boundary-price scope. Retain both claims and do not invent a post-event-only successor boundary or silently rewrite intended semantics. |
 
-## Source comment scope
+## Earlier discrepancy claims rechecked
 
-The post-Reset scanner's docstring says an unfinished owner blocks nested completion, while Reaction lines 1677-1678 skip the unfinished bounded candidate. The canonical bounded completion-selection note follows the executed branch and matches Reference section 4.7.
+| Earlier record | Current evidence | Status |
+| --- | --- | --- |
+| REF-BLUE-ENDPOINT | Blue count_scale_strikes computes the Break lower prefix through exact confirmation inclusive; pending helper also stops after that time. Current Reference5.2 uses the same prefix. | Resolved in current captured Source/Reference; old unconditional-scan warning removed. |
+| REF-E-TIE-SCOPE | E._zone now races every eligible route candidate globally by exact stop then larger FirstIndex instead of reducing routes to one representative. Current Reference8.2 states the global scope. | Resolved; route-local sort descriptions are no longer a competing final rank. |
+| REF-S-MODE-B | Reference12.4 and lifecycle detect distinguish direct accepted S Red donation in either mode at its decision from completed-stop Mode-B fallback. No independent Blue occurrence ledger remains. | Superseded former wording; current explicit route distinction replaces the old native-versus-final ambiguity. |
+| Initial successor absence | Unified initial no-Reset confirmation now invokes the shared successor helper. Reference4.4 explicitly covers initial and later confirmations. | Resolved; complete-candle price-scope ambiguity above remains separate. |
 
-Optional Bridge Output comments describing no new stop search need owner scope: bridge parent-stop and A-stop helpers call native E/S chronology methods that may scan. The mapper validates the returned exact event, creates no physical Order or lifecycle acceptance, and selects no substitute event after proof fails. These are comment-versus-operation qualifications, not authorized Source corrections.
+## Source-comment and operation qualifications
 
-## Feedback and evidence scope
+The bounded post-Reset scanner docstring says an unfinished owner blocks nested completion, but its executable branch skips an unfinished bounded candidate. Reference4.7 expressly documents that completion-selection distinction. The adjacent-anchor append assigns its confirmation edge after exact eligibility without an additional no-shrink comparison. Raw direct-geometry selection ranks first confirming main then First index rather than a universal exact-lower-event order. These are owner-specific static facts, not demonstrated reachable market failures.
 
-StopAll reconciliation makes one source-order pass per call. Order_B feedback calls it during each dependent pass, then final visibility calls it after convergence. The Reference's hard-boundary intent is preserved as a documented claim; this static phase does not prove global future-input prefix invariance through changing feedback state. Exact implementation scope is recorded in algorithm.reconciliation.
+Optional Bridge projection calls native chronology confirmation/parent-stop methods which can scan. It validates the resulting exact lower row and never substitutes another event when proof fails; comments saying no new stop search must be read at mapper ownership scope. A detector deliberately uses use_intrabar_start=False for its own confirmation API; S/E/public Reaction callers retain their separate defaults.
 
-## Additional Source-comment qualifications
+Each StopAll reconciliation call makes one source-order pass; Order_B feedback can invoke another pass over recalculated accepted state when explicitly enabled. Final visibility uses identical enablement and supplements only absent accepted independent E donor physical sources before fixing hard boundaries. This static record does not prove future-input prefix invariance globally.
 
-Canonical adjacent-anchor append directly assigns the confirmation edge after its exact eligibility proof; its no-shrink comment has no explicit edge-extension comparison in that branch. The overlapping direct-geometry helper selects earliest confirming main and then smallest First index, not exact lower confirmation time. These owner facts are qualified in algorithm.reaction and algorithm.order.a; no reachable shrinking or event-reordering market case is claimed.
+## Coverage limits
 
-Lifecycle visible_a_zones_after_s_stops excludes bisect_left(main_times, S decision_event_time), which can map an intrabar decision to the next main index; the comment describing a containing S stop must not replace that exact predicate. S._a_confirmation_time uses default chronology confirmation and does not impose A detector's separate use_intrabar_start=False formation API usage.
+No new primary-structure knowledge or standalone detector is added. Complete current References preserve incidental excluded content exactly; source_scope and embedded-only integrity pins make that distinction explicit. RAW market regression, independent opposite-direction market correctness, full runtime branch coverage and excluded-feature semantic review are NOT RUN. Byte/schema/index/contract checks have separate statuses in the current validation report.

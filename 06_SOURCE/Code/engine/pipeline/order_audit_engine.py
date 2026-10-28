@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from bisect import bisect_left, bisect_right
+from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime
 from decimal import Decimal
@@ -11,8 +12,23 @@ from typing import Callable, Sequence
 
 from core_utils import as_decimal, order_identity, reaction_identity
 
-ORDER_AUDIT_ENGINE_VERSION = "1.5.1"
-ORDER_AUDIT_ENGINE_LAST_MODIFIED = "2026-09-28 19:35:32 +03:30"
+ORDER_AUDIT_ENGINE_VERSION = "1.7.1"
+ORDER_AUDIT_ENGINE_LAST_MODIFIED = "2026-10-24T23:30:27+03:30"
+
+
+def relabel_primary_causes(causes, labels):
+    """Resolve PH aliases by physical source without changing Order provenance."""
+    result = []
+    for cause in causes:
+        row = deepcopy(cause)
+        for name, source in (("parentType", "parentSourceTime"),
+                             ("postBehaviorType", "postBehaviorSourceTime"),
+                             ("anchorBehaviorType", "anchorBehaviorSourceTime")):
+            if str(row.get(name, "")).startswith("PH") and row.get(source) in labels:
+                row[name] = labels[row[source]]
+        if row not in result:
+            result.append(row)
+    return result
 
 @dataclass(frozen=True, slots=True)
 class PostBehaviorStop:
@@ -148,10 +164,13 @@ def discover_order_b_reset_legs(
     the highest High from the anchor behavior candle through the Reset
     Reaction FirstGreen; Bullish mirrors it with the lowest Low through
     FirstRed.  The boundary must extend strictly beyond the anchor behavior
-    candle, the reset Reaction must start strictly after that boundary source,
-    and the physical opposite Reaction is the first canonical Reaction whose
-    First candle starts at or after the exact strict lower-TF crossing of the
-    frozen boundary following Reset, with confirmation strictly after it.
+    candle and the reset Reaction must start strictly after that boundary
+    source.  Order_B selection is owned by the calculation timeframe: the
+    first main candle containing a strict post-Reset boundary crossing opens
+    the opposite-Reaction gate, and a canonical opposite Reaction whose First
+    is that same main candle is eligible.  Lower-timeframe chronology is kept
+    only to prove that the crossing occurs after the exact Reset and, when
+    needed, that confirmation occurs strictly after the crossing.
     """
     if direction not in {"bullish", "bearish"}:
         raise ValueError("Direction must be 'bullish' or 'bearish'.")
@@ -281,23 +300,28 @@ def discover_order_b_reset_legs(
         if crossing is None:
             continue
         strict_break_time = lower_times[crossing]
+        strict_break_index = chronology.main_index(strict_break_time, clamp=True)
 
-        # A newly formed A is an upstream, Order_B-independent lifecycle
-        # boundary.  A reset-leg that was prepared before that A may not stay
-        # pending and fire after it; the new A is now the behavior context for
-        # subsequent Order logic.  Using A as the hard expiry also keeps the
-        # Order_B feedback monotonic because S/E/StopAll may themselves depend
-        # on Order_B while A does not.
+        # Order_B is a calculation-timeframe rule.  The exact lower-TF crossing
+        # proves the break happened after Reset and remains audit provenance,
+        # but it must not disqualify a canonical opposite Reaction whose First
+        # belongs to the same calculation candle as that strict break.
+        #
+        # A newly formed accepted A is likewise compared by its owning main
+        # candle.  This keeps lifecycle expiry on the configured calculation
+        # timeframe while preserving lower-TF chronology only where exact
+        # within-candle ordering is genuinely required.
         next_a_position = bisect_right(a_times, current_first_time)
         if (
             next_a_position < len(a_times)
-            and a_times[next_a_position] <= strict_break_time
+            and chronology.main_index(a_times[next_a_position], clamp=True)
+            <= strict_break_index
         ):
             continue
 
         physical = next((
             item for item in opposite_direction
-            if strict_break_time <= chronology.times[item[1]]
+            if strict_break_index <= item[1]
             and strict_break_time < item[0]
         ), None)
         if physical is None:
@@ -605,19 +629,57 @@ class OrderAuditEngineMixin:
         start: datetime,
         continuous_deadline: datetime | None,
         allow_bounded_continue: bool,
+        e_parent: bool = False,
+        *, confirmation_after: datetime | None = None,
     ) -> tuple[int, object, datetime] | None:
         """Select the direct parent-stop Order_A."""
+        cache_key = (start, continuous_deadline, allow_bounded_continue, e_parent, confirmation_after)
+        cached = self._direct_parent_stop_cache.get(cache_key)
+        if cached is not None or cache_key in self._direct_parent_stop_cache:
+            return cached
+        result = self._compute_direct_parent_stop_order(
+            start, continuous_deadline, allow_bounded_continue, e_parent,
+            confirmation_after=confirmation_after,
+        )
+        self._direct_parent_stop_cache[cache_key] = result
+        return result
+
+    def _compute_direct_parent_stop_order(
+        self,
+        start: datetime,
+        continuous_deadline: datetime | None,
+        allow_bounded_continue: bool,
+        e_parent: bool = False,
+        *, confirmation_after: datetime | None = None,
+    ) -> tuple[int, object, datetime] | None:
         gate_time = self.times[self._main_index(start)]
         geometric_direct = self._first_healthy_direct_geometry(
             start, allow_bounded_continue
         )
+        if (geometric_direct is not None and confirmation_after is not None
+                and geometric_direct[2] <= confirmation_after):
+            geometric_direct = None
         direct_position = bisect_left(self._opposite_first_times, gate_time)
+        if confirmation_after is not None:
+            while (direct_position < len(self.opposite_reactions)
+                   and self._opposite_confirmations[direct_position] <= confirmation_after):
+                direct_position += 1
         while (
             direct_position < len(self.opposite_reactions)
             and self._opposite_first_times[direct_position]
             in self.blocked_order_first_times
             and self._opposite_first_times[direct_position] == gate_time
         ):
+            # The invalid-A First veto remains in force except for a native
+            # Order_A consumed by this accepted E stop. Exact A/E simultaneous
+            # stop and strict post-stop confirmation are required; inherited
+            # unrelated blocks cannot be bypassed by a later E stop.
+            if (
+                e_parent
+                and (start, gate_time) in self.e_parent_order_first_exceptions
+                and self._opposite_confirmations[direct_position] > start
+            ):
+                break
             direct_position += 1
 
         independent = None
@@ -741,6 +803,7 @@ class OrderAuditEngineMixin:
         continuous_deadline: datetime | None = None,
         allow_bounded_continue: bool = False,
         allow_trend_leg_continue: bool = False,
+        e_parent: bool = False,
     ) -> list[OrderMatch]:
         """Return physical Order candidates formed before this E decision."""
         cache_key = (
@@ -748,6 +811,7 @@ class OrderAuditEngineMixin:
             continuous_deadline,
             allow_bounded_continue,
             allow_trend_leg_continue,
+            e_parent,
         )
         cached = self._order_candidates_cache.get(cache_key)
         if cached is not None:
@@ -755,7 +819,7 @@ class OrderAuditEngineMixin:
 
         by_geometry: dict[tuple[int, int], OrderMatch] = {}
         direct = self._direct_parent_stop_order(
-            start, continuous_deadline, allow_bounded_continue
+            start, continuous_deadline, allow_bounded_continue, e_parent
         )
         if direct is not None:
             self._merge_order_candidate(
@@ -865,6 +929,17 @@ class OrderAuditEngineMixin:
         self.order_audit.clear()
         self._order_audit_confirmation_index.clear()
         self._carried_orders_cache.clear()
+        self._invalidate_post_stop_order_cache()
+
+    def _invalidate_carried_order_caches(self) -> None:
+        # Carried results depend on creation causes, so they must drop when a
+        # cause is added. Post-stop results depend only on the confirmation
+        # index length (included in its cache key), so cause-only mutations
+        # must not wipe that cache.
+        self._carried_orders_cache.clear()
+
+    def _invalidate_post_stop_order_cache(self) -> None:
+        self._post_stop_orders_cache.clear()
 
 
     def register_order_b_reset_legs(
@@ -872,7 +947,7 @@ class OrderAuditEngineMixin:
     ) -> None:
         """Merge proven reset-leg causes by canonical physical identity."""
         if legs:
-            self._carried_orders_cache.clear()
+            self._invalidate_carried_order_caches()
         for leg in legs:
             reaction = leg.physical_reaction
             identity = reaction_identity(reaction)
@@ -931,7 +1006,115 @@ class OrderAuditEngineMixin:
                     item["postBehaviorStopTime"], item["resetTime"],
                     item["strictBreakTime"], item["physicalOrderIdentity"],
                 ))
+                self._invalidate_carried_order_caches()
 
+
+    def _reparent_primary_high_causes(self, parent, stop_event, direct_identity):
+        """Replace only StopAll roles owned by an already confirmed PH."""
+        label = f"PH{parent.number}"
+        source = (int(parent.source_index), parent.source_time)
+        changed = False
+        revoked = set()
+        for identity, entry in self.order_audit.items():
+            previous = entry.get("causes", set())
+            current = set()
+            for cause in previous:
+                replaced = (cause[0] == "parent-stop" and str(cause[1]).startswith("StopAll")
+                    and cause[4] == parent.source_time and stop_event is not None
+                    and cause[3] == stop_event and cause[3] > parent.decision_event_time)
+                if not replaced:
+                    current.add(cause)
+                elif identity == direct_identity:
+                    current.add((cause[0], label, "", cause[3], cause[4]))
+            if current != previous:
+                entry["causes"] = current
+                changed = True
+            for cause in entry.get("order_b_causes", ()):
+                if (str(cause.get("postBehaviorType", "")).startswith("StopAll")
+                        and (cause.get("postBehaviorSourceIndex"), cause.get("postBehaviorSourceTime")) == source
+                        and stop_event is not None
+                        and cause.get("postBehaviorStopTime") == stop_event
+                        and stop_event > parent.decision_event_time):
+                    cause["postBehaviorType"] = label
+                    changed = True
+                reset_identity = cause.get("resetReactionIdentity")
+                if (str(cause.get("anchorBehaviorType", "")).startswith("StopAll")
+                        and (cause.get("anchorBehaviorSourceIndex"), cause.get("anchorBehaviorSourceTime")) == source
+                        and reset_identity
+                        and self.times[int(reset_identity[0])] >= parent.decision_event_time):
+                    cause["anchorBehaviorType"] = label
+                    changed = True
+            if not current and not entry.get("order_b_causes"):
+                revoked.add(identity)
+        for identity in revoked:
+            del self.order_audit[identity]
+        if revoked:
+            self._order_audit_confirmation_index[:] = [
+                item for item in self._order_audit_confirmation_index
+                if (item[1], item[2]) not in revoked
+            ]
+            self._invalidate_post_stop_order_cache()
+        if changed or revoked:
+            self._invalidate_carried_order_caches()
+
+    def register_primary_high(self, parent):
+        """Create the native bearish-owner Order_A after a confirmed PH stop.
+
+        PH replaces the final StopAll owner without deleting the historical
+        sequence boundaries that were needed before PH confirmation.
+        """
+        if self.direction != "bearish" or getattr(parent, "kind", None) != "PH":
+            raise ValueError("Primary-High Order_A is specified for the bearish owner only.")
+        left = bisect_right(self.lower_times, parent.decision_event_time)
+        right = bisect_left(self.lower_times, self.range_end)
+        position = self._first_cross_position(left, right, as_decimal(parent.price), less=False)
+        stop_event = self.lower_times[position] if position is not None else None
+        direct = self._direct_parent_stop_order(
+            stop_event, None, False, confirmation_after=stop_event,
+        ) if stop_event is not None else None
+        self._reparent_primary_high_causes(
+            parent, stop_event, reaction_identity(direct[1]) if direct is not None else None,
+        )
+        if direct is None:
+            return None
+        number, reaction, confirmation = direct
+        identity = reaction_identity(reaction)
+        entry = self.order_audit.get(identity)
+        if entry is None:
+            level, source, source_time = self._order_stop(number, reaction)
+            entry = {
+                "reaction_number": number, "reaction": reaction,
+                "confirmation_time": confirmation, "stop_level": level,
+                "stop_source_index": source, "stop_source_time": source_time,
+                "stop_cross": self._cross_order(confirmation, level), "causes": set(),
+            }
+            self.order_audit[identity] = entry
+            self._index_order_audit_identity(identity, confirmation)
+        cause = ("parent-stop", f"PH{parent.number}", "", stop_event, parent.source_time)
+        if cause not in entry["causes"]:
+            entry["causes"].add(cause)
+            self._invalidate_carried_order_caches()
+        return identity
+
+    def reconcile_primary_high_labels(self, highs):
+        """Publish one final PH name without rediscovering or moving Orders."""
+        labels = {point.source_time: f"PH{point.number}" for point in highs}
+        changed = False
+        for entry in self.order_audit.values():
+            previous = entry.get("causes", set())
+            current = {(kind, labels.get(source, label) if str(label).startswith("PH") else label,
+                        family, event, source)
+                       for kind, label, family, event, source in previous}
+            if current != previous:
+                entry["causes"] = current
+                changed = True
+            previous_b = entry.get("order_b_causes", [])
+            current_b = relabel_primary_causes(previous_b, labels)
+            if current_b != previous_b:
+                entry["order_b_causes"] = current_b
+                changed = True
+        if changed:
+            self._invalidate_carried_order_caches()
 
     def _register_order_audit(
         self, parent_type: str, parent: object, parent_stop: datetime,
@@ -948,9 +1131,11 @@ class OrderAuditEngineMixin:
             None,
             allow_bounded_continue=(parent_type == "S"),
             allow_trend_leg_continue=(parent_type == "E"),
+            e_parent=(parent_type == "E"),
         )
         direct = self._direct_parent_stop_order(
-            parent_stop, None, allow_bounded_continue=(parent_type == "S")
+            parent_stop, None, allow_bounded_continue=(parent_type == "S"),
+            e_parent=(parent_type == "E"),
         )
         if direct is not None:
             direct_identity = reaction_identity(direct[1])
@@ -962,7 +1147,7 @@ class OrderAuditEngineMixin:
                     parent_stop,
                 ))
 
-        self._carried_orders_cache.clear()
+        changed = False
         for match in matches:
             number, reaction, confirmation, level, source, source_time = match[:6]
             crossed, causes = match[6], match[7]
@@ -983,6 +1168,7 @@ class OrderAuditEngineMixin:
                 }
                 self.order_audit[key] = entry
                 self._index_order_audit_identity(key, confirmation)
+                changed = True
             audit_causes = entry["causes"]
             assert isinstance(audit_causes, set)
             family = str(getattr(parent, "color", getattr(parent, "family", "")))
@@ -993,10 +1179,15 @@ class OrderAuditEngineMixin:
             if parent.source_time in self.sequence_resets:
                 parent_label = f"StopAll{self.sequence_resets[parent.source_time]}"
                 family = ""
-            audit_causes.add((
+            cause = (
                 "parent-stop", parent_label, family, parent_stop,
                 getattr(parent, "source_time"),
-            ))
+            )
+            if cause not in audit_causes:
+                audit_causes.add(cause)
+                changed = True
+        if changed:
+            self._invalidate_carried_order_caches()
 
 
     @staticmethod
@@ -1146,7 +1337,6 @@ class OrderAuditEngineMixin:
 
 
     @staticmethod
-    @staticmethod
     def _initial_record_match(
         record: tuple[
             datetime, datetime, int, object, Decimal, int, datetime,
@@ -1265,18 +1455,29 @@ class OrderAuditEngineMixin:
     ) -> list[OrderMatch]:
         """Return accepted physical Orders confirmed after this parent stop."""
         del parent
+        # Safe cache key: confirmation-index length changes whenever a new
+        # accepted Order enters the live ledger. Cause-only mutations do not
+        # change the post-stop result set.
+        cache_key = (parent_stop, len(self._order_audit_confirmation_index))
+        cached = self._post_stop_orders_cache.get(cache_key)
+        if cached is not None:
+            return list(cached)
         matches_by_identity: dict[tuple[int, int], OrderMatch] = {}
 
         def add_match(match: OrderMatch) -> None:
             crossed = match[6]
-            if crossed is None or crossed[2] <= parent_stop or crossed[2] <= match[2]:
+            if crossed is None:
                 return
-            if self._has_sequence_reset_between(parent_stop, crossed[2]):
+            crossed_time = crossed[2]
+            if crossed_time <= parent_stop or crossed_time <= match[2]:
                 return
-            identity = reaction_identity(match[1])
+            if self._has_sequence_reset_between(parent_stop, crossed_time):
+                return
+            reaction = match[1]
+            identity = (int(getattr(reaction, "first_idx")), int(getattr(reaction, "break_idx")))
             current = matches_by_identity.get(identity)
             if current is None or (
-                crossed[2], match[2], int(getattr(match[1], "first_idx"))
+                crossed_time, match[2], int(getattr(reaction, "first_idx"))
             ) < (
                 current[6][2], current[2], int(getattr(current[1], "first_idx"))
             ):
@@ -1321,12 +1522,14 @@ class OrderAuditEngineMixin:
                 ("accepted-live",), None,
             ))
 
-        return sorted(
+        result = sorted(
             matches_by_identity.values(),
             key=lambda item: (
                 item[6][2], item[2], -int(getattr(item[1], "first_idx")),
             ),
         )
+        self._post_stop_orders_cache[cache_key] = result
+        return list(result)
 
 
     def _blocked_by_gate_owned_order(self, zone: EZone) -> bool:
@@ -1494,7 +1697,9 @@ class OrderAuditEngineMixin:
                 "stop_cross": exact_cross,
                 "causes": causes,
             }
-            self._index_order_audit_identity(identity, zone.order_confirmation_time)
+            self._index_order_audit_identity(
+                identity, zone.order_confirmation_time
+            )
 
         # Order_A retention invariant: once a valid parent-stop physical Order
         # has entered the canonical ledger, later lifecycle reconciliation may
@@ -1558,46 +1763,64 @@ class OrderAuditEngineMixin:
             list(zones), supplemental_s_zones=supplemental_s_zones
         )
         for identity, entry in preserved.items():
-            self.order_audit.setdefault(identity, entry)
-        self._carried_orders_cache.clear()
+            if identity in self.order_audit:
+                continue
+            self.order_audit[identity] = entry
+            # The rebuild clears both ledger and index. Restoring only the
+            # ledger makes the physical Order invisible to chronological
+            # post-stop queries and downstream E/Order_B consumers.
+            self._index_order_audit_identity(identity, entry["confirmation_time"])
+        self._invalidate_carried_order_caches()
         return rebuilt
 
 
-def prepare_order_audit(
-    detector,
-    start_index: int,
-    end_index: int,
-    s_detector=None,
-    accepted_a_sources: set[datetime] | None = None,
-    required_identities: set[tuple[int, int]] | None = None,
-):
-    """Resolve final Order_A and Order_B identities before serialization."""
+def _parent_stop_cause_key(cause: dict[str, object]) -> tuple[object, object, object, object]:
+    return (
+        cause.get("parentType"),
+        cause.get("parentFamily"),
+        cause.get("eventTime"),
+        cause.get("parentSourceTime"),
+    )
+
+
+def _collect_s_ledger_entries(
+    s_detector,
+    accepted_a_sources: set[datetime] | None,
+) -> list[tuple[dict[str, object], list[dict[str, object]]]]:
+    """Collect A-owned Order_A entries with accepted creation causes."""
     combined: list[tuple[dict[str, object], list[dict[str, object]]]] = []
-    required_identities = set(required_identities or set())
+    if s_detector is None:
+        return combined
+    for entry in s_detector.order_audit.values():
+        a_causes = entry.get("a_causes") or [(
+            entry["a_source_time"], entry["a_stop_event_time"]
+        )]
+        if accepted_a_sources is not None:
+            a_causes = [
+                cause for cause in a_causes
+                if cause[0] in accepted_a_sources
+            ]
+        if not a_causes:
+            continue
+        combined.append((entry, [
+            {
+                "kind": "parent-stop",
+                "parentType": "A",
+                "parentFamily": None,
+                "eventTime": stop_time,
+                "parentSourceTime": source_time,
+            }
+            for source_time, stop_time in a_causes
+        ]))
+    return combined
 
-    if s_detector is not None:
-        for entry in s_detector.order_audit.values():
-            a_causes = entry.get("a_causes") or [(
-                entry["a_source_time"], entry["a_stop_event_time"]
-            )]
-            if accepted_a_sources is not None:
-                a_causes = [
-                    cause for cause in a_causes
-                    if cause[0] in accepted_a_sources
-                ]
-            if not a_causes:
-                continue
-            combined.append((entry, [
-                {
-                    "kind": "parent-stop",
-                    "parentType": "A",
-                    "parentFamily": None,
-                    "eventTime": stop_time,
-                    "parentSourceTime": source_time,
-                }
-                for source_time, stop_time in a_causes
-            ]))
 
+def _collect_e_ledger_entries(
+    detector,
+    accepted_a_sources: set[datetime] | None = None,
+) -> list[tuple[dict[str, object], list[dict[str, object]]]]:
+    """Collect E-stage Order entries using only accepted A parent-stop causes."""
+    combined: list[tuple[dict[str, object], list[dict[str, object]]]] = []
     for entry in detector.order_audit.values():
         causes = [
             {
@@ -1609,11 +1832,26 @@ def prepare_order_audit(
             }
             for cause in sorted(entry["causes"], key=str)
             if cause[0] == "parent-stop"
+            and not (
+                cause[1] == "A"
+                and accepted_a_sources is not None
+                and cause[4] not in accepted_a_sources
+            )
         ]
         causes.extend(entry.get("order_b_causes", ()))
         if causes:
             combined.append((entry, causes))
+    return combined
 
+
+def _merge_prepared_identities(
+    combined: list[tuple[dict[str, object], list[dict[str, object]]]],
+    detector,
+    start_index: int,
+    end_index: int,
+    required_identities: set[tuple[int, int]],
+) -> list[dict[str, object]]:
+    """Merge ledger rows by physical identity inside the presentation window."""
     merged: dict[tuple[int, int], dict[str, object]] = {}
     output: list[dict[str, object]] = []
     for entry, supplied_causes in combined:
@@ -1646,8 +1884,13 @@ def prepare_order_audit(
         }
         merged[identity] = prepared
         output.append(prepared)
+    return output
 
-    # One exact parent-stop event creates one physical Order_A.
+
+def _single_owner_parent_stop_causes(
+    output: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    """Keep one physical Order_A owner per exact parent-stop cause key."""
     parent_owner: dict[tuple[object, object, object, object], dict[str, object]] = {}
     parent_rank: dict[tuple[object, object, object, object], tuple[object, int, int]] = {}
     for item in output:
@@ -1660,12 +1903,7 @@ def prepare_order_audit(
         for cause in item["causes"]:
             if cause.get("kind") != "parent-stop":
                 continue
-            key = (
-                cause.get("parentType"),
-                cause.get("parentFamily"),
-                cause.get("eventTime"),
-                cause.get("parentSourceTime"),
-            )
+            key = _parent_stop_cause_key(cause)
             previous = parent_rank.get(key)
             if previous is None or rank < previous:
                 parent_rank[key] = rank
@@ -1678,18 +1916,33 @@ def prepare_order_audit(
             if cause.get("kind") != "parent-stop":
                 accepted_causes.append(cause)
                 continue
-            key = (
-                cause.get("parentType"),
-                cause.get("parentFamily"),
-                cause.get("eventTime"),
-                cause.get("parentSourceTime"),
-            )
+            key = _parent_stop_cause_key(cause)
             if parent_owner.get(key) is item:
                 accepted_causes.append(cause)
         if accepted_causes:
             item["causes"] = accepted_causes
             deduped_output.append(item)
     return deduped_output
+
+
+def prepare_order_audit(
+    detector,
+    start_index: int,
+    end_index: int,
+    s_detector=None,
+    accepted_a_sources: set[datetime] | None = None,
+    required_identities: set[tuple[int, int]] | None = None,
+):
+    """Resolve final Order_A and Order_B identities before serialization."""
+    required_identities = set(required_identities or set())
+    combined = [
+        *_collect_s_ledger_entries(s_detector, accepted_a_sources),
+        *_collect_e_ledger_entries(detector, accepted_a_sources),
+    ]
+    output = _merge_prepared_identities(
+        combined, detector, start_index, end_index, required_identities
+    )
+    return _single_owner_parent_stop_causes(output)
 
 
 def accepted_audit_entry(
@@ -1704,22 +1957,38 @@ def accepted_audit_entry(
     causes = entry.get("a_causes") or [
         (entry["a_source_time"], entry["a_stop_event_time"])
     ]
-    selected = next(
-        ((source_time, stop_time) for source_time, stop_time in causes
-         if source_time in accepted_sources),
-        None,
-    )
-    if selected is None:
+    accepted_causes = [
+        (source_time, stop_time)
+        for source_time, stop_time in causes
+        if source_time in accepted_sources
+    ]
+    if not accepted_causes:
         return None
+    selected = accepted_causes[0]
     if (
         selected[0] == entry.get("a_source_time")
         and selected[1] == entry.get("a_stop_event_time")
+        and accepted_causes == list(causes)
     ):
         return entry
     adjusted = dict(entry)
     adjusted["a_source_time"] = selected[0]
     adjusted["a_stop_event_time"] = selected[1]
+    adjusted["a_causes"] = accepted_causes
     return adjusted
+
+
+def accepted_audit_entries(
+    order_audit: dict[tuple[int, int], dict[str, object]],
+    accepted_sources: set[datetime],
+) -> dict[tuple[int, int], dict[str, object]]:
+    """Return Order_A entries whose creating A remains calculation-accepted."""
+    return {
+        identity: accepted
+        for identity, entry in order_audit.items()
+        for accepted in [accepted_audit_entry(entry, accepted_sources)]
+        if accepted is not None
+    }
 
 
 def order_identity_is_internal(item, internal_identities):
@@ -1737,14 +2006,57 @@ class SOrderAuditMixin:
     def _first_order_after(
         self, a_stop_event_time: datetime
     ) -> tuple[int, object, datetime] | None:
-        """Return the immutable first canonical opposite Order after A-stop.
+        """Resolve the first physical Order_A independently after each A stop.
 
-        Each stopped A creates at most one parent-stop Order_A.  Subsequent
-        native Mode-B Reactions cannot refresh that physical identity; they
-        may be accepted only through independently valid creation causes.
+        Opposite Order geometry must not inherit the normal same-direction
+        Reaction stream's previous-First ownership.  A valid post-stop First
+        can be nested inside an earlier, still-open opposite Reaction.  Keep
+        the canonical identity/number when the geometry is already present;
+        otherwise use reaction number zero (no invented public Reaction).
+        The same immutable chosen physical identity is shared by S and E audit.
         """
-        matches = self._order_matches_after(a_stop_event_time)
-        return matches[0] if matches else None
+        canonical = self._order_matches_after(a_stop_event_time)
+        native = canonical[0] if canonical else None
+        if self.initial_order_geometry is None:
+            return native
+
+        gate_index = self._main_index(a_stop_event_time)
+        physical = self.initial_order_geometry(
+            gate_index, a_stop_event_time, self.end_index
+        )
+        if physical is None or getattr(physical, "break_idx", None) is None:
+            return native
+        first_index = int(getattr(physical, "first_idx"))
+        if first_index < gate_index:
+            return native
+        confirmation = self._reaction_confirmation_time(
+            physical, self.order_direction
+        )
+        if confirmation <= a_stop_event_time:
+            return native
+
+        identity = reaction_identity(physical)
+        mapped = self._opposite_by_first_index.get(first_index)
+        if mapped is not None and reaction_identity(mapped[1]) == identity:
+            number, physical = mapped
+            confirmation = self._reaction_confirmation_time(
+                physical, self.order_direction
+            )
+        else:
+            # Order-only physical geometry is not a new canonical Reaction.
+            number = 0
+        independent = (number, physical, confirmation)
+        if native is None:
+            return independent
+        # A stopped parent owns its first post-stop First, not whichever
+        # unrelated continuous-stream Reaction happens to be published.
+        if (
+            first_index, confirmation
+        ) < (
+            int(getattr(native[1], "first_idx")), native[2]
+        ):
+            return independent
+        return native
 
 
     def _order_matches_after(

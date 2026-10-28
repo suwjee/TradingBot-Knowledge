@@ -3,34 +3,36 @@ id: "source.pipeline.__init__"
 type: "source"
 status: "active"
 authority: "executable"
-title: "Exact current Python package marker; unsupported package imports do not define the production entry path"
+title: "Maintained pipeline package compatibility wrapper"
 version: "unversioned package marker"
 related_entities: ["source.source_manifest"]
 source_reference: ["06_SOURCE/Code/engine/pipeline/__init__.py"]
 evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 source_path: "06_SOURCE/Code/engine/pipeline/__init__.py"
 mirror: "06_SOURCE/Code/engine/pipeline/__init__.py"
-sha256: "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3"
+sha256: "d22a1b81495a6c97b5eccc4d921b1ba4b709bfbcd39be6ef34b9014690b9f460"
 name: "Pipeline package surface"
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # __init__.py
 
-Exact current Python package marker; unsupported package imports do not define the production entry path.
+Maintained pipeline package compatibility wrapper.
 
-Current working-tree bytes are executable evidence; Source identity alone is not independent market correctness. The supported bridge dynamically loads owners; the legacy ordinary package wrapper is unsupported.
+Exact bytes describe executable behavior; Source identity is not intended-semantic authority or independent market correctness. Supported dynamic Bridge loading and the maintained pipeline compatibility wrapper are distinct runtime surfaces. The manifest source_scope bounds audit/reconstruction completeness.
 
-| Property | Current value |
-|---|---|
+## Snapshot identity
+
+| Property | Current captured evidence |
+| --- | --- |
 | Source | 06_SOURCE/Code/engine/pipeline/__init__.py |
-| SHA-256 | ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3 |
-| Bytes | 348 |
-| Lines | 19 |
+| SHA-256 | d22a1b81495a6c97b5eccc4d921b1ba4b709bfbcd39be6ef34b9014690b9f460 |
+| Bytes | 653 |
+| Lines | 28 |
 | Declared version | unversioned package marker |
 
-## Current symbols
+## Lexical Source symbols
 
-Every lexical class/function is listed, including nested definitions inside control blocks. Qualified name plus source line identifies repeated property accessors.
+Every lexical definition in this captured owner is indexed mechanically, including incidental out-of-scope feature helpers. A symbol row is navigation, not a separate concept or semantic approval.
 
-| Symbol | Source line | End line | Signature or role |
-|---|---:|---:|---|
+| Symbol | Line | End |
+| --- | ---: | ---: |

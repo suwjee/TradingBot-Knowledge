@@ -10,13 +10,13 @@ source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURC
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
 implemented_by: ["source.trading_pipeline", "source.order_audit_engine", "source.reaction_engine", "source.lifecycle_engine", "source.core_utils"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L309", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L309"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L415", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L415"]
 mirror_links: ["mirror.contract"]
 depends_on: ["algorithm.visibility", "algorithm.orderaudit"]
 name: "Serialization"
 aliases: ["Bridge Output"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Final public serialization and optional Bridge Output
 
 ## Bullish
@@ -87,3 +87,7 @@ Reaction projection contains first-candle color/time and top/bottom source time/
 `parent.order` is the selected behavior's recorded decisive physical Order joined to canonical audit identity. `currentOrder` is independent: it requires a proven strict stop of the projected behavior and an accepted creation cause matching the exact behavior source/stop. A `parent-stop` match requires exact parent type/source/event and compatible family. A `reset-leg` match requires exact post behavior source/stop and matching A/S type or the E/StopAll prefixed type. If these causes select exactly one physical audit identity it is projected; zero or multiple distinct identities return null. Neither list position nor a consumed physical Order invents creation rights.
 
 Native chronology APIs are used to obtain Reaction confirmations and first A/S/E stops that are not stored directly in every selected object. Those APIs may perform a lookup or scan of the supplied chronology; projection then validates the returned event at its recorded timestamp. The optional mapper does not create Orders, change lifecycle acceptance or choose an alternative event to replace failed exact proof. Ordinary legacy serializers retain their existing field sets and do not expose internal `donor_*` fields.
+
+## Current projection scope
+
+The field sets above document the existing upstream arrays. Exact current Source/References also contain user-excluded extension fields and callbacks; this note does not claim their schema is covered. Bridge parsing now preserves original Decimal lexemes. Final A creation causes are filtered to accepted A identities before serialization, and shared S recoloring records the physical opposite order_direction. Public drawing or optional projection still cannot repair upstream trading state.

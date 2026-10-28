@@ -10,29 +10,31 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py"]
 evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 source_path: "06_SOURCE/Code/engine/pipeline/core_utils.py"
 mirror: "06_SOURCE/Code/engine/pipeline/core_utils.py"
-sha256: "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de"
+sha256: "007e5329e14ab9695e555c630527badc84dd35a239dea1cf685141e4278265eb"
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # core_utils.py
 
 Behavior-neutral Decimal normalization and physical Reaction/Order identity.
 
-Current working-tree bytes are executable evidence; Source identity alone is not independent market correctness. The supported bridge dynamically loads owners; the legacy ordinary package wrapper is unsupported.
+Exact bytes describe executable behavior; Source identity is not intended-semantic authority or independent market correctness. Supported dynamic Bridge loading and the maintained pipeline compatibility wrapper are distinct runtime surfaces. The manifest source_scope bounds audit/reconstruction completeness.
 
-| Property | Current value |
-|---|---|
+## Snapshot identity
+
+| Property | Current captured evidence |
+| --- | --- |
 | Source | 06_SOURCE/Code/engine/pipeline/core_utils.py |
-| SHA-256 | 3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de |
-| Bytes | 885 |
-| Lines | 29 |
+| SHA-256 | 007e5329e14ab9695e555c630527badc84dd35a239dea1cf685141e4278265eb |
+| Bytes | 832 |
+| Lines | 26 |
 | Declared version | 1.0.0 |
 
-## Current symbols
+## Lexical Source symbols
 
-Every lexical class/function is listed, including nested definitions inside control blocks. Qualified name plus source line identifies repeated property accessors.
+Every lexical definition in this captured owner is indexed mechanically, including incidental out-of-scope feature helpers. A symbol row is navigation, not a separate concept or semantic approval.
 
-| Symbol | Source line | End line | Signature or role |
-|---|---:|---:|---|
-| as_decimal | 11 | 13 | value: object |
-| order_identity | 19 | 21 | first_index: object, break_index: object |
-| reaction_identity | 24 | 29 | reaction: object |
+| Symbol | Line | End |
+| --- | ---: | ---: |
+| as_decimal | 11 | 13 |
+| order_identity | 19 | 21 |
+| reaction_identity | 24 | 26 |

@@ -423,6 +423,33 @@ def build(check=False, mode="full-data"):
         required_sources = {relative.removeprefix("06_SOURCE/Code/engine/")
                             for relative in pins if relative.startswith("06_SOURCE/Code/engine/")
                             and relative.endswith(".py")}
+        source_scope = manifest.get("source_scope", {})
+        if not isinstance(source_scope, dict):
+            raise ValueError("Source scope must be an object")
+        excluded_rows = source_scope.get("excluded_source_paths", [])
+        if not isinstance(excluded_rows, list):
+            raise ValueError("Excluded source paths must be an array")
+        excluded_sources = {}
+        for excluded in excluded_rows:
+            if not isinstance(excluded, dict):
+                raise ValueError("Excluded source declaration must be an object")
+            origin = excluded["repository_relative_path"]
+            safe_path(root, origin)
+            if not origin.startswith("engine/") or not origin.endswith(".py"):
+                raise ValueError("Excluded source must be an Engine Python path")
+            relative = origin.removeprefix("engine/")
+            if relative in excluded_sources:
+                raise ValueError(f"Duplicate excluded source: {origin}")
+            if relative in required_sources:
+                raise ValueError(f"Excluded source is also captured: {origin}")
+            if (not isinstance(excluded.get("reason"), str) or not excluded["reason"].strip()
+                    or not isinstance(excluded.get("embedded_sha256"), str)
+                    or not HASH_PATTERN.fullmatch(excluded["embedded_sha256"])
+                    or type(excluded.get("embedded_bytes")) is not int
+                    or excluded["embedded_bytes"] < 0):
+                raise ValueError(f"Invalid embedded-only source identity: {origin}")
+            excluded_sources[relative] = excluded
+        expected_embedded = required_sources | set(excluded_sources)
         registered_local = set()
         for row in refs:
             origin = row["repository_relative_path"]
@@ -440,16 +467,24 @@ def build(check=False, mode="full-data"):
             if pin_row is None or pin_row["sha256"] != row["sha256"] or pin_row["bytes"] != row["bytes"]:
                 raise ValueError(f"Reference manifest mismatch: {row['id']}")
             sources = _embedded_sources(path.read_bytes())
-            if set(sources) != required_sources:
-                errors.append(f"Embedded source inventory mismatch: {row['id']}: missing={sorted(required_sources-set(sources))} extra={sorted(set(sources)-required_sources)}")
+            if set(sources) != expected_embedded:
+                errors.append(f"Embedded source inventory mismatch: {row['id']}: missing={sorted(expected_embedded-set(sources))} extra={sorted(set(sources)-expected_embedded)}")
             for relative, payload in sources.items():
-                source = safe_path(root, "06_SOURCE/Code/engine/" + relative)
-                matches = source.is_file() and source.read_bytes() == payload
+                excluded = excluded_sources.get(relative)
+                if excluded is not None:
+                    matches = (hashlib.sha256(payload).hexdigest() == excluded["embedded_sha256"]
+                               and len(payload) == excluded["embedded_bytes"])
+                    coverage = "embedded-only-excluded"
+                else:
+                    source = safe_path(root, "06_SOURCE/Code/engine/" + relative)
+                    matches = source.is_file() and source.read_bytes() == payload
+                    coverage = "standalone-captured"
                 if not matches:
-                    errors.append(f"Embedded source mismatch: {row['id']}:{relative}")
+                    label = "Embedded-only source mismatch" if excluded is not None else "Embedded source mismatch"
+                    errors.append(f"{label}: {row['id']}:{relative}")
                 reconstructions.append({"reference_id": row["id"], "source": relative,
                                         "sha256": hashlib.sha256(payload).hexdigest(),
-                                        "bytes": len(payload), "exact": matches})
+                                        "bytes": len(payload), "exact": matches, "coverage": coverage})
         manifest_refs = {row.get("mirror", row["source"]) for row in manifest.get("algorithm_references", [])}
         if manifest_refs != registered_local:
             errors.append("Reference manifest/registry inventory mismatch")
@@ -595,6 +630,7 @@ def build(check=False, mode="full-data"):
         "_INDEX/knowledge-graph.json": {"generated_from": label,
                                       "nodes": [{"id": ident, **row} for ident, row in rows.items()], "edges": edges},
         "_GENERATED/source-structure.json": {"schema_version": 1, "generated_from": "captured current Python AST",
+                                           "source_scope": manifest.get("source_scope", {}),
                                            "modules": structures, "reference_reconstructions": reconstructions},
         "_GENERATED/knowledge-model.json": {"schema_version": 1, "generated_from": label,
                                             "entities": [{"id": ident, "file": files[ident], **fields}

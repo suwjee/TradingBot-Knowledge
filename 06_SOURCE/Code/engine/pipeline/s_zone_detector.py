@@ -19,9 +19,9 @@ from order_audit_engine import SOrderAuditMixin
 from direction_policy import policy_for
 
 
-S_ZONE_VERSION = "4.20.0"
-S_ZONE_IMPLEMENTATION_VERSION = "4.21.0"
-S_ZONE_LAST_MODIFIED = "2026-09-27 23:17:17 +03:30"
+S_ZONE_VERSION = "4.20.1"
+S_ZONE_IMPLEMENTATION_VERSION = "4.21.1"
+S_ZONE_LAST_MODIFIED = "2026-10-23 12:23:13 +02:00"
 
 
 @dataclass(frozen=True, slots=True)
@@ -1393,6 +1393,7 @@ class SZoneDetector(SOrderAuditMixin):
             output.append(replace(
                 zone,
                 color="red",
+                order_direction=self.order_direction,
                 order_reaction_number=int(entry.get("reaction_number", 0)),
                 order_mode=str(getattr(reaction, "mode")),
                 order_first_index=first_index,

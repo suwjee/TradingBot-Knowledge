@@ -5,6 +5,18 @@ function bucketTime(value, timeframeSeconds) {
   return Math.floor(Number(value) / timeframeSeconds) * timeframeSeconds;
 }
 
+function bucketBoundaryIndex(rows, bucket, timeframeSeconds, afterBoundary = false) {
+  let left = 0;
+  let right = rows.length;
+  while (left < right) {
+    const middle = left + Math.floor((right - left) / 2);
+    const middleBucket = bucketTime(rows[middle].time, timeframeSeconds);
+    if (middleBucket < bucket || (afterBoundary && middleBucket === bucket)) left = middle + 1;
+    else right = middle;
+  }
+  return left;
+}
+
 export function prepareIndicatorRangeInput(rows, { from, to, chartTimeframeSeconds } = {}) {
   const start = Number(from);
   const end = Number(to);
@@ -29,10 +41,11 @@ export function prepareIndicatorRangeInput(rows, { from, to, chartTimeframeSecon
     return { rows, usesCompleteSource: true };
   }
 
-  const selected = rows.filter((row) => {
-    const bucket = bucketTime(row?.time, timeframe);
-    return bucket >= start && bucket <= end;
-  });
+  // RAW rows have already passed strict chronology validation at the store
+  // boundary, so their chart buckets are nondecreasing.
+  const first = bucketBoundaryIndex(rows, start, timeframe);
+  const afterLast = bucketBoundaryIndex(rows, end, timeframe, true);
+  const selected = rows.slice(first, afterLast);
   if (!selected.length
     || bucketTime(selected[0].time, timeframe) !== start
     || bucketTime(selected.at(-1).time, timeframe) !== end) {

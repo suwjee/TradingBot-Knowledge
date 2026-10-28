@@ -1,36 +1,29 @@
-# Current Phase-1 Vault and Plugin validation
+# Current scoped knowledge validation
 
-Captured: 2026-09-29 12:52:09 +0330 (Asia/Tehran)
+Verified 2026-10-28T18:18:57+03:30.
 
-Phase: 2026-09-29 current Source/Reference/Vault/Plugin audit. Engine Source Modified: NO. Reference Bytes Modified: NO. Source semantics were inspected, not executed. This report replaces the previous phase report; old Engine repairs or market checks are not evidence for this phase.
+Status: PASS for the scoped knowledge, source-integrity, Plugin and freshly launched installed-MCP gates below. The existing chat's old server process has not reloaded; see the host distinction below. No historical PASS is reused.
 
-| Check | Actual result |
-| --- | --- |
-| Current protected Source | 13/13 baseline hashes and captured mirrors exact; safe compilation PASS |
-| Complete semantic inspection | 346 functions; 383 class/function units covered; STATIC_REVIEW_ONLY |
-| Both current References | 5.4.19-EX1; independent reconstruction 13/13 each; exact bytes |
-| Reference narrative agreement | Four disclosed conditional/scope discrepancies; no intended-rule resolution |
-| Vault | 119 entities, 453 relations; 33 schema tests PASS |
-| Generation | Two independent seven-output generations and --check byte-identical |
-| Plugin | 0.3.8; 104 discovered, 103 passed, 0 failed, 1 environment skip |
-| Actual MCP | 604 successful calls; eight tools; zero Vault byte mutations |
-| Operational | Editable and official 25-file package; local/external modes; four ready=true doctors |
-| Protected mutation | Final boundary is recorded in the external final-snapshot.json and verification.json |
-| RAW / fixtures / market regression | NOT_REQUIRED_THIS_PHASE; stores EMPTY_BY_DESIGN |
+| Fresh check | Status | Scope |
+| --- | --- | --- |
+| Schema maintenance suite | PASS | 38 tests, including declared embedded-only exclusions and note timestamps |
+| Exact current snapshot comparison | PASS | 13 in-scope Engine owners/package files, 36 project support files, 2 full current accepted References |
+| Dynamic production closure accounting | PASS | Captured owners plus explicit user exclusion account for discovered production Python |
+| Builder full-data and knowledge modes | PASS | 124 entities, 480 relations; IDs, relations, schemas, local links/anchors, exact pins and embedded payloads |
+| Two independent deterministic builds | PASS | All seven managed generated files identical; final check modes passed |
+| Plugin complete suite with current Vault and Engine roots | PASS | 109 tests discovered: 108 passed, one Windows symlink-privilege skip; actual junction containment tests passed |
+| Plugin newline compatibility regression | PASS | LF/CRLF notes retrieve identically only after physical byte identity validation; newline-only unpinned tampering rejected |
+| Installed Plugin 0.3.9 package | PASS | All 25 packaged files byte-identical to the editable-source build; configured local marketplace and installed cache refreshed through CLI |
+| Fresh installed runtime doctor / MCP | PASS | ready=true; full-data integrity and external Reference cross-check; all eight tools initialized/listed/called, including expected EMPTY_BY_DESIGN data errors |
+| Fresh installed MCP knowledge retrieval | PASS | Current version 5.4.33, source-reference ambiguity warning and new project-release note retrieved |
+| Current chat's previously bound server reload | INCOMPLETE | Its old 0.3.8 process still rejects CRLF. A new chat must load the installed 0.3.9 runtime; fresh installed-process checks above already pass |
+| Engine unit suite | PASS | 193 tests; scratch test runtime supplied pytest/orjson/tzdata, no production dependency/source edit |
+| Chart subsystem tests | PASS | 250 tests completed during this task on 2026-10-27; no browser or authenticated live FARAZ exercise |
+| Maintained documentation verification | PASS | Full anti-drift zero diagnostics and 31 verifier unit tests; archive navigation/report links checked separately |
+| Market regression and excluded-feature semantic review | NOT RUN | No market data/fixture correctness claim or new excluded concepts |
 
-| Category | Command | Tests | Passed | Failed | Skipped | Exit Code | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| unit | python -B -m unittest discover -s tests/unit -t . -v | 73 | 73 | 0 | 0 | 0 | PASS |
-| contract | python -B -m unittest discover -s tests/contract -t . -v | 5 | 5 | 0 | 0 | 0 | PASS |
-| security | python -B -m unittest discover -s tests/security -t . -v | 11 | 10 | 0 | 1 | 0 | PASS |
-| integration | python -B -m unittest discover -s tests/integration -t . -v | 9 | 9 | 0 | 0 | 0 | PASS |
-| mcp | python -B -m unittest discover -s tests/mcp -t . -v | 3 | 3 | 0 | 0 | 0 | PASS |
-| operational | python -B -m unittest discover -s tests/operational -t . -v | 3 | 3 | 0 | 0 | 0 | PASS |
-| full | python -B -m unittest discover -s tests -t . -v | 104 | 103 | 0 | 1 | 0 | PASS |
-| schema | python -B -m unittest discover -s _SCHEMA/tests -v | 33 | 33 | 0 | 0 | 0 | PASS |
+Current source_scope excludes the added standalone detector and new primary-structure concepts. Complete exact References preserve incidental extension evidence with embedded-only hash/byte verification. This scoped standalone Code tree is not a full runnable Engine reconstruction. The Source/Reference remaining ambiguity REF-REACTION-SUCCESSOR remains disclosed; intended semantics were not silently rewritten.
 
-Plugin categories run from `D:\My-Projects\TradingBot-Intelligence-Plugin`; schema from `D:\My-Projects\TradingBot-Knowledge`. The exact executable is `C:\Users\msadr\AppData\Local\Python\pythoncore-3.14-64\python.exe`. Process-only dependency path: `C:\Users\msadr\.codex\scratch\tradingbot-end-to-end-20260928\release-runtime`. Category rows are subsets of the full Plugin run, not additional unique tests. The combined unique Plugin/schema result is 137 discovered, 136 passed, 0 failed, 1 skipped. The final Behavior wording clarification was followed by a fresh 9-test real-root integration run and 19 real MCP calls; it changed no Plugin runtime or schema code.
+Review includes a full structural note/schema/index survey and targeted current in-scope semantic/source deltas. It does not claim exhaustive runtime branches, independent market correctness or new excluded-feature coverage. Live production Source and accepted References remain unchanged. RAW/Fixture stores remain EMPTY_BY_DESIGN.
 
-PASS for traversal/absolute/drive/UNC rejection, allowed-root checks before protected reads, Source-ID and path currentness, registered Reference provenance, indexed-note byte identity, strict JSON/schema/manifest integrity, alias collision rejection, relation-neighbor evidence validation, declared current entity contracts, canonical external Engine mappings, a real Windows Source junction and a real bootstrap _INDEX junction/canary. The existing file-symlink test skipped because Windows returned WinError 1314; it was not weakened or disabled. There is no claim about arbitrary concurrent filesystem races or cryptographic authentication of a completely replaced coordinated Vault. These are outside the declared unsigned local evidence contract.
-
-Final reports and post-assembly archive integrity are under `C:\Users\msadr\.codex\artifacts\tradingbot-vault-plugin-phase1-20260929`. No Git reset/clean/stash/stage/commit/push, Graphify execution, install-cache mutation or trading calculation occurred.
+Reproducible commands and coverage are recorded in X:/My-Projects/TradingBot/engineering/verification/knowledge-sync-2026-10-28/report.md. This task's detailed execution logs are under the local knowledge-audit scratch directory recorded in sync-status.json; they are workstation evidence, not shipped market fixtures.

@@ -15,7 +15,7 @@ from typing import Sequence
 from direction_policy import policy_for
 
 
-BLUE_LINE_VERSION = "2.3.0"
+BLUE_LINE_VERSION = "2.4.1"
 FIBONACCI_RATIO = Decimal("0.618")
 
 
@@ -91,6 +91,7 @@ def _intrabar_pending_confirmation(
     candles_by_index: dict[int, object],
 ) -> ScaleStrike | None:
     policy = policy_for(direction)
+    confirmation_time = chronology.reaction_confirmation(direction, reaction)
     end_time = break_time + chronology.timeframe
     left, right = chronology.lower_bounds(start_time, end_time)
     relevant = chronology.seconds[left:right]
@@ -102,6 +103,8 @@ def _intrabar_pending_confirmation(
     )
     eligible: list[object] = []
     for second in relevant:
+        if second.timestamp > confirmation_time:
+            break
         extreme = Decimal(getattr(second, policy.extreme_attr))
         penetrates = (
             extreme < comparison_extreme
@@ -156,14 +159,34 @@ def count_scale_strikes(
         for index in range(first_index, break_index + 1)
     ]
     confirming_color = "GREEN" if direction == "bullish" else "RED"
+    # Reaction Break is an exact lower-timeframe event, not the end of the
+    # published main OHLC candle. Later prices cannot create scale strikes.
+    break_candle = reaction_candles[-1]
+    confirmation_time = chronology.reaction_confirmation(direction, reaction)
+    break_left, break_right = chronology.lower_bounds(
+        break_candle.timestamp, break_candle.timestamp + chronology.timeframe
+    )
+    available_break_rows = [
+        item for item in chronology.seconds[break_left:break_right]
+        if item.timestamp <= confirmation_time
+    ]
+    break_extreme = (
+        (min if direction == "bullish" else max)(
+            Decimal(getattr(item, "low" if direction == "bullish" else "high"))
+            for item in available_break_rows
+        ) if available_break_rows else None
+    )
     strikes: list[ScaleStrike] = []
     pending: ScaleStrike | None = None
 
     for candle in reaction_candles:
         last_extreme = strikes[-1].extreme if strikes else level
-        candle_extreme = Decimal(
-            getattr(candle, "low" if direction == "bullish" else "high")
+        candle_extreme = (
+            break_extreme if int(getattr(candle, "index")) == break_index
+            else Decimal(getattr(candle, "low" if direction == "bullish" else "high"))
         )
+        if candle_extreme is None:
+            continue  # A missing lower-TF prefix cannot prove a new strike.
         is_new = (
             candle_extreme < last_extreme
             if direction == "bullish"

@@ -10,13 +10,13 @@ source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURC
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.s_zone_detector", "source.order_audit_engine", "source.lifecycle_engine", "source.trading_pipeline", "source.direction_policy"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L228", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L228"]
 mirror_links: ["mirror.contract"]
 depends_on: ["algorithm.a", "algorithm.order", "algorithm.reaction", "algorithm.blue"]
 name: "S"
 aliases: ["S Zone", "SZone"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # S opening, candidates and decisions
 
 ## Bullish
@@ -111,3 +111,7 @@ Accepted,stage-invalid,consumed/historical and public S are distinct lifecycle s
 S-stage A ownership uses a native window beginning at the exact parent A-stop event. While that handoff has no resolved S decision its end is open. Once S decides, the window ends at `max(aStopEvent, sDecisionEvent + one microsecond)`; the upper boundary is exclusive, so the decision timestamp itself is included. This is the S detector's A eligibility window, not the later full lifecycle lifetime of S.
 
 Compare A's exact source event with that window. An A whose trigger begins strictly after the handoff is independently eligible. In a decided window, a fresh Reset/Reset Blue pair can also remain eligible when Blue-1 source is strictly after handoff, Blue-1 stop is strictly before Blue-2 source, and A source main time equals Blue-2 stop main time. Later lifecycle owners still decide calculation acceptance and public visibility. Every stopped A is audited independently before these S-selection filters run.
+
+## Current stopped-A physical admission and direction
+
+The first Order_A search after an accepted A stop is independent of continuous public opposite-Reaction ownership. Complete confirmed physical geometry absent from that stream may be accepted with reactionNumber=0, preserving real First/Break and exact confirmation; see algorithm.order.a. A-owned causes from provisional or lifecycle-invalid A are filtered before downstream use/final audit. Shared accepted-Order recoloring sets order_direction to the physical opposite direction as well as identity/stop fields.

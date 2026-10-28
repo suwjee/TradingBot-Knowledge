@@ -10,10 +10,10 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOUR
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.s_zone_detector", "source.order_audit_engine", "source.reaction_engine", "source.direction_policy"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L248", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L248"]
 mirror_links: ["mirror.contract"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # S Type-1 Simple physical-Order route
 
 ## Bullish

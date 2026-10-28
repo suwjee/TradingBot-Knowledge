@@ -17,8 +17,8 @@ from core_utils import as_decimal
 from direction_policy import policy_for
 
 
-A_ZONE_VERSION = "1.6.4"
-A_ZONE_LAST_MODIFIED_DATE = "2026-09-21"
+A_ZONE_VERSION = "1.7.0"
+A_ZONE_LAST_MODIFIED_DATE = "2026-09-30"
 
 
 @dataclass(frozen=True, slots=True)
@@ -92,6 +92,17 @@ class AZoneDetector:
         self.candle_times = chronology.times
         self.lower_times = chronology.second_times
         self.lower_index = chronology.lower_index
+        self._reaction_first_times = [
+            self.candle_times[int(getattr(reaction, "first_idx"))]
+            for reaction in self.reactions
+        ]
+        self._reaction_break_times = [
+            self.candle_times[int(getattr(reaction, "break_idx"))]
+            for reaction in self.reactions
+        ]
+        self._reaction_confirmations = [
+            self._reaction_confirmation_time(reaction) for reaction in self.reactions
+        ]
 
     @property
     def extreme_name(self) -> str:
@@ -479,16 +490,15 @@ class AZoneDetector:
         *,
         not_before: datetime | None = None,
     ) -> tuple[int, object] | None:
-        for number, reaction in enumerate(self.reactions, start=1):
-            first_time = getattr(
-                self.candles[int(getattr(reaction, "first_idx"))],
-                "timestamp",
-            )
+        reactions = self.reactions
+        first_times = self._reaction_first_times
+        confirmations = self._reaction_confirmations
+        for number in range(len(reactions)):
             if (
-                self._reaction_confirmation_time(reaction) >= trigger_event_time
-                and (not_before is None or first_time >= not_before)
+                confirmations[number] >= trigger_event_time
+                and (not_before is None or first_times[number] >= not_before)
             ):
-                return number, reaction
+                return number + 1, reactions[number]
         return None
 
     def _inherited_stop(
@@ -513,15 +523,12 @@ class AZoneDetector:
         if not chained and str(getattr(previous.line, "kind")) == "scale":
             return None
         window_start = previous.stop_time if chained else previous.formation_time
-        for reaction in self.reactions:
-            first_time = getattr(
-                self.candles[int(getattr(reaction, "first_idx"))],
-                "timestamp",
-            )
-            break_time = getattr(
-                self.candles[int(getattr(reaction, "break_idx"))],
-                "timestamp",
-            )
+        reactions = self.reactions
+        first_times = self._reaction_first_times
+        break_times = self._reaction_break_times
+        for number in range(len(reactions)):
+            first_time = first_times[number]
+            break_time = break_times[number]
             if first_time <= window_start:
                 continue
             if break_time >= current.formation_time:

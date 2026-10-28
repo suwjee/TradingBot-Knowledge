@@ -10,12 +10,12 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOUR
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.reaction_engine", "source.blue_line_detector", "source.lifecycle_engine", "source.trading_pipeline"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L182", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L182"]
 mirror_links: ["mirror.contract"]
 name: "Internal Reaction"
 aliases: ["InternalReaction"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Cross-direction internal Reaction ownership
 
 ## Bullish

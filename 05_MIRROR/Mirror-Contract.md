@@ -9,8 +9,8 @@ related_entities: ["mirror.direction_mapping", "mirror.exceptions", "mirror.inva
 source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
+last_modified_at: "2026-10-27T20:15:57+03:30"
 ---
-
 # Current directional mirror contract
 
 ## Current implementation
@@ -28,3 +28,7 @@ Time,chronology windows,physical identity,provenance,Red/Blue behavior family,pr
 ## Boundary scope
 
 Current Source and canonical References specify Blue decisive confirmation-row eligibility and shared S source-main-time equality in both directions. These inclusive time gates do not relax strict price crossing. Documentation/static Source coverage does not prove independent real-data correctness or supply stored fixture evidence.
+
+## Coverage boundary
+
+This mirror description covers the existing upstream owners only. The manifest source_scope records the explicitly excluded added feature. Complete raw Reference bytes remain exact evidence; incidental extension content does not create a mirror approval or semantic audit result.

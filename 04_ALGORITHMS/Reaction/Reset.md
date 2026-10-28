@@ -10,12 +10,12 @@ source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOUR
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.reaction_engine", "source.order_audit_engine", "source.blue_line_detector", "source.s_zone_detector"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L174", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L174"]
 mirror_links: ["mirror.contract"]
 name: "Reset"
 aliases: ["Reaction Reset"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Reset events and same-direction restart
 
 ## Bullish
@@ -26,7 +26,7 @@ A confirmed Bullish Reaction resets only on the first strict `Low < confirmed Bo
 
 #### 4.7 Post-Reset structural owner vs geometry-only evidence
 
-After Reset, `_first_direct_same_direction_after_reset` scans eligible First candidates in chronological First-index order within the configured end index. It returns a candidate only if confirmation wins before strict loss of its frozen owning boundary. If invalidation wins first, candidates with First indexes at or before that invalidation main index are blocked. A candidate unfinished at the bounded end is skipped, so a later eligible candidate that completes healthily may be returned. The standalone initial Mode-A WAITING state retains its selected unfinished structural owner. The returned healthy result joins the canonical same-direction Reaction stream. `_first_geometry_after_reset` separately returns complete geometry without lifecycle acceptance; geometry alone cannot create Order_A.
+After Reset, `_first_direct_same_direction_after_reset` scans eligible First candidates in chronological First-index order within the configured end index. It returns a candidate only if confirmation wins before strict loss of its frozen owning boundary. If invalidation wins first, candidates with First indexes at or before that invalidation main index are blocked. A candidate unfinished at the bounded end is skipped, so a later eligible candidate that completes healthily may be returned. The standalone initial Mode-A WAITING state retains its selected unfinished structural owner. The returned healthy result joins the canonical same-direction Reaction stream. `_first_geometry_after_reset` separately returns complete geometry without lifecycle acceptance; generic geometry alone cannot create Order_A; accepted stopped-A Order_A separately admits complete independent confirmed physical geometry as specified by algorithm.order.a.
 
 ## Bearish
 
@@ -36,7 +36,7 @@ A confirmed Bearish Reaction resets only on the first strict `High > confirmed B
 
 #### 4.7 Post-Reset structural owner vs geometry-only evidence
 
-After Reset, `_first_direct_same_direction_after_reset` scans eligible First candidates in chronological First-index order within the configured end index. It returns a candidate only if confirmation wins before strict loss of its frozen owning boundary. If invalidation wins first, candidates with First indexes at or before that invalidation main index are blocked. A candidate unfinished at the bounded end is skipped, so a later eligible candidate that completes healthily may be returned. The standalone initial Mode-A WAITING state retains its selected unfinished structural owner. The returned healthy result joins the canonical same-direction Reaction stream. `_first_geometry_after_reset` separately returns complete geometry without lifecycle acceptance; geometry alone cannot create Order_A.
+After Reset, `_first_direct_same_direction_after_reset` scans eligible First candidates in chronological First-index order within the configured end index. It returns a candidate only if confirmation wins before strict loss of its frozen owning boundary. If invalidation wins first, candidates with First indexes at or before that invalidation main index are blocked. A candidate unfinished at the bounded end is skipped, so a later eligible candidate that completes healthily may be returned. The standalone initial Mode-A WAITING state retains its selected unfinished structural owner. The returned healthy result joins the canonical same-direction Reaction stream. `_first_geometry_after_reset` separately returns complete geometry without lifecycle acceptance; generic geometry alone cannot create Order_A; accepted stopped-A Order_A separately admits complete independent confirmed physical geometry as specified by algorithm.order.a.
 
 ## Source-level contract
 

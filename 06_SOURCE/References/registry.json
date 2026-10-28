@@ -1,55 +1,50 @@
 {
   "schema_version": 1,
-  "captured_utc": "2026-09-28T19:12:46.969813+00:00",
+  "captured_utc": "2026-10-27T16:43:04.492024+00:00",
   "references": [
     {
       "id": "bearish_current",
-      "name": "TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-      "version": "5.4.19-EX1",
+      "name": "TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+      "version": "5.4.33",
       "direction": "Bearish",
-      "repository_relative_path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-      "local_path": "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-      "sha256": "109753d7d056b6b9ee173cc7f47472b53a77174d26e89f38b00b81061f310e18",
-      "bytes": 569305,
-      "line_count": 13267,
+      "repository_relative_path": "engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+      "local_path": "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+      "sha256": "bfb201d3d6b4d4d52fcd28ef6b8d77918757d5ed14fe8df033d9abfd4d499baf",
+      "bytes": 743552,
+      "line_count": 15309,
       "availability": "local",
       "current_status": "current",
-      "authority_scope": "Exact current Source embedding and preserved documented intent; narrative discrepancies require the linked semantic review",
+      "authority_scope": "Complete exact accepted Reference evidence; semantic review and standalone Source capture are explicitly scoped by source_scope",
       "sync_status": "byte-exact",
-      "reconstruction_status": "verified",
-      "narrative_review_status": "reviewed-with-disclosed-scope-discrepancies",
+      "reconstruction_status": "verified-scoped",
+      "narrative_review_status": "reviewed-in-scope-with-disclosed-ambiguity",
       "semantic_review_entity": "source.reference_consistency",
       "reference_conflicts": [
-        "REF-BLUE-ENDPOINT",
-        "REF-REACTION-SUCCESSOR",
-        "REF-E-TIE-SCOPE",
-        "REF-S-MODE-B"
+        "REF-REACTION-SUCCESSOR"
       ]
     },
     {
       "id": "bullish_current",
-      "name": "TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-      "version": "5.4.19-EX1",
+      "name": "TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+      "version": "5.4.33",
       "direction": "Bullish",
-      "repository_relative_path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-      "local_path": "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-      "sha256": "d3a0b89c59f1304ddefe6f6931cedf7ea2e17a15893c63d652c89489f3e6387f",
-      "bytes": 569275,
-      "line_count": 13267,
+      "repository_relative_path": "engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+      "local_path": "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+      "sha256": "131a0edb6945a59f4161c12aa00ba2c4cf5f787840a3786dbc66b5b3e69b27f7",
+      "bytes": 743524,
+      "line_count": 15309,
       "availability": "local",
       "current_status": "current",
-      "authority_scope": "Exact current Source embedding and preserved documented intent; narrative discrepancies require the linked semantic review",
+      "authority_scope": "Complete exact accepted Reference evidence; semantic review and standalone Source capture are explicitly scoped by source_scope",
       "sync_status": "byte-exact",
-      "reconstruction_status": "verified",
-      "narrative_review_status": "reviewed-with-disclosed-scope-discrepancies",
+      "reconstruction_status": "verified-scoped",
+      "narrative_review_status": "reviewed-in-scope-with-disclosed-ambiguity",
       "semantic_review_entity": "source.reference_consistency",
       "reference_conflicts": [
-        "REF-BLUE-ENDPOINT",
-        "REF-REACTION-SUCCESSOR",
-        "REF-E-TIE-SCOPE",
-        "REF-S-MODE-B"
+        "REF-REACTION-SUCCESSOR"
       ]
     }
   ],
-  "semantic_review_date": "2026-09-29"
+  "semantic_review_date": "2026-10-27",
+  "source_commit": "c2e7903890dddfaf8526cb9b11dd1c5e490c7410"
 }

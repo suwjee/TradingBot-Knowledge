@@ -8,14 +8,14 @@ version: "current"
 related_entities: ["data.policy", "source.reference_consistency", "source.reference_registry", "source.source_manifest", "system.authority", "test.validation_contract", "version.current"]
 source_reference: []
 evidence_basis: "Latest explicit rebuild requirements and current operating rules"
+last_modified_at: "2026-10-27T20:15:57+03:30"
 ---
-
 # Current-only Vault manifest
 
-This Vault represents the current audited TradingBot implementation with exact Reference version 5.4.19-EX1 evidence. Narrative scope discrepancies are registered in source.reference_consistency. Legacy active rules, old Reference copies, correction overrides and market examples are removed. Source inventory contains 13 exact current Python files, including package files. Current hashes and per-owner versions are in source-hashes.json and version.current; Reference versions are independent.
+The Vault records the current reviewed project and exact accepted directional References. Discover current evidence identities in _INDEX/source-hashes.json and 06_SOURCE/References/registry.json rather than treating any file count or version as a permanent ownership contract.
 
-RAW datasets, windows and regression cases are zero: EMPTY_BY_DESIGN. Market regression is NOT_REQUIRED_THIS_PHASE under the current task. Empty future directories are documented by Data/Fixture policies. Indexes and graph are derived navigation and never authority.
+source_scope explicitly limits standalone Source capture and semantic review. Complete current Reference bytes remain locally available; embedded excluded evidence is independently pinned and validated but does not receive a standalone snapshot, concept node or semantic audit claim. This is scoped evidence coverage, not a complete Engine reconstruction package.
 
-The current-contract declaration in _INDEX/source-hashes.json pins the reviewed active entity inventory, statuses and owners. Generic validation rejects missing/extra current concepts or status/owner drift. Exact source/reference inventories are checked without baked-in counts or versions. Full metadata is preserved in generated entity rows and validated by the Plugin.
+Current executable notes distinguish Source behavior from intended Reference statements. Remaining ambiguities and resolved formerly stale discrepancy claims are recorded in source.reference_consistency. Generated indexes, schema/AST navigation and exact byte reconstruction are separate gates from behavior/market correctness.
 
-Read _GENERATED/Current-Validation.md for completed command exits, counts, integrity/mirror scope and readiness. Until the final matrix completes, release status is INCOMPLETE. This manifest does not turn a pending check into PASS.
+RAW, window and fixture stores remain EMPTY_BY_DESIGN. The Vault contains no market-data regression baseline. Read _GENERATED/Current-Validation.md for checks actually executed during this maintenance and for NOT RUN or excluded scopes. Historical verification statements inside exact References remain historical statements.

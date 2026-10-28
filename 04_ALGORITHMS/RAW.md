@@ -10,10 +10,10 @@ source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURC
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
 implemented_by: ["source.trading_pipeline", "source.reaction_engine", "source.core_utils"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L125", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L125"]
 mirror_links: ["mirror.contract"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # RAW normalization and selected candle construction
 
 ## Input normalization
@@ -27,3 +27,5 @@ Consecutive equal timestamps aggregate lower bucket with first open,max High,min
 Candle index is zero-based in complete supplied input. Epoch becomes Asia/Tehran local naive datetime; display is YYYY-MM-DD HH:MM:SS. GREEN iff close>=open,RED otherwise; Doji remains GREEN in both directions. OHLC stays Decimal. MarketChronology shares main/lower timestamp arrays and strict crossing/range-extreme index.
 
 Requested from/to selects inclusive epoch-aligned presentation main buckets after input preparation. Empty rows or selected range raises. MarketContext outputs seconds,candles,lower_index,chronology,start_index,end_index. All stages share physical normalized input; serialization maps finalized state. This generic contract includes no stored market dataset or expected candle result.
+
+Input JSON floating lexemes are parsed directly with parse_float=Decimal before normalization; the current bridge no longer passes price lexemes through orjson binary floats.

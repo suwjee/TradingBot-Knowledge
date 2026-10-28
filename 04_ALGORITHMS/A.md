@@ -6,17 +6,17 @@ authority: "executable"
 title: "A Blue-pair triggers and confirming source"
 version: "current"
 related_entities: ["algorithm.blue", "algorithm.reaction", "algorithm.s"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L114", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L156", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L219", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L329", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L401", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L424", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L443", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L494", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L568", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L650", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L68", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L689", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L753", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L125", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L167", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L230", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L340", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L412", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L435", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L454", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L504", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L575", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L657", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L68", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L696", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L760", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.a_zone_detector", "source.blue_line_detector", "source.reaction_engine", "source.direction_policy"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L116", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L116"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L206", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L206"]
 mirror_links: ["mirror.contract"]
 depends_on: ["algorithm.blue"]
 name: "A"
 aliases: ["A Zone", "AZone"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # A Blue-pair triggers and confirming source
 
 ## Bullish
@@ -76,7 +76,7 @@ First aligned Reaction confirmation >= trigger and First >= both effective stop 
 
 ## Expiry equality by owning operation
 
-Stop guards reject an event strictly after third-Blue formation expiry and therefore retain equality. Lower-row crossing windows are expiry-exclusive. A same-event two-stop direct trigger can equal that formation expiry. Do not flatten the direct-stop and searched-crossing endpoints into one universal exclusive bound. Source lines 329-331, 401-403, 424-426 and 443-454 own these distinct checks.
+Stop guards reject an event strictly after third-Blue formation expiry and therefore retain equality. Lower-row crossing windows are expiry-exclusive. A same-event two-stop direct trigger can equal that formation expiry. Do not flatten the direct-stop and searched-crossing endpoints into one universal exclusive bound. AZoneDetector._pair_trigger owns these distinct checks; see the current symbol map for exact addresses.
 
 
 ## Exact lower fallback and inherited windows

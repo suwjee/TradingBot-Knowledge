@@ -9,11 +9,11 @@ related_entities: ["core.identity", "core.invariants", "mirror.validation_rules"
 source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/a_zone_detector.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/core_utils.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"]
-reference_agreement: "ambiguous"
-reference_conflicts: ["REF-E-TIE-SCOPE"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"]
+reference_agreement: "match"
+reference_conflicts: []
+last_modified_at: "2026-10-27T20:15:57+03:30"
 ---
-
 # Deterministic event, source and ledger selection
 
 ## Numeric and temporal state
@@ -22,11 +22,11 @@ Decimal inputs and immutable original market color precede calculations. Shared 
 
 ## Rule-specific ties
 
-Reaction/A/E and Order_B normally replace only strict-better extrema,earliest equal source. S Type-3/Type-4/after-Order Simple choose last equal main source. Mode-A invalidation/Reset wins same lower-position confirmation ties. S candidate/Order stop same-position tie makes no native decision. Blue includes the decisive crossing row under its nonempty-eligible-set condition; shared S reconciliation includes source main-time equality. Source/Reference endpoint scope is recorded separately. Order_B First-time equality valid,confirmation equality invalid.
+Reaction/A/E and Order_B normally replace only strict-better extrema,earliest equal source. S Type-3/Type-4/after-Order Simple choose last equal main source. Mode-A invalidation/Reset wins same lower-position confirmation ties. S candidate/Order stop same-position tie makes no native decision. Blue includes the exact confirmation row and never consumes later rows; shared S reconciliation includes source main-time equality. Order_B admits First in the strict-break calculation candle, while confirmation must be strictly after the exact crossing.
 
 ## Acceptance ties
 
-Parent-stop physical owner ranks confirmation/First/Break. E final representative race ranks stop then larger First; direct/reset-leg local candidates rank stop then earlier FirstTime, carried candidates stop then larger First, and post-stop accepted candidates stop then confirmation then larger First. Same-source E Red beats Blue,then larger same-family number,then prior accepted object. Latest stopped lifecycle boundary precedes priority/number/source ties. Order_B exact immutable cause identity must stabilize within eight passes or raise.
+Parent-stop physical owner ranks confirmation/First/Break. E globally races every eligible route candidate by exact stop then larger FirstIndex; route-local sorts do not reduce the candidate set before adjudication. Same-source E Red beats Blue,then larger same-family number,then prior accepted object. Latest stopped lifecycle boundary precedes priority/number/source ties. Order_B exact immutable cause identity must stabilize within eight passes or raise.
 
 ## Projection evidence
 

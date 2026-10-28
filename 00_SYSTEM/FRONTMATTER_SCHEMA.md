@@ -8,8 +8,8 @@ version: "current"
 related_entities: ["system.ids", "system.knowledge_model"]
 source_reference: []
 evidence_basis: "Latest explicit rebuild requirements and current operating rules"
+last_modified_at: "2026-10-27T20:15:57+03:30"
 ---
-
 # Frontmatter and evidence schema
 
 Each knowledge Markdown note begins with an opening --- line, one unique lowercase key per line whose value is valid JSON, and a closing --- line. This deliberately bounded format supports unambiguous scalars, arrays and objects without requiring a YAML loader. Required fields are id, type, status, authority, title and source_reference.
@@ -24,3 +24,7 @@ Schemas support system, core, market, behavior, algorithm, source, mirror, test,
 ## Names, narrative status and derived note identity
 
 Optional name and aliases are navigation metadata. Case-folded names/aliases cannot shadow another stable ID. reference_agreement records match/conflict/ambiguous/not-applicable; reference_conflicts lists review record keys and does not change executable authority. Every generated entity row carries content_sha256 and content_bytes for the complete Markdown bytes. These three derived row fields (including file) are excluded from frontmatter equality only; every authored metadata field remains compared. The current contract requires note identity pins, so deleting them cannot bypass body currentness. Regeneration follows any authorized Markdown change.
+
+## Maintenance timestamps and capture scope
+
+Optional created_at and last_modified_at use ISO 8601 seconds with an explicit timezone offset. New maintained notes supply both; edited notes supply last_modified_at while preserving a reliable original created_at. source_scope in the exact evidence manifest records declared standalone/semantic exclusions. The builder verifies excluded embedded payload hashes and byte lengths without creating standalone source nodes or treating exclusion as successful semantic coverage.

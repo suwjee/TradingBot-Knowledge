@@ -361,6 +361,79 @@ class CurrentVaultValidationTests(unittest.TestCase):
         write_json(self.manifest_path, self.manifest)
         self.assert_bad("Embedded source mismatch")
 
+    def add_embedded_only_source(self):
+        payload = b'"""Excluded standalone source evidence."""\n'
+        relative = "pipeline/optional_extension.py"
+        registry_path = self.root / "06_SOURCE/References/registry.json"
+        registry = json.loads(registry_path.read_text())
+        for row, manifest_row in zip(registry["references"], self.manifest["algorithm_references"]):
+            reference = self.root / row["local_path"]
+            reference.write_bytes(reference.read_bytes() +
+                b"<!-- EXACT-SOURCE-BEGIN:" + relative.encode() + b" -->\n````python\n" +
+                payload + b"````\n<!-- EXACT-SOURCE-END:" + relative.encode() + b" -->\n")
+            row.update(pin(reference))
+            manifest_row.update(pin(reference))
+        write_json(registry_path, registry)
+        self.manifest["supporting_files"][0].update(pin(registry_path))
+        self.manifest["source_scope"] = {
+            "excluded_source_paths": [{
+                "repository_relative_path": "engine/" + relative,
+                "reason": "Explicitly outside the requested standalone audit scope",
+                "embedded_sha256": hashlib.sha256(payload).hexdigest(),
+                "embedded_bytes": len(payload),
+            }],
+            "semantic_review_scope": "Existing calculation owners only",
+            "reference_scope": "complete-exact-current-reference-bytes",
+        }
+        write_json(self.manifest_path, self.manifest)
+
+    def test_declared_embedded_only_source_is_verified_without_standalone_capture(self):
+        self.add_embedded_only_source()
+        result, output = self.run_build()
+        self.assertEqual(0, result, output)
+        structure = json.loads((self.root / "_GENERATED/source-structure.json").read_text())
+        excluded = [row for row in structure["reference_reconstructions"]
+                    if row["source"] == "pipeline/optional_extension.py"]
+        self.assertEqual(2, len(excluded))
+        self.assertTrue(all(row["exact"] and row["coverage"] == "embedded-only-excluded" for row in excluded))
+        self.assertEqual(self.manifest["source_scope"], structure["source_scope"])
+        self.assertFalse((self.root / "06_SOURCE/Code/engine/pipeline/optional_extension.py").exists())
+
+    def test_embedded_only_source_pin_cannot_hide_changed_reference_payload(self):
+        self.add_embedded_only_source()
+        self.manifest["source_scope"]["excluded_source_paths"][0]["embedded_sha256"] = "0" * 64
+        write_json(self.manifest_path, self.manifest)
+        self.assert_bad("Embedded-only source mismatch")
+
+    def test_exclusion_cannot_remove_a_captured_source_from_reconstruction(self):
+        self.add_embedded_only_source()
+        row = self.manifest["source_scope"]["excluded_source_paths"][0]
+        row["repository_relative_path"] = "engine/pipeline/probe.py"
+        write_json(self.manifest_path, self.manifest)
+        self.assert_bad("Excluded source is also captured")
+
+    def test_duplicate_or_unsafe_source_exclusion_is_rejected(self):
+        self.add_embedded_only_source()
+        row = self.manifest["source_scope"]["excluded_source_paths"][0]
+        self.manifest["source_scope"]["excluded_source_paths"].append(dict(row))
+        write_json(self.manifest_path, self.manifest)
+        self.assert_bad("Duplicate excluded source")
+        self.manifest["source_scope"]["excluded_source_paths"] = [{**row, "repository_relative_path": "engine/../outside.py"}]
+        write_json(self.manifest_path, self.manifest)
+        self.assert_bad("Non-normalized path")
+
+    def test_maintenance_timestamps_require_explicit_second_precision_timezone(self):
+        path = self.root / "00_SYSTEM/AUTHORITY_MODEL.md"
+        fields = build_indexes.frontmatter(path)
+        write_note(path, {**fields, "created_at": "2026-10-27T12:00:00+03:30",
+                          "last_modified_at": "2026-10-27T12:30:00+03:30"})
+        result, output = self.run_build()
+        self.assertEqual(0, result, output)
+        write_note(path, {**fields, "last_modified_at": "2026-10-27"})
+        result, output = self.run_build()
+        self.assertEqual(1, result, output)
+        self.assertIn("last_modified_at", output)
+
     def test_relation_target_is_rejected(self):
         path = self.root / "04_ALGORITHMS/Order/Order-B.md"
         path.write_text(path.read_text().replace('"source.probe"', '"source.missing"'))

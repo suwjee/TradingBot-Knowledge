@@ -4,82 +4,97 @@ type: "source"
 status: "active"
 authority: "executable"
 title: "Physical Order_A and Order_B discovery, reset-leg anchors, immutable identity/provenance and accepted/live ledgers"
-version: "1.5.1"
+version: "1.7.1"
 related_entities: ["source.source_manifest"]
 source_reference: ["06_SOURCE/Code/engine/pipeline/order_audit_engine.py"]
 evidence_basis: "Latest explicit rebuild requirements and current operating rules"
 source_path: "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
 mirror: "06_SOURCE/Code/engine/pipeline/order_audit_engine.py"
-sha256: "09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc"
+sha256: "f4e991a6a516ad84e0223c802f5baf611f5e20fb8d7965b9dcdf4ff949d89296"
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # order_audit_engine.py
 
 Physical Order_A and Order_B discovery, reset-leg anchors, immutable identity/provenance and accepted/live ledgers.
 
-Current working-tree bytes are executable evidence; Source identity alone is not independent market correctness. The supported bridge dynamically loads owners; the legacy ordinary package wrapper is unsupported.
+Exact bytes describe executable behavior; Source identity is not intended-semantic authority or independent market correctness. Supported dynamic Bridge loading and the maintained pipeline compatibility wrapper are distinct runtime surfaces. The manifest source_scope bounds audit/reconstruction completeness.
 
-| Property | Current value |
-|---|---|
+## Snapshot identity
+
+| Property | Current captured evidence |
+| --- | --- |
 | Source | 06_SOURCE/Code/engine/pipeline/order_audit_engine.py |
-| SHA-256 | 09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc |
-| Bytes | 75219 |
-| Lines | 1863 |
-| Declared version | 1.5.1 |
+| SHA-256 | f4e991a6a516ad84e0223c802f5baf611f5e20fb8d7965b9dcdf4ff949d89296 |
+| Bytes | 89666 |
+| Lines | 2175 |
+| Declared version | 1.7.1 |
 
-## Current symbols
+## Lexical Source symbols
 
-Every lexical class/function is listed, including nested definitions inside control blocks. Qualified name plus source line identifies repeated property accessors.
+Every lexical definition in this captured owner is indexed mechanically, including incidental out-of-scope feature helpers. A symbol row is navigation, not a separate concept or semantic approval.
 
-| Symbol | Source line | End line | Signature or role |
-|---|---:|---:|---|
-| PostBehaviorStop | 18 | 22 | class |
-| OrderBBehaviorAnchor | 26 | 31 | class |
-| OrderBResetLeg | 35 | 52 | class |
-| dominant_post_behavior_stops | 55 | 98 | chronology: object, lifetimes: Sequence[tuple[str, object, datetime \| None]], priority: Callable[[object], int] |
-| order_b_reset_event_time | 101 | 129 | direction: str, chronology: object, reset: object |
-| discover_order_b_reset_legs | 132 | 325 | direction: str, chronology: object, trend_reactions: Sequence[object], resets: Sequence[object], opposite_reactions: Sequence[object], post_stops: Sequence[PostBehaviorStop], a_formation_times: Sequence[datetime], *, behavior_anchors: Sequence[OrderBBehaviorAnchor]=() |
-| discover_accepted_order_b_reset_legs | 328 | 403 | direction: str, chronology: object, trend_reactions: Sequence[object], trend_resets: Sequence[object], opposite_reactions: Sequence[object], a_zones: Sequence[object], invalid_a_identities: set[tuple[datetime, int]], s_zones: Sequence[object], e_zones: Sequence[object], stopalls: Sequence[object], s_detector: object, e_detector: object, priority: Callable[[object], int] |
-| order_b_leg_identity | 413 | 433 | items: Sequence[object] |
-| OrderAuditEngineMixin | 437 | 1563 | class |
-| OrderAuditEngineMixin._order_stop | 440 | 466 | self, number: int, reaction: object, context_start: datetime \| None=None |
-| OrderAuditEngineMixin.order_stop | 469 | 473 | self, reaction_number: int, reaction: object |
-| OrderAuditEngineMixin._first_healthy_direct_geometry | 476 | 548 | self, start: datetime, allow_bounded_continue: bool=False |
-| OrderAuditEngineMixin._trend_leg_direct_order | 551 | 600 | self, start: datetime |
-| OrderAuditEngineMixin._direct_parent_stop_order | 603 | 674 | self, start: datetime, continuous_deadline: datetime \| None, allow_bounded_continue: bool |
-| OrderAuditEngineMixin._merge_order_candidate | 677 | 708 | self, by_geometry: dict[tuple[int, int], OrderMatch], number: int, reaction: object, confirmation: datetime, *, parent_stop_cause_time: datetime |
-| OrderAuditEngineMixin._enforce_single_parent_stop_owner | 711 | 735 | self, by_geometry: dict[tuple[int, int], OrderMatch] |
-| OrderAuditEngineMixin.order_candidates | 738 | 824 | self, start: datetime, continuous_deadline: datetime \| None=None, allow_bounded_continue: bool=False, allow_trend_leg_continue: bool=False |
-| OrderAuditEngineMixin._first_order | 827 | 840 | self, start: datetime, continuous_deadline: datetime \| None=None, allow_bounded_continue: bool=False, allow_trend_leg_continue: bool=False |
-| OrderAuditEngineMixin._has_sequence_reset_between | 843 | 851 | self, start: datetime, end: datetime |
-| OrderAuditEngineMixin._index_order_audit_identity | 854 | 861 | self, identity: tuple[int, int], confirmation: datetime |
-| OrderAuditEngineMixin._clear_order_audit | 864 | 867 | self |
-| OrderAuditEngineMixin.register_order_b_reset_legs | 870 | 933 | self, legs: Sequence[OrderBResetLeg] |
-| OrderAuditEngineMixin._register_order_audit | 936 | 999 | self, parent_type: str, parent: object, parent_stop: datetime |
-| OrderAuditEngineMixin.visual_order_lifecycle | 1003 | 1022 | self, start: datetime |
-| OrderAuditEngineMixin._cross_order | 1025 | 1043 | self, start: datetime, level: Decimal |
-| OrderAuditEngineMixin.cross_order | 1046 | 1050 | self, confirmation_time: datetime, stop_level: Decimal |
-| OrderAuditEngineMixin._unconsumed_s_orders | 1053 | 1087 | self, parent: object, parent_stop: datetime |
-| OrderAuditEngineMixin._initial_order_records | 1090 | 1145 | self |
-| OrderAuditEngineMixin._initial_record_match | 1150 | 1161 | record: tuple[datetime, datetime, int, object, Decimal, int, datetime, tuple[int, datetime, datetime] \| None], causes: tuple[str, ...] |
-| OrderAuditEngineMixin._initial_order_match | 1164 | 1176 | self, entry: dict[str, object], causes: tuple[str, ...] |
-| OrderAuditEngineMixin._gate_owned_initial_order | 1179 | 1199 | self, parent_stop: datetime |
-| OrderAuditEngineMixin._carried_orders_for_parent | 1202 | 1260 | self, parent: object, parent_stop: datetime |
-| OrderAuditEngineMixin._post_stop_accepted_orders_for_parent | 1263 | 1329 | self, parent: object, parent_stop: datetime |
-| OrderAuditEngineMixin._post_stop_accepted_orders_for_parent.add_match | 1270 | 1283 | match: OrderMatch |
-| OrderAuditEngineMixin._blocked_by_gate_owned_order | 1332 | 1340 | self, zone: EZone |
-| OrderAuditEngineMixin._rebuild_accepted_order_audit | 1343 | 1524 | self, numbered: list[EZone], supplemental_s_zones: Sequence[object]=() |
-| OrderAuditEngineMixin._rebuild_accepted_order_audit.valid_parent_stop_cause | 1354 | 1367 | cause: tuple[object, ...] |
-| OrderAuditEngineMixin.rebuild_accepted_order_audit | 1527 | 1539 | self, zones: Sequence[EZone], supplemental_s_zones: Sequence[object]=() |
-| OrderAuditEngineMixin.ensure_accepted_order_audit | 1542 | 1563 | self, zones: Sequence[EZone], supplemental_s_zones: Sequence[object]=() |
-| prepare_order_audit | 1566 | 1692 | detector, start_index: int, end_index: int, s_detector=None, accepted_a_sources: set[datetime] \| None=None, required_identities: set[tuple[int, int]] \| None=None |
-| accepted_audit_entry | 1695 | 1722 | entry: dict[str, object], accepted_sources: set |
-| order_identity_is_internal | 1725 | 1731 | item, internal_identities |
-| SOrderAuditMixin | 1734 | 1862 | class |
-| SOrderAuditMixin._first_order_after | 1737 | 1747 | self, a_stop_event_time: datetime |
-| SOrderAuditMixin._order_matches_after | 1750 | 1769 | self, a_stop_event_time: datetime |
-| SOrderAuditMixin._record_a_order_audit | 1772 | 1804 | self, zone: object, a_stop_event_time: datetime, order_match: tuple[int, object, datetime] |
-| SOrderAuditMixin._audit_stopped_a | 1807 | 1817 | self, zone: object |
-| SOrderAuditMixin._order_stop | 1820 | 1829 | self, order_number: int, reaction: object |
-| SOrderAuditMixin._order_stop_crossed | 1832 | 1835 | self, candle: object, level: Decimal |
-| SOrderAuditMixin._shared_order_stop_cross | 1838 | 1862 | self, confirmation: datetime, level: Decimal |
+| Symbol | Line | End |
+| --- | ---: | ---: |
+| relabel_primary_causes | 19 | 31 |
+| PostBehaviorStop | 34 | 38 |
+| OrderBBehaviorAnchor | 42 | 47 |
+| OrderBResetLeg | 51 | 68 |
+| dominant_post_behavior_stops | 71 | 114 |
+| order_b_reset_event_time | 117 | 145 |
+| discover_order_b_reset_legs | 148 | 349 |
+| discover_accepted_order_b_reset_legs | 352 | 427 |
+| order_b_leg_identity | 437 | 457 |
+| OrderAuditEngineMixin | 461 | 1774 |
+| OrderAuditEngineMixin._order_stop | 464 | 490 |
+| OrderAuditEngineMixin.order_stop | 493 | 497 |
+| OrderAuditEngineMixin._first_healthy_direct_geometry | 500 | 572 |
+| OrderAuditEngineMixin._trend_leg_direct_order | 575 | 624 |
+| OrderAuditEngineMixin._direct_parent_stop_order | 627 | 645 |
+| OrderAuditEngineMixin._compute_direct_parent_stop_order | 647 | 736 |
+| OrderAuditEngineMixin._merge_order_candidate | 739 | 770 |
+| OrderAuditEngineMixin._enforce_single_parent_stop_owner | 773 | 797 |
+| OrderAuditEngineMixin.order_candidates | 800 | 888 |
+| OrderAuditEngineMixin._first_order | 891 | 904 |
+| OrderAuditEngineMixin._has_sequence_reset_between | 907 | 915 |
+| OrderAuditEngineMixin._index_order_audit_identity | 918 | 925 |
+| OrderAuditEngineMixin._clear_order_audit | 928 | 932 |
+| OrderAuditEngineMixin._invalidate_carried_order_caches | 934 | 939 |
+| OrderAuditEngineMixin._invalidate_post_stop_order_cache | 941 | 942 |
+| OrderAuditEngineMixin.register_order_b_reset_legs | 945 | 1009 |
+| OrderAuditEngineMixin._reparent_primary_high_causes | 1012 | 1058 |
+| OrderAuditEngineMixin.register_primary_high | 1060 | 1097 |
+| OrderAuditEngineMixin.reconcile_primary_high_labels | 1099 | 1117 |
+| OrderAuditEngineMixin._register_order_audit | 1119 | 1190 |
+| OrderAuditEngineMixin.visual_order_lifecycle | 1194 | 1213 |
+| OrderAuditEngineMixin._cross_order | 1216 | 1234 |
+| OrderAuditEngineMixin.cross_order | 1237 | 1241 |
+| OrderAuditEngineMixin._unconsumed_s_orders | 1244 | 1278 |
+| OrderAuditEngineMixin._initial_order_records | 1281 | 1336 |
+| OrderAuditEngineMixin._initial_record_match | 1340 | 1351 |
+| OrderAuditEngineMixin._initial_order_match | 1354 | 1366 |
+| OrderAuditEngineMixin._gate_owned_initial_order | 1369 | 1389 |
+| OrderAuditEngineMixin._carried_orders_for_parent | 1392 | 1450 |
+| OrderAuditEngineMixin._post_stop_accepted_orders_for_parent | 1453 | 1532 |
+| OrderAuditEngineMixin._post_stop_accepted_orders_for_parent.add_match | 1467 | 1484 |
+| OrderAuditEngineMixin._blocked_by_gate_owned_order | 1535 | 1543 |
+| OrderAuditEngineMixin._rebuild_accepted_order_audit | 1546 | 1729 |
+| OrderAuditEngineMixin._rebuild_accepted_order_audit.valid_parent_stop_cause | 1557 | 1570 |
+| OrderAuditEngineMixin.rebuild_accepted_order_audit | 1732 | 1744 |
+| OrderAuditEngineMixin.ensure_accepted_order_audit | 1747 | 1774 |
+| _parent_stop_cause_key | 1777 | 1783 |
+| _collect_s_ledger_entries | 1786 | 1815 |
+| _collect_e_ledger_entries | 1818 | 1844 |
+| _merge_prepared_identities | 1847 | 1887 |
+| _single_owner_parent_stop_causes | 1890 | 1925 |
+| prepare_order_audit | 1928 | 1945 |
+| accepted_audit_entry | 1948 | 1978 |
+| accepted_audit_entries | 1981 | 1991 |
+| order_identity_is_internal | 1994 | 2000 |
+| SOrderAuditMixin | 2003 | 2174 |
+| SOrderAuditMixin._first_order_after | 2006 | 2059 |
+| SOrderAuditMixin._order_matches_after | 2062 | 2081 |
+| SOrderAuditMixin._record_a_order_audit | 2084 | 2116 |
+| SOrderAuditMixin._audit_stopped_a | 2119 | 2129 |
+| SOrderAuditMixin._order_stop | 2132 | 2141 |
+| SOrderAuditMixin._order_stop_crossed | 2144 | 2147 |
+| SOrderAuditMixin._shared_order_stop_cross | 2150 | 2174 |

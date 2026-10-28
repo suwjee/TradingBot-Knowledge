@@ -9,8 +9,8 @@ related_entities: ["mirror.contract", "mirror.directional_rules", "mirror.invari
 source_reference: ["06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/direction_policy.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
+last_modified_at: "2026-10-27T20:15:57+03:30"
 ---
-
 # Rules combining price reflection and invariant ownership
 
 ## Reaction same-main chronology
@@ -23,7 +23,7 @@ Source/stop price reflects;formation subtype,Red/Blue role,qualifying chronology
 
 ## Orders
 
-Mode-A extrema/context and Mode-B previous outer edge reflect. Canonical membership,single cause owner,invalid-parent rejection,persistent identity/cause and reuse stay. Order_B LL/HH reflects while A trigger expiry,inclusive First-time,strict confirmation and exact cause identity stay.
+Mode-A extrema/context and Mode-B previous outer edge reflect. Order_B canonical membership, single cause owner, invalid-parent rejection and persistent identity/provenance stay. Accepted stopped-A Order_A has a mirrored independently confirmed physical-geometry exception. LL/HH reflects while Order_B main-candle First eligibility/A expiry, strict exact confirmation and complete cause identity stay.
 
 ## Lifecycle/projection
 

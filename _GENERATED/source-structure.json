@@ -1,6 +1,18 @@
 {
   "schema_version": 1,
   "generated_from": "captured current Python AST",
+  "source_scope": {
+    "excluded_source_paths": [
+      {
+        "repository_relative_path": "engine/pipeline/PL_PH_detector.py",
+        "reason": "Excluded from standalone capture and semantic audit by current user instruction",
+        "embedded_sha256": "4c03c016762c55006cba98b9dd565a5e0d37c9420c6e0cacdd1a060d4e8bd989",
+        "embedded_bytes": 22048
+      }
+    ],
+    "semantic_review_scope": "Existing Engine Reaction/Reset/Blue/A/S/E/Order/OrderAudit/StopAll owners and current project integration; no new primary-structure concepts",
+    "reference_scope": "complete-exact-current-reference-bytes"
+  },
   "modules": [
     {
       "path": "06_SOURCE/Code/engine/__init__.py",
@@ -469,16 +481,16 @@
         },
         {
           "name": "parse_arguments",
-          "line": 1597,
-          "end_line": 1666,
+          "line": 1598,
+          "end_line": 1668,
           "parameters": [
             "argv"
           ]
         },
         {
           "name": "load_engines",
-          "line": 1669,
-          "end_line": 1700,
+          "line": 1671,
+          "end_line": 1706,
           "parameters": [
             "args",
             "timings"
@@ -486,8 +498,8 @@
         },
         {
           "name": "prepare_market_context",
-          "line": 1703,
-          "end_line": 1781,
+          "line": 1709,
+          "end_line": 1789,
           "parameters": [
             "args",
             "engines",
@@ -496,8 +508,8 @@
         },
         {
           "name": "create_e_detector",
-          "line": 1819,
-          "end_line": 1862,
+          "line": 1827,
+          "end_line": 1872,
           "parameters": [
             "direction",
             "e_engine",
@@ -508,14 +520,15 @@
             "initial_order_audit",
             "lifecycle_engine",
             "blocked_order_first_times",
+            "e_parent_order_first_exceptions",
             "invalid_s_root_identities",
             "order_b_legs"
           ]
         },
         {
           "name": "calculate_full_direction_state",
-          "line": 1865,
-          "end_line": 2172,
+          "line": 1875,
+          "end_line": 2207,
           "parameters": [
             "direction",
             "engines",
@@ -530,8 +543,8 @@
         },
         {
           "name": "calculate_direction_with_order_b_feedback",
-          "line": 2175,
-          "end_line": 2227,
+          "line": 2210,
+          "end_line": 2269,
           "parameters": [
             "direction",
             "engines",
@@ -539,13 +552,14 @@
             "full_results",
             "geometry_detectors",
             "initial_order_geometry",
-            "timings"
+            "timings",
+            "stopall_enabled"
           ]
         },
         {
           "name": "prepare_pipeline_state",
-          "line": 2230,
-          "end_line": 2343,
+          "line": 2272,
+          "end_line": 2405,
           "parameters": [
             "args",
             "engines",
@@ -555,8 +569,8 @@
         },
         {
           "name": "calculate_direction_range_state",
-          "line": 2377,
-          "end_line": 2476,
+          "line": 2440,
+          "end_line": 2539,
           "parameters": [
             "direction",
             "args",
@@ -568,8 +582,8 @@
         },
         {
           "name": "finalize_direction_visibility",
-          "line": 2479,
-          "end_line": 2692,
+          "line": 2542,
+          "end_line": 2776,
           "parameters": [
             "direction",
             "args",
@@ -582,8 +596,8 @@
         },
         {
           "name": "serialize_direction_payload",
-          "line": 2695,
-          "end_line": 2833,
+          "line": 2779,
+          "end_line": 2917,
           "parameters": [
             "direction",
             "args",
@@ -595,9 +609,41 @@
           ]
         },
         {
+          "name": "serialize_primary_order",
+          "line": 2920,
+          "end_line": 2946,
+          "parameters": [
+            "order",
+            "market",
+            "owner_direction"
+          ]
+        },
+        {
+          "name": "serialize_primary_structures",
+          "line": 2949,
+          "end_line": 3050,
+          "parameters": [
+            "primary",
+            "market"
+          ]
+        },
+        {
+          "name": "calculate_primary_structures",
+          "line": 3053,
+          "end_line": 3096,
+          "parameters": [
+            "args",
+            "engines",
+            "market",
+            "state",
+            "visibility",
+            "timings"
+          ]
+        },
+        {
           "name": "build_direction_output",
-          "line": 2836,
-          "end_line": 2859,
+          "line": 3099,
+          "end_line": 3137,
           "parameters": [
             "direction",
             "args",
@@ -609,8 +655,8 @@
         },
         {
           "name": "build_response_payload",
-          "line": 2861,
-          "end_line": 2911,
+          "line": 3139,
+          "end_line": 3190,
           "parameters": [
             "args",
             "engines",
@@ -622,8 +668,8 @@
         },
         {
           "name": "main",
-          "line": 2914,
-          "end_line": 2944,
+          "line": 3193,
+          "end_line": 3223,
           "parameters": []
         }
       ],
@@ -665,7 +711,7 @@
         {
           "name": "EngineBundle",
           "line": 1578,
-          "end_line": 1584,
+          "end_line": 1585,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -699,14 +745,19 @@
               "name": "lifecycle",
               "annotation": "object | None",
               "line": 1584
+            },
+            {
+              "name": "primary",
+              "annotation": "object | None",
+              "line": 1585
             }
           ],
           "methods": []
         },
         {
           "name": "MarketContext",
-          "line": 1588,
-          "end_line": 1594,
+          "line": 1589,
+          "end_line": 1595,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -714,40 +765,40 @@
             {
               "name": "seconds",
               "annotation": "list[object]",
-              "line": 1589
+              "line": 1590
             },
             {
               "name": "candles",
               "annotation": "list[object]",
-              "line": 1590
+              "line": 1591
             },
             {
               "name": "lower_index",
               "annotation": "object",
-              "line": 1591
+              "line": 1592
             },
             {
               "name": "chronology",
               "annotation": "object",
-              "line": 1592
+              "line": 1593
             },
             {
               "name": "start_index",
               "annotation": "int",
-              "line": 1593
+              "line": 1594
             },
             {
               "name": "end_index",
               "annotation": "int",
-              "line": 1594
+              "line": 1595
             }
           ],
           "methods": []
         },
         {
           "name": "PipelineState",
-          "line": 1784,
-          "end_line": 1800,
+          "line": 1792,
+          "end_line": 1808,
           "decorators": [
             "dataclass(slots=True)"
           ],
@@ -755,80 +806,80 @@
             {
               "name": "directions",
               "annotation": "tuple[str, ...]",
-              "line": 1787
+              "line": 1795
             },
             {
               "name": "results",
               "annotation": "dict[str, object]",
-              "line": 1788
+              "line": 1796
             },
             {
               "name": "reusable_full_context",
               "annotation": "bool",
-              "line": 1789
+              "line": 1797
             },
             {
               "name": "initial_order_geometry",
               "annotation": "dict[str, object]",
-              "line": 1790
+              "line": 1798
             },
             {
               "name": "internal_reaction_identities",
               "annotation": "dict[str, set[tuple[int, int]]]",
-              "line": 1791
+              "line": 1799
             },
             {
               "name": "full_e_zones",
               "annotation": "dict[str, list[object]]",
-              "line": 1792
+              "line": 1800
             },
             {
               "name": "full_e_detectors",
               "annotation": "dict[str, object]",
-              "line": 1793
+              "line": 1801
             },
             {
               "name": "full_s_detectors",
               "annotation": "dict[str, object]",
-              "line": 1794
+              "line": 1802
             },
             {
               "name": "full_lines_by_direction",
               "annotation": "dict[str, list[object]]",
-              "line": 1795
+              "line": 1803
             },
             {
               "name": "full_a_by_direction",
               "annotation": "dict[str, list[object]]",
-              "line": 1796
+              "line": 1804
             },
             {
               "name": "invalid_a_identities_by_direction",
               "annotation": "dict[str, set[tuple[datetime, int]]]",
-              "line": 1797
+              "line": 1805
             },
             {
               "name": "invalid_s_identities_by_direction",
               "annotation": "dict[str, set[tuple[datetime, int]]]",
-              "line": 1798
+              "line": 1806
             },
             {
               "name": "full_s_by_direction",
               "annotation": "dict[str, list[object]]",
-              "line": 1799
+              "line": 1807
             },
             {
               "name": "full_s_candidates_by_direction",
               "annotation": "dict[str, list[object]]",
-              "line": 1800
+              "line": 1808
             }
           ],
           "methods": []
         },
         {
           "name": "FullDirectionState",
-          "line": 1804,
-          "end_line": 1816,
+          "line": 1812,
+          "end_line": 1824,
           "decorators": [
             "dataclass(slots=True)"
           ],
@@ -836,60 +887,60 @@
             {
               "name": "e_zones",
               "annotation": "list[object]",
-              "line": 1807
+              "line": 1815
             },
             {
               "name": "e_detector",
               "annotation": "object",
-              "line": 1808
+              "line": 1816
             },
             {
               "name": "s_detector",
               "annotation": "object",
-              "line": 1809
+              "line": 1817
             },
             {
               "name": "blue_lines",
               "annotation": "list[object]",
-              "line": 1810
+              "line": 1818
             },
             {
               "name": "a_zones",
               "annotation": "list[object]",
-              "line": 1811
+              "line": 1819
             },
             {
               "name": "invalid_a_identities",
               "annotation": "set[tuple[datetime, int]]",
-              "line": 1812
+              "line": 1820
             },
             {
               "name": "invalid_s_identities",
               "annotation": "set[tuple[datetime, int]]",
-              "line": 1813
+              "line": 1821
             },
             {
               "name": "s_zones",
               "annotation": "list[object]",
-              "line": 1814
+              "line": 1822
             },
             {
               "name": "s_candidates",
               "annotation": "list[object]",
-              "line": 1815
+              "line": 1823
             },
             {
               "name": "initial_s_zones",
               "annotation": "list[object]",
-              "line": 1816
+              "line": 1824
             }
           ],
           "methods": []
         },
         {
           "name": "DirectionRangeState",
-          "line": 2347,
-          "end_line": 2356,
+          "line": 2409,
+          "end_line": 2418,
           "decorators": [
             "dataclass(slots=True)"
           ],
@@ -897,45 +948,45 @@
             {
               "name": "blue_lines",
               "annotation": "list[object]",
-              "line": 2350
+              "line": 2412
             },
             {
               "name": "a_zones",
               "annotation": "list[object]",
-              "line": 2351
+              "line": 2413
             },
             {
               "name": "s_candidates",
               "annotation": "list[object]",
-              "line": 2352
+              "line": 2414
             },
             {
               "name": "accepted_s_zones",
               "annotation": "list[object]",
-              "line": 2353
+              "line": 2415
             },
             {
               "name": "e_zones",
               "annotation": "list[object]",
-              "line": 2354
+              "line": 2416
             },
             {
               "name": "invalid_a_identities",
               "annotation": "set[tuple[datetime, int]]",
-              "line": 2355
+              "line": 2417
             },
             {
               "name": "invalid_s_identities",
               "annotation": "set[tuple[datetime, int]]",
-              "line": 2356
+              "line": 2418
             }
           ],
           "methods": []
         },
         {
           "name": "DirectionVisibilityState",
-          "line": 2360,
-          "end_line": 2374,
+          "line": 2422,
+          "end_line": 2437,
           "decorators": [
             "dataclass(slots=True)"
           ],
@@ -943,47 +994,52 @@
             {
               "name": "blue_lines",
               "annotation": "list[object]",
-              "line": 2363
+              "line": 2425
             },
             {
               "name": "a_zones",
               "annotation": "list[object]",
-              "line": 2364
+              "line": 2426
             },
             {
               "name": "s_zones",
               "annotation": "list[object]",
-              "line": 2365
+              "line": 2427
             },
             {
               "name": "e_zones",
               "annotation": "list[object]",
-              "line": 2366
+              "line": 2428
             },
             {
               "name": "stopalls",
               "annotation": "list[object]",
-              "line": 2367
+              "line": 2429
             },
             {
               "name": "prepared_order_audit",
               "annotation": "list[object]",
-              "line": 2368
+              "line": 2430
             },
             {
               "name": "projection_s_zones",
               "annotation": "list[object]",
-              "line": 2372
+              "line": 2434
             },
             {
               "name": "projection_e_zones",
               "annotation": "list[object]",
-              "line": 2373
+              "line": 2435
             },
             {
               "name": "projection_stopalls",
               "annotation": "list[object]",
-              "line": 2374
+              "line": 2436
+            },
+            {
+              "name": "primary_groups",
+              "annotation": "dict[str, list[object]]",
+              "line": 2437
             }
           ],
           "methods": []
@@ -1359,161 +1415,203 @@
           "name": "EngineBundle",
           "kind": "class",
           "line": 1578,
-          "end_line": 1584
+          "end_line": 1585
         },
         {
           "qualified_name": "MarketContext",
           "name": "MarketContext",
           "kind": "class",
-          "line": 1588,
-          "end_line": 1594
+          "line": 1589,
+          "end_line": 1595
         },
         {
           "qualified_name": "parse_arguments",
           "name": "parse_arguments",
           "kind": "function",
-          "line": 1597,
-          "end_line": 1666
+          "line": 1598,
+          "end_line": 1668
         },
         {
           "qualified_name": "load_engines",
           "name": "load_engines",
           "kind": "function",
-          "line": 1669,
-          "end_line": 1700
+          "line": 1671,
+          "end_line": 1706
         },
         {
           "qualified_name": "prepare_market_context",
           "name": "prepare_market_context",
           "kind": "function",
-          "line": 1703,
-          "end_line": 1781
+          "line": 1709,
+          "end_line": 1789
         },
         {
           "qualified_name": "PipelineState",
           "name": "PipelineState",
           "kind": "class",
-          "line": 1784,
-          "end_line": 1800
+          "line": 1792,
+          "end_line": 1808
         },
         {
           "qualified_name": "FullDirectionState",
           "name": "FullDirectionState",
           "kind": "class",
-          "line": 1804,
-          "end_line": 1816
+          "line": 1812,
+          "end_line": 1824
         },
         {
           "qualified_name": "create_e_detector",
           "name": "create_e_detector",
           "kind": "function",
-          "line": 1819,
-          "end_line": 1862
+          "line": 1827,
+          "end_line": 1872
         },
         {
           "qualified_name": "create_e_detector.direct_geometry",
           "name": "direct_geometry",
           "kind": "function",
-          "line": 1837,
-          "end_line": 1845
+          "line": 1846,
+          "end_line": 1854
         },
         {
           "qualified_name": "calculate_full_direction_state",
           "name": "calculate_full_direction_state",
           "kind": "function",
-          "line": 1865,
-          "end_line": 2172
+          "line": 1875,
+          "end_line": 2207
         },
         {
           "qualified_name": "calculate_direction_with_order_b_feedback",
           "name": "calculate_direction_with_order_b_feedback",
           "kind": "function",
-          "line": 2175,
-          "end_line": 2227
+          "line": 2210,
+          "end_line": 2269
         },
         {
           "qualified_name": "prepare_pipeline_state",
           "name": "prepare_pipeline_state",
           "kind": "function",
-          "line": 2230,
-          "end_line": 2343
+          "line": 2272,
+          "end_line": 2405
         },
         {
           "qualified_name": "DirectionRangeState",
           "name": "DirectionRangeState",
           "kind": "class",
-          "line": 2347,
-          "end_line": 2356
+          "line": 2409,
+          "end_line": 2418
         },
         {
           "qualified_name": "DirectionVisibilityState",
           "name": "DirectionVisibilityState",
           "kind": "class",
-          "line": 2360,
-          "end_line": 2374
+          "line": 2422,
+          "end_line": 2437
         },
         {
           "qualified_name": "calculate_direction_range_state",
           "name": "calculate_direction_range_state",
           "kind": "function",
-          "line": 2377,
-          "end_line": 2476
+          "line": 2440,
+          "end_line": 2539
         },
         {
           "qualified_name": "finalize_direction_visibility",
           "name": "finalize_direction_visibility",
           "kind": "function",
-          "line": 2479,
-          "end_line": 2692
+          "line": 2542,
+          "end_line": 2776
         },
         {
           "qualified_name": "serialize_direction_payload",
           "name": "serialize_direction_payload",
           "kind": "function",
-          "line": 2695,
-          "end_line": 2833
+          "line": 2779,
+          "end_line": 2917
         },
         {
           "qualified_name": "serialize_direction_payload.build_legacy_payload",
           "name": "build_legacy_payload",
           "kind": "function",
-          "line": 2722,
-          "end_line": 2745
+          "line": 2806,
+          "end_line": 2829
         },
         {
           "qualified_name": "serialize_direction_payload.serialize_reactions_from_one_selection",
           "name": "serialize_reactions_from_one_selection",
           "kind": "function",
-          "line": 2754,
-          "end_line": 2762
+          "line": 2838,
+          "end_line": 2846
         },
         {
           "qualified_name": "serialize_direction_payload.build_payload",
           "name": "build_payload",
           "kind": "function",
-          "line": 2795,
-          "end_line": 2829
+          "line": 2879,
+          "end_line": 2913
+        },
+        {
+          "qualified_name": "serialize_primary_order",
+          "name": "serialize_primary_order",
+          "kind": "function",
+          "line": 2920,
+          "end_line": 2946
+        },
+        {
+          "qualified_name": "serialize_primary_order.value",
+          "name": "value",
+          "kind": "function",
+          "line": 2923,
+          "end_line": 2928
+        },
+        {
+          "qualified_name": "serialize_primary_structures",
+          "name": "serialize_primary_structures",
+          "kind": "function",
+          "line": 2949,
+          "end_line": 3050
+        },
+        {
+          "qualified_name": "serialize_primary_structures.point",
+          "name": "point",
+          "kind": "function",
+          "line": 2955,
+          "end_line": 2978
+        },
+        {
+          "qualified_name": "calculate_primary_structures",
+          "name": "calculate_primary_structures",
+          "kind": "function",
+          "line": 3053,
+          "end_line": 3096
+        },
+        {
+          "qualified_name": "calculate_primary_structures.commit_high",
+          "name": "commit_high",
+          "kind": "function",
+          "line": 3074,
+          "end_line": 3080
         },
         {
           "qualified_name": "build_direction_output",
           "name": "build_direction_output",
           "kind": "function",
-          "line": 2836,
-          "end_line": 2859
+          "line": 3099,
+          "end_line": 3137
         },
         {
           "qualified_name": "build_response_payload",
           "name": "build_response_payload",
           "kind": "function",
-          "line": 2861,
-          "end_line": 2911
+          "line": 3139,
+          "end_line": 3190
         },
         {
           "qualified_name": "main",
           "name": "main",
           "kind": "function",
-          "line": 2914,
-          "end_line": 2944
+          "line": 3193,
+          "end_line": 3223
         }
       ],
       "imports": [
@@ -1541,64 +1639,61 @@
           "line": 14
         },
         {
-          "module": "orjson",
-          "line": 15
-        },
-        {
           "module": "bisect",
           "names": [
             "bisect_left"
           ],
-          "line": 16
+          "line": 15
         },
         {
           "module": "dataclasses",
           "names": [
-            "dataclass"
+            "dataclass",
+            "field"
           ],
-          "line": 17
+          "line": 16
         },
         {
           "module": "datetime",
           "names": [
             "datetime"
           ],
-          "line": 18
+          "line": 17
         },
         {
           "module": "decimal",
           "names": [
             "Decimal"
           ],
-          "line": 19
+          "line": 18
         },
         {
           "module": "pathlib",
           "names": [
             "Path"
           ],
-          "line": 20
+          "line": 19
         },
         {
           "module": "time",
           "names": [
             "perf_counter"
           ],
-          "line": 21
+          "line": 20
         },
         {
           "module": "typing",
           "names": [
             "Sequence"
           ],
-          "line": 22
+          "line": 21
         },
         {
           "module": "zoneinfo",
           "names": [
             "ZoneInfo"
           ],
-          "line": 23
+          "line": 22
         },
         {
           "module": "core_utils",
@@ -1606,39 +1701,44 @@
             "as_decimal",
             "order_identity"
           ],
-          "line": 37
+          "line": 36
         },
         {
           "module": "order_audit_engine",
           "names": [
+            "accepted_audit_entries",
             "order_b_leg_identity"
           ],
-          "line": 38
+          "line": 37
         }
       ],
       "constants": [
         {
           "name": "_ENGINE_ROOT",
-          "line": 31
+          "line": 30
         },
         {
           "name": "_PIPELINE_DIR",
-          "line": 32
+          "line": 31
         },
         {
           "name": "_DTFMT",
-          "line": 40
+          "line": 39
         },
         {
           "name": "TRADING_PIPELINE_VERSION",
-          "line": 43
+          "line": 42
         },
         {
           "name": "TRADING_PIPELINE_IMPLEMENTATION_VERSION",
-          "line": 44
+          "line": 43
         },
         {
           "name": "TRADING_PIPELINE_LAST_MODIFIED",
+          "line": 44
+        },
+        {
+          "name": "MBL_EXTENSION_CANDLES",
           "line": 45
         },
         {
@@ -1654,16 +1754,26 @@
       "symbols": [],
       "imports": [
         {
+          "module": "sys",
+          "line": 7
+        },
+        {
+          "module": "pathlib",
+          "names": [
+            "Path"
+          ],
+          "line": 8
+        },
+        {
           "module": ".blue_line_detector",
           "names": [
             "BlueLine",
             "ScaleStrike",
             "count_scale_strikes",
             "detect_blue_lines",
-            "fibonacci_level",
-            "run_blue_line"
+            "fibonacci_level"
           ],
-          "line": 3
+          "line": 14
         }
       ],
       "constants": []
@@ -1673,8 +1783,8 @@
       "functions": [
         {
           "name": "detect_a_zones",
-          "line": 791,
-          "end_line": 797,
+          "line": 798,
+          "end_line": 804,
           "parameters": [
             "direction",
             "reactions",
@@ -1874,114 +1984,114 @@
         {
           "name": "AZoneDetector",
           "line": 67,
-          "end_line": 788,
+          "end_line": 795,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
               "line": 68,
-              "end_line": 94
+              "end_line": 105
             },
             {
               "name": "extreme_name",
-              "line": 97,
-              "end_line": 98
+              "line": 108,
+              "end_line": 109
             },
             {
               "name": "_strict_cross",
-              "line": 100,
-              "end_line": 101
-            },
-            {
-              "name": "_better",
-              "line": 103,
-              "end_line": 104
-            },
-            {
-              "name": "_main_index",
-              "line": 106,
-              "end_line": 107
-            },
-            {
-              "name": "_lower_window",
-              "line": 109,
+              "line": 111,
               "end_line": 112
             },
             {
-              "name": "_first_crossing",
+              "name": "_better",
               "line": 114,
-              "end_line": 154
+              "end_line": 115
+            },
+            {
+              "name": "_main_index",
+              "line": 117,
+              "end_line": 118
+            },
+            {
+              "name": "_lower_window",
+              "line": 120,
+              "end_line": 123
+            },
+            {
+              "name": "_first_crossing",
+              "line": 125,
+              "end_line": 165
             },
             {
               "name": "_range_extreme",
-              "line": 156,
-              "end_line": 188
+              "line": 167,
+              "end_line": 199
             },
             {
               "name": "_formation",
-              "line": 190,
-              "end_line": 205
+              "line": 201,
+              "end_line": 216
             },
             {
               "name": "_reset_formation_time",
-              "line": 207,
-              "end_line": 217
+              "line": 218,
+              "end_line": 228
             },
             {
               "name": "_build_blue_states",
-              "line": 219,
-              "end_line": 246
+              "line": 230,
+              "end_line": 257
             },
             {
               "name": "_double_stop_a_candidates",
-              "line": 248,
-              "end_line": 309
+              "line": 259,
+              "end_line": 320
             },
             {
               "name": "_pair_trigger",
-              "line": 311,
-              "end_line": 469
+              "line": 322,
+              "end_line": 480
             },
             {
               "name": "_reaction_confirmation_time",
-              "line": 471,
-              "end_line": 474
+              "line": 482,
+              "end_line": 485
             },
             {
               "name": "_first_reaction_after",
-              "line": 476,
-              "end_line": 492
+              "line": 487,
+              "end_line": 502
             },
             {
               "name": "_inherited_stop",
-              "line": 494,
-              "end_line": 545
+              "line": 504,
+              "end_line": 552
             },
             {
               "name": "_a_source",
-              "line": 547,
-              "end_line": 566
+              "line": 554,
+              "end_line": 573
             },
             {
               "name": "_detect_ordinary_a",
-              "line": 568,
-              "end_line": 687
+              "line": 575,
+              "end_line": 694
             },
             {
               "name": "_filter_special_a",
-              "line": 689,
-              "end_line": 751
+              "line": 696,
+              "end_line": 758
             },
             {
               "name": "detect",
-              "line": 753,
-              "end_line": 763
+              "line": 760,
+              "end_line": 770
             },
             {
               "name": "_a_was_stopped_before",
-              "line": 765,
-              "end_line": 788
+              "line": 772,
+              "end_line": 795
             }
           ]
         }
@@ -2006,161 +2116,161 @@
           "name": "AZoneDetector",
           "kind": "class",
           "line": 67,
-          "end_line": 788
+          "end_line": 795
         },
         {
           "qualified_name": "AZoneDetector.__init__",
           "name": "__init__",
           "kind": "function",
           "line": 68,
-          "end_line": 94
+          "end_line": 105
         },
         {
           "qualified_name": "AZoneDetector.extreme_name",
           "name": "extreme_name",
           "kind": "function",
-          "line": 97,
-          "end_line": 98
+          "line": 108,
+          "end_line": 109
         },
         {
           "qualified_name": "AZoneDetector._strict_cross",
           "name": "_strict_cross",
           "kind": "function",
-          "line": 100,
-          "end_line": 101
+          "line": 111,
+          "end_line": 112
         },
         {
           "qualified_name": "AZoneDetector._better",
           "name": "_better",
           "kind": "function",
-          "line": 103,
-          "end_line": 104
+          "line": 114,
+          "end_line": 115
         },
         {
           "qualified_name": "AZoneDetector._main_index",
           "name": "_main_index",
           "kind": "function",
-          "line": 106,
-          "end_line": 107
+          "line": 117,
+          "end_line": 118
         },
         {
           "qualified_name": "AZoneDetector._lower_window",
           "name": "_lower_window",
           "kind": "function",
-          "line": 109,
-          "end_line": 112
+          "line": 120,
+          "end_line": 123
         },
         {
           "qualified_name": "AZoneDetector._first_crossing",
           "name": "_first_crossing",
           "kind": "function",
-          "line": 114,
-          "end_line": 154
+          "line": 125,
+          "end_line": 165
         },
         {
           "qualified_name": "AZoneDetector._range_extreme",
           "name": "_range_extreme",
           "kind": "function",
-          "line": 156,
-          "end_line": 188
+          "line": 167,
+          "end_line": 199
         },
         {
           "qualified_name": "AZoneDetector._formation",
           "name": "_formation",
           "kind": "function",
-          "line": 190,
-          "end_line": 205
+          "line": 201,
+          "end_line": 216
         },
         {
           "qualified_name": "AZoneDetector._reset_formation_time",
           "name": "_reset_formation_time",
           "kind": "function",
-          "line": 207,
-          "end_line": 217
+          "line": 218,
+          "end_line": 228
         },
         {
           "qualified_name": "AZoneDetector._build_blue_states",
           "name": "_build_blue_states",
           "kind": "function",
-          "line": 219,
-          "end_line": 246
+          "line": 230,
+          "end_line": 257
         },
         {
           "qualified_name": "AZoneDetector._double_stop_a_candidates",
           "name": "_double_stop_a_candidates",
           "kind": "function",
-          "line": 248,
-          "end_line": 309
+          "line": 259,
+          "end_line": 320
         },
         {
           "qualified_name": "AZoneDetector._pair_trigger",
           "name": "_pair_trigger",
           "kind": "function",
-          "line": 311,
-          "end_line": 469
+          "line": 322,
+          "end_line": 480
         },
         {
           "qualified_name": "AZoneDetector._reaction_confirmation_time",
           "name": "_reaction_confirmation_time",
           "kind": "function",
-          "line": 471,
-          "end_line": 474
+          "line": 482,
+          "end_line": 485
         },
         {
           "qualified_name": "AZoneDetector._first_reaction_after",
           "name": "_first_reaction_after",
           "kind": "function",
-          "line": 476,
-          "end_line": 492
+          "line": 487,
+          "end_line": 502
         },
         {
           "qualified_name": "AZoneDetector._inherited_stop",
           "name": "_inherited_stop",
           "kind": "function",
-          "line": 494,
-          "end_line": 545
+          "line": 504,
+          "end_line": 552
         },
         {
           "qualified_name": "AZoneDetector._a_source",
           "name": "_a_source",
           "kind": "function",
-          "line": 547,
-          "end_line": 566
+          "line": 554,
+          "end_line": 573
         },
         {
           "qualified_name": "AZoneDetector._detect_ordinary_a",
           "name": "_detect_ordinary_a",
           "kind": "function",
-          "line": 568,
-          "end_line": 687
+          "line": 575,
+          "end_line": 694
         },
         {
           "qualified_name": "AZoneDetector._filter_special_a",
           "name": "_filter_special_a",
           "kind": "function",
-          "line": 689,
-          "end_line": 751
+          "line": 696,
+          "end_line": 758
         },
         {
           "qualified_name": "AZoneDetector.detect",
           "name": "detect",
           "kind": "function",
-          "line": 753,
-          "end_line": 763
+          "line": 760,
+          "end_line": 770
         },
         {
           "qualified_name": "AZoneDetector._a_was_stopped_before",
           "name": "_a_was_stopped_before",
           "kind": "function",
-          "line": 765,
-          "end_line": 788
+          "line": 772,
+          "end_line": 795
         },
         {
           "qualified_name": "detect_a_zones",
           "name": "detect_a_zones",
           "kind": "function",
-          "line": 791,
-          "end_line": 797
+          "line": 798,
+          "end_line": 804
         }
       ],
       "imports": [
@@ -2281,7 +2391,7 @@
         {
           "name": "_intrabar_pending_confirmation",
           "line": 84,
-          "end_line": 136,
+          "end_line": 139,
           "parameters": [
             "direction",
             "chronology",
@@ -2294,8 +2404,8 @@
         },
         {
           "name": "count_scale_strikes",
-          "line": 139,
-          "end_line": 204,
+          "line": 142,
+          "end_line": 227,
           "parameters": [
             "direction",
             "reaction",
@@ -2306,8 +2416,8 @@
         },
         {
           "name": "_build_scale_blue_line",
-          "line": 207,
-          "end_line": 242,
+          "line": 230,
+          "end_line": 265,
           "parameters": [
             "direction",
             "reaction_number",
@@ -2321,8 +2431,8 @@
         },
         {
           "name": "_build_reset_blue_line",
-          "line": 245,
-          "end_line": 297,
+          "line": 268,
+          "end_line": 320,
           "parameters": [
             "direction",
             "reaction_number",
@@ -2336,8 +2446,8 @@
         },
         {
           "name": "detect_blue_lines",
-          "line": 299,
-          "end_line": 404,
+          "line": 322,
+          "end_line": 427,
           "parameters": [
             "direction",
             "reactions",
@@ -2347,16 +2457,16 @@
         },
         {
           "name": "public_blue_lines",
-          "line": 407,
-          "end_line": 414,
+          "line": 430,
+          "end_line": 437,
           "parameters": [
             "lines"
           ]
         },
         {
           "name": "mark_internal_blue_lines",
-          "line": 416,
-          "end_line": 458,
+          "line": 439,
+          "end_line": 481,
           "parameters": [
             "lines",
             "owner_reactions",
@@ -2526,63 +2636,63 @@
           "name": "_intrabar_pending_confirmation",
           "kind": "function",
           "line": 84,
-          "end_line": 136
+          "end_line": 139
         },
         {
           "qualified_name": "count_scale_strikes",
           "name": "count_scale_strikes",
           "kind": "function",
-          "line": 139,
-          "end_line": 204
+          "line": 142,
+          "end_line": 227
         },
         {
           "qualified_name": "_build_scale_blue_line",
           "name": "_build_scale_blue_line",
           "kind": "function",
-          "line": 207,
-          "end_line": 242
+          "line": 230,
+          "end_line": 265
         },
         {
           "qualified_name": "_build_reset_blue_line",
           "name": "_build_reset_blue_line",
           "kind": "function",
-          "line": 245,
-          "end_line": 297
+          "line": 268,
+          "end_line": 320
         },
         {
           "qualified_name": "detect_blue_lines",
           "name": "detect_blue_lines",
           "kind": "function",
-          "line": 299,
-          "end_line": 404
+          "line": 322,
+          "end_line": 427
         },
         {
           "qualified_name": "public_blue_lines",
           "name": "public_blue_lines",
           "kind": "function",
-          "line": 407,
-          "end_line": 414
+          "line": 430,
+          "end_line": 437
         },
         {
           "qualified_name": "mark_internal_blue_lines",
           "name": "mark_internal_blue_lines",
           "kind": "function",
-          "line": 416,
-          "end_line": 458
+          "line": 439,
+          "end_line": 481
         },
         {
           "qualified_name": "mark_internal_blue_lines.owner_is_internal",
           "name": "owner_is_internal",
           "kind": "function",
-          "line": 429,
-          "end_line": 433
+          "line": 452,
+          "end_line": 456
         },
         {
           "qualified_name": "mark_internal_blue_lines.geometry_is_internal",
           "name": "geometry_is_internal",
           "kind": "function",
-          "line": 435,
-          "end_line": 454
+          "line": 458,
+          "end_line": 477
         }
       ],
       "imports": [
@@ -2663,7 +2773,7 @@
         {
           "name": "reaction_identity",
           "line": 24,
-          "end_line": 29,
+          "end_line": 26,
           "parameters": [
             "reaction"
           ]
@@ -2690,7 +2800,7 @@
           "name": "reaction_identity",
           "kind": "function",
           "line": 24,
-          "end_line": 29
+          "end_line": 26
         }
       ],
       "imports": [
@@ -2900,8 +3010,8 @@
       "functions": [
         {
           "name": "detect_e_zones",
-          "line": 1004,
-          "end_line": 1033,
+          "line": 1115,
+          "end_line": 1144,
           "parameters": [
             "direction",
             "trend_reactions",
@@ -3109,129 +3219,144 @@
         {
           "name": "EZoneDetector",
           "line": 69,
-          "end_line": 1001,
+          "end_line": 1112,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
               "line": 70,
-              "end_line": 210
+              "end_line": 225
             },
             {
               "name": "sequence_resets",
-              "line": 213,
-              "end_line": 214
+              "line": 228,
+              "end_line": 229
             },
             {
               "name": "sequence_resets",
-              "line": 217,
-              "end_line": 224
+              "line": 232,
+              "end_line": 244
             },
             {
               "name": "_reset_time",
-              "line": 226,
-              "end_line": 227
+              "line": 246,
+              "end_line": 247
             },
             {
               "name": "_main_index",
-              "line": 229,
-              "end_line": 230
+              "line": 249,
+              "end_line": 250
             },
             {
               "name": "_first_cross_position",
-              "line": 233,
-              "end_line": 248
-            },
-            {
-              "name": "_stop_value",
-              "line": 250,
-              "end_line": 251
-            },
-            {
-              "name": "_first_parent_stop",
-              "line": 254,
-              "end_line": 265
-            },
-            {
-              "name": "_confirmation_for",
-              "line": 267,
+              "line": 253,
               "end_line": 268
             },
             {
-              "name": "_confirmation",
+              "name": "_stop_value",
               "line": 270,
               "end_line": 271
             },
             {
-              "name": "_reaction_first_time",
+              "name": "_build_extreme_sparse",
               "line": 273,
-              "end_line": 274
+              "end_line": 300
+            },
+            {
+              "name": "_extreme_position",
+              "line": 302,
+              "end_line": 319
+            },
+            {
+              "name": "_first_parent_stop",
+              "line": 322,
+              "end_line": 333
+            },
+            {
+              "name": "_confirmation_for",
+              "line": 335,
+              "end_line": 336
+            },
+            {
+              "name": "_confirmation",
+              "line": 338,
+              "end_line": 339
+            },
+            {
+              "name": "_reaction_first_time",
+              "line": 341,
+              "end_line": 342
             },
             {
               "name": "_parent_stop",
-              "line": 277,
-              "end_line": 283
+              "line": 345,
+              "end_line": 351
             },
             {
               "name": "parent_stop",
-              "line": 285,
-              "end_line": 289
+              "line": 353,
+              "end_line": 357
             },
             {
               "name": "_extreme_between",
-              "line": 292,
-              "end_line": 306
+              "line": 360,
+              "end_line": 374
             },
             {
               "name": "_zone",
-              "line": 308,
-              "end_line": 408
+              "line": 376,
+              "end_line": 479
             },
             {
               "name": "set_consumed_s_evidence",
-              "line": 410,
-              "end_line": 420
+              "line": 481,
+              "end_line": 491
             },
             {
               "name": "_apply_consumed_s_evidence",
-              "line": 422,
-              "end_line": 438
+              "line": 493,
+              "end_line": 509
             },
             {
               "name": "continuation_chain_from_s",
-              "line": 440,
-              "end_line": 477
+              "line": 511,
+              "end_line": 559
             },
             {
               "name": "replace_with_earlier_continuation",
-              "line": 479,
-              "end_line": 520
+              "line": 561,
+              "end_line": 602
             },
             {
               "name": "resolve_same_source_conflicts",
-              "line": 522,
-              "end_line": 564
+              "line": 604,
+              "end_line": 646
             },
             {
               "name": "restore_independent_s_roots",
-              "line": 566,
-              "end_line": 624
+              "line": 648,
+              "end_line": 707
+            },
+            {
+              "name": "_invalid_s_without_order_cause",
+              "line": 709,
+              "end_line": 731
             },
             {
               "name": "_discover_candidate_chains",
-              "line": 626,
-              "end_line": 716
+              "line": 733,
+              "end_line": 823
             },
             {
               "name": "_reconcile_candidate_chains",
-              "line": 718,
-              "end_line": 988
+              "line": 825,
+              "end_line": 1099
             },
             {
               "name": "detect",
-              "line": 991,
-              "end_line": 1001
+              "line": 1102,
+              "end_line": 1112
             }
           ]
         }
@@ -3249,231 +3374,252 @@
           "name": "EZoneDetector",
           "kind": "class",
           "line": 69,
-          "end_line": 1001
+          "end_line": 1112
         },
         {
           "qualified_name": "EZoneDetector.__init__",
           "name": "__init__",
           "kind": "function",
           "line": 70,
-          "end_line": 210
+          "end_line": 225
         },
         {
           "qualified_name": "EZoneDetector.sequence_resets",
           "name": "sequence_resets",
           "kind": "function",
-          "line": 213,
-          "end_line": 214
+          "line": 228,
+          "end_line": 229
         },
         {
           "qualified_name": "EZoneDetector.sequence_resets",
           "name": "sequence_resets",
           "kind": "function",
-          "line": 217,
-          "end_line": 224
+          "line": 232,
+          "end_line": 244
         },
         {
           "qualified_name": "EZoneDetector._reset_time",
           "name": "_reset_time",
           "kind": "function",
-          "line": 226,
-          "end_line": 227
+          "line": 246,
+          "end_line": 247
         },
         {
           "qualified_name": "EZoneDetector._main_index",
           "name": "_main_index",
           "kind": "function",
-          "line": 229,
-          "end_line": 230
+          "line": 249,
+          "end_line": 250
         },
         {
           "qualified_name": "EZoneDetector._first_cross_position",
           "name": "_first_cross_position",
           "kind": "function",
-          "line": 233,
-          "end_line": 248
+          "line": 253,
+          "end_line": 268
         },
         {
           "qualified_name": "EZoneDetector._stop_value",
           "name": "_stop_value",
           "kind": "function",
-          "line": 250,
-          "end_line": 251
+          "line": 270,
+          "end_line": 271
+        },
+        {
+          "qualified_name": "EZoneDetector._build_extreme_sparse",
+          "name": "_build_extreme_sparse",
+          "kind": "function",
+          "line": 273,
+          "end_line": 300
+        },
+        {
+          "qualified_name": "EZoneDetector._extreme_position",
+          "name": "_extreme_position",
+          "kind": "function",
+          "line": 302,
+          "end_line": 319
         },
         {
           "qualified_name": "EZoneDetector._first_parent_stop",
           "name": "_first_parent_stop",
           "kind": "function",
-          "line": 254,
-          "end_line": 265
+          "line": 322,
+          "end_line": 333
         },
         {
           "qualified_name": "EZoneDetector._confirmation_for",
           "name": "_confirmation_for",
           "kind": "function",
-          "line": 267,
-          "end_line": 268
+          "line": 335,
+          "end_line": 336
         },
         {
           "qualified_name": "EZoneDetector._confirmation",
           "name": "_confirmation",
           "kind": "function",
-          "line": 270,
-          "end_line": 271
+          "line": 338,
+          "end_line": 339
         },
         {
           "qualified_name": "EZoneDetector._reaction_first_time",
           "name": "_reaction_first_time",
           "kind": "function",
-          "line": 273,
-          "end_line": 274
+          "line": 341,
+          "end_line": 342
         },
         {
           "qualified_name": "EZoneDetector._parent_stop",
           "name": "_parent_stop",
           "kind": "function",
-          "line": 277,
-          "end_line": 283
+          "line": 345,
+          "end_line": 351
         },
         {
           "qualified_name": "EZoneDetector.parent_stop",
           "name": "parent_stop",
           "kind": "function",
-          "line": 285,
-          "end_line": 289
+          "line": 353,
+          "end_line": 357
         },
         {
           "qualified_name": "EZoneDetector._extreme_between",
           "name": "_extreme_between",
           "kind": "function",
-          "line": 292,
-          "end_line": 306
+          "line": 360,
+          "end_line": 374
         },
         {
           "qualified_name": "EZoneDetector._zone",
           "name": "_zone",
           "kind": "function",
-          "line": 308,
-          "end_line": 408
+          "line": 376,
+          "end_line": 479
         },
         {
           "qualified_name": "EZoneDetector.set_consumed_s_evidence",
           "name": "set_consumed_s_evidence",
           "kind": "function",
-          "line": 410,
-          "end_line": 420
+          "line": 481,
+          "end_line": 491
         },
         {
           "qualified_name": "EZoneDetector._apply_consumed_s_evidence",
           "name": "_apply_consumed_s_evidence",
           "kind": "function",
-          "line": 422,
-          "end_line": 438
+          "line": 493,
+          "end_line": 509
         },
         {
           "qualified_name": "EZoneDetector.continuation_chain_from_s",
           "name": "continuation_chain_from_s",
           "kind": "function",
-          "line": 440,
-          "end_line": 477
+          "line": 511,
+          "end_line": 559
         },
         {
           "qualified_name": "EZoneDetector.replace_with_earlier_continuation",
           "name": "replace_with_earlier_continuation",
           "kind": "function",
-          "line": 479,
-          "end_line": 520
+          "line": 561,
+          "end_line": 602
         },
         {
           "qualified_name": "EZoneDetector.replace_with_earlier_continuation.descends_from_owner",
           "name": "descends_from_owner",
           "kind": "function",
-          "line": 488,
-          "end_line": 502
+          "line": 570,
+          "end_line": 584
         },
         {
           "qualified_name": "EZoneDetector.resolve_same_source_conflicts",
           "name": "resolve_same_source_conflicts",
           "kind": "function",
-          "line": 522,
-          "end_line": 564
+          "line": 604,
+          "end_line": 646
         },
         {
           "qualified_name": "EZoneDetector.resolve_same_source_conflicts.outranks",
           "name": "outranks",
           "kind": "function",
-          "line": 540,
-          "end_line": 547
+          "line": 622,
+          "end_line": 629
         },
         {
           "qualified_name": "EZoneDetector.restore_independent_s_roots",
           "name": "restore_independent_s_roots",
           "kind": "function",
-          "line": 566,
-          "end_line": 624
+          "line": 648,
+          "end_line": 707
+        },
+        {
+          "qualified_name": "EZoneDetector._invalid_s_without_order_cause",
+          "name": "_invalid_s_without_order_cause",
+          "kind": "function",
+          "line": 709,
+          "end_line": 731
         },
         {
           "qualified_name": "EZoneDetector._discover_candidate_chains",
           "name": "_discover_candidate_chains",
           "kind": "function",
-          "line": 626,
-          "end_line": 716
+          "line": 733,
+          "end_line": 823
         },
         {
           "qualified_name": "EZoneDetector._reconcile_candidate_chains",
           "name": "_reconcile_candidate_chains",
           "kind": "function",
-          "line": 718,
-          "end_line": 988
+          "line": 825,
+          "end_line": 1099
         },
         {
           "qualified_name": "EZoneDetector._reconcile_candidate_chains.valid_order",
           "name": "valid_order",
           "kind": "function",
-          "line": 749,
-          "end_line": 750
+          "line": 856,
+          "end_line": 860
         },
         {
           "qualified_name": "EZoneDetector._reconcile_candidate_chains.parent_active",
           "name": "parent_active",
           "kind": "function",
-          "line": 752,
-          "end_line": 822
+          "line": 862,
+          "end_line": 933
         },
         {
           "qualified_name": "EZoneDetector._reconcile_candidate_chains.stopped_by",
           "name": "stopped_by",
           "kind": "function",
-          "line": 824,
-          "end_line": 829
+          "line": 935,
+          "end_line": 940
         },
         {
           "qualified_name": "EZoneDetector._reconcile_candidate_chains.ownership_priority",
           "name": "ownership_priority",
           "kind": "function",
-          "line": 880,
-          "end_line": 885
+          "line": 991,
+          "end_line": 996
         },
         {
           "qualified_name": "EZoneDetector._reconcile_candidate_chains.collect_lineage",
           "name": "collect_lineage",
           "kind": "function",
-          "line": 966,
-          "end_line": 978
+          "line": 1077,
+          "end_line": 1089
         },
         {
           "qualified_name": "EZoneDetector.detect",
           "name": "detect",
           "kind": "function",
-          "line": 991,
-          "end_line": 1001
+          "line": 1102,
+          "end_line": 1112
         },
         {
           "qualified_name": "detect_e_zones",
           "name": "detect_e_zones",
           "kind": "function",
-          "line": 1004,
-          "end_line": 1033
+          "line": 1115,
+          "end_line": 1144
         }
       ],
       "imports": [
@@ -3579,9 +3725,21 @@
           ]
         },
         {
+          "name": "advance_dominant_behavior",
+          "line": 121,
+          "end_line": 139,
+          "parameters": [
+            "owner",
+            "kind",
+            "family",
+            "number",
+            "item"
+          ]
+        },
+        {
           "name": "detect_stopalls",
-          "line": 603,
-          "end_line": 609,
+          "line": 530,
+          "end_line": 536,
           "parameters": [
             "direction",
             "s_zones",
@@ -3591,8 +3749,8 @@
         },
         {
           "name": "resolve_order_context",
-          "line": 616,
-          "end_line": 665,
+          "line": 543,
+          "end_line": 629,
           "parameters": [
             "order_audit",
             "accepted_a_sources",
@@ -3602,13 +3760,16 @@
             "opposite_reactions",
             "candles",
             "direction",
-            "stop_finder"
+            "stop_finder",
+            "accepted_e_stop_events",
+            "opposite_confirmation_finder",
+            "e_parent_order_first_exceptions_out"
           ]
         },
         {
           "name": "visible_a_zones_after_s_stops",
-          "line": 668,
-          "end_line": 682,
+          "line": 632,
+          "end_line": 647,
           "parameters": [
             "a_zones",
             "s_zones",
@@ -3617,24 +3778,24 @@
         },
         {
           "name": "module_priority",
-          "line": 684,
-          "end_line": 696,
+          "line": 649,
+          "end_line": 661,
           "parameters": [
             "item"
           ]
         },
         {
           "name": "module_identity",
-          "line": 698,
-          "end_line": 705,
+          "line": 663,
+          "end_line": 670,
           "parameters": [
             "item"
           ]
         },
         {
           "name": "module_stop_event",
-          "line": 707,
-          "end_line": 719,
+          "line": 672,
+          "end_line": 684,
           "parameters": [
             "item",
             "stop_event_finder"
@@ -3642,8 +3803,8 @@
         },
         {
           "name": "strictly_beyond_boundary",
-          "line": 721,
-          "end_line": 724,
+          "line": 686,
+          "end_line": 689,
           "parameters": [
             "price",
             "boundary",
@@ -3652,16 +3813,16 @@
         },
         {
           "name": "dominant_module",
-          "line": 726,
-          "end_line": 735,
+          "line": 691,
+          "end_line": 700,
           "parameters": [
             "modules"
           ]
         },
         {
           "name": "split_a_zones_by_dominant_stops",
-          "line": 738,
-          "end_line": 939,
+          "line": 703,
+          "end_line": 904,
           "parameters": [
             "a_zones",
             "s_zones",
@@ -3678,8 +3839,8 @@
         },
         {
           "name": "blocked_orders_while_invalid_leg_heads_are_live",
-          "line": 941,
-          "end_line": 961,
+          "line": 906,
+          "end_line": 926,
           "parameters": [
             "invalid_a_zones",
             "opposite_reactions",
@@ -3690,8 +3851,8 @@
         },
         {
           "name": "consumed_s_evidence_after_larger_stop",
-          "line": 964,
-          "end_line": 1104,
+          "line": 929,
+          "end_line": 1069,
           "parameters": [
             "s_candidates",
             "accepted_s_zones",
@@ -3703,8 +3864,8 @@
         },
         {
           "name": "s_zones_for_module_engines",
-          "line": 1106,
-          "end_line": 1134,
+          "line": 1071,
+          "end_line": 1099,
           "parameters": [
             "s_zones",
             "e_zones",
@@ -3713,8 +3874,8 @@
         },
         {
           "name": "s_zones_for_stopall",
-          "line": 1136,
-          "end_line": 1153,
+          "line": 1101,
+          "end_line": 1118,
           "parameters": [
             "s_zones",
             "e_zones",
@@ -3723,8 +3884,8 @@
         },
         {
           "name": "visible_s_zones_after_module_resets",
-          "line": 1155,
-          "end_line": 1322,
+          "line": 1120,
+          "end_line": 1296,
           "parameters": [
             "s_zones",
             "e_zones",
@@ -3736,8 +3897,8 @@
         },
         {
           "name": "reconcile_stopall_lifecycle",
-          "line": 1324,
-          "end_line": 1354,
+          "line": 1298,
+          "end_line": 1328,
           "parameters": [
             "detector",
             "s_zones",
@@ -3749,8 +3910,8 @@
         },
         {
           "name": "visible_a_zones_after_module_boundaries",
-          "line": 1357,
-          "end_line": 1402,
+          "line": 1331,
+          "end_line": 1376,
           "parameters": [
             "a_zones",
             "s_zones",
@@ -3761,8 +3922,8 @@
         },
         {
           "name": "reaction_number_is_internal",
-          "line": 1404,
-          "end_line": 1415,
+          "line": 1378,
+          "end_line": 1389,
           "parameters": [
             "items",
             "number",
@@ -3771,8 +3932,8 @@
         },
         {
           "name": "point_is_inside_healthy_reaction",
-          "line": 1418,
-          "end_line": 1438,
+          "line": 1392,
+          "end_line": 1412,
           "parameters": [
             "source_time",
             "price",
@@ -3781,8 +3942,8 @@
         },
         {
           "name": "filter_internal_behavior_outputs",
-          "line": 1441,
-          "end_line": 1452,
+          "line": 1415,
+          "end_line": 1426,
           "parameters": [
             "a_zones",
             "s_zones",
@@ -3795,8 +3956,8 @@
         },
         {
           "name": "finalize_behavior_visibility",
-          "line": 1454,
-          "end_line": 1546,
+          "line": 1428,
+          "end_line": 1520,
           "parameters": [
             "a_zones",
             "s_zones",
@@ -3812,8 +3973,8 @@
         },
         {
           "name": "visible_a_zones",
-          "line": 1549,
-          "end_line": 1555,
+          "line": 1523,
+          "end_line": 1529,
           "parameters": [
             "a_zones",
             "s_zones"
@@ -4058,81 +4219,103 @@
           "methods": []
         },
         {
+          "name": "_DominantBehavior",
+          "line": 96,
+          "end_line": 118,
+          "decorators": [
+            "dataclass(frozen=True, slots=True)"
+          ],
+          "fields": [
+            {
+              "name": "kind",
+              "annotation": "str",
+              "line": 99
+            },
+            {
+              "name": "family",
+              "annotation": "str",
+              "line": 100
+            },
+            {
+              "name": "number",
+              "annotation": "int | None",
+              "line": 101
+            },
+            {
+              "name": "count",
+              "annotation": "int",
+              "line": 102
+            },
+            {
+              "name": "latest",
+              "annotation": "object",
+              "line": 103
+            }
+          ],
+          "methods": [
+            {
+              "name": "priority",
+              "line": 106,
+              "end_line": 107
+            },
+            {
+              "name": "armed",
+              "line": 110,
+              "end_line": 111
+            },
+            {
+              "name": "key",
+              "line": 114,
+              "end_line": 118
+            }
+          ]
+        },
+        {
           "name": "StopAllDetector",
-          "line": 95,
-          "end_line": 600,
+          "line": 142,
+          "end_line": 527,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 96,
-              "end_line": 115
+              "line": 143,
+              "end_line": 162
             },
             {
               "name": "_strict_stop",
-              "line": 117,
-              "end_line": 131
-            },
-            {
-              "name": "_e_key",
-              "line": 134,
-              "end_line": 135
+              "line": 164,
+              "end_line": 178
             },
             {
               "name": "_dominates_e",
-              "line": 138,
-              "end_line": 145
-            },
-            {
-              "name": "_sequence_priority",
-              "line": 148,
-              "end_line": 149
-            },
-            {
-              "name": "_active_sequence_priority",
-              "line": 152,
-              "end_line": 159
+              "line": 181,
+              "end_line": 188
             },
             {
               "name": "_stopall_from_e",
-              "line": 161,
-              "end_line": 217
+              "line": 190,
+              "end_line": 246
             },
             {
               "name": "_optional_int",
-              "line": 220,
-              "end_line": 221
+              "line": 249,
+              "end_line": 250
             },
             {
               "name": "_optional_decimal",
-              "line": 224,
-              "end_line": 225
+              "line": 253,
+              "end_line": 254
             },
             {
               "name": "_stopall_from_s",
-              "line": 227,
-              "end_line": 322
-            },
-            {
-              "name": "_blue_repeat_key",
-              "line": 325,
-              "end_line": 338
-            },
-            {
-              "name": "_record_blue_repeat",
-              "line": 341,
-              "end_line": 348
-            },
-            {
-              "name": "_opposite_s_stopall_gate",
-              "line": 350,
-              "end_line": 395
+              "line": 256,
+              "end_line": 342
             },
             {
               "name": "detect",
-              "line": 397,
-              "end_line": 600
+              "line": 344,
+              "end_line": 527
             }
           ]
         }
@@ -4153,270 +4336,277 @@
           "end_line": 92
         },
         {
+          "qualified_name": "_DominantBehavior",
+          "name": "_DominantBehavior",
+          "kind": "class",
+          "line": 96,
+          "end_line": 118
+        },
+        {
+          "qualified_name": "_DominantBehavior.priority",
+          "name": "priority",
+          "kind": "function",
+          "line": 106,
+          "end_line": 107
+        },
+        {
+          "qualified_name": "_DominantBehavior.armed",
+          "name": "armed",
+          "kind": "function",
+          "line": 110,
+          "end_line": 111
+        },
+        {
+          "qualified_name": "_DominantBehavior.key",
+          "name": "key",
+          "kind": "function",
+          "line": 114,
+          "end_line": 118
+        },
+        {
+          "qualified_name": "advance_dominant_behavior",
+          "name": "advance_dominant_behavior",
+          "kind": "function",
+          "line": 121,
+          "end_line": 139
+        },
+        {
           "qualified_name": "StopAllDetector",
           "name": "StopAllDetector",
           "kind": "class",
-          "line": 95,
-          "end_line": 600
+          "line": 142,
+          "end_line": 527
         },
         {
           "qualified_name": "StopAllDetector.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 96,
-          "end_line": 115
+          "line": 143,
+          "end_line": 162
         },
         {
           "qualified_name": "StopAllDetector._strict_stop",
           "name": "_strict_stop",
           "kind": "function",
-          "line": 117,
-          "end_line": 131
-        },
-        {
-          "qualified_name": "StopAllDetector._e_key",
-          "name": "_e_key",
-          "kind": "function",
-          "line": 134,
-          "end_line": 135
+          "line": 164,
+          "end_line": 178
         },
         {
           "qualified_name": "StopAllDetector._dominates_e",
           "name": "_dominates_e",
           "kind": "function",
-          "line": 138,
-          "end_line": 145
-        },
-        {
-          "qualified_name": "StopAllDetector._sequence_priority",
-          "name": "_sequence_priority",
-          "kind": "function",
-          "line": 148,
-          "end_line": 149
-        },
-        {
-          "qualified_name": "StopAllDetector._active_sequence_priority",
-          "name": "_active_sequence_priority",
-          "kind": "function",
-          "line": 152,
-          "end_line": 159
+          "line": 181,
+          "end_line": 188
         },
         {
           "qualified_name": "StopAllDetector._stopall_from_e",
           "name": "_stopall_from_e",
           "kind": "function",
-          "line": 161,
-          "end_line": 217
+          "line": 190,
+          "end_line": 246
         },
         {
           "qualified_name": "StopAllDetector._optional_int",
           "name": "_optional_int",
           "kind": "function",
-          "line": 220,
-          "end_line": 221
+          "line": 249,
+          "end_line": 250
         },
         {
           "qualified_name": "StopAllDetector._optional_decimal",
           "name": "_optional_decimal",
           "kind": "function",
-          "line": 224,
-          "end_line": 225
+          "line": 253,
+          "end_line": 254
         },
         {
           "qualified_name": "StopAllDetector._stopall_from_s",
           "name": "_stopall_from_s",
           "kind": "function",
-          "line": 227,
-          "end_line": 322
-        },
-        {
-          "qualified_name": "StopAllDetector._blue_repeat_key",
-          "name": "_blue_repeat_key",
-          "kind": "function",
-          "line": 325,
-          "end_line": 338
-        },
-        {
-          "qualified_name": "StopAllDetector._record_blue_repeat",
-          "name": "_record_blue_repeat",
-          "kind": "function",
-          "line": 341,
-          "end_line": 348
-        },
-        {
-          "qualified_name": "StopAllDetector._opposite_s_stopall_gate",
-          "name": "_opposite_s_stopall_gate",
-          "kind": "function",
-          "line": 350,
-          "end_line": 395
+          "line": 256,
+          "end_line": 342
         },
         {
           "qualified_name": "StopAllDetector.detect",
           "name": "detect",
           "kind": "function",
-          "line": 397,
-          "end_line": 600
+          "line": 344,
+          "end_line": 527
         },
         {
-          "qualified_name": "StopAllDetector.detect.reset_cycle_blue_repeats",
-          "name": "reset_cycle_blue_repeats",
+          "qualified_name": "StopAllDetector.detect.armed_stop_before",
+          "name": "armed_stop_before",
           "kind": "function",
-          "line": 413,
-          "end_line": 415
+          "line": 356,
+          "end_line": 404
+        },
+        {
+          "qualified_name": "StopAllDetector.detect.accept",
+          "name": "accept",
+          "kind": "function",
+          "line": 406,
+          "end_line": 408
         },
         {
           "qualified_name": "StopAllDetector.detect.process_s_event",
           "name": "process_s_event",
           "kind": "function",
-          "line": 417,
-          "end_line": 466
+          "line": 410,
+          "end_line": 461
         },
         {
           "qualified_name": "detect_stopalls",
           "name": "detect_stopalls",
           "kind": "function",
-          "line": 603,
-          "end_line": 609
+          "line": 530,
+          "end_line": 536
         },
         {
           "qualified_name": "resolve_order_context",
           "name": "resolve_order_context",
           "kind": "function",
-          "line": 616,
-          "end_line": 665
+          "line": 543,
+          "end_line": 629
         },
         {
           "qualified_name": "visible_a_zones_after_s_stops",
           "name": "visible_a_zones_after_s_stops",
           "kind": "function",
-          "line": 668,
-          "end_line": 682
+          "line": 632,
+          "end_line": 647
         },
         {
           "qualified_name": "module_priority",
           "name": "module_priority",
           "kind": "function",
-          "line": 684,
-          "end_line": 696
+          "line": 649,
+          "end_line": 661
         },
         {
           "qualified_name": "module_identity",
           "name": "module_identity",
           "kind": "function",
-          "line": 698,
-          "end_line": 705
+          "line": 663,
+          "end_line": 670
         },
         {
           "qualified_name": "module_stop_event",
           "name": "module_stop_event",
           "kind": "function",
-          "line": 707,
-          "end_line": 719
+          "line": 672,
+          "end_line": 684
         },
         {
           "qualified_name": "strictly_beyond_boundary",
           "name": "strictly_beyond_boundary",
           "kind": "function",
-          "line": 721,
-          "end_line": 724
+          "line": 686,
+          "end_line": 689
         },
         {
           "qualified_name": "dominant_module",
           "name": "dominant_module",
           "kind": "function",
-          "line": 726,
-          "end_line": 735
+          "line": 691,
+          "end_line": 700
         },
         {
           "qualified_name": "split_a_zones_by_dominant_stops",
           "name": "split_a_zones_by_dominant_stops",
           "kind": "function",
-          "line": 738,
-          "end_line": 939
+          "line": 703,
+          "end_line": 904
         },
         {
           "qualified_name": "blocked_orders_while_invalid_leg_heads_are_live",
           "name": "blocked_orders_while_invalid_leg_heads_are_live",
           "kind": "function",
-          "line": 941,
-          "end_line": 961
+          "line": 906,
+          "end_line": 926
         },
         {
           "qualified_name": "consumed_s_evidence_after_larger_stop",
           "name": "consumed_s_evidence_after_larger_stop",
           "kind": "function",
-          "line": 964,
-          "end_line": 1104
+          "line": 929,
+          "end_line": 1069
         },
         {
           "qualified_name": "s_zones_for_module_engines",
           "name": "s_zones_for_module_engines",
           "kind": "function",
-          "line": 1106,
-          "end_line": 1134
+          "line": 1071,
+          "end_line": 1099
         },
         {
           "qualified_name": "s_zones_for_stopall",
           "name": "s_zones_for_stopall",
           "kind": "function",
-          "line": 1136,
-          "end_line": 1153
+          "line": 1101,
+          "end_line": 1118
         },
         {
           "qualified_name": "visible_s_zones_after_module_resets",
           "name": "visible_s_zones_after_module_resets",
           "kind": "function",
-          "line": 1155,
-          "end_line": 1322
+          "line": 1120,
+          "end_line": 1296
+        },
+        {
+          "qualified_name": "visible_s_zones_after_module_resets.cached_stop_event",
+          "name": "cached_stop_event",
+          "kind": "function",
+          "line": 1149,
+          "end_line": 1153
         },
         {
           "qualified_name": "reconcile_stopall_lifecycle",
           "name": "reconcile_stopall_lifecycle",
           "kind": "function",
-          "line": 1324,
-          "end_line": 1354
+          "line": 1298,
+          "end_line": 1328
         },
         {
           "qualified_name": "visible_a_zones_after_module_boundaries",
           "name": "visible_a_zones_after_module_boundaries",
           "kind": "function",
-          "line": 1357,
-          "end_line": 1402
+          "line": 1331,
+          "end_line": 1376
         },
         {
           "qualified_name": "reaction_number_is_internal",
           "name": "reaction_number_is_internal",
           "kind": "function",
-          "line": 1404,
-          "end_line": 1415
+          "line": 1378,
+          "end_line": 1389
         },
         {
           "qualified_name": "point_is_inside_healthy_reaction",
           "name": "point_is_inside_healthy_reaction",
           "kind": "function",
-          "line": 1418,
-          "end_line": 1438
+          "line": 1392,
+          "end_line": 1412
         },
         {
           "qualified_name": "filter_internal_behavior_outputs",
           "name": "filter_internal_behavior_outputs",
           "kind": "function",
-          "line": 1441,
-          "end_line": 1452
+          "line": 1415,
+          "end_line": 1426
         },
         {
           "qualified_name": "finalize_behavior_visibility",
           "name": "finalize_behavior_visibility",
           "kind": "function",
-          "line": 1454,
-          "end_line": 1546
+          "line": 1428,
+          "end_line": 1520
         },
         {
           "qualified_name": "visible_a_zones",
           "name": "visible_a_zones",
           "kind": "function",
-          "line": 1549,
-          "end_line": 1555
+          "line": 1523,
+          "end_line": 1529
         }
       ],
       "imports": [
@@ -4477,7 +4667,6 @@
           "module": "order_audit_engine",
           "names": [
             "accepted_audit_entry",
-            "order_identity_is_internal",
             "prepare_order_audit"
           ],
           "line": 18
@@ -4513,9 +4702,18 @@
       "path": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
       "functions": [
         {
+          "name": "relabel_primary_causes",
+          "line": 19,
+          "end_line": 31,
+          "parameters": [
+            "causes",
+            "labels"
+          ]
+        },
+        {
           "name": "dominant_post_behavior_stops",
-          "line": 55,
-          "end_line": 98,
+          "line": 71,
+          "end_line": 114,
           "parameters": [
             "chronology",
             "lifetimes",
@@ -4524,8 +4722,8 @@
         },
         {
           "name": "order_b_reset_event_time",
-          "line": 101,
-          "end_line": 129,
+          "line": 117,
+          "end_line": 145,
           "parameters": [
             "direction",
             "chronology",
@@ -4534,8 +4732,8 @@
         },
         {
           "name": "discover_order_b_reset_legs",
-          "line": 132,
-          "end_line": 325,
+          "line": 148,
+          "end_line": 349,
           "parameters": [
             "direction",
             "chronology",
@@ -4549,8 +4747,8 @@
         },
         {
           "name": "discover_accepted_order_b_reset_legs",
-          "line": 328,
-          "end_line": 403,
+          "line": 352,
+          "end_line": 427,
           "parameters": [
             "direction",
             "chronology",
@@ -4569,16 +4767,62 @@
         },
         {
           "name": "order_b_leg_identity",
-          "line": 413,
-          "end_line": 433,
+          "line": 437,
+          "end_line": 457,
           "parameters": [
             "items"
           ]
         },
         {
+          "name": "_parent_stop_cause_key",
+          "line": 1777,
+          "end_line": 1783,
+          "parameters": [
+            "cause"
+          ]
+        },
+        {
+          "name": "_collect_s_ledger_entries",
+          "line": 1786,
+          "end_line": 1815,
+          "parameters": [
+            "s_detector",
+            "accepted_a_sources"
+          ]
+        },
+        {
+          "name": "_collect_e_ledger_entries",
+          "line": 1818,
+          "end_line": 1844,
+          "parameters": [
+            "detector",
+            "accepted_a_sources"
+          ]
+        },
+        {
+          "name": "_merge_prepared_identities",
+          "line": 1847,
+          "end_line": 1887,
+          "parameters": [
+            "combined",
+            "detector",
+            "start_index",
+            "end_index",
+            "required_identities"
+          ]
+        },
+        {
+          "name": "_single_owner_parent_stop_causes",
+          "line": 1890,
+          "end_line": 1925,
+          "parameters": [
+            "output"
+          ]
+        },
+        {
           "name": "prepare_order_audit",
-          "line": 1566,
-          "end_line": 1692,
+          "line": 1928,
+          "end_line": 1945,
           "parameters": [
             "detector",
             "start_index",
@@ -4590,17 +4834,26 @@
         },
         {
           "name": "accepted_audit_entry",
-          "line": 1695,
-          "end_line": 1722,
+          "line": 1948,
+          "end_line": 1978,
           "parameters": [
             "entry",
             "accepted_sources"
           ]
         },
         {
+          "name": "accepted_audit_entries",
+          "line": 1981,
+          "end_line": 1991,
+          "parameters": [
+            "order_audit",
+            "accepted_sources"
+          ]
+        },
+        {
           "name": "order_identity_is_internal",
-          "line": 1725,
-          "end_line": 1731,
+          "line": 1994,
+          "end_line": 2000,
           "parameters": [
             "item",
             "internal_identities"
@@ -4610,8 +4863,8 @@
       "classes": [
         {
           "name": "PostBehaviorStop",
-          "line": 18,
-          "end_line": 22,
+          "line": 34,
+          "end_line": 38,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -4619,30 +4872,30 @@
             {
               "name": "behavior_type",
               "annotation": "str",
-              "line": 19
+              "line": 35
             },
             {
               "name": "behavior_source_index",
               "annotation": "int",
-              "line": 20
+              "line": 36
             },
             {
               "name": "behavior_source_time",
               "annotation": "datetime",
-              "line": 21
+              "line": 37
             },
             {
               "name": "event_time",
               "annotation": "datetime",
-              "line": 22
+              "line": 38
             }
           ],
           "methods": []
         },
         {
           "name": "OrderBBehaviorAnchor",
-          "line": 26,
-          "end_line": 31,
+          "line": 42,
+          "end_line": 47,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -4650,35 +4903,35 @@
             {
               "name": "behavior_type",
               "annotation": "str",
-              "line": 27
+              "line": 43
             },
             {
               "name": "behavior_source_index",
               "annotation": "int",
-              "line": 28
+              "line": 44
             },
             {
               "name": "behavior_source_time",
               "annotation": "datetime",
-              "line": 29
+              "line": 45
             },
             {
               "name": "priority",
               "annotation": "int",
-              "line": 30
+              "line": 46
             },
             {
               "name": "number",
               "annotation": "int",
-              "line": 31
+              "line": 47
             }
           ],
           "methods": []
         },
         {
           "name": "OrderBResetLeg",
-          "line": 35,
-          "end_line": 52,
+          "line": 51,
+          "end_line": 68,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -4686,635 +4939,756 @@
             {
               "name": "post_stop",
               "annotation": "PostBehaviorStop",
-              "line": 36
+              "line": 52
             },
             {
               "name": "anchor_behavior_type",
               "annotation": "str",
-              "line": 37
+              "line": 53
             },
             {
               "name": "anchor_behavior_source_index",
               "annotation": "int",
-              "line": 38
+              "line": 54
             },
             {
               "name": "anchor_behavior_source_time",
               "annotation": "datetime",
-              "line": 39
+              "line": 55
             },
             {
               "name": "anchor_behavior_extreme",
               "annotation": "Decimal",
-              "line": 40
+              "line": 56
             },
             {
               "name": "reset_reaction",
               "annotation": "object",
-              "line": 41
+              "line": 57
             },
             {
               "name": "reset_confirmation_time",
               "annotation": "datetime",
-              "line": 42
+              "line": 58
             },
             {
               "name": "reset_source_index",
               "annotation": "int",
-              "line": 43
+              "line": 59
             },
             {
               "name": "reset_broken_level",
               "annotation": "Decimal",
-              "line": 44
+              "line": 60
             },
             {
               "name": "reset_time",
               "annotation": "datetime",
-              "line": 45
+              "line": 61
             },
             {
               "name": "leg_boundary",
               "annotation": "Decimal",
-              "line": 46
+              "line": 62
             },
             {
               "name": "leg_source_index",
               "annotation": "int",
-              "line": 47
+              "line": 63
             },
             {
               "name": "leg_source_time",
               "annotation": "datetime",
-              "line": 48
+              "line": 64
             },
             {
               "name": "strict_break_time",
               "annotation": "datetime",
-              "line": 49
+              "line": 65
             },
             {
               "name": "reaction_number",
               "annotation": "int",
-              "line": 50
+              "line": 66
             },
             {
               "name": "physical_reaction",
               "annotation": "object",
-              "line": 51
+              "line": 67
             },
             {
               "name": "physical_confirmation_time",
               "annotation": "datetime",
-              "line": 52
+              "line": 68
             }
           ],
           "methods": []
         },
         {
           "name": "OrderAuditEngineMixin",
-          "line": 437,
-          "end_line": 1563,
+          "line": 461,
+          "end_line": 1774,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "_order_stop",
-              "line": 440,
-              "end_line": 466
+              "line": 464,
+              "end_line": 490
             },
             {
               "name": "order_stop",
-              "line": 469,
-              "end_line": 473
+              "line": 493,
+              "end_line": 497
             },
             {
               "name": "_first_healthy_direct_geometry",
-              "line": 476,
-              "end_line": 548
+              "line": 500,
+              "end_line": 572
             },
             {
               "name": "_trend_leg_direct_order",
-              "line": 551,
-              "end_line": 600
+              "line": 575,
+              "end_line": 624
             },
             {
               "name": "_direct_parent_stop_order",
-              "line": 603,
-              "end_line": 674
+              "line": 627,
+              "end_line": 645
+            },
+            {
+              "name": "_compute_direct_parent_stop_order",
+              "line": 647,
+              "end_line": 736
             },
             {
               "name": "_merge_order_candidate",
-              "line": 677,
-              "end_line": 708
+              "line": 739,
+              "end_line": 770
             },
             {
               "name": "_enforce_single_parent_stop_owner",
-              "line": 711,
-              "end_line": 735
+              "line": 773,
+              "end_line": 797
             },
             {
               "name": "order_candidates",
-              "line": 738,
-              "end_line": 824
+              "line": 800,
+              "end_line": 888
             },
             {
               "name": "_first_order",
-              "line": 827,
-              "end_line": 840
+              "line": 891,
+              "end_line": 904
             },
             {
               "name": "_has_sequence_reset_between",
-              "line": 843,
-              "end_line": 851
+              "line": 907,
+              "end_line": 915
             },
             {
               "name": "_index_order_audit_identity",
-              "line": 854,
-              "end_line": 861
+              "line": 918,
+              "end_line": 925
             },
             {
               "name": "_clear_order_audit",
-              "line": 864,
-              "end_line": 867
+              "line": 928,
+              "end_line": 932
+            },
+            {
+              "name": "_invalidate_carried_order_caches",
+              "line": 934,
+              "end_line": 939
+            },
+            {
+              "name": "_invalidate_post_stop_order_cache",
+              "line": 941,
+              "end_line": 942
             },
             {
               "name": "register_order_b_reset_legs",
-              "line": 870,
-              "end_line": 933
+              "line": 945,
+              "end_line": 1009
+            },
+            {
+              "name": "_reparent_primary_high_causes",
+              "line": 1012,
+              "end_line": 1058
+            },
+            {
+              "name": "register_primary_high",
+              "line": 1060,
+              "end_line": 1097
+            },
+            {
+              "name": "reconcile_primary_high_labels",
+              "line": 1099,
+              "end_line": 1117
             },
             {
               "name": "_register_order_audit",
-              "line": 936,
-              "end_line": 999
+              "line": 1119,
+              "end_line": 1190
             },
             {
               "name": "visual_order_lifecycle",
-              "line": 1003,
-              "end_line": 1022
+              "line": 1194,
+              "end_line": 1213
             },
             {
               "name": "_cross_order",
-              "line": 1025,
-              "end_line": 1043
+              "line": 1216,
+              "end_line": 1234
             },
             {
               "name": "cross_order",
-              "line": 1046,
-              "end_line": 1050
+              "line": 1237,
+              "end_line": 1241
             },
             {
               "name": "_unconsumed_s_orders",
-              "line": 1053,
-              "end_line": 1087
+              "line": 1244,
+              "end_line": 1278
             },
             {
               "name": "_initial_order_records",
-              "line": 1090,
-              "end_line": 1145
+              "line": 1281,
+              "end_line": 1336
             },
             {
               "name": "_initial_record_match",
-              "line": 1150,
-              "end_line": 1161
+              "line": 1340,
+              "end_line": 1351
             },
             {
               "name": "_initial_order_match",
-              "line": 1164,
-              "end_line": 1176
+              "line": 1354,
+              "end_line": 1366
             },
             {
               "name": "_gate_owned_initial_order",
-              "line": 1179,
-              "end_line": 1199
+              "line": 1369,
+              "end_line": 1389
             },
             {
               "name": "_carried_orders_for_parent",
-              "line": 1202,
-              "end_line": 1260
+              "line": 1392,
+              "end_line": 1450
             },
             {
               "name": "_post_stop_accepted_orders_for_parent",
-              "line": 1263,
-              "end_line": 1329
+              "line": 1453,
+              "end_line": 1532
             },
             {
               "name": "_blocked_by_gate_owned_order",
-              "line": 1332,
-              "end_line": 1340
+              "line": 1535,
+              "end_line": 1543
             },
             {
               "name": "_rebuild_accepted_order_audit",
-              "line": 1343,
-              "end_line": 1524
+              "line": 1546,
+              "end_line": 1729
             },
             {
               "name": "rebuild_accepted_order_audit",
-              "line": 1527,
-              "end_line": 1539
+              "line": 1732,
+              "end_line": 1744
             },
             {
               "name": "ensure_accepted_order_audit",
-              "line": 1542,
-              "end_line": 1563
+              "line": 1747,
+              "end_line": 1774
             }
           ]
         },
         {
           "name": "SOrderAuditMixin",
-          "line": 1734,
-          "end_line": 1862,
+          "line": 2003,
+          "end_line": 2174,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "_first_order_after",
-              "line": 1737,
-              "end_line": 1747
+              "line": 2006,
+              "end_line": 2059
             },
             {
               "name": "_order_matches_after",
-              "line": 1750,
-              "end_line": 1769
+              "line": 2062,
+              "end_line": 2081
             },
             {
               "name": "_record_a_order_audit",
-              "line": 1772,
-              "end_line": 1804
+              "line": 2084,
+              "end_line": 2116
             },
             {
               "name": "_audit_stopped_a",
-              "line": 1807,
-              "end_line": 1817
+              "line": 2119,
+              "end_line": 2129
             },
             {
               "name": "_order_stop",
-              "line": 1820,
-              "end_line": 1829
+              "line": 2132,
+              "end_line": 2141
             },
             {
               "name": "_order_stop_crossed",
-              "line": 1832,
-              "end_line": 1835
+              "line": 2144,
+              "end_line": 2147
             },
             {
               "name": "_shared_order_stop_cross",
-              "line": 1838,
-              "end_line": 1862
+              "line": 2150,
+              "end_line": 2174
             }
           ]
         }
       ],
       "symbols": [
         {
+          "qualified_name": "relabel_primary_causes",
+          "name": "relabel_primary_causes",
+          "kind": "function",
+          "line": 19,
+          "end_line": 31
+        },
+        {
           "qualified_name": "PostBehaviorStop",
           "name": "PostBehaviorStop",
           "kind": "class",
-          "line": 18,
-          "end_line": 22
+          "line": 34,
+          "end_line": 38
         },
         {
           "qualified_name": "OrderBBehaviorAnchor",
           "name": "OrderBBehaviorAnchor",
           "kind": "class",
-          "line": 26,
-          "end_line": 31
+          "line": 42,
+          "end_line": 47
         },
         {
           "qualified_name": "OrderBResetLeg",
           "name": "OrderBResetLeg",
           "kind": "class",
-          "line": 35,
-          "end_line": 52
+          "line": 51,
+          "end_line": 68
         },
         {
           "qualified_name": "dominant_post_behavior_stops",
           "name": "dominant_post_behavior_stops",
           "kind": "function",
-          "line": 55,
-          "end_line": 98
+          "line": 71,
+          "end_line": 114
         },
         {
           "qualified_name": "order_b_reset_event_time",
           "name": "order_b_reset_event_time",
           "kind": "function",
-          "line": 101,
-          "end_line": 129
+          "line": 117,
+          "end_line": 145
         },
         {
           "qualified_name": "discover_order_b_reset_legs",
           "name": "discover_order_b_reset_legs",
           "kind": "function",
-          "line": 132,
-          "end_line": 325
+          "line": 148,
+          "end_line": 349
         },
         {
           "qualified_name": "discover_accepted_order_b_reset_legs",
           "name": "discover_accepted_order_b_reset_legs",
           "kind": "function",
-          "line": 328,
-          "end_line": 403
+          "line": 352,
+          "end_line": 427
         },
         {
           "qualified_name": "order_b_leg_identity",
           "name": "order_b_leg_identity",
           "kind": "function",
-          "line": 413,
-          "end_line": 433
+          "line": 437,
+          "end_line": 457
         },
         {
           "qualified_name": "OrderAuditEngineMixin",
           "name": "OrderAuditEngineMixin",
           "kind": "class",
-          "line": 437,
-          "end_line": 1563
+          "line": 461,
+          "end_line": 1774
         },
         {
           "qualified_name": "OrderAuditEngineMixin._order_stop",
           "name": "_order_stop",
           "kind": "function",
-          "line": 440,
-          "end_line": 466
+          "line": 464,
+          "end_line": 490
         },
         {
           "qualified_name": "OrderAuditEngineMixin.order_stop",
           "name": "order_stop",
           "kind": "function",
-          "line": 469,
-          "end_line": 473
+          "line": 493,
+          "end_line": 497
         },
         {
           "qualified_name": "OrderAuditEngineMixin._first_healthy_direct_geometry",
           "name": "_first_healthy_direct_geometry",
           "kind": "function",
-          "line": 476,
-          "end_line": 548
+          "line": 500,
+          "end_line": 572
         },
         {
           "qualified_name": "OrderAuditEngineMixin._trend_leg_direct_order",
           "name": "_trend_leg_direct_order",
           "kind": "function",
-          "line": 551,
-          "end_line": 600
+          "line": 575,
+          "end_line": 624
         },
         {
           "qualified_name": "OrderAuditEngineMixin._direct_parent_stop_order",
           "name": "_direct_parent_stop_order",
           "kind": "function",
-          "line": 603,
-          "end_line": 674
+          "line": 627,
+          "end_line": 645
+        },
+        {
+          "qualified_name": "OrderAuditEngineMixin._compute_direct_parent_stop_order",
+          "name": "_compute_direct_parent_stop_order",
+          "kind": "function",
+          "line": 647,
+          "end_line": 736
         },
         {
           "qualified_name": "OrderAuditEngineMixin._merge_order_candidate",
           "name": "_merge_order_candidate",
           "kind": "function",
-          "line": 677,
-          "end_line": 708
+          "line": 739,
+          "end_line": 770
         },
         {
           "qualified_name": "OrderAuditEngineMixin._enforce_single_parent_stop_owner",
           "name": "_enforce_single_parent_stop_owner",
           "kind": "function",
-          "line": 711,
-          "end_line": 735
+          "line": 773,
+          "end_line": 797
         },
         {
           "qualified_name": "OrderAuditEngineMixin.order_candidates",
           "name": "order_candidates",
           "kind": "function",
-          "line": 738,
-          "end_line": 824
+          "line": 800,
+          "end_line": 888
         },
         {
           "qualified_name": "OrderAuditEngineMixin._first_order",
           "name": "_first_order",
           "kind": "function",
-          "line": 827,
-          "end_line": 840
+          "line": 891,
+          "end_line": 904
         },
         {
           "qualified_name": "OrderAuditEngineMixin._has_sequence_reset_between",
           "name": "_has_sequence_reset_between",
           "kind": "function",
-          "line": 843,
-          "end_line": 851
+          "line": 907,
+          "end_line": 915
         },
         {
           "qualified_name": "OrderAuditEngineMixin._index_order_audit_identity",
           "name": "_index_order_audit_identity",
           "kind": "function",
-          "line": 854,
-          "end_line": 861
+          "line": 918,
+          "end_line": 925
         },
         {
           "qualified_name": "OrderAuditEngineMixin._clear_order_audit",
           "name": "_clear_order_audit",
           "kind": "function",
-          "line": 864,
-          "end_line": 867
+          "line": 928,
+          "end_line": 932
+        },
+        {
+          "qualified_name": "OrderAuditEngineMixin._invalidate_carried_order_caches",
+          "name": "_invalidate_carried_order_caches",
+          "kind": "function",
+          "line": 934,
+          "end_line": 939
+        },
+        {
+          "qualified_name": "OrderAuditEngineMixin._invalidate_post_stop_order_cache",
+          "name": "_invalidate_post_stop_order_cache",
+          "kind": "function",
+          "line": 941,
+          "end_line": 942
         },
         {
           "qualified_name": "OrderAuditEngineMixin.register_order_b_reset_legs",
           "name": "register_order_b_reset_legs",
           "kind": "function",
-          "line": 870,
-          "end_line": 933
+          "line": 945,
+          "end_line": 1009
+        },
+        {
+          "qualified_name": "OrderAuditEngineMixin._reparent_primary_high_causes",
+          "name": "_reparent_primary_high_causes",
+          "kind": "function",
+          "line": 1012,
+          "end_line": 1058
+        },
+        {
+          "qualified_name": "OrderAuditEngineMixin.register_primary_high",
+          "name": "register_primary_high",
+          "kind": "function",
+          "line": 1060,
+          "end_line": 1097
+        },
+        {
+          "qualified_name": "OrderAuditEngineMixin.reconcile_primary_high_labels",
+          "name": "reconcile_primary_high_labels",
+          "kind": "function",
+          "line": 1099,
+          "end_line": 1117
         },
         {
           "qualified_name": "OrderAuditEngineMixin._register_order_audit",
           "name": "_register_order_audit",
           "kind": "function",
-          "line": 936,
-          "end_line": 999
+          "line": 1119,
+          "end_line": 1190
         },
         {
           "qualified_name": "OrderAuditEngineMixin.visual_order_lifecycle",
           "name": "visual_order_lifecycle",
           "kind": "function",
-          "line": 1003,
-          "end_line": 1022
+          "line": 1194,
+          "end_line": 1213
         },
         {
           "qualified_name": "OrderAuditEngineMixin._cross_order",
           "name": "_cross_order",
           "kind": "function",
-          "line": 1025,
-          "end_line": 1043
+          "line": 1216,
+          "end_line": 1234
         },
         {
           "qualified_name": "OrderAuditEngineMixin.cross_order",
           "name": "cross_order",
           "kind": "function",
-          "line": 1046,
-          "end_line": 1050
+          "line": 1237,
+          "end_line": 1241
         },
         {
           "qualified_name": "OrderAuditEngineMixin._unconsumed_s_orders",
           "name": "_unconsumed_s_orders",
           "kind": "function",
-          "line": 1053,
-          "end_line": 1087
+          "line": 1244,
+          "end_line": 1278
         },
         {
           "qualified_name": "OrderAuditEngineMixin._initial_order_records",
           "name": "_initial_order_records",
           "kind": "function",
-          "line": 1090,
-          "end_line": 1145
+          "line": 1281,
+          "end_line": 1336
         },
         {
           "qualified_name": "OrderAuditEngineMixin._initial_record_match",
           "name": "_initial_record_match",
           "kind": "function",
-          "line": 1150,
-          "end_line": 1161
+          "line": 1340,
+          "end_line": 1351
         },
         {
           "qualified_name": "OrderAuditEngineMixin._initial_order_match",
           "name": "_initial_order_match",
           "kind": "function",
-          "line": 1164,
-          "end_line": 1176
+          "line": 1354,
+          "end_line": 1366
         },
         {
           "qualified_name": "OrderAuditEngineMixin._gate_owned_initial_order",
           "name": "_gate_owned_initial_order",
           "kind": "function",
-          "line": 1179,
-          "end_line": 1199
+          "line": 1369,
+          "end_line": 1389
         },
         {
           "qualified_name": "OrderAuditEngineMixin._carried_orders_for_parent",
           "name": "_carried_orders_for_parent",
           "kind": "function",
-          "line": 1202,
-          "end_line": 1260
+          "line": 1392,
+          "end_line": 1450
         },
         {
           "qualified_name": "OrderAuditEngineMixin._post_stop_accepted_orders_for_parent",
           "name": "_post_stop_accepted_orders_for_parent",
           "kind": "function",
-          "line": 1263,
-          "end_line": 1329
+          "line": 1453,
+          "end_line": 1532
         },
         {
           "qualified_name": "OrderAuditEngineMixin._post_stop_accepted_orders_for_parent.add_match",
           "name": "add_match",
           "kind": "function",
-          "line": 1270,
-          "end_line": 1283
+          "line": 1467,
+          "end_line": 1484
         },
         {
           "qualified_name": "OrderAuditEngineMixin._blocked_by_gate_owned_order",
           "name": "_blocked_by_gate_owned_order",
           "kind": "function",
-          "line": 1332,
-          "end_line": 1340
+          "line": 1535,
+          "end_line": 1543
         },
         {
           "qualified_name": "OrderAuditEngineMixin._rebuild_accepted_order_audit",
           "name": "_rebuild_accepted_order_audit",
           "kind": "function",
-          "line": 1343,
-          "end_line": 1524
+          "line": 1546,
+          "end_line": 1729
         },
         {
           "qualified_name": "OrderAuditEngineMixin._rebuild_accepted_order_audit.valid_parent_stop_cause",
           "name": "valid_parent_stop_cause",
           "kind": "function",
-          "line": 1354,
-          "end_line": 1367
+          "line": 1557,
+          "end_line": 1570
         },
         {
           "qualified_name": "OrderAuditEngineMixin.rebuild_accepted_order_audit",
           "name": "rebuild_accepted_order_audit",
           "kind": "function",
-          "line": 1527,
-          "end_line": 1539
+          "line": 1732,
+          "end_line": 1744
         },
         {
           "qualified_name": "OrderAuditEngineMixin.ensure_accepted_order_audit",
           "name": "ensure_accepted_order_audit",
           "kind": "function",
-          "line": 1542,
-          "end_line": 1563
+          "line": 1747,
+          "end_line": 1774
+        },
+        {
+          "qualified_name": "_parent_stop_cause_key",
+          "name": "_parent_stop_cause_key",
+          "kind": "function",
+          "line": 1777,
+          "end_line": 1783
+        },
+        {
+          "qualified_name": "_collect_s_ledger_entries",
+          "name": "_collect_s_ledger_entries",
+          "kind": "function",
+          "line": 1786,
+          "end_line": 1815
+        },
+        {
+          "qualified_name": "_collect_e_ledger_entries",
+          "name": "_collect_e_ledger_entries",
+          "kind": "function",
+          "line": 1818,
+          "end_line": 1844
+        },
+        {
+          "qualified_name": "_merge_prepared_identities",
+          "name": "_merge_prepared_identities",
+          "kind": "function",
+          "line": 1847,
+          "end_line": 1887
+        },
+        {
+          "qualified_name": "_single_owner_parent_stop_causes",
+          "name": "_single_owner_parent_stop_causes",
+          "kind": "function",
+          "line": 1890,
+          "end_line": 1925
         },
         {
           "qualified_name": "prepare_order_audit",
           "name": "prepare_order_audit",
           "kind": "function",
-          "line": 1566,
-          "end_line": 1692
+          "line": 1928,
+          "end_line": 1945
         },
         {
           "qualified_name": "accepted_audit_entry",
           "name": "accepted_audit_entry",
           "kind": "function",
-          "line": 1695,
-          "end_line": 1722
+          "line": 1948,
+          "end_line": 1978
+        },
+        {
+          "qualified_name": "accepted_audit_entries",
+          "name": "accepted_audit_entries",
+          "kind": "function",
+          "line": 1981,
+          "end_line": 1991
         },
         {
           "qualified_name": "order_identity_is_internal",
           "name": "order_identity_is_internal",
           "kind": "function",
-          "line": 1725,
-          "end_line": 1731
+          "line": 1994,
+          "end_line": 2000
         },
         {
           "qualified_name": "SOrderAuditMixin",
           "name": "SOrderAuditMixin",
           "kind": "class",
-          "line": 1734,
-          "end_line": 1862
+          "line": 2003,
+          "end_line": 2174
         },
         {
           "qualified_name": "SOrderAuditMixin._first_order_after",
           "name": "_first_order_after",
           "kind": "function",
-          "line": 1737,
-          "end_line": 1747
+          "line": 2006,
+          "end_line": 2059
         },
         {
           "qualified_name": "SOrderAuditMixin._order_matches_after",
           "name": "_order_matches_after",
           "kind": "function",
-          "line": 1750,
-          "end_line": 1769
+          "line": 2062,
+          "end_line": 2081
         },
         {
           "qualified_name": "SOrderAuditMixin._record_a_order_audit",
           "name": "_record_a_order_audit",
           "kind": "function",
-          "line": 1772,
-          "end_line": 1804
+          "line": 2084,
+          "end_line": 2116
         },
         {
           "qualified_name": "SOrderAuditMixin._audit_stopped_a",
           "name": "_audit_stopped_a",
           "kind": "function",
-          "line": 1807,
-          "end_line": 1817
+          "line": 2119,
+          "end_line": 2129
         },
         {
           "qualified_name": "SOrderAuditMixin._order_stop",
           "name": "_order_stop",
           "kind": "function",
-          "line": 1820,
-          "end_line": 1829
+          "line": 2132,
+          "end_line": 2141
         },
         {
           "qualified_name": "SOrderAuditMixin._order_stop_crossed",
           "name": "_order_stop_crossed",
           "kind": "function",
-          "line": 1832,
-          "end_line": 1835
+          "line": 2144,
+          "end_line": 2147
         },
         {
           "qualified_name": "SOrderAuditMixin._shared_order_stop_cross",
           "name": "_shared_order_stop_cross",
           "kind": "function",
-          "line": 1838,
-          "end_line": 1862
+          "line": 2150,
+          "end_line": 2174
         }
       ],
       "imports": [
@@ -5334,32 +5708,39 @@
           "line": 5
         },
         {
+          "module": "copy",
+          "names": [
+            "deepcopy"
+          ],
+          "line": 6
+        },
+        {
           "module": "dataclasses",
           "names": [
             "dataclass"
           ],
-          "line": 6
+          "line": 7
         },
         {
           "module": "datetime",
           "names": [
             "datetime"
           ],
-          "line": 7
+          "line": 8
         },
         {
           "module": "decimal",
           "names": [
             "Decimal"
           ],
-          "line": 8
+          "line": 9
         },
         {
           "module": "types",
           "names": [
             "SimpleNamespace"
           ],
-          "line": 9
+          "line": 10
         },
         {
           "module": "typing",
@@ -5367,7 +5748,7 @@
             "Callable",
             "Sequence"
           ],
-          "line": 10
+          "line": 11
         },
         {
           "module": "core_utils",
@@ -5376,17 +5757,17 @@
             "order_identity",
             "reaction_identity"
           ],
-          "line": 12
+          "line": 13
         }
       ],
       "constants": [
         {
           "name": "ORDER_AUDIT_ENGINE_VERSION",
-          "line": 14
+          "line": 15
         },
         {
           "name": "ORDER_AUDIT_ENGINE_LAST_MODIFIED",
-          "line": 15
+          "line": 16
         }
       ]
     },
@@ -5395,8 +5776,8 @@
       "functions": [
         {
           "name": "classify_candle_color",
-          "line": 91,
-          "end_line": 93,
+          "line": 94,
+          "end_line": 96,
           "parameters": [
             "open_price",
             "close_price"
@@ -5404,48 +5785,48 @@
         },
         {
           "name": "opposite_direction",
-          "line": 96,
-          "end_line": 98,
+          "line": 99,
+          "end_line": 101,
           "parameters": [
             "direction"
           ]
         },
         {
           "name": "mirror_candle",
-          "line": 560,
-          "end_line": 577,
+          "line": 563,
+          "end_line": 580,
           "parameters": [
             "candle"
           ]
         },
         {
           "name": "mirror_candidate",
-          "line": 580,
-          "end_line": 597,
+          "line": 583,
+          "end_line": 600,
           "parameters": [
             "candidate"
           ]
         },
         {
           "name": "mirror_analysis",
-          "line": 599,
-          "end_line": 605,
+          "line": 602,
+          "end_line": 608,
           "parameters": [
             "analysis"
           ]
         },
         {
           "name": "_reflected_view",
-          "line": 636,
-          "end_line": 643,
+          "line": 639,
+          "end_line": 646,
           "parameters": [
             "source"
           ]
         },
         {
           "name": "published_reaction_candidate",
-          "line": 706,
-          "end_line": 801,
+          "line": 709,
+          "end_line": 804,
           "parameters": [
             "direction",
             "candidate",
@@ -5454,24 +5835,24 @@
         },
         {
           "name": "_decimal_value",
-          "line": 804,
-          "end_line": 806,
+          "line": 807,
+          "end_line": 809,
           "parameters": [
             "value"
           ]
         },
         {
           "name": "shared_lower_timeframe_index",
-          "line": 934,
-          "end_line": 944,
+          "line": 937,
+          "end_line": 947,
           "parameters": [
             "candles"
           ]
         },
         {
           "name": "build_behavior_reaction_views",
-          "line": 1202,
-          "end_line": 1310,
+          "line": 1205,
+          "end_line": 1313,
           "parameters": [
             "full_results",
             "chronology"
@@ -5479,8 +5860,8 @@
         },
         {
           "name": "directional_a_stop_order_finder",
-          "line": 1313,
-          "end_line": 1373,
+          "line": 1316,
+          "end_line": 1376,
           "parameters": [
             "candles",
             "seconds",
@@ -5491,8 +5872,8 @@
       "classes": [
         {
           "name": "Candle",
-          "line": 27,
-          "end_line": 35,
+          "line": 30,
+          "end_line": 38,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -5500,50 +5881,50 @@
             {
               "name": "index",
               "annotation": "int",
-              "line": 28
+              "line": 31
             },
             {
               "name": "timestamp",
               "annotation": "datetime",
-              "line": 29
+              "line": 32
             },
             {
               "name": "display_time",
               "annotation": "str",
-              "line": 30
+              "line": 33
             },
             {
               "name": "tag",
               "annotation": "str",
-              "line": 31
+              "line": 34
             },
             {
               "name": "open",
               "annotation": "Decimal",
-              "line": 32
+              "line": 35
             },
             {
               "name": "high",
               "annotation": "Decimal",
-              "line": 33
+              "line": 36
             },
             {
               "name": "low",
               "annotation": "Decimal",
-              "line": 34
+              "line": 37
             },
             {
               "name": "close",
               "annotation": "Decimal",
-              "line": 35
+              "line": 38
             }
           ],
           "methods": []
         },
         {
           "name": "Candidate",
-          "line": 39,
-          "end_line": 63,
+          "line": 42,
+          "end_line": 66,
           "decorators": [
             "dataclass(slots=True)"
           ],
@@ -5551,130 +5932,130 @@
             {
               "name": "first_idx",
               "annotation": "int",
-              "line": 40
+              "line": 43
             },
             {
               "name": "first_time",
               "annotation": "str",
-              "line": 41
+              "line": 44
             },
             {
               "name": "box_top_source_idx",
               "annotation": "int",
-              "line": 42
+              "line": 45
             },
             {
               "name": "box_top_source_time",
               "annotation": "str",
-              "line": 43
+              "line": 46
             },
             {
               "name": "box_top",
               "annotation": "Decimal",
-              "line": 44
+              "line": 47
             },
             {
               "name": "box_bottom_source_idx",
               "annotation": "int",
-              "line": 45
+              "line": 48
             },
             {
               "name": "box_bottom_source_time",
               "annotation": "str",
-              "line": 46
+              "line": 49
             },
             {
               "name": "box_bottom",
               "annotation": "Decimal",
-              "line": 47
+              "line": 50
             },
             {
               "name": "mode",
               "annotation": "str",
-              "line": 48
+              "line": 51
             },
             {
               "name": "anchor_idx",
               "annotation": "int | None",
-              "line": 49
+              "line": 52
             },
             {
               "name": "anchor_value",
               "annotation": "Decimal | None",
-              "line": 50
+              "line": 53
             },
             {
               "name": "leg_boundary_value",
               "annotation": "Decimal | None",
-              "line": 51
+              "line": 54
             },
             {
               "name": "break_idx",
               "annotation": "int | None",
-              "line": 52
+              "line": 55
             },
             {
               "name": "break_time",
               "annotation": "str | None",
-              "line": 53
+              "line": 56
             },
             {
               "name": "intrabar_start",
               "annotation": "datetime | None",
-              "line": 54
+              "line": 57
             },
             {
               "name": "cross_direction_origin",
               "annotation": "bool",
-              "line": 55
+              "line": 58
             },
             {
               "name": "cross_direction_chain_owner",
               "annotation": "bool",
-              "line": 56
+              "line": 59
             },
             {
               "name": "order_gate_decision",
               "annotation": "str | None",
-              "line": 57
+              "line": 60
             },
             {
               "name": "behavior_public_number",
               "annotation": "int | None",
-              "line": 58
+              "line": 61
             },
             {
               "name": "behavior_public_box_top",
               "annotation": "Decimal | None",
-              "line": 59
+              "line": 62
             },
             {
               "name": "behavior_public_box_bottom",
               "annotation": "Decimal | None",
-              "line": 60
+              "line": 63
             },
             {
               "name": "behavior_confirmation_time",
               "annotation": "datetime | None",
-              "line": 61
+              "line": 64
             },
             {
               "name": "behavior_first_time",
               "annotation": "datetime | None",
-              "line": 62
+              "line": 65
             },
             {
               "name": "behavior_internal",
               "annotation": "bool",
-              "line": 63
+              "line": 66
             }
           ],
           "methods": []
         },
         {
           "name": "ResetEvent",
-          "line": 67,
-          "end_line": 72,
+          "line": 70,
+          "end_line": 75,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -5682,35 +6063,35 @@
             {
               "name": "index",
               "annotation": "int",
-              "line": 68
+              "line": 71
             },
             {
               "name": "display_time",
               "annotation": "str",
-              "line": 69
+              "line": 72
             },
             {
               "name": "second_time",
               "annotation": "str | None",
-              "line": 70
+              "line": 73
             },
             {
               "name": "broken_level",
               "annotation": "Decimal",
-              "line": 71
+              "line": 74
             },
             {
               "name": "from_first_idx",
               "annotation": "int",
-              "line": 72
+              "line": 75
             }
           ],
           "methods": []
         },
         {
           "name": "IntrabarAnalysis",
-          "line": 76,
-          "end_line": 79,
+          "line": 79,
+          "end_line": 82,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -5718,25 +6099,25 @@
             {
               "name": "event_second",
               "annotation": "Candle",
-              "line": 77
+              "line": 80
             },
             {
               "name": "extreme",
               "annotation": "Decimal",
-              "line": 78
+              "line": 81
             },
             {
               "name": "extreme_source",
               "annotation": "Candle",
-              "line": 79
+              "line": 82
             }
           ],
           "methods": []
         },
         {
           "name": "DetectionResult",
-          "line": 83,
-          "end_line": 88,
+          "line": 86,
+          "end_line": 91,
           "decorators": [
             "dataclass(frozen=True, slots=True)"
           ],
@@ -5744,415 +6125,415 @@
             {
               "name": "direction",
               "annotation": "str",
-              "line": 84
+              "line": 87
             },
             {
               "name": "reactions",
               "annotation": "list[Candidate]",
-              "line": 85
+              "line": 88
             },
             {
               "name": "resets",
               "annotation": "list[ResetEvent]",
-              "line": 86
+              "line": 89
             },
             {
               "name": "start_index",
               "annotation": "int",
-              "line": 87
+              "line": 90
             },
             {
               "name": "end_index",
               "annotation": "int",
-              "line": 88
+              "line": 91
             }
           ],
           "methods": []
         },
         {
           "name": "DetectorBase",
-          "line": 101,
-          "end_line": 171,
+          "line": 104,
+          "end_line": 174,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 102,
-              "end_line": 124
+              "line": 105,
+              "end_line": 127
             },
             {
               "name": "_shared_time_index",
-              "line": 127,
-              "end_line": 135
+              "line": 130,
+              "end_line": 138
             },
             {
               "name": "seconds_between",
-              "line": 137,
-              "end_line": 140
+              "line": 140,
+              "end_line": 143
             },
             {
               "name": "main_source_for_time",
-              "line": 142,
-              "end_line": 153
+              "line": 145,
+              "end_line": 156
             },
             {
               "name": "minimum_low",
-              "line": 155,
-              "end_line": 162
+              "line": 158,
+              "end_line": 165
             },
             {
               "name": "maximum_high",
-              "line": 164,
-              "end_line": 171
+              "line": 167,
+              "end_line": 174
             }
           ]
         },
         {
           "name": "BullishDetector",
-          "line": 174,
-          "end_line": 557,
+          "line": 177,
+          "end_line": 560,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "green_run_peak_before",
-              "line": 175,
-              "end_line": 183
+              "line": 178,
+              "end_line": 186
             },
             {
               "name": "breakout_analysis",
-              "line": 185,
-              "end_line": 209
+              "line": 188,
+              "end_line": 212
             },
             {
               "name": "mode_a_invalidation_before_breakout",
-              "line": 211,
-              "end_line": 245
+              "line": 214,
+              "end_line": 248
             },
             {
               "name": "confirmed_reset_before_breakout",
-              "line": 247,
-              "end_line": 265
+              "line": 250,
+              "end_line": 268
             },
             {
               "name": "post_breakout_reset",
-              "line": 267,
-              "end_line": 280
+              "line": 270,
+              "end_line": 283
             },
             {
               "name": "detect",
-              "line": 282,
-              "end_line": 557
+              "line": 285,
+              "end_line": 560
             }
           ]
         },
         {
           "name": "_ReflectedCandles",
-          "line": 608,
-          "end_line": 630,
+          "line": 611,
+          "end_line": 633,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 616,
-              "end_line": 618
-            },
-            {
-              "name": "__len__",
-              "line": 620,
+              "line": 619,
               "end_line": 621
             },
             {
-              "name": "__getitem__",
+              "name": "__len__",
               "line": 623,
-              "end_line": 630
+              "end_line": 624
+            },
+            {
+              "name": "__getitem__",
+              "line": 626,
+              "end_line": 633
             }
           ]
         },
         {
           "name": "BearishDetector",
-          "line": 646,
-          "end_line": 703,
+          "line": 649,
+          "end_line": 706,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 654,
-              "end_line": 666
+              "line": 657,
+              "end_line": 669
             },
             {
               "name": "red_run_bottom_before",
-              "line": 668,
-              "end_line": 670
+              "line": 671,
+              "end_line": 673
             },
             {
               "name": "breakdown_analysis",
-              "line": 672,
-              "end_line": 675
+              "line": 675,
+              "end_line": 678
             },
             {
               "name": "invalidation_high_break_before_breakdown",
-              "line": 677,
-              "end_line": 680
+              "line": 680,
+              "end_line": 683
             },
             {
               "name": "confirmed_reset_before_breakdown",
-              "line": 682,
-              "end_line": 686
+              "line": 685,
+              "end_line": 689
             },
             {
               "name": "post_breakdown_reset",
-              "line": 688,
-              "end_line": 693
+              "line": 691,
+              "end_line": 696
             },
             {
               "name": "detect",
-              "line": 695,
-              "end_line": 703
+              "line": 698,
+              "end_line": 706
             }
           ]
         },
         {
           "name": "LowerTimeframeIndex",
-          "line": 809,
-          "end_line": 926,
+          "line": 812,
+          "end_line": 929,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 816,
-              "end_line": 855
-            },
-            {
-              "name": "first_less",
-              "line": 857,
+              "line": 819,
               "end_line": 858
             },
             {
-              "name": "first_greater",
+              "name": "first_less",
               "line": 860,
               "end_line": 861
             },
             {
-              "name": "range_minimum",
+              "name": "first_greater",
               "line": 863,
-              "end_line": 865
+              "end_line": 864
+            },
+            {
+              "name": "range_minimum",
+              "line": 866,
+              "end_line": 868
             },
             {
               "name": "range_maximum",
-              "line": 867,
-              "end_line": 869
+              "line": 870,
+              "end_line": 872
             },
             {
               "name": "_range_query",
-              "line": 871,
-              "end_line": 907
+              "line": 874,
+              "end_line": 910
             },
             {
               "name": "_first",
-              "line": 909,
-              "end_line": 926
+              "line": 912,
+              "end_line": 929
             }
           ]
         },
         {
           "name": "ReflectedLowerTimeframeIndex",
-          "line": 947,
-          "end_line": 968,
+          "line": 950,
+          "end_line": 971,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 952,
-              "end_line": 954
-            },
-            {
-              "name": "first_less",
-              "line": 956,
+              "line": 955,
               "end_line": 957
             },
             {
-              "name": "first_greater",
+              "name": "first_less",
               "line": 959,
               "end_line": 960
             },
             {
-              "name": "range_minimum",
+              "name": "first_greater",
               "line": 962,
-              "end_line": 964
+              "end_line": 963
+            },
+            {
+              "name": "range_minimum",
+              "line": 965,
+              "end_line": 967
             },
             {
               "name": "range_maximum",
-              "line": 966,
-              "end_line": 968
+              "line": 969,
+              "end_line": 971
             }
           ]
         },
         {
           "name": "MarketChronology",
-          "line": 971,
-          "end_line": 1199,
+          "line": 974,
+          "end_line": 1202,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 990,
-              "end_line": 1010
+              "line": 993,
+              "end_line": 1013
             },
             {
               "name": "opposite_direction",
-              "line": 1013,
-              "end_line": 1015
+              "line": 1016,
+              "end_line": 1018
             },
             {
               "name": "main_index",
-              "line": 1017,
-              "end_line": 1024
+              "line": 1020,
+              "end_line": 1027
             },
             {
               "name": "lower_bounds",
-              "line": 1026,
-              "end_line": 1035
+              "line": 1029,
+              "end_line": 1038
             },
             {
               "name": "lower_window",
-              "line": 1037,
-              "end_line": 1041
+              "line": 1040,
+              "end_line": 1044
             },
             {
               "name": "_reset_cache_key",
-              "line": 1044,
-              "end_line": 1053
+              "line": 1047,
+              "end_line": 1056
             },
             {
               "name": "_reaction_cache_key",
-              "line": 1056,
-              "end_line": 1068
+              "line": 1059,
+              "end_line": 1071
             },
             {
               "name": "reset_time",
-              "line": 1070,
-              "end_line": 1087
+              "line": 1073,
+              "end_line": 1090
             },
             {
               "name": "reaction_confirmation",
-              "line": 1089,
-              "end_line": 1134
+              "line": 1092,
+              "end_line": 1137
             },
             {
               "name": "canonical_order_stop",
-              "line": 1137,
-              "end_line": 1199
+              "line": 1140,
+              "end_line": 1202
             }
           ]
         },
         {
           "name": "UnifiedReactionDetector",
-          "line": 1376,
-          "end_line": 2404,
+          "line": 1379,
+          "end_line": 2437,
           "decorators": [],
           "fields": [],
           "methods": [
             {
               "name": "__init__",
-              "line": 1386,
-              "end_line": 1408
+              "line": 1389,
+              "end_line": 1418
             },
             {
               "name": "bull",
-              "line": 1411,
-              "end_line": 1416
+              "line": 1421,
+              "end_line": 1426
             },
             {
               "name": "bear",
-              "line": 1419,
-              "end_line": 1424
+              "line": 1429,
+              "end_line": 1434
             },
             {
               "name": "_append_reaction",
-              "line": 1426,
-              "end_line": 1506
+              "line": 1436,
+              "end_line": 1516
             },
             {
               "name": "_append_reset",
-              "line": 1508,
-              "end_line": 1524
+              "line": 1518,
+              "end_line": 1534
             },
             {
               "name": "_refine",
-              "line": 1526,
-              "end_line": 1545
+              "line": 1536,
+              "end_line": 1555
             },
             {
               "name": "_candidate_from_confirmation_remainder",
-              "line": 1547,
-              "end_line": 1630
+              "line": 1557,
+              "end_line": 1640
             },
             {
               "name": "_first_initial",
-              "line": 1632,
-              "end_line": 1642
+              "line": 1642,
+              "end_line": 1652
             },
             {
               "name": "_first_direct_same_direction_after_reset",
-              "line": 1645,
-              "end_line": 1681
+              "line": 1655,
+              "end_line": 1691
             },
             {
               "name": "_first_geometry_after_reset",
-              "line": 1683,
-              "end_line": 1734
+              "line": 1693,
+              "end_line": 1744
             },
             {
               "name": "first_geometry_after_reset",
-              "line": 1736,
-              "end_line": 1740
+              "line": 1746,
+              "end_line": 1750
             },
             {
               "name": "_reaction_break_indices",
-              "line": 1743,
-              "end_line": 1756
+              "line": 1753,
+              "end_line": 1766
             },
             {
               "name": "first_order_reaction_after_gate",
-              "line": 1758,
-              "end_line": 1890
+              "line": 1768,
+              "end_line": 1915
             },
             {
               "name": "_earliest_confirmed_geometry",
-              "line": 1892,
-              "end_line": 1964
+              "line": 1917,
+              "end_line": 1989
             },
             {
               "name": "_build_direct_candidate",
-              "line": 1966,
-              "end_line": 2021
+              "line": 1991,
+              "end_line": 2046
             },
             {
               "name": "_scan_direct_candidate",
-              "line": 2024,
-              "end_line": 2052
+              "line": 2049,
+              "end_line": 2077
             },
             {
               "name": "_owner_boundary_before_confirmation",
-              "line": 2054,
-              "end_line": 2092
+              "line": 2079,
+              "end_line": 2117
             },
             {
               "name": "_result",
-              "line": 2095,
-              "end_line": 2102
+              "line": 2120,
+              "end_line": 2127
             },
             {
               "name": "detect",
-              "line": 2104,
-              "end_line": 2404
+              "line": 2129,
+              "end_line": 2437
             }
           ]
         }
@@ -6162,631 +6543,638 @@
           "qualified_name": "Candle",
           "name": "Candle",
           "kind": "class",
-          "line": 27,
-          "end_line": 35
+          "line": 30,
+          "end_line": 38
         },
         {
           "qualified_name": "Candidate",
           "name": "Candidate",
           "kind": "class",
-          "line": 39,
-          "end_line": 63
+          "line": 42,
+          "end_line": 66
         },
         {
           "qualified_name": "ResetEvent",
           "name": "ResetEvent",
           "kind": "class",
-          "line": 67,
-          "end_line": 72
+          "line": 70,
+          "end_line": 75
         },
         {
           "qualified_name": "IntrabarAnalysis",
           "name": "IntrabarAnalysis",
           "kind": "class",
-          "line": 76,
-          "end_line": 79
+          "line": 79,
+          "end_line": 82
         },
         {
           "qualified_name": "DetectionResult",
           "name": "DetectionResult",
           "kind": "class",
-          "line": 83,
-          "end_line": 88
+          "line": 86,
+          "end_line": 91
         },
         {
           "qualified_name": "classify_candle_color",
           "name": "classify_candle_color",
           "kind": "function",
-          "line": 91,
-          "end_line": 93
+          "line": 94,
+          "end_line": 96
         },
         {
           "qualified_name": "opposite_direction",
           "name": "opposite_direction",
           "kind": "function",
-          "line": 96,
-          "end_line": 98
+          "line": 99,
+          "end_line": 101
         },
         {
           "qualified_name": "DetectorBase",
           "name": "DetectorBase",
           "kind": "class",
-          "line": 101,
-          "end_line": 171
+          "line": 104,
+          "end_line": 174
         },
         {
           "qualified_name": "DetectorBase.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 102,
-          "end_line": 124
+          "line": 105,
+          "end_line": 127
         },
         {
           "qualified_name": "DetectorBase._shared_time_index",
           "name": "_shared_time_index",
           "kind": "function",
-          "line": 127,
-          "end_line": 135
+          "line": 130,
+          "end_line": 138
         },
         {
           "qualified_name": "DetectorBase.seconds_between",
           "name": "seconds_between",
           "kind": "function",
-          "line": 137,
-          "end_line": 140
+          "line": 140,
+          "end_line": 143
         },
         {
           "qualified_name": "DetectorBase.main_source_for_time",
           "name": "main_source_for_time",
           "kind": "function",
-          "line": 142,
-          "end_line": 153
+          "line": 145,
+          "end_line": 156
         },
         {
           "qualified_name": "DetectorBase.minimum_low",
           "name": "minimum_low",
           "kind": "function",
-          "line": 155,
-          "end_line": 162
+          "line": 158,
+          "end_line": 165
         },
         {
           "qualified_name": "DetectorBase.maximum_high",
           "name": "maximum_high",
           "kind": "function",
-          "line": 164,
-          "end_line": 171
+          "line": 167,
+          "end_line": 174
         },
         {
           "qualified_name": "BullishDetector",
           "name": "BullishDetector",
           "kind": "class",
-          "line": 174,
-          "end_line": 557
+          "line": 177,
+          "end_line": 560
         },
         {
           "qualified_name": "BullishDetector.green_run_peak_before",
           "name": "green_run_peak_before",
           "kind": "function",
-          "line": 175,
-          "end_line": 183
+          "line": 178,
+          "end_line": 186
         },
         {
           "qualified_name": "BullishDetector.breakout_analysis",
           "name": "breakout_analysis",
           "kind": "function",
-          "line": 185,
-          "end_line": 209
+          "line": 188,
+          "end_line": 212
         },
         {
           "qualified_name": "BullishDetector.mode_a_invalidation_before_breakout",
           "name": "mode_a_invalidation_before_breakout",
           "kind": "function",
-          "line": 211,
-          "end_line": 245
+          "line": 214,
+          "end_line": 248
         },
         {
           "qualified_name": "BullishDetector.confirmed_reset_before_breakout",
           "name": "confirmed_reset_before_breakout",
           "kind": "function",
-          "line": 247,
-          "end_line": 265
+          "line": 250,
+          "end_line": 268
         },
         {
           "qualified_name": "BullishDetector.post_breakout_reset",
           "name": "post_breakout_reset",
           "kind": "function",
-          "line": 267,
-          "end_line": 280
+          "line": 270,
+          "end_line": 283
         },
         {
           "qualified_name": "BullishDetector.detect",
           "name": "detect",
           "kind": "function",
-          "line": 282,
-          "end_line": 557
+          "line": 285,
+          "end_line": 560
         },
         {
           "qualified_name": "mirror_candle",
           "name": "mirror_candle",
           "kind": "function",
-          "line": 560,
-          "end_line": 577
+          "line": 563,
+          "end_line": 580
         },
         {
           "qualified_name": "mirror_candidate",
           "name": "mirror_candidate",
           "kind": "function",
-          "line": 580,
-          "end_line": 597
+          "line": 583,
+          "end_line": 600
         },
         {
           "qualified_name": "mirror_analysis",
           "name": "mirror_analysis",
           "kind": "function",
-          "line": 599,
-          "end_line": 605
+          "line": 602,
+          "end_line": 608
         },
         {
           "qualified_name": "_ReflectedCandles",
           "name": "_ReflectedCandles",
           "kind": "class",
-          "line": 608,
-          "end_line": 630
+          "line": 611,
+          "end_line": 633
         },
         {
           "qualified_name": "_ReflectedCandles.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 616,
-          "end_line": 618
+          "line": 619,
+          "end_line": 621
         },
         {
           "qualified_name": "_ReflectedCandles.__len__",
           "name": "__len__",
           "kind": "function",
-          "line": 620,
-          "end_line": 621
+          "line": 623,
+          "end_line": 624
         },
         {
           "qualified_name": "_ReflectedCandles.__getitem__",
           "name": "__getitem__",
           "kind": "function",
-          "line": 623,
-          "end_line": 630
+          "line": 626,
+          "end_line": 633
         },
         {
           "qualified_name": "_reflected_view",
           "name": "_reflected_view",
           "kind": "function",
-          "line": 636,
-          "end_line": 643
+          "line": 639,
+          "end_line": 646
         },
         {
           "qualified_name": "BearishDetector",
           "name": "BearishDetector",
           "kind": "class",
-          "line": 646,
-          "end_line": 703
+          "line": 649,
+          "end_line": 706
         },
         {
           "qualified_name": "BearishDetector.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 654,
-          "end_line": 666
+          "line": 657,
+          "end_line": 669
         },
         {
           "qualified_name": "BearishDetector.red_run_bottom_before",
           "name": "red_run_bottom_before",
           "kind": "function",
-          "line": 668,
-          "end_line": 670
+          "line": 671,
+          "end_line": 673
         },
         {
           "qualified_name": "BearishDetector.breakdown_analysis",
           "name": "breakdown_analysis",
           "kind": "function",
-          "line": 672,
-          "end_line": 675
+          "line": 675,
+          "end_line": 678
         },
         {
           "qualified_name": "BearishDetector.invalidation_high_break_before_breakdown",
           "name": "invalidation_high_break_before_breakdown",
           "kind": "function",
-          "line": 677,
-          "end_line": 680
+          "line": 680,
+          "end_line": 683
         },
         {
           "qualified_name": "BearishDetector.confirmed_reset_before_breakdown",
           "name": "confirmed_reset_before_breakdown",
           "kind": "function",
-          "line": 682,
-          "end_line": 686
+          "line": 685,
+          "end_line": 689
         },
         {
           "qualified_name": "BearishDetector.post_breakdown_reset",
           "name": "post_breakdown_reset",
           "kind": "function",
-          "line": 688,
-          "end_line": 693
+          "line": 691,
+          "end_line": 696
         },
         {
           "qualified_name": "BearishDetector.detect",
           "name": "detect",
           "kind": "function",
-          "line": 695,
-          "end_line": 703
+          "line": 698,
+          "end_line": 706
         },
         {
           "qualified_name": "published_reaction_candidate",
           "name": "published_reaction_candidate",
           "kind": "function",
-          "line": 706,
-          "end_line": 801
+          "line": 709,
+          "end_line": 804
         },
         {
           "qualified_name": "_decimal_value",
           "name": "_decimal_value",
           "kind": "function",
-          "line": 804,
-          "end_line": 806
+          "line": 807,
+          "end_line": 809
         },
         {
           "qualified_name": "LowerTimeframeIndex",
           "name": "LowerTimeframeIndex",
           "kind": "class",
-          "line": 809,
-          "end_line": 926
+          "line": 812,
+          "end_line": 929
         },
         {
           "qualified_name": "LowerTimeframeIndex.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 816,
-          "end_line": 855
+          "line": 819,
+          "end_line": 858
         },
         {
           "qualified_name": "LowerTimeframeIndex.first_less",
           "name": "first_less",
           "kind": "function",
-          "line": 857,
-          "end_line": 858
+          "line": 860,
+          "end_line": 861
         },
         {
           "qualified_name": "LowerTimeframeIndex.first_greater",
           "name": "first_greater",
           "kind": "function",
-          "line": 860,
-          "end_line": 861
+          "line": 863,
+          "end_line": 864
         },
         {
           "qualified_name": "LowerTimeframeIndex.range_minimum",
           "name": "range_minimum",
           "kind": "function",
-          "line": 863,
-          "end_line": 865
+          "line": 866,
+          "end_line": 868
         },
         {
           "qualified_name": "LowerTimeframeIndex.range_maximum",
           "name": "range_maximum",
           "kind": "function",
-          "line": 867,
-          "end_line": 869
+          "line": 870,
+          "end_line": 872
         },
         {
           "qualified_name": "LowerTimeframeIndex._range_query",
           "name": "_range_query",
           "kind": "function",
-          "line": 871,
-          "end_line": 907
+          "line": 874,
+          "end_line": 910
         },
         {
           "qualified_name": "LowerTimeframeIndex._first",
           "name": "_first",
           "kind": "function",
-          "line": 909,
-          "end_line": 926
+          "line": 912,
+          "end_line": 929
         },
         {
           "qualified_name": "shared_lower_timeframe_index",
           "name": "shared_lower_timeframe_index",
           "kind": "function",
-          "line": 934,
-          "end_line": 944
+          "line": 937,
+          "end_line": 947
         },
         {
           "qualified_name": "ReflectedLowerTimeframeIndex",
           "name": "ReflectedLowerTimeframeIndex",
           "kind": "class",
-          "line": 947,
-          "end_line": 968
+          "line": 950,
+          "end_line": 971
         },
         {
           "qualified_name": "ReflectedLowerTimeframeIndex.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 952,
-          "end_line": 954
+          "line": 955,
+          "end_line": 957
         },
         {
           "qualified_name": "ReflectedLowerTimeframeIndex.first_less",
           "name": "first_less",
           "kind": "function",
-          "line": 956,
-          "end_line": 957
+          "line": 959,
+          "end_line": 960
         },
         {
           "qualified_name": "ReflectedLowerTimeframeIndex.first_greater",
           "name": "first_greater",
           "kind": "function",
-          "line": 959,
-          "end_line": 960
+          "line": 962,
+          "end_line": 963
         },
         {
           "qualified_name": "ReflectedLowerTimeframeIndex.range_minimum",
           "name": "range_minimum",
           "kind": "function",
-          "line": 962,
-          "end_line": 964
+          "line": 965,
+          "end_line": 967
         },
         {
           "qualified_name": "ReflectedLowerTimeframeIndex.range_maximum",
           "name": "range_maximum",
           "kind": "function",
-          "line": 966,
-          "end_line": 968
+          "line": 969,
+          "end_line": 971
         },
         {
           "qualified_name": "MarketChronology",
           "name": "MarketChronology",
           "kind": "class",
-          "line": 971,
-          "end_line": 1199
+          "line": 974,
+          "end_line": 1202
         },
         {
           "qualified_name": "MarketChronology.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 990,
-          "end_line": 1010
+          "line": 993,
+          "end_line": 1013
         },
         {
           "qualified_name": "MarketChronology.opposite_direction",
           "name": "opposite_direction",
           "kind": "function",
-          "line": 1013,
-          "end_line": 1015
+          "line": 1016,
+          "end_line": 1018
         },
         {
           "qualified_name": "MarketChronology.main_index",
           "name": "main_index",
           "kind": "function",
-          "line": 1017,
-          "end_line": 1024
+          "line": 1020,
+          "end_line": 1027
         },
         {
           "qualified_name": "MarketChronology.lower_bounds",
           "name": "lower_bounds",
           "kind": "function",
-          "line": 1026,
-          "end_line": 1035
+          "line": 1029,
+          "end_line": 1038
         },
         {
           "qualified_name": "MarketChronology.lower_window",
           "name": "lower_window",
           "kind": "function",
-          "line": 1037,
-          "end_line": 1041
+          "line": 1040,
+          "end_line": 1044
         },
         {
           "qualified_name": "MarketChronology._reset_cache_key",
           "name": "_reset_cache_key",
           "kind": "function",
-          "line": 1044,
-          "end_line": 1053
+          "line": 1047,
+          "end_line": 1056
         },
         {
           "qualified_name": "MarketChronology._reaction_cache_key",
           "name": "_reaction_cache_key",
           "kind": "function",
-          "line": 1056,
-          "end_line": 1068
+          "line": 1059,
+          "end_line": 1071
         },
         {
           "qualified_name": "MarketChronology.reset_time",
           "name": "reset_time",
           "kind": "function",
-          "line": 1070,
-          "end_line": 1087
+          "line": 1073,
+          "end_line": 1090
         },
         {
           "qualified_name": "MarketChronology.reaction_confirmation",
           "name": "reaction_confirmation",
           "kind": "function",
-          "line": 1089,
-          "end_line": 1134
+          "line": 1092,
+          "end_line": 1137
         },
         {
           "qualified_name": "MarketChronology.canonical_order_stop",
           "name": "canonical_order_stop",
           "kind": "function",
-          "line": 1137,
-          "end_line": 1199
+          "line": 1140,
+          "end_line": 1202
         },
         {
           "qualified_name": "build_behavior_reaction_views",
           "name": "build_behavior_reaction_views",
           "kind": "function",
-          "line": 1202,
-          "end_line": 1310
+          "line": 1205,
+          "end_line": 1313
         },
         {
           "qualified_name": "build_behavior_reaction_views.path_is_contained",
           "name": "path_is_contained",
           "kind": "function",
-          "line": 1222,
-          "end_line": 1240
+          "line": 1225,
+          "end_line": 1243
         },
         {
           "qualified_name": "directional_a_stop_order_finder",
           "name": "directional_a_stop_order_finder",
           "kind": "function",
-          "line": 1313,
-          "end_line": 1373
+          "line": 1316,
+          "end_line": 1376
         },
         {
           "qualified_name": "directional_a_stop_order_finder.find",
           "name": "find",
           "kind": "function",
-          "line": 1327,
-          "end_line": 1371
+          "line": 1330,
+          "end_line": 1374
         },
         {
           "qualified_name": "UnifiedReactionDetector",
           "name": "UnifiedReactionDetector",
           "kind": "class",
-          "line": 1376,
-          "end_line": 2404
+          "line": 1379,
+          "end_line": 2437
         },
         {
           "qualified_name": "UnifiedReactionDetector.__init__",
           "name": "__init__",
           "kind": "function",
-          "line": 1386,
-          "end_line": 1408
+          "line": 1389,
+          "end_line": 1418
         },
         {
           "qualified_name": "UnifiedReactionDetector.bull",
           "name": "bull",
           "kind": "function",
-          "line": 1411,
-          "end_line": 1416
+          "line": 1421,
+          "end_line": 1426
         },
         {
           "qualified_name": "UnifiedReactionDetector.bear",
           "name": "bear",
           "kind": "function",
-          "line": 1419,
-          "end_line": 1424
+          "line": 1429,
+          "end_line": 1434
         },
         {
           "qualified_name": "UnifiedReactionDetector._append_reaction",
           "name": "_append_reaction",
           "kind": "function",
-          "line": 1426,
-          "end_line": 1506
+          "line": 1436,
+          "end_line": 1516
         },
         {
           "qualified_name": "UnifiedReactionDetector._append_reset",
           "name": "_append_reset",
           "kind": "function",
-          "line": 1508,
-          "end_line": 1524
+          "line": 1518,
+          "end_line": 1534
         },
         {
           "qualified_name": "UnifiedReactionDetector._refine",
           "name": "_refine",
           "kind": "function",
-          "line": 1526,
-          "end_line": 1545
+          "line": 1536,
+          "end_line": 1555
         },
         {
           "qualified_name": "UnifiedReactionDetector._candidate_from_confirmation_remainder",
           "name": "_candidate_from_confirmation_remainder",
           "kind": "function",
-          "line": 1547,
-          "end_line": 1630
+          "line": 1557,
+          "end_line": 1640
         },
         {
           "qualified_name": "UnifiedReactionDetector._first_initial",
           "name": "_first_initial",
           "kind": "function",
-          "line": 1632,
-          "end_line": 1642
+          "line": 1642,
+          "end_line": 1652
         },
         {
           "qualified_name": "UnifiedReactionDetector._first_direct_same_direction_after_reset",
           "name": "_first_direct_same_direction_after_reset",
           "kind": "function",
-          "line": 1645,
-          "end_line": 1681
+          "line": 1655,
+          "end_line": 1691
         },
         {
           "qualified_name": "UnifiedReactionDetector._first_geometry_after_reset",
           "name": "_first_geometry_after_reset",
           "kind": "function",
-          "line": 1683,
-          "end_line": 1734
+          "line": 1693,
+          "end_line": 1744
         },
         {
           "qualified_name": "UnifiedReactionDetector.first_geometry_after_reset",
           "name": "first_geometry_after_reset",
           "kind": "function",
-          "line": 1736,
-          "end_line": 1740
+          "line": 1746,
+          "end_line": 1750
         },
         {
           "qualified_name": "UnifiedReactionDetector._reaction_break_indices",
           "name": "_reaction_break_indices",
           "kind": "function",
-          "line": 1743,
-          "end_line": 1756
+          "line": 1753,
+          "end_line": 1766
         },
         {
           "qualified_name": "UnifiedReactionDetector.first_order_reaction_after_gate",
           "name": "first_order_reaction_after_gate",
           "kind": "function",
-          "line": 1758,
-          "end_line": 1890
+          "line": 1768,
+          "end_line": 1915
+        },
+        {
+          "qualified_name": "UnifiedReactionDetector.first_order_reaction_after_gate.cache_result",
+          "name": "cache_result",
+          "kind": "function",
+          "line": 1784,
+          "end_line": 1793
         },
         {
           "qualified_name": "UnifiedReactionDetector.first_order_reaction_after_gate.confirmed_no_later_than_gate",
           "name": "confirmed_no_later_than_gate",
           "kind": "function",
-          "line": 1770,
-          "end_line": 1788
+          "line": 1795,
+          "end_line": 1813
         },
         {
           "qualified_name": "UnifiedReactionDetector._earliest_confirmed_geometry",
           "name": "_earliest_confirmed_geometry",
           "kind": "function",
-          "line": 1892,
-          "end_line": 1964
+          "line": 1917,
+          "end_line": 1989
         },
         {
           "qualified_name": "UnifiedReactionDetector._build_direct_candidate",
           "name": "_build_direct_candidate",
           "kind": "function",
-          "line": 1966,
-          "end_line": 2021
+          "line": 1991,
+          "end_line": 2046
         },
         {
           "qualified_name": "UnifiedReactionDetector._scan_direct_candidate",
           "name": "_scan_direct_candidate",
           "kind": "function",
-          "line": 2024,
-          "end_line": 2052
+          "line": 2049,
+          "end_line": 2077
         },
         {
           "qualified_name": "UnifiedReactionDetector._owner_boundary_before_confirmation",
           "name": "_owner_boundary_before_confirmation",
           "kind": "function",
-          "line": 2054,
-          "end_line": 2092
+          "line": 2079,
+          "end_line": 2117
         },
         {
           "qualified_name": "UnifiedReactionDetector._result",
           "name": "_result",
           "kind": "function",
-          "line": 2095,
-          "end_line": 2102
+          "line": 2120,
+          "end_line": 2127
         },
         {
           "qualified_name": "UnifiedReactionDetector.detect",
           "name": "detect",
           "kind": "function",
-          "line": 2104,
-          "end_line": 2404
+          "line": 2129,
+          "end_line": 2437
         }
       ],
       "imports": [
@@ -6853,20 +7241,28 @@
           "line": 21
         },
         {
-          "name": "REACTION_ENGINE_LAST_MODIFIED",
+          "name": "REACTION_ENGINE_IMPLEMENTATION_VERSION",
           "line": 22
         },
         {
+          "name": "REACTION_ENGINE_LAST_MODIFIED",
+          "line": 23
+        },
+        {
+          "name": "_ORDER_GATE_CACHE_MAX_ENTRIES",
+          "line": 25
+        },
+        {
           "name": "_SEQUENCE_TIME_INDEXES",
-          "line": 24
+          "line": 27
         },
         {
           "name": "_REFLECTED_VIEWS",
-          "line": 633
+          "line": 636
         },
         {
           "name": "_LOWER_TIMEFRAME_INDEXES",
-          "line": 929
+          "line": 932
         }
       ]
     },
@@ -6875,8 +7271,8 @@
       "functions": [
         {
           "name": "detect_s_zones",
-          "line": 1421,
-          "end_line": 1444,
+          "line": 1422,
+          "end_line": 1445,
           "parameters": [
             "direction",
             "trend_reactions",
@@ -7081,7 +7477,7 @@
         {
           "name": "SZoneDetector",
           "line": 66,
-          "end_line": 1418,
+          "end_line": 1419,
           "decorators": [],
           "fields": [],
           "methods": [
@@ -7288,7 +7684,7 @@
             {
               "name": "reconcile_shared_order_stops",
               "line": 1305,
-              "end_line": 1418
+              "end_line": 1419
             }
           ]
         }
@@ -7306,7 +7702,7 @@
           "name": "SZoneDetector",
           "kind": "class",
           "line": 66,
-          "end_line": 1418
+          "end_line": 1419
         },
         {
           "qualified_name": "SZoneDetector.__init__",
@@ -7593,14 +7989,14 @@
           "name": "reconcile_shared_order_stops",
           "kind": "function",
           "line": 1305,
-          "end_line": 1418
+          "end_line": 1419
         },
         {
           "qualified_name": "detect_s_zones",
           "name": "detect_s_zones",
           "kind": "function",
-          "line": 1421,
-          "end_line": 1444
+          "line": 1422,
+          "end_line": 1445
         }
       ],
       "imports": [
@@ -7694,182 +8090,224 @@
       "source": "__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "bytes": 0,
-      "exact": true
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "bridge/__init__.py",
       "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
       "bytes": 64,
-      "exact": true
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "bridge/trading_pipeline.py",
-      "sha256": "ef5109f4ebb95bc0e04b3d964b14da5f764ae4472f3d10a1a9b7192d59fec683",
-      "bytes": 107807,
-      "exact": true
+      "sha256": "d70481975d2b8e41c6271a02243862d967d5c906bbe1f2f23a432df6fc0f85a1",
+      "bytes": 123325,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/__init__.py",
-      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
-      "bytes": 348,
-      "exact": true
+      "sha256": "d22a1b81495a6c97b5eccc4d921b1ba4b709bfbcd39be6ef34b9014690b9f460",
+      "bytes": 653,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/a_zone_detector.py",
-      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097",
-      "bytes": 31007,
-      "exact": true
+      "sha256": "83f08b06556eb59c6d1b3afd22b51c280315bd80f3a31bc3044ada349251a115",
+      "bytes": 31373,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/blue_line_detector.py",
-      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448",
-      "bytes": 15802,
-      "exact": true
+      "sha256": "c6466c280504f82d8f2b189263ed0e9b9581c2f48edd8aaa12f016e55effc98c",
+      "bytes": 16945,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/core_utils.py",
-      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de",
-      "bytes": 885,
-      "exact": true
+      "sha256": "007e5329e14ab9695e555c630527badc84dd35a239dea1cf685141e4278265eb",
+      "bytes": 832,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/direction_policy.py",
       "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
       "bytes": 2282,
-      "exact": true
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/e_zone_detector.py",
-      "sha256": "38834e96cc58931fe2e12096f4465ecaa046387d30fd40fecbd6891971020988",
-      "bytes": 44859,
-      "exact": true
+      "sha256": "96ea351ff88c195937da5c32c5712356b9b876ba6f509d68cb16d37012958ad5",
+      "bytes": 48992,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/lifecycle_engine.py",
-      "sha256": "94feb038e1e78b291762cfc03dfc370e48bb94f3e1fe1171b7a5206301e8be13",
-      "bytes": 64325,
-      "exact": true
+      "sha256": "760928f5480efad446b42bc6aa2fbea3e431de13ab92714bac05c09188519c26",
+      "bytes": 63174,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/order_audit_engine.py",
-      "sha256": "09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc",
-      "bytes": 75219,
-      "exact": true
+      "sha256": "f4e991a6a516ad84e0223c802f5baf611f5e20fb8d7965b9dcdf4ff949d89296",
+      "bytes": 89666,
+      "exact": true,
+      "coverage": "standalone-captured"
+    },
+    {
+      "reference_id": "bearish_current",
+      "source": "pipeline/PL_PH_detector.py",
+      "sha256": "4c03c016762c55006cba98b9dd565a5e0d37c9420c6e0cacdd1a060d4e8bd989",
+      "bytes": 22048,
+      "exact": true,
+      "coverage": "embedded-only-excluded"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/reaction_engine.py",
-      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6",
-      "bytes": 103120,
-      "exact": true
+      "sha256": "f62f7e3c6480750068c4550a8489806030aac16f021f349930bd5efb3ce54198",
+      "bytes": 105073,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bearish_current",
       "source": "pipeline/s_zone_detector.py",
-      "sha256": "ef71a2e4176caaabc25d1ef0c1f0f24efb54ed3110982cdb7cf52d2449cca2ee",
-      "bytes": 60888,
-      "exact": true
+      "sha256": "0c5864bc3bc6c17f72c5c38b04a1cd0b5b38c726d8834207a55d5351fdfa38fe",
+      "bytes": 60942,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "bytes": 0,
-      "exact": true
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "bridge/__init__.py",
       "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
       "bytes": 64,
-      "exact": true
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "bridge/trading_pipeline.py",
-      "sha256": "ef5109f4ebb95bc0e04b3d964b14da5f764ae4472f3d10a1a9b7192d59fec683",
-      "bytes": 107807,
-      "exact": true
+      "sha256": "d70481975d2b8e41c6271a02243862d967d5c906bbe1f2f23a432df6fc0f85a1",
+      "bytes": 123325,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/__init__.py",
-      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
-      "bytes": 348,
-      "exact": true
+      "sha256": "d22a1b81495a6c97b5eccc4d921b1ba4b709bfbcd39be6ef34b9014690b9f460",
+      "bytes": 653,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/a_zone_detector.py",
-      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097",
-      "bytes": 31007,
-      "exact": true
+      "sha256": "83f08b06556eb59c6d1b3afd22b51c280315bd80f3a31bc3044ada349251a115",
+      "bytes": 31373,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/blue_line_detector.py",
-      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448",
-      "bytes": 15802,
-      "exact": true
+      "sha256": "c6466c280504f82d8f2b189263ed0e9b9581c2f48edd8aaa12f016e55effc98c",
+      "bytes": 16945,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/core_utils.py",
-      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de",
-      "bytes": 885,
-      "exact": true
+      "sha256": "007e5329e14ab9695e555c630527badc84dd35a239dea1cf685141e4278265eb",
+      "bytes": 832,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/direction_policy.py",
       "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
       "bytes": 2282,
-      "exact": true
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/e_zone_detector.py",
-      "sha256": "38834e96cc58931fe2e12096f4465ecaa046387d30fd40fecbd6891971020988",
-      "bytes": 44859,
-      "exact": true
+      "sha256": "96ea351ff88c195937da5c32c5712356b9b876ba6f509d68cb16d37012958ad5",
+      "bytes": 48992,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/lifecycle_engine.py",
-      "sha256": "94feb038e1e78b291762cfc03dfc370e48bb94f3e1fe1171b7a5206301e8be13",
-      "bytes": 64325,
-      "exact": true
+      "sha256": "760928f5480efad446b42bc6aa2fbea3e431de13ab92714bac05c09188519c26",
+      "bytes": 63174,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/order_audit_engine.py",
-      "sha256": "09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc",
-      "bytes": 75219,
-      "exact": true
+      "sha256": "f4e991a6a516ad84e0223c802f5baf611f5e20fb8d7965b9dcdf4ff949d89296",
+      "bytes": 89666,
+      "exact": true,
+      "coverage": "standalone-captured"
+    },
+    {
+      "reference_id": "bullish_current",
+      "source": "pipeline/PL_PH_detector.py",
+      "sha256": "4c03c016762c55006cba98b9dd565a5e0d37c9420c6e0cacdd1a060d4e8bd989",
+      "bytes": 22048,
+      "exact": true,
+      "coverage": "embedded-only-excluded"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/reaction_engine.py",
-      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6",
-      "bytes": 103120,
-      "exact": true
+      "sha256": "f62f7e3c6480750068c4550a8489806030aac16f021f349930bd5efb3ce54198",
+      "bytes": 105073,
+      "exact": true,
+      "coverage": "standalone-captured"
     },
     {
       "reference_id": "bullish_current",
       "source": "pipeline/s_zone_detector.py",
-      "sha256": "ef71a2e4176caaabc25d1ef0c1f0f24efb54ed3110982cdb7cf52d2449cca2ee",
-      "bytes": 60888,
-      "exact": true
+      "sha256": "0c5864bc3bc6c17f72c5c38b04a1cd0b5b38c726d8834207a55d5351fdfa38fe",
+      "bytes": 60942,
+      "exact": true,
+      "coverage": "standalone-captured"
     }
   ]
 }

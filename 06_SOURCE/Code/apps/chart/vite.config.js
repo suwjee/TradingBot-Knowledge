@@ -11,12 +11,19 @@ import { runIndicatorRangeCalculation } from './server/indicator-range-input.js'
 import { migrateFlatRawFiles } from './server/migrate-raw-resources.js';
 import { createRawResourceStore } from './server/raw-resource-store.js';
 import { sendCandleFile } from './server/candle-file-response.js';
+import { resolveLocalStatePaths } from './server/local-state-paths.js';
+import { createCalculationCoordinator, parseEngineConcurrency } from './server/calculation-coordinator.js';
+import { readBoundedBody } from './server/request-body.js';
+import { createProgressChannels } from './server/progress-channels.js';
+import { assertRawInputUnchanged, captureRawInputIdentity } from './server/raw-input-identity.js';
+import { cachePathForRaw, readCalculationCache, writeCalculationCache } from './server/calculation-cache.js';
 
-// Keep local data, caches, and Python engines anchored to this config file.
+// Anchor source paths to this config and local state to the chart-owned subtree.
 // Vite may be launched from either the repository root or apps/chart.
 const chartRoot = path.dirname(fileURLToPath(import.meta.url));
 const workspaceRoot = path.resolve(chartRoot, '..', '..');
-const inputDir = path.join(workspaceRoot, 'data', 'raw');
+const localState = resolveLocalStatePaths(workspaceRoot);
+const inputDir = localState.raw;
 const rawStore = createRawResourceStore({ rootDir: inputDir });
 const bridgePath = path.join(workspaceRoot, 'engine', 'bridge', 'trading_pipeline.py');
 const pipelineRoot = path.join(workspaceRoot, 'engine', 'pipeline');
@@ -29,8 +36,9 @@ const stopAllEnginePath = path.join(pipelineRoot, 'lifecycle_engine.py');
 const orderEnginePath = path.join(pipelineRoot, 'order_audit_engine.py');
 const directionPolicyPath = path.join(pipelineRoot, 'direction_policy.py');
 const coreUtilsPath = path.join(pipelineRoot, 'core_utils.py');
+const primaryEnginePath = path.join(pipelineRoot, 'PL_PH_detector.py');
 const indicatorRangeInputPath = path.join(chartRoot, 'server', 'indicator-range-input.js');
-const calculationSources = [bridgePath, enginePath, blueEnginePath, aEnginePath, sEnginePath, eEnginePath, stopAllEnginePath, orderEnginePath, directionPolicyPath, coreUtilsPath, indicatorRangeInputPath];
+const calculationSources = [bridgePath, enginePath, blueEnginePath, aEnginePath, sEnginePath, eEnginePath, stopAllEnginePath, orderEnginePath, directionPolicyPath, coreUtilsPath, primaryEnginePath, indicatorRangeInputPath];
 const pythonCommand = process.env.TRADINGBOT_PYTHON || 'python';
 // VMware shared folders reject native watches, while polling can monopolize
 // Vite's event loop. The launcher therefore serves without filesystem watches;
@@ -57,21 +65,25 @@ const inventoryMeta = new Map();
 // Durable, human-navigable cache root.  Calculation results must never rely on
 // Vite's process memory: restarting the dev server must preserve the exact
 // serialized payload and each chart source gets an independent drawing file.
-const primaryCacheRoot = path.join(workspaceRoot, 'runtime', 'cache');
+const primaryCacheRoot = localState.cache;
 const drawingsDir = path.join(primaryCacheRoot, 'drawings');
 const calculationsDir = path.join(primaryCacheRoot, 'indicator-calculations');
 const templatesDir = path.join(primaryCacheRoot, 'indicator-templates');
 const templatesPath = path.join(templatesDir, 'templates.json');
-const progressChannels = new Map();
+const progressChannels = createProgressChannels();
+const calculationCoordinator = createCalculationCoordinator({
+  maxActive: parseEngineConcurrency(process.env.TRADINGBOT_MAX_ENGINE_CONCURRENCY),
+});
+const activeDetectorChildren = new Set();
+
+function shutdownCalculations() {
+  calculationCoordinator.close();
+  for (const child of activeDetectorChildren) child.kill();
+  progressChannels.close();
+}
 
 function publishProgress(requestId, event) {
-  if (!requestId) return;
-  const channel = progressChannels.get(requestId) || { events: [], clients: new Set() };
-  progressChannels.set(requestId, channel);
-  channel.events.push(event);
-  if (channel.events.length > 120) channel.events.shift();
-  const message = `data: ${JSON.stringify(event)}\n\n`;
-  for (const client of channel.clients) client.write(message);
+  progressChannels.publish(requestId, event);
 }
 
 function cacheSegment(value, fallback) {
@@ -203,6 +215,8 @@ function removeChartArtifacts(item) {
       if (metadata?.sourceFile !== item.id && (!item.chartId || metadata?.chartId !== item.chartId)) continue;
       const calculationFile = target.slice(0, -'.info.json'.length);
       if (fs.existsSync(calculationFile)) fs.unlinkSync(calculationFile);
+      const digestFile = `${calculationFile}.raw-sha256`;
+      if (fs.existsSync(digestFile)) fs.unlinkSync(digestFile);
       fs.unlinkSync(target);
       calculationFilesCleared += 1;
     }
@@ -212,13 +226,7 @@ function removeChartArtifacts(item) {
 }
 
 function readBody(req, maxBytes = 100_000) {
-  return new Promise((resolve, reject) => {
-    let body = '';
-    req.setEncoding('utf8');
-    req.on('data', (chunk) => { body += chunk; if (body.length > maxBytes) reject(new Error('Request is too large')); });
-    req.on('end', () => resolve(body));
-    req.on('error', reject);
-  });
+  return readBoundedBody(req, maxBytes);
 }
 
 async function readJson(req, maxBytes = 100_000) {
@@ -229,9 +237,20 @@ async function readJson(req, maxBytes = 100_000) {
   return body;
 }
 
-function runDetector(args, onProgress = () => {}) {
+function runDetector(args, onProgress = () => {}, signal) {
   return new Promise((resolve, reject) => {
-    const child = spawn(pythonCommand, [bridgePath, '--engine', enginePath, '--blue-engine', blueEnginePath, '--a-engine', aEnginePath, '--s-engine', sEnginePath, '--e-engine', eEnginePath, '--stopall-engine', stopAllEnginePath, ...args], { windowsHide: true });
+    if (signal?.aborted) { reject(new Error('Server is shutting down.')); return; }
+    const child = spawn(pythonCommand, [bridgePath, '--engine', enginePath, '--blue-engine', blueEnginePath, '--a-engine', aEnginePath, '--s-engine', sEnginePath, '--e-engine', eEnginePath, '--stopall-engine', stopAllEnginePath, ...args], {
+      windowsHide: true,
+      env: { ...process.env, PYTHONDONTWRITEBYTECODE: '1' },
+    });
+    activeDetectorChildren.add(child);
+    const stopChild = () => child.kill();
+    const releaseChild = () => {
+      activeDetectorChildren.delete(child);
+      signal?.removeEventListener('abort', stopChild);
+    };
+    signal?.addEventListener('abort', stopChild, { once: true });
     let stdout = '', stderr = '', stderrBuffer = '';
     child.stdout.on('data', (part) => { stdout += part; });
     child.stderr.on('data', (part) => {
@@ -244,8 +263,9 @@ function runDetector(args, onProgress = () => {}) {
         catch { stderr += `${line}\n`; }
       }
     });
-    child.on('error', reject);
+    child.on('error', (error) => { releaseChild(); reject(error); });
     child.on('close', (code) => {
+      releaseChild();
       if (stderrBuffer) stderr += stderrBuffer;
       code === 0 ? resolve(stdout) : reject(new Error(stderr || stdout || `Detector exited with ${code}`));
     });
@@ -292,19 +312,15 @@ function localDataApi() {
     name: 'local-candle-data-api',
     configureServer(server) {
       ensureStateDirectories();
+      server.watcher.once('close', shutdownCalculations);
+      server.httpServer?.once('close', shutdownCalculations);
       server.middlewares.use('/api/reactions/progress', (req, res) => {
         const requestId = new URL(req.url ?? '', 'http://localhost').searchParams.get('requestId');
         if (!requestId || !/^[a-zA-Z0-9-]{8,80}$/.test(requestId)) { res.statusCode = 400; res.end('Invalid progress request'); return; }
-        const channel = progressChannels.get(requestId) || { events: [], clients: new Set() };
-        progressChannels.set(requestId, channel);
         res.writeHead(200, { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache, no-transform', Connection: 'keep-alive' });
         res.write(': connected\n\n');
-        channel.clients.add(res);
-        for (const event of channel.events) res.write(`data: ${JSON.stringify(event)}\n\n`);
-        req.on('close', () => {
-          channel.clients.delete(res);
-          if (!channel.clients.size && channel.events.at(-1)?.status === 'finished') progressChannels.delete(requestId);
-        });
+        const detach = progressChannels.attach(requestId, res);
+        req.once('close', detach);
       });
       server.middlewares.use('/api/symbols', (_req, res) => {
         res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -456,11 +472,7 @@ function localDataApi() {
         if (layers.includes('drawings')) fs.rmSync(drawingsTarget, { recursive: true, force: true });
         fs.mkdirSync(calculationsDir, { recursive: true });
         fs.mkdirSync(drawingsDir, { recursive: true });
-        if (scope === 'all' && layers.includes('calculations')) {
-          // Keep the tracked placeholder; it is not cached indicator data.
-          fs.writeFileSync(path.join(calculationsDir, '.gitkeep'), '');
-        }
-        const farazSessionPath = path.join(primaryCacheRoot, 'secret', 'faraz-session.dpapi.json');
+        const farazSessionPath = path.join(localState.secret, 'faraz-session.dpapi.json');
         const localSessionCleared = layers.includes('secret') && fs.existsSync(farazSessionPath);
         if (localSessionCleared) fs.unlinkSync(farazSessionPath);
         res.end(JSON.stringify({ filesCleared, drawingsCleared, localSessionCleared, layers, scope, symbol: scope === 'symbol' ? symbol : undefined }));
@@ -557,6 +569,21 @@ function localDataApi() {
           res.end(JSON.stringify({ error: error.message }));
         }
       });
+      server.middlewares.use('/api/reactions/source', (req, res) => {
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.setHeader('Cache-Control', 'no-store');
+        if (req.method !== 'GET') {
+          res.statusCode = 405;
+          res.end(JSON.stringify({ error: 'GET is required' }));
+          return;
+        }
+        try {
+          res.end(JSON.stringify({ sourceFingerprint: calculationSourceFingerprint() }));
+        } catch {
+          res.statusCode = 500;
+          res.end(JSON.stringify({ error: 'Calculation source identity is unavailable' }));
+        }
+      });
       server.middlewares.use('/api/reactions', async (req, res) => {
         const requestStarted = performance.now();
         let requestId = null;
@@ -579,66 +606,87 @@ function localDataApi() {
           }
           if (!['bullish', 'bearish'].includes(body.direction)) throw new Error('Invalid reaction direction');
           if (typeof body.blueLines !== 'boolean') throw new Error('Invalid Blue Line setting');
-          const dataStat = fs.statSync(path.join(inputDir, valid.id));
+          const sourcePath = path.join(inputDir, valid.id);
+          const rawIdentity = await captureRawInputIdentity(sourcePath);
+          if (rawIdentity.sha256 !== valid.metadata?.dataSha256) {
+            throw new Error('The selected RAW file changed while calculating. Apply again with the current file.');
+          }
+          const dataStat = rawIdentity.stat;
           const sourceFingerprint = calculationSourceFingerprint();
           const inputScope = from === sourceFromBucket && to === sourceToBucket ? 'complete-source' : 'selected-range';
           const bridgeOutput = true;
           const calculationRequest = { timeframe, chartTimeframe, from, to, direction: body.direction, blueLines: body.blueLines, bridgeOutput };
           const cacheKey = JSON.stringify(['engine-content-v3-range-input', sourceFingerprint, valid.chartId || valid.id, valid.id, dataStat.mtimeMs, timeframe, chartTimeframe, from, to, body.direction, body.blueLines, bridgeOutput, inputScope]);
-           const persistedCalculationPath = calculationPath(valid, calculationRequest, cacheKey);
+          const executionKey = JSON.stringify([cacheKey, rawIdentity.sha256]);
+          const baseCalculationPath = calculationPath(valid, calculationRequest, cacheKey);
+          const changedRawPath = calculationPath(valid, calculationRequest, JSON.stringify([cacheKey, rawIdentity.sha256]));
+          const persistedCalculationPath = cachePathForRaw(baseCalculationPath, rawIdentity.sha256, changedRawPath);
           let output = null;
           let cacheSource = null;
           const cacheReadStarted = performance.now();
-          if (fs.existsSync(persistedCalculationPath)) {
-            output = fs.readFileSync(persistedCalculationPath, 'utf8');
+          output = readCalculationCache(persistedCalculationPath, rawIdentity.sha256);
+          if (output) {
             cacheSource = 'file';
           }
           const cacheHit = Boolean(output);
           const cacheReadMs = performance.now() - cacheReadStarted;
           let detectorMs = 0;
           if (!output) {
-            const sourcePath = path.join(inputDir, valid.id);
-            const runCalculation = async (calculationInputPath, bounds) => {
-              const detectorStarted = performance.now();
-              publishProgress(requestId, { status: 'started', label: 'Start Python calculation' });
-              try {
-                const result = await runDetector(['--data', calculationInputPath, '--timeframe', String(timeframe), '--from-time', String(bounds.fromTime), '--to-time', String(bounds.toTime), '--direction', body.direction, '--blue-lines', body.blueLines ? 'enabled' : 'disabled', '--a-zones', 'enabled', '--s-zones', 'enabled', '--bridge-output'], (event) => publishProgress(requestId, event));
-                detectorMs = performance.now() - detectorStarted;
-                publishProgress(requestId, { status: 'completed', label: 'Start Python calculation', durationMs: detectorMs });
-                return result;
-              } catch (error) {
-                detectorMs = performance.now() - detectorStarted;
-                throw error;
+            const calculated = await calculationCoordinator.run(executionKey, async (publish, signal) => {
+              await assertRawInputUnchanged(sourcePath, rawIdentity);
+              let jobDetectorMs = 0;
+              const runCalculation = async (calculationInputPath, bounds) => {
+                const detectorStarted = performance.now();
+                publish({ status: 'started', label: 'Start Python calculation' });
+                try {
+                  const result = await runDetector(['--data', calculationInputPath, '--timeframe', String(timeframe), '--from-time', String(bounds.fromTime), '--to-time', String(bounds.toTime), '--direction', body.direction, '--blue-lines', body.blueLines ? 'enabled' : 'disabled', '--a-zones', 'enabled', '--s-zones', 'enabled', '--bridge-output'], publish, signal);
+                  jobDetectorMs = performance.now() - detectorStarted;
+                  publish({ status: 'completed', label: 'Start Python calculation', durationMs: jobDetectorMs });
+                  return result;
+                } catch (error) {
+                  jobDetectorMs = performance.now() - detectorStarted;
+                  throw error;
+                }
+              };
+              let result;
+              if (inputScope === 'complete-source') {
+                result = await runCalculation(sourcePath, { fromTime: from, toTime: Number(valid.to) });
+              } else {
+                const inputPreparationStarted = performance.now();
+                publish({ status: 'started', label: 'Filter raw range' });
+                const rows = rawStore.read(valid.id);
+                if (!rows) throw new Error('Candle file not found');
+                result = await runIndicatorRangeCalculation({
+                  rows,
+                  sourcePath,
+                  from,
+                  to,
+                  chartTimeframeSeconds: chartTimeframe,
+                  onPrepared: () => publish({
+                    status: 'completed',
+                    label: 'Filter raw range',
+                    durationMs: performance.now() - inputPreparationStarted,
+                  }),
+                  run: runCalculation,
+                });
               }
-            };
-            if (inputScope === 'complete-source') {
-              output = await runCalculation(sourcePath, { fromTime: from, toTime: Number(valid.to) });
-            } else {
-              const inputPreparationStarted = performance.now();
-              publishProgress(requestId, { status: 'started', label: 'Filter raw range' });
-              const rows = rawStore.read(valid.id);
-              if (!rows) throw new Error('Candle file not found');
-              output = await runIndicatorRangeCalculation({
-                rows,
-                sourcePath,
-                from,
-                to,
-                chartTimeframeSeconds: chartTimeframe,
-                onPrepared: () => publishProgress(requestId, {
-                  status: 'completed',
-                  label: 'Filter raw range',
-                  durationMs: performance.now() - inputPreparationStarted,
-                }),
-                run: runCalculation,
-              });
-            }
-            if (calculationSourceFingerprint() !== sourceFingerprint) {
-              throw new Error('Calculation sources changed while running. Apply again with the current engines.');
-            }
-            fs.mkdirSync(path.dirname(persistedCalculationPath), { recursive: true });
-            fs.writeFileSync(persistedCalculationPath, output, 'utf8');
+              if (calculationSourceFingerprint() !== sourceFingerprint) {
+                throw new Error('Calculation sources changed while running. Apply again with the current engines.');
+              }
+              await assertRawInputUnchanged(sourcePath, rawIdentity);
+              writeCalculationCache(persistedCalculationPath, rawIdentity.sha256, result);
+              return { output: result, detectorMs: jobDetectorMs };
+            }, (event) => publishProgress(requestId, event));
+            output = calculated.output;
+            detectorMs = calculated.detectorMs;
           }
-           else publishProgress(requestId, { status: 'completed', label: `Cached result (${cacheSource})` });
+           else {
+             await assertRawInputUnchanged(sourcePath, rawIdentity);
+             if (calculationSourceFingerprint() !== sourceFingerprint) {
+               throw new Error('Calculation sources changed while running. Apply again with the current engines.');
+             }
+             publishProgress(requestId, { status: 'completed', label: `Cached result (${cacheSource})` });
+           }
            const metadataFile = calculationMetadataPath(persistedCalculationPath);
            if (!fs.existsSync(metadataFile)) fs.writeFileSync(metadataFile, JSON.stringify(
               calculationMetadata(valid, calculationRequest, persistedCalculationPath),
@@ -682,11 +730,14 @@ function infoPage() {
 }
 
 export default defineConfig({
-  plugins: [localDataApi(), createFarazCandleApi(), infoPage()],
+  plugins: [localDataApi(), createFarazCandleApi({ workspaceRoot, localStateRoot: localState.root }), infoPage()],
   server: {
     port: 5173,
     strictPort: false,
-    watch: viteWatchOptions,
+    fs: {
+      deny: ['**/.env', '**/.env.*', '**/*.{crt,pem}', '**/.git/**', '**/state/**', '**/tests/**', '**/engineering/archive/**', '**/engineering/verification/**'],
+    },
+    watch: { ...viteWatchOptions, ignored: [...(viteWatchOptions.ignored ?? []), '**/state/**', '**/tests/**', '**/engineering/archive/**', '**/engineering/verification/**'] },
   },
   build: { target: 'chrome89' },
 });

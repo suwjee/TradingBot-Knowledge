@@ -6,17 +6,17 @@ authority: "executable"
 title: "Final behavior visibility, range and lineage"
 version: "current"
 related_entities: ["algorithm.lifecycle", "algorithm.orderaudit", "algorithm.serialization"]
-source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1155", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1357", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1120", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1331", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
 implemented_by: ["source.lifecycle_engine", "source.trading_pipeline", "source.order_audit_engine", "source.blue_line_detector", "source.reaction_engine"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L409", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L409"]
 mirror_links: ["mirror.contract"]
 depends_on: ["algorithm.lifecycle", "algorithm.stopall"]
 name: "Visibility"
 aliases: ["Final visibility"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Final behavior visibility, range and lineage
 
 ## Bullish
@@ -55,3 +55,7 @@ S closed-transition visibility uses its exact candidate formation event when a c
 The general stopped-owner comparison then chooses greatest `(exactStopEvent, priority, number, sourceTime, sourceIndex)`. A higher-priority Red S may survive a stopped Blue S. Otherwise a S price that is equal to or does not extend strictly beyond the chosen owner's price remains visible; a strict extension consumes stopped owners of equal/lower priority and suppresses this S label. An active larger owner does not globally disable independent A/S discovery.
 
 A provenance filtering is a separate operation from A cycle acceptance. It chooses the dominant already-stopped S/E owner by `(priority, number, sourceTime, sourceIndex)`, then requires the earliest of Blue-1 source, Blue-2 source, continuation source and Reaction First to be at or after that owner's exact stop. Equality is admitted. This provenance check must not be described as the latest-stop-main selection used by `split_a_zones_by_dominant_stops`.
+
+## Current containing-candle correction
+
+visible_a_zones_after_s_stops uses bisect_right(mainTimes,S.decision_event_time)-1. An intrabar decision suppresses its containing main candle instead of the following main candle. Final OrderAudit A sources come from S calculation-eligible A with invalid-A identities removed, not every provisional detected A.

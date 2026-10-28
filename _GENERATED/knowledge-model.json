@@ -17,19 +17,19 @@
       ],
       "source_reference": [
         "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L114",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L156",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L219",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L329",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L401",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L424",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L443",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L494",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L568",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L650",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L125",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L167",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L230",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L340",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L412",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L435",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L454",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L504",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L575",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L657",
         "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L68",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L689",
-        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L753",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L696",
+        "06_SOURCE/Code/engine/pipeline/a_zone_detector.py#L760",
         "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
         "06_SOURCE/Code/engine/pipeline/direction_policy.py",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
@@ -43,8 +43,8 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L116",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L116"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L206",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L206"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -56,7 +56,8 @@
       "aliases": [
         "A Zone",
         "AZone"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.blue",
@@ -74,7 +75,7 @@
       ],
       "source_reference": [
         "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
-        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L299",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L322",
         "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84",
         "06_SOURCE/Code/engine/pipeline/direction_policy.py",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
@@ -87,8 +88,8 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L96",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L96"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L186",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L186"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -102,10 +103,9 @@
         "Blue Line",
         "BlueLine"
       ],
-      "reference_agreement": "conflict",
-      "reference_conflicts": [
-        "REF-BLUE-ENDPOINT"
-      ]
+      "reference_agreement": "match",
+      "reference_conflicts": [],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.e",
@@ -124,17 +124,17 @@
       "source_reference": [
         "06_SOURCE/Code/engine/pipeline/direction_policy.py",
         "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
-        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L308",
-        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L749",
-        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L880",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L376",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L856",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L991",
         "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
         "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1053",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1179",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1202",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1263",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L476",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L816",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1244",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1369",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1392",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1453",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L500",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L880",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
@@ -147,8 +147,8 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L177",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L177"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L271",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L271"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -163,10 +163,7 @@
         "E Zone",
         "EZone"
       ],
-      "reference_agreement": "ambiguous",
-      "reference_conflicts": [
-        "REF-E-TIE-SCOPE"
-      ]
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.internal_reaction",
@@ -196,8 +193,8 @@
         "source.trading_pipeline"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L182",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L182"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -205,7 +202,8 @@
       "name": "Internal Reaction",
       "aliases": [
         "InternalReaction"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.lifecycle",
@@ -239,8 +237,8 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L375",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L375"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -253,7 +251,8 @@
       "name": "Lifecycle",
       "aliases": [
         "Behavior lifecycle"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.order",
@@ -285,8 +284,8 @@
         "source.core_utils"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L363",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L363"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -295,7 +294,8 @@
       "aliases": [
         "Physical Order",
         "Orders"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.order.a",
@@ -314,9 +314,9 @@
         "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
         "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1313",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1758",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1892",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1316",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1768",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1917",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
@@ -329,8 +329,8 @@
         "source.core_utils"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L203",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L203"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L299",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L299"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -339,7 +339,8 @@
       "aliases": [
         "Order A",
         "Parent-stop Order"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.order.b",
@@ -359,7 +360,7 @@
         "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
         "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
         "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L101",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L117",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
@@ -372,8 +373,8 @@
         "source.lifecycle_engine"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L219",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L219"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L321",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L321"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -382,7 +383,8 @@
       "aliases": [
         "Order B",
         "Reset-leg Order"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.orderaudit",
@@ -404,8 +406,9 @@
         "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
         "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
         "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1578",
-        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
+        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1928",
+        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L1948"
       ],
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
@@ -418,8 +421,8 @@
         "source.core_utils"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L259"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L363",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L363"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -430,7 +433,8 @@
       "name": "OrderAudit",
       "aliases": [
         "Order Audit"
-      ]
+      ],
+      "last_modified_at": "2026-10-28T18:07:57+03:30"
     },
     {
       "id": "algorithm.raw",
@@ -459,12 +463,13 @@
         "source.core_utils"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L125",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L125"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.reaction",
@@ -484,15 +489,15 @@
         "06_SOURCE/Code/engine/pipeline/core_utils.py",
         "06_SOURCE/Code/engine/pipeline/direction_policy.py",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1426",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1554",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1582",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1648",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1966",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2108",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2283",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2324",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2362"
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1436",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1564",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1592",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1658",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1991",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2133",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2316",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2357",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L2395"
       ],
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-sensitive geometry",
@@ -502,8 +507,8 @@
         "source.core_utils"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L148",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L148"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -515,7 +520,8 @@
       "reference_agreement": "ambiguous",
       "reference_conflicts": [
         "REF-REACTION-SUCCESSOR"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.reconciliation",
@@ -533,14 +539,14 @@
       ],
       "source_reference": [
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
-        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2119",
-        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2189",
-        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2510",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2149",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2226",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2591",
         "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
         "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
-        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1019",
-        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1041",
-        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L964",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L984",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1006",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L929",
         "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
@@ -554,8 +560,8 @@
         "source.trading_pipeline"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L287",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L287"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -563,7 +569,8 @@
       "name": "Reconciliation",
       "aliases": [
         "Accepted-state reconciliation"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.reset",
@@ -593,8 +600,8 @@
         "source.s_zone_detector"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L60"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L174",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L174"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -602,7 +609,8 @@
       "name": "Reset",
       "aliases": [
         "Reaction Reset"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.s",
@@ -639,8 +647,8 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L228",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L228"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -655,7 +663,8 @@
       "aliases": [
         "S Zone",
         "SZone"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.s.type1",
@@ -684,12 +693,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L248",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L248"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.s.type2",
@@ -718,12 +728,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L248",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L248"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.s.type3",
@@ -753,12 +764,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L238",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L238"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.s.type4",
@@ -788,12 +800,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L138"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L242",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L242"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.serialization",
@@ -829,8 +842,8 @@
         "source.core_utils"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L309",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L309"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L415",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L415"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -842,7 +855,8 @@
       "name": "Serialization",
       "aliases": [
         "Bridge Output"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.stopall",
@@ -875,8 +889,8 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L375",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L375"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -888,10 +902,7 @@
       "aliases": [
         "Stop All"
       ],
-      "reference_agreement": "ambiguous",
-      "reference_conflicts": [
-        "REF-S-MODE-B"
-      ]
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.stopall.blue_reversal",
@@ -919,16 +930,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L395",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L395"
       ],
       "mirror_links": [
         "mirror.contract"
       ],
-      "reference_agreement": "ambiguous",
-      "reference_conflicts": [
-        "REF-S-MODE-B"
-      ]
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.stopall.sequence_group",
@@ -955,12 +963,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L387",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L387"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.stopall.stopall_stop",
@@ -987,12 +996,13 @@
         "source.direction_policy"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L387",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L387"
       ],
       "mirror_links": [
         "mirror.contract"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "algorithm.visibility",
@@ -1011,8 +1021,8 @@
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
         "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
         "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
-        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1155",
-        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1357",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1120",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1331",
         "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py"
       ],
@@ -1026,8 +1036,8 @@
         "source.reaction_engine"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L409",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L409"
       ],
       "mirror_links": [
         "mirror.contract"
@@ -1039,7 +1049,8 @@
       "name": "Visibility",
       "aliases": [
         "Final visibility"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "behavior.a",
@@ -1325,7 +1336,8 @@
         "source.s_zone_detector",
         "source.order_audit_engine",
         "source.lifecycle_engine"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "behavior.stopall",
@@ -1352,7 +1364,8 @@
         "source.lifecycle_engine",
         "source.e_zone_detector",
         "source.s_zone_detector"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "behavior.stopall.blue_reversal",
@@ -1379,11 +1392,10 @@
         "source.e_zone_detector",
         "source.s_zone_detector"
       ],
-      "reference_agreement": "ambiguous",
-      "reference_conflicts": [
-        "REF-S-MODE-B"
-      ],
-      "name": "StopAll reversal behavior"
+      "reference_agreement": "match",
+      "reference_conflicts": [],
+      "name": "StopAll reversal behavior",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "behavior.stopall.sequence_group",
@@ -1409,7 +1421,8 @@
         "source.e_zone_detector",
         "source.s_zone_detector"
       ],
-      "name": "StopAll sequence group behavior"
+      "name": "StopAll sequence group behavior",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "behavior.stopall.stopall_stop",
@@ -1463,9 +1476,10 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-28T18:07:57+03:30"
     },
     {
       "id": "core.chronology",
@@ -1492,9 +1506,10 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.determinism",
@@ -1523,13 +1538,12 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
       ],
-      "reference_agreement": "ambiguous",
-      "reference_conflicts": [
-        "REF-E-TIE-SCOPE"
-      ]
+      "reference_agreement": "match",
+      "reference_conflicts": [],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.identity",
@@ -1555,13 +1569,14 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
       ],
       "name": "Identity",
       "aliases": [
         "Physical identity"
-      ]
+      ],
+      "last_modified_at": "2026-10-28T18:07:57+03:30"
     },
     {
       "id": "core.invariants",
@@ -1589,9 +1604,10 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.lifecycle",
@@ -1617,9 +1633,10 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.ownership",
@@ -1648,13 +1665,14 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
       ],
       "name": "Ownership",
       "aliases": [
         "Behavior ownership"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.pipeline",
@@ -1662,7 +1680,7 @@
       "type": "core",
       "status": "active",
       "authority": "executable",
-      "title": "Current full calculation pipeline",
+      "title": "Current upstream calculation pipeline",
       "version": "current",
       "related_entities": [
         "algorithm.orderaudit",
@@ -1687,13 +1705,14 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L37"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L125",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L125"
       ],
       "name": "Pipeline",
       "aliases": [
         "Trading pipeline"
-      ]
+      ],
+      "last_modified_at": "2026-10-28T18:07:57+03:30"
     },
     {
       "id": "core.precision",
@@ -1712,9 +1731,10 @@
       ],
       "evidence_basis": "Current source and synchronized current references",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.priority",
@@ -1737,9 +1757,10 @@
       "evidence_basis": "Current source and synchronized current references",
       "direction_sensitivity": "direction-invariant or explicitly mixed",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "core.project",
@@ -1758,9 +1779,10 @@
       ],
       "evidence_basis": "Current source and synchronized current references",
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"
-      ]
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "data.dataset_registry",
@@ -1880,13 +1902,14 @@
       "source_reference": [
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1017",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L102",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L142",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L185"
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1020",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L105",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L145",
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L188"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant"
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "market.crossing",
@@ -1972,7 +1995,8 @@
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant"
+      "direction_sensitivity": "mixed: geometry changes, native chronology and identity remain invariant",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "market.timeframe",
@@ -2016,7 +2040,8 @@
         "06_SOURCE/Code/engine/pipeline/core_utils.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "direction-invariant or explicitly mixed"
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "mirror.behavior",
@@ -2039,7 +2064,8 @@
         "06_SOURCE/Code/engine/pipeline/direction_policy.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "direction-invariant or explicitly mixed"
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "mirror.contract",
@@ -2067,7 +2093,8 @@
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "direction-invariant or explicitly mixed"
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "mirror.direction_mapping",
@@ -2166,7 +2193,8 @@
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "direction-invariant or explicitly mixed"
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "mirror.mixed_rules",
@@ -2191,7 +2219,8 @@
         "06_SOURCE/Code/engine/pipeline/direction_policy.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "direction-sensitive geometry"
+      "direction_sensitivity": "direction-sensitive geometry",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "mirror.source_map",
@@ -2218,7 +2247,8 @@
         "06_SOURCE/Code/engine/bridge/trading_pipeline.py"
       ],
       "evidence_basis": "Current source and synchronized current references",
-      "direction_sensitivity": "direction-invariant or explicitly mixed"
+      "direction_sensitivity": "direction-invariant or explicitly mixed",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "mirror.validation_rules",
@@ -2248,7 +2278,7 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "Exact current Python package marker; unsupported package imports do not define the production entry path",
+      "title": "Current Engine package marker",
       "version": "unversioned package marker",
       "related_entities": [
         "source.source_manifest"
@@ -2260,7 +2290,8 @@
       "source_path": "06_SOURCE/Code/engine/__init__.py",
       "mirror": "06_SOURCE/Code/engine/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "name": "Engine package marker"
+      "name": "Engine package marker",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.a_zone_detector",
@@ -2269,7 +2300,7 @@
       "status": "active",
       "authority": "executable",
       "title": "A formation, paired Blue provenance and inherited stops",
-      "version": "1.6.4",
+      "version": "1.7.0",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2279,7 +2310,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/a_zone_detector.py",
-      "sha256": "d7c33dd619ad7e4590027667a2c4e984c83be7b82fbfafeb5d7f944ddd521097"
+      "sha256": "83f08b06556eb59c6d1b3afd22b51c280315bd80f3a31bc3044ada349251a115",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.blue_line_detector",
@@ -2288,7 +2320,7 @@
       "status": "active",
       "authority": "executable",
       "title": "Scale and Reset Blue construction and public/calculation-valid Blue ownership",
-      "version": "2.3.0",
+      "version": "2.4.1",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2298,7 +2330,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/blue_line_detector.py",
-      "sha256": "6fa01d94bc98060b62bc7e68db0ec24a0b0159727d44043affee7130a9c11448"
+      "sha256": "c6466c280504f82d8f2b189263ed0e9b9581c2f48edd8aaa12f016e55effc98c",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.bridge.__init__",
@@ -2306,7 +2339,7 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "Exact current Python package marker; unsupported package imports do not define the production entry path",
+      "title": "Current Engine package marker",
       "version": "unversioned package marker",
       "related_entities": [
         "source.source_manifest"
@@ -2318,7 +2351,43 @@
       "source_path": "06_SOURCE/Code/engine/bridge/__init__.py",
       "mirror": "06_SOURCE/Code/engine/bridge/__init__.py",
       "sha256": "2bc59770b9d4313c0e6306287d074487b9e1672dbaf3ada9a8be381e7123f0b8",
-      "name": "Bridge package marker"
+      "name": "Bridge package marker",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
+    },
+    {
+      "id": "source.chart_workspace",
+      "file": "06_SOURCE/Chart-Workspace.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current Chart workspace and review presentation",
+      "version": "current",
+      "related_entities": [
+        "core.project",
+        "source.local_server",
+        "source.raw_resources",
+        "source.faraz",
+        "source.integration_boundary"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/apps/chart/src/main.js#L1665",
+        "06_SOURCE/Code/apps/chart/src/main.js#L2252",
+        "06_SOURCE/Code/apps/chart/src/main.js#L5770",
+        "06_SOURCE/Code/apps/chart/src/ui/workspace-state.js",
+        "06_SOURCE/Code/apps/chart/src/features/workspace-session.js",
+        "06_SOURCE/Code/apps/chart/src/features/indicator-lifecycle.js",
+        "06_SOURCE/Code/apps/chart/src/features/indicator-calculation-request.js",
+        "06_SOURCE/Code/apps/chart/src/features/indicator-cache.js",
+        "06_SOURCE/Code/apps/chart/src/chart/lod.js",
+        "06_SOURCE/Code/apps/chart/src/chart/view-transform.js",
+        "06_SOURCE/Code/apps/chart/src/chart/drawing-coordinates.js",
+        "06_SOURCE/Code/apps/chart/src/features/manual-review/entry.js",
+        "06_SOURCE/Code/apps/chart/src/features/manual-review/render.js#L736",
+        "06_SOURCE/Code/apps/chart/src/features/manual-review/tab.js"
+      ],
+      "evidence_basis": "Current live project Source captured for the 2026-10-27 synchronization",
+      "created_at": "2026-10-27T20:16:20+03:30",
+      "last_modified_at": "2026-10-27T20:16:20+03:30"
     },
     {
       "id": "source.core_utils",
@@ -2337,7 +2406,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/core_utils.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/core_utils.py",
-      "sha256": "3dae390ae77b72965f5799f7c132c4eba203775d5e72761fd7dd60c90f8578de"
+      "sha256": "007e5329e14ab9695e555c630527badc84dd35a239dea1cf685141e4278265eb",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.dependency_map",
@@ -2366,7 +2436,8 @@
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.direction_policy",
@@ -2385,7 +2456,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/direction_policy.py",
-      "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea"
+      "sha256": "a27ac63c2f066311c9381e2ead6fb44f0789f423a37b465da65c80e6329397ea",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.e_zone_detector",
@@ -2394,7 +2466,7 @@
       "status": "active",
       "authority": "executable",
       "title": "E parent-stop cycles, recursive families and reconciled Order-backed continuation",
-      "version": "6.16.1",
+      "version": "6.16.2",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2404,7 +2476,36 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/e_zone_detector.py",
-      "sha256": "38834e96cc58931fe2e12096f4465ecaa046387d30fd40fecbd6891971020988"
+      "sha256": "96ea351ff88c195937da5c32c5712356b9b876ba6f509d68cb16d37012958ad5",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
+    },
+    {
+      "id": "source.faraz",
+      "file": "06_SOURCE/FARAZ-Integration.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current FARAZ session and acquisition integration",
+      "version": "current",
+      "related_entities": [
+        "core.project",
+        "source.local_server",
+        "source.raw_resources",
+        "source.chart_workspace"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/apps/chart/server/faraz-candle-api.js#L388",
+        "06_SOURCE/Code/apps/chart/server/faraz-candle-api.js#L406",
+        "06_SOURCE/Code/apps/chart/server/faraz-candle-api.js#L760",
+        "06_SOURCE/Code/apps/chart/server/faraz-candle-api.js#L997",
+        "06_SOURCE/Code/apps/chart/server/faraz-candle-api.js#L1070",
+        "06_SOURCE/Code/apps/chart/server/faraz-candle-api.js#L1209",
+        "06_SOURCE/Code/apps/chart/src/features/candle-update.js",
+        "06_SOURCE/Code/apps/chart/server/chart-update-merge.js"
+      ],
+      "evidence_basis": "Current live project Source captured for the 2026-10-27 synchronization",
+      "created_at": "2026-10-27T20:16:20+03:30",
+      "last_modified_at": "2026-10-27T20:16:20+03:30"
     },
     {
       "id": "source.integration_boundary",
@@ -2416,14 +2517,18 @@
       "version": "current",
       "related_entities": [
         "core.pipeline",
-        "source.trading_pipeline"
+        "source.trading_pipeline",
+        "source.local_server",
+        "source.raw_resources",
+        "source.chart_workspace"
       ],
       "source_reference": [
         "06_SOURCE/Code/apps/chart/vite.config.js",
         "06_SOURCE/Code/apps/chart/server/indicator-range-input.js",
         "06_SOURCE/Code/apps/chart/server/raw-resource-store.js"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:16:20+03:30"
     },
     {
       "id": "source.lifecycle_engine",
@@ -2432,7 +2537,7 @@
       "status": "active",
       "authority": "executable",
       "title": "Lifecycle ownership, StopAll gates, retained calculation lineage and final visibility",
-      "version": "1.17.0",
+      "version": "1.18.6",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2442,7 +2547,39 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py",
-      "sha256": "94feb038e1e78b291762cfc03dfc370e48bb94f3e1fe1171b7a5206301e8be13"
+      "sha256": "760928f5480efad446b42bc6aa2fbea3e431de13ab92714bac05c09188519c26",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
+    },
+    {
+      "id": "source.local_server",
+      "file": "06_SOURCE/Local-Server.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current local server and calculation coordination",
+      "version": "current",
+      "related_entities": [
+        "core.project",
+        "source.integration_boundary",
+        "source.raw_resources",
+        "source.chart_workspace",
+        "source.faraz"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/apps/chart/vite.config.js#L52",
+        "06_SOURCE/Code/apps/chart/vite.config.js#L240",
+        "06_SOURCE/Code/apps/chart/vite.config.js#L587",
+        "06_SOURCE/Code/apps/chart/server/calculation-coordinator.js",
+        "06_SOURCE/Code/apps/chart/server/calculation-cache.js",
+        "06_SOURCE/Code/apps/chart/server/progress-channels.js",
+        "06_SOURCE/Code/apps/chart/server/raw-input-identity.js",
+        "06_SOURCE/Code/apps/chart/server/request-body.js",
+        "06_SOURCE/Code/apps/chart/server/local-state-paths.js",
+        "06_SOURCE/Code/apps/chart/server/candle-file-response.js"
+      ],
+      "evidence_basis": "Current live project Source captured for the 2026-10-27 synchronization",
+      "created_at": "2026-10-27T20:16:20+03:30",
+      "last_modified_at": "2026-10-27T20:16:20+03:30"
     },
     {
       "id": "source.module_map",
@@ -2471,7 +2608,8 @@
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.order_audit_engine",
@@ -2480,7 +2618,7 @@
       "status": "active",
       "authority": "executable",
       "title": "Physical Order_A and Order_B discovery, reset-leg anchors, immutable identity/provenance and accepted/live ledgers",
-      "version": "1.5.1",
+      "version": "1.7.1",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2490,7 +2628,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/order_audit_engine.py",
-      "sha256": "09cba00c0623ffcce0d7bc3460c1e963c4e2b14fb02a9172cc25dcca8ba9aedc"
+      "sha256": "f4e991a6a516ad84e0223c802f5baf611f5e20fb8d7965b9dcdf4ff949d89296",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.ownership_map",
@@ -2519,7 +2658,8 @@
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.pipeline.__init__",
@@ -2527,7 +2667,7 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "Exact current Python package marker; unsupported package imports do not define the production entry path",
+      "title": "Maintained pipeline package compatibility wrapper",
       "version": "unversioned package marker",
       "related_entities": [
         "source.source_manifest"
@@ -2538,8 +2678,36 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/__init__.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/__init__.py",
-      "sha256": "ca549e4cf5d9a070227498d0d210279e0f7edae66d62dadab7981cddaa1db5c3",
-      "name": "Pipeline package surface"
+      "sha256": "d22a1b81495a6c97b5eccc4d921b1ba4b709bfbcd39be6ef34b9014690b9f460",
+      "name": "Pipeline package surface",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
+    },
+    {
+      "id": "source.raw_resources",
+      "file": "06_SOURCE/RAW-Resources.md",
+      "type": "source",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current RAW resources, identity and transfer",
+      "version": "current",
+      "related_entities": [
+        "core.project",
+        "source.local_server",
+        "source.faraz",
+        "source.chart_workspace",
+        "source.integration_boundary"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/apps/chart/server/raw-resource-store.js",
+        "06_SOURCE/Code/apps/chart/server/chart-update-merge.js",
+        "06_SOURCE/Code/apps/chart/server/chart-transfer.js",
+        "06_SOURCE/Code/apps/chart/src/features/raw-file-contract.js",
+        "06_SOURCE/Code/apps/chart/src/features/candle-update.js",
+        "06_SOURCE/Code/apps/chart/vite.config.js#L357"
+      ],
+      "evidence_basis": "Current live project Source captured for the 2026-10-27 synchronization",
+      "created_at": "2026-10-27T20:16:20+03:30",
+      "last_modified_at": "2026-10-27T20:16:20+03:30"
     },
     {
       "id": "source.reaction_engine",
@@ -2548,7 +2716,7 @@
       "status": "active",
       "authority": "executable",
       "title": "Reaction, Reset, reflected direction geometry, exact lower-timeframe chronology and internal Reaction classification",
-      "version": "9.8.0",
+      "version": "9.8.1",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2558,7 +2726,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
-      "sha256": "bea0d5a5e95ee15ad54d024f6c01b8c777ba2abcc3c8e671118f1ae2df28f2a6"
+      "sha256": "f62f7e3c6480750068c4550a8489806030aac16f021f349930bd5efb3ce54198",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.reference_consistency",
@@ -2581,26 +2750,22 @@
         "source.reference_registry"
       ],
       "source_reference": [
-        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84",
-        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1554",
-        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L308",
-        "06_SOURCE/Code/engine/pipeline/order_audit_engine.py#L816",
-        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L366",
-        "06_SOURCE/Code/engine/pipeline/s_zone_detector.py#L1393",
-        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L833"
+        "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1557",
+        "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L142",
+        "06_SOURCE/Code/engine/pipeline/e_zone_detector.py#L376",
+        "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L344",
+        "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2542"
       ],
       "algorithm_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md"
       ],
       "evidence_basis": "Fresh complete Source and directional Reference review; exact byte identity checked separately",
-      "reference_agreement": "conflict",
+      "reference_agreement": "ambiguous",
       "reference_conflicts": [
-        "REF-BLUE-ENDPOINT",
-        "REF-REACTION-SUCCESSOR",
-        "REF-E-TIE-SCOPE",
-        "REF-S-MODE-B"
-      ]
+        "REF-REACTION-SUCCESSOR"
+      ],
+      "last_modified_at": "2026-10-28T18:07:57+03:30"
     },
     {
       "id": "source.reference_registry",
@@ -2616,10 +2781,11 @@
         "version.current"
       ],
       "source_reference": [
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md",
-        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md"
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md",
+        "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.s_zone_detector",
@@ -2628,7 +2794,7 @@
       "status": "active",
       "authority": "executable",
       "title": "S candidate races, source geometry, color decisions and shared accepted-Order stop reconciliation",
-      "version": "4.20.0",
+      "version": "4.20.1",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2638,7 +2804,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
       "mirror": "06_SOURCE/Code/engine/pipeline/s_zone_detector.py",
-      "sha256": "ef71a2e4176caaabc25d1ef0c1f0f24efb54ed3110982cdb7cf52d2449cca2ee"
+      "sha256": "0c5864bc3bc6c17f72c5c38b04a1cd0b5b38c726d8834207a55d5351fdfa38fe",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.source_manifest",
@@ -2646,7 +2813,7 @@
       "type": "source",
       "status": "active",
       "authority": "executable",
-      "title": "Complete current Source manifest",
+      "title": "Current scoped Source manifest",
       "version": "current",
       "related_entities": [
         "source.reference_registry",
@@ -2671,7 +2838,8 @@
       "name": "Source Manifest",
       "aliases": [
         "Source provenance"
-      ]
+      ],
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.source_map",
@@ -2700,7 +2868,8 @@
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.state_map",
@@ -2729,7 +2898,8 @@
         "06_SOURCE/Code/engine/pipeline/reaction_engine.py",
         "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"
       ],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "source.trading_pipeline",
@@ -2738,7 +2908,7 @@
       "status": "active",
       "authority": "executable",
       "title": "CLI input normalization, dynamic module loading, cross-stage coordination, OrderAudit preparation and JSON serialization",
-      "version": "1.7.0",
+      "version": "1.11.0",
       "related_entities": [
         "source.source_manifest"
       ],
@@ -2748,7 +2918,8 @@
       "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
       "source_path": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
       "mirror": "06_SOURCE/Code/engine/bridge/trading_pipeline.py",
-      "sha256": "ef5109f4ebb95bc0e04b3d964b14da5f764ae4472f3d10a1a9b7192d59fec683"
+      "sha256": "d70481975d2b8e41c6271a02243862d967d5c906bbe1f2f23a432df6fc0f85a1",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "system.authority",
@@ -2766,7 +2937,8 @@
         "version.current"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "system.editing",
@@ -2781,7 +2953,8 @@
         "workflow.update_vault"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "system.frontmatter",
@@ -2796,7 +2969,8 @@
         "system.knowledge_model"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "system.ids",
@@ -2824,7 +2998,8 @@
         "source.source_manifest"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "system.manifest",
@@ -2844,7 +3019,8 @@
         "version.current"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "system.readme",
@@ -2861,7 +3037,8 @@
         "system.retrieval"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "system.retrieval",
@@ -2881,7 +3058,8 @@
         "workflow.operating"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "test.fixture_model",
@@ -2940,7 +3118,8 @@
         "source.source_manifest"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "test.validation_contract",
@@ -2956,7 +3135,8 @@
         "workflow.run_regression"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "version.current",
@@ -2965,14 +3145,15 @@
       "status": "active",
       "authority": "executable",
       "title": "Current Engine and Reference identities",
-      "version": "5.4.19-EX1",
+      "version": "5.4.33",
       "related_entities": [
         "source.reference_consistency",
         "source.reference_registry",
         "source.source_manifest"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:18:37+03:30"
     },
     {
       "id": "workflow.analyze_raw",
@@ -3043,7 +3224,38 @@
         "system.authority"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
+    },
+    {
+      "id": "workflow.project_release",
+      "file": "12_WORKFLOWS/Project-Release.md",
+      "type": "workflow",
+      "status": "active",
+      "authority": "executable",
+      "title": "Current project startup and release tooling",
+      "version": "current",
+      "related_entities": [
+        "core.project",
+        "workflow.operating",
+        "workflow.release",
+        "source.local_server",
+        "source.chart_workspace"
+      ],
+      "source_reference": [
+        "06_SOURCE/Code/scripts/start.ps1",
+        "06_SOURCE/Code/scripts/launch.bat",
+        "06_SOURCE/Code/apps/chart/scripts/dev-server.mjs",
+        "06_SOURCE/Code/apps/chart/package.json",
+        "06_SOURCE/Code/scripts/git/README.md",
+        "06_SOURCE/Code/scripts/git/Release.Workflow.psm1",
+        "06_SOURCE/Code/scripts/git/Git.Menu.ps1",
+        "06_SOURCE/Code/scripts/git/production-policy.psd1",
+        "06_SOURCE/Code/scripts/git/Invoke-TradingBotRelease.ps1"
+      ],
+      "evidence_basis": "Current live project Source captured for the 2026-10-27 synchronization",
+      "created_at": "2026-10-27T20:16:20+03:30",
+      "last_modified_at": "2026-10-27T20:16:20+03:30"
     },
     {
       "id": "workflow.release",
@@ -3057,7 +3269,8 @@
         "workflow.operating"
       ],
       "source_reference": [],
-      "evidence_basis": "Latest explicit rebuild requirements and current operating rules"
+      "evidence_basis": "Latest explicit rebuild requirements and current operating rules",
+      "last_modified_at": "2026-10-27T20:15:57+03:30"
     },
     {
       "id": "workflow.run_regression",
@@ -4944,6 +5157,31 @@
       "to": "source.source_manifest"
     },
     {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.faraz"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "source.chart_workspace",
+      "type": "relates_to",
+      "to": "source.raw_resources"
+    },
+    {
       "from": "source.core_utils",
       "type": "relates_to",
       "to": "source.source_manifest"
@@ -4969,9 +5207,44 @@
       "to": "source.source_manifest"
     },
     {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "source.faraz",
+      "type": "relates_to",
+      "to": "source.raw_resources"
+    },
+    {
       "from": "source.integration_boundary",
       "type": "relates_to",
       "to": "core.pipeline"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "source.integration_boundary",
+      "type": "relates_to",
+      "to": "source.raw_resources"
     },
     {
       "from": "source.integration_boundary",
@@ -4982,6 +5255,31 @@
       "from": "source.lifecycle_engine",
       "type": "relates_to",
       "to": "source.source_manifest"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.faraz"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.local_server",
+      "type": "relates_to",
+      "to": "source.raw_resources"
     },
     {
       "from": "source.module_map",
@@ -5012,6 +5310,31 @@
       "from": "source.pipeline.__init__",
       "type": "relates_to",
       "to": "source.source_manifest"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.faraz"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.integration_boundary"
+    },
+    {
+      "from": "source.raw_resources",
+      "type": "relates_to",
+      "to": "source.local_server"
     },
     {
       "from": "source.reaction_engine",
@@ -5347,6 +5670,31 @@
       "from": "workflow.operating",
       "type": "relates_to",
       "to": "system.authority"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "core.project"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "source.chart_workspace"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "source.local_server"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "workflow.operating"
+    },
+    {
+      "from": "workflow.project_release",
+      "type": "relates_to",
+      "to": "workflow.release"
     },
     {
       "from": "workflow.release",

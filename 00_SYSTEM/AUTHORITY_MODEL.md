@@ -8,14 +8,12 @@ version: "current"
 related_entities: ["source.reference_consistency", "source.reference_registry", "source.source_manifest", "system.retrieval", "version.current"]
 source_reference: []
 evidence_basis: "Latest explicit rebuild requirements and current operating rules"
+last_modified_at: "2026-10-27T20:15:57+03:30"
 ---
-
 # Current authority model
 
-The latest explicit user requirement governs this clean rebuild. Current Production Source defines what the implementation does; current synchronized directional references define the documented specification. The operating protocol, project instructions, configuration and tests supply engineering constraints. Old Vault labels, old conversations, memory, generated indexes and historical artifacts have no trading authority here.
+Apply current explicit user instructions, the project root and nearer AGENTS.md contracts, TradingBot Intelligence retrieval, canonical/normative Vault knowledge, accepted Algorithm References, current production Source/configuration, current tests/runtime/RAW evidence, then historical evidence and inference. The live project root AGENTS.md owns this ordering; this note does not invert it.
 
-Every derived executable claim must identify its actual current Source owner and evidence. Reference agreement must be checked, not assumed from a matching filename. When current Source and reference wording disagree, preserve exact evidence, disclose the disagreement and exclude the disputed interpretation from normative reasoning until explicitly resolved. Production changes require a demonstrated implementation defect or an explicitly approved general rule; a documentation mismatch alone does not authorize a trading change.
+Canonical knowledge and accepted References define intended trading semantics. Active/executable notes describe reviewed implementation behavior; their authority label does not promote implementation above intended semantics. When they disagree, retain both exact claims and record the mismatch in source.reference_consistency. Do not choose a trading correction during a documentation synchronization.
 
-Status is lifecycle; authority is evidence class. Active/executable notes record current implementation facts. Active/normative system notes record the current governance contract. Empirical evidence requires an actual recorded observation. Non-canonical notes are explicitly unresolved and cannot silently supply a rule. No note or generated relation proves a market-data regression passed.
-
-An exact current Reference may contain its own revision metadata. That raw evidence is preserved unchanged; old revision statements are not imported as active Vault rules. Current source constants, header descriptions and historical comments are distinct evidence, not automatically reconciled version values.
+Generated indexes, AST maps, snapshot identities, hashes, versions and capture dates support retrieval and integrity. They never define trading semantics or prove a market regression. Current user scope excludes adding new primary-structure concepts or a standalone detector snapshot. Full accepted Reference bytes and existing owner snapshots remain exact, including incidental extension evidence. Read source_scope and the validation report before asserting completeness.

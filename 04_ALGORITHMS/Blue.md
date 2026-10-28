@@ -6,19 +6,19 @@ authority: "executable"
 title: "Scale and Reset Blue calculation"
 version: "current"
 related_entities: ["algorithm.a", "algorithm.reaction", "algorithm.reset", "source.reference_consistency"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L299", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/blue_line_detector.py", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L322", "06_SOURCE/Code/engine/pipeline/blue_line_detector.py#L84", "06_SOURCE/Code/engine/pipeline/direction_policy.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.blue_line_detector", "source.reaction_engine", "source.direction_policy"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L96", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L96"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L186", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L186"]
 mirror_links: ["mirror.contract"]
 depends_on: ["algorithm.reaction", "algorithm.reset"]
 name: "Blue"
 aliases: ["Blue Line", "BlueLine"]
-reference_agreement: "conflict"
-reference_conflicts: ["REF-BLUE-ENDPOINT"]
+reference_agreement: "match"
+reference_conflicts: []
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Scale and Reset Blue calculation
 
 ## Bullish
@@ -29,7 +29,7 @@ Blue consumes canonical Bullish Reactions and Bullish Resets. For each Reaction,
 
 #### 5.2 Scale strikes
 
-Within Reaction First..Break inclusive, a new strike requires a strictly lower `Low` than the previous confirmed strike (or than the Fibonacci level for the first strike). Pending strikes confirm on a `GREEN` main candle. Pending intrabar confirmation scans lower rows from pending source time through the Break main-candle close, exclusive. A strict Bullish Low penetration (Bearish High penetration) is added before testing that row's strict Reaction crossing. The helper returns at the first crossing with a nonempty eligible set, selecting the earliest most-directional eligible extreme. A crossing while the eligible set is empty does not end the scan. The decisive row is included. This conditional scan is the executable contract; the Reference's unconditional first-confirmation endpoint is disputed in source.reference_consistency.
+Within Reaction First..Break inclusive, a new strike requires a strictly lower `Low` than the previous confirmed strike (or than the Fibonacci level for the first strike). Pending strikes confirm on a `GREEN` main candle. Break-candle extrema and pending intrabar confirmation are limited to supplied lower rows through exact Reaction confirmation inclusive. A row after confirmation cannot create or extend a strike. If the lower Break prefix is absent, that candle cannot prove a strike. Penetration is evaluated before the decisive crossing row so that row remains eligible; equal extrema preserve earliest ownership.
 
 A Scale Blue is emitted when strike count increases and spacing ownership permits it (first Blue, or at least one healthy Reaction since the previous Blue). Its source is the decisive strike; line price is `Low + (High − Low) / 3` and its drawing interval is one timeframe before/after the source time.
 
@@ -49,7 +49,7 @@ Blue consumes canonical Bearish Reactions and Bearish Resets. For each Reaction,
 
 #### 5.2 Scale strikes
 
-Within Reaction First..Break inclusive, a new strike requires a strictly higher `High` than the previous confirmed strike (or than the Fibonacci level for the first strike). Pending strikes confirm on a `RED` main candle. Pending intrabar confirmation scans lower rows from pending source time through the Break main-candle close, exclusive. A strict Bullish Low penetration (Bearish High penetration) is added before testing that row's strict Reaction crossing. The helper returns at the first crossing with a nonempty eligible set, selecting the earliest most-directional eligible extreme. A crossing while the eligible set is empty does not end the scan. The decisive row is included. This conditional scan is the executable contract; the Reference's unconditional first-confirmation endpoint is disputed in source.reference_consistency.
+Within Reaction First..Break inclusive, a new strike requires a strictly higher `High` than the previous confirmed strike (or than the Fibonacci level for the first strike). Pending strikes confirm on a `RED` main candle. Break-candle extrema and pending intrabar confirmation are limited to supplied lower rows through exact Reaction confirmation inclusive. A row after confirmation cannot create or extend a strike. If the lower Break prefix is absent, that candle cannot prove a strike. Penetration is evaluated before the decisive crossing row so that row remains eligible; equal extrema preserve earliest ownership.
 
 A Scale Blue is emitted when strike count increases and spacing ownership permits it (first Blue, or at least one healthy Reaction since the previous Blue). Its source is the decisive strike; line price is `High − (High − Low) / 3` and its drawing interval is one timeframe before/after the source time.
 
@@ -65,7 +65,7 @@ A Blue becomes behavior-internal when its owning Reaction is internal, or when b
 
 Mode A resets prior strike-count baseline and requires anchor_value or leg_boundary_value; Mode B uses previous aligned opposite edge. Scale emission requires an existing previous count and strict count increase. Mode-A baseline alone does not emit Scale Blue. Pending extrema replace only on strict improvement; equal eligible lower extremes keep earliest row.
 
-Pending main strikes confirm GREEN Bullish/RED Bearish. Remaining pending intrabar strikes use the conditional crossing-and-eligible-set window described above, including the decisive row. Source_extreme can be lower-TF while rendered line_price uses source main High/Low. Scale/Reset share spacing state; first Blue bypasses spacing, later Blue needs one completed aligned Reaction since prior Blue. calculation_valid and behavior_internal are distinct. Invalid Reset Blue remains input for special A; public requires valid and not internal.
+Pending main strikes confirm GREEN Bullish/RED Bearish. Remaining pending intrabar strikes use the exact-confirmation-bounded prefix described above, including its decisive row. Source_extreme can be lower-TF while rendered line_price uses source main High/Low. Scale/Reset share spacing state; first Blue bypasses spacing, later Blue needs one completed aligned Reaction since prior Blue. calculation_valid and behavior_internal are distinct. Invalid Reset Blue remains input for special A; public requires valid and not internal.
 
 
 ## Retained emissions and shared spacing

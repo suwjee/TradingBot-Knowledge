@@ -16,14 +16,14 @@ from typing import Sequence
 
 from core_utils import as_decimal, order_identity
 from order_audit_engine import (
-    accepted_audit_entry, order_identity_is_internal, prepare_order_audit,
+    accepted_audit_entry, prepare_order_audit,
 )
 from direction_policy import policy_for
 
 
-STOP_ALL_VERSION = "1.17.0"
-STOP_ALL_IMPLEMENTATION_VERSION = "1.18.0"
-STOP_ALL_LAST_MODIFIED = "2026-09-27 23:17:17 +03:30"
+STOP_ALL_VERSION = "1.18.6"
+STOP_ALL_IMPLEMENTATION_VERSION = "1.20.7"
+STOP_ALL_LAST_MODIFIED = "2026-10-24T12:06:51+03:30"
 
 
 SEQUENCE_PRIORITY = {
@@ -92,6 +92,53 @@ class StopAll:
     donor_stop_event_time: datetime | None = field(default=None, kw_only=True)
 
 
+@dataclass(frozen=True, slots=True)
+class _DominantBehavior:
+    """The only active exact S/E owner and its StopAll occurrence count."""
+
+    kind: str
+    family: str
+    number: int | None
+    count: int
+    latest: object
+
+    @property
+    def priority(self) -> int:
+        return sequence_priority(self.kind, self.family)
+
+    @property
+    def armed(self) -> bool:
+        return self.count >= 2
+
+    @property
+    def key(self) -> str:
+        return (
+            f"E{self.number} {self.family}"
+            if self.kind == "E" else f"S {self.family}"
+        )
+
+
+def advance_dominant_behavior(
+    owner: _DominantBehavior | None, kind: str, family: str,
+    number: int | None, item: object,
+) -> _DominantBehavior:
+    """Accept one finalized S/E occurrence using the shared exact-owner rule."""
+    incoming = _DominantBehavior(kind, family, number, 1, item)
+    if owner is None:
+        return incoming
+    if (owner.kind, owner.family, owner.number) == (kind, family, number):
+        return replace(owner, count=owner.count + 1, latest=item)
+    if incoming.priority > owner.priority or (
+        incoming.priority == owner.priority
+        and kind == owner.kind == "E"
+        and StopAllDetector._dominates_e(
+            (family, int(number)), (owner.family, int(owner.number))
+        )
+    ):
+        return incoming
+    return owner
+
+
 class StopAllDetector:
     def __init__(
         self,
@@ -131,10 +178,6 @@ class StopAllDetector:
         return index, self.times[index], event
 
     @staticmethod
-    def _e_key(item: object) -> tuple[str, int]:
-        return str(item.family), int(item.number)
-
-    @staticmethod
     def _dominates_e(new: tuple[str, int], old: tuple[str, int]) -> bool:
         new_family, new_number = new
         old_family, old_number = old
@@ -143,20 +186,6 @@ class StopAllDetector:
         # Red is always the dominant E family. A higher-numbered Blue E must
         # not separate or replace an active Red group.
         return new_family == "red" and old_family == "blue"
-
-    @classmethod
-    def _sequence_priority(cls, kind: str, family: str) -> int:
-        return sequence_priority(kind, family)
-
-    @classmethod
-    def _active_sequence_priority(
-        cls, s_key: str | None, e_key: tuple[str, int] | None,
-    ) -> int:
-        if e_key is not None:
-            return cls._sequence_priority("e", e_key[0])
-        if s_key is not None:
-            return cls._sequence_priority("s", s_key)
-        return 0
 
     def _stopall_from_e(
         self,
@@ -231,18 +260,9 @@ class StopAllDetector:
         behavior_key: str,
         behavior_count: int,
         underlying_e_key: tuple[str, int] | None,
+        gate_event: datetime,
     ) -> StopAll:
-        """Promote the accepted opposite-color S into a fresh StopAll1.
-
-        This is the direction-invariant family reversal gate.  In both
-        Bullish and Bearish calculations, only an accepted native Mode-B S Red
-        is promoted after two accepted occurrences of the same Blue behavior
-        group since the latest accepted Red or StopAll boundary.  The repeated
-        group need not remain the current dominant owner.  Directional mirroring is handled
-        by strict stop/reaction geometry; Red/Blue family
-        labels themselves are invariant.  Type-3 S Blue has no formation
-        Order, so StopAll Order provenance remains optional.
-        """
+        """Materialize StopAll from an accepted S Red and eligible Blue owner."""
         return StopAll(
             direction=self.direction,
             number=1,
@@ -253,7 +273,7 @@ class StopAllDetector:
             decision_time=item.decision_time,
             decision_event_time=item.decision_event_time,
             gate_type="opposite-s-group-stop",
-            gate_event_time=item.decision_event_time,
+            gate_event_time=gate_event,
             stopped_behavior_type=behavior_type,
             stopped_behavior_key=behavior_key,
             stopped_behavior_count=behavior_count,
@@ -321,149 +341,124 @@ class StopAllDetector:
             donor_price=as_decimal(item.price),
         )
 
-    @staticmethod
-    def _blue_repeat_key(kind: str, number: int | None = None) -> tuple[str, int | None]:
-        """Return the pending-reversal exact Blue behavior-group key.
-
-        S Blue is one group regardless of its internal subtype.  Each E number
-        is a separate group: E1 Blue, E2 Blue, E5 Blue, ... .  Counts are
-        accepted-occurrence counts since the most recent Red S/Red E/StopAll,
-        not counts of dominant-owner transitions.
-        """
-        normalized = str(kind).upper()
-        if normalized == "S":
-            return ("S", None)
-        if normalized != "E" or number is None:
-            raise ValueError("Blue repeat key must be S or numbered E.")
-        return ("E", int(number))
-
-    @staticmethod
-    def _record_blue_repeat(
-        counts: dict[tuple[str, int | None], int],
-        latest: dict[tuple[str, int | None], object],
-        key: tuple[str, int | None],
-        item: object,
-    ) -> None:
-        counts[key] = counts.get(key, 0) + 1
-        latest[key] = item
-
-    def _opposite_s_stopall_gate(
-        self,
-        s_item: object,
-        blue_repeat_counts: dict[tuple[str, int | None], int],
-        blue_repeat_latest: dict[tuple[str, int | None], object],
-    ) -> tuple[str, str, int, tuple[str, int] | None] | None:
-        """Return Blue-repeat metadata when accepted S Red must become StopAll.
-
-        Accepted Blue occurrences accumulate per exact S/E group until the
-        first accepted Red S, accepted Red E, or hard StopAll boundary.  A Red
-        behavior resolves the prior Blue reversal opportunity; a later S Red
-        cannot consume its stale evidence.  The incoming S Red must have a
-        native Mode-B formation Order; different numbered E groups never add.
-        E-driven StopAll counters/priority are independent of this reversal
-        evidence and retain their existing semantics.
-        """
-        if str(getattr(s_item, "color", "")).lower() != "red":
-            return None
-        # An initial native Mode-A Order opens an independent A→S Red branch;
-        # it cannot consume old Blue-repeat evidence to promote that S to
-        # StopAll. A continued Mode-B Order may own the reversal gate in the
-        # existing hard lifecycle, in either market direction.
-        if str(getattr(s_item, "order_mode", "")).upper() != "B":
-            return None
-
-        qualified = [
-            (key, count, blue_repeat_latest[key])
-            for key, count in blue_repeat_counts.items()
-            if count >= 2 and key in blue_repeat_latest
-        ]
-        if not qualified:
-            return None
-
-        key, count, _ = max(
-            qualified,
-            key=lambda entry: (
-                getattr(entry[2], "source_time"),
-                int(getattr(entry[2], "source_index", -1)),
-                1 if entry[0][0] == "E" else 0,
-                -1 if entry[0][1] is None else int(entry[0][1]),
-            ),
-        )
-        if key[0] == "S":
-            return ("S", "S blue", count, None)
-        e_number = int(key[1])
-        return ("E", f"E{e_number} blue", count, ("blue", e_number))
-
     def detect(self) -> list[StopAll]:
         s_events = sorted(
             self.s_zones, key=lambda item: (item.source_time, item.source_index)
         )
         s_position = 0
-        s_key: str | None = None
-        s_count = 0
-        e_key: tuple[str, int] | None = None
-        e_count = 0
-        dominant_s_item: object | None = None
-        dominant_e_item: object | None = None
+        owner: _DominantBehavior | None = None
+        # A completed stop is frozen historical evidence awaiting an existing
+        # S-Red Mode-B or E donor. It cannot arm a displaced behavior again.
+        pending_stop: tuple[_DominantBehavior, datetime] | None = None
         active: list[StopAll] = []
         output: list[StopAll] = []
-        blue_repeat_counts: dict[tuple[str, int | None], int] = {}
-        blue_repeat_latest: dict[tuple[str, int | None], object] = {}
 
-        def reset_cycle_blue_repeats() -> None:
-            blue_repeat_counts.clear()
-            blue_repeat_latest.clear()
+        def armed_stop_before(
+            boundary: datetime, donor_e: object | None = None,
+        ) -> datetime | None:
+            if owner is None or not owner.armed:
+                return None
+            stop = self._strict_stop(
+                owner.latest.decision_event_time, as_decimal(owner.latest.price)
+            )
+            if stop is None:
+                return None
+            if stop[2] < boundary:
+                return stop[2]
+            if donor_e is None or stop[2] > donor_e.decision_event_time:
+                return None
+            # An independently accepted E can donate its physical source when
+            # its extreme strictly stops the armed owner *inside that source
+            # candle*.  Its earlier source timestamp is only a bucket label;
+            # the authoritative lower-timeframe stop must be inside the bucket
+            # and no later than E's decision event.  This is independent of
+            # the E parent: its parent may predate the dominant owner.
+            source_index = int(donor_e.source_index)
+            if (
+                self.chronology.main_index(stop[2], clamp=True) == source_index
+                and donor_e.source_time <= stop[2]
+                and stop[2] < donor_e.source_time + self.chronology.timeframe
+                and (
+                    as_decimal(donor_e.price) < as_decimal(owner.latest.price)
+                    if self.direction == "bullish"
+                    else as_decimal(donor_e.price) > as_decimal(owner.latest.price)
+                )
+            ):
+                return stop[2]
+            # E source geometry is retrospective and may use the main candle
+            # containing its own parent's strict stop. Match that physical
+            # parent exactly before allowing a stop at/after E source time.
+            parent_index = getattr(donor_e, "parent_source_index", None)
+            parent_price = getattr(donor_e, "parent_price", None)
+            if (
+                str(getattr(donor_e, "parent_type", "")).upper() == owner.kind
+                and parent_index is not None
+                and int(parent_index) == int(owner.latest.source_index)
+                and getattr(donor_e, "parent_source_time", None)
+                == owner.latest.source_time
+                and parent_price is not None
+                and as_decimal(parent_price) == as_decimal(owner.latest.price)
+                and getattr(donor_e, "parent_stop_event_time", None) == stop[2]
+            ):
+                return stop[2]
+            return None
+
+        def accept(kind: str, family: str, number: int | None, item: object) -> None:
+            nonlocal owner
+            owner = advance_dominant_behavior(owner, kind, family, number, item)
 
         def process_s_event(s_item: object) -> None:
-            nonlocal s_key, s_count, e_key, e_count, dominant_s_item, dominant_e_item, active
-
-            reversal = self._opposite_s_stopall_gate(
-                s_item, blue_repeat_counts, blue_repeat_latest
-            )
-            if reversal is not None:
-                behavior_type, behavior_key, behavior_count, underlying_e_key = reversal
+            nonlocal owner, pending_stop, active
+            color = str(s_item.color).lower()
+            # An armed exact Blue owner reverses directly on the first
+            # accepted S Red. Neither a prior price stop nor Order Mode B
+            # is required; S decision chronology, not retrospective source,
+            # determines whether the second Blue had already confirmed.
+            if (
+                color == "red"
+                and owner is not None
+                and owner.family == "blue"
+                and owner.armed
+                and owner.latest.decision_event_time < s_item.decision_event_time
+            ):
                 zone = self._stopall_from_s(
-                    s_item,
-                    behavior_type,
-                    behavior_key,
-                    behavior_count,
-                    underlying_e_key,
+                    s_item, owner.kind, owner.key, owner.count,
+                    (owner.family, int(owner.number))
+                    if owner.kind == "E" else None,
+                    s_item.decision_event_time,
                 )
                 output.append(zone)
-                # The S-reversal StopAll starts a fresh lifecycle. Historical
-                # StopAll objects remain in output, but no pre-boundary active
-                # StopAll may influence numbering or ownership in the new cycle.
                 active = [zone]
-                s_key = e_key = None
-                s_count = e_count = 0
-                dominant_s_item = None
-                dominant_e_item = None
-                reset_cycle_blue_repeats()
+                owner = None
+                pending_stop = None
                 return
 
-            color = str(s_item.color)
-            # An accepted Red S resolves the pending Blue-repeat reversal
-            # opportunity even if its native Order mode cannot promote it.
-            # Later Red S may use only Blue occurrences accepted after it.
-            if color == "red":
-                reset_cycle_blue_repeats()
-            if color == "blue":
-                self._record_blue_repeat(
-                    blue_repeat_counts,
-                    blue_repeat_latest,
-                    self._blue_repeat_key("S"),
-                    s_item,
+            gate_event = armed_stop_before(s_item.source_time)
+            completed = pending_stop or (
+                (owner, gate_event) if owner is not None and gate_event is not None
+                else None
+            )
+            if (
+                color == "red" and completed is not None
+                and completed[0].family == "blue"
+                and str(getattr(s_item, "order_mode", "")).upper() == "B"
+            ):
+                stopped_owner, stopped_at = completed
+                zone = self._stopall_from_s(
+                    s_item, stopped_owner.kind, stopped_owner.key,
+                    stopped_owner.count,
+                    (stopped_owner.family, int(stopped_owner.number))
+                    if stopped_owner.kind == "E" else None,
+                    stopped_at,
                 )
-            incoming_priority = self._sequence_priority("s", color)
-            active_priority = self._active_sequence_priority(s_key, e_key)
-            if e_key is None and s_key == color:
-                s_count += 1
-                dominant_s_item = s_item
-            elif incoming_priority > active_priority:
-                s_key, s_count = color, 1
-                dominant_s_item = s_item
-                e_key, e_count = None, 0
-                dominant_e_item = None
+                output.append(zone)
+                active = [zone]
+                owner = None
+                pending_stop = None
+                return
+            if pending_stop is None and completed is not None:
+                pending_stop = completed
+            accept("S", color, None, s_item)
 
         for e_item in self.e_zones:
             while s_position < len(s_events) and (
@@ -489,96 +484,28 @@ class StopAllDetector:
                 active = [item for item in active if id(item) not in stopped_ids]
                 output.append(zone)
                 active.append(zone)
-                s_key = e_key = None
-                s_count = e_count = 0
-                dominant_s_item = None
-                dominant_e_item = None
-                reset_cycle_blue_repeats()
+                owner = None
+                pending_stop = None
                 continue
 
-            new_key = self._e_key(e_item)
-            # Once a dominant group has stopped, this E supplies the winning
-            # order only. Its family/number need not match the stopped group.
-            qualifies_e = e_key is not None and e_count >= 2
-            qualifies_s = (
-                e_key is None
-                and s_key is not None
-                and s_count >= 2
+            gate_event = armed_stop_before(e_item.source_time, e_item)
+            completed = pending_stop or (
+                (owner, gate_event) if owner is not None and gate_event is not None
+                else None
             )
-            if qualifies_e or qualifies_s:
-                parent = max(
-                    (
-                        item for item in (
-                            self.e_zones if qualifies_e else self.s_zones
-                        )
-                        if item.source_time < e_item.source_time
-                        and (
-                            self._e_key(item) == e_key if qualifies_e
-                            else str(item.color) == s_key
-                        )
-                    ),
-                    key=lambda item: item.source_time,
+            if completed is not None:
+                stopped_owner, stopped_at = completed
+                zone = self._stopall_from_e(
+                    e_item, 1, "sequence-group-stop", stopped_at,
+                    stopped_owner.kind, stopped_owner.key, stopped_owner.count,
                 )
-                gate = self._strict_stop(
-                    parent.decision_event_time, as_decimal(parent.price)
-                )
-                if gate is not None and gate[2] <= e_decision:
-                    zone = self._stopall_from_e(
-                        e_item, 1, "sequence-group-stop", gate[2],
-                        "E" if qualifies_e else "S",
-                        (
-                            f"E{e_key[1]} {e_key[0]}" if qualifies_e
-                            else f"S {s_key}"
-                        ),
-                        e_count if qualifies_e else s_count,
-                    )
-                    output.append(zone)
-                    active.append(zone)
-                    s_key = e_key = None
-                    s_count = e_count = 0
-                    dominant_s_item = None
-                    dominant_e_item = None
-                    reset_cycle_blue_repeats()
-                    continue
+                output.append(zone)
+                active.append(zone)
+                owner = None
+                pending_stop = None
+                continue
 
-            # Red E resolves earlier Blue-repeat evidence. It may be a
-            # higher-stage replacement of Blue, but cannot leave a stale
-            # Blue reversal armed for a later unrelated S Red. Do not reset
-            # dominant sequence state: E-driven StopAll gates own that state.
-            if new_key[0] == "red":
-                reset_cycle_blue_repeats()
-            # This E remains accepted after independent StopAll checks.
-            if new_key[0] == "blue":
-                self._record_blue_repeat(
-                    blue_repeat_counts,
-                    blue_repeat_latest,
-                    self._blue_repeat_key("E", new_key[1]),
-                    e_item,
-                )
-
-            # Stage ownership is A -> S -> E -> StopAll. When the first E
-            # replaces an S owner, E starts a new dominant-stage occurrence;
-            # the superseded S is not counted again in current-owner sequence
-            # state. Pending Blue-repeat counting is independent above.
-            if e_key == new_key:
-                e_count += 1
-                dominant_e_item = e_item
-            else:
-                incoming_priority = self._sequence_priority("e", new_key[0])
-                active_priority = self._active_sequence_priority(s_key, e_key)
-                replaces_active = incoming_priority > active_priority
-                advances_e = (
-                    e_key is not None
-                    and incoming_priority == active_priority
-                    and self._dominates_e(new_key, e_key)
-                )
-                if replaces_active or advances_e:
-                    e_key, e_count = new_key, 1
-                    dominant_e_item = e_item
-                    s_key, s_count = None, 0
-                    dominant_s_item = None
-            # A lower-priority Sequence event remains valid output but cannot
-            # replace or separate the active dominant group.
+            accept("E", str(e_item.family).lower(), int(e_item.number), e_item)
 
         # The reversal rule is driven by accepted S itself, so it must still
         # fire when the triggering S occurs after the final accepted E.
@@ -623,6 +550,10 @@ def resolve_order_context(
     candles: Sequence[object],
     direction: str,
     stop_finder,
+    *,
+    accepted_e_stop_events: set[datetime] | None = None,
+    opposite_confirmation_finder=None,
+    e_parent_order_first_exceptions_out: set[tuple[datetime, datetime]] | None = None,
 ) -> tuple[dict, set[datetime]]:
     """Resolve accepted stopped-A Orders against provisional Order blocks.
 
@@ -662,6 +593,39 @@ def resolve_order_context(
         for value in accepted_initial_first_times
     }
     blocked_order_first_times.difference_update(accepted_initial_first_times)
+
+    # This is NOT a global unblock.  Preserve the invalid-A and inherited-S
+    # First vetoes for every A/S order route.  Only the accepted E parent whose
+    # exact strict stop also ends that invalid A may use a canonical opposite
+    # Reaction started in the stop-owning main candle and confirmed afterward.
+    # The exception is keyed by both exact E stop event and physical First.
+    exceptions: set[tuple[datetime, datetime]] = set()
+    if accepted_e_stop_events and opposite_confirmation_finder is not None:
+        candle_times = [getattr(item, "timestamp") for item in candles]
+        reactions_by_first_index: dict[int, list[object]] = {}
+        for reaction in opposite_reactions:
+            reactions_by_first_index.setdefault(
+                int(getattr(reaction, "first_idx")), []
+            ).append(reaction)
+        for invalid_a in invalid_a_zones:
+            if getattr(invalid_a, "source_time") not in pending_s_a_sources:
+                continue
+            stop = stop_finder(invalid_a)
+            if stop is None or stop[2] not in accepted_e_stop_events:
+                continue
+            exact_stop = stop[2]
+            stop_candle = bisect_right(candle_times, exact_stop) - 1
+            if stop_candle < 0:
+                continue
+            for reaction in reactions_by_first_index.get(stop_candle, ()):
+                first_time = candle_times[stop_candle]
+                if (first_time in blocked_order_first_times
+                        and first_time not in inherited_blocked_first_times
+                        and getattr(invalid_a, "source_time") <= first_time < exact_stop
+                        and opposite_confirmation_finder(reaction) > exact_stop):
+                    exceptions.add((exact_stop, first_time))
+    if e_parent_order_first_exceptions_out is not None:
+        e_parent_order_first_exceptions_out.update(exceptions)
     return accepted_orders, blocked_order_first_times
 
 
@@ -673,9 +637,10 @@ def visible_a_zones_after_s_stops(a_zones, s_zones, candles):
     """
     times = [getattr(item, "timestamp") for item in candles]
     stop_indices = {
-        bisect_left(times, getattr(item, "decision_event_time"))
+        bisect_right(times, getattr(item, "decision_event_time")) - 1
         for item in s_zones
     }
+    stop_indices.discard(-1)
     return [
         item for item in a_zones
         if int(getattr(item, "source_index")) not in stop_indices
@@ -1173,6 +1138,20 @@ def visible_s_zones_after_module_resets(
             int(getattr(item, "source_index", -1)),
         ),
     )
+    # Immutable per invocation. Building this inside the S loop made the
+    # visibility pass O(S*C) allocations on large RAW histories.
+    candle_times = (
+        [getattr(candle, "timestamp") for candle in candles]
+        if candles is not None else None
+    )
+    stop_event_cache: dict[int, datetime | None] = {}
+
+    def cached_stop_event(module: object) -> datetime | None:
+        key = id(module)
+        if key not in stop_event_cache:
+            stop_event_cache[key] = module_stop_event(module, stop_event_finder)
+        return stop_event_cache[key]
+
     visible = []
     consumed = set()
     for s_zone in sorted(
@@ -1221,7 +1200,7 @@ def visible_s_zones_after_module_resets(
             stopped_prior = [
                 module for module in prior_modules
                 if (
-                    module_stop := module_stop_event(module, stop_event_finder)
+                    module_stop := cached_stop_event(module)
                 ) is not None
                 and module_stop <= ownership_event
             ]
@@ -1235,7 +1214,7 @@ def visible_s_zones_after_module_resets(
                     module for module in stopped_prior
                     if not hasattr(module, "a_source_time")
                 ]
-                if candles is not None and stopped_external:
+                if candle_times is not None and stopped_external:
                     latest_external = max(
                         stopped_external,
                         key=lambda item: (
@@ -1244,13 +1223,8 @@ def visible_s_zones_after_module_resets(
                         ),
                     )
                     if module_priority(s_zone) < module_priority(latest_external):
-                        larger_stop = module_stop_event(
-                            latest_external, stop_event_finder
-                        )
+                        larger_stop = cached_stop_event(latest_external)
                         if larger_stop is not None:
-                            candle_times = [
-                                getattr(candle, "timestamp") for candle in candles
-                            ]
                             stop_index = bisect_right(candle_times, larger_stop) - 1
                             source_index = int(getattr(s_zone, "source_index"))
                             if (
@@ -1275,7 +1249,7 @@ def visible_s_zones_after_module_resets(
                 dominant = max(
                     stopped_prior,
                     key=lambda item: (
-                        module_stop_event(item, stop_event_finder),
+                        cached_stop_event(item),
                         module_priority(item),
                         int(getattr(item, "number", 0)),
                         getattr(item, "source_time"),
@@ -1310,7 +1284,7 @@ def visible_s_zones_after_module_resets(
                 # highest-priority object determines the next module number.
                 dominant_priority = module_priority(dominant)
                 for module in stopped_prior:
-                    module_stop = module_stop_event(module, stop_event_finder)
+                    module_stop = cached_stop_event(module)
                     if (
                         module_priority(module) <= dominant_priority
                     ):

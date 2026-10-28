@@ -6,16 +6,16 @@ authority: "executable"
 title: "Accepted E, S and physical Order reconciliation"
 version: "current"
 related_entities: ["algorithm.e", "algorithm.orderaudit", "algorithm.s", "algorithm.stopall"]
-source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2119", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2189", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2510", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1019", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1041", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L964", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
+source_reference: ["06_SOURCE/Code/engine/bridge/trading_pipeline.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2149", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2226", "06_SOURCE/Code/engine/bridge/trading_pipeline.py#L2591", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L984", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L1006", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py#L929", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
 implemented_by: ["source.e_zone_detector", "source.s_zone_detector", "source.order_audit_engine", "source.lifecycle_engine", "source.trading_pipeline"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L269"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L287", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L287"]
 mirror_links: ["mirror.contract"]
 name: "Reconciliation"
 aliases: ["Accepted-state reconciliation"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Accepted E, S and physical Order reconciliation
 
 ## Bullish
@@ -34,7 +34,7 @@ At one physical E source, Red E outranks Blue E; within the same family higher n
 
 #### 12.5 Hard StopAll boundary
 
-StopAll is a hard historical boundary. Once decided from already-reconciled chronology, future state cannot retroactively remove or move that prefix boundary. Creation resets active sequence keys/counts, dominant owners and pending Blue-repeat evidence. Historical StopAll objects remain output; only current-cycle ownership resets. E receives the accepted StopAll source map through an atomic sequence-reset publication: the sorted boundary index is refreshed and candidate/carried context caches are invalidated once, while immutable physical crossing/stop caches and historical accepted causes remain retained. For downstream audit semantics, but StopAll reconciliation does not rebuild past E from future reset state.
+StopAll is a hard historical boundary. Once decided from already-reconciled chronology, future state cannot retroactively remove or move that prefix boundary. Creation resets the single exact dominant owner, its count and pending completed stop. Historical StopAll objects remain output; only current-cycle ownership resets. E receives the accepted StopAll source map through an atomic sequence-reset publication: the sorted boundary index is refreshed and candidate/carried context caches are invalidated once, while immutable physical crossing/stop caches and historical accepted causes remain retained. For downstream audit semantics, but StopAll reconciliation does not rebuild past E from future reset state.
 
 ## Bearish
 
@@ -52,7 +52,7 @@ At one physical E source, Red E outranks Blue E; within the same family higher n
 
 #### 12.5 Hard StopAll boundary
 
-StopAll is a hard historical boundary. Once decided from already-reconciled chronology, future state cannot retroactively remove or move that prefix boundary. Creation resets active sequence keys/counts, dominant owners and pending Blue-repeat evidence. Historical StopAll objects remain output; only current-cycle ownership resets. E receives the accepted StopAll source map through an atomic sequence-reset publication: the sorted boundary index is refreshed and candidate/carried context caches are invalidated once, while immutable physical crossing/stop caches and historical accepted causes remain retained. For downstream audit semantics, but StopAll reconciliation does not rebuild past E from future reset state.
+StopAll is a hard historical boundary. Once decided from already-reconciled chronology, future state cannot retroactively remove or move that prefix boundary. Creation resets the single exact dominant owner, its count and pending completed stop. Historical StopAll objects remain output; only current-cycle ownership resets. E receives the accepted StopAll source map through an atomic sequence-reset publication: the sorted boundary index is refreshed and candidate/carried context caches are invalidated once, while immutable physical crossing/stop caches and historical accepted causes remain retained. For downstream audit semantics, but StopAll reconciliation does not rebuild past E from future reset state.
 
 ## Source-level contract
 
@@ -60,7 +60,7 @@ Bridge calculates initial S/E,filters S eligibility,resolves A-cycle invalidity/
 
 Same-source E chooses Red,then greater same-family number,then earlier accepted object/provenance. Stopped E leaves active but remains history. Independent accepted-S E1 restoration occurs after hard StopAll with audit synchronization retaining canonical history Orders. Same-source E prevents competing provisional S root.
 
-Order_B feedback compares the complete exact reset-leg identity after each dependent calculation pass, with at most eight passes. Every feedback pass invokes a fresh StopAll reconciliation over that pass's accepted S/E state for accepted reset-leg discovery; final visibility invokes reconciliation again after convergence. Each **reconciliation call** makes one source-order StopAll pass and publishes its sequence-reset map without rebuilding that call's E prefix from future reset state. Reaction, Blue, A and initial S remain shared across feedback passes. Repeated changed cause identity, exhaustion of eight passes or a final cause identity differing from the converged detector identity raises an error.
+Order_B feedback compares the complete exact reset-leg identity after each dependent calculation pass, with at most eight passes. Every lifecycle-enabled feedback pass invokes a fresh StopAll reconciliation over that pass's accepted S/E state for accepted reset-leg discovery; final visibility invokes reconciliation again after convergence. Each **reconciliation call** makes one source-order StopAll pass and publishes its sequence-reset map without rebuilding that call's E prefix from future reset state. Reaction, Blue, A and initial S remain shared across feedback passes. Repeated changed cause identity, exhaustion of eight passes or a final cause identity differing from the converged detector identity raises an error.
 
 
 ## Consumed S Close gates and selected owner
@@ -70,3 +70,7 @@ Consumed-S continuation is evaluated separately from public S visibility. A cand
 The latest accepted E source strictly before A source marks current lineage. That E can qualify directly. An older E can qualify only when `(priority, number)` is strictly larger than the latest source's rank, its exact stop is strictly later than the latest source's decision, and, when the latest source also qualifies, its stop main index is no earlier. Among the remaining owners, choose greatest `(stopMainIndex, priority, number, sourceTime, sourceIndex)`. For each owner retain the earliest suppressed S by `(sourceTime, sourceIndex)`.
 
 The bridge excludes S descendants rejected specifically by S-stage A ownership before this continuation selection. It resolves the chosen owner against current E physical source identity, obtains the native continuation chain, replaces only descendants later than that earlier chain, then rebuilds the accepted OrderAudit ledger from the actual final E list and supplemental consumed S evidence. Public-label suppression and explicit calculation invalidity therefore remain different states.
+
+## Current lifecycle and ledger corrections
+
+The StopAll owner/count/direct-S/causal-E rules are maintained in algorithm.stopall. The old independent Blue repetition ledger is superseded. Lifecycle enablement is explicit and identical in feedback/final visibility. Before final hard boundaries, the bridge supplements only absent accepted independent S-root E physical sources; an existing source keeps its prior candidate and Order provenance. Final root visibility restoration and audit synchronization remain afterward. Invalid S continuation/restoration requires an independent accepted physical creating cause. Ledger restoration includes its chronological confirmation-index tuple.

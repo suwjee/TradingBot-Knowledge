@@ -6,61 +6,66 @@ authority: "executable"
 title: "Order_A canonical accepted parent-stop creation"
 version: "current"
 related_entities: ["algorithm.order", "algorithm.orderaudit"]
-source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1313", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1758", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1892", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
+source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1316", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1768", "06_SOURCE/Code/engine/pipeline/reaction_engine.py#L1917", "06_SOURCE/Code/engine/pipeline/s_zone_detector.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-sensitive geometry"
 implemented_by: ["source.order_audit_engine", "source.reaction_engine", "source.s_zone_detector", "source.e_zone_detector", "source.core_utils"]
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L203", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L203"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L299", "06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L299"]
 mirror_links: ["mirror.contract"]
 name: "Order_A"
 aliases: ["Order A", "Parent-stop Order"]
+last_modified_at: "2026-10-27T20:18:37+03:30"
 ---
-
 # Order_A canonical accepted parent-stop creation
 
 ## Bullish
 
-#### 9.1 Creation gate
+### 9.1 Creation gate
 
-Order_A is the physical `parent-stop` route opened by an accepted strict behavior stop. A bounded/direct geometry candidate may create Order_A **only** when its `(FirstIndex, BreakIndex)` exists in the canonical opposite-direction (Bearish) Reaction stream. Geometry absent from that canonical registry remains internal evidence and cannot enter OrderAudit as Order_A or receive a synthetic reaction number.
+Order_A is the physical `parent-stop` route opened by an accepted strict behavior stop. Ordinarily a bounded/direct Order candidate must match a canonical opposite-direction (Bearish) Reaction identity `(FirstIndex, BreakIndex)`. **Approved 5.4.30 exception:** after an accepted A stop, independently confirmed complete physical opposite Order geometry may enter S OrderAudit even when it is absent from the public opposite Reaction stream. It receives `reactionNumber=0`, not a synthetic canonical Reaction, and retains its real physical First/Break identity and exact confirmation. An incomplete, unconfirmed, or otherwise invalid geometry cannot enter the accepted audit.
 
-After a stopped A, the first canonical opposite Order is immutable for that A. For S/E parent stops, direct bounded geometry may be evaluated, but canonical membership remains mandatory. One exact parent-stop cause may own at most one physical Order_A; when multiple candidates compete, earliest canonical confirmation, then FirstIndex, then BreakIndex owns the cause.
+After a stopped A, the first eligible physically confirmed opposite Order is immutable for that A. For S/E parent stops, direct bounded geometry may be evaluated subject to the existing canonical acceptance contract. One exact parent-stop cause may own at most one physical Order_A; when multiple candidates compete, earliest canonical confirmation, then FirstIndex, then BreakIndex owns the cause.
 
-#### 9.2 Canonical stop
+For an A parent, “accepted” means the A survives S ownership and current invalid-A lifecycle filtering into the finalized A behavior set. A provisional/detected A that is S-owned, consumed, filtered or invalid cannot open an A-owned Order_A and cannot be retained as an A `parent-stop` cause in the final OrderAudit. Other independently valid creation causes on the same physical Order identity remain valid.
+
+A shared accepted physical Order stop that changes S Blue to S Red must preserve its opposite `order_direction`, identity, First/Break, confirmation, and exact stop provenance.
+
+### 9.2 Canonical stop
 
 Order stop provenance comes from `MarketChronology.canonical_order_stop`. For Mode A it uses the canonical leg-head/floor context required by that opposite Reaction; for Mode B it uses the previous healthy opposite Reaction's outer edge under the established chronology. The Order's exact strict stop uses the **opposite direction** predicate; for this Bullish calculation that is `High > OrderStop`. Equality does not stop an Order.
 
-#### 9.3 Parent validity and retention
+### 9.3 Parent validity and retention
 
-An S explicitly identified in invalid_s_root_identities is calculation evidence, not an accepted S parent, and cannot create or retain a `parent-stop` Order_A cause. Once a valid canonical Order_A enters the identity-keyed ledger, later E/lifecycle reconciliation may change who uses it but cannot delete that physical identity/provenance. A shared Order_B identity may add reset-leg provenance without erasing valid parent-stop provenance.
+An S explicitly identified in invalid_s_root_identities is calculation evidence, not an accepted S parent, and cannot create or retain a `parent-stop` Order_A cause. An E derived from that S may be accepted only when its chosen physical Order has a valid creating cause independent of the invalid S. This applies to ordinary chain reconciliation, consumed-S continuation, and independent-root restoration; provisional geometry alone cannot publish an E or StopAll. Once a valid canonical Order_A enters the identity-keyed ledger, later E/lifecycle reconciliation may change who uses it but cannot delete that physical identity/provenance. A shared Order_B identity may add reset-leg provenance without erasing valid parent-stop provenance.
+
+The same acceptance rule applies during every OrderAudit rebuild/reconciliation pass: nonaccepted A causes are removed before a physical identity is retained on A provenance. This prevents a provisional A cause from being reintroduced after downstream E reconciliation while preserving independent valid S/E or reset-leg provenance for the same physical Order.
 
 ## Bearish
 
-#### 9.1 Creation gate
+### 9.1 Creation gate
 
-Order_A is the physical `parent-stop` route opened by an accepted strict behavior stop. A bounded/direct geometry candidate may create Order_A **only** when its `(FirstIndex, BreakIndex)` exists in the canonical opposite-direction (Bullish) Reaction stream. Geometry absent from that canonical registry remains internal evidence and cannot enter OrderAudit as Order_A or receive a synthetic reaction number.
+Order_A is the physical `parent-stop` route opened by an accepted strict behavior stop. Ordinarily a bounded/direct Order candidate must match a canonical opposite-direction (Bullish) Reaction identity `(FirstIndex, BreakIndex)`. **Approved 5.4.30 exception:** after an accepted A stop, independently confirmed complete physical opposite Order geometry may enter S OrderAudit even when it is absent from the public opposite Reaction stream. It receives `reactionNumber=0`, not a synthetic canonical Reaction, and retains its real physical First/Break identity and exact confirmation. An incomplete, unconfirmed, or otherwise invalid geometry cannot enter the accepted audit.
 
-After a stopped A, the first canonical opposite Order is immutable for that A. For S/E parent stops, direct bounded geometry may be evaluated, but canonical membership remains mandatory. One exact parent-stop cause may own at most one physical Order_A; when multiple candidates compete, earliest canonical confirmation, then FirstIndex, then BreakIndex owns the cause.
+After a stopped A, the first eligible physically confirmed opposite Order is immutable for that A. For S/E parent stops, direct bounded geometry may be evaluated subject to the existing canonical acceptance contract. One exact parent-stop cause may own at most one physical Order_A; when multiple candidates compete, earliest canonical confirmation, then FirstIndex, then BreakIndex owns the cause.
 
-#### 9.2 Canonical stop
+For an A parent, “accepted” means the A survives S ownership and current invalid-A lifecycle filtering into the finalized A behavior set. A provisional/detected A that is S-owned, consumed, filtered or invalid cannot open an A-owned Order_A and cannot be retained as an A `parent-stop` cause in the final OrderAudit. Other independently valid creation causes on the same physical Order identity remain valid.
+
+A shared accepted physical Order stop that changes S Blue to S Red must preserve its opposite `order_direction`, identity, First/Break, confirmation, and exact stop provenance.
+
+### 9.2 Canonical stop
 
 Order stop provenance comes from `MarketChronology.canonical_order_stop`. For Mode A it uses the canonical leg-head/floor context required by that opposite Reaction; for Mode B it uses the previous healthy opposite Reaction's outer edge under the established chronology. The Order's exact strict stop uses the **opposite direction** predicate; for this Bearish calculation that is `Low < OrderStop`. Equality does not stop an Order.
 
-#### 9.3 Parent validity and retention
+### 9.3 Parent validity and retention
 
-An S explicitly identified in invalid_s_root_identities is calculation evidence, not an accepted S parent, and cannot create or retain a `parent-stop` Order_A cause. Once a valid canonical Order_A enters the identity-keyed ledger, later E/lifecycle reconciliation may change who uses it but cannot delete that physical identity/provenance. A shared Order_B identity may add reset-leg provenance without erasing valid parent-stop provenance.
+An S explicitly identified in invalid_s_root_identities is calculation evidence, not an accepted S parent, and cannot create or retain a `parent-stop` Order_A cause. An E derived from that S may be accepted only when its chosen physical Order has a valid creating cause independent of the invalid S. This applies to ordinary chain reconciliation, consumed-S continuation, and independent-root restoration; provisional geometry alone cannot publish an E or StopAll. Once a valid canonical Order_A enters the identity-keyed ledger, later E/lifecycle reconciliation may change who uses it but cannot delete that physical identity/provenance. A shared Order_B identity may add reset-leg provenance without erasing valid parent-stop provenance.
 
-## Source-level contract
+The same acceptance rule applies during every OrderAudit rebuild/reconciliation pass: nonaccepted A causes are removed before a physical identity is retained on A provenance. This prevents a provisional A cause from being reintroduced after downstream E reconciliation while preserving independent valid S/E or reset-leg provenance for the same physical Order.
 
-Mode-A physical Bearish Order stop scans maximum High from anchor or First-1 through Break inclusive and extends backward over contiguous GREEN; physical Bullish mirrors minimum Low and RED. Strict improvement keeps earliest source. Mode B uses preceding healthy canonical BoxTop Bearish/BoxBottom Bullish; number <=1 raises.
+## Review scope
 
-S first physical Order confirms strictly after A stop and First index >= stop-main index. Bounded direct/trend-leg geometry must map to canonical identity,Reaction and number. Exact parent cause has one physical owner by confirmation,First,Break. Explicit invalid S has no parent-stop rights; accepted historical nonpublic provenance remains. accepted_audit_entry selects first accepted A cause for E without deleting complete cause list.
+These are current accepted Reference statements compared with the captured executable owners. They do not establish independent RAW correctness. The current source-scope exclusion applies to additional features present incidentally in exact snapshots.
 
-Publishing sequence_resets atomically copies its map, refreshes sorted reset times and clears dependent candidate/carried context caches once. Immutable physical stop/cross caches and historical accepted Order_A causes remain retained. The reset lookup window is (start,end]. Explicit invalid S identities are rejected at parent registration and reconstructed parent-stop cause retention; valid historical S and shared Order_B reset-leg provenance remain eligible.
+## Executable accepted-A gate
 
-
-## Continuous gate and bounded geometry selectors
-
-The overlapping direct-geometry helper selects the earliest confirming main candle. If multiple healthy candidates confirm in that main, current Source chooses the smallest First index. It does not compare their exact lower confirmation times for this tie. This geometry selection remains separate from downstream exact physical Order/cause ranking and canonical membership gates.
-
-Continuous Order gate geometry uses canonical context confirmed no later than the gate, with exact same-main confirmation eligibility. Without canonical history it chooses healthy bounded geometry and tags no-history. With an owner, strict outer-boundary restart races strict gate-boundary continuation from the exact gate; restart owns a true lower-position tie. Restart begins geometry after the decision main; continuation begins after the gate main. Existing anchor is preserved, with prior-Reset reconstruction only when absent. The separate bounded structural wrapper has a main-index/end cache and ignores its gate_event argument; it is not the continuous exact-gate selector. All returned geometry still requires canonical physical membership before Order_A acceptance.
+S detects physical A-stop candidates independently, then accepted_audit_entry/accepted_audit_entries remove A causes outside the calculation-eligible A set. The bridge reapplies this filter after S ownership, lifecycle invalidity and before final preparation. Every independent valid cause on the same physical identity survives. A complete post-stop independent geometry can receive reactionNumber=0 only for the accepted stopped-A Order_A route; this exception does not authorize geometry-only Order_B.

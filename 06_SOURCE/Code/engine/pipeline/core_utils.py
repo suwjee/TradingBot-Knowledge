@@ -23,7 +23,4 @@ def order_identity(first_index: object, break_index: object) -> OrderIdentity:
 
 def reaction_identity(reaction: object) -> OrderIdentity:
     """Return ``(FirstIndex, BreakIndex)`` for a Reaction-like object."""
-    return order_identity(
-        getattr(reaction, "first_idx"),
-        getattr(reaction, "break_idx"),
-    )
+    return int(reaction.first_idx), int(reaction.break_idx)

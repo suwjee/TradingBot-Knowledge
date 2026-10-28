@@ -9,11 +9,11 @@ related_entities: ["algorithm.orderaudit", "algorithm.reconciliation", "core.det
 source_reference: ["06_SOURCE/Code/engine/pipeline/core_utils.py", "06_SOURCE/Code/engine/pipeline/reaction_engine.py", "06_SOURCE/Code/engine/pipeline/order_audit_engine.py", "06_SOURCE/Code/engine/pipeline/e_zone_detector.py", "06_SOURCE/Code/engine/pipeline/lifecycle_engine.py", "06_SOURCE/Code/engine/bridge/trading_pipeline.py"]
 evidence_basis: "Current source and synchronized current references"
 direction_sensitivity: "direction-invariant or explicitly mixed"
-algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.19_EX1_Source_Synchronized.md#L49"]
+algorithm_reference: ["06_SOURCE/Code/engine/algorithms/TradingBot_Bullish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137", "06_SOURCE/Code/engine/algorithms/TradingBot_Bearish_Algorithm_Reference_V5.4.33_Source_Synchronized.md#L137"]
 name: "Identity"
 aliases: ["Physical identity"]
+last_modified_at: "2026-10-28T18:07:57+03:30"
 ---
-
 # Physical identity and provenance model
 
 ## Reaction and physical Order
@@ -29,3 +29,5 @@ E same-source reconciliation keys source_index/source_time. A/S invalid identity
 Order_B cause identity includes post-stop type/source/event,anchor type/source/extreme,aligned reset Reaction First/Break,Reset index/level/time,frozen boundary/source,strict break and physical opposite First/Break. Complete identity equality drives feedback convergence. Multiple reset causes may share one Order; cause identity is not duplicate physical identity.
 
 Physical identity and source joins remain invariant across mirror/projection. Row position,chart label,parent name or visible ordinal cannot substitute physical identity.
+
+The accepted stopped-A Order_A exception preserves real First/Break even when no public canonical opposite Reaction exists; reactionNumber=0 denotes that absence and never renumbers the canonical stream.

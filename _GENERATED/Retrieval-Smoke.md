@@ -1,20 +1,11 @@
-# Current Phase-1 actual MCP retrieval verification
+# Current retrieval validation
 
-Captured: 2026-09-29 12:52:09 +0330 (Asia/Tehran)
+Verified 2026-10-28T18:17:57+03:30 using installed Plugin 0.3.9 against the refreshed Vault.
 
-PASS: actual MCP SDK 2.2.0 stdio initialization negotiated protocol `2025-11-25` and the exact eight-tool surface. The comprehensive run completed 585 successful calls in 306.148 seconds; the final supplement completed 19 in 5.138 seconds. Total 604; both snapshots recorded zero Vault byte mutations. Every entity ID/canonical name, every alias and relation root was queried; local Source paths, Source IDs and both Reference routes were exercised. Expected structured ENTITY_NOT_FOUND for empty data/window stores and unknown entities, and PATH_OUTSIDE_ALLOWED_ROOT for traversal are successful negative checks. A separate three-test MCP suite exercises external Source mismatch rejection and all public request routes. This proves the subprocess protocol, not installation/connection into an existing Codex client session.
+Status: PASS for a freshly started installed MCP process. Doctor initialized the connection, listed and called all eight tools: search_knowledge, get_knowledge, trace_relations, get_dataset, get_raw_window, read_source_evidence, read_algorithm_reference_evidence and verify_vault. Dataset/window calls returned the expected ENTITY_NOT_FOUND for EMPTY_BY_DESIGN stores; the other tools succeeded.
 
-| Tool | Observed contract |
-| --- | --- |
-| get_knowledge | All 119 IDs/names; 30 aliases; full note byte identity and metadata |
-| search_knowledge | Every canonical name/alias; exact single-letter resolution |
-| trace_relations | All canonical roots/aliases; stable IDs and current neighbor provenance |
-| read_source_evidence | 12 nonempty Source paths and 12 Source IDs; registered Reference classification |
-| read_algorithm_reference_evidence | Both registered directional References, exact local/external digest |
-| get_dataset | Expected ENTITY_NOT_FOUND; EMPTY_BY_DESIGN |
-| get_raw_window | Expected ENTITY_NOT_FOUND; EMPTY_BY_DESIGN |
-| verify_vault | Knowledge verifier ok=true; no errors; full declared inventory |
+The 109-test full Plugin suite passed with one unavailable Windows symlink-privilege skip. It exercised current canonical Order metadata, alias/relation/source linkage, exact local References, configured external Engine cross-check, read-only public operations, fresh review-state/scope metadata, supported pinned text formats, malformed/tampered evidence and containment. LF/CRLF note handling now normalizes retrieved text only after physical hash and byte validation. Actual Windows junction tests passed.
 
-The one zero-byte engine package marker is checked by the baseline/manifest verifier; it has no valid excerpt line. MCP uses no RAW, trading fixture, synthetic market input or calculation. The complete transcript and final evidence-route supplement are retained as external JSON evidence.
+Additional fresh installed-MCP get_knowledge calls retrieved version.current=5.4.33, source.reference_consistency with REF-REACTION-SUCCESSOR and its warning, and workflow.project_release. All reported reviewed-scoped-with-disclosed-ambiguity. These facts do not resolve the narrative ambiguity or prove market correctness.
 
-No installed Codex cache or client connection is claimed; editable and official package stdio runtimes were verified.
+Host limitation: the existing chat's already-bound old 0.3.8 process still rejects CRLF and has not hot-reloaded. Its direct retrieval failure is not relabeled PASS. Start a new chat to load the installed 0.3.9 runtime and skill definitions. Installed-byte comparison (25 files), fresh runtime doctor and fresh MCP retrieval passed independently. No installed cache file was manually patched.
